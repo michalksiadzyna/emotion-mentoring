@@ -329,7 +329,7 @@
     display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: center;
   }
   .mentor-portrait {
-    display: flex; align-items: center; justify-content: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
   }
   .portrait-frame {
     width: 100%; max-width: 360px;
@@ -965,10 +965,6 @@
   </div>
   <div class="proof-divider"></div>
   <div class="proof-item">
-    <span class="number" style="font-size:1.1rem;letter-spacing:0.05em;">Dozens of Clients</span>
-  </div>
-  <div class="proof-divider"></div>
-  <div class="proof-item">
     <svg viewBox="0 0 24 24" fill="none" style="width:20px;height:20px;color:var(--gold);display:block;margin:0 auto 0.4rem;"><polygon points="12 2 22 12 12 22 2 12" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="12 6.5 17.5 12 12 17.5 6.5 12" fill="currentColor"/></svg>
     <span class="label">SHEN Foundation</span>
   </div>
@@ -1072,8 +1068,12 @@
           <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Years of Practice</span>
         </div>
         <div>
-          <span style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--gold);display:block;line-height:1;">◈</span>
-          <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Shen Foundation</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--gold);display:block;line-height:1;">Worldwide</span>
+          <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Dozens of Clients</span>
+        </div>
+        <div>
+          <svg viewBox="0 0 24 24" fill="none" style="width:22px;height:22px;color:var(--gold);display:block;margin-bottom:0.3rem;"><polygon points="12 2 22 12 12 22 2 12" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="12 6.5 17.5 12 12 17.5 6.5 12" fill="currentColor"/></svg>
+          <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">SHEN Foundation</span>
         </div>
       </div>
     </div>
@@ -1294,8 +1294,8 @@
     <div class="reveal" style="margin-bottom:1.5rem;text-align:center;">
       <svg viewBox="0 0 24 24" fill="none" style="width:26px;height:26px;color:var(--gold);opacity:0.85;display:block;margin:0 auto;"><rect x="2" y="2" width="20" height="20" rx="0" stroke="currentColor" stroke-width="1.8" fill="none"/><rect x="7" y="7" width="10" height="10" rx="0" fill="currentColor"/></svg>
     </div>
-    <h2 class="reveal" style="text-align:center;">Begin with One Powerful Conversation</h2>
-    <p class="reveal" style="text-align:center;color:var(--muted);font-size:0.85rem;margin-bottom:2rem;margin-top:-0.5rem;">Dozens of clients have started right here.</p>
+    <h2 class="reveal" style="text-align:center;margin-bottom:0.4rem;">Begin with One Powerful Conversation</h2>
+    <p class="reveal" style="text-align:center;color:var(--muted);font-size:0.85rem;margin-bottom:2rem;margin-top:0;">Dozens of clients have started right here.</p>
     <div class="steps" style="margin:0 auto;">
       <div class="step reveal" data-step="01">
         <svg style="width:24px;height:24px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
@@ -1467,8 +1467,7 @@
         </select>
       </div>
       <div class="form-row">
-        <label>If your life operated at full capacity, what would be different? <span style="color:var(--gold);font-size:0.72rem;letter-spacing:0.1em;opacity:0.85;">(Optional)</span></label>
-        <textarea id="fvision" placeholder="Describe the shift you are ready to make." rows="3"></textarea>
+        <textarea id="fvision" placeholder="(Optional) Describe the shift you are ready to make." rows="3"></textarea>
       </div>
       <button class="submit-btn" onclick="handleSubmit()">Yes — I Want My Free Consultation →</button>
       <p class="form-note">100% private. No spam. No commitment required.</p>
