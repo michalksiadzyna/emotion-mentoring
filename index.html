@@ -326,7 +326,7 @@
   }
   .mentor-inner {
     max-width: 1200px; margin: 0 auto;
-    display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: center;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start;
   }
   .mentor-portrait {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
@@ -390,7 +390,7 @@
     text-align: center;
   }
   .results-lead {
-    color: var(--muted); max-width: 520px; margin-bottom: 4rem; text-align: center; margin-left: auto; margin-right: auto;
+    color: var(--muted); max-width: 520px; margin-bottom: 2.5rem; text-align: center; margin-left: auto; margin-right: auto;
   }
   .results-grid {
     display: grid;
@@ -942,7 +942,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">11 Years of Transformative Work · Proven Results · Private & Confidential</div>
+  <div class="hero-eyebrow">11+ Years of Transformative Work · Proven Results · Private & Confidential</div>
   <h1><span class="h1-line">You've Optimized Everything</span><em>Except What Matters Most.</em></h1>
   <p class="hero-sub">The strategies, the discipline, the drive — you've mastered all of it.<br>Yet the invisible system running your decisions and relationships<br>remains untouched. <strong>That's about to change.</strong></p>
   <div class="hero-actions">
@@ -974,7 +974,7 @@
 
 <!-- PAIN -->
 <section class="pain">
-  <div class="section-label reveal">What's Really Happening</div>
+  <div class="section-label reveal" style="margin-bottom:1rem;">What's Really Happening</div>
   <h2 class="reveal">You've Built an Impressive Life.<br>So Why Does Something Still Feel <em style="color:var(--gold);font-style:italic;">Wrong?</em></h2>
   <p class="reveal" style="color: var(--muted); max-width: 600px; margin-top: -1rem; margin-left:auto; margin-right:auto; text-align:center;">It's not a lack of effort or intelligence. It's your Subconscious Mind — running emotional patterns that no strategy, willpower, or achievement can override. Every day you don't address it, the gap between where you are and where you could be grows wider.</p>
   <div class="pain-grid">
@@ -1068,11 +1068,11 @@
           <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Years of Practice</span>
         </div>
         <div>
-          <span style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--gold);display:block;line-height:1;">Worldwide</span>
+          <span style="font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:900;color:var(--gold);display:block;line-height:1;">Worldwide</span>
           <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Dozens of Clients</span>
         </div>
-        <div>
-          <svg viewBox="0 0 24 24" fill="none" style="width:22px;height:22px;color:var(--gold);display:block;margin-bottom:0.3rem;"><polygon points="12 2 22 12 12 22 2 12" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="12 6.5 17.5 12 12 17.5 6.5 12" fill="currentColor"/></svg>
+        <div style="text-align:center;">
+          <svg viewBox="0 0 24 24" fill="none" style="width:22px;height:22px;color:var(--gold);display:block;margin:0 auto 0.3rem;"><polygon points="12 2 22 12 12 22 2 12" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="12 6.5 17.5 12 12 17.5 6.5 12" fill="currentColor"/></svg>
           <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">SHEN Foundation</span>
         </div>
       </div>
@@ -1095,7 +1095,7 @@
 
 <!-- RESULTS -->
 <section class="results">
-  <div class="section-label reveal" style="text-align:center;margin-bottom:0.8rem;">What Changes</div>
+  <div class="section-label reveal" style="text-align:center;margin-bottom:0.5rem;">What Changes</div>
   <h2 class="reveal" style="text-align:center;">The Inner World Shifts.<br>Everything Follows.</h2>
   <p class="results-lead reveal">When your emotional system changes, everything changes with it — your decisions, your relationships, your performance, your quality of life. These aren't promises. They're what clients report within weeks.</p>
   <div class="results-grid">
@@ -1449,15 +1449,12 @@
 
     <div id="formContent">
       <div class="form-row">
-        <label>Your Name</label>
         <input type="text" id="fname" placeholder="First & Last Name">
       </div>
       <div class="form-row">
-        <label>Email Address</label>
         <input type="email" id="femail" placeholder="your@email.com">
       </div>
       <div class="form-row">
-        <label>Preferred Time to Be Contacted</label>
         <select id="ftime">
           <option value="" disabled selected>Select a time window</option>
           <option value="Morning (8am–12pm)">Morning (8am–12pm)</option>
@@ -1467,7 +1464,8 @@
         </select>
       </div>
       <div class="form-row">
-        <textarea id="fvision" placeholder="(Optional) Describe the shift you are ready to make." rows="3"></textarea>
+        <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.4rem;"><span style="color:var(--gold);">(Optional)</span><span style="color:var(--muted);"> Describe the shift you are ready to make.</span></p>
+        <textarea id="fvision" placeholder="" rows="3"></textarea>
       </div>
       <button class="submit-btn" onclick="handleSubmit()">Yes — I Want My Free Consultation →</button>
       <p class="form-note">100% private. No spam. No commitment required.</p>
