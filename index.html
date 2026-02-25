@@ -1597,4 +1597,11 @@
         'Timezone: ' + timezone + ' (' + tzOffset + ')\n' +
         'Vision: ' + vision
       );
-      window.locatio
+    window.location.href = `mailto:michal@emotionmentoring.com?subject=${subject}&body=${body}`;
+
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }
+</script>
+</body>
+</html>
