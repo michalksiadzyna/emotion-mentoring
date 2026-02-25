@@ -696,7 +696,7 @@
 
   /* CTA / CONTACT */
   .cta-section {
-    padding: 7rem 4rem 3rem;
+    padding: 5.25rem 4rem 3rem;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -771,7 +771,6 @@
   .form-row textarea:focus,
   .form-row select:focus { border-color: var(--gold); }
   .form-row textarea { resize: vertical; min-height: 100px; }
-  #fvision::placeholder { color: rgba(201, 169, 110, 0.55); }
   .form-row select option { background: var(--deep); }
   .submit-btn {
     width: 100%;
@@ -1070,6 +1069,7 @@
         </div>
         <div>
           <span style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--gold);display:block;line-height:1;">Worldwide</span>
+          <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Dozens of Clients</span>
         </div>
         <div style="text-align:center;">
           <svg viewBox="0 0 24 24" fill="none" style="width:22px;height:22px;color:var(--gold);display:block;margin:0 auto 0.3rem;"><polygon points="12 2 22 12 12 22 2 12" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="12 6.5 17.5 12 12 17.5 6.5 12" fill="currentColor"/></svg>
@@ -1463,8 +1463,9 @@
           <option value="Anytime – flexible">Anytime – flexible</option>
         </select>
       </div>
-      <div class="form-row">
-        <textarea id="fvision" placeholder="(Optional) Describe the shift you are ready to make." rows="3"></textarea>
+      <div class="form-row" style="position:relative;">
+        <textarea id="fvision" rows="3"></textarea>
+        <div id="fvision-ph" style="position:absolute;top:0.9rem;left:1rem;right:1rem;pointer-events:none;font-family:'Barlow',sans-serif;font-size:0.95rem;font-weight:300;line-height:1.5;color:rgba(255,255,255,0.3);"><span style="color:rgba(201,169,110,0.6);">(Optional)</span> Describe the shift you are ready to make.</div>
       </div>
       <button class="submit-btn" onclick="handleSubmit()">Yes — I Want My Free Consultation →</button>
       <p class="form-note">100% private. No spam. No commitment required.</p>
@@ -1627,6 +1628,16 @@
     document.getElementById('formContent').style.display = 'none';
     document.getElementById('successMsg').style.display = 'block';
   }
+  // Fake placeholder for #fvision
+  (function(){
+    var fv = document.getElementById('fvision');
+    var ph = document.getElementById('fvision-ph');
+    if (!fv || !ph) return;
+    var update = function(){ ph.style.display = fv.value ? 'none' : ''; };
+    fv.addEventListener('input', update);
+    fv.addEventListener('focus', function(){ ph.style.display = 'none'; });
+    fv.addEventListener('blur', update);
+  })();
 </script>
 </body>
 </html>
