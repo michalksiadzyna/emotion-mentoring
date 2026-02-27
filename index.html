@@ -1304,6 +1304,7 @@
       padding: 0.7rem 1rem;
     }
     .sw-cta { min-height: 48px; }
+    body.spots-visible .nav-cta { display: none; }
     .exit-modal { padding: 2rem 1.5rem; }
     .exit-modal .modal-headline { margin-bottom: 0.3rem; }
     .modal-cta { padding: 0.9rem 1.5rem; min-height: 48px; }
@@ -1998,8 +1999,10 @@
     const contactTop = contactSection ? contactSection.getBoundingClientRect().top + scrollY - window.innerHeight : Infinity;
     if (scrollY > heroHeight && scrollY < contactTop) {
       spotsWidget.classList.add('visible');
+      document.body.classList.add('spots-visible');
     } else {
       spotsWidget.classList.remove('visible');
+      document.body.classList.remove('spots-visible');
     }
   });
 
