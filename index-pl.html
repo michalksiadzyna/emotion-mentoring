@@ -1,0 +1,2145 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mentoring Emocji — Szczytowa Sprawność Mentalna</title>
+<meta name="description" content="Indywidualny mentoring emocji dla osób osiągających najwyższe wyniki. Strukturalna transformacja emocjonalna poprzez bezpośrednią pracę z układem nerwowym. Darmowa 45-minutowa konsultacja.">
+<meta property="og:title" content="Mentoring Emocji — Szczytowa Sprawność Mentalna">
+<meta property="og:description" content="Indywidualny mentoring emocji dla osób osiągających najwyższe wyniki. Darmowa 45-minutowa konsultacja.">
+<link rel="dns-prefetch" href="https://formspree.io">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #141418;
+    --deep: #1a1a20;
+    --card: #16161a;
+    --gold: #c9a96e;
+    --gold-light: #e8cc96;
+    --white: #f5f3ee;
+    --muted: #8a8880;
+    --border: rgba(201, 169, 110, 0.18);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.5rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+    backdrop-filter: blur(2px);
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    color: var(--gold);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  nav a.nav-cta {
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 0.55rem 1.4rem;
+    transition: all 0.1s;
+  }
+  nav a.nav-cta:hover { background: var(--gold); color: var(--black); transform: translateY(-2px); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    padding: 10rem 4rem 6rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 70% 60% at 85% 40%, rgba(201,169,110,0.13) 0%, transparent 65%),
+      radial-gradient(ellipse 40% 50% at 10% 70%, rgba(201,169,110,0.08) 0%, transparent 60%);
+  }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3.2rem, 8vw, 7.5rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 2.5rem;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.4s forwards;
+    letter-spacing: -0.01em;
+    width: 100%;
+  }
+  .hero h1 .h1-line {
+    display: block;
+    text-align: center;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+    display: block;
+    text-align: center;
+  }
+  .hero-sub {
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 3.5rem;
+    font-weight: 400;
+    line-height: 1.8;
+    text-align: center;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.6s forwards;
+    transition: color 0.1s, background 0.1s;
+  }
+  .hero-actions {
+    display: flex; gap: 1.2rem; align-items: center; justify-content: center;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.8s forwards;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    padding: 1rem 2.4rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: all 0.1s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: #dcc48a; transform: translateY(-2px); }
+  .btn-ghost {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.1s;
+  }
+  .btn-ghost:hover { color: var(--white); transform: translateY(-2px); }
+
+  /* SOCIAL PROOF STRIP */
+  .proof-strip {
+    background: var(--deep);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+  .proof-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .proof-item .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    min-height: 2.4rem;
+    margin-bottom: 0.3rem;
+  }
+  .proof-item .label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.1s;
+  }
+  .proof-item.proof-link {
+    cursor: pointer;
+  }
+  .proof-item.proof-link .label a {
+    transition: color 0.1s;
+  }
+  .proof-item.proof-link:hover .label a {
+    color: #fff;
+  }
+  .proof-divider {
+    width: 1px;
+    height: 40px;
+    background: var(--border);
+    transition: background 0.1s, opacity 0.1s;
+  }
+
+  /* MENTOR SHEN LINK HOVER */
+  .mentor-shen-link:hover .mentor-shen-label {
+    color: #fff !important;
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
+    margin: 0 4rem;
+  }
+
+  /* PAIN SECTION */
+  .pain {
+    padding: 5rem 4rem 8rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .section-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 3rem;
+  }
+  .pain h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .pain-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 4rem;
+  }
+  .pain-item {
+    padding: 2.5rem;
+    background: var(--card);
+    border-top: 1px solid var(--border);
+    transition: background 0.1s, border-color 0.1s;
+    text-align: left;
+  }
+  .pain-item:hover { background: #1c1c22; }
+  .pain-item .number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    color: var(--border);
+    margin-bottom: 0.8rem;
+    font-weight: 900;
+  }
+  .pain-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    transition: color 0.1s;
+  }
+  .pain-item p { color: var(--muted); font-size: 0.95rem; transition: color 0.1s, opacity 0.1s; }
+  .pain-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+  .pain-header .number { margin-bottom: 0; line-height: 1; }
+  .pain-icon {
+    width: 26px;
+    height: 26px;
+    color: var(--gold);
+    opacity: 0.85;
+    flex-shrink: 0;
+    margin-bottom: 0.15rem;
+    transition: color 0.1s, opacity 0.1s;
+  }
+
+  /* WHAT IS IT */
+  .what {
+    padding: 5rem 4rem;
+    background: var(--deep);
+    position: relative;
+    overflow: hidden;
+  }
+  .what::after {
+    content: 'EM';
+    position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 22rem;
+    font-weight: 900;
+    color: rgba(201,169,110,0.03);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .what-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 6rem; align-items: stretch;
+  }
+  .what h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+  .what h2 em { font-style: italic; color: var(--gold); }
+  .what p { color: var(--muted); margin-bottom: 1.4rem; font-size: 1rem; }
+  .what p strong { color: var(--white); font-weight: 500; }
+
+  .pillars {
+    display: flex; flex-direction: column; gap: 1px;
+    justify-content: space-between;
+  }
+  .pillar {
+    padding: 1.3rem 2rem;
+    border-left: 2px solid var(--border);
+    transition: border-color 0.1s, background 0.1s;
+    cursor: default;
+  }
+  .pillar:hover { border-color: var(--gold); }
+  .pillar h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+  .pillar p { color: var(--muted); font-size: 0.9rem; transition: color 0.1s, opacity 0.1s; }
+
+  /* MENTOR */
+  .mentor {
+    padding: 5rem 4rem 8rem;
+    background: var(--deep);
+    position: relative;
+    overflow: hidden;
+  }
+  .mentor::after {
+    content: 'M';
+    position: absolute; left: -1rem; top: 50%; transform: translateY(-50%);
+    font-family: 'Playfair Display', serif;
+    font-size: 22rem;
+    font-weight: 900;
+    color: rgba(201,169,110,0.03);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .mentor-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start;
+  }
+  .mentor-portrait {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+  }
+  .portrait-frame {
+    width: 100%; max-width: 360px;
+    position: relative;
+    margin: 24px auto 0;
+  }
+  .portrait-frame::before {
+    content: '';
+    position: absolute;
+    inset: -12px;
+    border: 1px solid var(--gold);
+    opacity: 0.35;
+    pointer-events: none;
+    transition: opacity 0.5s ease, inset 0.5s ease;
+  }
+  .portrait-frame::after {
+    content: '';
+    position: absolute;
+    inset: -24px;
+    border: 1px solid var(--gold);
+    opacity: 0.12;
+    pointer-events: none;
+    transition: opacity 0.5s ease, inset 0.5s ease;
+  }
+  .portrait-frame:hover::before {
+    opacity: 0.55;
+    inset: -14px;
+  }
+  .portrait-frame:hover::after {
+    opacity: 0.25;
+    inset: -28px;
+  }
+  .portrait-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+    filter: grayscale(15%) contrast(1.05);
+    transition: filter 0.5s ease;
+  }
+  .portrait-frame:hover .portrait-img {
+    filter: grayscale(0%) contrast(1.02);
+  }
+  /* Corner accents */
+  .portrait-frame .corner {
+    position: absolute;
+    width: 18px; height: 18px;
+    border-color: var(--gold);
+    border-style: solid;
+    opacity: 0.5;
+    transition: opacity 0.5s ease, width 0.5s ease, height 0.5s ease;
+  }
+  .portrait-frame:hover .corner {
+    opacity: 0.8;
+    width: 24px; height: 24px;
+  }
+  .portrait-frame .corner.tl { top: -18px; left: -18px; border-width: 1px 0 0 1px; }
+  .portrait-frame .corner.tr { top: -18px; right: -18px; border-width: 1px 1px 0 0; }
+  .portrait-frame .corner.bl { bottom: -18px; left: -18px; border-width: 0 0 1px 1px; }
+  .portrait-frame .corner.br { bottom: -18px; right: -18px; border-width: 0 1px 1px 0; }
+
+  /* RESULTS */
+  .results {
+    padding: 3rem 4rem 5rem;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .results h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .results-lead {
+    color: var(--muted); max-width: 520px; margin-bottom: 2.5rem; text-align: center; margin-left: auto; margin-right: auto;
+  }
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .result-card {
+    background: var(--card);
+    padding: 3rem 2.5rem;
+    border-top: 1px solid var(--border);
+    transition: background 0.1s, border-color 0.1s;
+    display: flex;
+    flex-direction: column;
+  }
+  .result-card:hover { background: #1c1c22; }
+  .result-card .icon {
+    width: 26px;
+    height: 26px;
+    margin-bottom: 1.5rem;
+    display: block;
+    color: var(--gold);
+    opacity: 0.85;
+    flex-shrink: 0;
+    transition: color 0.1s, opacity 0.1s;
+  }
+  .result-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700; margin-bottom: 0.6rem;
+  }
+  .result-card p { color: var(--muted); font-size: 0.9rem; transition: color 0.1s, opacity 0.1s; }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    padding: 5rem 4rem;
+    background: var(--deep);
+    position: relative;
+    overflow: hidden;
+  }
+  .testimonials::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(201,169,110,0.05), transparent 70%);
+  }
+  .testimonials-inner { max-width: 1200px; margin: 0 auto; position: relative; }
+  .testimonials h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 900;
+    margin-bottom: 1rem;
+  }
+  .testimonials-lead {
+    color: var(--muted); max-width: 520px; margin-bottom: 4rem;
+  }
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 2px;
+  }
+  .testi-card {
+    background: var(--card);
+    padding: 2.5rem;
+    border-top: 1px solid var(--border);
+    transition: background 0.1s, border-color 0.1s;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .testi-card:hover { background: #1c1c22; }
+  .testi-outcome {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--gold);
+    opacity: 0.8;
+    letter-spacing: 0.03em;
+    font-style: italic;
+    line-height: 1.5;
+    transition: color 0.1s, opacity 0.1s;
+  }
+  .testi-card:hover .testi-outcome {
+    color: #f5d56a;
+    opacity: 1;
+  }
+  .testi-quote-wrap {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    flex: 1;
+  }
+  .testi-quote-icon {
+    flex-shrink: 0;
+    color: var(--gold);
+    opacity: 0.7;
+    align-self: center;
+  }
+  .testi-quote {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: rgba(245, 243, 238, 0.82);
+    flex: 1;
+    position: relative;
+  }
+  .testi-author {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1.2rem;
+  }
+  .testi-author .name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+  }
+  .testi-author .context {
+    font-size: 0.78rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  /* QUOTE BREAK */
+  .quote-break {
+    padding: 4.5rem 4rem;
+    background: linear-gradient(135deg, #111114 0%, #0f0f12 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .quote-break::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 50% 100% at 50% 0%, rgba(201,169,110,0.06), transparent);
+  }
+  .quote-break blockquote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-style: italic;
+    font-weight: 400;
+    max-width: 780px; margin: 0 auto;
+    line-height: 1.5;
+    position: relative;
+  }
+  .quote-break blockquote::before {
+    content: '\201C';
+    position: absolute; top: -2rem; left: -2rem;
+    font-size: 8rem; color: rgba(201,169,110,0.12);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+  }
+  .quote-break blockquote::after {
+    content: '\201D';
+    position: absolute; bottom: -4rem; right: -1rem;
+    font-size: 8rem; color: rgba(201,169,110,0.12);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+  }
+
+  /* FOR WHO */
+  .forwho {
+    padding: 5rem 4rem;
+    max-width: 1200px; margin: 0 auto;
+  }
+  .forwho h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 900;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  .who-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .who-item {
+    background: var(--card);
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.1s, border-color 0.1s;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .who-item svg {
+    display: block;
+    margin: 0 auto 1rem;
+    transition: color 0.1s, opacity 0.1s;
+  }
+  .who-item:hover { background: #1c1c22; }
+  .who-item::before {
+    content: attr(data-num);
+    position: absolute; top: -1rem; right: 1rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem; font-weight: 900;
+    color: rgba(201,169,110,0.06);
+    line-height: 1;
+  }
+  .who-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem; font-weight: 700; margin-bottom: 0.8rem;
+  }
+  .who-item p { color: var(--muted); font-size: 0.9rem; transition: color 0.1s, opacity 0.1s; }
+
+  /* PROCESS */
+  .process {
+    padding: 3.5rem 4rem;
+    background: var(--deep);
+  }
+  .process-inner { max-width: 1200px; margin: 0 auto; }
+  .process h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-weight: 900;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .steps {
+    display: flex; flex-direction: column; gap: 0;
+    border-left: 1px solid var(--border);
+    padding-left: 3rem;
+    max-width: 700px;
+  }
+  .step {
+    padding: 2.5rem 1.5rem;
+    margin-left: -1.5rem;
+    border-bottom: 1px solid rgba(201,169,110,0.08);
+    position: relative;
+    transition: background 0.1s, border-color 0.1s;
+  }
+  .step::before {
+    content: attr(data-step);
+    position: absolute; left: -3.9rem;
+    width: 1.6rem; height: 1.6rem;
+    background: var(--black); border: 1px solid var(--gold);
+    font-size: 0.6rem; font-weight: 600;
+    color: var(--gold); letter-spacing: 0.05em;
+    display: flex; align-items: center; justify-content: center;
+    top: 2.7rem;
+  }
+  .step h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 700; margin-bottom: 0.5rem;
+  }
+  .step p { color: var(--muted); font-size: 0.95rem; transition: color 0.1s, opacity 0.1s; }
+
+  /* FAQ */
+  .faq-section {
+    padding: 5rem 4rem;
+    background: var(--deep);
+  }
+  .faq-inner {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--white);
+    transition: color 0.1s;
+  }
+  .faq-q:hover { color: var(--gold); }
+  .faq-arrow {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    color: var(--gold);
+    transition: transform 0.1s ease;
+  }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.1s ease;
+  }
+  .faq-item.open .faq-a {
+    max-height: 800px;
+    padding-bottom: 1.5rem;
+  }
+  .faq-a p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    transition: color 0.1s;
+  }
+
+  /* CTA / CONTACT */
+  .cta-section {
+    padding: 5.25rem 4rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 50% 0%, rgba(201,169,110,0.08), transparent 70%);
+  }
+  .cta-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 4.5rem);
+    font-weight: 900;
+    line-height: 1.1;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+  }
+  .cta-section h2 em { font-style: italic; color: var(--gold); }
+  .cta-lead {
+    color: var(--muted);
+    font-size: 1.05rem;
+    max-width: 520px;
+    margin: 0 auto 1.5rem;
+    position: relative;
+  }
+
+  /* FORM */
+  .form-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 2rem 3.5rem 3.5rem;
+    max-width: 560px;
+    margin: 0 auto;
+    position: relative;
+    text-align: left;
+    transition: border-color 0.1s, box-shadow 0.1s;
+    scroll-margin-top: 8rem;
+  }
+  .form-wrap h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem; font-weight: 700;
+    transition: color 0.1s;
+    margin-bottom: 0.4rem;
+  }
+  .form-row { margin-bottom: 0.8rem; }
+  .form-row label {
+    display: block;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible, .nav-cta:focus-visible, .faq-q:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+  .form-row input,
+  .form-row textarea,
+  .form-row select {
+    width: 100%;
+    background: var(--black);
+    border: 1px solid rgba(201,169,110,0.15);
+    color: var(--white);
+    padding: 0.9rem 1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 300;
+    outline: none;
+    transition: border-color 0.1s;
+    appearance: none;
+  }
+  .form-row input:focus,
+  .form-row textarea:focus,
+  .form-row select:focus { border-color: var(--gold); }
+  .form-row textarea { resize: vertical; min-height: 100px; }
+  .form-row:focus-within #fvision-ph { display: none; }
+  .form-row select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9a96e' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 12px;
+    padding-right: 2.5rem;
+  }
+  .form-row select option { background: var(--deep); }
+  .submit-btn {
+    width: 100%;
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    padding: 1.1rem;
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 0.8rem;
+    transition: all 0.1s;
+  }
+  .submit-btn:hover { background: #dcc48a; transform: translateY(-2px); }
+  .form-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-top: 1.2rem;
+  }
+  .form-note a { color: var(--gold); text-decoration: none; }
+  .or-divider {
+    text-align: center;
+    color: var(--muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin: 2rem 0;
+    position: relative;
+  }
+  .or-divider::before, .or-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%; width: 40%; height: 1px;
+    background: var(--border);
+  }
+  .or-divider::before { left: 0; }
+  .or-divider::after { right: 0; }
+  .email-direct {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .email-direct a {
+    color: var(--gold-light);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .email-direct a:hover { text-decoration: underline; }
+
+  /* HOVER EFFECTS — PROOF STRIP */
+  .proof-strip:hover .proof-item .label {
+    color: rgba(245,243,238,0.7) !important;
+  }
+  .proof-strip:hover .proof-item .label a {
+    color: rgba(245,243,238,0.7) !important;
+  }
+
+  /* HOVER EFFECTS — PAIN ITEMS */
+  .pain-item:hover {
+    border-top-color: var(--gold);
+  }
+  .pain-item:hover h3 {
+    color: var(--white);
+  }
+  .pain-item:hover p {
+    color: var(--white);
+    opacity: 0.75;
+  }
+  .pain-item:hover .pain-icon {
+    opacity: 1;
+    color: var(--gold-light);
+  }
+
+  /* HOVER EFFECTS — METHOD PILLARS */
+  .pillar:hover {
+    background: rgba(201,169,110,0.03);
+  }
+  .pillar:hover p {
+    color: var(--white);
+    opacity: 0.75;
+  }
+
+  /* HOVER EFFECTS — RESULT CARDS (What Changes) */
+  .result-card:hover {
+    border-top-color: var(--gold);
+  }
+  .result-card:hover .icon {
+    opacity: 1;
+    color: var(--gold-light);
+  }
+  .result-card:hover p {
+    color: var(--white);
+    opacity: 0.75;
+  }
+
+  /* HOVER EFFECTS — TESTIMONIAL CARDS */
+  .testi-card:hover {
+    border-top-color: var(--gold);
+  }
+  /* HOVER EFFECTS — DESIGNED FOR (who-items) */
+  .who-item:hover {
+    border-top-color: var(--gold);
+  }
+  .who-item:hover svg {
+    opacity: 1;
+    color: var(--gold-light);
+  }
+  .who-item:hover p {
+    color: var(--white);
+    opacity: 0.75;
+  }
+
+  /* HOVER EFFECTS — PROCESS STEPS */
+  .step:hover {
+    background: rgba(201,169,110,0.03);
+    border-bottom-color: rgba(201,169,110,0.2);
+  }
+  .step:hover p {
+    color: var(--white);
+    opacity: 0.75;
+  }
+  .step:hover svg {
+    opacity: 1 !important;
+    color: var(--gold-light) !important;
+  }
+  .step:hover::before {
+    border-color: var(--gold-light);
+    color: var(--gold-light);
+  }
+
+  /* HOVER EFFECTS — FORM BOX */
+  .form-wrap:hover {
+    border-color: rgba(201,169,110,0.4);
+    box-shadow: 0 0 24px rgba(201,169,110,0.06);
+  }
+  .form-wrap:hover h3 {
+    color: var(--gold-light);
+  }
+
+  /* HOVER EFFECTS — BODY TEXT (with background rectangle) */
+  /* Left-aligned text blocks (pain intro) */
+  .pain > p {
+    transition: color 0.1s, background 0.1s;
+    padding: 0.4rem 0.6rem;
+    margin-left: -0.6rem;
+    margin-right: -0.6rem;
+  }
+  .pain > p:hover {
+    color: rgba(245,243,238,0.65) !important;
+    background: rgba(255,255,255,0.03);
+  }
+
+  /* Method + Mentor: parent hover lights up all paragraphs as one box */
+  .what p,
+  .mentor-text p {
+    transition: color 0.1s;
+  }
+  .what-text-group {
+    transition: background 0.1s;
+    padding: 0.6rem;
+    margin: -0.6rem;
+  }
+  .what-text-group:hover {
+    background: rgba(255,255,255,0.03);
+  }
+  .what-text-group:hover p {
+    color: rgba(245,243,238,0.65) !important;
+  }
+  .mentor-text-group {
+    transition: background 0.1s;
+    padding: 0.6rem;
+    margin: -0.6rem;
+  }
+  .mentor-text-group:hover {
+    background: rgba(255,255,255,0.03);
+  }
+  .mentor-text-group:hover p {
+    color: rgba(245,243,238,0.65) !important;
+  }
+
+  /* Centered text blocks (no negative margins, use padding only) */
+  .results-lead,
+  .testimonials-lead,
+  .cta-lead {
+    transition: color 0.1s, background 0.1s;
+    padding: 0.4rem 0.6rem;
+  }
+  .results-lead:hover,
+  .testimonials-lead:hover,
+  .cta-lead:hover {
+    color: rgba(245,243,238,0.65) !important;
+    background: rgba(255,255,255,0.03);
+  }
+
+  /* Muted-hover for misc text */
+  .muted-hover {
+    transition: color 0.1s, background 0.1s;
+    padding: 0.3rem 0.6rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .muted-hover:hover {
+    color: rgba(245,243,238,0.65) !important;
+    background: rgba(255,255,255,0.03);
+  }
+
+  /* Hero sub hover */
+  .hero-sub:hover {
+    color: rgba(245,243,238,0.65) !important;
+    background: rgba(255,255,255,0.03);
+  }
+
+  /* HOVER EFFECTS — QUOTE BREAK */
+  .quote-break blockquote {
+    transition: color 0.1s;
+  }
+  .quote-break:hover blockquote {
+    color: var(--gold);
+  }
+  .quote-break:hover blockquote::before,
+  .quote-break:hover blockquote::after {
+    color: rgba(201,169,110,0.3);
+  }
+
+  /* HOVER EFFECTS — FAQ */
+  .faq-item {
+    transition: background 0.1s;
+  }
+  .faq-item.open:hover {
+    background: rgba(0,0,0,0.1);
+  }
+  .faq-item.open:hover .faq-a p {
+    color: rgba(245,243,238,0.55) !important;
+  }
+
+  /* SPOTS NOTE */
+  .spots-note {
+    color: var(--gold);
+    font-size: 0.82rem;
+    text-align: center;
+    margin-top: 0.6rem;
+    letter-spacing: 0.03em;
+  }
+  /* SPOTS WIDGET */
+  .spots-widget {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 99;
+    background: rgba(20, 20, 24, 0.95);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    padding: 1rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    transform: translateY(120%);
+    transition: transform 0.4s ease;
+  }
+  .spots-widget.visible { transform: translateY(0); }
+  .sw-count {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--gold);
+  }
+  .sw-sub {
+    font-size: 0.7rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .sw-cta {
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.1s;
+    white-space: nowrap;
+    margin-top: 0.3rem;
+    display: inline-block;
+    min-height: 48px;
+    line-height: 48px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .sw-cta:hover { background: #dcc48a; transform: translateY(-2px); }
+
+  /* EXIT-INTENT MODAL */
+  .exit-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .exit-modal-overlay.active { display: flex; }
+  .exit-modal {
+    background: var(--deep);
+    border: 1px solid var(--border);
+    padding: 3rem 4rem;
+    max-width: 720px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+    transition: border-color 0.1s, box-shadow 0.1s;
+  }
+  .exit-modal:hover {
+    border-color: rgba(201,169,110,0.45);
+    box-shadow: 0 0 30px rgba(201,169,110,0.08);
+  }
+  .exit-modal .modal-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 6vw, 4rem);
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    transition: color 0.1s;
+  }
+  .exit-modal:hover .modal-headline {
+    color: var(--gold-light);
+  }
+  .exit-modal h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--white);
+    transition: color 0.1s;
+  }
+  .exit-modal:hover h3 {
+    color: #fff;
+  }
+  .exit-modal p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    transition: color 0.1s;
+  }
+  .exit-modal:hover p {
+    color: var(--white);
+  }
+  .exit-modal .modal-dismiss {
+    transition: color 0.1s;
+  }
+  .exit-modal:hover .modal-dismiss {
+    color: var(--gold);
+  }
+  .modal-cta {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--black);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: all 0.1s;
+    border: none;
+    cursor: pointer;
+    font-family: 'Barlow', sans-serif;
+  }
+  .modal-cta:hover { background: #dcc48a; transform: translateY(-2px); }
+  .modal-dismiss {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--muted);
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0.3rem;
+    transition: color 0.1s;
+  }
+  .modal-dismiss:hover { color: var(--white); }
+
+  /* FOOTER */
+  footer {
+    padding: 3rem 4rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted);
+    font-size: 0.8rem;
+  }
+  footer .logo { font-size: 0.9rem; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  /* SCROLL REVEAL */
+  .reveal {
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  body.js-loaded .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  body.js-loaded .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Urgency CTA section */
+  .urgency-section {
+    padding: 5rem 4rem;
+    text-align: center;
+    background: linear-gradient(135deg, #111114 0%, #0f0f12 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Privacy section */
+  .privacy-section {
+    padding: 4rem 4rem;
+    background: linear-gradient(135deg, #111114 0%, #0f0f12 100%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1.5rem 2rem; }
+    .hero { padding: 9rem 2rem 5rem; }
+    .proof-strip { padding: 2rem; gap: 2rem; }
+    .proof-divider { display: none; }
+    .pain, .what, .results, .testimonials, .forwho, .process, .cta-section, footer, .mentor, .faq-section, .quote-break, .urgency-section, .privacy-section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .pain-grid, .results-grid, .who-list { grid-template-columns: 1fr; }
+    .testi-grid { grid-template-columns: repeat(2, 1fr); }
+    .testi-card { grid-column: span 1 !important; padding: 1.8rem 1.5rem; }
+    .testi-quote-icon { display: none; }
+    .testi-quote-wrap { gap: 0; }
+    .testi-quote { font-size: 0.88rem; line-height: 1.75; }
+    .what-inner, .mentor-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .what::after, .mentor::after { display: none; }
+    .form-wrap { padding: 2.5rem 1.5rem; }
+    .divider { margin: 0 1.5rem; }
+    .submit-btn { min-height: 48px; font-size: 0.88rem; }
+    .spots-widget {
+      bottom: 0;
+      right: 0;
+      left: 0;
+      border-left: none;
+      border-right: none;
+      border-bottom: none;
+      flex-direction: row;
+      gap: 0.8rem;
+      justify-content: center;
+      padding: 0.7rem 1rem;
+    }
+    .sw-cta { min-height: 48px; }
+    body.spots-visible .nav-cta { display: none; }
+    .exit-modal { padding: 2rem 1.5rem; }
+    .exit-modal .modal-headline { margin-bottom: 0.3rem; }
+    .modal-cta { padding: 0.9rem 1.5rem; min-height: 48px; }
+    footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2.5rem 1.5rem 5rem; }
+    .hero-sub br { display: none; }
+  }
+  @media (max-width: 600px) {
+    .testi-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: clamp(2.2rem, 8vw, 3.5rem); }
+    .hero { padding: 7rem 1.2rem 4rem; }
+    nav { padding: 1.2rem 1.2rem; }
+    .urgency-section, .privacy-section, .quote-break { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .form-wrap { padding: 2rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+<svg style="display:none" aria-hidden="true"><symbol id="diamond" viewBox="0 0 24 24"><polygon points="12 2 22 12 12 22 2 12" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="12 6.5 17.5 12 12 17.5 6.5 12" fill="currentColor"/></symbol><symbol id="logo" viewBox="0 0 411 411"><path d="M 163.0,330.5 L 162.5,329.0 L 163.5,328.0 L 164.0,326.5 L 165.0,325.5 L 166.0,324.5 L 166.5,323.0 L 167.5,322.0 L 168.0,320.5 L 169.0,319.5 L 169.5,318.0 L 170.5,317.0 L 171.0,315.5 L 172.0,314.5 L 172.5,313.0 L 173.5,312.0 L 174.0,310.5 L 174.5,309.0 L 175.5,308.0 L 176.0,306.5 L 176.5,305.0 L 177.0,303.5 L 177.5,302.0 L 178.5,301.0 L 178.5,299.0 L 179.0,297.5 L 179.5,296.0 L 179.5,294.0 L 180.0,292.5 L 180.5,291.0 L 180.5,289.0 L 180.5,287.0 L 180.5,285.0 L 180.0,283.5 L 179.5,282.0 L 179.5,280.0 L 179.5,278.0 L 178.5,277.0 L 178.5,275.0 L 178.0,273.5 L 177.5,272.0 L 177.5,270.0 L 176.5,269.0 L 176.5,267.0 L 176.0,265.5 L 175.5,264.0 L 175.5,262.0 L 174.5,261.0 L 174.5,259.0 L 174.0,257.5 L 173.5,256.0 L 172.5,255.0 L 171.5,254.0 L 170.5,253.0 L 169.0,252.5 L 167.0,252.5 L 165.0,252.5 L 163.0,252.5 L 161.0,252.5 L 159.0,252.5 L 158.0,253.5 L 156.0,253.5 L 154.0,253.5 L 152.0,253.5 L 150.0,253.5 L 148.0,253.5 L 146.0,253.5 L 144.0,253.5 L 142.0,253.5 L 141.0,252.5 L 139.5,252.0 L 138.0,251.5 L 137.0,250.5 L 136.5,249.0 L 135.5,248.0 L 135.5,246.0 L 135.5,244.0 L 135.5,242.0 L 135.5,240.0 L 136.5,239.0 L 136.5,237.0 L 136.5,235.0 L 136.5,233.0 L 136.0,231.5 L 135.5,230.0 L 134.5,229.0 L 133.5,228.0 L 133.5,226.0 L 133.5,224.0 L 134.5,223.0 L 134.5,221.0 L 133.5,220.0 L 132.5,219.0 L 131.5,218.0 L 130.5,217.0 L 131.0,215.5 L 131.5,214.0 L 132.0,212.5 L 132.5,211.0 L 132.5,209.0 L 132.0,207.5 L 131.0,206.5 L 130.0,205.5 L 128.5,205.0 L 127.0,204.5 L 125.5,204.0 L 124.0,203.5 L 123.0,202.5 L 122.0,201.5 L 120.5,201.0 L 120.5,199.0 L 120.5,197.0 L 121.0,195.5 L 121.5,194.0 L 122.5,193.0 L 123.5,192.0 L 124.0,190.5 L 124.5,189.0 L 125.5,188.0 L 126.5,187.0 L 127.0,185.5 L 128.0,184.5 L 128.5,183.0 L 129.5,182.0 L 130.0,180.5 L 131.0,179.5 L 131.5,178.0 L 132.5,177.0 L 133.0,175.5 L 133.5,174.0 L 133.5,172.0 L 134.5,171.0 L 134.5,169.0 L 134.5,167.0 L 134.5,165.0 L 134.5,163.0 L 134.5,161.0 L 134.5,159.0 L 134.5,157.0 L 134.5,155.0 L 134.5,153.0 L 135.0,151.5 L 135.5,150.0 L 135.5,148.0 L 136.0,146.5 L 136.5,145.0 L 136.5,143.0 L 137.5,142.0 L 137.5,140.0 L 138.0,138.5 L 138.5,137.0 L 139.0,135.5 L 139.5,134.0 L 139.5,132.0 L 140.0,130.5 L 140.5,129.0 L 140.5,127.0 L 140.0,125.5 L 138.5,125.0 L 137.0,124.5 L 135.5,124.0 L 134.5,123.0 L 133.0,122.5 L 132.0,121.5 L 132.0,120.5 L 133.0,119.5 L 135.0,119.5 L 135.0,118.5 L 134.0,117.5 L 132.5,117.0 L 131.0,116.5 L 130.0,115.5 L 128.5,115.0 L 127.5,114.0 L 126.0,113.5 L 125.0,112.5 L 124.5,111.0 L 123.5,110.0 L 124.5,109.0 L 126.0,108.5 L 128.0,108.5 L 130.0,108.5 L 132.0,108.5 L 134.0,108.5 L 136.0,108.5 L 137.5,108.0 L 139.0,107.5 L 139.5,106.0 L 138.0,105.5 L 136.5,105.0 L 135.0,104.5 L 134.0,103.5 L 132.5,103.0 L 131.5,102.0 L 130.0,101.5 L 129.0,100.5 L 128.0,99.5 L 127.0,98.5 L 126.0,97.5 L 125.5,96.0 L 127.0,95.5 L 129.0,95.5 L 131.0,95.5 L 132.5,95.0 L 134.0,94.5 L 136.0,94.5 L 138.0,94.5 L 140.0,94.5 L 141.0,93.5 L 143.0,93.5 L 145.0,93.5 L 147.0,93.5 L 148.0,92.5 L 150.0,92.5 L 152.0,92.5 L 152.5,91.0 L 151.0,90.5 L 150.0,89.5 L 149.0,88.5 L 148.0,87.5 L 147.0,86.5 L 146.5,85.0 L 148.0,84.5 L 150.0,84.5 L 152.0,84.5 L 153.0,85.5 L 155.0,85.5 L 157.0,85.5 L 159.0,85.5 L 161.0,85.5 L 163.0,85.5 L 165.0,85.5 L 167.0,85.5 L 169.0,85.5 L 171.0,85.5 L 173.0,85.5 L 174.0,84.5 L 176.0,84.5 L 178.0,84.5 L 180.0,84.5 L 181.5,84.0 L 180.0,83.5 L 179.0,82.5 L 177.0,82.5 L 176.0,81.5 L 176.0,80.5 L 178.0,80.5 L 179.5,80.0 L 181.0,79.5 L 183.0,79.5 L 185.0,79.5 L 187.0,79.5 L 189.0,79.5 L 191.0,79.5 L 193.0,79.5 L 195.0,79.5 L 196.5,80.0 L 198.0,80.5 L 200.0,80.5 L 202.0,80.5 L 204.0,80.5 L 206.0,80.5 L 207.0,81.5 L 209.0,81.5 L 211.0,81.5 L 212.0,82.5 L 214.0,82.5 L 215.5,83.0 L 217.0,83.5 L 218.5,84.0 L 220.0,84.5 L 221.5,85.0 L 223.0,85.5 L 224.5,86.0 L 226.0,86.5 L 227.0,87.5 L 228.5,88.0 L 230.0,88.5 L 231.5,88.0 L 230.5,87.0 L 229.5,86.0 L 228.5,85.0 L 227.0,84.5 L 226.0,83.5 L 225.5,82.0 L 226.5,82.0 L 228.0,82.5 L 230.0,82.5 L 231.5,83.0 L 233.0,83.5 L 234.5,84.0 L 236.0,84.5 L 237.0,85.5 L 238.5,86.0 L 240.0,86.5 L 241.0,87.5 L 242.0,88.5 L 243.5,89.0 L 244.5,90.0 L 245.5,91.0 L 246.5,92.0 L 247.5,93.0 L 248.5,94.0 L 249.5,95.0 L 250.5,96.0 L 251.5,97.0 L 252.5,98.0 L 254.0,98.5 L 255.0,99.5 L 256.0,100.5 L 257.0,101.5 L 258.5,102.0 L 260.0,102.5 L 261.0,103.5 L 262.5,104.0 L 264.0,104.5 L 265.0,105.5 L 266.0,106.5 L 267.5,107.0 L 268.5,108.0 L 269.5,109.0 L 270.5,110.0 L 271.5,111.0 L 272.5,112.0 L 273.5,113.0 L 274.5,114.0 L 275.5,115.0 L 276.5,116.0 L 277.5,117.0 L 278.0,118.5 L 279.0,119.5 L 280.0,120.5 L 280.5,122.0 L 281.5,123.0 L 282.0,124.5 L 282.5,126.0 L 283.5,127.0 L 284.0,128.5 L 284.5,130.0 L 285.5,131.0 L 286.0,132.5 L 286.5,134.0 L 287.0,135.5 L 287.5,137.0 L 288.0,138.5 L 288.5,140.0 L 288.5,142.0 L 289.5,143.0 L 289.5,145.0 L 289.5,147.0 L 289.5,149.0 L 289.5,151.0 L 289.5,153.0 L 289.5,155.0 L 289.5,157.0 L 289.5,159.0 L 289.5,161.0 L 289.5,163.0 L 289.5,165.0 L 289.5,167.0 L 289.5,169.0 L 288.5,170.0 L 288.5,172.0 L 288.5,174.0 L 287.5,175.0 L 287.5,177.0 L 286.5,178.0 L 286.5,180.0 L 285.5,181.0 L 285.0,182.5 L 284.5,184.0 L 284.0,185.5 L 283.5,187.0 L 282.5,188.0 L 282.0,189.5 L 281.5,191.0 L 280.5,192.0 L 280.0,193.5 L 279.5,195.0 L 278.5,196.0 L 278.0,197.5 L 277.5,199.0 L 276.5,200.0 L 275.5,201.0 L 275.0,202.5 L 274.5,204.0 L 273.5,205.0 L 273.0,206.5 L 272.0,207.5 L 271.5,209.0 L 270.5,210.0 L 270.0,211.5 L 269.5,213.0 L 268.5,214.0 L 267.5,215.0 L 267.0,216.5 L 266.5,218.0 L 265.5,219.0 L 265.0,220.5 L 264.5,222.0 L 263.5,223.0 L 263.5,225.0 L 262.5,226.0 L 262.5,228.0 L 261.5,229.0 L 261.5,231.0 L 261.0,232.5 L 260.5,234.0 L 260.5,236.0 L 260.0,237.5 L 258.5,237.0 L 257.5,236.0 L 256.0,235.5 L 255.5,237.0 L 255.5,239.0 L 256.5,240.0 L 256.5,242.0 L 256.5,244.0 L 256.5,246.0 L 256.5,248.0 L 257.0,249.5 L 257.5,251.0 L 257.5,253.0 L 257.5,255.0 L 258.0,256.5 L 258.5,258.0 L 258.5,260.0 L 259.0,261.5 L 259.5,263.0 L 259.5,265.0 L 260.5,266.0 L 260.5,268.0 L 261.5,269.0 L 261.5,271.0 L 262.0,272.5 L 262.5,274.0 L 263.5,275.0 L 263.5,277.0 L 264.5,278.0 L 265.0,279.5 L 265.5,281.0 L 266.0,282.5 L 266.5,284.0 L 267.5,285.0 L 268.0,286.5 L 268.5,288.0 L 269.5,289.0 L 270.5,290.0 L 271.0,291.5 L 271.5,293.0 L 272.5,294.0 L 273.0,295.5 L 274.0,296.5 L 274.5,298.0 L 275.5,299.0 L 276.5,300.0 L 277.0,301.5 L 278.0,302.5 L 278.5,304.0 L 279.5,305.0 L 280.5,306.0 L 281.5,307.0 L 282.0,308.5 L 283.0,309.5 L 283.5,311.0 L 282.0,311.5 L 280.0,311.5 L 278.0,311.5 L 276.0,311.5 L 274.0,311.5 L 272.0,311.5 L 270.0,311.5 L 268.0,311.5 L 266.0,311.5 L 264.0,311.5 L 262.5,312.0 L 261.0,312.5 L 259.0,312.5 L 257.0,312.5 L 255.0,312.5 L 253.0,312.5 L 251.0,312.5 L 249.0,312.5 L 247.0,312.5 L 246.0,313.5 L 244.0,313.5 L 242.0,313.5 L 240.0,313.5 L 238.5,314.0 L 237.0,314.5 L 235.0,314.5 L 233.0,314.5 L 232.0,315.5 L 230.0,315.5 L 228.0,315.5 L 226.5,316.0 L 225.0,316.5 L 223.0,316.5 L 221.5,317.0 L 220.0,317.5 L 218.0,317.5 L 216.5,318.0 L 215.0,318.5 L 213.0,318.5 L 211.0,318.5 L 210.0,319.5 L 208.0,319.5 L 206.0,319.5 L 205.0,320.5 L 203.0,320.5 L 201.5,321.0 L 200.0,321.5 L 198.0,321.5 L 197.0,322.5 L 195.0,322.5 L 193.5,323.0 L 192.0,323.5 L 190.0,323.5 L 188.5,324.0 L 187.0,324.5 L 185.0,324.5 L 184.0,325.5 L 182.0,325.5 L 180.5,326.0 L 179.0,326.5 L 177.0,326.5 L 176.0,327.5 L 174.0,327.5 L 172.5,328.0 L 171.0,328.5 L 169.0,328.5 L 167.5,329.0 L 166.0,329.5 L 164.0,329.5 L 163.0,330.5 Z M 203.5,194.0 L 204.5,193.0 L 206.0,192.5 L 207.0,191.5 L 208.5,191.0 L 209.5,190.0 L 211.0,189.5 L 212.0,188.5 L 213.0,187.5 L 214.5,187.0 L 215.5,186.0 L 217.0,185.5 L 218.0,184.5 L 219.0,183.5 L 220.5,183.0 L 221.5,182.0 L 222.5,181.0 L 223.5,180.0 L 224.5,179.0 L 225.5,178.0 L 227.0,177.5 L 228.0,176.5 L 229.0,175.5 L 230.0,174.5 L 231.0,173.5 L 231.5,172.0 L 232.5,171.0 L 233.5,170.0 L 234.5,169.0 L 235.5,168.0 L 236.0,166.5 L 237.0,165.5 L 237.5,164.0 L 238.5,163.0 L 239.0,161.5 L 239.5,160.0 L 240.0,158.5 L 240.5,157.0 L 240.5,155.0 L 240.5,153.0 L 240.5,151.0 L 240.5,149.0 L 240.5,147.0 L 240.5,145.0 L 240.0,143.5 L 239.5,142.0 L 239.5,140.0 L 238.5,139.0 L 237.5,138.0 L 237.0,136.5 L 236.0,135.5 L 235.0,134.5 L 234.0,133.5 L 233.0,132.5 L 231.5,132.0 L 230.0,131.5 L 229.0,130.5 L 227.5,130.0 L 226.0,129.5 L 224.0,129.5 L 222.0,129.5 L 220.0,129.5 L 218.0,129.5 L 216.0,129.5 L 214.5,130.0 L 213.0,130.5 L 212.0,131.5 L 210.5,132.0 L 209.5,133.0 L 208.0,133.5 L 207.0,134.5 L 206.5,136.0 L 205.5,137.0 L 204.5,138.0 L 203.5,139.0 L 202.5,140.0 L 201.5,140.0 L 200.5,139.0 L 199.5,138.0 L 198.5,137.0 L 197.5,136.0 L 196.5,135.0 L 195.5,134.0 L 194.5,133.0 L 193.5,132.0 L 192.0,131.5 L 191.0,130.5 L 189.5,130.0 L 188.0,129.5 L 186.0,129.5 L 185.0,128.5 L 183.0,128.5 L 181.0,128.5 L 180.0,129.5 L 178.0,129.5 L 176.5,130.0 L 175.0,130.5 L 174.0,131.5 L 172.5,132.0 L 171.5,133.0 L 170.5,134.0 L 169.5,135.0 L 168.5,136.0 L 167.5,137.0 L 166.5,138.0 L 165.5,139.0 L 165.0,140.5 L 164.5,142.0 L 164.0,143.5 L 163.5,145.0 L 163.5,147.0 L 163.5,149.0 L 163.5,151.0 L 162.5,152.0 L 163.5,153.0 L 163.5,155.0 L 163.5,157.0 L 164.0,158.5 L 164.5,160.0 L 165.0,161.5 L 165.5,163.0 L 166.5,164.0 L 167.0,165.5 L 168.0,166.5 L 168.5,168.0 L 169.5,169.0 L 170.5,170.0 L 171.5,171.0 L 172.5,172.0 L 173.5,173.0 L 174.5,174.0 L 175.5,175.0 L 176.5,176.0 L 177.5,177.0 L 178.5,178.0 L 179.5,179.0 L 180.5,180.0 L 181.5,181.0 L 182.5,182.0 L 184.0,182.5 L 185.0,183.5 L 186.0,184.5 L 187.0,185.5 L 188.5,186.0 L 189.5,187.0 L 191.0,187.5 L 192.0,188.5 L 193.0,189.5 L 194.5,190.0 L 196.0,190.5 L 197.0,191.5 L 198.0,192.5 L 199.5,193.0 L 200.5,194.0 L 202.0,194.5 L 203.5,194.0 Z" fill="#c9a96e" fill-rule="evenodd"/></symbol></svg>
+
+<!-- NAV -->
+<nav>
+  <div class="logo"><svg width="72" height="72" viewBox="0 0 411 411" aria-hidden="true"><use href="#logo"/></svg> Mentoring Emocji</div>
+  <a href="#bookForm" class="nav-cta">Darmowa Konsultacja →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">11+ lat transformacyjnej pracy · Potwierdzone rezultaty · Prywatnie i poufnie</div>
+  <h1><span class="h1-line">Zoptymalizowałeś wszystko</span><em>Oprócz tego, co najważniejsze.</em></h1>
+  <p class="hero-sub">Strategie, dyscyplina, ambicja — to wszystko już masz. <br>Ale niewidoczny system sterujący Twoimi decyzjami i relacjami <br>pozostaje nietknięty. <strong>To się właśnie zmieni.</strong></p>
+  <div class="hero-actions">
+    <a href="#bookForm" class="btn-primary">Umów darmową 45-minutową konsultację</a>
+    <a href="#what" class="btn-ghost">Poznaj metodę ↓</a>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF STRIP -->
+<div class="proof-strip">
+  <div class="proof-item">
+    <span class="number">11+</span>
+    <span class="label">Lat praktyki</span>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-item">
+    <span class="number" style="font-size:1.3rem;letter-spacing:0.08em;">Wielu narodowości</span>
+    <span class="label">Klienci na całym świecie</span>
+  </div>
+  <div class="proof-divider"></div>
+  <div class="proof-item">
+    <span class="number" style="font-size:1.3rem;letter-spacing:0.08em;">Indywidualny</span>
+    <span class="label">Program premium</span>
+  </div>
+  <div class="proof-divider"></div>
+  <a href="foundation-pl.html" class="proof-item proof-link" style="text-decoration:none;color:inherit;">
+    <span class="number" style="font-size:1.3rem;letter-spacing:0.08em;">Wspierane przez</span>
+    <span class="label">Fundację Shen</span>
+  </a>
+</div>
+
+<div class="divider"></div>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="section-label reveal" style="margin-bottom:1rem;">Co się naprawdę dzieje</div>
+  <h2 class="reveal">Zbudowałeś imponujące życie.<br>Więc dlaczego coś wciąż <em style="color:var(--gold);font-style:italic;">nie gra?</em></h2>
+  <p class="reveal" style="color: var(--muted); max-width: 600px; margin-top: -1rem; margin-left:auto; margin-right:auto; text-align:center;">To nie kwestia braku wysiłku ani inteligencji. To Twoja Podświadomość — prowadząca wzorce emocjonalne, których żadna strategia, siła woli ani osiągnięcie nie jest w stanie nadpisać. Każdy dzień bez zmiany pogłębia przepaść między tym, gdzie jesteś, a tym, gdzie mógłbyś być.</p>
+  <div class="pain-grid">
+    <div class="pain-item reveal">
+      <div class="pain-header">
+        <div class="number">01</div>
+        <svg class="pain-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg>
+      </div>
+      <h3>Reagujesz zamiast odpowiadać</h3>
+      <p>Negocjacja, trudna rozmowa, krytyczny moment — coś Cię przejmuje. Opanowana, ostra wersja Ciebie znika dokładnie wtedy, kiedy jest najbardziej potrzebna.</p>
+    </div>
+    <div class="pain-item reveal">
+      <div class="pain-header">
+        <div class="number">02</div>
+        <svg class="pain-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg>
+      </div>
+      <h3>Twoje wyniki są niestabilne</h3>
+      <p>Jednego dnia jesteś nie do zatrzymania. Innego — niewidzialny ciężar rujnuje wszystko. Nie możesz wymusić siłą woli stałości — bo blokada nie siedzi w myśleniu. Jest głębiej.</p>
+    </div>
+    <div class="pain-item reveal">
+      <div class="pain-header">
+        <div class="number">03</div>
+        <svg class="pain-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg>
+      </div>
+      <h3>Sukces jest pusty — i nie potrafisz wyjaśnić dlaczego</h3>
+      <p>Osiągnąłeś prawdziwe rzeczy. A mimo to trwałe zadowolenie wciąż umyka. Czujesz, że coś głębszego jest możliwe — tuż za granicą tego, co znasz.</p>
+    </div>
+    <div class="pain-item reveal">
+      <div class="pain-header">
+        <div class="number">04</div>
+        <svg class="pain-icon" viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg>
+      </div>
+      <h3>Stres przenika wszystko</h3>
+      <p>Presja zawodowa zatruwa relacje. Stary emocjonalny balast zanieczyszcza chwilę obecną. Żadna granica nie wytrzymuje. Żadna strategia nie utrzyma murów wiecznie.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHAT IS IT -->
+<section class="what" id="what">
+  <div class="what-inner">
+    <div style="display:flex;flex-direction:column;justify-content:center;">
+      <div class="section-label reveal">Metoda</div>
+      <h2 class="reveal">To nie jest terapia.<br>To <em>precyzyjna<br>praca wewnętrzna.</em></h2>
+      <div class="what-text-group">
+        <p class="reveal">Mentoring Emocji to <strong>precyzyjny, uporządkowany proces</strong>, który działa bezpośrednio na to, jak Twój umysł i układ nerwowy przetwarzają dane emocjonalne — tworząc nowe, trwałe adaptacje u źródła. To nie teoria. To metoda, która właśnie teraz transformuje dyrektorów, sportowców i ludzi sukcesu.</p>
+        <p class="reveal">Pomyśl o tym jak o elitarnym treningu systemu operacyjnego pod Twoją świadomą myślą. Nie analizujemy problemów w nieskończoność. <strong>Zmieniamy wzorce, które je generują</strong> — na poziomie, na którym faktycznie żyją. A rezultaty mówią same za siebie.</p>
+        <p class="reveal">W odróżnieniu od terapii nie chodzi tu o rozpamiętywanie przeszłości. W odróżnieniu od coachingu nie chodzi tylko o odpowiedzialność. To działa na zupełnie innym poziomie — na który większość podejść nigdy nie dociera. Zmiany są strukturalne. Nie blakną. <strong>Kumulują się.</strong></p>
+      </div>
+    </div>
+    <div class="pillars reveal">
+      <div class="pillar">
+        <svg style="width:22px;height:22px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+        <h4>Trening adaptacyjny umysłu</h4>
+        <p>Prowadzenie układu nerwowego do tworzenia nowych, silnych odpowiedzi na wyzwania, presję i niepewność. Przestajesz reagować — zaczynasz wybierać.</p>
+      </div>
+      <div class="pillar">
+        <svg style="width:22px;height:22px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+        <h4>Rozwiązywanie wzorców</h4>
+        <p>Identyfikacja i uwolnienie wzorców emocjonalnych, które po cichu ograniczają Twoje wyniki i zdolność do radości — nawet wzorców utrzymywanych od dekad.</p>
+      </div>
+      <div class="pillar">
+        <svg style="width:22px;height:22px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+        <h4>Wyrównanie z rzeczywistością</h4>
+        <p>Budowanie szczerej, wzmacniającej relacji z rzeczywistością. Takiej, która służy Twoim ambicjom zamiast po cichu je podkopywać.</p>
+      </div>
+      <div class="pillar">
+        <svg style="width:22px;height:22px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
+        <h4>Trwała integracja</h4>
+        <p>Zmiany osadzają się głęboko z czasem. To nie motywacja, która gaśnie po tygodniu. To strukturalna transformacja, która się kumuluje.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER before mentor -->
+<div class="divider"></div>
+
+<!-- MEET MICHAŁ -->
+<section class="mentor" id="mentor" style="background: var(--black);">
+  <div class="mentor-inner">
+    <div class="mentor-text">
+      <div class="section-label reveal" style="margin-bottom:1.8rem;">Twój Przewodnik</div>
+      <h2 class="reveal" style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;line-height:1.2;margin-bottom:2rem;">Poznaj <em style="font-style:italic;color:var(--gold);">Michała</em></h2>
+      <div class="mentor-text-group">
+        <p class="reveal" style="color:var(--muted);font-size:1rem;margin-bottom:1.4rem;">Od ponad 11 lat Michał pracuje na styku inteligencji emocjonalnej i szczytowej wydajności — prowadząc dyrektorów, sportowców i ludzi sukcesu przez głębokie wewnętrzne przemiany, których żadna powierzchowna metoda nie jest w stanie dotknąć.</p>
+        <p class="reveal" style="color:var(--muted);font-size:1rem;margin-bottom:1.4rem;">Jego podejście wykuwało się przez tysiące godzin intensywnej praktyki, osobistej transformacji i rygorystycznego badania tego, jak ludzki system emocjonalny naprawdę działa — nie jak jest opisywany w podręcznikach. Założył <strong style="color:var(--white);font-weight:500;">Fundację Shen</strong>, by udostępnić tę pracę szerszemu gronu osób.</p>
+        <p class="reveal" style="color:var(--muted);font-size:1rem;margin-bottom:1.4rem;">Klienci opisują go jako <strong style="color:var(--white);font-weight:500;">bezpośredniego, precyzyjnego, głęboko empatycznego i bezkompromisowego</strong> w dążeniu do prawdziwych rezultatów. Nie zajmuje się pogawędkami. Zajmuje się głęboką pracą — i robi to wyjątkowo dobrze.</p>
+        <p class="reveal" style="color:var(--muted);font-size:1rem;margin-bottom:1.4rem;">Tym, co wyróżnia tę pracę, jest jej precyzja. Większość podejść leczy objawy. Ta metoda identyfikuje dokładne struktury emocjonalne kształtujące Twoje zachowanie — i zmienia je u korzenia. Zmiana nie jest koncepcyjna. To coś, co <strong style="color:var(--white);font-weight:500;">czujesz w ciele, w decyzjach, w tym jak się pojawiasz</strong> już następnego dnia.</p>
+      </div>
+      <div class="reveal" style="margin-top:2rem;display:flex;gap:2.5rem;flex-wrap:wrap;align-items:flex-end;">
+        <div>
+          <span style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--gold);display:block;line-height:1;">11+</span>
+          <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Lat praktyki</span>
+        </div>
+        <div style="text-align:center;">
+          <span style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--gold);display:block;line-height:1;">Na całym świecie</span>
+          <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Dziesiątki klientów</span>
+        </div>
+        <a href="foundation-pl.html" style="text-align:center;text-decoration:none;" class="mentor-shen-link">
+          <span style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--gold);display:block;line-height:1;">Założyciel</span>
+          <span class="mentor-shen-label" style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);transition:color 0.1s;">Fundacja Shen</span>
+        </a>
+      </div>
+    </div>
+    <div class="mentor-portrait reveal">
+      <div class="portrait-frame">
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <picture>
+          <source srcset="portrait.webp" type="image/webp">
+          <img src="portrait.jpg" loading="lazy" width="360" height="480" alt="Michał — Mentoring Emocji" class="portrait-img">
+        </picture>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <p style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.25rem;">Michał Ksiądzyna</p>
+        <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem;">Założyciel i Prezes, Fundacja SHEN</p>
+        <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Twórca metody Mentoringu Emocji</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- RESULTS -->
+<section class="results">
+  <div class="section-label reveal" style="text-align:center;margin-bottom:0.5rem;">Co się zmienia</div>
+  <h2 class="reveal" style="text-align:center;">Wewnętrzny świat się zmienia.<br>Reszta podąża za nim.</h2>
+  <p class="results-lead reveal">Kiedy Twój system emocjonalny się zmienia, zmienia się wszystko — decyzje, relacje, wyniki, jakość życia.</p>
+  <div class="results-grid">
+    <div class="result-card reveal">
+      <svg class="icon" viewBox="0 0 24 24" fill="none"><polygon points="12 2 23 21 1 21" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="12 10.5 16 17.5 8 17.5" fill="currentColor"/></svg>
+      <h3>Jasność pod presją</h3>
+      <p>Podejmowanie kluczowych decyzji z ugruntowanego, czystego stanu — bez mgły, bez wahania, bez emocjonalnych zakłóceń zniekształcających osąd.</p>
+    </div>
+    <div class="result-card reveal">
+      <svg class="icon" viewBox="0 0 24 24" fill="none"><polygon points="12 2 23 21 1 21" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="12 10.5 16 17.5 8 17.5" fill="currentColor"/></svg>
+      <h3>Stała szczytowa forma</h3>
+      <p>Niezawodny dostęp do najlepszej wersji siebie — w salach konferencyjnych, na zawodach, w pracy twórczej, w rozmowach, które mają największe znaczenie.</p>
+    </div>
+    <div class="result-card reveal">
+      <svg class="icon" viewBox="0 0 24 24" fill="none"><polygon points="12 2 23 21 1 21" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="12 10.5 16 17.5 8 17.5" fill="currentColor"/></svg>
+      <h3>Prawdziwe panowanie nad emocjami</h3>
+      <p>Odpowiadanie na trudności z precyzją i opanowaniem. Przestajesz być sterowany emocjami — zaczynasz je wykorzystywać jako informację.</p>
+    </div>
+    <div class="result-card reveal">
+      <svg class="icon" viewBox="0 0 24 24" fill="none"><polygon points="12 2 23 21 1 21" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="12 10.5 16 17.5 8 17.5" fill="currentColor"/></svg>
+      <h3>Głębsze relacje</h3>
+      <p>Kiedy Twój wewnętrzny świat się oczyszcza, relacje na zewnątrz się transformują. Bliskość pogłębia się. Wpływ rośnie. Stare tarcia znikają.</p>
+    </div>
+    <div class="result-card reveal">
+      <svg class="icon" viewBox="0 0 24 24" fill="none"><polygon points="12 2 23 21 1 21" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="12 10.5 16 17.5 8 17.5" fill="currentColor"/></svg>
+      <h3>Prawdziwe spełnienie</h3>
+      <p>Nie sztuczna pozytywność — prawdziwa, trwała satysfakcja. Jakość życia, która faktycznie odpowiada jakości Twoich ambicji.</p>
+    </div>
+    <div class="result-card reveal">
+      <svg class="icon" viewBox="0 0 24 24" fill="none"><polygon points="12 2 23 21 1 21" stroke="currentColor" stroke-width="1.8" fill="none"/><polygon points="12 10.5 16 17.5 8 17.5" fill="currentColor"/></svg>
+      <h3>Trwała zmiana</h3>
+      <p>Bez cotygodniowej zależności. Bez trybu podtrzymującego. Zmiany kumulują się z czasem. Ewoluujesz — a ta ewolucja robi resztę.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-inner">
+    <div class="section-label reveal" style="text-align:center;margin-bottom:0.8rem;">Prawdziwe rezultaty</div>
+    <h2 class="reveal" style="text-align:center;">Rezultaty. Ich własnymi słowami.</h2>
+    <p class="testimonials-lead reveal" style="text-align:center;margin-left:auto;margin-right:auto;">Nie wierz nam na słowo. To niefiltrowane słowa prawdziwych klientów, którzy zdecydowali się na ten proces — i wyszli z niego fundamentalnie zmienieni.</p>
+    <div class="testi-grid">
+
+      <!-- ROW 1: FEATURED — Best testimonial first -->
+      <div class="testi-card reveal" style="grid-column: span 3;">
+        <div class="testi-quote-wrap">
+          <svg class="testi-quote-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6" fill="var(--card)"/><circle cx="12" cy="12" r="2"/></svg>
+          <div class="testi-quote">Po czterech miesiącach samotność, która przez lata czyniła moje życie koszmarem, po prostu zniknęła. Zmiany na początku były subtelne — prawie niezauważalne. Ale im więcej odpuszczałam, tym było lżej. Po niecałym roku poczułam prawdziwą wolność i radość — czegoś, czego tak bardzo mi brakowało. Efektem ubocznym było całkowite odpadnięcie potrzeby alkoholu i kawy. A moja relacja z córką — która sprowadziła mnie tutaj — całkowicie się przemieniła.</div>
+        </div>
+        <div class="testi-author">
+          <span class="name">Krystyna Mendonca</span>
+          <span class="context">Niecały rok pracy — głęboka przemiana</span>
+          <span class="testi-outcome">Efekt: Wyeliminowana zależność od alkoholu, rozwiązana wieloletnia samotność, odmieniona relacja z córką</span>
+        </div>
+      </div>
+
+      <div class="testi-card reveal" style="grid-column: span 3;">
+        <div class="testi-quote-wrap">
+          <svg class="testi-quote-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6" fill="var(--card)"/><circle cx="12" cy="12" r="2"/></svg>
+          <div class="testi-quote">Wcześniej pracowałam z kilkoma terapeutami — CBT, psychodynamika, Gestalt, Hellinger, Theta Healing. To, co uderzyło mnie w tej metodzie, było zupełnie inne niż cokolwiek wcześniej. Michał jest doskonałym przewodnikiem — pozwala doświadczyć nawet najgłębszych emocji, jednocześnie czujesz się całkowicie bezpiecznie i zrozumiana. Mogłam przeżyć, przetransformować i uwolnić to, co mi już nie służyło. Słucha, jest empatyczny, a jednocześnie stanowczy. Prowadzi do celu nie pozwalając, by obrony przejęły kontrolę — i dlatego to jest tak skuteczne.</div>
+        </div>
+        <div class="testi-author">
+          <span class="name">Agnieszka Palka</span>
+          <span class="context">Wypróbowała pięć innych metod zanim znalazła tę</span>
+          <span class="testi-outcome">Efekt: Znalazła metodę, która zadziałała po CBT, terapii psychodynamicznej, Gestalt, Hellingerze i Theta Healing</span>
+        </div>
+      </div>
+
+      <!-- ROW 2 -->
+      <div class="testi-card reveal" style="grid-column: span 2;">
+        <div class="testi-quote-wrap">
+          <svg class="testi-quote-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6" fill="var(--card)"/><circle cx="12" cy="12" r="2"/></svg>
+          <div class="testi-quote">Michał to wysoko wykwalifikowany profesjonalista, który budował moje zaufanie sesja po sesji — a nie jestem osobą łatwą do przekonania. Czuję, że dokładnie wie, co robi i że idziemy we właściwym kierunku. Pracujemy razem od trzech miesięcy i nie zamierzam kończyć. Nie kryje się za chwytliwymi sloganami. Po prostu dostarcza rezultaty. Polecam go każdemu, kto chce więcej od życia.</div>
+        </div>
+        <div class="testi-author">
+          <span class="name">Arkadiusz Czajkowski</span>
+          <span class="context">Przyszedł sceptyczny — został, bo to działa</span>
+          <span class="testi-outcome">Efekt: Odbudowane zaufanie sesja po sesji — stabilny postęp przez ponad 3 miesiące z pozycji głębokiego sceptycyzmu</span>
+        </div>
+      </div>
+
+      <div class="testi-card reveal" style="grid-column: span 2;">
+        <div class="testi-quote-wrap">
+          <svg class="testi-quote-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6" fill="var(--card)"/><circle cx="12" cy="12" r="2"/></svg>
+          <div class="testi-quote">W ciągu jednej sesji uzdrowiłam wzorzec, który powtarzałam od wielu lat — i jestem teraz z tego powodu głęboko szczęśliwa. Po sesji pojawiło się głębokie ukojenie. Nowa perspektywa na tematy, które nosiłam od tak dawna, jak pamiętam. Pełen profesjonalizm, zaangażowanie i ciągła uwaga na mój proces. Polecam każdemu, kto chce się uwolnić od tego, co wymaga uzdrowienia.</div>
+        </div>
+        <div class="testi-author">
+          <span class="name">Dominika Lenard</span>
+          <span class="context">Wahała się zanim się odezwała — dobrze, że to zrobiła</span>
+          <span class="testi-outcome">Efekt: Uzdrowiony powracający wzorzec w jednej sesji — głęboki spokój i nowa perspektywa pojawiły się natychmiast</span>
+        </div>
+      </div>
+
+      <div class="testi-card reveal" style="grid-column: span 2;">
+        <div class="testi-quote-wrap">
+          <svg class="testi-quote-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6" fill="var(--card)"/><circle cx="12" cy="12" r="2"/></svg>
+          <div class="testi-quote">Każda przepracowana godzina przyczynia się do mojego sukcesu. Jestem teraz bardziej empatyczny. Rozumiem, jakie mechanizmy napędzają innych ludzi — a to zmienia wszystko. Coaching emocjonalny oznaczał odkrycie prostego łańcucha przyczynowo-skutkowego we własnych wzorcach — odpowiedź na pytania, które nosiłem latami, nie zdając sobie sprawy, że mają odpowiedzi.</div>
+        </div>
+        <div class="testi-author">
+          <span class="name">Michał Szost</span>
+          <span class="context">Połączył się przez energię i flow od samego początku</span>
+          <span class="testi-outcome">Efekt: Rozwinięta płynność emocjonalna i empatia, które przemieniły jego rozumienie własnych wzorców i wzorców innych</span>
+        </div>
+      </div>
+
+      <!-- ROW 3 — Second-best testimonial goes last -->
+      <div class="testi-card reveal" style="grid-column: span 2;">
+        <div class="testi-quote-wrap">
+          <svg class="testi-quote-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6" fill="var(--card)"/><circle cx="12" cy="12" r="2"/></svg>
+          <div class="testi-quote">Pokazałeś mi, że samotność to nie osamotnienie — i że bycie sam na sam ze sobą jest bezcenne. Od czasu tej pracy nigdy nie czułam się osamotniona. Teraz szukam tych chwil dla własnej autentyczności. Niektóre z najgłębszych uświadomień przyszły nie na sesjach, lecz w ekstremalnych miejscach w naturze — bo tam nie ma miejsca na samooszukiwanie się.</div>
+        </div>
+        <div class="testi-author">
+          <span class="name">Beata Brzychczyk</span>
+          <span class="context">Uczestniczka warsztatów</span>
+          <span class="testi-outcome">Efekt: Odmieniona relacja z samotnością — wyeliminowane osamotnienie i odnaleziony głęboki komfort i autentyczność w byciu samemu</span>
+        </div>
+      </div>
+
+      <div class="testi-card reveal" style="grid-column: span 2;">
+        <div class="testi-quote-wrap">
+          <svg class="testi-quote-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6" fill="var(--card)"/><circle cx="12" cy="12" r="2"/></svg>
+          <div class="testi-quote">Myślałam, że wiem już dużo o emocjach i jak z nimi pracować. Za każdym razem Michał pokazywał mi każdą z nich z dużo głębszego i szerszego kąta. Nie znam nikogo, kto pracuje na tym poziomie z tym, co w nas wciąż czeka na uzdrowienie. Jestem głęboko wdzięczna za tę współpracę.</div>
+        </div>
+        <div class="testi-author">
+          <span class="name">Paulina Szuta</span>
+          <span class="context">Długoterminowa współpraca nad pracą z emocjami</span>
+          <span class="testi-outcome">Efekt: Osiągnięte głębie rozumienia emocji niedostępne u żadnego innego specjalisty — trwająca praca długoterminowa</span>
+        </div>
+      </div>
+
+      <div class="testi-card reveal" style="grid-column: span 2;">
+        <div class="testi-quote-wrap">
+          <svg class="testi-quote-icon" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6" fill="var(--card)"/><circle cx="12" cy="12" r="2"/></svg>
+          <div class="testi-quote">Pojawiłeś się na mojej drodze w momencie, gdy czułam się całkowicie zagubiona. Pomogłeś mi wrócić do siebie — do miejsca, w którym znów czuję spokój. Jestem pełna wdzięczności.</div>
+        </div>
+        <div class="testi-author">
+          <span class="name">Karolina Stelmaszczyk</span>
+          <span class="context">Odnalazła drogę powrotną do siebie</span>
+          <span class="testi-outcome">Efekt: Ponowne połączenie z wewnętrznym spokojem po poczuciu całkowitego zagubienia — powrót do stabilnego poczucia siebie</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section class="urgency-section">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 100% at 50% 0%, rgba(201,169,110,0.06), transparent);"></div>
+  <p class="reveal" style="font-family:'Playfair Display',serif;font-size:clamp(1.4rem,3vw,2rem);font-weight:400;font-style:italic;max-width:600px;margin:0 auto 1.5rem;line-height:1.5;position:relative;">Każdy tydzień czekania to kolejny tydzień działania poniżej swojego potencjału.</p>
+  <a href="#bookForm" class="btn-primary reveal" style="position:relative;">Umów darmową konsultację →</a>
+  <p class="reveal muted-hover" style="color:var(--muted);font-size:0.8rem;margin-top:1.2rem;position:relative;">45 minut. Zero zobowiązań. Sama rozmowa zmieni to, jak widzisz siebie.</p>
+</section>
+<section class="quote-break">
+  <blockquote class="reveal">
+    Wzorce, które Cię hamują, powstały z dobrych powodów — ale nie są granicą tego, co możesz osiągnąć. Nowe adaptacje są zawsze możliwe. Potrzebujesz jedynie odpowiedniego przewodnika, by do nich dotrzeć.
+  </blockquote>
+</section>
+
+<!-- FOR WHO -->
+<section class="forwho">
+  <div class="section-label reveal" style="text-align:center;margin-bottom:1rem;">Dla kogo</div>
+  <h2 class="reveal" style="text-align:center;margin-bottom:0.4rem;">Stworzone dla tych, którzy<br>wymagają od siebie najwięcej</h2>
+  <p class="reveal muted-hover" style="text-align:center;color:var(--muted);font-size:0.95rem;margin-top:0;margin-bottom:2.5rem;">Zarezerwowane dla osób działających na najwyższym poziomie — gdzie stawka jest realna, a półśrodki nie wchodzą w grę.</p>
+  <div class="who-list">
+    <div class="who-item reveal" data-num="01">
+      <!-- Executives: large rect with filled center -->
+      <svg viewBox="0 0 24 24" fill="none" style="width:26px;height:26px;color:var(--gold);opacity:0.85;display:block;margin:0 auto 1rem;">
+        <rect x="2" y="2" width="20" height="20" rx="0" fill="none" stroke="currentColor" stroke-width="1.8"/>
+        <rect x="7" y="7" width="10" height="10" rx="0" fill="currentColor"/>
+      </svg>
+      <h3>Dyrektorzy i liderzy</h3>
+      <p>Twoje decyzje kształtują organizacje i ludzi. Precyzja emocjonalna to nie miękka umiejętność — to Twój najważniejszy atut przywódczy. Przepaść między dobrym a wybitnym przywództwem leży właśnie tutaj.</p>
+    </div>
+    <div class="who-item reveal" data-num="02">
+      <!-- Athletes: circle with inner ring + center dot — same layered style as pain icons -->
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:26px;height:26px;color:var(--gold);opacity:0.85;display:block;margin:0 auto 1rem;">
+        <circle cx="12" cy="12" r="10"/>
+        <circle cx="12" cy="12" r="6" fill="var(--card)"/>
+        <circle cx="12" cy="12" r="2"/>
+      </svg>
+      <h3>Elitarni sportowcy i performerzy</h3>
+      <p>Przewaga fizyczna i techniczna zawęża się na szczycie. Mistrzostwa rozstrzygają się w głowie — w jakości stanu, do którego potrafisz dotrzeć, gdy presja jest najwyższa. Właśnie tam żyje ta praca.</p>
+    </div>
+    <div class="who-item reveal" data-num="03">
+      <!-- High Achievers: diamond — same style as pain icons -->
+      <svg viewBox="0 0 24 24" style="width:26px;height:26px;color:var(--gold);opacity:0.85;display:block;margin:0 auto 1rem;" aria-hidden="true"><use href="#diamond"/></svg>
+      <h3>Ludzie sukcesu szukający czegoś więcej</h3>
+      <p>Zbudowałeś sukces na zewnątrz. Teraz chcesz, żeby wnętrze dorównało — głębszy spokój, bogatsze doświadczenie, prawdziwe wyrównanie. Nie więcej technik. Inna jakość bycia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="process-inner">
+    <div class="section-label reveal" style="text-align:center;">Jak to działa</div>
+    <div class="reveal" style="margin-bottom:1.5rem;text-align:center;">
+      <svg viewBox="0 0 24 24" fill="none" style="width:26px;height:26px;color:var(--gold);opacity:0.85;display:block;margin:0 auto;"><rect x="2" y="2" width="20" height="20" rx="0" stroke="currentColor" stroke-width="1.8" fill="none"/><rect x="7" y="7" width="10" height="10" rx="0" fill="currentColor"/></svg>
+    </div>
+    <h2 class="reveal" style="text-align:center;margin-bottom:0.4rem;">Zacznij od jednej ważnej rozmowy</h2>
+    <p class="reveal muted-hover" style="text-align:center;color:var(--muted);font-size:1.05rem;margin-bottom:2rem;margin-top:0;">Dziesiątki klientów zaczęły właśnie tutaj.</p>
+    <div class="steps" style="margin:0 auto;">
+      <div class="step reveal" data-step="01">
+        <svg style="width:24px;height:24px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        <h3>Darmowa 45-minutowa konsultacja — bez presji</h3>
+        <p>Prywatna rozmowa wideo, by zrozumieć, gdzie jesteś, co chcesz zmienić i czy to jest odpowiednie dopasowanie. Bez sprzedażowego pitchu. Bez zobowiązań. Tylko szczera rozmowa o tym, co jest dla Ciebie możliwe.</p>
+      </div>
+      <div class="step reveal" data-step="02">
+        <svg style="width:24px;height:24px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        <h3>Indywidualny plan mentoringowy</h3>
+        <p>Na podstawie Twoich konkretnych wzorców i celów budujemy precyzyjną mapę drogową. Każda sesja ma jasny cel. Nic nie jest ogólnikowe, teoretyczne ani wypełniaczem. To zaprojektowane specjalnie dla Ciebie.</p>
+      </div>
+      <div class="step reveal" data-step="03">
+        <svg style="width:24px;height:24px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        <h3>Sesje głębokiej pracy</h3>
+        <p>Intensywne, skupione sesje pracujące bezpośrednio z Twoim systemem emocjonalnym. Większość klientów zauważa zmianę już po pierwszej sesji — nie tylko ulgę, ale prawdziwą strukturalną zmianę.</p>
+      </div>
+      <div class="step reveal" data-step="04">
+        <svg style="width:24px;height:24px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+        <h3>Trwała transformacja</h3>
+        <p>Zmiany integrują się z Twoim życiem i kumulują z czasem. To nie jest podtrzymywanie — to ewolucja. Nie wracasz, bo musisz. Wracasz, bo chcesz iść dalej.</p>
+      </div>
+    </div>
+    <div class="reveal" style="text-align:center;margin-top:3.5rem;">
+      <a href="#bookForm" class="btn-primary">Zacznij od kroku pierwszego — umów darmową konsultację</a>
+      <p class="muted-hover" style="color:var(--muted);font-size:0.78rem;margin-top:1rem;">45 minut. Zero zobowiązań. Sama rozmowa zmieni to, jak widzisz siebie.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRIVACY (compact) -->
+<section class="privacy-section">
+  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 50% 0%, rgba(201,169,110,0.05), transparent);"></div>
+  <div style="max-width: 700px; margin: 0 auto; text-align: center; position:relative;">
+    <div class="reveal" style="margin-bottom:1rem;">
+      <svg viewBox="0 0 24 24" style="width:40px;height:40px;color:var(--gold);opacity:0.85;display:block;margin:0 auto;" aria-hidden="true"><use href="#diamond"/></svg>
+    </div>
+    <h2 class="reveal" style="font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 900; line-height: 1.2; margin-bottom: 1.2rem;">Wszystko, co tu powiedziane, <em style="font-style:italic;color:var(--gold);">tu zostaje.</em></h2>
+    <p class="reveal muted-hover" style="color: var(--muted); font-size: 0.95rem; max-width: 560px; margin: 0 auto;">Każda rozmowa jest całkowicie prywatna. Nic nie jest nagrywane ani udostępniane. Wielu klientów to dyrektorzy i osoby publiczne — dyskrecja jest absolutna, od pierwszego kontaktu.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="faq-inner">
+    <div class="section-label reveal" style="text-align:center;margin-bottom:0.8rem;">Najczęstsze pytania</div>
+    <h2 class="reveal" style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:900;margin-bottom:0.4rem;text-align:center;">Zanim się odezwiesz</h2>
+    <p class="reveal muted-hover" style="text-align:center;color:var(--muted);font-size:0.95rem;margin-top:0;margin-bottom:4rem;">Odpowiedzi na pytania, które najczęściej zadają klienci przed pierwszą rozmową.</p>
+    <div class="faq-list">
+
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))" aria-expanded="false">
+          <span>Czym Mentoring Emocji różni się od terapii lub coachingu?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Terapia zazwyczaj skupia się na rozumieniu i przetwarzaniu przeszłości. Coaching skupia się na odpowiedzialności i planowaniu działań. Mentoring Emocji działa na zupełnie innym poziomie — pracuje bezpośrednio ze wzorcami emocjonalnymi Twojego układu nerwowego, tworząc strukturalną zmianę u źródła. Większość klientów wcześniej próbowała terapii lub coachingu i uznała je za pomocne, ale niepełne. To dociera tam, gdzie tamte podejścia nie mogą.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))" aria-expanded="false">
+          <span>Czy muszę być w kryzysie, żeby z tego skorzystać?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Absolutnie nie. Wielu moich klientów już odnosi sukcesy i funkcjonuje na wysokim poziomie. Przychodzą nie dlatego, że coś jest „zepsute", ale dlatego, że wyczuwają głębszy poziom wydajności, spełnienia i wewnętrznej jasności — i mają rację. Ta praca dotyczy zarówno optymalizacji, jak i uzdrawiania.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))" aria-expanded="false">
+          <span>Ile sesji zwykle potrzeba, żeby zobaczyć rezultaty?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Większość klientów zauważa zmianę już po pierwszej sesji — nie tylko ulgę, ale prawdziwą zmianę w sposobie reagowania na sytuacje. Głębsza, strukturalna transformacja zazwyczaj rozwija się w ciągu 3–6 miesięcy regularnej pracy. Niektóre wzorce utrzymywane od dekad rozpuszczają się w tygodnie. Harmonogram zależy od Twojej konkretnej sytuacji, i właśnie temu służy darmowa konsultacja.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))" aria-expanded="false">
+          <span>Czy praca odbywa się online czy osobiście?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Jedno i drugie. Sesje odbywają się przez prywatne połączenie wideo, co pozwala klientom na całym świecie korzystać z tej pracy z dowolnego miejsca. Intensywne sesje osobiste są również dostępne po uzgodnieniu. Metoda jest równie skuteczna w obu formatach — liczy się Twoja gotowość do zaangażowania, nie lokalizacja.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))" aria-expanded="false">
+          <span>A jeśli jestem sceptyczny?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Dobrze. Sceptycyzm oznacza, że myślisz krytycznie — a właśnie takim umysłom ta praca służy najlepiej. Kilku moich najbardziej udanych klientów przyszło głęboko sceptycznych i zostało, bo rezultaty mówiły głośniej niż ich wątpliwości. Darmowa konsultacja istnieje właśnie po to, byś mógł doświadczyć podejścia na własnej skórze bez żadnego ryzyka. Jeśli to nie jest odpowiednie dopasowanie, powiem Ci to wprost.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))" aria-expanded="false">
+          <span>Jak szybko zauważę różnicę?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Wielu klientów opisuje zmianę już podczas pierwszej rozmowy — moment, w którym coś, co nosili latami, nagle nabiera sensu w nowy sposób. Wczesne zmiany często objawiają się spokojniejszymi reakcjami, jaśniejszym myśleniem pod presją lub cichą pewnością siebie, której wcześniej nie było. Głębsze architektoniczne przemiany — jak odnosisz się do siebie, jak przewodzisz, jak nawiązujesz kontakt — te budują się stopniowo i zaskakują ludzi tym, jak naturalnie się odczuwają.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))" aria-expanded="false">
+          <span>A jeśli nie jestem gotowy na pełny program?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>Sama konsultacja nie wiąże się z żadnym zobowiązaniem. Wielu klientów przychodzi niepewnych i wychodzi z pełną jasnością — niezależnie od tego, czy oznacza to kontynuację, czy nie. Oba wyniki są wartościowe. Jeśli zadajesz to pytanie, konsultacja jest dokładnie właściwym następnym krokiem.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))" aria-expanded="false">
+          <span>Czym różni się darmowa konsultacja od konsultacji VIP i pełnej sesji?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p><strong style="color:var(--white);">Darmowa konsultacja</strong> to skupiona 45-minutowa rozmowa, podczas której oceniam Twoją sytuację, identyfikuję kluczowe wzorce i określam, czy ta praca jest właściwym dopasowaniem. Wyjdziesz z prawdziwą jasnością — nawet jeśli nigdy nie będziemy współpracować.</p>
+          <p style="margin-top:0.8rem;"><strong style="color:var(--white);">Konsultacja VIP</strong> idzie znacznie głębiej. To dłuższa, bardziej dokładna ocena Twojej sytuacji życiowej — ze szczegółową informacją zwrotną, którą zachowujesz niezależnie od tego, co zdecydujesz dalej. Będziesz dokładnie wiedział, gdzie stoisz, jakie wzorce kierują Twoimi decyzjami i jak wygląda droga do przodu. Niezależnie od tego, czy kontynuujesz pełny program, sama konsultacja VIP dostarcza prawdziwą, trwałą wartość.</p>
+          <p style="margin-top:0.8rem;"><strong style="color:var(--white);">Pełna sesja</strong> to miejsce, gdzie zachodzi prawdziwa transformacja. To głęboka, intensywna praca nad konkretnym wzorcem lub wyzwaniem w Twoim życiu. Tu zachodzi trwała zmiana strukturalna — nie tylko wgląd, ale faktyczne przebudowanie sposobu reagowania na sytuacje, które mają największe znaczenie.</p>
+          <p style="margin-top:0.8rem;">Jeśli chcesz doświadczyć pracy sesyjnej przed podjęciem decyzji o pełnym programie, ta opcja jest dostępna po darmowej konsultacji.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-q" onclick="this.parentElement.classList.toggle('open');this.setAttribute('aria-expanded',this.parentElement.classList.contains('open'))" aria-expanded="false">
+          <span>Jak wygląda inwestycja?</span>
+          <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a">
+          <p>To indywidualna, intensywna współpraca na najwyższym poziomie, zaprojektowana jako <strong style="color:var(--white);">12-miesięczny program</strong> — ponieważ prawdziwa, strukturalna transformacja wymaga czasu na integrację, kumulację i pełne wyrażenie się w Twoim życiu. To nie jest krótki kurs ani jednorazowy intensyw; to pełny rok dedykowanej, prywatnej pracy z Michałem. Dokładna struktura i warunki współpracy są dopasowane do Twojej sytuacji i omawiane podczas darmowej konsultacji. Biorąc pod uwagę ograniczoną liczbę klientów, z którymi pracuję jednocześnie, każda współpraca otrzymuje moją pełną uwagę i zaangażowanie. Sama konsultacja jest całkowicie bezpłatna i nie wiąże się z żadnym zobowiązaniem.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="cta-section" id="contact">
+  <h2 class="reveal">Gotowy zmienić to, co<br><em>naprawdę wymaga zmiany?</em></h2>
+  <p class="cta-lead reveal" style="color:var(--muted);font-size:1rem;max-width:560px;margin:0 auto 2rem;text-align:center;line-height:1.8;font-family:inherit;">Zaczynasz od jednej bezpłatnej 45-minutowej konsultacji.<br>Oceniam jasność, kierunek i dopasowanie.</p>
+
+  <div style="text-align:center;margin:0.5rem 0 1rem;">
+    <svg viewBox="0 0 24 24" style="width:18px;height:18px;color:var(--gold);display:inline-block;" aria-hidden="true"><use href="#diamond"/></svg>
+  </div>
+
+  <div class="form-wrap reveal" id="bookForm">
+    <h3 style="text-align:center;font-size:1.8rem;margin-bottom:0.2rem;">Umów darmową konsultację</h3>
+    <p style="color:var(--muted);font-size:0.85rem;margin-bottom:1.5rem;text-align:center;">Zazwyczaj odpowiadam w ciągu kilku godzin.</p>
+    <div style="text-align:center;margin-bottom:1.5rem;">
+      <div style="display:inline-block;background:rgba(201,169,110,0.08);border:1px solid rgba(201,169,110,0.2);padding:0.6rem 1.5rem;font-size:0.78rem;letter-spacing:0.08em;color:var(--gold-light);">
+        <strong>Dostępność jest ograniczona</strong><br>
+        <span style="color:var(--white);opacity:0.75;font-size:0.74rem;">Miejsca na konsultacje VIP i sesje profesjonalne są limitowane — tylko kilka przyznawanych jest rocznie. Każda współpraca otrzymuje pełną uwagę na najwyższym poziomie.</span>
+      </div>
+    </div>
+
+    <form id="formContent" action="https://formspree.io/f/mvzblnyr" method="POST" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <label for="fname" class="sr-only">Imię i nazwisko</label>
+        <input type="text" id="fname" name="name" placeholder="Imię i nazwisko" required>
+      </div>
+      <div class="form-row">
+        <label for="femail" class="sr-only">E-mail</label>
+        <input type="email" id="femail" name="email" placeholder="twoj@email.com" required>
+      </div>
+      <div class="form-row">
+        <label for="ftime" class="sr-only">Preferowany przedział czasowy</label>
+        <select id="ftime" name="preferred_time">
+          <option value="Dowolna pora – elastycznie" selected>Przedział czasowy (domyślnie: Elastycznie)</option>
+          <option value="Rano (8:00–12:00)">Rano (8:00–12:00)</option>
+          <option value="Popołudnie (12:00–18:00)">Popołudnie (12:00–18:00)</option>
+          <option value="Wieczór (18:00–22:00)">Wieczór (18:00–22:00)</option>
+        </select>
+      </div>
+      <div class="form-row" style="position:relative;">
+        <label for="fvision" class="sr-only">Twoja wizja</label>
+        <textarea id="fvision" name="vision" rows="3"></textarea>
+        <div id="fvision-ph" style="position:absolute;top:0.9rem;left:1rem;right:1rem;pointer-events:none;font-family:'Barlow',sans-serif;font-size:0.95rem;font-weight:300;line-height:1.5;color:rgba(255,255,255,0.3);"><span style="color:rgba(201,169,110,0.6);">(Opcjonalnie)</span> Opisz zmianę, na którą jesteś gotowy.</div>
+      </div>
+      <p class="spots-note" id="spotsFormNote"></p>
+      <div id="formError" style="display:none;color:#e87c7c;font-size:0.85rem;text-align:center;margin-bottom:1rem;"></div>
+      <button type="submit" class="submit-btn">Tak — chcę darmową konsultację →</button>
+      <p class="form-note">100% prywatnie. Bez spamu. Bez zobowiązań.</p>
+    </form>
+
+    <div class="or-divider">lub</div>
+    <div class="email-direct">Wolisz e-mail? Napisz bezpośrednio na <a href="mailto:michal@emotionmentoring.com">michal@emotionmentoring.com</a></div>
+  </div>
+</section>
+
+<div style="text-align:center;padding:1.2rem 0 2rem;background:var(--black);">
+  <svg viewBox="0 0 24 24" style="width:18px;height:18px;color:var(--gold);display:inline-block;" aria-hidden="true"><use href="#diamond"/></svg>
+</div>
+
+<!-- SPOTS WIDGET -->
+<div class="spots-widget" id="spotsWidget">
+  <span class="sw-count" id="spotsWidgetCount"></span>
+  <span class="sw-sub">Ograniczone miejsca. Trwała zmiana.</span>
+  <a href="#bookForm" class="sw-cta">Zarezerwuj swoje &rarr;</a>
+</div>
+
+<!-- EXIT-INTENT MODAL -->
+<div class="exit-modal-overlay" id="exitModal" role="dialog" aria-modal="true" aria-labelledby="exitModalHeadline">
+  <div class="exit-modal">
+    <button class="modal-dismiss" id="exitModalClose" aria-label="Close dialog">&times;</button>
+    <div class="modal-headline" id="exitModalHeadline">Wychodzisz?</div>
+    <h3>Umów darmową konsultację zanim odejdziesz.</h3>
+    <p>Pozostało tylko kilka miejsc na konsultacje. Twoje miejsce nie jest zarezerwowane, dopóki się nie odezwiesz.</p>
+    <a href="#bookForm" class="modal-cta" id="exitModalCta">Umów darmową konsultację &rarr;</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="logo"><svg width="72" height="72" viewBox="0 0 411 411" aria-hidden="true"><use href="#logo"/></svg> Mentoring Emocji</div>
+  <div style="display:flex;align-items:center;gap:1.5rem;justify-content:center;flex-wrap:wrap;">
+    <span style="font-size:0.78rem;letter-spacing:0.15em;text-transform:uppercase;">Wspierane przez: <a href="foundation-pl.html" style="color:var(--gold);text-decoration:none;">Fundację Shen</a></span>
+    <span style="color:var(--border);">◈</span>
+    <a href="https://www.facebook.com/mentoringemocji/" target="_blank" rel="noopener" aria-label="Mentoring Emocji na Facebooku" class="social-link" style="color:var(--muted);display:flex;align-items:center;gap:0.4rem;font-size:0.7rem;letter-spacing:0.1em;text-decoration:none;transition:color 0.1s;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Mentoring Emocji
+    </a>
+    <a href="https://www.facebook.com/shen.fundacja/" target="_blank" rel="noopener" aria-label="Fundacja Shen na Facebooku" class="social-link" style="color:var(--muted);display:flex;align-items:center;gap:0.4rem;font-size:0.7rem;letter-spacing:0.1em;text-decoration:none;transition:color 0.1s;">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      Fundacja Shen
+    </a>
+  </div>
+  <div>© 2026 — Wszelkie prawa zastrzeżone</div>
+</footer>
+
+<script>
+  // Single source of truth for spots count
+  const SPOTS = { taken: 6, total: 12, asOf: 'marzec 2026' };
+
+  // Populate spots displays from SPOTS constant
+  (function initSpots() {
+    var formNote = document.getElementById('spotsFormNote');
+    if (formNote) {
+      formNote.textContent = SPOTS.taken + ' / ' + SPOTS.total + ' miejsc zajętych — stan na ' + SPOTS.asOf + '. Ograniczone miejsca. Trwała zmiana.';
+    }
+    var widgetCount = document.getElementById('spotsWidgetCount');
+    if (widgetCount) {
+      widgetCount.textContent = SPOTS.taken + ' / ' + SPOTS.total + ' miejsc zajętych';
+    }
+  })();
+
+  // Scroll reveal
+  document.body.classList.add('js-loaded');
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Re-check reveals after anchor navigation (fixes elements not triggering on jump)
+  function checkRevealsinView() {
+    reveals.forEach(el => {
+      if (!el.classList.contains('visible')) {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          el.classList.add('visible');
+        }
+      }
+    });
+  }
+  window.addEventListener('hashchange', () => setTimeout(checkRevealsinView, 50));
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', () => setTimeout(checkRevealsinView, 300));
+  });
+
+  // Fallback: after 8s make sure nothing is permanently stuck invisible
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 8000);
+
+  // Spots widget - show after scrolling past hero, hide near contact form
+  const spotsWidget = document.getElementById('spotsWidget');
+  const contactSection = document.getElementById('contact');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY;
+    const heroHeight = window.innerHeight;
+    const contactTop = contactSection ? contactSection.getBoundingClientRect().top + scrollY - window.innerHeight : Infinity;
+    if (scrollY > heroHeight && scrollY < contactTop) {
+      spotsWidget.classList.add('visible');
+    } else {
+      spotsWidget.classList.remove('visible');
+    }
+    if (scrollY > heroHeight) document.body.classList.add('spots-visible');
+  });
+
+  // Form submit
+  function handleSubmit(e) {
+    if (e) e.preventDefault();
+    var errorEl = document.getElementById('formError');
+    errorEl.style.display = 'none';
+
+    var name = document.getElementById('fname').value.trim();
+    var email = document.getElementById('femail').value.trim();
+    var emailInput = document.getElementById('femail');
+
+    if (!name || !email) {
+      errorEl.textContent = 'Proszę uzupełnić imię i e-mail, aby kontynuować.';
+      errorEl.style.display = 'block';
+      return;
+    }
+    if (!emailInput.checkValidity()) {
+      errorEl.textContent = 'Proszę podać prawidłowy adres e-mail.';
+      errorEl.style.display = 'block';
+      return;
+    }
+
+    var preferredTime = document.getElementById('ftime').value || 'Nie podano';
+    var vision = document.getElementById('fvision').value.trim() || 'Nie podano';
+    var timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    var tzOffset = new Date().toLocaleString('en-US', { timeZoneName: 'short' }).split(' ').pop();
+
+    sessionStorage.setItem('emName', name);
+    sessionStorage.setItem('emEmail', email);
+
+    var btn = document.querySelector('.submit-btn');
+    btn.textContent = 'Wysyłanie\u2026';
+    btn.disabled = true;
+
+    fetch('https://formspree.io/f/mvzblnyr', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        email: email,
+        preferred_time: preferredTime,
+        vision: vision,
+        timezone: timezone + ' (' + tzOffset + ')'
+      })
+    })
+    .then(function(response) {
+      if (response.ok) {
+        window.location.href = 'thankyou-pl.html';
+      } else {
+        btn.textContent = 'Tak \u2014 chcę darmową konsultację \u2192';
+        btn.disabled = false;
+        errorEl.innerHTML = 'Coś poszło nie tak. Spróbuj ponownie lub napisz bezpośrednio na <a href="mailto:michal@emotionmentoring.com" style="color:var(--gold);">michal@emotionmentoring.com</a>.';
+        errorEl.style.display = 'block';
+      }
+    })
+    .catch(function() {
+      btn.textContent = 'Yes \u2014 I Want My Free Assessment \u2192';
+      btn.disabled = false;
+      errorEl.innerHTML = 'Something went wrong. Please try again or email <a href="mailto:michal@emotionmentoring.com" style="color:var(--gold);">michal@emotionmentoring.com</a> directly.';
+      errorEl.style.display = 'block';
+    });
+  }
+
+  // Fake placeholder: hide on content (focus handled by CSS :focus-within)
+  var fvEl = document.getElementById('fvision');
+  var phEl = document.getElementById('fvision-ph');
+  if (fvEl && phEl) {
+    fvEl.addEventListener('input', function() {
+      phEl.style.display = this.value ? 'none' : '';
+    });
+  }
+
+  // Exit-intent modal (fires once per session)
+  (function() {
+    var modal = document.getElementById('exitModal');
+    var closeBtn = document.getElementById('exitModalClose');
+    var ctaBtn = document.getElementById('exitModalCta');
+    if (!modal) return;
+
+    var previousFocus = null;
+    function showModal() {
+      if (sessionStorage.getItem('exitShown')) return;
+      sessionStorage.setItem('exitShown', '1');
+      previousFocus = document.activeElement;
+      modal.classList.add('active');
+      closeBtn.focus();
+    }
+
+    function hideModal() {
+      modal.classList.remove('active');
+      if (previousFocus) previousFocus.focus();
+    }
+
+    // Desktop: mouse leaves viewport top
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY <= 0) showModal();
+    });
+
+    // Mobile: 90 seconds of inactivity
+    var idleTimer = null;
+    function resetIdle() {
+      clearTimeout(idleTimer);
+      idleTimer = setTimeout(showModal, 90000);
+    }
+    if ('ontouchstart' in window) {
+      ['touchstart', 'scroll', 'click'].forEach(function(evt) {
+        window.addEventListener(evt, resetIdle, { passive: true });
+      });
+      resetIdle();
+    }
+
+    // Dismiss handlers
+    closeBtn.addEventListener('click', hideModal);
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) hideModal();
+    });
+    ctaBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      hideModal();
+      document.getElementById('bookForm').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal.classList.contains('active')) hideModal();
+    });
+
+    // Focus trap
+    modal.addEventListener('keydown', function(e) {
+      if (e.key !== 'Tab') return;
+      var focusable = modal.querySelectorAll('button, a[href]');
+      var first = focusable[0], last = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    });
+  })();
+</script>
+</body>
+</html>
