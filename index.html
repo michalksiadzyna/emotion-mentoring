@@ -162,14 +162,21 @@
   }
   .proof-item {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
   }
   .proof-item .number {
     font-family: 'Playfair Display', serif;
     font-size: 2rem;
     font-weight: 900;
     color: var(--gold);
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     line-height: 1;
+    min-height: 2.4rem;
     margin-bottom: 0.3rem;
   }
   .proof-item .label {
@@ -362,6 +369,7 @@
     border: 1px solid var(--gold);
     opacity: 0.35;
     pointer-events: none;
+    transition: opacity 0.5s ease, inset 0.5s ease;
   }
   .portrait-frame::after {
     content: '';
@@ -370,6 +378,15 @@
     border: 1px solid var(--gold);
     opacity: 0.12;
     pointer-events: none;
+    transition: opacity 0.5s ease, inset 0.5s ease;
+  }
+  .portrait-frame:hover::before {
+    opacity: 0.55;
+    inset: -14px;
+  }
+  .portrait-frame:hover::after {
+    opacity: 0.25;
+    inset: -28px;
   }
   .portrait-img {
     width: 100%;
@@ -390,6 +407,11 @@
     border-color: var(--gold);
     border-style: solid;
     opacity: 0.5;
+    transition: opacity 0.5s ease, width 0.5s ease, height 0.5s ease;
+  }
+  .portrait-frame:hover .corner {
+    opacity: 0.8;
+    width: 24px; height: 24px;
   }
   .portrait-frame .corner.tl { top: -18px; left: -18px; border-width: 1px 0 0 1px; }
   .portrait-frame .corner.tr { top: -18px; right: -18px; border-width: 1px 1px 0 0; }
