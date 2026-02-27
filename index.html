@@ -1999,11 +1999,10 @@
     const contactTop = contactSection ? contactSection.getBoundingClientRect().top + scrollY - window.innerHeight : Infinity;
     if (scrollY > heroHeight && scrollY < contactTop) {
       spotsWidget.classList.add('visible');
-      document.body.classList.add('spots-visible');
     } else {
       spotsWidget.classList.remove('visible');
-      document.body.classList.remove('spots-visible');
     }
+    if (scrollY > heroHeight) document.body.classList.add('spots-visible');
   });
 
   // Form submit
