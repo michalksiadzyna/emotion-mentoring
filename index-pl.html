@@ -7,6 +7,7 @@
 <meta name="description" content="Indywidualny mentoring emocji dla osób osiągających najwyższe wyniki. Strukturalna transformacja emocjonalna poprzez bezpośrednią pracę z układem nerwowym. Darmowa 45-minutowa konsultacja.">
 <meta property="og:title" content="Mentoring Emocji — Szczytowa Sprawność Mentalna">
 <meta property="og:description" content="Indywidualny mentoring emocji dla osób osiągających najwyższe wyniki. Darmowa 45-minutowa konsultacja.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="dns-prefetch" href="https://formspree.io">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +22,7 @@
     --gold: #c9a96e;
     --gold-light: #e8cc96;
     --white: #f5f3ee;
-    --muted: #8a8880;
+    --muted: #9a9890;
     --border: rgba(201, 169, 110, 0.18);
   }
 
@@ -39,9 +40,10 @@
   /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 1.5rem 4rem;
+    padding: 1.5rem clamp(1.2rem, 3vw, 4rem);
     display: flex; justify-content: space-between; align-items: center;
     background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+    -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
   }
   .logo {
@@ -53,7 +55,12 @@
     display: flex;
     align-items: center;
     gap: 0.7rem;
+    text-decoration: none;
+    transition: color 0.3s;
   }
+  .logo svg { transition: transform 0.3s, filter 0.3s; }
+  .logo:hover { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .logo:hover svg { transform: scale(1.1); filter: brightness(1.25) saturate(1.3) drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
   nav a.nav-cta {
     font-size: 0.78rem;
     letter-spacing: 0.2em;
@@ -141,7 +148,8 @@
     transition: all 0.1s;
     display: inline-block;
   }
-  .btn-primary:hover { background: #dcc48a; transform: translateY(-2px); }
+  .btn-primary { position: relative; top: 0; }
+  .btn-primary:hover { background: #dcc48a; top: -2px; }
   .btn-ghost {
     color: var(--muted);
     text-decoration: none;
@@ -150,7 +158,8 @@
     text-transform: uppercase;
     transition: all 0.1s;
   }
-  .btn-ghost:hover { color: var(--white); transform: translateY(-2px); }
+  .btn-ghost { position: relative; top: 0; }
+  .btn-ghost:hover { color: var(--white); top: -2px; }
 
   /* SOCIAL PROOF STRIP */
   .proof-strip {
@@ -250,7 +259,7 @@
     padding: 2.5rem;
     background: var(--card);
     border-top: 1px solid var(--border);
-    transition: background 0.1s, border-color 0.1s;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
     text-align: left;
   }
   .pain-item:hover { background: #1c1c22; }
@@ -283,7 +292,7 @@
     opacity: 0.85;
     flex-shrink: 0;
     margin-bottom: 0.15rem;
-    transition: color 0.1s, opacity 0.1s;
+    transition: color 0.3s, opacity 0.3s, transform 0.3s;
   }
 
   /* WHAT IS IT */
@@ -329,11 +338,12 @@
     cursor: default;
   }
   .pillar:hover { border-color: var(--gold); }
-  .pillar h4 {
+  .pillar h3 {
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
     font-weight: 700;
     margin-bottom: 0.4rem;
+    transition: color 0.3s, text-shadow 0.3s;
   }
   .pillar p { color: var(--muted); font-size: 0.9rem; transition: color 0.1s, opacity 0.1s; }
 
@@ -447,11 +457,10 @@
     background: var(--card);
     padding: 3rem 2.5rem;
     border-top: 1px solid var(--border);
-    transition: background 0.1s, border-color 0.1s;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
   }
-  .result-card:hover { background: #1c1c22; }
   .result-card .icon {
     width: 26px;
     height: 26px;
@@ -460,7 +469,7 @@
     color: var(--gold);
     opacity: 0.85;
     flex-shrink: 0;
-    transition: color 0.1s, opacity 0.1s;
+    transition: color 0.3s, opacity 0.3s, transform 0.3s;
   }
   .result-card h3 {
     font-family: 'Playfair Display', serif;
@@ -499,7 +508,7 @@
     background: var(--card);
     padding: 2.5rem;
     border-top: 1px solid var(--border);
-    transition: background 0.1s, border-color 0.1s;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -516,10 +525,6 @@
     line-height: 1.5;
     transition: color 0.1s, opacity 0.1s;
   }
-  .testi-card:hover .testi-outcome {
-    color: #f5d56a;
-    opacity: 1;
-  }
   .testi-quote-wrap {
     display: flex;
     align-items: center;
@@ -531,6 +536,7 @@
     color: var(--gold);
     opacity: 0.7;
     align-self: center;
+    transition: color 0.3s, opacity 0.3s, transform 0.3s;
   }
   .testi-quote {
     font-family: 'Playfair Display', serif;
@@ -619,16 +625,15 @@
     padding: 3rem 2.5rem;
     position: relative;
     overflow: hidden;
-    transition: background 0.1s, border-color 0.1s;
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.3s;
     border-top: 1px solid var(--border);
     text-align: center;
   }
   .who-item svg {
     display: block;
     margin: 0 auto 1rem;
-    transition: color 0.1s, opacity 0.1s;
+    transition: color 0.3s, opacity 0.3s, transform 0.3s;
   }
-  .who-item:hover { background: #1c1c22; }
   .who-item::before {
     content: attr(data-num);
     position: absolute; top: -1rem; right: 1rem;
@@ -636,6 +641,16 @@
     font-size: 5rem; font-weight: 900;
     color: rgba(201,169,110,0.06);
     line-height: 1;
+  }
+  .who-item::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 60px; height: 3px;
+    background: var(--gold);
+    opacity: 0;
+    transition: width 0.3s, opacity 0.3s;
   }
   .who-item h3 {
     font-family: 'Playfair Display', serif;
@@ -735,8 +750,9 @@
   }
   .faq-item.open .faq-a {
     max-height: 800px;
-    padding-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
   }
+  .faq-item.open .faq-q { padding-bottom: 0.5rem; }
   .faq-a p {
     color: var(--muted);
     font-size: 0.95rem;
@@ -885,192 +901,185 @@
   }
   .email-direct a:hover { text-decoration: underline; }
 
-  /* HOVER EFFECTS — PROOF STRIP */
-  .proof-strip:hover .proof-item .label {
-    color: rgba(245,243,238,0.7) !important;
-  }
-  .proof-strip:hover .proof-item .label a {
-    color: rgba(245,243,238,0.7) !important;
-  }
+  /* ===== HOVER COLOR TOKENS =====
+     Gold hover: #f5d56a (yellow glow)
+     White hover: #fff + text-shadow glow
+     Muted hover: rgba(245,243,238,0.85) (bright)
+     NO background changes on text hovers
+     Cards: border-top gold + box-shadow glow
+  ===== */
 
-  /* HOVER EFFECTS — PAIN ITEMS */
-  .pain-item:hover {
-    border-top-color: var(--gold);
-  }
-  .pain-item:hover h3 {
-    color: var(--white);
-  }
-  .pain-item:hover p {
-    color: var(--white);
-    opacity: 0.75;
-  }
-  .pain-item:hover .pain-icon {
-    opacity: 1;
-    color: var(--gold-light);
-  }
+  /* Base transitions for heading lift effect */
+  h1, h2, h3, .portrait-caption p:first-child { position: relative; top: 0; transition: color 0.2s, text-shadow 0.2s, top 0.2s; }
 
-  /* HOVER EFFECTS — METHOD PILLARS */
-  .pillar:hover {
-    background: rgba(201,169,110,0.03);
-  }
-  .pillar:hover p {
-    color: var(--white);
-    opacity: 0.75;
-  }
+  /* HOVER — GLOBAL: section labels (standalone) */
+  .section-label { transition: color 0.2s; }
+  .section-label:hover { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
 
-  /* HOVER EFFECTS — RESULT CARDS (What Changes) */
-  .result-card:hover {
-    border-top-color: var(--gold);
-  }
-  .result-card:hover .icon {
-    opacity: 1;
-    color: var(--gold-light);
-  }
-  .result-card:hover p {
-    color: var(--white);
-    opacity: 0.75;
-  }
+  /* HOVER — HERO (eyebrow + h1 grouped) */
+  .hero-header { transition: color 0.2s; }
+  .hero-header:hover .hero-eyebrow { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .hero-header:hover h1 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
+  .hero-header:hover h1 em { color: #f5d56a !important; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .hero-sub { transition: color 0.2s; }
+  .hero-sub:hover { color: rgba(245,243,238,0.85) !important; }
 
-  /* HOVER EFFECTS — TESTIMONIAL CARDS */
-  .testi-card:hover {
-    border-top-color: var(--gold);
-  }
-  /* HOVER EFFECTS — DESIGNED FOR (who-items) */
-  .who-item:hover {
-    border-top-color: var(--gold);
-  }
-  .who-item:hover svg {
-    opacity: 1;
-    color: var(--gold-light);
-  }
-  .who-item:hover p {
-    color: var(--white);
-    opacity: 0.75;
-  }
+  /* HOVER — PROOF STRIP (each item independently) */
+  .proof-item { transition: all 0.2s; }
+  .proof-item:hover .number { color: #f5d56a !important; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .proof-item:hover .label { color: rgba(245,243,238,0.85) !important; }
+  .proof-item:hover .label a { color: rgba(245,243,238,0.85) !important; }
 
-  /* HOVER EFFECTS — PROCESS STEPS */
-  .step:hover {
-    background: rgba(201,169,110,0.03);
-    border-bottom-color: rgba(201,169,110,0.2);
-  }
-  .step:hover p {
-    color: var(--white);
-    opacity: 0.75;
-  }
-  .step:hover svg {
-    opacity: 1 !important;
-    color: var(--gold-light) !important;
-  }
-  .step:hover::before {
-    border-color: var(--gold-light);
-    color: var(--gold-light);
-  }
+  /* HOVER — PAIN SECTION (label + h2 grouped) */
+  .pain-section-head { transition: color 0.2s; }
+  .pain-section-head:hover .section-label { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .pain-section-head:hover h2 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
+  .pain-section-head:hover h2 em { color: #f5d56a !important; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .pain > p { transition: color 0.2s; }
+  .pain > p:hover { color: rgba(245,243,238,0.85) !important; }
+  .pain-item:hover { border-top-color: var(--gold); box-shadow: 0 0 30px rgba(201,169,110,0.08); }
+  .pain-item:hover h3 { color: #fff; text-shadow: 0 0 25px rgba(201,169,110,0.15); top: -1px; }
+  .pain-item:hover p { color: rgba(245,243,238,0.85); }
+  .pain-item:hover .pain-icon { opacity: 1; color: #f5d56a; transform: scale(1.15); filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
 
-  /* HOVER EFFECTS — FORM BOX */
-  .form-wrap:hover {
-    border-color: rgba(201,169,110,0.4);
-    box-shadow: 0 0 24px rgba(201,169,110,0.06);
-  }
-  .form-wrap:hover h3 {
-    color: var(--gold-light);
-  }
+  /* HOVER — METHOD (label + h2 grouped) */
+  .what-header { transition: color 0.2s; }
+  .what-header:hover .section-label { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .what-header:hover h2 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
+  .what-header:hover h2 em { color: #f5d56a !important; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .what p, .mentor-text p { transition: color 0.2s; }
+  .what-text-group { transition: color 0.2s; }
+  .what-text-group:hover p { color: rgba(245,243,238,0.85) !important; }
+  .pillar svg { transition: color 0.3s, opacity 0.3s, transform 0.3s; }
+  .pillar:hover { background: rgba(201,169,110,0.03); }
+  .pillar:hover svg { color: #f5d56a !important; opacity: 1 !important; transform: scale(1.15); filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
+  .pillar:hover h3 { color: #fff; text-shadow: 0 0 25px rgba(201,169,110,0.15); top: -1px; }
+  .pillar:hover p { color: rgba(245,243,238,0.85); }
 
-  /* HOVER EFFECTS — BODY TEXT (with background rectangle) */
-  /* Left-aligned text blocks (pain intro) */
-  .pain > p {
-    transition: color 0.1s, background 0.1s;
-    padding: 0.4rem 0.6rem;
-    margin-left: -0.6rem;
-    margin-right: -0.6rem;
-  }
-  .pain > p:hover {
-    color: rgba(245,243,238,0.65) !important;
-    background: rgba(255,255,255,0.03);
-  }
+  /* HOVER — RESULTS (label + h2 grouped) */
+  .results-header { transition: color 0.2s; }
+  .results-header:hover .section-label { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .results-header:hover h2 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
+  .result-card:hover { background: #1c1c22; border-top-color: var(--gold); box-shadow: 0 0 30px rgba(201,169,110,0.08); }
+  .result-card:hover .icon { opacity: 1; color: #f5d56a; transform: scale(1.25); filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
+  .result-card:hover h3 { color: #fff; text-shadow: 0 0 25px rgba(201,169,110,0.15); top: -1px; }
+  .result-card:hover p { color: rgba(245,243,238,0.85); }
 
-  /* Method + Mentor: parent hover lights up all paragraphs as one box */
-  .what p,
-  .mentor-text p {
-    transition: color 0.1s;
-  }
-  .what-text-group {
-    transition: background 0.1s;
-    padding: 0.6rem;
-    margin: -0.6rem;
-  }
-  .what-text-group:hover {
-    background: rgba(255,255,255,0.03);
-  }
-  .what-text-group:hover p {
-    color: rgba(245,243,238,0.65) !important;
-  }
-  .mentor-text-group {
-    transition: background 0.1s;
-    padding: 0.6rem;
-    margin: -0.6rem;
-  }
-  .mentor-text-group:hover {
-    background: rgba(255,255,255,0.03);
-  }
-  .mentor-text-group:hover p {
-    color: rgba(245,243,238,0.65) !important;
-  }
+  /* HOVER — TESTIMONIALS (label + h2 grouped, split zones) */
+  .testi-header { transition: color 0.2s; }
+  .testi-header:hover .section-label { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .testi-header:hover h2 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
+  .testi-card:hover { border-top-color: var(--gold); box-shadow: 0 0 30px rgba(201,169,110,0.08); }
+  .testi-quote-wrap { transition: all 0.2s; }
+  .testi-quote-wrap:hover .testi-quote-icon { opacity: 1; color: #f5d56a; transform: scale(1.25); filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
+  .testi-quote-wrap:hover .testi-quote { color: rgba(245,243,238,0.95); }
+  .testi-author { transition: all 0.2s; }
+  .testi-author:hover .name { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .testi-author:hover .context { color: rgba(245,243,238,0.85); }
+  .testi-author:hover .testi-outcome { color: #f5d56a; opacity: 1; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
 
-  /* Centered text blocks (no negative margins, use padding only) */
-  .results-lead,
-  .testimonials-lead,
-  .cta-lead {
-    transition: color 0.1s, background 0.1s;
-    padding: 0.4rem 0.6rem;
-  }
-  .results-lead:hover,
-  .testimonials-lead:hover,
-  .cta-lead:hover {
-    color: rgba(245,243,238,0.65) !important;
-    background: rgba(255,255,255,0.03);
-  }
+  /* HOVER — RESULTS/TESTIMONIALS/CTA lead text (no background) */
+  .results-lead, .testimonials-lead, .cta-lead { transition: color 0.2s; }
+  .results-lead:hover, .testimonials-lead:hover, .cta-lead:hover { color: rgba(245,243,238,0.85) !important; }
 
-  /* Muted-hover for misc text */
-  .muted-hover {
-    transition: color 0.1s, background 0.1s;
-    padding: 0.3rem 0.6rem;
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .muted-hover:hover {
-    color: rgba(245,243,238,0.65) !important;
-    background: rgba(255,255,255,0.03);
-  }
+  /* HOVER — MENTOR SECTION (label + h2 grouped) */
+  .mentor-header { transition: color 0.2s; }
+  .mentor-header:hover .section-label { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .mentor-header:hover h2 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
+  .mentor-header:hover h2 .mentor-name { color: #f5d56a !important; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .mentor-header:hover h2 span { color: rgba(245,243,238,0.3) !important; }
+  .mentor-text-group { transition: color 0.2s; }
+  .mentor-text-group:hover p { color: rgba(245,243,238,0.85) !important; }
+  .mentor-stat { transition: all 0.2s; }
+  .mentor-stat:hover .mentor-stat-num { color: #f5d56a !important; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .mentor-stat:hover .mentor-stat-lbl { color: rgba(245,243,238,0.85) !important; }
+  .portrait-caption { transition: all 0.2s; }
+  .portrait-caption:hover p:first-child { color: #fff !important; text-shadow: 0 0 20px rgba(201,169,110,0.15); top: -1px; }
+  .portrait-caption:hover p:nth-child(2) { color: #f5d56a !important; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .portrait-caption:hover p:last-child { color: rgba(245,243,238,0.85) !important; }
 
-  /* Hero sub hover */
-  .hero-sub:hover {
-    color: rgba(245,243,238,0.65) !important;
-    background: rgba(255,255,255,0.03);
-  }
+  /* HOVER — DESIGNED FOR (label + h2 grouped) */
+  .forwho-header { transition: color 0.2s; }
+  .forwho-header:hover .section-label { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .forwho-header:hover h2 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
+  /* Who-item cards: accent line + icon enlarge, no background change */
+  .who-item:hover { border-top-color: var(--gold); }
+  .who-item:hover::before { color: rgba(201,169,110,0.12); }
+  .who-item:hover::after { width: 140px; opacity: 1; }
+  .who-item:hover svg { opacity: 1; color: #f5d56a !important; transform: scale(1.25); filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
+  .who-item:hover h3 { color: #fff; text-shadow: 0 0 25px rgba(201,169,110,0.2); top: -1px; }
+  .who-item:hover p { color: rgba(245,243,238,0.85); }
 
-  /* HOVER EFFECTS — QUOTE BREAK */
-  .quote-break blockquote {
-    transition: color 0.1s;
-  }
-  .quote-break:hover blockquote {
-    color: var(--gold);
-  }
-  .quote-break:hover blockquote::before,
-  .quote-break:hover blockquote::after {
-    color: rgba(201,169,110,0.3);
-  }
+  /* HOVER — PROCESS HEADER (group zone, no subtitle) */
+  .process-header { transition: all 0.2s; }
+  .process-header svg { transition: color 0.3s, opacity 0.3s, transform 0.3s; }
+  .process-header:hover .section-label { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .process-header:hover svg { color: #f5d56a !important; opacity: 1 !important; transform: scale(1.15); filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
+  .process-header:hover h2 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
 
-  /* HOVER EFFECTS — FAQ */
-  .faq-item {
-    transition: background 0.1s;
+  /* HOVER — PROCESS STEPS */
+  .step:hover { background: rgba(201,169,110,0.03); border-bottom-color: rgba(201,169,110,0.2); }
+  .step:hover h3 { color: #fff; text-shadow: 0 0 25px rgba(201,169,110,0.15); top: -1px; }
+  .step:hover p { color: rgba(245,243,238,0.85); }
+  .step svg { transition: color 0.3s, opacity 0.3s, transform 0.3s; }
+  .step:hover svg { opacity: 1 !important; color: #f5d56a !important; transform: scale(1.15); filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
+  .step:hover::before { border-color: #f5d56a; color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+
+  /* HOVER — PRIVACY (split: heading zone + text zone) */
+  .privacy-heading { transition: all 0.2s; }
+  .privacy-heading svg { transition: color 0.3s, opacity 0.3s, transform 0.3s; }
+  .privacy-heading:hover svg { color: #f5d56a !important; opacity: 1 !important; transform: scale(1.15); filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
+  .privacy-heading:hover h2 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
+  .privacy-heading:hover h2 em { color: #f5d56a !important; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+
+  /* HOVER — FAQ HEADER (group zone, no background) */
+  .faq-header { transition: all 0.2s; }
+  .faq-header:hover .section-label { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .faq-header:hover h2 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
+  .faq-header:hover p { color: rgba(245,243,238,0.85) !important; }
+
+  /* HOVER — CTA HEADER (group zone) */
+  .cta-header { transition: all 0.2s; }
+  .cta-header:hover h2 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
+  .cta-header:hover h2 em { color: #f5d56a !important; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .cta-header svg { transition: color 0.3s, transform 0.3s; display: inline-block; }
+  .cta-header:hover svg { color: #f5d56a !important; transform: scale(1.4); filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
+  /* HOVER — MUTED TEXT (no background, text only) */
+  .muted-hover { transition: color 0.2s; }
+  .muted-hover:hover { color: rgba(245,243,238,0.85) !important; }
+
+  /* HOVER — FORM BOX */
+  .form-wrap:hover { border-color: rgba(201,169,110,0.4); box-shadow: 0 0 24px rgba(201,169,110,0.06); }
+  .form-wrap:hover h3 { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+
+  /* HOVER — "45 min / zero obligation" after testimonials CTA */
+  .testi-cta-note { transition: color 0.2s; }
+  .testi-cta-note:hover { color: rgba(245,243,238,0.85) !important; }
+
+  /* HOVER — QUOTE BREAK */
+  .quote-break blockquote { transition: color 0.2s; }
+  .quote-break:hover blockquote { color: var(--gold); }
+  .quote-break:hover blockquote::before, .quote-break:hover blockquote::after { color: rgba(201,169,110,0.3); }
+
+  /* HOVER — FAQ */
+  .faq-item { transition: background 0.2s; }
+  .faq-q { padding-left: 0.8rem; padding-right: 0.8rem; }
+  .faq-a { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .faq-item.open:hover { background: rgba(0,0,0,0.1); }
+  .faq-item.open:hover .faq-a p { color: rgba(245,243,238,0.8) !important; }
+  .faq-diamond {
+    display: block; text-align: center;
+    color: var(--gold); opacity: 0.5;
+    transition: color 0.3s, opacity 0.3s, transform 0.3s;
   }
-  .faq-item.open:hover {
-    background: rgba(0,0,0,0.1);
-  }
-  .faq-item.open:hover .faq-a p {
-    color: rgba(245,243,238,0.55) !important;
-  }
+  .faq-diamond:first-child { margin: 0 auto 0.3rem; }
+  .faq-diamond:last-child { margin: 0.3rem auto 0; }
+  .faq-diamond svg { width: 12px; height: 12px; display: inline-block; }
+  .faq-item.open:hover .faq-diamond { color: #f5d56a; opacity: 1; transform: scale(1.25); filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
+
+  /* HOVER — BOTTOM DIAMOND */
+  .footer-diamond { transition: all 0.3s; display: inline-block; }
+  .diamond-wrap:hover .footer-diamond { color: #f5d56a !important; transform: scale(1.8) !important; filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
 
   /* SPOTS NOTE */
   .spots-note {
@@ -1332,8 +1341,10 @@
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-header">
   <div class="hero-eyebrow">11+ lat transformacyjnej pracy · Potwierdzone rezultaty · Prywatnie i poufnie</div>
   <h1><span class="h1-line">Zoptymalizowałeś wszystko</span><em>Oprócz tego, co najważniejsze.</em></h1>
+  </div>
   <p class="hero-sub">Strategie, dyscyplina, ambicja — to wszystko już masz. <br>Ale niewidoczny system sterujący Twoimi decyzjami i relacjami <br>pozostaje nietknięty. <strong>To się właśnie zmieni.</strong></p>
   <div class="hero-actions">
     <a href="#bookForm" class="btn-primary">Umów darmową 45-minutową konsultację</a>
@@ -1368,8 +1379,10 @@
 
 <!-- PAIN -->
 <section class="pain">
+  <div class="pain-section-head">
   <div class="section-label reveal" style="margin-bottom:1rem;">Co się naprawdę dzieje</div>
   <h2 class="reveal">Zbudowałeś imponujące życie.<br>Więc dlaczego coś wciąż <em style="color:var(--gold);font-style:italic;">nie gra?</em></h2>
+  </div>
   <p class="reveal" style="color: var(--muted); max-width: 600px; margin-top: -1rem; margin-left:auto; margin-right:auto; text-align:center;">To nie kwestia braku wysiłku ani inteligencji. To Twoja Podświadomość — prowadząca wzorce emocjonalne, których żadna strategia, siła woli ani osiągnięcie nie jest w stanie nadpisać. Każdy dzień bez zmiany pogłębia przepaść między tym, gdzie jesteś, a tym, gdzie mógłbyś być.</p>
   <div class="pain-grid">
     <div class="pain-item reveal">
@@ -1413,8 +1426,10 @@
 <section class="what" id="what">
   <div class="what-inner">
     <div style="display:flex;flex-direction:column;justify-content:center;">
+      <div class="what-header">
       <div class="section-label reveal">Metoda</div>
       <h2 class="reveal">To nie jest terapia.<br>To <em>precyzyjna<br>praca wewnętrzna.</em></h2>
+      </div>
       <div class="what-text-group">
         <p class="reveal">Mentoring Emocji to <strong>precyzyjny, uporządkowany proces</strong>, który działa bezpośrednio na to, jak Twój umysł i układ nerwowy przetwarzają dane emocjonalne — tworząc nowe, trwałe adaptacje u źródła. To nie teoria. To metoda, która właśnie teraz transformuje dyrektorów, sportowców i ludzi sukcesu.</p>
         <p class="reveal">Pomyśl o tym jak o elitarnym treningu systemu operacyjnego pod Twoją świadomą myślą. Nie analizujemy problemów w nieskończoność. <strong>Zmieniamy wzorce, które je generują</strong> — na poziomie, na którym faktycznie żyją. A rezultaty mówią same za siebie.</p>
@@ -1424,22 +1439,22 @@
     <div class="pillars reveal">
       <div class="pillar">
         <svg style="width:22px;height:22px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
-        <h4>Trening adaptacyjny umysłu</h4>
+        <h3>Trening adaptacyjny umysłu</h3>
         <p>Prowadzenie układu nerwowego do tworzenia nowych, silnych odpowiedzi na wyzwania, presję i niepewność. Przestajesz reagować — zaczynasz wybierać.</p>
       </div>
       <div class="pillar">
         <svg style="width:22px;height:22px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
-        <h4>Rozwiązywanie wzorców</h4>
+        <h3>Rozwiązywanie wzorców</h3>
         <p>Identyfikacja i uwolnienie wzorców emocjonalnych, które po cichu ograniczają Twoje wyniki i zdolność do radości — nawet wzorców utrzymywanych od dekad.</p>
       </div>
       <div class="pillar">
         <svg style="width:22px;height:22px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
-        <h4>Wyrównanie z rzeczywistością</h4>
+        <h3>Wyrównanie z rzeczywistością</h3>
         <p>Budowanie szczerej, wzmacniającej relacji z rzeczywistością. Takiej, która służy Twoim ambicjom zamiast po cichu je podkopywać.</p>
       </div>
       <div class="pillar">
         <svg style="width:22px;height:22px;color:var(--gold);opacity:0.8;margin-bottom:0.8rem;display:block;" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-12a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>
-        <h4>Trwała integracja</h4>
+        <h3>Trwała integracja</h3>
         <p>Zmiany osadzają się głęboko z czasem. To nie motywacja, która gaśnie po tygodniu. To strukturalna transformacja, która się kumuluje.</p>
       </div>
     </div>
@@ -1453,8 +1468,10 @@
 <section class="mentor" id="mentor" style="background: var(--black);">
   <div class="mentor-inner">
     <div class="mentor-text">
+      <div class="mentor-header">
       <div class="section-label reveal" style="margin-bottom:1.8rem;">Twój Przewodnik</div>
-      <h2 class="reveal" style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;line-height:1.2;margin-bottom:2rem;">Poznaj <em style="font-style:italic;color:var(--gold);">Michała</em></h2>
+      <h2 class="reveal" style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:900;line-height:1.2;margin-bottom:2rem;">Poznaj <em style="font-style:italic;color:var(--gold);" class="mentor-name">Michała</em></h2>
+      </div>
       <div class="mentor-text-group">
         <p class="reveal" style="color:var(--muted);font-size:1rem;margin-bottom:1.4rem;">Od ponad 11 lat Michał pracuje na styku inteligencji emocjonalnej i szczytowej wydajności — prowadząc dyrektorów, sportowców i ludzi sukcesu przez głębokie wewnętrzne przemiany, których żadna powierzchowna metoda nie jest w stanie dotknąć.</p>
         <p class="reveal" style="color:var(--muted);font-size:1rem;margin-bottom:1.4rem;">Jego podejście wykuwało się przez tysiące godzin intensywnej praktyki, osobistej transformacji i rygorystycznego badania tego, jak ludzki system emocjonalny naprawdę działa — nie jak jest opisywany w podręcznikach. Założył <strong style="color:var(--white);font-weight:500;">Fundację Shen</strong>, by udostępnić tę pracę szerszemu gronu osób.</p>
@@ -1462,17 +1479,17 @@
         <p class="reveal" style="color:var(--muted);font-size:1rem;margin-bottom:1.4rem;">Tym, co wyróżnia tę pracę, jest jej precyzja. Większość podejść leczy objawy. Ta metoda identyfikuje dokładne struktury emocjonalne kształtujące Twoje zachowanie — i zmienia je u korzenia. Zmiana nie jest koncepcyjna. To coś, co <strong style="color:var(--white);font-weight:500;">czujesz w ciele, w decyzjach, w tym jak się pojawiasz</strong> już następnego dnia.</p>
       </div>
       <div class="reveal" style="margin-top:2rem;display:flex;gap:2.5rem;flex-wrap:wrap;align-items:flex-end;">
-        <div>
-          <span style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--gold);display:block;line-height:1;">11+</span>
-          <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Lat praktyki</span>
+        <div class="mentor-stat">
+          <span class="mentor-stat-num" style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--gold);display:block;line-height:1;">11+</span>
+          <span class="mentor-stat-lbl" style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Lat praktyki</span>
         </div>
-        <div style="text-align:center;">
-          <span style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--gold);display:block;line-height:1;">Na całym świecie</span>
-          <span style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Dziesiątki klientów</span>
+        <div class="mentor-stat" style="text-align:center;">
+          <span class="mentor-stat-num" style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--gold);display:block;line-height:1;">Na całym świecie</span>
+          <span class="mentor-stat-lbl" style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Dziesiątki klientów</span>
         </div>
-        <a href="foundation-pl.html" style="text-align:center;text-decoration:none;" class="mentor-shen-link">
-          <span style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--gold);display:block;line-height:1;">Założyciel</span>
-          <span class="mentor-shen-label" style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);transition:color 0.1s;">Fundacja Shen</span>
+        <a href="foundation-pl.html" style="text-align:center;text-decoration:none;" class="mentor-stat mentor-shen-link">
+          <span class="mentor-stat-num" style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--gold);display:block;line-height:1;">Założyciel</span>
+          <span class="mentor-stat-lbl mentor-shen-label" style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);transition:color 0.1s;">Fundacja Shen</span>
         </a>
       </div>
     </div>
@@ -1484,7 +1501,7 @@
           <img src="portrait.jpg" loading="lazy" width="360" height="480" alt="Michał — Mentoring Emocji" class="portrait-img">
         </picture>
       </div>
-      <div style="text-align:center;margin-top:2.5rem;">
+      <div class="portrait-caption" style="text-align:center;margin-top:2.5rem;">
         <p style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--white);margin-bottom:0.25rem;">Michał Ksiądzyna</p>
         <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:0.2rem;">Założyciel i Prezes, Fundacja SHEN</p>
         <p style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Twórca metody Mentoringu Emocji</p>
@@ -1497,8 +1514,10 @@
 
 <!-- RESULTS -->
 <section class="results">
+  <div class="results-header">
   <div class="section-label reveal" style="text-align:center;margin-bottom:0.5rem;">Co się zmienia</div>
   <h2 class="reveal" style="text-align:center;">Wewnętrzny świat się zmienia.<br>Reszta podąża za nim.</h2>
+  </div>
   <p class="results-lead reveal">Kiedy Twój system emocjonalny się zmienia, zmienia się wszystko — decyzje, relacje, wyniki, jakość życia.</p>
   <div class="results-grid">
     <div class="result-card reveal">
@@ -1537,8 +1556,10 @@
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonials">
   <div class="testimonials-inner">
+    <div class="testi-header">
     <div class="section-label reveal" style="text-align:center;margin-bottom:0.8rem;">Prawdziwe rezultaty</div>
     <h2 class="reveal" style="text-align:center;">Rezultaty. Ich własnymi słowami.</h2>
+    </div>
     <p class="testimonials-lead reveal" style="text-align:center;margin-left:auto;margin-right:auto;">Nie wierz nam na słowo. To niefiltrowane słowa prawdziwych klientów, którzy zdecydowali się na ten proces — i wyszli z niego fundamentalnie zmienieni.</p>
     <div class="testi-grid">
 
@@ -1658,8 +1679,10 @@
 
 <!-- FOR WHO -->
 <section class="forwho">
+  <div class="forwho-header">
   <div class="section-label reveal" style="text-align:center;margin-bottom:1rem;">Dla kogo</div>
   <h2 class="reveal" style="text-align:center;margin-bottom:0.4rem;">Stworzone dla tych, którzy<br>wymagają od siebie najwięcej</h2>
+  </div>
   <p class="reveal muted-hover" style="text-align:center;color:var(--muted);font-size:0.95rem;margin-top:0;margin-bottom:2.5rem;">Zarezerwowane dla osób działających na najwyższym poziomie — gdzie stawka jest realna, a półśrodki nie wchodzą w grę.</p>
   <div class="who-list">
     <div class="who-item reveal" data-num="01">
@@ -1693,11 +1716,13 @@
 <!-- PROCESS -->
 <section class="process">
   <div class="process-inner">
+    <div class="process-header">
     <div class="section-label reveal" style="text-align:center;">Jak to działa</div>
     <div class="reveal" style="margin-bottom:1.5rem;text-align:center;">
       <svg viewBox="0 0 24 24" fill="none" style="width:26px;height:26px;color:var(--gold);opacity:0.85;display:block;margin:0 auto;"><rect x="2" y="2" width="20" height="20" rx="0" stroke="currentColor" stroke-width="1.8" fill="none"/><rect x="7" y="7" width="10" height="10" rx="0" fill="currentColor"/></svg>
     </div>
     <h2 class="reveal" style="text-align:center;margin-bottom:0.4rem;">Zacznij od jednej ważnej rozmowy</h2>
+    </div>
     <p class="reveal muted-hover" style="text-align:center;color:var(--muted);font-size:1.05rem;margin-bottom:2rem;margin-top:0;">Dziesiątki klientów zaczęły właśnie tutaj.</p>
     <div class="steps" style="margin:0 auto;">
       <div class="step reveal" data-step="01">
@@ -1732,10 +1757,12 @@
 <section class="privacy-section">
   <div style="position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 50% 0%, rgba(201,169,110,0.05), transparent);"></div>
   <div style="max-width: 700px; margin: 0 auto; text-align: center; position:relative;">
+    <div class="privacy-heading">
     <div class="reveal" style="margin-bottom:1rem;">
       <svg viewBox="0 0 24 24" style="width:40px;height:40px;color:var(--gold);opacity:0.85;display:block;margin:0 auto;" aria-hidden="true"><use href="#diamond"/></svg>
     </div>
     <h2 class="reveal" style="font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 2.5vw, 2rem); font-weight: 900; line-height: 1.2; margin-bottom: 1.2rem;">Wszystko, co tu powiedziane, <em style="font-style:italic;color:var(--gold);">tu zostaje.</em></h2>
+    </div>
     <p class="reveal muted-hover" style="color: var(--muted); font-size: 0.95rem; max-width: 560px; margin: 0 auto;">Każda rozmowa jest całkowicie prywatna. Nic nie jest nagrywane ani udostępniane. Wielu klientów to dyrektorzy i osoby publiczne — dyskrecja jest absolutna, od pierwszego kontaktu.</p>
   </div>
 </section>
@@ -1743,9 +1770,11 @@
 <!-- FAQ -->
 <section class="faq-section" id="faq">
   <div class="faq-inner">
+    <div class="faq-header">
     <div class="section-label reveal" style="text-align:center;margin-bottom:0.8rem;">Najczęstsze pytania</div>
     <h2 class="reveal" style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:900;margin-bottom:0.4rem;text-align:center;">Zanim się odezwiesz</h2>
     <p class="reveal muted-hover" style="text-align:center;color:var(--muted);font-size:0.95rem;margin-top:0;margin-bottom:4rem;">Odpowiedzi na pytania, które najczęściej zadają klienci przed pierwszą rozmową.</p>
+    </div>
     <div class="faq-list">
 
       <div class="faq-item reveal">
@@ -1754,7 +1783,9 @@
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-a">
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
           <p>Terapia zazwyczaj skupia się na rozumieniu i przetwarzaniu przeszłości. Coaching skupia się na odpowiedzialności i planowaniu działań. Mentoring Emocji działa na zupełnie innym poziomie — pracuje bezpośrednio ze wzorcami emocjonalnymi Twojego układu nerwowego, tworząc strukturalną zmianę u źródła. Większość klientów wcześniej próbowała terapii lub coachingu i uznała je za pomocne, ale niepełne. To dociera tam, gdzie tamte podejścia nie mogą.</p>
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
         </div>
       </div>
 
@@ -1764,7 +1795,9 @@
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-a">
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
           <p>Absolutnie nie. Wielu moich klientów już odnosi sukcesy i funkcjonuje na wysokim poziomie. Przychodzą nie dlatego, że coś jest „zepsute", ale dlatego, że wyczuwają głębszy poziom wydajności, spełnienia i wewnętrznej jasności — i mają rację. Ta praca dotyczy zarówno optymalizacji, jak i uzdrawiania.</p>
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
         </div>
       </div>
 
@@ -1774,7 +1807,9 @@
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-a">
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
           <p>Większość klientów zauważa zmianę już po pierwszej sesji — nie tylko ulgę, ale prawdziwą zmianę w sposobie reagowania na sytuacje. Głębsza, strukturalna transformacja zazwyczaj rozwija się w ciągu 3–6 miesięcy regularnej pracy. Niektóre wzorce utrzymywane od dekad rozpuszczają się w tygodnie. Harmonogram zależy od Twojej konkretnej sytuacji, i właśnie temu służy darmowa konsultacja.</p>
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
         </div>
       </div>
 
@@ -1784,7 +1819,9 @@
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-a">
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
           <p>Jedno i drugie. Sesje odbywają się przez prywatne połączenie wideo, co pozwala klientom na całym świecie korzystać z tej pracy z dowolnego miejsca. Intensywne sesje osobiste są również dostępne po uzgodnieniu. Metoda jest równie skuteczna w obu formatach — liczy się Twoja gotowość do zaangażowania, nie lokalizacja.</p>
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
         </div>
       </div>
 
@@ -1794,7 +1831,9 @@
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-a">
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
           <p>Dobrze. Sceptycyzm oznacza, że myślisz krytycznie — a właśnie takim umysłom ta praca służy najlepiej. Kilku moich najbardziej udanych klientów przyszło głęboko sceptycznych i zostało, bo rezultaty mówiły głośniej niż ich wątpliwości. Darmowa konsultacja istnieje właśnie po to, byś mógł doświadczyć podejścia na własnej skórze bez żadnego ryzyka. Jeśli to nie jest odpowiednie dopasowanie, powiem Ci to wprost.</p>
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
         </div>
       </div>
 
@@ -1804,7 +1843,9 @@
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-a">
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
           <p>Wielu klientów opisuje zmianę już podczas pierwszej rozmowy — moment, w którym coś, co nosili latami, nagle nabiera sensu w nowy sposób. Wczesne zmiany często objawiają się spokojniejszymi reakcjami, jaśniejszym myśleniem pod presją lub cichą pewnością siebie, której wcześniej nie było. Głębsze architektoniczne przemiany — jak odnosisz się do siebie, jak przewodzisz, jak nawiązujesz kontakt — te budują się stopniowo i zaskakują ludzi tym, jak naturalnie się odczuwają.</p>
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
         </div>
       </div>
 
@@ -1814,7 +1855,9 @@
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-a">
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
           <p>Sama konsultacja nie wiąże się z żadnym zobowiązaniem. Wielu klientów przychodzi niepewnych i wychodzi z pełną jasnością — niezależnie od tego, czy oznacza to kontynuację, czy nie. Oba wyniki są wartościowe. Jeśli zadajesz to pytanie, konsultacja jest dokładnie właściwym następnym krokiem.</p>
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
         </div>
       </div>
 
@@ -1824,10 +1867,12 @@
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-a">
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
           <p><strong style="color:var(--white);">Darmowa konsultacja</strong> to skupiona 45-minutowa rozmowa, podczas której oceniam Twoją sytuację, identyfikuję kluczowe wzorce i określam, czy ta praca jest właściwym dopasowaniem. Wyjdziesz z prawdziwą jasnością — nawet jeśli nigdy nie będziemy współpracować.</p>
           <p style="margin-top:0.8rem;"><strong style="color:var(--white);">Konsultacja VIP</strong> idzie znacznie głębiej. To dłuższa, bardziej dokładna ocena Twojej sytuacji życiowej — ze szczegółową informacją zwrotną, którą zachowujesz niezależnie od tego, co zdecydujesz dalej. Będziesz dokładnie wiedział, gdzie stoisz, jakie wzorce kierują Twoimi decyzjami i jak wygląda droga do przodu. Niezależnie od tego, czy kontynuujesz pełny program, sama konsultacja VIP dostarcza prawdziwą, trwałą wartość.</p>
           <p style="margin-top:0.8rem;"><strong style="color:var(--white);">Pełna sesja</strong> to miejsce, gdzie zachodzi prawdziwa transformacja. To głęboka, intensywna praca nad konkretnym wzorcem lub wyzwaniem w Twoim życiu. Tu zachodzi trwała zmiana strukturalna — nie tylko wgląd, ale faktyczne przebudowanie sposobu reagowania na sytuacje, które mają największe znaczenie.</p>
           <p style="margin-top:0.8rem;">Jeśli chcesz doświadczyć pracy sesyjnej przed podjęciem decyzji o pełnym programie, ta opcja jest dostępna po darmowej konsultacji.</p>
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
         </div>
       </div>
 
@@ -1837,7 +1882,9 @@
           <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-a">
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
           <p>To indywidualna, intensywna współpraca na najwyższym poziomie, zaprojektowana jako <strong style="color:var(--white);">12-miesięczny program</strong> — ponieważ prawdziwa, strukturalna transformacja wymaga czasu na integrację, kumulację i pełne wyrażenie się w Twoim życiu. To nie jest krótki kurs ani jednorazowy intensyw; to pełny rok dedykowanej, prywatnej pracy z Michałem. Dokładna struktura i warunki współpracy są dopasowane do Twojej sytuacji i omawiane podczas darmowej konsultacji. Biorąc pod uwagę ograniczoną liczbę klientów, z którymi pracuję jednocześnie, każda współpraca otrzymuje moją pełną uwagę i zaangażowanie. Sama konsultacja jest całkowicie bezpłatna i nie wiąże się z żadnym zobowiązaniem.</p>
+          <div class="faq-diamond"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#diamond"/></svg></div>
         </div>
       </div>
 
@@ -1847,11 +1894,13 @@
 
 <!-- CTA / CONTACT -->
 <section class="cta-section" id="contact">
+  <div class="cta-header">
   <h2 class="reveal">Gotowy zmienić to, co<br><em>naprawdę wymaga zmiany?</em></h2>
+  </div>
   <p class="cta-lead reveal" style="color:var(--muted);font-size:1rem;max-width:560px;margin:0 auto 2rem;text-align:center;line-height:1.8;font-family:inherit;">Zaczynasz od jednej bezpłatnej 45-minutowej konsultacji.<br>Oceniam jasność, kierunek i dopasowanie.</p>
 
-  <div style="text-align:center;margin:0.5rem 0 1rem;">
-    <svg viewBox="0 0 24 24" style="width:18px;height:18px;color:var(--gold);display:inline-block;" aria-hidden="true"><use href="#diamond"/></svg>
+  <div class="diamond-wrap" style="text-align:center;margin:0.5rem 0 1rem;padding:0.5rem 0;cursor:pointer;">
+    <svg class="footer-diamond" viewBox="0 0 24 24" style="width:18px;height:18px;color:var(--gold);display:inline-block;" aria-hidden="true"><use href="#diamond"/></svg>
   </div>
 
   <div class="form-wrap reveal" id="bookForm">
@@ -1898,8 +1947,8 @@
   </div>
 </section>
 
-<div style="text-align:center;padding:1.2rem 0 2rem;background:var(--black);">
-  <svg viewBox="0 0 24 24" style="width:18px;height:18px;color:var(--gold);display:inline-block;" aria-hidden="true"><use href="#diamond"/></svg>
+<div class="diamond-wrap" style="text-align:center;padding:1.2rem 0 2rem;background:var(--black);cursor:pointer;">
+  <svg class="footer-diamond" viewBox="0 0 24 24" style="width:18px;height:18px;color:var(--gold);display:inline-block;" aria-hidden="true"><use href="#diamond"/></svg>
 </div>
 
 <!-- SPOTS WIDGET -->
