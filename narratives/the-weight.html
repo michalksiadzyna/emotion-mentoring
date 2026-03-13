@@ -64,6 +64,11 @@
   .pull-quote::before { top: 0; }
   .pull-quote::after { bottom: 0; }
   .pull-quote:hover { color: #f5d56a; text-shadow: 0 0 12px rgba(245,213,106,0.12); top: -2px; }
+  .pull-quote.finisher:hover { color: var(--gold-light); text-shadow: none; top: 0; }
+  .finisher-lead { position: relative; top: 0; cursor: default; transition: color 0.2s, text-shadow 0.2s, top 0.2s; }
+  .finisher-lead:hover { color: #f5d56a; text-shadow: 0 0 12px rgba(245,213,106,0.12); top: -2px; }
+  .punchword { font-size: 1.8em; color: #f5d56a; letter-spacing: 0.05em; text-shadow: 0 0 12px rgba(245,213,106,0.12); position: relative; top: 0; display: inline-block; cursor: default; transition: color 0.2s, text-shadow 0.2s, top 0.2s; }
+  .punchword:hover { color: #fff; text-shadow: 0 0 20px rgba(245,213,106,0.3); top: -2px; }
 
   /* SECTION BREAK */
   .section-break { text-align: center; padding: 1rem 0; margin: 1rem 0; }
@@ -208,7 +213,7 @@
 
   <p class="reveal">Understanding dissolves guilt. When the blinding effect of self-hatred subsides, we begin to see the true causes. Blame loses its grip. The weight lifts. We discover that what we mistook for our limit was a safety mechanism protecting us from ourselves.</p>
 
-  <div class="pull-quote finisher reveal">The ceiling was never external. The brake was inside the machine. And when the cause is removed, the protection becomes unnecessary. What remains is the full flow of Lifeforce<br><span style="font-size: 1.8em; color: #f5d56a; letter-spacing: 0.05em; text-shadow: 0 0 12px rgba(245,213,106,0.12);">Unleashed.</span></div>
+  <div class="pull-quote finisher reveal"><span class="finisher-lead">The ceiling was never external. The brake was inside the machine. And when the cause is removed, the protection becomes unnecessary. What remains is the full flow of Lifeforce</span><br><span class="punchword">Unleashed.</span></div>
 
 </article>
 
