@@ -3,23 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Narratives — Emotion Mentoring</title>
-<meta name="description" content="Narratives on emotional mechanics, leadership, and transformation — written from the practice of Emotion Mentoring.">
-<meta property="og:title" content="Narratives — Emotion Mentoring">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://emotionmentoring.com/narratives/">
-<meta property="og:description" content="Narratives on emotional mechanics, leadership, and transformation — written from the practice of Emotion Mentoring.">
+<title>The Cage — Emotion Mentoring</title>
+<meta name="description" content="We build structures that sustain us, then discover we cannot leave. On the matnia — the golden cage of dependency — and what happens when the capacity for self-reliance is rebuilt.">
+<meta property="og:title" content="The Cage — Emotion Mentoring">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://emotionmentoring.com/narratives/the-cage">
+<meta property="og:description" content="We build structures that sustain us, then discover we cannot leave. On the matnia — the golden cage of dependency — and what happens when the capacity for self-reliance is rebuilt.">
 <meta property="og:image" content="https://emotionmentoring.com/portrait.jpg">
+<meta property="og:site_name" content="Emotion Mentoring">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Narratives — Emotion Mentoring">
-<meta name="twitter:description" content="Narratives on emotional mechanics, leadership, and transformation — written from the practice of Emotion Mentoring.">
+<meta name="twitter:title" content="The Cage — Emotion Mentoring">
+<meta name="twitter:description" content="We build structures that sustain us, then discover we cannot leave. On the matnia — the golden cage of dependency — and what happens when the capacity for self-reliance is rebuilt.">
 <meta name="twitter:image" content="https://emotionmentoring.com/portrait.jpg">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://emotionmentoring.com/narratives/">
+<link rel="canonical" href="https://emotionmentoring.com/narratives/the-cage">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Cage",
+  "description": "We build structures that sustain us, then discover we cannot leave. On the matnia — the golden cage of dependency — and what happens when the capacity for self-reliance is rebuilt.",
+  "author": {
+    "@type": "Person",
+    "name": "Michal Ksiadzyna",
+    "alternateName": "Shen",
+    "url": "https://emotionmentoring.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Emotion Mentoring",
+    "url": "https://emotionmentoring.com"
+  },
+  "datePublished": "2026-03-13",
+  "url": "https://emotionmentoring.com/narratives/the-cage",
+  "mainEntityOfPage": "https://emotionmentoring.com/narratives/the-cage",
+  "image": "https://emotionmentoring.com/portrait.jpg",
+  "articleSection": "Narratives"
+}
+</script>
 <style>
   :root {
     --black: #141418; --deep: #1a1a20; --card: #16161a;
@@ -44,24 +69,51 @@
   .hero h1:hover { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
   .hero h1 em { font-style: italic; color: var(--gold); transition: color 0.2s, text-shadow 0.2s; }
   .hero h1:hover em { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
-  .hero p { color: var(--muted); max-width: 520px; margin: 0 auto; font-size: clamp(1rem, 1.5vw, 1.15rem); font-weight: 400; line-height: 1.8; position: relative; transition: color 0.2s; }
-  .hero p:hover { color: rgba(245,243,238,0.85); }
+  .hero .subtitle { color: var(--gold-light); max-width: 560px; margin: 0 auto; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.05rem, 1.8vw, 1.3rem); font-weight: 400; line-height: 1.7; position: relative; }
+  /* PREV/NEXT NAV */
+  .narrative-nav { display: flex; justify-content: space-between; align-items: center; max-width: 720px; margin: 0 auto; padding: 3rem 4rem 1rem; }
+  .narrative-nav a { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); transition: color 0.2s, text-shadow 0.2s; position: relative; top: 0; }
+  .narrative-nav a:hover { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); top: -1px; }
+  .narrative-nav .nav-disabled { color: var(--muted); opacity: 0.3; pointer-events: none; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; }
 
-  /* NARRATIVE LIST */
-  .narrative-list { max-width: 800px; margin: 0 auto; padding: 2rem 4rem 6rem; }
-  .narrative-card { display: block; background: var(--card); border-top: 1px solid var(--border); padding: 3rem 3rem; margin-bottom: 2px; transition: border-top-color 0.2s; text-decoration: none; }
-  .narrative-card:hover { border-top-color: var(--gold); }
-  .narrative-card h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; line-height: 1.3; margin-bottom: 0.6rem; color: var(--white); position: relative; top: 0; transition: color 0.2s, text-shadow 0.2s, top 0.2s; }
-  .narrative-card:hover h2 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
-  .narrative-card .card-desc { color: var(--muted); font-size: 1rem; line-height: 1.7; transition: color 0.2s; }
-  .narrative-card:hover .card-desc { color: rgba(245,243,238,0.85); }
-  .narrative-card .read-more { display: inline-block; margin-top: 1.2rem; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); transition: color 0.2s; }
-  .narrative-card:hover .read-more { color: #f5d56a; }
+  /* NARRATIVE BODY */
+  .narrative { max-width: 720px; margin: 0 auto; padding: 2rem 4rem 4rem; }
+  .narrative p { font-size: clamp(1.05rem, 1.5vw, 1.18rem); line-height: 2; color: var(--white); margin-bottom: 2rem; transition: color 0.2s; }
+  .narrative p:hover { color: rgba(245,243,238,0.95); }
+
+  /* PULL QUOTES — italic gold emphasis lines */
+  .pull-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.8; color: var(--gold-light); text-align: center; padding: 2.5rem 2rem; margin: 3rem 0; position: relative; cursor: default; transition: color 0.2s, text-shadow 0.2s; }
+  .pull-quote::before, .pull-quote::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .pull-quote::before { top: 0; }
+  .pull-quote::after { bottom: 0; }
+  .pull-quote:hover { color: #f5d56a; text-shadow: 0 0 12px rgba(245,213,106,0.12); }
+  .pull-quote.finisher:hover { color: var(--gold-light); text-shadow: none; }
+
+  /* SECTION BREAK */
+  .section-break { text-align: center; padding: 1rem 0; margin: 1rem 0; }
+  .section-break-label { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: block; transition: color 0.2s, text-shadow 0.2s; cursor: default; }
+  .section-break-label:hover { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
 
   /* DIAMOND DIVIDER */
   .divider-diamond { text-align: center; padding: 0.8rem 0; cursor: pointer; }
   .diamond-inline { width: 18px; height: 18px; color: var(--gold); display: inline-block; transition: all 0.3s; }
   .divider-diamond:hover .diamond-inline { color: #f5d56a !important; transform: scale(1.8) !important; filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
+
+  /* CTA */
+  .cta-wrap { padding: 4rem 4rem 5rem; text-align: center; position: relative; overflow: hidden; background: var(--deep); border-top: 1px solid var(--border); }
+  .cta-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse 50% 80% at 50% 0%, rgba(201,169,110,0.05), transparent); }
+  .cta-inner { position: relative; max-width: 560px; margin: 0 auto; }
+  .cta-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; line-height: 1.2; margin-bottom: 1rem; position: relative; top: 0; transition: color 0.2s, text-shadow 0.2s, top 0.2s; cursor: default; }
+  .cta-heading:hover { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
+  .cta-heading em { font-style: italic; color: var(--gold); transition: color 0.2s, text-shadow 0.2s; }
+  .cta-heading:hover em { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .cta-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; transition: color 0.2s; cursor: default; }
+  .cta-desc:hover { color: rgba(245,243,238,0.85); }
+  .cta-btn-primary { display: inline-block; padding: 1rem 2.5rem; background: var(--gold); color: var(--black); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.1s; position: relative; top: 0; }
+  .cta-btn-primary:hover { background: #dcc48a; top: -2px; }
+  .cta-back { margin-top: 1.5rem; }
+  .cta-back a { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.1em; text-decoration: none; transition: all 0.2s; position: relative; top: 0; }
+  .cta-back a:hover { color: var(--gold); top: -2px; }
 
   /* FOOTER */
   .footer-links { display: flex; align-items: center; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
@@ -85,8 +137,9 @@
   @media (max-width: 900px) {
     nav { padding: 1.5rem 2rem; }
     .hero { padding: 9rem 2rem 3rem; }
-    .narrative-list { padding: 2rem 1.5rem 4rem; }
-    .narrative-card { padding: 2rem 1.5rem; }
+    .narrative { padding: 2rem 1.5rem 3rem; }
+    .pull-quote { padding: 2rem 1rem; margin: 2rem 0; }
+    .cta-wrap { padding: 3rem 1.5rem 4rem; }
     footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2.5rem 1.5rem 5rem; }
   }
 </style>
@@ -109,50 +162,71 @@
     <svg aria-hidden="true" width="72" height="72" viewBox="0 0 411 411"><use href="#logo-icon"/></svg>
     Emotion Mentoring
   </a>
-  <a href="../index.html" class="nav-back">← Back to Main</a>
+  <a href="index.html" class="nav-back">&larr; Narratives</a>
 </nav>
 
 <div class="hero">
-  <h1 class="reveal"><em>Narratives</em></h1>
-  <p class="reveal">On emotional mechanics, leadership, and transformation — written from the practice of Emotion Mentoring.</p>
+  <h1 class="reveal">The <em>Cage</em></h1>
+  <p class="subtitle reveal">We build the structure that sustains us. Then we discover we cannot leave.</p>
 </div>
 
 <div class="divider-diamond">
   <svg aria-hidden="true" class="diamond-inline"><use href="#diamond-icon"/></svg>
 </div>
 
-<div class="narrative-list">
+<article class="narrative">
 
-  <a href="the-cage.html" class="narrative-card reveal">
-    <h2>The Cage</h2>
-    <p class="card-desc">We build structures that sustain us, then discover we cannot leave. On the matnia — the golden cage of dependency — and what happens when the capacity for self-reliance is rebuilt.</p>
-    <span class="read-more">Read narrative →</span>
-  </a>
+  <p class="reveal">We build structures to make life easier. The company, the team, the network, the lifestyle. At first the structure serves us. It solves problems, opens doors, creates stability. Then something shifts. The structure stops being a tool and becomes the environment. We live inside what we built. And we discover, quietly, that we have forgotten how to live without it.</p>
 
-  <a href="the-mask.html" class="narrative-card reveal">
-    <h2>The Mask</h2>
-    <p class="card-desc">We build identities to survive success. The role becomes the person, the person becomes invisible. On the architecture of ego, shame, and what happens when the mask is finally removed.</p>
-    <span class="read-more">Read narrative →</span>
-  </a>
+  <p class="reveal">The mechanism beneath this is one of the oldest in the human emotional system. The matnia — from the word mother — is an ecosystem of dependency that makes satisfying vital needs easier. It creates an environment in which our survival does not rely on us entirely. The original matnia is the family. A child cannot satisfy its own needs and depends entirely on its caretakers. Securing love becomes the survival strategy, because being loved is the strongest guarantee that needs will be met.</p>
 
-  <a href="the-weight.html" class="narrative-card reveal">
-    <h2>The Weight</h2>
-    <p class="card-desc">We build empires while running at half power. On the invisible mechanism of self-directed hatred that makes life smaller, and what happens when it is dismantled.</p>
-    <span class="read-more">Read narrative →</span>
-  </a>
+  <div class="pull-quote reveal">A matnia makes life easier and weakens us in the long run. It fosters weakness through the lack of motivation to become strong.</div>
 
-  <a href="the-grip.html" class="narrative-card reveal">
-    <h2>The Grip</h2>
-    <p class="card-desc">Control is a fear response wearing a leadership mask. On the difference between chosen leadership and compelled leadership — and what happens when the grip releases.</p>
-    <span class="read-more">Read narrative →</span>
-  </a>
+  <p class="reveal">This pattern persists into adulthood. We recreate it unconsciously. The corporation becomes the matnia. The relationship becomes the matnia. The wealth, the reputation, the network — each one an ecosystem that provides what we need, and each one a layer of dependency we barely notice forming.</p>
 
-  <a href="background-frequency.html" class="narrative-card reveal">
-    <h2>Background Frequency</h2>
-    <p class="card-desc">The tension we have carried for years stopped registering as tension long ago. On the background frequency that shapes every decision, every relationship, every reaction.</p>
-    <span class="read-more">Read narrative →</span>
-  </a>
+  <p class="reveal">The cage is golden because it provides. It sustains. It satisfies. And precisely because it satisfies, the motivation to develop independent capacity vanishes. The muscles that would carry us atrophy. The skills that would make us self-reliant go unused. Reliance on the matnia for survival leads to unconscious obedience to its directives. We obey the directives of the structure without realizing it, because our survival depends on it.</p>
 
+  <div class="pull-quote reveal">Reliance on the matnia for survival leads to unconscious obedience to its directives.</div>
+
+  <div class="divider-diamond">
+    <svg aria-hidden="true" class="diamond-inline"><use href="#diamond-icon"/></svg>
+  </div>
+
+  <p class="reveal">The people I mentor are often surprised to discover that the empire they built has become the structure that owns them. The company they created runs their schedule, their relationships, their health. The wealth they accumulated dictates where they live, who they associate with, what they can say. The identity they constructed demands maintenance. And underneath all of it lives a mechanism from childhood: the dependence on others to satisfy vital needs, dressed as achievement.</p>
+
+  <p class="reveal">"I have built something I cannot walk away from" is one of the most common descriptions of the golden cage dressed as success.</p>
+
+  <div class="pull-quote reveal">Life is constrained on two levels. Reality sets the base limits of what is physically possible, and even those boundaries can be pushed. The constraints of the mind restrict far tighter than reality ever does.</div>
+
+  <div class="divider-diamond">
+    <svg aria-hidden="true" class="diamond-inline"><use href="#diamond-icon"/></svg>
+  </div>
+
+  <p class="reveal">The cage opens when the dependency is identified and the capacity for self-reliance is rebuilt. When the emotional charges beneath the dependency are released, the constraints lift. Life opens to the full range of what is physically possible. A constrained mind makes life deterministic — every action, every choice, every relationship follows the rails of the structure. A free mind makes potential limitless.</p>
+
+  <p class="reveal">This is structural work. Seeing the cage is the first step. Identifying what it provides, and building the independent capacity to provide it for ourselves, is the real one.</p>
+
+  <div class="pull-quote finisher reveal" style="color: var(--gold-light);">The cage kept us comfortable and small.<br>Beyond the walls<br>we are<br><span style="font-size: 1.8em; color: #f5d56a; letter-spacing: 0.05em; text-shadow: 0 0 12px rgba(245,213,106,0.12);">Sovereign.</span></div>
+
+</article>
+
+<!-- PREV/NEXT NAV -->
+<div class="narrative-nav">
+  <a href="the-mask.html">&larr; Previous</a>
+  <span class="nav-disabled">Next &rarr;</span>
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="cta-overlay"></div>
+  <div class="cta-inner">
+    <h2 class="reveal cta-heading">Ready to Start Your <em>Transformation?</em></h2>
+    <p class="reveal cta-desc">Book a free, private 45-minute assessment with Michal. No commitment, no pressure — just an honest conversation about where you are and what's possible.</p>
+    <a href="../index.html#bookForm" class="reveal cta-btn-primary">Book Your Free Assessment</a>
+    <div class="reveal cta-back">
+      <a href="index.html">&larr; More Narratives</a>
+    </div>
+  </div>
 </div>
 
 <footer>
@@ -160,12 +234,14 @@
   <div class="footer-links">
     <a href="../foundation.html" class="footer-foundation">Shen Foundation</a>
     <span class="footer-divider">&#x25C8;</span>
+    <a href="index.html" class="footer-foundation">Narratives</a>
+    <span class="footer-divider">&#x25C8;</span>
     <a href="https://www.facebook.com/mentoringemocji/" target="_blank" rel="noopener" class="social-link" aria-label="Emotion Mentoring on Facebook">
       <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
       Emotion Mentoring
     </a>
   </div>
-  <div>© 2026 — All Rights Reserved</div>
+  <div>&copy; 2026 — All Rights Reserved</div>
 </footer>
 
 <script>
