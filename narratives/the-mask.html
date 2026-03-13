@@ -45,7 +45,8 @@
   .hero h1:hover { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
   .hero h1 em { font-style: italic; color: var(--gold); transition: color 0.2s, text-shadow 0.2s; }
   .hero h1:hover em { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
-  .hero .subtitle { color: var(--gold-light); max-width: 560px; margin: 0 auto; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.05rem, 1.8vw, 1.3rem); font-weight: 400; line-height: 1.7; position: relative; }
+  .hero .subtitle { color: var(--gold-light); max-width: 560px; margin: 0 auto; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.05rem, 1.8vw, 1.3rem); font-weight: 400; line-height: 1.7; position: relative; top: 0; cursor: default; transition: color 0.2s, text-shadow 0.2s, top 0.2s; }
+  .hero .subtitle:hover { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); top: -1px; }
   /* PREV/NEXT NAV */
   .narrative-nav { display: flex; justify-content: space-between; align-items: center; max-width: 720px; margin: 0 auto; padding: 3rem 4rem 1rem; }
   .narrative-nav a { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); transition: color 0.2s, text-shadow 0.2s; position: relative; top: 0; }
@@ -58,12 +59,12 @@
   .narrative p:hover { color: rgba(245,243,238,0.95); }
 
   /* PULL QUOTES — italic gold emphasis lines */
-  .pull-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.8; color: var(--gold-light); text-align: center; padding: 2.5rem 2rem; margin: 3rem 0; position: relative; cursor: default; transition: color 0.2s, text-shadow 0.2s; }
+  .pull-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.8; color: var(--gold-light); text-align: center; padding: 2.5rem 2rem; margin: 3rem 0; position: relative; top: 0; cursor: default; transition: color 0.2s, text-shadow 0.2s, top 0.2s; }
   .pull-quote::before, .pull-quote::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
   .pull-quote::before { top: 0; }
   .pull-quote::after { bottom: 0; }
-  .pull-quote:hover { color: #f5d56a; text-shadow: 0 0 12px rgba(245,213,106,0.12); }
-  .pull-quote.finisher:hover { color: var(--gold-light); text-shadow: none; }
+  .pull-quote:hover { color: #f5d56a; text-shadow: 0 0 12px rgba(245,213,106,0.12); top: -1px; }
+  .pull-quote.finisher { color: var(--gold-light); }
 
   /* SECTION BREAK */
   .section-break { text-align: center; padding: 1rem 0; margin: 1rem 0; }
@@ -210,7 +211,7 @@
 
   <p class="reveal">This is structural work. Seeing the mask is the first step. Removing it requires dismantling the shame that built it, releasing the emotional charges that keep the shadow in place, and allowing the hidden traits to return to consciousness.</p>
 
-  <div class="pull-quote finisher reveal" style="color: var(--gold-light);">The mask kept us hidden. Hidden from ourselves.<br>We step into the open, we are<br><span style="font-size: 1.8em; color: #f5d56a; letter-spacing: 0.05em; text-shadow: 0 0 12px rgba(245,213,106,0.12);">Seen.</span></div>
+  <div class="pull-quote finisher reveal">The mask kept us hidden. Hidden from ourselves.<br>We step into the open, we are<br><span style="font-size: 1.8em; color: #f5d56a; letter-spacing: 0.05em; text-shadow: 0 0 12px rgba(245,213,106,0.12);">Seen.</span></div>
 
 </article>
 
