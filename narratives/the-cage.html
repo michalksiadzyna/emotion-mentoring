@@ -69,7 +69,7 @@
   .hero h1:hover { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
   .hero h1 em { font-style: italic; color: var(--gold); transition: color 0.2s, text-shadow 0.2s; }
   .hero h1:hover em { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
-  .hero .subtitle { color: var(--gold-light); max-width: 560px; margin: 0 auto; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.05rem, 1.8vw, 1.3rem); font-weight: 400; line-height: 1.7; position: relative; top: 0; cursor: default; transition: color 0.2s, text-shadow 0.2s, top 0.2s; }
+  .hero .subtitle { color: var(--gold-light); max-width: 560px; margin: 0 auto; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.05rem, 1.8vw, 1.3rem); font-weight: 400; line-height: 1.7; position: relative; top: 0; cursor: default; transition: color 0.2s, text-shadow 0.2s, top 0.2s, opacity 0.6s, transform 0.6s; }
   .hero .subtitle:hover { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); top: -1px; }
   /* PREV/NEXT NAV */
   .narrative-nav { display: flex; justify-content: space-between; align-items: center; max-width: 720px; margin: 0 auto; padding: 3rem 4rem 1rem; }
@@ -88,7 +88,6 @@
   .pull-quote::before { top: 0; }
   .pull-quote::after { bottom: 0; }
   .pull-quote:hover { color: #f5d56a; text-shadow: 0 0 12px rgba(245,213,106,0.12); top: -1px; }
-  .pull-quote.finisher { color: var(--gold-light); }
 
   /* SECTION BREAK */
   .section-break { text-align: center; padding: 1rem 0; margin: 1rem 0; }
@@ -131,7 +130,7 @@
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
   /* REVEAL ANIMATION */
-  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s, color 0.2s, text-shadow 0.2s, top 0.2s; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* RESPONSIVE */
