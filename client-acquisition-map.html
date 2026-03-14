@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Acquisition Map — Emotion Mentoring</title>
+    <link rel="stylesheet" href="report_style.css">
+    <style>
+        .funnel { display: flex; flex-direction: column; align-items: center; gap: 0; margin: 30px auto; max-width: 800px; }
+        .funnel-stage {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 20px 28px;
+            text-align: center;
+            position: relative;
+            transition: border-color 0.2s;
+        }
+        .funnel-stage:hover { border-color: var(--gold); }
+        .funnel-stage .stage-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .funnel-stage .stage-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+        .funnel-stage .stage-math {
+            font-size: 0.8rem;
+            color: var(--white);
+            margin-top: 8px;
+            font-weight: 400;
+        }
+        .funnel-arrow {
+            color: var(--gold);
+            font-size: 1.4rem;
+            line-height: 1;
+            padding: 6px 0;
+            opacity: 0.5;
+        }
+        .f1 { width: 100%; border-radius: 4px 4px 0 0; }
+        .f2 { width: 88%; }
+        .f3 { width: 74%; }
+        .f4 { width: 58%; }
+        .f5 { width: 42%; }
+        .f6 { width: 30%; border-radius: 0 0 4px 4px; border-bottom: 3px solid var(--gold); }
+
+        .client-card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 4px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            border-left: 3px solid var(--gold);
+            position: relative;
+        }
+        .client-card .client-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+        .client-card .client-channel {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+        .client-card .client-path {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .path-step {
+            background: rgba(201, 169, 110, 0.08);
+            border: 1px solid rgba(201, 169, 110, 0.15);
+            border-radius: 3px;
+            padding: 4px 10px;
+            font-size: 0.78rem;
+            color: var(--white);
+        }
+        .path-arrow { color: var(--gold); font-size: 0.9rem; opacity: 0.5; }
+        .client-card .timeline-badge {
+            position: absolute;
+            top: 24px;
+            right: 28px;
+            background: rgba(201, 169, 110, 0.1);
+            border: 1px solid rgba(201, 169, 110, 0.2);
+            border-radius: 3px;
+            padding: 3px 10px;
+            font-size: 0.68rem;
+            color: var(--gold);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .client-card .requirements {
+            color: var(--muted);
+            font-size: 0.82rem;
+            line-height: 1.8;
+        }
+        .client-card .requirements strong { color: var(--white); font-weight: 500; }
+
+        .timeline-section {
+            position: relative;
+            padding-left: 30px;
+        }
+        .timeline-section::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--gold), rgba(201,169,110,0.1));
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 24px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--gold);
+            border: 2px solid var(--bg);
+        }
+        .timeline-item.human::before { background: var(--blue); }
+        .timeline-item.blocker::before { background: var(--red); }
+        .timeline-when {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+        .timeline-what {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+        .timeline-detail {
+            color: var(--muted);
+            font-size: 0.82rem;
+            line-height: 1.7;
+        }
+
+        .assumption-box {
+            background: rgba(224, 160, 64, 0.06);
+            border: 1px solid rgba(224, 160, 64, 0.15);
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin-top: 20px;
+            font-size: 0.82rem;
+            color: var(--muted);
+        }
+        .assumption-box strong { color: var(--orange); font-weight: 500; }
+
+        .summary-bar { grid-template-columns: repeat(4, 1fr); }
+
+        .blocker-strip {
+            background: rgba(224, 85, 85, 0.06);
+            border: 1px solid rgba(224, 85, 85, 0.15);
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin-top: 20px;
+        }
+        .blocker-strip .blocker-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--red);
+            margin-bottom: 8px;
+        }
+        .blocker-strip ul {
+            list-style: none;
+            padding: 0;
+        }
+        .blocker-strip li {
+            color: var(--muted);
+            font-size: 0.82rem;
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+        .blocker-strip li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 11px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--red);
+        }
+        .blocker-strip li strong { color: var(--white); font-weight: 500; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <span class="nav-title">Acquisition Map</span>
+    <ul class="nav-links">
+        <li><a href="#funnel">Funnel Math</a></li>
+        <li><a href="#clients">6 Clients</a></li>
+        <li><a href="#timeline">Timeline</a></li>
+        <li><a href="#blockers">Blockers</a></li>
+        <li><a href="#assumptions">Assumptions</a></li>
+        <li><a href="#paid">Paid Alternative</a></li>
+    </ul>
+</nav>
+
+<div class="report-header">
+    <h1>The Path to 6 Clients</h1>
+    <p class="subtitle">Reverse-engineered from acquisition to today. Every client, every step, every dependency.</p>
+    <p class="date">Emotion Mentoring &mdash; 14 March 2026</p>
+</div>
+
+<div class="summary-bar">
+    <div class="summary-item">
+        <div class="num gold">6</div>
+        <div class="desc">Clients Target</div>
+    </div>
+    <div class="summary-item">
+        <div class="num">~20</div>
+        <div class="desc">Assessments Needed</div>
+    </div>
+    <div class="summary-item">
+        <div class="num">3</div>
+        <div class="desc">Active Channels</div>
+    </div>
+    <div class="summary-item">
+        <div class="num">~4 mo</div>
+        <div class="desc">Estimated Timeline</div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════ FUNNEL ═══════════════════════════════════ -->
+<div class="section" id="funnel">
+    <span class="section-label gold-bg">Reverse Funnel</span>
+    <h2>The Math, Working Backwards</h2>
+    <p class="section-desc">Each level feeds the one above it. The numbers tell you what the machine requires.</p>
+
+    <div class="funnel">
+        <div class="funnel-stage f1">
+            <div class="stage-num">~3,000+</div>
+            <div class="stage-label">Content Impressions (Social + SEO)</div>
+            <div class="stage-math">Knifehead + GLASS across LinkedIn, Instagram, Facebook</div>
+        </div>
+        <div class="funnel-arrow">&darr;</div>
+        <div class="funnel-stage f2">
+            <div class="stage-num">~800</div>
+            <div class="stage-label">Qualified Website Visitors</div>
+            <div class="stage-math">~2-3% click-through from social &middot; organic search &middot; direct referrals</div>
+        </div>
+        <div class="funnel-arrow">&darr;</div>
+        <div class="funnel-stage f3">
+            <div class="stage-num">~30</div>
+            <div class="stage-label">Form Submissions</div>
+            <div class="stage-math">~3-4% conversion on emotionmentoring.com (free 45-min assessment CTA)</div>
+        </div>
+        <div class="funnel-arrow">&darr;</div>
+        <div class="funnel-stage f4">
+            <div class="stage-num">~20</div>
+            <div class="stage-label">Assessment Calls Completed</div>
+            <div class="stage-math">~65-70% show rate on booked calls</div>
+        </div>
+        <div class="funnel-arrow">&darr;</div>
+        <div class="funnel-stage f5">
+            <div class="stage-num">~10</div>
+            <div class="stage-label">Serious Prospects</div>
+            <div class="stage-math">~50% express genuine interest after assessment</div>
+        </div>
+        <div class="funnel-arrow">&darr;</div>
+        <div class="funnel-stage f6">
+            <div class="stage-num">6</div>
+            <div class="stage-label">Paying Clients</div>
+            <div class="stage-math">~30% close rate from assessment &middot; higher for warm/referral leads</div>
+        </div>
+    </div>
+
+    <div class="assumption-box">
+        <strong>Key insight:</strong> The funnel above assumes cold traffic only. Warm leads (personal network, referrals from early clients, GLASS-warmed prospects) skip the top 2-3 levels entirely. That is why Clients 1-2 come from direct outreach &mdash; they bypass the machine.
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════ 6 CLIENTS ═══════════════════════════════════ -->
+<div class="section" id="clients">
+    <span class="section-label gold-bg">Acquisition Paths</span>
+    <h2>Six Clients, Six Paths</h2>
+    <p class="section-desc">Each client acquired through a different channel at a different velocity. Ordered by expected acquisition speed.</p>
+
+    <!-- CLIENT 1 -->
+    <div class="client-card">
+        <div class="timeline-badge">Week 1-3</div>
+        <div class="client-num">Client 1</div>
+        <div class="client-channel">Direct Outreach &mdash; Warm Network</div>
+        <div class="client-path">
+            <span class="path-step">Identify 10-20 warm contacts</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Personal message (genuine, not salesy)</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Conversation about their situation</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Offer free assessment</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Close on the call</span>
+        </div>
+        <div class="requirements">
+            <strong>What you do:</strong> Identify people who already know your work, have seen transformations, or expressed curiosity. Reach out personally. Three to five messages per day until you have 2-3 assessments booked.<br>
+            <strong>Why this works first:</strong> Zero friction. They already trust you. Conversion rate is 50%+ on warm leads.<br>
+            <strong>Prerequisite:</strong> A list of contacts. People from past sessions, friends who have witnessed results, anyone who has said "I need something like that."
+        </div>
+    </div>
+
+    <!-- CLIENT 2 -->
+    <div class="client-card">
+        <div class="timeline-badge">Week 2-4</div>
+        <div class="client-num">Client 2</div>
+        <div class="client-channel">Referral &mdash; Existing Contacts Introduce Someone</div>
+        <div class="client-path">
+            <span class="path-step">Ask 5-10 people for referrals</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">They introduce someone specific</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Warm intro conversation</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Assessment call</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Close</span>
+        </div>
+        <div class="requirements">
+            <strong>What you do:</strong> Ask people who know your work: "Do you know anyone struggling with [specific pattern]?" Give them a concrete description, not a vague ask. Make it easy to think of one person.<br>
+            <strong>Why this works second:</strong> Referred prospects arrive with pre-built trust. Close rate 40-50%.<br>
+            <strong>Prerequisite:</strong> Client 1 outreach is already happening. Same contact list, different ask.
+        </div>
+    </div>
+
+    <!-- CLIENT 3 -->
+    <div class="client-card">
+        <div class="timeline-badge">Week 4-8</div>
+        <div class="client-num">Client 3</div>
+        <div class="client-channel">LinkedIn &mdash; Knifehead Content + GLASS Engagement</div>
+        <div class="client-path">
+            <span class="path-step">Daily LinkedIn posts (Knifehead)</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">GLASS drops comments on target profiles</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Prospect visits your profile</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Clicks emotionmentoring.com</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Books assessment</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Close</span>
+        </div>
+        <div class="requirements">
+            <strong>What you do:</strong> Activate Knifehead Phase 2 content production. One LinkedIn post per weekday. Activate GLASS to find and engage with ideal prospects via thoughtful comments. The content builds authority; GLASS puts you in front of the right people.<br>
+            <strong>Why LinkedIn third:</strong> Professional audience, higher intent, longer content format works well for the Shen Method depth. Takes 3-4 weeks of consistent posting before the algorithm surfaces you reliably.<br>
+            <strong>Prerequisites:</strong> Knifehead Phase 2 running. GLASS Phase 1 complete (database + discovery). LinkedIn profile already optimized (done 2026-03-10).
+        </div>
+    </div>
+
+    <!-- CLIENT 4 -->
+    <div class="client-card">
+        <div class="timeline-badge">Week 6-10</div>
+        <div class="client-num">Client 4</div>
+        <div class="client-channel">Instagram &mdash; Carousels + Stories + GLASS</div>
+        <div class="client-path">
+            <span class="path-step">Regular carousels on @shenfreelife</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">GLASS engages on emotional wellness accounts</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Prospect follows, watches stories</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Multiple touchpoints over days</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Link in bio &rarr; website</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Assessment &rarr; close</span>
+        </div>
+        <div class="requirements">
+            <strong>What you do:</strong> Produce 2 feed posts + 5 stories per day (Knifehead). GLASS runs engagement on Instagram emotional wellness space. The path is longer here &mdash; Instagram prospects need more touchpoints before they click the bio link.<br>
+            <strong>Why Instagram fourth:</strong> Higher volume, lower individual intent. Requires multiple exposures. The carousel format showcases Shen Method laws beautifully, but conversion takes longer than LinkedIn.<br>
+            <strong>Prerequisites:</strong> Knifehead carousel templates working (first carousel done). GLASS active on Instagram. Compelling link-in-bio setup.
+        </div>
+    </div>
+
+    <!-- CLIENT 5 -->
+    <div class="client-card">
+        <div class="timeline-badge">Month 2-4</div>
+        <div class="client-num">Client 5</div>
+        <div class="client-channel">Referral &mdash; From Client 1 or 2</div>
+        <div class="client-path">
+            <span class="path-step">Deliver results to early clients</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Ask for referral at natural moment</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Warm intro</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Assessment</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Close</span>
+        </div>
+        <div class="requirements">
+            <strong>What you do:</strong> After 3-4 sessions with Client 1 or 2, when they experience a breakthrough, ask: "Do you know someone who is dealing with something similar?" Timing matters &mdash; ask when they feel the value, not before.<br>
+            <strong>Why this works fifth:</strong> Your best marketing is a transformed client talking about it. Referrals from paying clients close at the highest rate of any channel.<br>
+            <strong>Prerequisites:</strong> Client 1 and 2 already working with you. Genuine results delivered. This is organic &mdash; it happens because the work is real.
+        </div>
+    </div>
+
+    <!-- CLIENT 6 -->
+    <div class="client-card">
+        <div class="timeline-badge">Month 3-4</div>
+        <div class="client-num">Client 6</div>
+        <div class="client-channel">Content Convert &mdash; Cross-Platform Compounding</div>
+        <div class="client-path">
+            <span class="path-step">Content library reaches critical mass</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Prospect discovers via any platform</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Cross-checks on other platforms (social proof)</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Reads website + FAQs</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Books assessment</span>
+            <span class="path-arrow">&rarr;</span>
+            <span class="path-step">Close</span>
+        </div>
+        <div class="requirements">
+            <strong>What you do:</strong> By month 3, you have 60+ LinkedIn posts, 100+ Instagram pieces, active GLASS engagement, and a growing digital footprint. The compounding effect means people find you from multiple angles. Someone sees a LinkedIn post, checks Instagram, reads the website, and books.<br>
+            <strong>Why this works last:</strong> Compounding requires time and volume. This client does not come from any single action &mdash; they come from the accumulated weight of consistent presence across platforms.<br>
+            <strong>Prerequisites:</strong> 8-12 weeks of consistent content output. All platforms active. Website polished and converting.
+        </div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════ TIMELINE ═══════════════════════════════════ -->
+<div class="section" id="timeline">
+    <span class="section-label green-bg">Execution</span>
+    <h2>What Happens and When</h2>
+    <p class="section-desc">Sequential from today. Each action feeds the acquisition machine.</p>
+
+    <div class="timeline-section">
+
+        <div class="timeline-item human">
+            <div class="timeline-when">This Week (March 14-21)</div>
+            <div class="timeline-what">Build the Warm Contact List</div>
+            <div class="timeline-detail">
+                Write down every person who has experienced your work, expressed curiosity, or knows someone who struggles with emotional patterns. Target: <strong>15-20 names</strong>. This is the highest-conversion channel and costs nothing except honesty.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-when">This Week (March 14-21)</div>
+            <div class="timeline-what">Activate GLASS Phase 1</div>
+            <div class="timeline-detail">
+                Set up SQLite database, target discovery pipeline, and engagement scoring. This runs inside Claude Code sessions at <strong>$0/month</strong>. Once operational, GLASS starts finding and warming prospects on LinkedIn and Instagram.
+            </div>
+        </div>
+
+        <div class="timeline-item human">
+            <div class="timeline-when">Week 1-2 (March 14-28)</div>
+            <div class="timeline-what">Begin Personal Outreach</div>
+            <div class="timeline-detail">
+                Send <strong>3-5 personal messages per day</strong> from the warm list. Genuine conversations, not pitches. Ask about their life, mention your work naturally, offer the free assessment when relevant. Target: <strong>3-5 assessments booked</strong> by end of Week 2.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-when">Week 1-2 (March 14-28)</div>
+            <div class="timeline-what">Knifehead Phase 2 Full Activation</div>
+            <div class="timeline-detail">
+                Begin daily content production pipeline. <strong>1 LinkedIn post/weekday</strong>, <strong>2 Instagram feeds + 5 stories/day</strong>, <strong>2 Facebook posts/day</strong>. Content draws from the Shen Method Canon (196 laws). Narrative pipeline: The Signal, The Mask, The Spiral queued.
+            </div>
+        </div>
+
+        <div class="timeline-item human">
+            <div class="timeline-when">Week 2-3 (March 21-April 4)</div>
+            <div class="timeline-what">First Assessment Calls</div>
+            <div class="timeline-detail">
+                Conduct the first 3-5 free assessments from warm outreach. Close rate on warm leads: <strong>~50%</strong>. Target: <strong>Client 1 acquired</strong>.
+            </div>
+        </div>
+
+        <div class="timeline-item human">
+            <div class="timeline-when">Week 2-4 (March 21-April 11)</div>
+            <div class="timeline-what">Referral Asks</div>
+            <div class="timeline-detail">
+                Ask 5-10 people from the warm list: "Do you know someone dealing with [specific emotional pattern]?" One concrete referral is worth ten cold impressions. Target: <strong>Client 2 acquired</strong>.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-when">Week 2-4 (March 21-April 11)</div>
+            <div class="timeline-what">GLASS Engagement Running Daily</div>
+            <div class="timeline-detail">
+                <strong>5-10 quality comments/day</strong> on target accounts across LinkedIn and Instagram. Each comment is Opus-quality &mdash; genuine, insightful, positioned to spark curiosity. Targets are profiles matching ideal client demographics.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-when">Week 3-4 (March 28-April 11)</div>
+            <div class="timeline-what">Website Quick Fixes</div>
+            <div class="timeline-detail">
+                Execute FIXPLAN Phase 1 (accessibility) and Phase 3 (JS form fixes). The form submission path must work flawlessly &mdash; every lost form submission is a lost assessment. Silent false-success bug is a <strong>conversion killer</strong>.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-when">Week 4-6 (April 11-25)</div>
+            <div class="timeline-what">LinkedIn Content Gains Traction</div>
+            <div class="timeline-detail">
+                After 20+ posts, the LinkedIn algorithm begins consistently surfacing content. Combined with GLASS engagement putting the profile in front of ideal prospects, <strong>the first inbound inquiries arrive</strong>. Target: <strong>Client 3 acquired</strong>.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-when">Week 6-10 (April 25-May 23)</div>
+            <div class="timeline-what">Instagram Reaches Critical Mass</div>
+            <div class="timeline-detail">
+                40+ carousels, 150+ stories. @shenfreelife builds a following in the emotional wellness space. GLASS engagement creates inbound follows. The longer Instagram nurture cycle produces its first assessment booking. Target: <strong>Client 4 acquired</strong>.
+            </div>
+        </div>
+
+        <div class="timeline-item human">
+            <div class="timeline-when">Month 2-3 (May-June)</div>
+            <div class="timeline-what">Early Client Referrals</div>
+            <div class="timeline-detail">
+                Clients 1 and 2 have experienced 6-8 sessions. After a breakthrough moment, ask for a referral. One transformed person telling their friend about it is the most powerful marketing that exists. Target: <strong>Client 5 acquired</strong>.
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-when">Month 3-4 (June-July)</div>
+            <div class="timeline-what">Compounding Effect Delivers Client 6</div>
+            <div class="timeline-detail">
+                60+ LinkedIn posts, 100+ Instagram pieces, daily GLASS engagement, growing search presence, word of mouth from early clients. The accumulated weight of consistent multi-platform presence converts a prospect who has seen you from multiple angles. Target: <strong>Client 6 acquired</strong>.
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════ BLOCKERS ═══════════════════════════════════ -->
+<div class="section" id="blockers">
+    <span class="section-label red-bg">Critical Path</span>
+    <h2>What Blocks This Plan</h2>
+    <p class="section-desc">Remove these or the timeline extends.</p>
+
+    <div class="blocker-strip">
+        <div class="blocker-title">Human-Only Blockers</div>
+        <ul>
+            <li><strong>Warm contact list:</strong> Only you know who has seen your work and who might be open to a conversation. No automation replaces this. Build the list this week.</li>
+            <li><strong>Assessment calls:</strong> Only you can run the 45-minute sessions and close. This is the bottleneck &mdash; every assessment you do not take is a client you do not get.</li>
+            <li><strong>Referral asks:</strong> Only you can make the personal ask. A message from you carries weight that no automation can replicate.</li>
+        </ul>
+    </div>
+
+    <div class="blocker-strip" style="margin-top: 14px;">
+        <div class="blocker-title" style="color: var(--orange);">Machine Blockers (Claude Handles)</div>
+        <ul>
+            <li><strong>GLASS Phase 1 (database + discovery):</strong> Engagement engine requires setup before it can start warming prospects. Target: operational this week.</li>
+            <li><strong>Knifehead Phase 2 (content production):</strong> Daily content across platforms. Templates exist. Narrative pipeline queued. Target: daily output starting this week.</li>
+            <li><strong>Form submission bug (FIXPLAN 3.1):</strong> Silent false-success on form submission means you are losing assessments right now. Critical fix &mdash; prioritize before anything else on the website.</li>
+        </ul>
+    </div>
+
+    <div class="finding gold-l" style="margin-top: 20px;">
+        <div class="finding-header">
+            <span class="finding-title">The Honest Math</span>
+        </div>
+        <div class="finding-body">
+            If you send <strong>3 personal messages per day</strong> to warm contacts for 2 weeks, that is 30-40 conversations. At a 50% assessment booking rate, that is 15-20 assessments. At a 50% close rate on warm leads, that is <strong>7-10 clients from outreach alone</strong>.<br><br>
+            The content engine (Knifehead + GLASS) is the long game &mdash; it builds the pipeline that sustains the business after warm contacts are exhausted. But the first 2-3 clients come from <strong>picking up the phone</strong>.
+        </div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════ ASSUMPTIONS ═══════════════════════════════════ -->
+<div class="section" id="assumptions">
+    <span class="section-label orange-bg">Assumptions</span>
+    <h2>What This Plan Assumes</h2>
+    <p class="section-desc">Correct these and the numbers shift.</p>
+
+    <table class="rtable">
+        <thead>
+            <tr>
+                <th>Assumption</th>
+                <th>Value Used</th>
+                <th>If Different</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Warm lead close rate</td>
+                <td>~50%</td>
+                <td>Lower = need more warm contacts on the list</td>
+            </tr>
+            <tr>
+                <td>Cold/content close rate</td>
+                <td>~25-30%</td>
+                <td>Industry standard for coaching. Video on site could push to 35%+</td>
+            </tr>
+            <tr>
+                <td>Assessment show rate</td>
+                <td>~70%</td>
+                <td>Reminder emails + SMS increase this. Automated follow-up helps.</td>
+            </tr>
+            <tr>
+                <td>Website form conversion</td>
+                <td>~3-4%</td>
+                <td>Current site has good structure. Video + testimonials push higher.</td>
+            </tr>
+            <tr>
+                <td>Warm contacts available</td>
+                <td>15-20 people</td>
+                <td>If fewer, Clients 1-2 shift to content channels (slower)</td>
+            </tr>
+            <tr>
+                <td>Content consistency</td>
+                <td>Daily across platforms</td>
+                <td>Intermittent posting breaks algorithm momentum. Consistency is mandatory.</td>
+            </tr>
+            <tr>
+                <td>GLASS + Knifehead operational</td>
+                <td>Within 1 week</td>
+                <td>Delay here pushes Clients 3-6 back proportionally</td>
+            </tr>
+            <tr>
+                <td>Ad spend</td>
+                <td>$0</td>
+                <td>Even $50-100/month on LinkedIn ads compresses timeline significantly</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- ═══════════════════════════════════ PAID ALTERNATIVE ═══════════════════════════════════ -->
+<div class="section" id="paid">
+    <span class="section-label blue-bg">Alternative Path</span>
+    <h2>Facebook PPC Accelerator</h2>
+    <p class="section-desc">Replace months of organic grind with direct traffic injection. Same funnel, compressed timeline.</p>
+
+    <div class="finding blue-l">
+        <div class="finding-header">
+            <span class="finding-num blue">$</span>
+            <span class="finding-title">The Cost Per Visit</span>
+            <span class="badge medium">2026 Data</span>
+        </div>
+        <div class="finding-body">
+            Wellness/coaching niche on Facebook averages <strong>$0.93 CPC</strong> (January 2026), down from $1.47 a year ago. Wellness runs 9-38% above global averages depending on the month. Spring tends to spike.<br><br>
+            <strong>Geographic lever:</strong> Targeting Poland/CEE drops CPC to <strong>$0.30-0.50</strong>. Targeting US/UK/Western Europe pays the full $0.93+. Your audience mix determines the real number.
+        </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <table class="rtable">
+            <thead>
+                <tr>
+                    <th>Scenario</th>
+                    <th>CPC</th>
+                    <th>Cost for 3,000 Visits</th>
+                    <th>Expected Assessments</th>
+                    <th>Expected Clients</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="green">Optimistic</span> &mdash; good creative, tight targeting</td>
+                    <td>$0.70</td>
+                    <td><strong>$2,100</strong></td>
+                    <td>~60-80</td>
+                    <td>~15-20</td>
+                </tr>
+                <tr>
+                    <td><span class="gold">Realistic</span> &mdash; wellness niche average</td>
+                    <td>$0.93</td>
+                    <td><strong>$2,790</strong></td>
+                    <td>~60-80</td>
+                    <td>~15-20</td>
+                </tr>
+                <tr>
+                    <td><span class="orange">Conservative</span> &mdash; spring spike, broad targeting</td>
+                    <td>$1.40</td>
+                    <td><strong>$4,200</strong></td>
+                    <td>~60-80</td>
+                    <td>~15-20</td>
+                </tr>
+                <tr>
+                    <td><span class="blue">Poland/CEE only</span> &mdash; lower competition market</td>
+                    <td>$0.35</td>
+                    <td><strong>$1,050</strong></td>
+                    <td>~60-80</td>
+                    <td>~15-20</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="finding gold-l" style="margin-top: 20px;">
+        <div class="finding-header">
+            <span class="finding-num gold">!</span>
+            <span class="finding-title">3,000 Visits Is Overkill for 6 Clients</span>
+        </div>
+        <div class="finding-body">
+            3,000 visits at 3-4% form conversion = <strong>90-120 form submissions</strong>. At 70% show rate = <strong>63-84 assessments</strong>. At 30% close rate = <strong>19-25 clients</strong>. That is 3-4x the target.<br><br>
+            <strong>To acquire exactly 6 clients via paid traffic, you need ~600-800 visits.</strong> That costs:
+        </div>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <table class="rtable">
+            <thead>
+                <tr>
+                    <th>Target</th>
+                    <th>Visits Needed</th>
+                    <th>Budget (at $0.93 CPC)</th>
+                    <th>Budget (Poland $0.35)</th>
+                    <th>Timeline</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>6 clients</strong> (just the target)</td>
+                    <td>~700</td>
+                    <td><strong>$650</strong></td>
+                    <td><strong>$245</strong></td>
+                    <td>2-4 weeks</td>
+                </tr>
+                <tr>
+                    <td><strong>6 clients + safety margin</strong></td>
+                    <td>~1,200</td>
+                    <td><strong>$1,100</strong></td>
+                    <td><strong>$420</strong></td>
+                    <td>3-5 weeks</td>
+                </tr>
+                <tr>
+                    <td><strong>6 clients + pipeline surplus</strong></td>
+                    <td>~3,000</td>
+                    <td><strong>$2,790</strong></td>
+                    <td><strong>$1,050</strong></td>
+                    <td>4-6 weeks</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="finding green-l" style="margin-top: 20px;">
+        <div class="finding-header">
+            <span class="finding-num green">&harr;</span>
+            <span class="finding-title">Organic vs. Paid &mdash; Side by Side</span>
+        </div>
+        <div class="finding-body">
+            <table class="rtable" style="margin-top: 0;">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Organic Only (Base Plan)</th>
+                        <th>Facebook PPC Alternative</th>
+                        <th>Hybrid (Both)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Cost</strong></td>
+                        <td>$0</td>
+                        <td>$650-2,800</td>
+                        <td>$250-500</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Time to 6 clients</strong></td>
+                        <td>~4 months</td>
+                        <td>~4-6 weeks</td>
+                        <td>~6-8 weeks</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Your time investment</strong></td>
+                        <td>High (outreach + referrals + assessments)</td>
+                        <td>Low (assessments only)</td>
+                        <td>Medium</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Long-term asset built</strong></td>
+                        <td>Yes (content library, social presence, SEO)</td>
+                        <td>No (traffic stops when ad spend stops)</td>
+                        <td>Yes (organic grows while paid delivers now)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Risk</strong></td>
+                        <td>Slow start, requires discipline</td>
+                        <td>Money spent, depends on website converting</td>
+                        <td>Balanced</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Best for</strong></td>
+                        <td>$0 budget, willing to grind</td>
+                        <td>Speed priority, budget available</td>
+                        <td>Smart allocation &mdash; paid covers early clients while organic compounds</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="assumption-box" style="margin-top: 20px;">
+        <strong>Recommended hybrid approach:</strong> Spend <strong>$250-500</strong> on Facebook PPC to drive ~300-500 targeted visits in the first 3-4 weeks. This covers Clients 3-4 while warm outreach handles Clients 1-2 and organic content builds toward Clients 5-6. Total timeline compresses from ~4 months to ~6-8 weeks. The organic engine (Knifehead + GLASS) keeps running in parallel and takes over once the ad spend stops.
+    </div>
+
+    <div class="finding orange-l" style="margin-top: 14px;">
+        <div class="finding-header">
+            <span class="finding-num orange">!</span>
+            <span class="finding-title">Campaign Setup Requirements</span>
+        </div>
+        <div class="finding-body">
+            <strong>Objective:</strong> Traffic &rarr; Landing Page Views (not Engagement &mdash; engagement clicks scroll past without visiting the site).<br>
+            <strong>Audience:</strong> Interest-based targeting &mdash; emotional intelligence, life coaching, personal development, mental health, mindfulness. Ages 28-55. Lookalike audience from website visitors once pixel has data.<br>
+            <strong>Creative:</strong> Adapt Knifehead carousel content for Facebook ad format. The same Shen Method narratives work as ad creative &mdash; they are already designed to stop the scroll.<br>
+            <strong>Pixel:</strong> Install Facebook Pixel on emotionmentoring.com before running any ads. Tracks conversions, enables retargeting, builds lookalike data. <span class="tag">AUTONOMOUS</span><br>
+            <strong>Landing page:</strong> The form submission bug (FIXPLAN 3.1) must be fixed before spending any money on traffic. Paid visitors hitting a broken form is burning cash. <span class="tag" style="border-color: rgba(224,85,85,0.3); color: var(--red);">BLOCKER</span>
+        </div>
+    </div>
+
+    <p class="section-desc" style="margin-top: 24px; font-size: 0.72rem; color: var(--muted);">
+        CPC data sourced from SuperAds, WordStream, and WebFX benchmarks (January 2026). Wellness/holistic health niche-specific.
+    </p>
+</div>
+
+<div class="accent-line"></div>
+
+<footer>
+    <p><strong>ARES</strong> &mdash; Acquisition Intelligence &mdash; Emotion Mentoring &mdash; 14 March 2026</p>
+</footer>
+
+</body>
+</html>
