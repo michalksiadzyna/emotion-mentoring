@@ -3,23 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Narratives — Emotion Mentoring</title>
-<meta name="description" content="Narratives on emotional mechanics, leadership, and transformation — written from the practice of Emotion Mentoring.">
-<meta property="og:title" content="Narratives — Emotion Mentoring">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://emotionmentoring.com/narratives/">
-<meta property="og:description" content="Narratives on emotional mechanics, leadership, and transformation — written from the practice of Emotion Mentoring.">
+<title>The Eruption — Emotion Mentoring</title>
+<meta name="description" content="The breakdown that looks sudden was years in the making. The charge was always there. On the mechanism of emotional overflow — and what happens when the container is finally emptied.">
+<meta property="og:title" content="The Eruption — Emotion Mentoring">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://emotionmentoring.com/narratives/the-eruption">
+<meta property="og:description" content="The breakdown that looks sudden was years in the making. The charge was always there. On the mechanism of emotional overflow — and what happens when the container is finally emptied.">
 <meta property="og:image" content="https://emotionmentoring.com/portrait.jpg">
+<meta property="og:site_name" content="Emotion Mentoring">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Narratives — Emotion Mentoring">
-<meta name="twitter:description" content="Narratives on emotional mechanics, leadership, and transformation — written from the practice of Emotion Mentoring.">
+<meta name="twitter:title" content="The Eruption — Emotion Mentoring">
+<meta name="twitter:description" content="The breakdown that looks sudden was years in the making. The charge was always there. On the mechanism of emotional overflow — and what happens when the container is finally emptied.">
 <meta name="twitter:image" content="https://emotionmentoring.com/portrait.jpg">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://emotionmentoring.com/narratives/">
+<link rel="canonical" href="https://emotionmentoring.com/narratives/the-eruption">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Eruption",
+  "description": "The breakdown that looks sudden was years in the making. The charge was always there. On the mechanism of emotional overflow — and what happens when the container is finally emptied.",
+  "author": {
+    "@type": "Person",
+    "name": "Michal Ksiadzyna",
+    "alternateName": "Shen",
+    "url": "https://emotionmentoring.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Emotion Mentoring",
+    "url": "https://emotionmentoring.com"
+  },
+  "datePublished": "2026-03-15",
+  "url": "https://emotionmentoring.com/narratives/the-eruption",
+  "mainEntityOfPage": "https://emotionmentoring.com/narratives/the-eruption",
+  "image": "https://emotionmentoring.com/portrait.jpg",
+  "articleSection": "Narratives"
+}
+</script>
 <style>
   :root {
     --black: #141418; --deep: #1a1a20; --card: #16161a;
@@ -44,24 +69,56 @@
   .hero h1:hover { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
   .hero h1 em { font-style: italic; color: var(--gold); transition: color 0.2s, text-shadow 0.2s; }
   .hero h1:hover em { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
-  .hero p { color: var(--muted); max-width: 520px; margin: 0 auto; font-size: clamp(1rem, 1.5vw, 1.15rem); font-weight: 400; line-height: 1.8; position: relative; transition: color 0.2s; }
-  .hero p:hover { color: rgba(245,243,238,0.85); }
+  .hero .subtitle { color: var(--gold-light); max-width: 560px; margin: 0 auto; font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.05rem, 1.8vw, 1.3rem); font-weight: 400; line-height: 1.7; position: relative; top: 0; cursor: default; transition: color 0.2s, text-shadow 0.2s, top 0.2s, opacity 0.6s, transform 0.6s; }
+  .hero .subtitle:hover { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); top: -2px; }
+  /* PREV/NEXT NAV */
+  .narrative-nav { display: flex; justify-content: space-between; align-items: center; max-width: 720px; margin: 0 auto; padding: 3rem 4rem 1rem; }
+  .narrative-nav a { font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); transition: color 0.2s, text-shadow 0.2s; position: relative; top: 0; }
+  .narrative-nav a:hover { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); top: -1px; }
+  .narrative-nav .nav-disabled { color: var(--muted); opacity: 0.3; pointer-events: none; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; }
 
-  /* NARRATIVE LIST */
-  .narrative-list { max-width: 800px; margin: 0 auto; padding: 2rem 4rem 6rem; }
-  .narrative-card { display: block; background: var(--card); border-top: 1px solid var(--border); padding: 3rem 3rem; margin-bottom: 2px; transition: border-top-color 0.2s; text-decoration: none; }
-  .narrative-card:hover { border-top-color: var(--gold); }
-  .narrative-card h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; line-height: 1.3; margin-bottom: 0.6rem; color: var(--white); position: relative; top: 0; transition: color 0.2s, text-shadow 0.2s, top 0.2s; }
-  .narrative-card:hover h2 { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
-  .narrative-card .card-desc { color: var(--muted); font-size: 1rem; line-height: 1.7; transition: color 0.2s; }
-  .narrative-card:hover .card-desc { color: rgba(245,243,238,0.85); }
-  .narrative-card .read-more { display: inline-block; margin-top: 1.2rem; font-size: 0.78rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); transition: color 0.2s; }
-  .narrative-card:hover .read-more { color: #f5d56a; }
+  /* NARRATIVE BODY */
+  .narrative { max-width: 720px; margin: 0 auto; padding: 2rem 4rem 4rem; }
+  .narrative p { font-size: clamp(1.05rem, 1.5vw, 1.18rem); line-height: 2; color: var(--white); margin-bottom: 2rem; transition: color 0.2s; }
+  .narrative p:hover { color: rgba(245,243,238,0.95); }
+
+  /* PULL QUOTES — italic gold emphasis lines */
+  .pull-quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.2rem, 2vw, 1.5rem); line-height: 1.8; color: var(--gold-light); text-align: center; padding: 2.5rem 2rem; margin: 3rem 0; position: relative; top: 0; cursor: default; transition: color 0.2s, text-shadow 0.2s, top 0.2s; }
+  .pull-quote::before, .pull-quote::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .pull-quote::before { top: 0; }
+  .pull-quote::after { bottom: 0; }
+  .pull-quote:hover { color: #f5d56a; text-shadow: 0 0 12px rgba(245,213,106,0.12); top: -2px; }
+  .pull-quote.finisher:hover { color: var(--gold-light); text-shadow: none; top: 0; }
+  .finisher-lead { position: relative; top: 0; cursor: default; transition: color 0.2s, text-shadow 0.2s, top 0.2s; }
+  .finisher-lead:hover { color: #f5d56a; text-shadow: 0 0 12px rgba(245,213,106,0.12); top: -2px; }
+  .punchword { font-size: 1.8em; color: #f5d56a; letter-spacing: 0.05em; text-shadow: 0 0 12px rgba(245,213,106,0.12); position: relative; top: 0; display: inline-block; cursor: default; transition: color 0.2s, text-shadow 0.2s, top 0.2s; }
+  .punchword:hover { color: #fff; text-shadow: 0 0 20px rgba(245,213,106,0.3); top: -2px; }
+
+  /* SECTION BREAK */
+  .section-break { text-align: center; padding: 1rem 0; margin: 1rem 0; }
+  .section-break-label { font-size: 0.7rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: block; transition: color 0.2s, text-shadow 0.2s; cursor: default; }
+  .section-break-label:hover { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
 
   /* DIAMOND DIVIDER */
   .divider-diamond { text-align: center; padding: 0.8rem 0; cursor: pointer; }
   .diamond-inline { width: 18px; height: 18px; color: var(--gold); display: inline-block; transition: all 0.3s; }
   .divider-diamond:hover .diamond-inline { color: #f5d56a !important; transform: scale(1.8) !important; filter: drop-shadow(0 0 3px rgba(245,213,106,0.15)); }
+
+  /* CTA */
+  .cta-wrap { padding: 4rem 4rem 5rem; text-align: center; position: relative; overflow: hidden; background: var(--deep); border-top: 1px solid var(--border); }
+  .cta-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse 50% 80% at 50% 0%, rgba(201,169,110,0.05), transparent); }
+  .cta-inner { position: relative; max-width: 560px; margin: 0 auto; }
+  .cta-heading { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 900; line-height: 1.2; margin-bottom: 1rem; position: relative; top: 0; transition: color 0.2s, text-shadow 0.2s, top 0.2s; cursor: default; }
+  .cta-heading:hover { color: #fff; text-shadow: 0 0 30px rgba(201,169,110,0.2); top: -1px; }
+  .cta-heading em { font-style: italic; color: var(--gold); transition: color 0.2s, text-shadow 0.2s; }
+  .cta-heading:hover em { color: #f5d56a; text-shadow: 0 0 8px rgba(245,213,106,0.15); }
+  .cta-desc { color: var(--muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 2rem; transition: color 0.2s; cursor: default; }
+  .cta-desc:hover { color: rgba(245,243,238,0.85); }
+  .cta-btn-primary { display: inline-block; padding: 1rem 2.5rem; background: var(--gold); color: var(--black); font-weight: 600; font-size: 0.82rem; letter-spacing: 0.15em; text-transform: uppercase; text-decoration: none; transition: all 0.1s; position: relative; top: 0; }
+  .cta-btn-primary:hover { background: #dcc48a; top: -2px; }
+  .cta-back { margin-top: 1.5rem; }
+  .cta-back a { color: var(--muted); font-size: 0.8rem; letter-spacing: 0.1em; text-decoration: none; transition: all 0.2s; position: relative; top: 0; }
+  .cta-back a:hover { color: var(--gold); top: -2px; }
 
   /* FOOTER */
   .footer-links { display: flex; align-items: center; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
@@ -78,15 +135,16 @@
   .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 
   /* REVEAL ANIMATION */
-  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s, color 0.2s, text-shadow 0.2s, top 0.2s; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 1.5rem 2rem; }
     .hero { padding: 9rem 2rem 3rem; }
-    .narrative-list { padding: 2rem 1.5rem 4rem; }
-    .narrative-card { padding: 2rem 1.5rem; }
+    .narrative { padding: 2rem 1.5rem 3rem; }
+    .pull-quote { padding: 2rem 1rem; margin: 2rem 0; }
+    .cta-wrap { padding: 3rem 1.5rem 4rem; }
     footer { flex-direction: column; gap: 1.5rem; text-align: center; padding: 2.5rem 1.5rem 5rem; }
   }
 </style>
@@ -109,106 +167,96 @@
     <svg aria-hidden="true" width="72" height="72" viewBox="0 0 411 411"><use href="#logo-icon"/></svg>
     Emotion Mentoring
   </a>
-  <a href="../index.html" class="nav-back">← Back to Main</a>
+  <a href="index.html" class="nav-back">&larr; Narratives</a>
 </nav>
 
 <div class="hero">
-  <h1 class="reveal"><em>Narratives</em></h1>
-  <p class="reveal">On emotional mechanics, leadership, and transformation — written from the practice of Emotion Mentoring.</p>
+  <h1 class="reveal">The <em>Eruption</em></h1>
+  <p class="subtitle reveal">The breakdown that looks sudden was years in the making. The charge was always there.</p>
 </div>
 
 <div class="divider-diamond">
   <svg aria-hidden="true" class="diamond-inline"><use href="#diamond-icon"/></svg>
 </div>
 
-<div class="narrative-list" id="narrative-list"></div>
+<article class="narrative">
 
-<div class="pagination" id="pagination" style="text-align:center; padding: 1rem 0 4rem; display:flex; justify-content:center; gap:0.5rem;"></div>
+  <p class="reveal">Everyone remembers the moment it happened. The dinner where the CEO threw a glass at the wall over a misplaced fork. The board meeting where the founder screamed at a junior analyst for a typo in the slide deck. The quiet father who, after twenty-three years of composure, shattered a kitchen table with his fist because someone forgot to buy milk. The reaction was so far beyond what the situation called for that everyone in the room froze. Something was deeply, visibly wrong — and it had nothing to do with the fork, the typo, or the milk.</p>
 
-<script>
-var allNarratives = [
-  { href: 'the-venom.html', title: 'The Venom', desc: 'Hatred that cannot reach its target expands. From the person, to the role, to reality itself. On the mechanism of hatred spreading into wider categories.' },
-  { href: 'the-scales.html', title: 'The Scales', desc: 'Blame concentrates. Forgiveness releases. Redemption restores. Three mechanisms for rebalancing after harm.' },
-  { href: 'the-blind-spot.html', title: 'The Blind Spot', desc: 'Hatred blinds perception. Understanding arises only when hatred subsides and reveals the true causes.' },
-  { href: 'the-return.html', title: 'The Return', desc: 'Nostalgia is gratitude nested in the past. The pleasure of remembering what was, without needing it to return.' },
-  { href: 'the-anchor.html', title: 'The Anchor', desc: 'We hold on to what we view as essential. The tighter the hold, the deeper the fear of letting go.' },
-  { href: 'the-eruption.html', title: 'The Eruption', desc: 'The breakdown that looks sudden was years in the making. The charge was always there.' },
-  { href: 'the-blade.html', title: 'The Blade', desc: 'Anger is temporary, directed at a situation. Hatred is permanent, directed at reality itself. The distinction changes everything.' },
-  { href: 'the-fire.html', title: 'The Fire', desc: 'Anger is a defense. Underneath it, there is always hurt.' },
-  { href: 'the-edge.html', title: 'The Edge', desc: 'Courage and cowardice are both real assessments. The edge is the threshold between them.' },
-  { href: 'the-phantom.html', title: 'The Phantom', desc: 'At every fork, the mind creates a vision of the path not taken. The vision holds energy long after the choice is made.' },
-  { href: 'the-freeze.html', title: 'The Freeze', desc: 'When fear dominates the mixture, the system shuts down. Feeling ceases.' },
-  { href: 'the-desert.html', title: 'The Desert', desc: 'When the imbalance becomes severe, the system switches off everything it can. On depression and apathy as safety mechanisms.' },
-  { href: 'the-cage.html', title: 'The Cage', desc: 'We build structures that sustain us, then discover we cannot leave. On the golden cage of dependency.' },
-  { href: 'the-mask.html', title: 'The Mask', desc: 'We build identities to survive success. The role becomes the person, the person becomes invisible.' },
-  { href: 'the-weight.html', title: 'The Weight', desc: 'We build empires while running at half power. On the invisible mechanism of self-directed hatred.' },
-  { href: 'the-grip.html', title: 'The Grip', desc: 'Control is a fear response wearing a leadership mask. On the difference between chosen and compelled leadership.' },
-  { href: 'background-frequency.html', title: 'Background Frequency', desc: 'The tension we have carried for years stopped registering as tension. On the background frequency that shapes everything.' },
-];
+  <p class="reveal">We carry emotional charges. Every unprocessed hurt, every suppressed grief, every anger that was swallowed instead of expressed — each one adds to the container. The container has a capacity. For years, sometimes decades, we manage it. We hold it closed through discipline, through distraction, through sheer force of will. The container fills, and we adapt. We become experts at containment. We build identities around our ability to absorb, to endure, to remain composed.</p>
 
-var PER_PAGE = 10;
-var currentPage = 1;
-var totalPages = Math.ceil(allNarratives.length / PER_PAGE);
+  <div class="pull-quote reveal">When accumulated emotional charges exceed the container's capacity, the release is uncontrollable. The intensity vastly exceeds what the situation calls for.</div>
 
-function renderPage(page) {
-  currentPage = page;
-  var list = document.getElementById('narrative-list');
-  list.textContent = '';
-  var start = (page - 1) * PER_PAGE;
-  var end = Math.min(start + PER_PAGE, allNarratives.length);
-  for (var i = start; i < end; i++) {
-    var n = allNarratives[i];
-    var a = document.createElement('a');
-    a.href = n.href;
-    a.className = 'narrative-card reveal visible';
+  <p class="reveal">Then the container overflows. The trigger is always small — absurdly, almost comically small relative to the response it produces. A wrong word. A missed call. A tone of voice. The minor event touches the surface of the container, and the lid gives way. What comes out is everything. Every charge stored over years erupts simultaneously. The fury that lands on the person holding the fork belongs to dozens of situations, dozens of people, dozens of moments that were absorbed and stored and sealed away.</p>
 
-    var h2 = document.createElement('h2');
-    h2.textContent = n.title;
+  <p class="reveal">This is why the eruption shocks everyone, including its owner. The force of the response feels alien, disproportionate, almost possessed. And it is — possessed by every charge that was ever pushed down instead of released. The current situation merely opened the valve. The pressure was already there.</p>
 
-    var p = document.createElement('p');
-    p.className = 'card-desc';
-    p.textContent = n.desc;
+  <div class="pull-quote reveal">The trigger is always small. The charge belongs to a lifetime of stored content that found its exit.</div>
 
-    var span = document.createElement('span');
-    span.className = 'read-more';
-    span.textContent = 'Read narrative \u2192';
+  <div class="divider-diamond">
+    <svg aria-hidden="true" class="diamond-inline"><use href="#diamond-icon"/></svg>
+  </div>
 
-    a.appendChild(h2);
-    a.appendChild(p);
-    a.appendChild(span);
-    list.appendChild(a);
-  }
-  renderPagination();
-}
+  <div class="section-break">
+    <span class="section-break-label reveal">Mentoring Observation</span>
+  </div>
 
-function renderPagination() {
-  var pag = document.getElementById('pagination');
-  pag.textContent = '';
-  if (totalPages <= 1) return;
-  for (var i = 1; i <= totalPages; i++) {
-    var btn = document.createElement('button');
-    btn.textContent = i;
-    btn.style.cssText = 'background:' + (i === currentPage ? 'var(--gold)' : 'var(--card)') + ';color:' + (i === currentPage ? 'var(--black)' : 'var(--gold)') + ';border:1px solid var(--border);padding:0.5rem 1rem;border-radius:4px;cursor:pointer;font-size:0.9rem;letter-spacing:0.1em;transition:all 0.15s;';
-    btn.dataset.page = i;
-    btn.addEventListener('click', function() { renderPage(parseInt(this.dataset.page)); window.scrollTo({top: document.getElementById('narrative-list').offsetTop - 100, behavior: 'smooth'}); });
-    pag.appendChild(btn);
-  }
-}
+  <p class="reveal">The people I mentor after an eruption carry two layers of pain. The first is the original content — the accumulated charges that had been stored for years. The second is the aftermath — the relationships damaged, the reputations altered, the trust shattered by a response that no one, least of all its owner, can explain or justify.</p>
 
-renderPage(1);
-</script>
+  <p class="reveal">The eruption itself was inevitable. A container at capacity will overflow. The only variable is when and where. Those who pride themselves on control are often the most at risk, because control is the mechanism that keeps the lid on. The stronger the control, the more pressure can build before the break. And when it breaks, the force is proportional to the containment.</p>
+
+  <p class="reveal">"I have never done anything like that before" is the most common statement after an eruption. It is always true. And it always misses the point. The eruption was years in the making. The only thing new was the moment it finally arrived.</p>
+
+  <div class="divider-diamond">
+    <svg aria-hidden="true" class="diamond-inline"><use href="#diamond-icon"/></svg>
+  </div>
+
+  <div class="section-break">
+    <span class="section-break-label reveal">The Deeper Truth</span>
+  </div>
+
+  <p class="reveal">The eruption is a symptom. The disease is accumulation. Every charge that is stored instead of processed adds to the pressure. Every emotion that is managed instead of felt increases the volume in the container. The work is the systematic release of stored content — charge by charge, layer by layer, until the container holds only what belongs to the present.</p>
+
+  <p class="reveal">When the stored content is released, responses calibrate to the situation. The misplaced fork produces a glance, a brief annoyance, a correction — responses proportional to what actually happened. The fury disappears because the fuel behind it has been consumed. The same person who shattered a table can hold silence in a genuine crisis, because the response flows from the situation itself, uncontaminated by decades of stored charge.</p>
+
+  <p class="reveal">This is the difference between containment and capacity. Containment stores charges and holds them under pressure. Capacity processes charges as they arrive and releases them as they pass. One builds toward eruption. The other maintains equilibrium. The work transforms the first into the second — and what follows is a life where every response matches its moment.</p>
+
+  <div class="pull-quote finisher reveal"><span class="finisher-lead">The eruption was the container breaking.<br>Empty the charge, and every response<br>becomes</span><br><span class="punchword">Measured.</span></div>
+
+</article>
+
+<!-- PREV/NEXT NAV -->
+<div class="narrative-nav">
+  <a href="the-blade.html">&larr; Previous</a>
+  <a href="the-anchor.html">Next &rarr;</a>
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <div class="cta-overlay"></div>
+  <div class="cta-inner">
+    <h2 class="reveal cta-heading">Ready to Start Your <em>Transformation?</em></h2>
+    <p class="reveal cta-desc">Book a free, private 45-minute assessment with Michal. No commitment, no pressure — just an honest conversation about where you are and what's possible.</p>
+    <a href="../index.html#bookForm" class="reveal cta-btn-primary">Book Your Free Assessment</a>
+    <div class="reveal cta-back">
+      <a href="index.html">&larr; More Narratives</a>
+    </div>
+  </div>
+</div>
 
 <footer>
   <div class="logo"><svg aria-hidden="true" width="72" height="72" viewBox="0 0 411 411"><use href="#logo-icon"/></svg> Emotion Mentoring</div>
   <div class="footer-links">
     <a href="../foundation.html" class="footer-foundation">Shen Foundation</a>
     <span class="footer-divider">&#x25C8;</span>
+    <a href="index.html" class="footer-foundation">Narratives</a>
+    <span class="footer-divider">&#x25C8;</span>
     <a href="https://www.facebook.com/mentoringemocji/" target="_blank" rel="noopener" class="social-link" aria-label="Emotion Mentoring on Facebook">
       <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
       Emotion Mentoring
     </a>
   </div>
-  <div>© 2026 — All Rights Reserved</div>
+  <div>&copy; 2026 — All Rights Reserved</div>
 </footer>
 
 <script>
