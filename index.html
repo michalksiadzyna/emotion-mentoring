@@ -1474,6 +1474,7 @@
     .what { padding: 3.5rem 1.5rem; }
     .mentor { padding: 3.5rem 1.5rem 5rem; }
     .mentor-portrait { order: -1; }
+    .mentor-stats-grid { display: grid !important; grid-template-columns: 1fr 1fr; gap: 1.5rem !important; justify-items: center; }
     .portrait-frame { max-width: 280px; }
     .results { padding: 3rem 1.5rem 4rem; }
     .result-card { padding: 2rem 1.5rem; }
@@ -1533,10 +1534,11 @@
   @media (max-width: 900px) {
     .ebook-promo-content { max-width: 100% !important; padding: 0 0.5rem; }
     .ebook-promo-content h2 { font-size: clamp(1.6rem, 5vw, 2.2rem); }
-    .distro-strip { gap: 1.5rem !important; flex-direction: column !important; }
-    .distro-icons { gap: 1.2rem !important; }
-    .platform-icon svg { width: 32px !important; height: 32px !important; }
-    .platform-icon .plat-label { font-size: 0.6rem !important; }
+    .book-logo-wrap { display: none !important; }
+    .distro-strip { gap: 1.2rem !important; flex-direction: column !important; }
+    .distro-icons { gap: 1rem !important; }
+    .platform-icon svg { width: 30px !important; height: 30px !important; }
+    .platform-icon .plat-label { font-size: 0.55rem !important; }
   }
 
   @media (max-width: 600px) {
@@ -1786,9 +1788,9 @@
         <p class="reveal" style="color:var(--muted);font-size:1rem;margin-bottom:1.4rem;">Clients describe him as <strong style="color:var(--white);font-weight:500;">direct, precise, deeply empathetic, and uncompromising</strong> in his commitment to real results. Every conversation goes deep, and he's exceptionally good at taking you there.</p>
         <p class="reveal" style="color:var(--muted);font-size:1rem;margin-bottom:1.4rem;">What sets this work apart is its precision. Most approaches treat symptoms. This method identifies the exact emotional structures shaping your behaviour, and changes them at the root. The shift is not conceptual. It's something you <strong style="color:var(--white);font-weight:500;">feel in your body, in your decisions, in how you show up</strong> the very next day.</p>
       </div>
-      <div class="reveal" style="margin-top:2rem;display:flex;gap:2.2rem;flex-wrap:wrap;align-items:flex-end;">
-        <div class="mentor-stat">
-          <span class="mentor-stat-num" style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:900;color:var(--gold);display:block;line-height:1;">11+</span>
+      <div class="mentor-stats-grid reveal" style="margin-top:2rem;display:flex;gap:2.2rem;flex-wrap:wrap;align-items:flex-end;">
+        <div class="mentor-stat" style="text-align:center;">
+          <span class="mentor-stat-num" style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--gold);display:block;line-height:1;">11+</span>
           <span class="mentor-stat-lbl" style="font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);">Years of Inner Work</span>
         </div>
         <div class="mentor-stat" style="text-align:center;">
@@ -1849,10 +1851,11 @@
     .platform-icon:hover { opacity:1; }
     .platform-icon:hover svg { color:#f5d56a; transform:scale(1.12); filter:drop-shadow(0 0 6px rgba(245,213,106,0.3)); }
     .platform-icon:hover .plat-label { color:var(--white); }
+    @media (max-width: 900px) { .book-logo-wrap { display: none !important; } }
   </style>
-  <div class="distro-strip" style="margin-top:2.5rem;padding-top:2.2rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:3rem;max-width:1100px;margin-left:auto;margin-right:auto;flex-wrap:wrap;">
+  <div class="distro-strip" style="margin-top:2.5rem;padding-top:2.2rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:2rem;max-width:1200px;margin-left:auto;margin-right:auto;flex-wrap:wrap;">
     <p style="font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);white-space:nowrap;flex-shrink:0;">Also on</p>
-    <div class="distro-icons" style="display:flex;align-items:flex-start;gap:2rem;flex-wrap:wrap;justify-content:center;">
+    <div class="distro-icons" style="display:flex;align-items:flex-start;gap:1.3rem;flex-wrap:wrap;justify-content:center;">
       <a href="https://books2read.com/u/b5e771" target="_blank" rel="noopener" class="platform-icon"><svg viewBox="0 0 24 24" style="width:42px;height:42px;" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 16.56 2.93 11.3 4.7 7.72C5.57 5.94 7.36 4.86 9.28 4.84C10.56 4.81 11.78 5.72 12.57 5.72C13.36 5.72 14.85 4.62 16.4 4.8C17.07 4.83 18.89 5.08 20.04 6.8C19.92 6.88 17.63 8.23 17.66 11.08C17.7 14.47 20.55 15.57 20.58 15.58C20.55 15.66 20.12 17.21 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg><span class="plat-label">Apple Books</span></a>
       <a href="https://play.google.com/store/books/details?id=cTjMEQAAQBAJ" target="_blank" rel="noopener" class="platform-icon"><svg viewBox="0 0 24 24" style="width:42px;height:42px;" fill="currentColor"><path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5ZM16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12ZM20.16 10.81C20.5 11.08 20.75 11.5 20.75 12C20.75 12.5 20.5 12.92 20.16 13.19L17.89 14.5L15.39 12L17.89 9.5L20.16 10.81ZM6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z"/></svg><span class="plat-label">Google Play</span></a>
       <a href="https://books2read.com/u/b5e771" target="_blank" rel="noopener" class="platform-icon"><svg viewBox="0 0 24 24" style="width:42px;height:42px;" fill="currentColor"><path d="M21 15.5V20a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4.5M21 15.5c0-1.5-1.5-3-4-3.5M3 15.5c0-1.5 1.5-3 4-3.5M12 2v12m0 0l-3-3m3 3l3-3"/></svg><span class="plat-label">Kindle</span></a>
@@ -1862,6 +1865,12 @@
       <a href="https://archive.org/details/secret-book-of-emotions-shen" target="_blank" rel="noopener" class="platform-icon"><svg viewBox="0 0 24 24" style="width:42px;height:42px;" fill="currentColor"><path d="M3 21h18v-2H3v2zM3 3v2h18V3H3zm4 4v10h2V7H7zm4 0v10h2V7h-2zm4 0v10h2V7h-2z"/></svg><span class="plat-label">Archive</span></a>
       <a href="https://books2read.com/u/b5e771" target="_blank" rel="noopener" class="platform-icon"><svg viewBox="0 0 24 24" style="width:42px;height:42px;" fill="currentColor"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9h-4v4h-2v-4H9V9h4V5h2v4h4v2z"/></svg><span class="plat-label">Libraries</span></a>
       <a href="https://books2read.com/u/b5e771" target="_blank" rel="noopener" class="platform-icon"><svg viewBox="0 0 24 24" style="width:42px;height:42px;" fill="currentColor"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6" fill="var(--deep)"/><circle cx="12" cy="12" r="3"/></svg><span class="plat-label">Everand</span></a>
+      <a href="https://www.obooko.com" target="_blank" rel="noopener" class="platform-icon"><svg viewBox="0 0 24 24" style="width:42px;height:42px;" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg><span class="plat-label">Obooko</span></a>
+      <a href="https://bookshop.org/book/9798233574702" target="_blank" rel="noopener" class="platform-icon"><svg viewBox="0 0 24 24" style="width:42px;height:42px;" fill="currentColor"><path d="M18 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM6 4h5v8l-2.5-1.5L6 12V4z"/></svg><span class="plat-label">Bookshop</span></a>
+      <a href="https://www.thalia.de/shop/home/artikeldetails/EAN9798233574702" target="_blank" rel="noopener" class="platform-icon"><svg viewBox="0 0 24 24" style="width:42px;height:42px;" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg><span class="plat-label">Tolino</span></a>
+      <a href="https://shop.vivlio.com/search?search=9798233574702" target="_blank" rel="noopener" class="platform-icon"><svg viewBox="0 0 24 24" style="width:42px;height:42px;" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg><span class="plat-label">Vivlio</span></a>
+      <a href="https://fable.co/book/x-9798233574702" target="_blank" rel="noopener" class="platform-icon"><svg viewBox="0 0 24 24" style="width:42px;height:42px;" fill="currentColor"><path d="M21 5c-1.11-.35-2.33-.5-3.5-.5-1.95 0-4.05.4-5.5 1.5-1.45-1.1-3.55-1.5-5.5-1.5S2.45 4.9 1 6v14.65c0 .25.25.5.5.5.1 0 .15-.05.25-.05C3.1 20.45 5.05 20 6.5 20c1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.3 4.75 1.05.1.05.15.05.25.05.25 0 .5-.25.5-.5V6c-.6-.45-1.25-.75-2-1zm0 13.5c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V8c1.35-.85 3.8-1.5 5.5-1.5 1.2 0 2.4.15 3.5.5v11.5z"/></svg><span class="plat-label">Fable</span></a>
+      <a href="http://self.gutenberg.org" target="_blank" rel="noopener" class="platform-icon"><svg viewBox="0 0 24 24" style="width:42px;height:42px;" fill="currentColor"><path d="M4 4h16v2H4V4zm0 14h16v2H4v-2zm2-4h12v2H6v-2zm-2-4h16v2H4v-2z"/><path d="M8 2h8v2H8V2zm0 18h8v2H8v-2z"/></svg><span class="plat-label">Gutenberg</span></a>
     </div>
   </div>
 </section>
