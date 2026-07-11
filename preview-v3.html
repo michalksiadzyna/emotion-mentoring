@@ -84,13 +84,14 @@ html.no-intro #veil{display:none}
   font-family:var(--sans);font-weight:400;font-size:.64rem;letter-spacing:.32em;text-transform:uppercase;color:var(--text-dim)}
 #hook .bar b{font-weight:400;color:var(--gold-dim);transition:color .25s}
 #hook .bar b:hover{color:var(--gold-hi)}
-#hook .kicker{color:var(--gold);font-family:var(--sans);font-weight:400;font-size:clamp(.66rem,1.5vw,.8rem);letter-spacing:.6em;text-indent:.6em;text-transform:uppercase}
+#hook .kicker{color:var(--gold);font-family:var(--sans);font-weight:400;font-size:clamp(.66rem,1.5vw,.8rem);letter-spacing:.42em;text-transform:uppercase;line-height:2}
 #hook h1{margin-top:3.4vh;font-family:var(--serif);font-weight:500;line-height:1.04;letter-spacing:.005em}
 #hook .l1wrap{display:block;overflow:hidden;padding-bottom:.08em}
 #hook .l1{display:block;font-variant:small-caps;font-size:clamp(2.6rem,7.6vw,6.6rem)}
 #hook .l2{display:block;font-style:italic;font-weight:400;font-size:clamp(1.5rem,3.9vw,3.3rem);color:var(--text);margin-top:1.2vh;max-width:22em}
 #hook .support{max-width:600px;margin-top:3vh;font-size:clamp(1rem,2.2vw,1.16rem);line-height:1.78;color:var(--text)}
 #hook .citeline{margin-top:1.6vh;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim)}
+@media (max-width:760px){#hook .citeline .csep{display:none}#hook .citeline .cite2{display:block}}
 #hook .h-cta{margin-top:5vh;display:flex;align-items:center;gap:38px;flex-wrap:wrap}
 #hook .cue{position:absolute;bottom:4vh;left:8vw;display:flex;align-items:center;gap:14px;
   font-family:var(--sans);font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--text-dim)}
@@ -188,7 +189,7 @@ html.no-intro #veil{display:none}
 /* ═══ 5 · TERMS ═══ */
 #terms{background:var(--ink2)}
 #terms .spots{display:flex;align-items:baseline;gap:1.6vw;margin-top:3vh;flex-wrap:wrap}
-#terms .spots .n{font-family:var(--serif);font-weight:500;font-size:clamp(4rem,10vw,7.5rem);line-height:.9}
+#terms .spots .n{font-family:var(--serif);font-weight:500;font-size:clamp(3.2rem,9vw,6.5rem);line-height:.9;white-space:nowrap}
 #terms .spots .lbl{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.6rem,4vw,3rem);color:var(--gold-hi)}
 #terms .spots-note{margin-top:2.6vh;max-width:480px;color:var(--text-dim);font-size:.96rem}
 .t-rows{margin-top:7vh;border-top:1px solid var(--hair)}
@@ -198,10 +199,6 @@ html.no-intro #veil{display:none}
 .t-row .v{font-size:clamp(1rem,2.2vw,1.2rem);color:var(--text);text-align:right;max-width:34em}
 .t-row .v b{font-weight:400;color:var(--gold-hi)}
 @media (max-width:760px){.t-row{flex-direction:column;gap:8px}.t-row .v{text-align:left}}
-.crisis{margin-top:4.5vh;padding:3.6vh 4vw;background:linear-gradient(165deg,#111014,#0b0b0e);border:1px solid rgba(201,169,110,.22);transition:border-color .3s,box-shadow .3s}
-.crisis:hover{border-color:rgba(201,169,110,.45);box-shadow:0 0 60px -20px rgba(201,169,110,.15)}
-.crisis h4{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.5rem,3.4vw,2.3rem);color:var(--gold-lt)}
-.crisis p{margin-top:1.8vh;max-width:640px;font-size:clamp(1rem,2.1vw,1.14rem);color:var(--text)}
 .sidedoor{margin-top:5vh;font-size:.95rem;color:var(--text-dim)}
 .sidedoor a{color:var(--gold-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3);padding-bottom:2px;transition:color .25s,border-color .25s}
 .sidedoor a:hover{color:var(--gold-hi);border-color:var(--gold)}
@@ -271,7 +268,7 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
     <span class="l1wrap"><span class="l1 metal shimmer">Half of CEOs are lonely at the top.</span></span>
     <span class="l2" id="l2">Two-thirds face it without any outside advice.</span>
   </h1>
-  <p class="citeline" data-fade>RHR International via Harvard Business Review &middot; Stanford GSB</p>
+  <p class="citeline" data-fade>RHR International via Harvard Business Review<span class="csep"> &middot; </span><span class="cite2">Stanford GSB</span></p>
   <p class="support" data-fade>Private one-on-one mentoring with Michal Ksiadzyna on the emotional weight of leading a company. It begins with one conversation.</p>
   <div class="h-cta" data-fade>
     <a class="pill solid" href="#conversation">Book your private conversation</a>
@@ -369,17 +366,18 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
   <div class="rule" data-line></div>
 
   <div class="spots" data-rise>
-    <span class="n metal shimmer"><span data-count="12">12</span></span>
-    <span class="lbl">spots.</span>
+    <span class="n metal shimmer" id="spotsBig">7 of 12</span>
+    <span class="lbl">spots taken.</span>
   </div>
-  <p class="spots-note" data-rise><b class="metal" id="spotsLine">7 of 12 taken as of July 2026 — 5 open.</b> When they are full, they are full.</p>
+  <p class="spots-note" data-rise><b class="metal" id="spotsLine">5 open as of July 2026.</b> When they are full, they are full.</p>
   <script>
   /* Numbers maintained manually by Michal; month always shows current (user ruling 2026-07-12) */
   (function(){
     var SPOTS = { taken: 7, total: 12 };
     var asOf = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
+    document.getElementById('spotsBig').textContent = SPOTS.taken + ' of ' + SPOTS.total;
     document.getElementById('spotsLine').textContent =
-      SPOTS.taken + ' of ' + SPOTS.total + ' taken as of ' + asOf + ' — ' + (SPOTS.total - SPOTS.taken) + ' open.';
+      (SPOTS.total - SPOTS.taken) + ' open as of ' + asOf + '.';
   })();
   </script>
 
@@ -392,12 +390,6 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
       <span class="k">Investment</span>
       <span class="v">Engagements begin at <b>€3,000/month</b>.</span>
     </div>
-  </div>
-
-  <div class="crisis ticked" data-rise>
-    <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
-    <h4>The crisis line</h4>
-    <p>When everything breaks at once, Michal is ready within hours — and works with you until it is solved.</p>
   </div>
 
   <p class="sidedoor" data-rise>One side door exists — <a href="the-secret-book-of-emotions-shen.html">The Secret Book of Emotions</a>.</p>
