@@ -7,7 +7,7 @@
 
 ## LAUNCHED (2026-07-12): V3 Cinema IS the live website at emotionmentoring.com
 
-User order: "save, upload as the new website." Old gold index archived at `archive/index_gold_pre_champagne_2026-07-12.html` (local) and in git history (commit dc35eca and earlier). New index carries: canonical, favicon, OG/Twitter meta, Formspree (version=live_v3). Verified serving at the root domain. Subpages (foundation, book, thankyou) still carry the old design — restyle pending. Full SEO pass (JSON-LD) pending.
+User order: "save, upload as the new website." Old gold index archived at `archive/index_gold_pre_champagne_2026-07-12.html` (local) and in git history (commit dc35eca and earlier). New index carries: canonical, favicon, OG/Twitter meta, Formspree (version=live_v3). Verified serving at the root domain. Subpages RESTYLED and live (2026-07-12): foundation.html (facts/board/KRS verbatim), the-secret-book-of-emotions-shen.html (xgopoelo gate preserved, "free" copy removed), thankyou.html (rebuilt minimal, old upsell content discarded, noindex). Polish pages untouched per English-only ruling. Full SEO pass (JSON-LD) pending.
 
 ## OPERATION CHAMPAGNE (2026-07-11) — supersedes conflicting entries below
 
