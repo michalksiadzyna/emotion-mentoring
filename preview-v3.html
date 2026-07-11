@@ -374,11 +374,12 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
   </div>
   <p class="spots-note" data-rise><b class="metal" id="spotsLine">7 of 12 taken as of July 2026 — 5 open.</b> When they are full, they are full.</p>
   <script>
-  /* Single source of truth — update taken + asOf together, nothing else */
+  /* Numbers maintained manually by Michal; month always shows current (user ruling 2026-07-12) */
   (function(){
-    var SPOTS = { taken: 7, total: 12, asOf: 'July 2026' };
+    var SPOTS = { taken: 7, total: 12 };
+    var asOf = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
     document.getElementById('spotsLine').textContent =
-      SPOTS.taken + ' of ' + SPOTS.total + ' taken as of ' + SPOTS.asOf + ' — ' + (SPOTS.total - SPOTS.taken) + ' open.';
+      SPOTS.taken + ' of ' + SPOTS.total + ' taken as of ' + asOf + ' — ' + (SPOTS.total - SPOTS.taken) + ' open.';
   })();
   </script>
 
