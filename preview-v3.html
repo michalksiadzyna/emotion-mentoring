@@ -68,10 +68,10 @@ html.no-intro #veil{display:none}
 @media (max-width:860px){#spine{display:none}}
 
 /* ═══ shared scene scaffolding ═══ */
-.scene{position:relative;padding:16vh 8vw}
+.scene{position:relative;padding:9vh 8vw}
 .kick{font-family:var(--sans);font-weight:400;font-size:.66rem;letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:var(--gold-dim)}
 .scene h2{font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;line-height:1.06;
-  font-size:clamp(2.4rem,6.4vw,5rem);color:var(--gold-hi);margin-top:2.6vh}
+  font-size:clamp(2rem,5vw,3.6rem);color:var(--gold-hi);margin-top:2vh}
 .rule{height:1px;background:var(--hair);margin-top:4.5vh;transform-origin:left center}
 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .01em .04em}
 .ch{display:inline-block;will-change:transform}
@@ -89,7 +89,8 @@ html.no-intro #veil{display:none}
 #hook .l1wrap{display:block;overflow:hidden;padding-bottom:.08em}
 #hook .l1{display:block;font-variant:small-caps;font-size:clamp(2.6rem,7.6vw,6.6rem)}
 #hook .l2{display:block;font-style:italic;font-weight:400;font-size:clamp(1.5rem,3.9vw,3.3rem);color:var(--text);margin-top:1.2vh;max-width:22em}
-#hook .support{max-width:600px;margin-top:4.5vh;font-size:clamp(1rem,2.2vw,1.16rem);line-height:1.78;color:var(--text)}
+#hook .support{max-width:600px;margin-top:3vh;font-size:clamp(1rem,2.2vw,1.16rem);line-height:1.78;color:var(--text)}
+#hook .citeline{margin-top:1.6vh;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim)}
 #hook .h-cta{margin-top:5vh;display:flex;align-items:center;gap:38px;flex-wrap:wrap}
 #hook .cue{position:absolute;bottom:4vh;left:8vw;display:flex;align-items:center;gap:14px;
   font-family:var(--sans);font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--text-dim)}
@@ -118,23 +119,23 @@ html.no-intro #veil{display:none}
 /* ═══ 2 · RECOGNITION ═══ */
 #recognition{background:var(--ink)}
 #recognition .intro{max-width:620px;margin-top:3.6vh;color:var(--text);font-size:clamp(.98rem,2vw,1.1rem)}
-.r-rows{margin-top:7vh;border-top:1px solid var(--hair)}
-.r-row{position:relative;display:flex;align-items:baseline;gap:3.5vw;padding:4.2vh 2vw 4.2vh 0;border-bottom:1px solid var(--hair);transition:background .3s}
+.r-rows{margin-top:4.5vh;border-top:1px solid var(--hair)}
+.r-row{position:relative;display:flex;align-items:baseline;gap:3.5vw;padding:2.8vh 2vw 2.8vh 0;border-bottom:1px solid var(--hair);transition:background .3s}
 .r-row .in{display:flex;align-items:baseline;gap:3.5vw;width:100%;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .r-row:hover{background:rgba(201,169,110,.03)}
 .r-row:hover .in{transform:translateX(14px)}
 .r-row .idx{font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;color:var(--gold-dim);min-width:36px;transition:color .25s}
 .r-row:hover .idx{color:var(--gold)}
-.r-row h3{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.5rem,3.6vw,2.5rem);line-height:1.14;color:var(--gold-hi);flex-shrink:0;max-width:15em}
+.r-row h3{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.35rem,3vw,2.1rem);line-height:1.14;color:var(--gold-hi);flex-shrink:0;max-width:16em}
 .r-row p{font-size:.94rem;color:var(--text-dim);max-width:340px;margin-left:auto;text-align:right;transition:color .3s}
 .r-row:hover p{color:var(--text)}
 .r-row.feat{padding:6vh 2.5vw 6vh 2.5vw;background:rgba(201,169,110,.035)}
-.r-row.feat h3{font-size:clamp(2.2rem,6vw,4.2rem)}
+.r-row.feat h3{font-size:clamp(1.9rem,5vw,3.2rem)}
 .r-row.feat:hover{background:rgba(201,169,110,.06)}
 @media (max-width:860px){.r-row .in{flex-direction:column;gap:10px}.r-row p{margin-left:0;text-align:left}}
 
-.fornot{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:8vh}
-.fn-card{border:1px solid var(--hair);padding:5vh 4vw;background:linear-gradient(165deg,#101013,#0b0b0e);transition:border-color .3s,transform .3s,box-shadow .3s}
+.fornot{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:4.5vh}
+.fn-card{border:1px solid var(--hair);padding:3.2vh 3.2vw;background:linear-gradient(165deg,#101013,#0b0b0e);transition:border-color .3s,transform .3s,box-shadow .3s}
 .fn-card:hover{border-color:rgba(201,169,110,.4);transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(0,0,0,.8)}
 .fn-card h4{font-family:var(--sans);font-weight:400;font-size:.68rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
 .fn-card.no h4{color:var(--text-dim)}
@@ -142,7 +143,7 @@ html.no-intro #veil{display:none}
 .fn-card.no p{color:var(--text-dim)}
 @media (max-width:760px){.fornot{grid-template-columns:1fr}}
 
-.stats{margin-top:9vh}
+.stats{margin-top:5.5vh}
 .stats .kick{display:block}
 .s-grid{display:grid;grid-template-columns:repeat(2,1fr);margin-top:3.6vh;border-top:1px solid var(--hair)}
 .s-grid>div{padding:5vh 30px 4.5vh;border-bottom:1px solid var(--hair);transition:background .3s}
@@ -162,8 +163,8 @@ html.no-intro #veil{display:none}
 #work .body p{font-size:clamp(1.04rem,2.3vw,1.24rem);line-height:1.8;color:var(--text)}
 #work .body p+p{margin-top:3.2vh}
 #work .method{margin-top:4.5vh;font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,2.8vw,1.7rem);color:var(--gold-lt);line-height:1.5}
-.engine{display:grid;grid-template-columns:1fr 1fr;margin-top:8vh;border:1px solid var(--hair)}
-.engine>div{padding:5.5vh 4vw;transition:background .3s}
+.engine{display:grid;grid-template-columns:1fr 1fr;margin-top:5vh;border:1px solid var(--hair)}
+.engine>div{padding:3.6vh 3.4vw;transition:background .3s}
 .engine>div:first-child{border-right:1px solid var(--hair)}
 .engine>div:hover{background:rgba(201,169,110,.03)}
 .engine h4{font-family:var(--sans);font-weight:400;font-size:.66rem;letter-spacing:.36em;text-transform:uppercase;color:var(--text-dim)}
@@ -174,30 +175,30 @@ html.no-intro #veil{display:none}
 /* ═══ 4 · PROOF ═══ */
 #proof{background:var(--ink)}
 #proof .sub{margin-top:2vh;font-family:var(--sans);font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--text-dim)}
-.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:7vh}
-.q-card{border:1px solid var(--hair);padding:5.5vh 3.4vw;background:linear-gradient(165deg,#101013,#0b0b0e);
+.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:4.5vh}
+.q-card{border:1px solid var(--hair);padding:3.6vh 3vw;background:linear-gradient(165deg,#101013,#0b0b0e);
   transition:border-color .3s,transform .3s,box-shadow .3s;position:relative}
 .q-card:hover{border-color:rgba(201,169,110,.4);transform:translateY(-4px);box-shadow:0 26px 54px -32px rgba(0,0,0,.85)}
 .q-card blockquote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.2rem,2.5vw,1.55rem);line-height:1.5;color:var(--gold-hi)}
 .q-card figcaption{margin-top:3vh;font-family:var(--sans);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);transition:color .3s}
 .q-card:hover figcaption{color:var(--gold)}
 @media (max-width:860px){.q-grid{grid-template-columns:1fr}}
-.cta-block{margin-top:10vh;display:flex;align-items:center;justify-content:center;gap:44px;flex-wrap:wrap;text-align:left}
+.cta-block{margin-top:5vh;display:flex;align-items:center;justify-content:center;gap:44px;flex-wrap:wrap;text-align:left}
 
 /* ═══ 5 · TERMS ═══ */
 #terms{background:var(--ink2)}
-#terms .spots{display:flex;align-items:baseline;gap:1.6vw;margin-top:5vh;flex-wrap:wrap}
-#terms .spots .n{font-family:var(--serif);font-weight:500;font-size:clamp(5.5rem,15vw,12rem);line-height:.9}
-#terms .spots .lbl{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(2rem,5.4vw,4.2rem);color:var(--gold-hi)}
+#terms .spots{display:flex;align-items:baseline;gap:1.6vw;margin-top:3vh;flex-wrap:wrap}
+#terms .spots .n{font-family:var(--serif);font-weight:500;font-size:clamp(4rem,10vw,7.5rem);line-height:.9}
+#terms .spots .lbl{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.6rem,4vw,3rem);color:var(--gold-hi)}
 #terms .spots-note{margin-top:2.6vh;max-width:480px;color:var(--text-dim);font-size:.96rem}
 .t-rows{margin-top:7vh;border-top:1px solid var(--hair)}
-.t-row{display:flex;justify-content:space-between;align-items:baseline;gap:4vw;padding:3.6vh 1vw;border-bottom:1px solid var(--hair);transition:background .3s}
+.t-row{display:flex;justify-content:space-between;align-items:baseline;gap:4vw;padding:2.4vh 1vw;border-bottom:1px solid var(--hair);transition:background .3s}
 .t-row:hover{background:rgba(201,169,110,.03)}
 .t-row .k{font-family:var(--sans);font-weight:400;font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-dim);min-width:130px}
 .t-row .v{font-size:clamp(1rem,2.2vw,1.2rem);color:var(--text);text-align:right;max-width:34em}
 .t-row .v b{font-weight:400;color:var(--gold-hi)}
 @media (max-width:760px){.t-row{flex-direction:column;gap:8px}.t-row .v{text-align:left}}
-.crisis{margin-top:8vh;padding:6vh 5vw;background:linear-gradient(165deg,#111014,#0b0b0e);border:1px solid rgba(201,169,110,.22);transition:border-color .3s,box-shadow .3s}
+.crisis{margin-top:4.5vh;padding:3.6vh 4vw;background:linear-gradient(165deg,#111014,#0b0b0e);border:1px solid rgba(201,169,110,.22);transition:border-color .3s,box-shadow .3s}
 .crisis:hover{border-color:rgba(201,169,110,.45);box-shadow:0 0 60px -20px rgba(201,169,110,.15)}
 .crisis h4{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.5rem,3.4vw,2.3rem);color:var(--gold-lt)}
 .crisis p{margin-top:1.8vh;max-width:640px;font-size:clamp(1rem,2.1vw,1.14rem);color:var(--text)}
@@ -208,7 +209,7 @@ html.no-intro #veil{display:none}
 /* ═══ 6 · THE CONVERSATION ═══ */
 #conversation{background:var(--ink);padding-bottom:18vh}
 #conversation .lead{margin-top:2.8vh;font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2.4vw,1.4rem);color:var(--text)}
-.convpanel{position:relative;max-width:780px;margin:7vh auto 0;background:linear-gradient(165deg,#101013,#0b0b0e);
+.convpanel{position:relative;max-width:780px;margin:4vh auto 0;background:linear-gradient(165deg,#101013,#0b0b0e);
   border:1px solid rgba(201,169,110,.22);padding:9vh 7vw;text-align:center;transition:border-color .35s,box-shadow .35s}
 .convpanel:hover{border-color:rgba(201,169,110,.4);box-shadow:0 0 80px -24px rgba(201,169,110,.14)}
 .convpanel form{display:flex;flex-direction:column;align-items:center;gap:4vh}
@@ -240,7 +241,7 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
 @media (max-width:760px){#mcta{display:block}}
 
 @media (max-width:760px){
-  .scene{padding:12vh 7vw}
+  .scene{padding:8vh 7vw}
   #hook{padding:14vh 7vw 12vh}
   #hook .bar{padding:22px 7vw}
   #hook .cue{left:7vw}
@@ -270,7 +271,8 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
     <span class="l1wrap"><span class="l1 metal shimmer">Half of CEOs are lonely at the top.</span></span>
     <span class="l2" id="l2">Two-thirds face it without any outside advice.</span>
   </h1>
-  <p class="support" data-fade>Private one-on-one work with Michal Ksiadzyna on the emotional weight of leading a company — the loneliness, the pressure, the private storms carried in silence. It begins with one conversation.</p>
+  <p class="citeline" data-fade>RHR International via Harvard Business Review &middot; Stanford GSB</p>
+  <p class="support" data-fade>Private one-on-one work with Michal Ksiadzyna on the emotional weight of leading a company. It begins with one conversation.</p>
   <div class="h-cta" data-fade>
     <a class="pill solid" href="#conversation">Book your private conversation</a>
     <div class="ctaq">
@@ -286,17 +288,16 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
   <p class="kick" data-rise>01 &middot; Recognition</p>
   <h2 class="assemble">The weight has many names.</h2>
   <div class="rule" data-line></div>
-  <p class="intro" data-rise>The role concentrates everything — money, people, risk, expectation — into one chair. What lands there rarely gets said out loud.</p>
 
   <div class="r-rows">
-    <div class="r-row" data-rise><div class="in"><span class="idx">i</span><h3>Carrying a divorce or private crisis while running the company.</h3><p>Board meetings in the morning. Lawyers in the afternoon.</p></div></div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">ii</span><h3>Decision load that never stops.</h3><p>Every open question in the company ends at one desk.</p></div></div>
+    <div class="r-row" data-rise><div class="in"><span class="idx">i</span><h3>Carrying a divorce or private crisis while running the company.</h3></div></div>
+    <div class="r-row" data-rise><div class="in"><span class="idx">ii</span><h3>Decision load that never stops.</h3></div></div>
     <div class="r-row feat ticked" data-rise>
       <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
       <div class="in"><span class="idx">iii</span><h3 class="metal shimmer">Loneliness at the top.</h3><p>Everyone reports upward. The weight itself reports to no one.</p></div>
     </div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">iv</span><h3>Success that stopped feeling like anything.</h3><p>The numbers grow. The feeling behind them went quiet.</p></div></div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">v</span><h3>The moment everything breaks at once.</h3><p>Company, family, health — the same month.</p></div></div>
+    <div class="r-row" data-rise><div class="in"><span class="idx">iv</span><h3>Success that stopped feeling like anything.</h3></div></div>
+    <div class="r-row" data-rise><div class="in"><span class="idx">v</span><h3>The moment everything breaks at once.</h3></div></div>
   </div>
 
   <div class="fornot">
@@ -310,31 +311,6 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
     </div>
   </div>
 
-  <div class="stats">
-    <span class="kick" data-rise>The research says</span>
-    <div class="s-grid">
-      <div data-rise>
-        <div class="n metal"><span data-count="50" data-suffix="%">50%</span></div>
-        <p>&ldquo;Half of CEOs report loneliness in the role; of those, 61% believe it hinders their performance.&rdquo;</p>
-        <cite>RHR International, via Harvard Business Review</cite>
-      </div>
-      <div data-rise>
-        <div class="n metal">2/3</div>
-        <p>&ldquo;Nearly two-thirds of CEOs receive no coaching or leadership advice from outside.&rdquo;</p>
-        <cite>Stanford GSB</cite>
-      </div>
-      <div data-rise>
-        <div class="n metal"><span data-count="62.5">62.5</span><small>&thinsp;h</small></div>
-        <p>&ldquo;CEOs average 62.5-hour workweeks.&rdquo;</p>
-        <cite>Harvard Business Review</cite>
-      </div>
-      <div data-rise>
-        <div class="n metal"><span data-count="85" data-suffix="%">85%</span></div>
-        <p>&ldquo;85% of business leaders suffered decision distress in the past year.&rdquo;</p>
-        <cite>Oracle</cite>
-      </div>
-    </div>
-  </div>
 </section>
 
 <!-- ═══════════ 3 · THE WORK ═══════════ -->
@@ -343,19 +319,18 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
   <h2 class="assemble">What the work does.</h2>
   <div class="rule" data-line></div>
   <div class="body">
-    <p data-rise>Life leaves errors in the mind — damage, emotional blockages that were never handled. They stay. They surface as heavy decisions, strained relationships, and fear that rises without reason.</p>
-    <p data-rise>We find those blockages and repair them, one by one. The mind adapts again. It runs better and carries more with less strain — the way a repaired engine stops burning oil.</p>
-    <p data-rise>The sessions are direct: we look at what the load is doing, find where it started, and resolve it at the source.</p>
+    <p data-rise>Life leaves errors in the mind — damage, emotional blockages that were never handled. They surface as heavy decisions, strained relationships, and fear that rises without reason.</p>
+    <p data-rise>We find those blockages and repair them at the source. The mind adapts again — it runs better and carries more with less strain.</p>
     <p class="method metal shimmer" data-rise>This is The Shen Method: emotion mentoring built for minds that carry companies.</p>
   </div>
   <div class="engine" data-rise>
     <div>
       <h4>Left unrepaired</h4>
-      <p>A loaded mind slowly stops keeping up. Decisions get heavier. The strain shows up at home first, then in the numbers. The role costs more than it returns.</p>
+      <p>A loaded mind slowly stops keeping up. The strain shows up at home first, then in the numbers.</p>
     </div>
     <div class="up">
       <h4>Repaired</h4>
-      <p>Decisions sharpen. The mind gets lighter. Work and life start feeding each other. Fear shrinks. The role starts returning more than it costs.</p>
+      <p>Decisions sharpen. The mind gets lighter. Work and life start feeding each other. Fear shrinks.</p>
     </div>
   </div>
 </section>
@@ -364,21 +339,13 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
 <section id="proof" class="scene">
   <p class="kick" data-rise>03 &middot; Proof</p>
   <h2 class="assemble">Spoken by name.</h2>
-  <p class="sub" data-rise>Attributed, never anonymous. The words below are quoted as given.</p>
+  <p class="sub" data-rise>Attributed, never anonymous.</p>
   <div class="rule" data-line></div>
 
   <div class="q-grid">
     <figure class="q-card" data-rise>
       <blockquote>&ldquo;After four months, the loneliness that had made my life a nightmare for years simply disappeared.&rdquo;</blockquote>
       <figcaption>Krystyna Mendonca &middot; Entrepreneur</figcaption>
-    </figure>
-    <figure class="q-card" data-rise>
-      <blockquote>&ldquo;Within a single session I healed a pattern I had been repeating for many years.&rdquo;</blockquote>
-      <figcaption>Dominika Lenard</figcaption>
-    </figure>
-    <figure class="q-card" data-rise>
-      <blockquote>&ldquo;I know no one who works at this level with what is still in us to be healed.&rdquo;</blockquote>
-      <figcaption>Paulina Szuta</figcaption>
     </figure>
     <figure class="q-card" data-rise>
       <blockquote>&ldquo;Michał is a highly skilled professional who built my trust session by session — and I&rsquo;m not someone easily convinced.&rdquo;</blockquote>
@@ -405,12 +372,12 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
     <span class="n metal shimmer"><span data-count="12">12</span></span>
     <span class="lbl">spots.</span>
   </div>
-  <p class="spots-note" data-rise>The practice holds 12 spots at a time. When they are full, they are full. That limit protects the depth of each engagement.</p>
+  <p class="spots-note" data-rise>When they are full, they are full. The limit protects the depth of each engagement.</p>
 
   <div class="t-rows">
     <div class="t-row" data-rise>
       <span class="k">Cadence</span>
-      <span class="v">Two private sessions a month, plus direct access between them — a message away when the weight moves.</span>
+      <span class="v">Two private sessions a month, plus direct access between them.</span>
     </div>
     <div class="t-row" data-rise>
       <span class="k">Investment</span>
