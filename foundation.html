@@ -118,6 +118,10 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;o
   transition:border-color .3s,transform .3s,box-shadow .3s;position:relative}
 .b-card:hover{border-color:rgba(201,169,110,.4);transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(0,0,0,.8)}
 .b-card h3{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.5rem,3vw,2rem);line-height:1.14;color:var(--gold-hi)}
+.b-portrait{width:132px;height:132px;margin-bottom:2.4vh;border:1px solid rgba(201,169,110,.3);padding:5px;transition:border-color .3s}
+.b-portrait img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%) contrast(1.05);transition:filter .3s}
+.b-card:hover .b-portrait{border-color:var(--gold)}
+.b-card:hover .b-portrait img{filter:none}
 .b-card .role{margin-top:1vh;font-family:var(--sans);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);transition:color .3s}
 .b-card:hover .role{color:var(--gold)}
 .b-card p{margin-top:2.4vh;font-size:.98rem;color:var(--text-dim);line-height:1.75;transition:color .3s}
@@ -201,6 +205,12 @@ footer .back:hover{color:var(--gold-hi);border-color:var(--gold-dim)}
   <div class="b-grid">
     <div class="b-card ticked" data-rise>
       <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div class="b-portrait">
+        <picture>
+          <source srcset="portrait.webp" type="image/webp">
+          <img src="portrait.jpg" alt="Michał Ksiądzyna" loading="lazy">
+        </picture>
+      </div>
       <h3>Michał Ksiądzyna</h3>
       <p class="role">Founding Member &amp; President of the Board</p>
       <p>Creator of Emotion Mentoring. A practitioner with deep experience guiding individuals through lasting emotional transformation. Graduate of the Wrocław University of Economics and Business. Published researcher and author.</p>
