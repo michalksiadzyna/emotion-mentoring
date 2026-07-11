@@ -2364,7 +2364,7 @@
   });
 
   // Single source of truth for spots count
-  const SPOTS = { taken: 7, total: 12, asOf: 'July 2026' };
+  const SPOTS = { taken: 7, total: 12, asOf: new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' }) };
 
   // Populate spots displays from SPOTS constant
   (function initSpots() {
