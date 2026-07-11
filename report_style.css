@@ -14,7 +14,7 @@
     --gold-light: #e8cc96;
     --gold-hover: #f5d56a;
     --white: #f5f3ee;
-    --muted: #9a9890;
+    --muted: #b5b2a9;
     --border: rgba(201, 169, 110, 0.18);
     --red: #e05555;
     --orange: #e0a040;
@@ -25,12 +25,15 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* Readability baseline: 20px root scales every rem value up 25% (user rule: larger type on 14" monitor) */
+html { font-size: 20px; }
+
 body {
     font-family: 'Inter', sans-serif;
     background: var(--bg);
     color: var(--white);
     line-height: 1.7;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 /* ── NAV (sticky) ── */
@@ -98,7 +101,7 @@ nav {
 
 .report-header .subtitle {
     color: var(--muted);
-    font-size: 0.9rem;
+    font-size: 1rem;
 }
 
 .report-header .date {
@@ -182,7 +185,7 @@ nav {
 
 .section .section-desc {
     color: var(--muted);
-    font-size: 0.85rem;
+    font-size: 1rem;
     margin-bottom: 28px;
 }
 
@@ -226,11 +229,12 @@ nav {
 
 .finding-body {
     color: var(--muted);
-    font-size: 0.85rem;
+    font-size: 1rem;
+    font-weight: 400;
     line-height: 1.8;
 }
 
-.finding-body strong { color: var(--white); font-weight: 500; }
+.finding-body strong { color: var(--white); font-weight: 600; }
 
 /* ── TAGS ── */
 .tag {
@@ -254,7 +258,7 @@ nav {
     background: rgba(20, 20, 24, 0.6);
     border-left: 2px solid rgba(255,255,255,0.08);
     border-radius: 0 4px 4px 0;
-    font-size: 0.82rem;
+    font-size: 0.95rem;
     color: var(--muted);
     font-style: italic;
 }
@@ -296,7 +300,7 @@ nav {
 
 .rtable td {
     padding: 12px 14px;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: var(--muted);
     border-bottom: 1px solid rgba(255,255,255,0.03);
     vertical-align: top;

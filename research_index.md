@@ -1,7 +1,7 @@
 # Emotion Mentoring — Research Index
 
 > Strategos file. Index of all research and analysis assets.
-> Last updated: 2026-03-09
+> Last updated: 2026-07-11
 
 ---
 
@@ -35,11 +35,29 @@
   - Phase 6: Load Time Optimization (minification, font optimization, image delivery)
 - **Actionable output**: Ordered implementation plan with branch strategy and testing notes
 
+### 4. Conversion Science Digest (OPERATION CHAMPAGNE)
+- **File**: `research/conversion_science_digest.md`
+- **Date**: 2026-07-11
+- **Scope**: Evidence base for landing-page structure — section count/order, form fields, single CTA, hero clarity, social proof placement, psychology frameworks, animation vs conversion. Each claim graded STRONG/MODERATE/OPINION with source URLs.
+- **Actionable output**: 15 hard design rules for the rebuild structure.
+
+### 5. Best-in-Class Site Structures Digest (OPERATION CHAMPAGNE)
+- **File**: `research/best_sites_structures_digest.md`
+- **Date**: 2026-07-11
+- **Scope**: 13 sites dissected — elite executive coaches (Goldsmith, Reboot/Colonna, Founder Coach, Vistage), private-client luxury (Private Medical, Sollis, JPM Private Bank, Aman, Clare Locke), award one-pagers, conversion canon.
+- **Actionable output**: 12 structural patterns + 10 anti-patterns for high-trust high-ticket pages.
+
+### 6. Hooks & Entrance Effects Digest (OPERATION CHAMPAGNE)
+- **File**: `research/hooks_and_entrance_effects_digest.md`
+- **Date**: 2026-07-11
+- **Scope**: 22 verbatim hook examples from the executive space + 10 hook formulas; one-time entrance effect catalog (Awwwards-class), gating/replay/performance technique, 5 effect concepts ranked for champagne-on-black mobile-first.
+- **Actionable output**: Hook formula palette + effect shortlist feeding structure_propositions.html.
+
 ---
 
 ## Research Subfolder
 
-`research/` — Reserved for future deep-dive research documents (market sizing, SEO keyword research, audience persona analysis, etc.)
+`research/` — Deep-dive research documents (satellites of ideas/decisions).
 
 ---
 
