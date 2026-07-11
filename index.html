@@ -642,5 +642,29 @@ if(animOK){
 }
 })();
 </script>
+<script>
+/* form: submit in background, land on our thank-you page (user ruling 2026-07-12) */
+(function(){
+  var form = document.querySelector('#conversation form');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var original = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending…';
+    fetch(form.action, { method:'POST', body:new FormData(form), headers:{ 'Accept':'application/json' } })
+      .then(function(r){
+        if(r.ok){ window.location.href = '/thankyou.html'; }
+        else { throw new Error('formspree'); }
+      })
+      .catch(function(){
+        btn.disabled = false; btn.textContent = original;
+        var m = form.querySelector('.form-err');
+        if(!m){ m = document.createElement('p'); m.className = 'fine form-err'; form.appendChild(m); }
+        m.textContent = 'Something did not go through. Please email michal@emotionmentoring.com directly.';
+      });
+  });
+})();
+</script>
 </body>
 </html>
