@@ -372,7 +372,15 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
     <span class="n metal shimmer"><span data-count="12">12</span></span>
     <span class="lbl">spots.</span>
   </div>
-  <p class="spots-note" data-rise><b class="metal">7 of 12 taken as of July 2026 — 5 open.</b> When they are full, they are full.</p>
+  <p class="spots-note" data-rise><b class="metal" id="spotsLine">7 of 12 taken as of July 2026 — 5 open.</b> When they are full, they are full.</p>
+  <script>
+  /* Single source of truth — update taken + asOf together, nothing else */
+  (function(){
+    var SPOTS = { taken: 7, total: 12, asOf: 'July 2026' };
+    document.getElementById('spotsLine').textContent =
+      SPOTS.taken + ' of ' + SPOTS.total + ' taken as of ' + SPOTS.asOf + ' — ' + (SPOTS.total - SPOTS.taken) + ' open.';
+  })();
+  </script>
 
   <div class="t-rows">
     <div class="t-row" data-rise>
