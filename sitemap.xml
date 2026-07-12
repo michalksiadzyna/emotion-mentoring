@@ -28,4 +28,8 @@
     <loc>https://emotionmentoring.com/foundation.html</loc>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://emotionmentoring.com/michal-ksiadzyna.html</loc>
+    <priority>0.6</priority>
+  </url>
 </urlset>

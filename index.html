@@ -183,6 +183,16 @@ html.no-intro #veil{display:none}
 .engine>div.up h4{color:var(--gold)}
 .engine p{margin-top:2.4vh;font-size:clamp(.98rem,2vw,1.12rem);color:var(--text);line-height:1.75}
 @media (max-width:760px){.engine{grid-template-columns:1fr}.engine>div:first-child{border-right:none;border-bottom:1px solid var(--hair)}}
+.mentorline{display:flex;align-items:center;gap:30px;margin-top:6vh;max-width:560px;text-decoration:none;transition:transform .25s}
+.mentorline:hover{transform:translateY(-3px)}
+.m-photo{flex:0 0 auto;display:block;width:150px;height:150px;padding:5px;border:1px solid rgba(201,169,110,.3);transition:border-color .3s}
+.m-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%) contrast(1.05);transition:filter .3s}
+.mentorline:hover .m-photo{border-color:var(--gold)}
+.mentorline:hover .m-photo img{filter:none}
+.m-info b{display:block;font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.4rem,2.8vw,1.9rem);line-height:1.15;color:var(--gold-hi)}
+.m-info .m-role{display:block;margin-top:6px;font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim)}
+.m-info .m-link{display:inline-block;margin-top:14px;font-family:var(--sans);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dim);border-bottom:1px solid rgba(201,169,110,.3);padding-bottom:3px;transition:color .25s,border-color .25s}
+.mentorline:hover .m-link{color:var(--gold-hi);border-color:var(--gold)}
 
 /* ═══ 4 · PROOF ═══ */
 #proof{background:var(--ink)}
@@ -348,6 +358,21 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
       <p>Decisions sharpen. The mind gets lighter. Work and life start feeding each other. Fear shrinks.</p>
     </div>
   </div>
+
+  <a class="mentorline" href="michal-ksiadzyna.html" data-rise>
+    <span class="m-photo ticked">
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <picture>
+        <source srcset="portrait.webp" type="image/webp">
+        <img src="portrait.jpg" alt="Michal Ksiadzyna" loading="lazy">
+      </picture>
+    </span>
+    <span class="m-info">
+      <b>Michal Ksiadzyna</b>
+      <span class="m-role">Creator of The Shen Method</span>
+      <span class="m-link">About Michal &rarr;</span>
+    </span>
+  </a>
 </section>
 
 <!-- ═══════════ 4 · PROOF ═══════════ -->
