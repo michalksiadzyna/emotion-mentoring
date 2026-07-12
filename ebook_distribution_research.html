@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Book Distribution Research — The Secret Book of Emotions</title>
+    <link rel="stylesheet" href="report_style.css">
+    <style>
+        .org-card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 4px;
+            padding: 24px 28px;
+            margin-bottom: 14px;
+            border-left: 3px solid var(--gold);
+        }
+        .org-card.green-border { border-left-color: var(--green); }
+        .org-card.blue-border { border-left-color: var(--blue); }
+        .org-card.orange-border { border-left-color: var(--orange); }
+        .org-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            color: var(--white);
+            margin-bottom: 4px;
+        }
+        .org-url {
+            font-size: 0.78rem;
+            margin-bottom: 10px;
+        }
+        .org-url a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .org-url a:hover { color: var(--gold-hover); text-decoration: underline; }
+        .org-body {
+            color: var(--muted);
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+        .org-body strong { color: var(--white); font-weight: 500; }
+        .detail-row {
+            display: flex;
+            gap: 8px;
+            margin: 4px 0;
+        }
+        .detail-label {
+            color: var(--gold);
+            font-size: 0.78rem;
+            font-weight: 500;
+            min-width: 120px;
+            flex-shrink: 0;
+        }
+        .detail-value {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+        .priority-high {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: rgba(80, 180, 120, 0.12);
+            color: var(--green);
+        }
+        .priority-medium {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: rgba(201, 169, 110, 0.12);
+            color: var(--gold);
+        }
+        .priority-low {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            background: rgba(90, 142, 201, 0.12);
+            color: var(--blue);
+        }
+        .strategy-box {
+            background: rgba(201, 169, 110, 0.06);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 20px 24px;
+            margin: 18px 0;
+        }
+        .strategy-box h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+        .strategy-box p, .strategy-box li {
+            color: var(--muted);
+            font-size: 0.82rem;
+            line-height: 1.8;
+        }
+        .strategy-box ul { padding-left: 20px; }
+    </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+    <span class="nav-title">Distribution Research</span>
+    <ul class="nav-links">
+        <li><a href="#ei-orgs">EI Organizations</a></li>
+        <li><a href="#mental-health">Mental Health</a></li>
+        <li><a href="#personal-dev">Personal Dev</a></li>
+        <li><a href="#mindfulness">Mindfulness</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#universities">Universities</a></li>
+        <li><a href="#libraries">Libraries</a></li>
+        <li><a href="#corporate">Corporate</a></li>
+        <li><a href="#therapy">Therapy</a></li>
+        <li><a href="#international">International</a></li>
+        <li><a href="#free-platforms">Free Platforms</a></li>
+        <li><a href="#strategy">Strategy</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<div class="report-header">
+    <h1>E-Book Distribution Research</h1>
+    <p class="subtitle">Organizations, platforms, and channels for distributing<br>"The Secret Book of Emotions" by Shen</p>
+    <p class="date">March 24, 2026 &mdash; Emotion Mentoring</p>
+</div>
+
+<!-- SUMMARY BAR -->
+<div class="summary-bar" style="grid-template-columns: repeat(4, 1fr);">
+    <div class="summary-item">
+        <div class="num gold">35</div>
+        <div class="desc">Organizations Found</div>
+    </div>
+    <div class="summary-item">
+        <div class="num green">11</div>
+        <div class="desc">Categories Covered</div>
+    </div>
+    <div class="summary-item">
+        <div class="num blue">12</div>
+        <div class="desc">Direct Submit Channels</div>
+    </div>
+    <div class="summary-item">
+        <div class="num orange">8</div>
+        <div class="desc">Pitch-Required</div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECTION 1: EMOTIONAL INTELLIGENCE ORGANIZATIONS -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section" id="ei-orgs">
+    <span class="section-label gold-bg">Category 1</span>
+    <h2>Emotional Intelligence Organizations</h2>
+    <p class="section-desc">Dedicated EI networks and research bodies &mdash; highest alignment with the book's core subject matter.</p>
+
+    <div class="org-card">
+        <div class="org-name">1. Six Seconds &mdash; The Emotional Intelligence Network <span class="priority-high">High Priority</span></div>
+        <div class="org-url"><a href="https://www.6seconds.org/" target="_blank">6seconds.org</a></div>
+        <div class="org-body">
+            <p>The world's largest EI nonprofit, founded 1997. Offices in 10 countries, agents in ~50. They already publish and distribute <strong>free EI ebooks</strong> (Practicing EQ, 12 Days of Wellbeing, Coaching E-book) via their <a href="https://www.6seconds.org/emotional-intelligence/ebooks/" style="color:var(--gold)">ebook library</a>.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact form at <a href="https://www.6seconds.org/about/contact/" style="color:var(--gold)">6seconds.org/about/contact</a> or call US +1 831 763-1800. Jenny Wiley (certification): jenny.wiley@6seconds.org</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">They publish their own, but accept content contributions from their network. Becoming a contributor/partner is the path.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">200,000+ email subscribers, millions of annual site visitors. Global network of certified practitioners.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card">
+        <div class="org-name">2. Consortium for Research on Emotional Intelligence in Organizations (CREIO)</div>
+        <div class="org-url"><a href="https://www.eiconsortium.org/" target="_blank">eiconsortium.org</a></div>
+        <div class="org-body">
+            <p>Academic consortium headquartered at Rutgers University, co-founded with support from the Fetzer Institute (1996). 11 core members + 113 additional members. Provides <strong>free research and reference materials</strong> on their site. Co-sponsored by Yale Center for Emotional Intelligence.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through Rutgers Organizational Psychology Program. Email via site contact. Reference their research.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Focused on academic research. A practitioner-oriented ebook would need academic framing or endorsement.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Niche but influential: researchers, corporate EI trainers, university programs globally.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card">
+        <div class="org-name">3. Yale Center for Emotional Intelligence (YCEI)</div>
+        <div class="org-url"><a href="https://medicine.yale.edu/childstudy/services/community-and-schools-programs/center-for-emotional-intelligence/" target="_blank">medicine.yale.edu/YCEI</a></div>
+        <div class="org-body">
+            <p>Led by Marc Brackett (author of "Permission to Feel"). Runs InspirED (open-source educator toolkit) and a free Coursera course (Managing Emotions in Times of Uncertainty). Primarily education-focused (PreK-12).</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Direct outreach: 350 George St., New Haven, CT 06511. Academic credentialing matters here.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Unlikely for external self-published work. Better path: cite their research, build relationship, offer as supplementary resource.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">600,000+ Coursera enrollments. Major institutional brand power.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card">
+        <div class="org-name">4. TalentSmartEQ</div>
+        <div class="org-url"><a href="https://www.talentsmarteq.com/" target="_blank">talentsmarteq.com</a></div>
+        <div class="org-body">
+            <p>Serves 75% of the Fortune 500. Their book "Emotional Intelligence 2.0" has sold 2.5M+ copies. Maintains a <a href="https://www.talentsmarteq.com/resources/" style="color:var(--gold)">resources page</a> with free articles, webinars, and an "EQ Insights" newsletter.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value"><a href="https://www.talentsmarteq.com/contact/" style="color:var(--gold)">talentsmarteq.com/contact</a> &mdash; commercial entity, so a partnership or guest content angle works best.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">They produce their own. Cross-promotion or guest blog/newsletter feature is more realistic.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Millions across corporate clients. Newsletter reaches L&D professionals globally.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card">
+        <div class="org-name">5. CASEL (Collaborative for Academic, Social, and Emotional Learning)</div>
+        <div class="org-url"><a href="https://casel.org/" target="_blank">casel.org</a></div>
+        <div class="org-body">
+            <p>Founded by Daniel Goleman (1994). The gold standard for SEL in education. Maintains a <a href="https://casel.org/resources/" style="color:var(--gold)">resource library</a> linking to books, articles, reports, studies, and videos. Offers free intro course on SEL.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact via casel.org. Education-focused &mdash; frame ebook as supplementary SEL resource for educators/parents.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Their resource library curates external links. Getting listed there is feasible if the content has educational application.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Influences education policy across all US states. Massive educator network.</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECTION 2: MENTAL HEALTH FOUNDATIONS -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section" id="mental-health">
+    <span class="section-label green-bg">Category 2</span>
+    <h2>Mental Health Foundations</h2>
+    <p class="section-desc">Organizations that distribute free resources or maintain resource libraries.</p>
+
+    <div class="org-card green-border">
+        <div class="org-name">6. NAMI (National Alliance on Mental Illness) <span class="priority-high">High Priority</span></div>
+        <div class="org-url"><a href="https://www.nami.org/" target="_blank">nami.org</a></div>
+        <div class="org-body">
+            <p>The largest grassroots mental health organization in the US. Maintains a <a href="https://www.nami.org/Support-Education/NAMI-HelpLine/NAMI-Resource-Library" style="color:var(--gold)">Resource Library</a> and local chapter libraries (350+ volumes each). HelpLine: 1-800-950-NAMI.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Email info@nami.org. Local chapters accept book donations and resource suggestions independently. Target both national and local.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Local chapters maintain recommended reading lists and accept suggestions. National resource library curates external links.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">500+ local affiliates across all 50 states. Millions of annual contacts.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card green-border">
+        <div class="org-name">7. Mental Health America (MHA)</div>
+        <div class="org-url"><a href="https://mhanational.org/" target="_blank">mhanational.org</a></div>
+        <div class="org-body">
+            <p>The nation's leading mental health nonprofit (founded 1909). Maintains a <a href="https://mhanational.org/resources/" style="color:var(--gold)">resources archive</a> designed to help navigate difficult moments.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through mhanational.org. Focus on how the ebook supports emotional awareness as a prevention tool.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Curates resources and tools. Getting listed as a recommended resource is the pathway.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">200+ affiliates in 41 states. Millions of annual screenings.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card green-border">
+        <div class="org-name">8. The Mental Health Coalition</div>
+        <div class="org-url"><a href="https://www.thementalhealthcoalition.org/" target="_blank">thementalhealthcoalition.org</a></div>
+        <div class="org-body">
+            <p>Alliance of leading mental health organizations. Maintains a searchable <a href="https://www.thementalhealthcoalition.org/resource-library/" style="color:var(--gold)">Resource Library</a> and <a href="https://www.thementalhealthcoalition.org/resources/mental-health-resources-database/" style="color:var(--gold)">Mental Health Resources Database</a>.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Email info@thementalhealthcoalition.org or via <a href="https://www.thementalhealthcoalition.org/get-involved/" style="color:var(--gold)">Get Involved page</a>.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Their database aggregates resources from member organizations. Getting listed requires aligning with their curation standards.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Coalition of 50+ major mental health organizations combined.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card green-border">
+        <div class="org-name">9. HelpGuide.org</div>
+        <div class="org-url"><a href="https://www.helpguide.org/" target="_blank">helpguide.org</a></div>
+        <div class="org-body">
+            <p>501(c)(3) nonprofit. One of the world's leading online mental health resources. Expert-reviewed articles in ad-free format. Founded 1999.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through helpguide.org. They have affiliate relationships &mdash; a resource partnership or recommended reading feature is possible.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">They link to external resources. A recommendation within their emotional intelligence articles would reach a large audience.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Millions of monthly visitors worldwide. Top Google results for many mental health queries.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card green-border">
+        <div class="org-name">10. Well Being Trust</div>
+        <div class="org-url"><a href="https://wellbeingtrust.org/" target="_blank">wellbeingtrust.org</a></div>
+        <div class="org-body">
+            <p>Foundation advancing mental, social, and spiritual health. Uses <strong>CredibleMind</strong> widget for curated resource discovery. Part of Providence health system.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through wellbeingtrust.org. Also consider pitching directly to <a href="https://crediblemind.com/" style="color:var(--gold)">CredibleMind</a> (their content curation platform with 16,000+ resources across 230 topics, serving 150+ partners and 40M+ lives).</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">CredibleMind curates books among its resources. Getting into CredibleMind's database would cascade across all their partner organizations.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">CredibleMind alone: 40M+ lives supported through 150+ partners. High-leverage target.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card green-border">
+        <div class="org-name">11. The Jed Foundation (JED)</div>
+        <div class="org-url"><a href="https://jedfoundation.org/" target="_blank">jedfoundation.org</a></div>
+        <div class="org-body">
+            <p>Protects emotional health and prevents suicide for teens and young adults. Maintains a <a href="https://jedfoundation.org/mental-health-resource-center/" style="color:var(--gold)">Mental Health Resource Center</a> visited by 250,000+ young people monthly.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through jedfoundation.org. The ebook's emotional awareness angle aligns with their prevention mission.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">They curate resources. The book's focus on emotional patterns could fit their prevention resources.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">250,000+ monthly resource center visitors. Partners with colleges and high schools nationwide.</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECTION 3: PERSONAL DEVELOPMENT ORGANIZATIONS -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section" id="personal-dev">
+    <span class="section-label blue-bg">Category 3</span>
+    <h2>Personal Development Organizations</h2>
+    <p class="section-desc">Coaching federations, self-help communities, and personal growth platforms.</p>
+
+    <div class="org-card blue-border">
+        <div class="org-name">12. International Coaching Federation (ICF) <span class="priority-medium">Medium Priority</span></div>
+        <div class="org-url"><a href="https://coachingfederation.org/" target="_blank">coachingfederation.org</a></div>
+        <div class="org-body">
+            <p>The world's leading coaching accrediting body. Maintains a <a href="https://coachingfederation.org/resources/" style="color:var(--gold)">resource library</a> of tools, guides, and research for professional coaches.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through coachingfederation.org. Position as a coaching tool &mdash; something coaches can recommend to clients.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">They curate resources for their member community. A free tool for coaches is attractive.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">60,000+ members in 150+ countries. The global coaching standard.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card blue-border">
+        <div class="org-name">13. Psychology Today (Blog / Resource Feature)</div>
+        <div class="org-url"><a href="https://www.psychologytoday.com/" target="_blank">psychologytoday.com</a></div>
+        <div class="org-body">
+            <p>Massive platform with expert blogger network. Blog proposals accepted via <a href="https://psychologytoday.submittable.com/submit/68626/blog-proposals" style="color:var(--gold)">Submittable</a>. Magazine contributors often start as bloggers.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Submit blog proposal via psychologytoday.submittable.com. Describe your expertise, why now, include 1-3 published samples. Ebook can be featured within blog posts.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Indirect: become a blogger, then reference/feature the ebook in posts. High-value exposure channel.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Tens of millions of monthly visitors. Top Google authority for psychology content.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card blue-border">
+        <div class="org-name">14. PositivePsychology.com</div>
+        <div class="org-url"><a href="https://positivepsychology.com/" target="_blank">positivepsychology.com</a></div>
+        <div class="org-body">
+            <p>Leading positive psychology resource hub for practitioners. Offers <a href="https://positivepsychology.com/positive-psychology-pdf/" style="color:var(--gold)">15+ free PDF worksheets</a> and maintains extensive recommended reading lists (22+ books on EI). 100% science-based content.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through site. Getting listed in their "Best Emotional Intelligence Books" article would be high-value exposure.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">They curate recommended reading lists. A free ebook on emotional patterns would fit their practitioner audience.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Millions of monthly visitors. Primary resource for psychology practitioners globally.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card blue-border">
+        <div class="org-name">15. Tiny Buddha</div>
+        <div class="org-url"><a href="https://tinybuddha.com/" target="_blank">tinybuddha.com</a></div>
+        <div class="org-body">
+            <p>Community-driven personal development site (since 2009). Publishes daily blog posts from community members. Accepts <strong>guest post submissions</strong>. Already publishes free ebooks (Tiny Wisdom series).</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Submit a guest post through their submission guidelines. Feature the ebook within the post or author bio.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Open to community contributions. A guest post + ebook mention is the realistic path.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Millions of monthly readers. Massive email subscriber base. Very engaged community.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card blue-border">
+        <div class="org-name">16. Goodreads Author Program</div>
+        <div class="org-url"><a href="https://www.goodreads.com/author/program" target="_blank">goodreads.com/author/program</a></div>
+        <div class="org-body">
+            <p>Free author page for any published author (self-published included). Add book to Goodreads database, join <a href="https://www.goodreads.com/list/tag/emotional-intelligence" style="color:var(--gold)">Emotional Intelligence Listopia</a> lists, and engage readers.</p>
+            <div class="detail-row"><span class="detail-label">How to submit</span><span class="detail-value">Create account, claim author page (needs published book with ISBN in database). Add book via Goodreads librarian program. Free.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Yes, any published ebook. Ebook giveaways cost $119 (100 copies), but the listing itself is free.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">125M+ members. The world's largest reader community.</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECTION 4: MINDFULNESS / WELLNESS ORGANIZATIONS -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section" id="mindfulness">
+    <span class="section-label gold-bg">Category 4</span>
+    <h2>Mindfulness & Wellness Organizations</h2>
+    <p class="section-desc">Organizations that curate free reading materials on mindfulness, emotional awareness, and well-being.</p>
+
+    <div class="org-card">
+        <div class="org-name">17. Greater Good Science Center (UC Berkeley) <span class="priority-high">High Priority</span></div>
+        <div class="org-url"><a href="https://greatergood.berkeley.edu/" target="_blank">greatergood.berkeley.edu</a></div>
+        <div class="org-body">
+            <p>Research center at UC Berkeley. Publishes <a href="https://greatergood.berkeley.edu/" style="color:var(--gold)">Greater Good Magazine</a> (free, millions of readers). Offers <a href="https://ggia.berkeley.edu" style="color:var(--gold)">Greater Good in Action</a> practice library. Their Science of Happiness course has 600,000+ enrollments.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value"><strong>Personal essays:</strong> submit directly (they pay $300 &mdash; sole exception to no-unsolicited-submissions). <strong>Other pitches:</strong> greater@berkeley.edu. <strong>Researchers:</strong> jeremysmith@berkeley.edu with study PDFs.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Submit a personal essay featuring insights from the book. High editorial standards. Science-backed framing essential.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Millions of annual readers. 600,000+ course enrollments. Top academic credibility.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card">
+        <div class="org-name">18. Mindful.org</div>
+        <div class="org-url"><a href="https://www.mindful.org/" target="_blank">mindful.org</a></div>
+        <div class="org-body">
+            <p>Leading mindfulness media platform. Publishes content from various mindfulness experts and organizations. Covers mindfulness, awareness, and compassion in all aspects of life.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through mindful.org editorial. Position as emotional awareness/mindfulness content. Contributor model.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Publishes expert content. A contributed article with ebook reference is the path. They collaborate with Greater Good Science Center.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Major mindfulness platform. Millions of monthly readers across web + events.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card">
+        <div class="org-name">19. Search Inside Yourself Leadership Institute (SIYLI)</div>
+        <div class="org-url"><a href="https://siyli.org/" target="_blank">siyli.org</a></div>
+        <div class="org-body">
+            <p>Born at Google (2007), spun off as nonprofit (2012). Combines mindfulness, neuroscience, and EI. Works with Google, SAP, UN, P&G, Salesforce. Operates in 50+ countries, tens of thousands trained.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through siyli.org. Their mission aligns: "developing wise and compassionate leaders worldwide." Complementary resource angle.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">They maintain post-training resources for their community. A free ebook could be a supplementary offering to their graduates.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">50+ countries. Corporate clients include Fortune 500. Post-training alumni community.</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECTION 5: LEADERSHIP DEVELOPMENT -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section" id="leadership">
+    <span class="section-label orange-bg">Category 5</span>
+    <h2>Leadership Development Organizations</h2>
+    <p class="section-desc">Organizations where emotional intelligence content reaches leaders and high-performers.</p>
+
+    <div class="org-card orange-border">
+        <div class="org-name">20. Center for Creative Leadership (CCL)</div>
+        <div class="org-url"><a href="https://www.ccl.org/" target="_blank">ccl.org</a></div>
+        <div class="org-body">
+            <p>Top-ranked global leadership development provider (50+ years). Trained 1M+ leaders and coaches. Serves 2/3 of the Fortune 1000. Maintains an <a href="https://www.ccl.org/categories/emotional-intelligence/" style="color:var(--gold)">EI content library</a> with articles, webinars, and white papers.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through ccl.org. Frame as complementary resource for their leadership programs. White paper co-creation or guest blog.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">They publish their own. A guest article or resource partnership is more realistic than direct ebook distribution.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">1M+ trained leaders. 2/3 of Fortune 1000 as clients. Global brand in leadership.</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECTION 6: UNIVERSITY RESOURCES -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section" id="universities">
+    <span class="section-label blue-bg">Category 6</span>
+    <h2>University Psychology Departments & Open Education</h2>
+    <p class="section-desc">Academic channels that maintain free resource lists for students and practitioners.</p>
+
+    <div class="org-card blue-border">
+        <div class="org-name">21. OER Commons (Open Educational Resources)</div>
+        <div class="org-url"><a href="https://oercommons.org/" target="_blank">oercommons.org</a></div>
+        <div class="org-body">
+            <p>Public digital library of open educational resources. Already hosts EI content including "The Neurobiology of Emotional Intelligence" and SEL collections. Community-contributed content under Creative Commons.</p>
+            <div class="detail-row"><span class="detail-label">How to submit</span><span class="detail-value">Create free account, submit through their authoring tools. Content must be under Creative Commons license. Free process.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Yes &mdash; accepts any educational resource under open license. Direct submission. High alignment.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Used by educators globally. Indexed by academic search engines.</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECTION 7: LIBRARY SYSTEMS -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section" id="libraries">
+    <span class="section-label green-bg">Category 7</span>
+    <h2>Library Systems & Free E-Book Platforms</h2>
+    <p class="section-desc">How to get a free e-book into public library catalogs and free digital reading platforms.</p>
+
+    <div class="org-card green-border">
+        <div class="org-name">22. Draft2Digital &rarr; OverDrive/Libby <span class="priority-high">High Priority</span></div>
+        <div class="org-url"><a href="https://draft2digital.com/" target="_blank">draft2digital.com</a></div>
+        <div class="org-body">
+            <p>Free aggregator that distributes ebooks to <strong>38,000+ libraries and schools in 70+ countries</strong> via OverDrive (Libby app). Also distributes to Apple Books, B&N, Kobo, Scribd, Hoopla, Baker & Taylor, and more. Acquired Smashwords. <strong>Zero upfront cost.</strong></p>
+            <div class="detail-row"><span class="detail-label">How to submit</span><span class="detail-value">Create free account at draft2digital.com. Upload formatted manuscript + cover. Check "Library Services" box. Set price to free. Provides free ISBN.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Yes &mdash; any self-published ebook. Free listing, free formatting tools, free ISBN. They take 10% commission (zero on free books).</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">38,000+ libraries/schools. 70+ countries. Millions of Libby app users. Massive cascade across retail + library channels.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card green-border">
+        <div class="org-name">23. Internet Archive / Open Library</div>
+        <div class="org-url"><a href="https://openlibrary.org/" target="_blank">openlibrary.org</a> &bull; <a href="https://archive.org/" target="_blank">archive.org</a></div>
+        <div class="org-body">
+            <p>Open, editable library catalog building toward a web page for every book published. Community-driven. Free account required for uploads. Has a Trusted Book Provider program for integration.</p>
+            <div class="detail-row"><span class="detail-label">How to submit</span><span class="detail-value">Create free archive.org account. Upload ebook files directly. For catalog integration, contact info@archive.org.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Yes &mdash; direct upload for original content you own rights to. Community then adds metadata, covers, links editions.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Millions of monthly visitors. Permanent archive. Indexed globally.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card green-border">
+        <div class="org-name">24. Project Gutenberg Self Publishing</div>
+        <div class="org-url"><a href="https://self.gutenberg.org/" target="_blank">self.gutenberg.org</a></div>
+        <div class="org-body">
+            <p>Self-publishing arm of Project Gutenberg (oldest digital library, 78,000+ items). Accepts original unpublished texts. Part of World Library Foundation.</p>
+            <div class="detail-row"><span class="detail-label">How to submit</span><span class="detail-value">Register at self.gutenberg.org. Upload text. Master format is HTML (also requires plain text version). Free process.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Yes &mdash; accepts self-published original works. Must control digital rights.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Millions of annual downloads from the Gutenberg ecosystem. Strong SEO and academic credibility.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card green-border">
+        <div class="org-name">25. Obooko</div>
+        <div class="org-url"><a href="https://www.obooko.com/" target="_blank">obooko.com</a></div>
+        <div class="org-body">
+            <p>Indie-only library of rights-cleared, DRM-free ebooks. Has a dedicated <a href="https://www.obooko.com/category/free-health-and-self-help-books" style="color:var(--gold)">Health & Self-Help category</a>. Helps emerging authors find readers through safe, legal downloads.</p>
+            <div class="detail-row"><span class="detail-label">How to submit</span><span class="detail-value">Submit through obooko.com author area. Free submission. Focus on quality covers and descriptions.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Yes &mdash; specifically designed for free original ebooks. Perfect fit for the book's distribution model.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Growing indie readership. Strong SEO for free ebook searches.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card green-border">
+        <div class="org-name">26. ManyBooks</div>
+        <div class="org-url"><a href="https://manybooks.net/" target="_blank">manybooks.net</a></div>
+        <div class="org-body">
+            <p>50,000+ free ebooks. Has a <a href="https://manybooks.net/get-featured" style="color:var(--gold)">Feature Application</a> for authors to get books promoted on the platform.</p>
+            <div class="detail-row"><span class="detail-label">How to submit</span><span class="detail-value">Apply via manybooks.net/get-featured. Provide book details through their application form.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Yes &mdash; accepts free ebook submissions. Feature application available for promotion.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Millions of monthly visitors searching for free ebooks.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card green-border">
+        <div class="org-name">27. Free-Ebooks.net</div>
+        <div class="org-url"><a href="https://www.free-ebooks.net/" target="_blank">free-ebooks.net</a></div>
+        <div class="org-body">
+            <p>Established free ebook platform with dedicated <a href="https://www.free-ebooks.net/self-improvement" style="color:var(--gold)">Self-Improvement category</a>. Downloads in PDF, ePub, and Kindle formats.</p>
+            <div class="detail-row"><span class="detail-label">How to submit</span><span class="detail-value">Submit through author portal on free-ebooks.net. Category: Self-Improvement.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Yes &mdash; free original ebooks in self-improvement/personal development.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Major free ebook search destination. Strong organic traffic.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card green-border">
+        <div class="org-name">28. Smashwords Store (via Draft2Digital)</div>
+        <div class="org-url"><a href="https://www.smashwords.com/" target="_blank">smashwords.com</a></div>
+        <div class="org-body">
+            <p>Now a dedicated ebook store (publishing moved to Draft2Digital). Over 1M original DRM-free ebooks, including ~100,000 priced at free daily. Strong self-improvement section.</p>
+            <div class="detail-row"><span class="detail-label">How to submit</span><span class="detail-value">Publish through Draft2Digital, opt into Smashwords Store distribution. Free.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Yes &mdash; part of D2D ecosystem. Automatic when you publish through Draft2Digital.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">1M+ ebook catalog. Browsable store with engaged indie readership.</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECTION 8: CORPORATE WELLNESS -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section" id="corporate">
+    <span class="section-label orange-bg">Category 8</span>
+    <h2>Corporate Wellness Programs</h2>
+    <p class="section-desc">Platforms and companies that distribute free wellness/emotional health content to employees.</p>
+
+    <div class="org-card orange-border">
+        <div class="org-name">29. CredibleMind <span class="priority-high">High Priority</span></div>
+        <div class="org-url"><a href="https://crediblemind.com/" target="_blank">crediblemind.com</a></div>
+        <div class="org-body">
+            <p>Population-based mental health platform. Curates <strong>16,000+ expert-reviewed resources across 230+ topics</strong> including apps, videos, podcasts, articles, and books. Partners with health plans, health systems, and employers. <strong>150+ partners, 40M+ lives supported.</strong></p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through crediblemind.com. Position as an expert-authored emotional awareness resource. They actively curate books.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Yes &mdash; their catalog includes books. Getting curated into CredibleMind cascades the ebook across all their 150+ partners (hospitals, employers, communities).</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">40M+ lives through 150+ organizational partners. The highest-leverage corporate wellness target.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card orange-border">
+        <div class="org-name">30. Wellable</div>
+        <div class="org-url"><a href="https://www.wellable.co/" target="_blank">wellable.co</a></div>
+        <div class="org-body">
+            <p>Corporate wellness platform. Publishes <a href="https://www.wellable.co/resources/ebooks/" style="color:var(--gold)">free workplace wellness ebooks</a>. Integrates with multiple wellness dimensions including emotional well-being.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through wellable.co. They already publish free ebooks &mdash; a co-branded or featured ebook aligns with their content strategy.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">They publish their own free ebooks. Partnership or guest content is the angle.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Corporate clients across industries. Their free ebooks reach HR and L&D decision-makers.</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECTION 9: THERAPY / COUNSELING -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section" id="therapy">
+    <span class="section-label gold-bg">Category 9</span>
+    <h2>Therapy & Counseling Organizations</h2>
+    <p class="section-desc">Organizations maintaining recommended reading lists for therapists and clients.</p>
+
+    <div class="org-card">
+        <div class="org-name">31. ADAA (Anxiety and Depression Association of America)</div>
+        <div class="org-url"><a href="https://adaa.org/" target="_blank">adaa.org</a></div>
+        <div class="org-body">
+            <p>International nonprofit (since 1979). Offers free resources: <a href="https://adaa.org/educational-resources/from-adaa-experts/downloadable-brochures" style="color:var(--gold)">downloadable brochures</a>, webinars, peer communities, and a <a href="https://adaa.org/books/patient-guide-to-mood-and-anxiety-disorders" style="color:var(--gold)">book section</a> with expert-authored works.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through adaa.org/professionals. Frame as a client resource for emotional awareness. Free ebook = accessible to their patient community.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">They curate books and educational resources. A free ebook from a credentialed practitioner could be listed.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Major professional membership + large public-facing patient community.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card">
+        <div class="org-name">32. Mental Health First Aid (MHFA)</div>
+        <div class="org-url"><a href="https://mentalhealthfirstaid.org/" target="_blank">mentalhealthfirstaid.org</a></div>
+        <div class="org-body">
+            <p>Run by the National Council for Mental Wellbeing (3,200+ member organizations). 2.5M+ people trained in the US. MHFA Connect platform for instructors includes resource-sharing forums.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact National Council for Mental Wellbeing. Frame as supplementary resource for MHFA graduates &mdash; emotional awareness tools after training.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">MHFA Connect has a resources tab. Getting listed as a recommended resource is feasible.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">2.5M+ trained individuals. 3,200+ member organizations delivering mental health care.</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECTION 10: INTERNATIONAL ORGANIZATIONS -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section" id="international">
+    <span class="section-label red-bg">Category 10</span>
+    <h2>International Organizations</h2>
+    <p class="section-desc">Global institutions with mental health and well-being resource programs.</p>
+
+    <div class="org-card" style="border-left-color: var(--red);">
+        <div class="org-name">33. WHO Mental Health Resources</div>
+        <div class="org-url"><a href="https://www.who.int/health-topics/mental-health" target="_blank">who.int/health-topics/mental-health</a></div>
+        <div class="org-body">
+            <p>WHO provides <a href="https://www.who.int/news-room/feature-stories/mental-well-being-resources-for-the-public" style="color:var(--gold)">mental well-being resources for the public</a>. Maintains Comprehensive Mental Health Action Plan 2013-2030. Publishes stress management guides and evidence-based tools.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">WHO operates at institutional/governmental level. Realistic path: get cited by WHO-affiliated researchers or included in their resource aggregation through partner orgs.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">They publish their own resources. External ebooks would need to come through an institutional partner or research endorsement.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">Global. 194 member states. Maximum institutional credibility.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card" style="border-left-color: var(--red);">
+        <div class="org-name">34. UN Mental Health and Well-being</div>
+        <div class="org-url"><a href="https://www.un.org/en/healthy-workforce/resources" target="_blank">un.org/en/healthy-workforce/resources</a></div>
+        <div class="org-body">
+            <p>UN System Mental Health and Well-being Strategy. Maintains a <a href="https://www.un.org/en/healthy-workforce/resources" style="color:var(--gold)">resources page</a> for personnel mental health. Mental Health Literacy Dialogue materials available to all UN organizations.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Through UN agency partnerships. SIYLI already works with the UN &mdash; their channel could be an entry point.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">Internal focus. A realistic path: get included through a UN partner organization's resource list.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">UN system workforce + global policy influence.</span></div>
+        </div>
+    </div>
+
+    <div class="org-card" style="border-left-color: var(--red);">
+        <div class="org-name">35. Mind (UK)</div>
+        <div class="org-url"><a href="https://www.mind.org.uk/" target="_blank">mind.org.uk</a></div>
+        <div class="org-body">
+            <p>UK's leading mental health charity (founded 1946). Provides information, advice, and lobbying. <a href="https://shop.mind.org.uk/collections/information" style="color:var(--gold)">Online shop</a> sells mental health resources and leaflets. Some resources free with discount code.</p>
+            <div class="detail-row"><span class="detail-label">How to pitch</span><span class="detail-value">Contact through mind.org.uk. Frame as a complementary resource for their emotional well-being information pages.</span></div>
+            <div class="detail-row"><span class="detail-label">Accepts ebooks?</span><span class="detail-value">They produce their own booklets and resources. A partnership or recommended reading listing is more realistic.</span></div>
+            <div class="detail-row"><span class="detail-label">Est. reach</span><span class="detail-value">England and Wales. Millions of annual site visitors. Strong brand trust.</span></div>
+        </div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- SECTION 11: FREE DISTRIBUTION PLATFORMS -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section" id="free-platforms">
+    <span class="section-label green-bg">Bonus</span>
+    <h2>Free E-Book Distribution Platforms</h2>
+    <p class="section-desc">Platforms where you can list the ebook for free download immediately.</p>
+
+    <table class="rtable">
+        <thead>
+            <tr>
+                <th>Platform</th>
+                <th>URL</th>
+                <th>Cost</th>
+                <th>Distribution</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Draft2Digital</strong></td>
+                <td><a href="https://draft2digital.com" style="color:var(--gold)">draft2digital.com</a></td>
+                <td style="color:var(--green)">Free</td>
+                <td>38,000+ libraries, Apple, B&N, Kobo, Scribd, Hoopla</td>
+                <td>Highest leverage. Single upload cascades everywhere. Free ISBN included.</td>
+            </tr>
+            <tr>
+                <td><strong>Internet Archive</strong></td>
+                <td><a href="https://archive.org" style="color:var(--gold)">archive.org</a></td>
+                <td style="color:var(--green)">Free</td>
+                <td>Open Library + archive.org</td>
+                <td>Permanent archive. High academic credibility. Direct upload.</td>
+            </tr>
+            <tr>
+                <td><strong>Project Gutenberg SP</strong></td>
+                <td><a href="https://self.gutenberg.org" style="color:var(--gold)">self.gutenberg.org</a></td>
+                <td style="color:var(--green)">Free</td>
+                <td>Gutenberg ecosystem</td>
+                <td>Oldest digital library. HTML + plain text formats required.</td>
+            </tr>
+            <tr>
+                <td><strong>Obooko</strong></td>
+                <td><a href="https://obooko.com" style="color:var(--gold)">obooko.com</a></td>
+                <td style="color:var(--green)">Free</td>
+                <td>Direct downloads</td>
+                <td>Indie-only. Has Health & Self-Help category. DRM-free.</td>
+            </tr>
+            <tr>
+                <td><strong>ManyBooks</strong></td>
+                <td><a href="https://manybooks.net" style="color:var(--gold)">manybooks.net</a></td>
+                <td style="color:var(--green)">Free</td>
+                <td>Direct downloads + feature</td>
+                <td>50K+ books. Feature application available for promotion.</td>
+            </tr>
+            <tr>
+                <td><strong>Free-Ebooks.net</strong></td>
+                <td><a href="https://free-ebooks.net" style="color:var(--gold)">free-ebooks.net</a></td>
+                <td style="color:var(--green)">Free</td>
+                <td>PDF, ePub, Kindle downloads</td>
+                <td>Self-Improvement category. High organic traffic.</td>
+            </tr>
+            <tr>
+                <td><strong>Smashwords Store</strong></td>
+                <td><a href="https://smashwords.com" style="color:var(--gold)">smashwords.com</a></td>
+                <td style="color:var(--green)">Free</td>
+                <td>Via D2D</td>
+                <td>1M+ ebook catalog. ~100K free titles. Via Draft2Digital.</td>
+            </tr>
+            <tr>
+                <td><strong>Goodreads</strong></td>
+                <td><a href="https://goodreads.com/author/program" style="color:var(--gold)">goodreads.com</a></td>
+                <td style="color:var(--green)">Free listing</td>
+                <td>Author page + Listopia</td>
+                <td>125M+ members. Free author page. Ebook giveaway costs $119.</td>
+            </tr>
+            <tr>
+                <td><strong>OER Commons</strong></td>
+                <td><a href="https://oercommons.org" style="color:var(--gold)">oercommons.org</a></td>
+                <td style="color:var(--green)">Free</td>
+                <td>Educational resource library</td>
+                <td>Requires Creative Commons license. Academic audience.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- STRATEGY SECTION -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="section" id="strategy">
+    <span class="section-label gold-bg">Execution</span>
+    <h2>Recommended Distribution Strategy</h2>
+    <p class="section-desc">Prioritized action plan for maximum reach with minimum effort.</p>
+
+    <div class="strategy-box">
+        <h4>Phase 1: Immediate &mdash; Direct Submit Platforms (Week 1)</h4>
+        <p>These require zero approval. Upload the ebook and it is live.</p>
+        <ul>
+            <li><strong>Draft2Digital</strong> &mdash; single upload cascades to 38,000+ libraries, Apple Books, B&N, Kobo, Scribd, Hoopla, Smashwords Store. The single highest-leverage action.</li>
+            <li><strong>Internet Archive / Open Library</strong> &mdash; permanent, indexed, academically credible.</li>
+            <li><strong>Obooko, ManyBooks, Free-Ebooks.net</strong> &mdash; quick listings on dedicated free ebook platforms.</li>
+            <li><strong>Project Gutenberg Self Publishing</strong> &mdash; HTML + plain text version needed.</li>
+            <li><strong>Goodreads Author Program</strong> &mdash; claim page, list book, join EI Listopia lists.</li>
+            <li><strong>OER Commons</strong> &mdash; if willing to use Creative Commons license.</li>
+        </ul>
+    </div>
+
+    <div class="strategy-box">
+        <h4>Phase 2: Outreach &mdash; Resource Libraries (Weeks 2-4)</h4>
+        <p>Email pitches to organizations that curate free resources. Template: "Free e-book on emotional patterns by Shen (emotionmentoring.com). 20 chapters, 12.8K words. Available for your resource library at no cost. Here's the download link."</p>
+        <ul>
+            <li><strong>CredibleMind</strong> (40M+ lives) &mdash; highest-leverage curation target. One listing cascades to 150+ partners.</li>
+            <li><strong>Six Seconds</strong> &mdash; already distributes free EI ebooks. Most aligned organization.</li>
+            <li><strong>NAMI</strong> &mdash; target both national (info@nami.org) and local chapters individually.</li>
+            <li><strong>Mental Health America</strong> &mdash; resource archive listing.</li>
+            <li><strong>The Mental Health Coalition</strong> (info@thementalhealthcoalition.org) &mdash; resource database.</li>
+            <li><strong>HelpGuide.org</strong> &mdash; recommended resource within their EI articles.</li>
+            <li><strong>Well Being Trust</strong> &mdash; uses CredibleMind, so getting into CM covers this.</li>
+            <li><strong>PositivePsychology.com</strong> &mdash; recommended reading list inclusion.</li>
+        </ul>
+    </div>
+
+    <div class="strategy-box">
+        <h4>Phase 3: Content Partnerships &mdash; Write to Feature (Weeks 4-8)</h4>
+        <p>These require writing content (guest posts, essays, blog proposals) that features or references the ebook.</p>
+        <ul>
+            <li><strong>Greater Good Science Center</strong> &mdash; submit personal essay (they pay $300). Feature ebook insights. Email: greater@berkeley.edu.</li>
+            <li><strong>Psychology Today</strong> &mdash; submit blog proposal via Submittable. Feature ebook within posts. Massive SEO authority.</li>
+            <li><strong>Tiny Buddha</strong> &mdash; guest post + ebook mention. Community-driven, accepts submissions.</li>
+            <li><strong>Mindful.org</strong> &mdash; contributor article on emotional awareness.</li>
+            <li><strong>ICF</strong> &mdash; position as a coaching tool for their 60,000+ members.</li>
+        </ul>
+    </div>
+
+    <div class="strategy-box">
+        <h4>Phase 4: Institutional &mdash; Long Game (Months 2-6)</h4>
+        <p>These require relationship-building and institutional credibility.</p>
+        <ul>
+            <li><strong>CASEL</strong> &mdash; resource library listing. Needs educational framing.</li>
+            <li><strong>Center for Creative Leadership</strong> &mdash; guest content or co-created resource.</li>
+            <li><strong>SIYLI</strong> &mdash; complementary post-training resource for their alumni.</li>
+            <li><strong>ADAA</strong> &mdash; recommended reading for their patient community.</li>
+            <li><strong>MHFA</strong> &mdash; supplementary resource for 2.5M+ trained individuals.</li>
+            <li><strong>CREIO / Yale YCEI</strong> &mdash; academic partnerships. Needs research backing.</li>
+            <li><strong>Mind UK</strong> &mdash; UK market entry through their resource pages.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p><strong>The Secret Book of Emotions</strong> &mdash; Distribution Research Report</p>
+    <p style="margin-top: 8px;">Emotion Mentoring &bull; emotionmentoring.com &bull; March 2026</p>
+</footer>
+
+</body>
+</html>

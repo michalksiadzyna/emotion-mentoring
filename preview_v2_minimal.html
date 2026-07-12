@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emotion Mentoring for CEOs — The Shen Method</title>
+<meta name="description" content="Emotion Mentoring for CEOs. Private one-on-one work with Michal Ksiadzyna. 12 spots.">
+<script>
+/* intro gate — runs before first paint */
+(function(){try{if(localStorage.getItem('introSeen_v1')){document.documentElement.classList.add('intro-seen')}}catch(e){document.documentElement.classList.add('intro-seen')}})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a0c;
+  --ink2:#0d0d10;
+  --hair:rgba(255,255,255,.12);
+  --gold:#c9a96e;
+  --gold-dim:#85714a;
+  --gold-lt:#d9c491;
+  --gold-hi:#f2e8d4;
+  --text:#b6b1a6;
+  --text-dim:#76715f;
+  --metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%);
+  --serif:'Cormorant Garamond',serif;
+  --sans:'Jost',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);font-weight:300;font-size:19px;line-height:1.75;overflow-x:hidden}
+::selection{background:#c9a96e;color:#0a0a0c}
+
+/* grain */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;opacity:.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* metal text */
+.metal{background-image:var(--metal);background-size:220% 100%;background-position:50% 0;
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;
+  transition:background-position 1.2s ease}
+
+/* corner ticks */
+.tick{position:absolute;width:14px;height:14px;pointer-events:none;z-index:3;transition:width .3s,height .3s}
+.tick i{position:absolute;inset:0;background-image:var(--metal);background-size:420% 420%;background-position:0% 0%;
+  clip-path:polygon(0 0,100% 0,100% 14%,14% 14%,14% 100%,0 100%);transition:background-position .6s ease;display:block}
+.tick.tl{top:-1px;left:-1px}.tick.tr{top:-1px;right:-1px;transform:rotate(90deg)}
+.tick.br{bottom:-1px;right:-1px;transform:rotate(180deg)}.tick.bl{bottom:-1px;left:-1px;transform:rotate(270deg)}
+
+/* ═══ single column ═══ */
+.col{max-width:640px;margin:0 auto;padding:0 24px;text-align:center}
+section{position:relative;padding:13vh 0}
+
+/* small-caps labels — SIGNATURE: track wider on hover */
+.lab{display:inline-block;font-family:var(--sans);font-weight:400;font-size:.64rem;letter-spacing:.42em;text-indent:.42em;
+  text-transform:uppercase;color:var(--gold-dim);cursor:default;transition:letter-spacing .45s cubic-bezier(.2,.7,.2,1),color .3s}
+.lab:hover{letter-spacing:.6em;color:var(--gold)}
+
+h2.sc{font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.04em;line-height:1.12;
+  font-size:clamp(1.9rem,5vw,2.7rem);color:var(--gold-hi);margin-top:22px}
+.bridge{margin:2.6vh auto 0;max-width:440px;font-size:clamp(.96rem,2.1vw,1.06rem);color:var(--text-dim);line-height:1.75}
+.scrollhint{margin-top:6vh;font-size:.62rem;letter-spacing:.28em;text-indent:.28em;text-transform:uppercase;color:var(--text-dim)}
+.preline{margin-top:2.2vh;font-size:clamp(.94rem,2vw,1.02rem);color:var(--text-dim);letter-spacing:.06em}
+
+/* ═══ SIGNATURE: breathing champagne seam between sections ═══ */
+.seam{width:1px;height:88px;margin:0 auto;position:relative;
+  background:linear-gradient(to bottom,transparent,var(--gold) 50%,transparent);
+  animation:breathe 5.5s ease-in-out infinite}
+.seam::after{content:"";position:absolute;top:50%;left:50%;width:4px;height:4px;transform:translate(-50%,-50%) rotate(45deg);
+  background:var(--gold-lt);box-shadow:0 0 12px rgba(201,169,110,.55);animation:breatheDot 5.5s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.3;transform:scaleY(.82)}50%{opacity:.95;transform:scaleY(1)}}
+@keyframes breatheDot{0%,100%{opacity:.35}50%{opacity:1}}
+
+/* ═══ INTRO — dust-flash condensing into wordmark ═══ */
+#intro{position:fixed;inset:0;z-index:4000;background:var(--ink);display:flex;align-items:center;justify-content:center;overflow:hidden}
+html.intro-seen #intro{display:none}
+#intro .i-mark{position:relative;z-index:5;font-family:var(--serif);font-variant:small-caps;font-weight:600;letter-spacing:.16em;text-indent:.16em;
+  font-size:clamp(1.6rem,5vw,3rem);opacity:0;text-align:center;line-height:1.25;filter:blur(6px)}
+#intro .i-mark small{display:block;font-family:var(--sans);font-size:.58rem;font-weight:400;letter-spacing:.55em;text-indent:.55em;color:var(--gold-dim);margin-top:12px;text-transform:uppercase}
+#intro .i-flash{position:absolute;z-index:4;width:340px;height:340px;border-radius:50%;opacity:0;transform:scale(.2);
+  background:radial-gradient(circle,rgba(253,246,227,.85) 0%,rgba(201,169,110,.32) 34%,transparent 68%)}
+#intro .dust{position:absolute;z-index:3;width:3px;height:3px;border-radius:50%;background:var(--gold-lt);
+  box-shadow:0 0 8px rgba(217,196,145,.9);opacity:0;left:50%;top:50%}
+
+/* ═══ HERO ═══ */
+#hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:12vh 0 10vh}
+#hero .mark{font-family:var(--serif);font-variant:small-caps;font-weight:600;font-size:1.05rem;letter-spacing:.3em;text-indent:.3em}
+#hero .forline{margin-top:16px}
+#hero h1{font-family:var(--serif);font-weight:400;line-height:1.18;letter-spacing:.005em;color:var(--gold-hi);
+  font-size:clamp(2.3rem,6.8vw,4rem);margin-top:7vh}
+#hero h1 em{font-style:italic;font-weight:400}
+#hero .sub{max-width:470px;margin:4.5vh auto 0;font-size:clamp(1rem,2.2vw,1.13rem);color:var(--text);line-height:1.8}
+#hero .sub b{font-weight:400;color:var(--gold-lt)}
+
+/* CTA object */
+.cta-wrap{margin-top:5.5vh}
+.btn{display:inline-block;position:relative;text-decoration:none;cursor:pointer;background:rgba(201,169,110,.05);
+  border:1px solid rgba(201,169,110,.38);padding:17px 44px;font-family:var(--sans);font-weight:400;font-size:.72rem;
+  letter-spacing:.32em;text-indent:.32em;text-transform:uppercase;color:var(--gold-hi);overflow:hidden;
+  transition:border-color .3s,box-shadow .3s,background .3s}
+.btn::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.15) 50%,transparent 58%);
+  background-size:260% 100%;background-position:135% 0;transition:background-position .8s ease}
+.btn:hover{border-color:var(--gold);box-shadow:0 0 44px rgba(201,169,110,.14);background:rgba(201,169,110,.09)}
+.btn:hover::before{background-position:-60% 0}
+.btn:active{transform:scale(.975)}
+.btn .tick{opacity:.85;transition:opacity .3s}
+.btn:hover .tick{opacity:1}
+.btn:hover .tick i{background-position:60% 60%}
+
+/* quote beside CTA */
+.cta-q{margin-top:3.2vh}
+.cta-q p{font-family:var(--serif);font-style:italic;font-size:clamp(1.02rem,2.3vw,1.16rem);line-height:1.6;color:var(--text)}
+.cta-q span{display:block;margin-top:10px;font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;color:var(--gold-dim)}
+
+/* ═══ RECOGNITION ═══ */
+.plaques{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:6vh;text-align:left}
+.plaque{position:relative;border:1px solid var(--hair);padding:26px 24px;background:linear-gradient(168deg,#101013,#0b0b0e);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),inset 0 0 42px rgba(0,0,0,.45);transition:border-color .3s,transform .3s,box-shadow .3s}
+.plaque:hover{border-color:rgba(201,169,110,.4);transform:translateY(-3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.05),inset 0 0 42px rgba(0,0,0,.45),0 14px 38px rgba(0,0,0,.5)}
+.plaque:hover .tick i{background-position:60% 60%}
+.plaque p{font-family:var(--serif);font-size:1.14rem;line-height:1.55;color:var(--gold-hi)}
+.plaque span{display:block;margin-top:12px;font-family:var(--sans);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-dim);line-height:1.8}
+@media (max-width:640px){.plaques{grid-template-columns:1fr}}
+
+.situ{margin-top:7vh;text-align:center}
+.situ li{list-style:none;font-family:var(--serif);font-size:clamp(1.14rem,2.7vw,1.4rem);line-height:1.5;color:var(--text);
+  padding:16px 8px;border-bottom:1px solid rgba(255,255,255,.06);transition:color .3s,background .3s,letter-spacing .3s}
+.situ li:first-child{border-top:1px solid rgba(255,255,255,.06)}
+.situ li:hover{color:var(--gold-hi);background:rgba(201,169,110,.03)}
+.situ li.feat{font-variant:small-caps;font-weight:600;letter-spacing:.05em;font-size:clamp(1.5rem,4vw,2rem);padding:22px 8px}
+.situ li.feat:hover{letter-spacing:.07em}
+
+.forlists{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:7vh;text-align:left}
+.forlists>div{position:relative;border:1px solid var(--hair);padding:28px 26px;background:linear-gradient(168deg,#101013,#0b0b0e);
+  box-shadow:inset 0 0 42px rgba(0,0,0,.45);transition:border-color .3s}
+.forlists>div:hover{border-color:rgba(201,169,110,.4)}
+.forlists>div:hover .tick i{background-position:60% 60%}
+.forlists h3{font-family:var(--sans);font-weight:400;font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);transition:letter-spacing .45s}
+.forlists>div:hover h3{letter-spacing:.44em}
+.forlists p{margin-top:14px;font-size:.98rem;color:var(--text);line-height:1.75}
+.forlists .not h3{color:var(--text-dim)}
+.forlists .not p{color:var(--text-dim)}
+@media (max-width:640px){.forlists{grid-template-columns:1fr}}
+
+/* ═══ THE WORK ═══ */
+#work .body{margin-top:5vh;font-size:clamp(1.02rem,2.3vw,1.16rem);line-height:1.9}
+#work .body p+p{margin-top:3.2vh}
+#work .body b{font-weight:400;color:var(--gold-lt)}
+#work .keyline{font-family:var(--serif);font-style:italic;font-size:clamp(1.35rem,3.4vw,1.8rem);line-height:1.5;color:var(--gold-hi);margin-top:5vh}
+
+/* ═══ PROOF ═══ */
+.tstack{margin-top:6vh;display:flex;flex-direction:column;gap:20px}
+.tcard{position:relative;border:1px solid var(--hair);padding:36px 32px;background:linear-gradient(168deg,#101013,#0b0b0e);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),inset 0 0 46px rgba(0,0,0,.45);transition:border-color .3s,transform .3s,box-shadow .35s}
+.tcard:hover{border-color:rgba(201,169,110,.42);transform:translateY(-3px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),inset 0 0 46px rgba(0,0,0,.45),0 16px 44px rgba(0,0,0,.5)}
+.tcard:hover .tick i{background-position:60% 60%}
+.tcard blockquote{font-family:var(--serif);font-style:italic;font-size:clamp(1.18rem,3vw,1.5rem);line-height:1.55;color:var(--gold-hi)}
+.tcard cite{display:block;margin-top:18px;font-style:normal;font-family:var(--sans);font-size:.6rem;letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;color:var(--gold-dim);transition:color .3s,letter-spacing .45s}
+.tcard:hover cite{color:var(--gold);letter-spacing:.38em}
+
+/* ═══ TERMS ═══ */
+.terms{position:relative;margin-top:6vh;border:1px solid var(--hair);background:linear-gradient(168deg,#101013,#0b0b0e);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),inset 0 0 46px rgba(0,0,0,.45);transition:border-color .3s}
+.terms:hover{border-color:rgba(201,169,110,.35)}
+.terms:hover .tick i{background-position:60% 60%}
+.terms>div{padding:30px 30px;border-bottom:1px solid rgba(255,255,255,.07);transition:background .3s}
+.terms>div:last-child{border-bottom:none}
+.terms>div:hover{background:rgba(201,169,110,.03)}
+.terms .n{font-family:var(--serif);font-weight:500;font-size:clamp(2.4rem,6vw,3.4rem);line-height:1}
+.terms .t-big{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.3rem,3.2vw,1.7rem);letter-spacing:.04em;color:var(--gold-hi)}
+.terms p{font-size:.98rem;color:var(--text);margin-top:8px;line-height:1.75}
+.terms .crisis p{color:var(--text)}
+.terms .crisis b{font-weight:400;color:var(--gold-lt)}
+.sidedoor{margin-top:4.5vh;font-size:.94rem;color:var(--text-dim)}
+.sidedoor a{color:var(--gold-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3);padding-bottom:2px;transition:color .25s,border-color .25s}
+.sidedoor a:hover{color:var(--gold-hi);border-color:var(--gold)}
+
+/* ═══ THE CONVERSATION — the jewel ═══ */
+#conversation{padding-bottom:16vh}
+.jewel-halo{position:relative}
+.jewel-halo::before{content:"";position:absolute;inset:-90px;pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(201,169,110,.09) 0%,transparent 62%)}
+.jewel{position:relative;border:1px solid rgba(201,169,110,.32);padding:8vh 7vw 7vh;
+  background:linear-gradient(170deg,#111116,#0b0b0e 72%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),inset 0 0 70px rgba(0,0,0,.55),0 30px 90px rgba(0,0,0,.6);
+  transition:border-color .35s,box-shadow .45s}
+.jewel:hover{border-color:rgba(201,169,110,.55);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),inset 0 0 70px rgba(0,0,0,.55),0 30px 90px rgba(0,0,0,.6),0 0 80px rgba(201,169,110,.1)}
+.jewel:hover .tick i{background-position:60% 60%}
+.jewel .tick{width:18px;height:18px}
+.jewel h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,4.6vw,2.5rem);line-height:1.3;color:var(--gold-hi);margin-top:20px}
+.jewel .f-row{margin-top:5vh}
+/* SIGNATURE: engraved inner-glow email field */
+.f-field{position:relative;max-width:400px;margin:0 auto}
+.f-field input{width:100%;background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.1);border-bottom:1px solid rgba(201,169,110,.35);
+  padding:17px 20px;color:var(--gold-hi);font-family:var(--sans);font-weight:300;font-size:1.02rem;text-align:center;letter-spacing:.04em;outline:none;
+  box-shadow:inset 0 2px 10px rgba(0,0,0,.55);transition:border-color .3s,box-shadow .4s,background .3s;border-radius:0;appearance:none}
+.f-field input::placeholder{color:var(--text-dim);letter-spacing:.06em}
+.f-field input:hover{border-bottom-color:rgba(201,169,110,.6)}
+.f-field input:focus{border-color:rgba(201,169,110,.35);border-bottom-color:var(--gold);background:rgba(201,169,110,.04);
+  box-shadow:inset 0 2px 10px rgba(0,0,0,.55),inset 0 -1px 0 var(--gold),inset 0 0 36px rgba(201,169,110,.09)}
+.f-field .f-line{position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--metal);background-size:300% 100%;
+  transform:scaleX(0);transform-origin:center;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.f-field input:focus~.f-line{transform:scaleX(1)}
+.jewel button.btn{margin-top:26px;background:rgba(201,169,110,.1);border-color:rgba(201,169,110,.5)}
+.jewel button.btn:hover{background:rgba(201,169,110,.16);border-color:var(--gold-lt)}
+.jewel .dissolve{margin-top:3.4vh;font-size:.82rem;letter-spacing:.12em;color:var(--text-dim)}
+.jewel .dissolve b{font-weight:400;color:var(--text)}
+.jewel .sent{display:none;margin-top:5vh}
+.jewel .sent p{font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3.2vw,1.7rem);color:var(--gold-hi)}
+.jewel .sent span{display:block;margin-top:12px;font-size:.86rem;color:var(--text-dim)}
+.jewel.is-sent form{display:none}
+.jewel.is-sent .sent{display:block}
+
+/* ═══ FOOTER ═══ */
+footer{border-top:1px solid rgba(255,255,255,.07);padding:7vh 24px 9vh;text-align:center}
+footer .f-name{font-family:var(--serif);font-variant:small-caps;font-weight:600;font-size:1.05rem;letter-spacing:.22em;text-indent:.22em}
+footer .f-sub{margin-top:10px;font-size:.62rem;letter-spacing:.34em;text-indent:.34em;text-transform:uppercase;color:var(--text-dim)}
+#replay{margin-top:4vh;background:none;border:1px solid rgba(255,255,255,.1);padding:9px 22px;color:var(--text-dim);
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;cursor:pointer;
+  transition:color .3s,border-color .3s,letter-spacing .45s}
+#replay:hover{color:var(--gold);border-color:rgba(201,169,110,.4);letter-spacing:.4em}
+
+/* ═══ sticky mobile CTA ═══ */
+#mcta{position:fixed;left:0;right:0;bottom:0;z-index:1500;display:none;justify-content:center;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  background:rgba(10,10,12,.9);backdrop-filter:blur(10px);border-top:1px solid rgba(201,169,110,.28);
+  transform:translateY(110%);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+#mcta.show{transform:translateY(0)}
+#mcta a{display:block;width:100%;max-width:420px;text-align:center;text-decoration:none;background:rgba(201,169,110,.12);
+  border:1px solid rgba(201,169,110,.5);padding:14px 10px;font-size:.66rem;letter-spacing:.26em;text-indent:.26em;
+  text-transform:uppercase;color:var(--gold-hi);transition:background .3s,border-color .3s}
+#mcta a:active{background:rgba(201,169,110,.2)}
+@media (max-width:760px){#mcta{display:flex}}
+
+/* ═══ reveals ═══ */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:640px){
+  section{padding:11vh 0}
+  .jewel{padding:7vh 6vw 6vh}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .seam,.seam::after{animation:none;opacity:.6}
+  .btn::before{display:none}
+  #mcta{transition:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ INTRO OVERLAY — dust-flash condensing into wordmark ═══ -->
+<div id="intro" aria-hidden="true">
+  <div class="i-flash"></div>
+  <div class="i-mark metal">Emotion&nbsp;Mentoring<small>The Shen Method</small></div>
+</div>
+
+<!-- ═══ 1 · HOOK ═══ -->
+<section id="hero">
+  <div class="col">
+    <div class="mark metal">Shen</div>
+    <div class="forline lab">Emotion Mentoring for CEOs</div>
+    <h1 class="rv">CEOs have everyone's attention<br>and <em>no one to talk to.</em></h1>
+    <p class="sub rv">Private one-on-one work on the mind itself, with <b>Michal Ksiadzyna</b>. Twelve engagements at a time. It begins with one conversation.</p>
+    <div class="cta-wrap rv">
+      <a class="btn" href="#conversation">Book your private conversation
+        <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      </a>
+      <div class="cta-q">
+        <p>&ldquo;He doesn't hide behind catchy sales copy. He simply delivers results.&rdquo;</p>
+        <span>Arkadiusz Czajkowski — CEO</span>
+      </div>
+    </div>
+    <p class="scrollhint rv">The full picture is one scroll long.</p>
+  </div>
+</section>
+
+<div class="seam" aria-hidden="true"></div>
+
+<!-- ═══ 2 · RECOGNITION ═══ -->
+<section id="recognition">
+  <div class="col">
+    <span class="lab rv">Recognition</span>
+    <h2 class="sc rv">The weight has a shape</h2>
+    <p class="bridge rv">The load takes recognizable shapes. This work was built for them.</p>
+
+    <div class="plaques rv">
+      <div class="plaque">
+        <span class="tick tl"><i></i></span><span class="tick br"><i></i></span>
+        <p>&ldquo;Half of CEOs report loneliness in the role; of those, 61% believe it hinders their performance.&rdquo;</p>
+        <span>RHR International, via Harvard Business Review</span>
+      </div>
+      <div class="plaque">
+        <span class="tick tl"><i></i></span><span class="tick br"><i></i></span>
+        <p>&ldquo;Nearly two-thirds of CEOs receive no coaching or leadership advice from outside.&rdquo;</p>
+        <span>Stanford GSB</span>
+      </div>
+      <div class="plaque">
+        <span class="tick tl"><i></i></span><span class="tick br"><i></i></span>
+        <p>&ldquo;CEOs average 62.5-hour workweeks.&rdquo;</p>
+        <span>Harvard Business Review</span>
+      </div>
+      <div class="plaque">
+        <span class="tick tl"><i></i></span><span class="tick br"><i></i></span>
+        <p>&ldquo;85% of business leaders suffered decision distress in the past year.&rdquo;</p>
+        <span>Oracle</span>
+      </div>
+    </div>
+
+    <ul class="situ rv">
+      <li>A divorce or private crisis, carried while running the company</li>
+      <li>Decision load that never stops</li>
+      <li class="feat metal">Loneliness at the top</li>
+      <li>Success that stopped feeling like anything</li>
+      <li>The moment everything breaks at once</li>
+    </ul>
+
+    <div class="forlists rv">
+      <div>
+        <span class="tick tl"><i></i></span><span class="tick br"><i></i></span>
+        <h3>This is for</h3>
+        <p>CEOs, founders, and leaders who want to develop the capacity of their mind.</p>
+      </div>
+      <div class="not">
+        <span class="tick tl"><i></i></span><span class="tick br"><i></i></span>
+        <h3>This is not for</h3>
+        <p>People seeking therapy, standard psychological help, or psychiatric help.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="seam" aria-hidden="true"></div>
+
+<!-- ═══ 3 · THE WORK ═══ -->
+<section id="work">
+  <div class="col">
+    <span class="lab rv">The Work</span>
+    <h2 class="sc rv">The Shen Method</h2>
+    <div class="body rv">
+      <p>Life leaves errors in the mind — damage, emotional blockages that never got handled. They sit under the surface and tax every decision, every relationship, every quiet hour.</p>
+      <p>We find those errors and repair them. That is the whole method. The mind adapts again. It runs better. <b>It carries more with less strain.</b></p>
+      <p>Left unrepaired, the load wins — a mind that stops keeping up with it. Repaired, the gains arrive on their own: decisions improve, relationships improve, fear shrinks, and work and life start feeding each other.</p>
+      <p>The work is private and one on one, led by <b>Michal Ksiadzyna</b>, who works under the name Shen.</p>
+    </div>
+    <p class="keyline rv">A lighter mind runs the company better.</p>
+  </div>
+</section>
+
+<div class="seam" aria-hidden="true"></div>
+
+<!-- ═══ 4 · PROOF ═══ -->
+<section id="proof">
+  <div class="col">
+    <span class="lab rv">Proof</span>
+    <h2 class="sc rv">In their words</h2>
+    <p class="bridge rv">Every quote carries a name.</p>
+    <div class="tstack">
+      <div class="tcard rv">
+        <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+        <blockquote>&ldquo;After four months, the loneliness that had made my life a nightmare for years simply disappeared.&rdquo;</blockquote>
+        <cite>Krystyna Mendonca — Entrepreneur</cite>
+      </div>
+      <div class="tcard rv">
+        <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+        <blockquote>&ldquo;Within a single session I healed a pattern I had been repeating for many years.&rdquo;</blockquote>
+        <cite>Dominika Lenard</cite>
+      </div>
+      <div class="tcard rv">
+        <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+        <blockquote>&ldquo;Since that work, I have never felt lonely.&rdquo;</blockquote>
+        <cite>Beata Brzychczyk</cite>
+      </div>
+    </div>
+    <div class="cta-wrap rv">
+      <a class="btn" href="#conversation">Book your private conversation
+        <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      </a>
+      <div class="cta-q">
+        <p>&ldquo;I know no one who works at this level with what is still in us to be healed.&rdquo;</p>
+        <span>Paulina Szuta</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="seam" aria-hidden="true"></div>
+
+<!-- ═══ 5 · TERMS ═══ -->
+<section id="terms">
+  <div class="col">
+    <span class="lab rv">Terms</span>
+    <h2 class="sc rv">The engagement</h2>
+    <div class="terms rv">
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div>
+        <div class="n metal">12 spots</div>
+        <p>Twelve engagements at a time. Attention has a ceiling.</p>
+      </div>
+      <div>
+        <div class="t-big">Two private sessions a month</div>
+        <p>Plus direct access between them.</p>
+      </div>
+      <div>
+        <div class="t-big">Engagements begin at €3,000/month</div>
+        <p>Shown plainly. A real decision needs the real number.</p>
+      </div>
+      <div class="crisis">
+        <div class="t-big">The crisis line</div>
+        <p>When everything breaks at once, <b>Michal is ready within hours</b> — and stays in the work until it is solved.</p>
+      </div>
+    </div>
+    <p class="sidedoor rv">There is one other door — the written one: <a href="the-secret-book-of-emotions-shen.html">The Secret Book of Emotions</a></p>
+  </div>
+</section>
+
+<div class="seam" aria-hidden="true"></div>
+
+<!-- ═══ 6 · THE CONVERSATION ═══ -->
+<section id="conversation">
+  <div class="col jewel-halo">
+    <div class="jewel rv">
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <span class="lab">The Conversation</span>
+      <h2>Book your private 20–30 minute conversation.</h2>
+      <p class="preline">One field. One decision. We take it from there.</p>
+      <form id="convForm" class="f-row" action="https://formspree.io/f/mvzblnyr" method="POST">
+        <input type="hidden" name="version" value="v2_minimal">
+        <div class="f-field">
+          <input type="email" name="email" required autocomplete="email" placeholder="name@company.com" aria-label="Email address">
+          <span class="f-line" aria-hidden="true"></span>
+        </div>
+        <button class="btn" type="submit">Book your private conversation
+          <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+        </button>
+      </form>
+      <div class="sent" role="status">
+        <p>Received.</p>
+        <span>The details are on their way by email.</span>
+      </div>
+      <p class="dissolve"><b>Confidential.</b> 20–30 minutes. You get the details by email.</p>
+      <div class="cta-q">
+        <p>&ldquo;Michał is a highly skilled professional who built my trust session by session — and I'm not someone easily convinced.&rdquo;</p>
+        <span>Arkadiusz Czajkowski — CEO</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="f-name metal">Michal Ksiadzyna</div>
+  <div class="f-sub">Shen · The Shen Method · Emotion Mentoring</div>
+  <button id="replay" type="button">Replay the opening</button>
+</footer>
+
+<!-- sticky mobile CTA -->
+<div id="mcta"><a href="#conversation">Book your private conversation</a></div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/gsap.min.js"></script>
+<script>
+(function(){
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ═══ INTRO — champagne dust-flash condensing into the wordmark (~0.5s) ═══ */
+  var intro = document.getElementById('intro');
+  var introDone = false;
+  function stamp(){ try{ localStorage.setItem('introSeen_v1','1'); }catch(e){} }
+  function endIntro(instant){
+    if (introDone || !intro) return;
+    introDone = true;
+    stamp();
+    if (window.gsap) gsap.killTweensOf('#intro, #intro *');
+    if (instant){ intro.remove(); }
+    else {
+      intro.style.transition = 'opacity .22s ease';
+      intro.style.opacity = '0';
+      setTimeout(function(){ if (intro.parentNode) intro.remove(); }, 240);
+    }
+    window.removeEventListener('pointerdown', skip);
+    window.removeEventListener('keydown', skip);
+    window.removeEventListener('wheel', skip);
+    window.removeEventListener('touchstart', skip);
+  }
+  function skip(){ endIntro(true); }
+
+  if (document.documentElement.classList.contains('intro-seen')){
+    if (intro) intro.remove();
+    introDone = true;
+  } else if (intro){
+    window.addEventListener('pointerdown', skip);
+    window.addEventListener('keydown', skip);
+    window.addEventListener('wheel', skip, {passive:true});
+    window.addEventListener('touchstart', skip, {passive:true});
+
+    if (reduced || !window.gsap){
+      /* reduced motion: simple 300ms fade */
+      var mk = intro.querySelector('.i-mark');
+      mk.style.filter = 'none'; mk.style.opacity = '1';
+      setTimeout(function(){
+        intro.style.transition = 'opacity .3s ease';
+        intro.style.opacity = '0';
+        setTimeout(function(){ endIntro(true); }, 310);
+      }, 240);
+    } else {
+      /* build the dust */
+      var N = 26, i, d, frag = document.createDocumentFragment();
+      for (i = 0; i < N; i++){ d = document.createElement('span'); d.className = 'dust'; frag.appendChild(d); }
+      intro.appendChild(frag);
+      var dust = intro.querySelectorAll('.dust');
+      var tl = gsap.timeline({ onComplete: function(){ endIntro(false); } });
+      dust.forEach(function(el){
+        tl.fromTo(el,
+          { x: gsap.utils.random(-46,46) + 'vw', y: gsap.utils.random(-40,40) + 'vh', opacity: 0, scale: gsap.utils.random(.6,1.8) },
+          { x: 0, y: 0, opacity: 1, scale: .18, duration: .3, ease: 'power3.in' }, gsap.utils.random(0, .06));
+      });
+      tl.to('#intro .i-flash', { opacity: 1, scale: 1.15, duration: .12, ease: 'power2.out' }, .28)
+        .to(dust, { opacity: 0, duration: .1 }, .3)
+        .to('#intro .i-flash', { opacity: 0, scale: 1.7, duration: .18, ease: 'power2.out' }, .38)
+        .to('#intro .i-mark', { opacity: 1, filter: 'blur(0px)', duration: .18, ease: 'power2.out' }, .32)
+        .to({}, { duration: .12 }); /* one breath on the wordmark, total ≈ 0.62s */
+    }
+  }
+
+  /* replay control */
+  var rp = document.getElementById('replay');
+  if (rp) rp.addEventListener('click', function(){
+    try{ localStorage.removeItem('introSeen_v1'); }catch(e){}
+    location.reload();
+  });
+
+  /* ═══ reveals ═══ */
+  var rvs = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window && !reduced){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+    rvs.forEach(function(el){ io.observe(el); });
+  } else {
+    rvs.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ═══ sticky mobile CTA — appears past the hero, retires at the form ═══ */
+  var mcta = document.getElementById('mcta');
+  var hero = document.getElementById('hero');
+  var conv = document.getElementById('conversation');
+  var pastHero = false, atForm = false;
+  function setBar(){ mcta.classList.toggle('show', pastHero && !atForm); }
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){ pastHero = !e[0].isIntersecting; setBar(); }, { threshold: .05 }).observe(hero);
+    new IntersectionObserver(function(e){ atForm = e[0].isIntersecting; setBar(); }, { threshold: .25 }).observe(conv);
+  }
+
+  /* ═══ the form — pure yes ═══ */
+  var form = document.getElementById('convForm');
+  var jewel = document.querySelector('.jewel');
+  if (form) form.addEventListener('submit', function(ev){
+    ev.preventDefault();
+    var btn = form.querySelector('button');
+    btn.disabled = true; btn.style.opacity = '.6';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(r){
+      if (r.ok){ jewel.classList.add('is-sent'); }
+      else { HTMLFormElement.prototype.submit.call(form); }
+    }).catch(function(){
+      /* graceful fallback: native submit */
+      HTMLFormElement.prototype.submit.call(form);
+    });
+  });
+})();
+</script>
+</body>
+</html>

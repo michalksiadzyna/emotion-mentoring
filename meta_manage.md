@@ -1,0 +1,527 @@
+- generic [ref=e12]:
+  - generic [ref=e13]:
+    - generic [ref=e362]:
+      - generic [ref=e364]:
+        - generic [ref=e365]:
+          - heading "Zawartość" [level=1] [ref=e366]
+          - generic [ref=e367]: Planuj i publikuj posty, rolki oraz relacje, zarządzaj nimi i nie tylko.
+        - toolbar [ref=e369]:
+          - generic [ref=e371]:
+            - group [ref=e374]:
+              - button "Eksportuj dane" [ref=e375] [cursor=pointer]:
+                - generic [ref=e380]: Eksportuj dane
+              - button "Otwórz menu rozwijane" [ref=e382] [cursor=pointer]:
+                - generic [ref=e385]: Otwórz menu rozwijane
+            - button "Utwórz rolkę" [ref=e389] [cursor=pointer]:
+              - generic [ref=e394]: Utwórz rolkę
+            - group [ref=e395]:
+              - button "Utwórz post" [ref=e396] [cursor=pointer]:
+                - generic [ref=e401]: Utwórz post
+              - button "Utwórz post" [ref=e403] [cursor=pointer]:
+                - generic [ref=e406]: Utwórz post
+          - button "Zadania do wykonania" [ref=e412] [cursor=pointer]:
+            - generic [ref=e417]: Zadania do wykonania
+          - button "Facebook" [ref=e419] [cursor=pointer]:
+            - generic [ref=e425]:
+              - generic:
+                - img
+              - img "Facebook" [ref=e427]
+      - generic [ref=e428]:
+        - generic [ref=e435]:
+          - generic [ref=e438]:
+            - navigation "Materiały" [ref=e439]:
+              - generic [ref=e446]: Materiały
+              - list [ref=e447]:
+                - listitem [ref=e449]:
+                  - link "Posty i rolki" [ref=e451] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/posts/published_posts?business_id=952013878730287&asset_id=114978181708449
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Posty i rolki
+                - listitem [ref=e457]:
+                  - link "Relacje" [ref=e459] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/posts/active_stories?business_id=952013878730287&asset_id=114978181708449
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Relacje
+                - listitem [ref=e465]:
+                  - link "Aktualności i siatka" [ref=e467] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/posts/feed_and_grid?business_id=952013878730287&asset_id=114978181708449
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Aktualności i siatka
+                - listitem [ref=e473]:
+                  - link "Wzmianki i znaczniki" [ref=e475] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/posts/tagged_content?business_id=952013878730287&asset_id=114978181708449
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Wzmianki i znaczniki
+                - listitem [ref=e481]:
+                  - link "Klipy" [ref=e483] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/posts/all_clips?business_id=952013878730287&asset_id=114978181708449
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Klipy
+            - navigation "Kolekcje" [ref=e488]:
+              - generic [ref=e495]: Kolekcje
+              - list [ref=e496]:
+                - listitem [ref=e498]:
+                  - link "Programy" [ref=e500] [cursor=pointer]:
+                    - /url: https://business.facebook.com/latest/posts/series?business_id=952013878730287&asset_id=114978181708449
+                  - generic:
+                    - listitem:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic: Programy
+          - button "Zwiń" [ref=e508] [cursor=pointer]:
+            - generic [ref=e511]: Zwiń
+        - generic [ref=e516]:
+          - generic [ref=e529]:
+            - generic [ref=e531]:
+              - heading "Nowy wskaźnik liczby widzów dla treści opublikowanych po 31 lipca 2025 r." [level=4] [ref=e533]
+              - generic [ref=e534]: Skorzystaj z tego nowego wskaźnika, aby lepiej zrozumieć, kto widzi Twoje treści na platformach Meta. Wskaźnik zasięgu nie będzie już wyświetlany w Meta Business Suite, ale nadal można go znaleźć w Menedżerze reklam.
+            - button "Zamknij" [ref=e535] [cursor=pointer]:
+              - generic [ref=e538]: Zamknij
+          - generic [ref=e544]:
+            - generic [ref=e545]:
+              - heading "Wszystkie filmy publikowane przez Ciebie na Facebooku mają teraz status rolek" [level=4] [ref=e552]
+              - button "Zamknij" [ref=e553] [cursor=pointer]:
+                - generic [ref=e556]: Zamknij
+            - generic [ref=e561]:
+              - generic [ref=e562]: Upraszczamy sposób tworzenia materiałów.
+              - link "Dowiedz się więcej" [ref=e563] [cursor=pointer]:
+                - /url: "#"
+          - generic [ref=e569]:
+            - tablist [ref=e572]:
+              - tab "Opublikowane" [ref=e575] [cursor=pointer]:
+                - generic [ref=e578]: Opublikowane
+              - tab "Zaplanowane" [selected] [ref=e581] [cursor=pointer]:
+                - generic [ref=e584]: Zaplanowane
+              - tab "Wersje robocze" [ref=e587] [cursor=pointer]:
+                - generic [ref=e590]: Wersje robocze
+            - generic [ref=e593]:
+              - generic [ref=e594]:
+                - generic [ref=e596]:
+                  - generic [ref=e598]:
+                    - generic [ref=e604]: Typ posta
+                    - combobox "Typ posta Typ posta" [ref=e609] [cursor=pointer]:
+                      - generic [ref=e616]: Typ posta
+                  - generic [ref=e619]:
+                    - generic [ref=e625]: Filtruj
+                    - combobox "Filtruj Filtruj" [ref=e630] [cursor=pointer]:
+                      - generic [ref=e637]: Filtruj
+                - link "Wyczyść" [ref=e641] [cursor=pointer]:
+                  - /url: "#"
+                - generic [ref=e643]:
+                  - generic [ref=e649]: Szukaj według identyfikatora lub podpisu
+                  - textbox "Szukaj według identyfikatora lub podpisu" [ref=e662]
+              - grid "Tabela zawierająca statystyki dotyczące materiałów utworzonych na wybraną stronę lub profil na Facebooku i/lub konto na Instagramie, w tym reklam, postów i relacji." [ref=e673]:
+                - rowgroup [ref=e674]:
+                  - row "Tytuł Zaplanowana data Ustawienia prywatności Status" [ref=e675]:
+                    - columnheader [ref=e676]
+                    - columnheader "Tytuł" [ref=e677]:
+                      - generic [ref=e678]:
+                        - heading "Tytuł" [level=4] [ref=e683]
+                        - separator:
+                          - separator [ref=e684]
+                    - columnheader "Zaplanowana data" [ref=e686]:
+                      - generic [ref=e687]:
+                        - heading "Zaplanowana data" [level=4] [ref=e692]
+                        - separator:
+                          - separator [ref=e693]
+                    - columnheader "Ustawienia prywatności" [ref=e695]:
+                      - generic [ref=e696]:
+                        - heading "Ustawienia prywatności" [level=4] [ref=e701]
+                        - separator:
+                          - separator [ref=e702]
+                    - columnheader "Status" [ref=e704]:
+                      - generic [ref=e705]:
+                        - heading "Status" [level=4] [ref=e710]
+                        - separator:
+                          - separator [ref=e711]
+                - rowgroup [ref=e713]:
+                  - row "Zaznacz element z podpisem „It begins with one person. One competitor, one partner. The hatred is specific, targeted, contained. Then the container cracks. When hatred is blocked, the charge seeks alternative expression. It spills into broader categories. From the individual to the group, to the role, to reality itself. When the original charge is released at its source, the expansion reverses.” Instagram It begins with one person. One competitor, one partner. The hatred is specific, targeted, contained. Then the container cracks. When hatred is blocked, the charge seeks alternative expression. It spills into broader categories. From the individual to the group, to the role, to reality itself. When the original charge is released at its source, the expansion reverses. Zdjęcie · shenfreelife Promuj Otwórz menu rozwijane 26 marca 06:00 Publiczne Brak promowania" [ref=e714] [cursor=pointer]:
+                    - gridcell "Zaznacz element z podpisem „It begins with one person. One competitor, one partner. The hatred is specific, targeted, contained. Then the container cracks. When hatred is blocked, the charge seeks alternative expression. It spills into broader categories. From the individual to the group, to the role, to reality itself. When the original charge is released at its source, the expansion reverses.”" [ref=e715]:
+                      - button "Zaznacz element z podpisem „It begins with one person. One competitor, one partner. The hatred is specific, targeted, contained. Then the container cracks. When hatred is blocked, the charge seeks alternative expression. It spills into broader categories. From the individual to the group, to the role, to reality itself. When the original charge is released at its source, the expansion reverses.”" [ref=e717]:
+                        - generic [ref=e721]:
+                          - checkbox "Zaznacz element z podpisem „It begins with one person. One competitor, one partner. The hatred is specific, targeted, contained. Then the container cracks. When hatred is blocked, the charge seeks alternative expression. It spills into broader categories. From the individual to the group, to the role, to reality itself. When the original charge is released at its source, the expansion reverses.”" [ref=e722]
+                          - generic:
+                            - img
+                    - gridcell "Instagram It begins with one person. One competitor, one partner. The hatred is specific, targeted, contained. Then the container cracks. When hatred is blocked, the charge seeks alternative expression. It spills into broader categories. From the individual to the group, to the role, to reality itself. When the original charge is released at its source, the expansion reverses. Zdjęcie · shenfreelife Promuj Otwórz menu rozwijane" [ref=e723]:
+                      - generic [ref=e726]:
+                        - img "Instagram" [ref=e732]
+                        - generic [ref=e733]:
+                          - generic [ref=e734]: It begins with one person. One competitor, one partner. The hatred is specific, targeted, contained. Then the container cracks. When hatred is blocked, the charge seeks alternative expression. It spills into broader categories. From the individual to the group, to the role, to reality itself. When the original charge is released at its source, the expansion reverses.
+                          - generic [ref=e735]:
+                            - generic [ref=e738]: Zdjęcie ·
+                            - generic [ref=e742]: shenfreelife
+                        - generic [ref=e745]:
+                          - button "Promuj" [ref=e747]:
+                            - generic [ref=e751]: Promuj
+                          - button "Otwórz menu rozwijane" [ref=e752]:
+                            - generic [ref=e755]: Otwórz menu rozwijane
+                    - gridcell "26 marca 06:00" [ref=e758]:
+                      - generic [ref=e760]: 26 marca 06:00
+                    - gridcell "Publiczne" [ref=e761]:
+                      - generic [ref=e762]: Publiczne
+                    - gridcell "Brak promowania" [ref=e763]:
+                      - generic "Brak promowania" [ref=e765]
+                  - row "Zaznacz element z podpisem „The betrayal happened. Something was broken and the harm is real. What follows is the system searching for balance. Blame concentrates all cause on one side. Forgiveness releases the hatred that fuels revenge. Redemption reverses the damage through acts of good. When the hatred is freed, the need for punishment dissolves on its own.” Instagram The betrayal happened. Something was broken and the harm is real. What follows is the system searching for balance. Blame concentrates all cause on one side. Forgiveness releases the hatred that fuels revenge. Redemption reverses the damage through acts of good. When the hatred is freed, the need for punishment dissolves on its own. Zdjęcie · shenfreelife Promuj Otwórz menu rozwijane 25 marca 06:00 Publiczne Brak promowania" [ref=e768] [cursor=pointer]:
+                    - gridcell "Zaznacz element z podpisem „The betrayal happened. Something was broken and the harm is real. What follows is the system searching for balance. Blame concentrates all cause on one side. Forgiveness releases the hatred that fuels revenge. Redemption reverses the damage through acts of good. When the hatred is freed, the need for punishment dissolves on its own.”" [ref=e769]:
+                      - button "Zaznacz element z podpisem „The betrayal happened. Something was broken and the harm is real. What follows is the system searching for balance. Blame concentrates all cause on one side. Forgiveness releases the hatred that fuels revenge. Redemption reverses the damage through acts of good. When the hatred is freed, the need for punishment dissolves on its own.”" [ref=e771]:
+                        - generic [ref=e775]:
+                          - checkbox "Zaznacz element z podpisem „The betrayal happened. Something was broken and the harm is real. What follows is the system searching for balance. Blame concentrates all cause on one side. Forgiveness releases the hatred that fuels revenge. Redemption reverses the damage through acts of good. When the hatred is freed, the need for punishment dissolves on its own.”" [ref=e776]
+                          - generic:
+                            - img
+                    - gridcell "Instagram The betrayal happened. Something was broken and the harm is real. What follows is the system searching for balance. Blame concentrates all cause on one side. Forgiveness releases the hatred that fuels revenge. Redemption reverses the damage through acts of good. When the hatred is freed, the need for punishment dissolves on its own. Zdjęcie · shenfreelife Promuj Otwórz menu rozwijane" [ref=e777]:
+                      - generic [ref=e780]:
+                        - img "Instagram" [ref=e786]
+                        - generic [ref=e787]:
+                          - generic [ref=e788]: The betrayal happened. Something was broken and the harm is real. What follows is the system searching for balance. Blame concentrates all cause on one side. Forgiveness releases the hatred that fuels revenge. Redemption reverses the damage through acts of good. When the hatred is freed, the need for punishment dissolves on its own.
+                          - generic [ref=e789]:
+                            - generic [ref=e792]: Zdjęcie ·
+                            - generic [ref=e796]: shenfreelife
+                        - generic [ref=e799]:
+                          - button "Promuj" [ref=e801]:
+                            - generic [ref=e805]: Promuj
+                          - button "Otwórz menu rozwijane" [ref=e806]:
+                            - generic [ref=e809]: Otwórz menu rozwijane
+                    - gridcell "25 marca 06:00" [ref=e812]:
+                      - generic [ref=e814]: 25 marca 06:00
+                    - gridcell "Publiczne" [ref=e815]:
+                      - generic [ref=e816]: Publiczne
+                    - gridcell "Brak promowania" [ref=e817]:
+                      - generic "Brak promowania" [ref=e819]
+                  - row [ref=e822] [cursor=pointer]:
+                    - gridcell "Zaznacz element z podpisem „The team keeps leaving. The partners keep failing. The pattern repeats and the cause remains invisible. The analysis runs deep, the strategy adjusts, and the same result appears. Hatred blinds perception. When hatred is present, the ability to see strengths and weaknesses disappears. The blind spot is active obstruction. Understanding arises when hatred subsides. The real picture becomes visible.”" [ref=e823]:
+                      - button "Zaznacz element z podpisem „The team keeps leaving. The partners keep failing. The pattern repeats and the cause remains invisible. The analysis runs deep, the strategy adjusts, and the same result appears. Hatred blinds perception. When hatred is present, the ability to see strengths and weaknesses disappears. The blind spot is active obstruction. Understanding arises when hatred subsides. The real picture becomes visible.”" [ref=e825]:
+                        - generic [ref=e829]:
+                          - checkbox "Zaznacz element z podpisem „The team keeps leaving. The partners keep failing. The pattern repeats and the cause remains invisible. The analysis runs deep, the strategy adjusts, and the same result appears. Hatred blinds perception. When hatred is present, the ability to see strengths and weaknesses disappears. The blind spot is active obstruction. Understanding arises when hatred subsides. The real picture becomes visible.”" [ref=e830]
+                          - generic:
+                            - img
+                    - gridcell "Instagram The team keeps leaving. The partners keep failing. The pattern repeats and the cause remains invisible. The analysis runs deep, the strategy adjusts, and the same result appears. Hatred blinds perception. When hatred is present, the ability to see strengths and weaknesses disappears. The blind spot is active obstruction. Understanding arises when hatred subsides. The real picture becomes visible. Zdjęcie · shenfreelife Promuj Otwórz menu rozwijane" [ref=e831]:
+                      - generic [ref=e834]:
+                        - img "Instagram" [ref=e840]
+                        - generic [ref=e841]:
+                          - generic [ref=e842]: The team keeps leaving. The partners keep failing. The pattern repeats and the cause remains invisible. The analysis runs deep, the strategy adjusts, and the same result appears. Hatred blinds perception. When hatred is present, the ability to see strengths and weaknesses disappears. The blind spot is active obstruction. Understanding arises when hatred subsides. The real picture becomes visible.
+                          - generic [ref=e843]:
+                            - generic [ref=e846]: Zdjęcie ·
+                            - generic [ref=e850]: shenfreelife
+                        - generic [ref=e853]:
+                          - button "Promuj" [ref=e855]:
+                            - generic [ref=e859]: Promuj
+                          - button "Otwórz menu rozwijane" [ref=e860]:
+                            - generic [ref=e863]: Otwórz menu rozwijane
+                    - gridcell "24 marca 06:00" [ref=e866]:
+                      - generic [ref=e868]: 24 marca 06:00
+                    - gridcell "Publiczne" [ref=e869]:
+                      - generic [ref=e870]: Publiczne
+                    - gridcell "Brak promowania" [ref=e871]:
+                      - generic "Brak promowania" [ref=e873]
+                  - row "Zaznacz element z podpisem „We revisit the garage where it started. The first office. The early team. Something warm arises. Familiar but different from longing. Nostalgia is a form of gratitude nested in the past. The pleasure of reminiscing how we felt, remembering fondly what was, even though it no longer is. The past feeds the present through appreciation, not longing.” Instagram We revisit the garage where it started. The first office. The early team. Something warm arises. Familiar but different from longing. Nostalgia is a form of gratitude nested in the past. The pleasure of reminiscing how we felt, remembering fondly what was, even though it no longer is. The past feeds the present through appreciation, not longing. Zdjęcie · shenfreelife Promuj Otwórz menu rozwijane 23 marca 06:00 Publiczne Brak promowania" [ref=e876] [cursor=pointer]:
+                    - gridcell "Zaznacz element z podpisem „We revisit the garage where it started. The first office. The early team. Something warm arises. Familiar but different from longing. Nostalgia is a form of gratitude nested in the past. The pleasure of reminiscing how we felt, remembering fondly what was, even though it no longer is. The past feeds the present through appreciation, not longing.”" [ref=e877]:
+                      - button "Zaznacz element z podpisem „We revisit the garage where it started. The first office. The early team. Something warm arises. Familiar but different from longing. Nostalgia is a form of gratitude nested in the past. The pleasure of reminiscing how we felt, remembering fondly what was, even though it no longer is. The past feeds the present through appreciation, not longing.”" [ref=e879]:
+                        - generic [ref=e883]:
+                          - checkbox "Zaznacz element z podpisem „We revisit the garage where it started. The first office. The early team. Something warm arises. Familiar but different from longing. Nostalgia is a form of gratitude nested in the past. The pleasure of reminiscing how we felt, remembering fondly what was, even though it no longer is. The past feeds the present through appreciation, not longing.”" [ref=e884]
+                          - generic:
+                            - img
+                    - gridcell "Instagram We revisit the garage where it started. The first office. The early team. Something warm arises. Familiar but different from longing. Nostalgia is a form of gratitude nested in the past. The pleasure of reminiscing how we felt, remembering fondly what was, even though it no longer is. The past feeds the present through appreciation, not longing. Zdjęcie · shenfreelife Promuj Otwórz menu rozwijane" [ref=e885]:
+                      - generic [ref=e888]:
+                        - img "Instagram" [ref=e894]
+                        - generic [ref=e895]:
+                          - generic [ref=e896]: We revisit the garage where it started. The first office. The early team. Something warm arises. Familiar but different from longing. Nostalgia is a form of gratitude nested in the past. The pleasure of reminiscing how we felt, remembering fondly what was, even though it no longer is. The past feeds the present through appreciation, not longing.
+                          - generic [ref=e897]:
+                            - generic [ref=e900]: Zdjęcie ·
+                            - generic [ref=e904]: shenfreelife
+                        - generic [ref=e907]:
+                          - button "Promuj" [ref=e909]:
+                            - generic [ref=e913]: Promuj
+                          - button "Otwórz menu rozwijane" [ref=e914]:
+                            - generic [ref=e917]: Otwórz menu rozwijane
+                    - gridcell "23 marca 06:00" [ref=e920]:
+                      - generic [ref=e922]: 23 marca 06:00
+                    - gridcell "Publiczne" [ref=e923]:
+                      - generic [ref=e924]: Publiczne
+                    - gridcell "Brak promowania" [ref=e925]:
+                      - generic "Brak promowania" [ref=e927]
+                  - row [ref=e930] [cursor=pointer]:
+                    - gridcell "Zaznacz element z podpisem „The company becomes the identity. The relationship becomes the foundation. At some point, what we built and who we are merge so completely that separating them feels like annihilation. Attachment arises when we view something as the essential source of satisfying our needs. Attachment produces fear, because what we are attached to, we are afraid to lose. Without attachment, the prospect of loss produces no fear.”" [ref=e931]:
+                      - button "Zaznacz element z podpisem „The company becomes the identity. The relationship becomes the foundation. At some point, what we built and who we are merge so completely that separating them feels like annihilation. Attachment arises when we view something as the essential source of satisfying our needs. Attachment produces fear, because what we are attached to, we are afraid to lose. Without attachment, the prospect of loss produces no fear.”" [ref=e933]:
+                        - generic [ref=e937]:
+                          - checkbox "Zaznacz element z podpisem „The company becomes the identity. The relationship becomes the foundation. At some point, what we built and who we are merge so completely that separating them feels like annihilation. Attachment arises when we view something as the essential source of satisfying our needs. Attachment produces fear, because what we are attached to, we are afraid to lose. Without attachment, the prospect of loss produces no fear.”" [ref=e938]
+                          - generic:
+                            - img
+                    - gridcell "Instagram The company becomes the identity. The relationship becomes the foundation. At some point, what we built and who we are merge so completely that separating them feels like annihilation. Attachment arises when we view something as the essential source of satisfying our needs. Attachment produces fear, because what we are attached to, we are afraid to lose. Without attachment, the prospect of loss produces no fear. Zdjęcie · shenfreelife Promuj Otwórz menu rozwijane" [ref=e939]:
+                      - generic [ref=e942]:
+                        - img "Instagram" [ref=e948]
+                        - generic [ref=e949]:
+                          - generic [ref=e950]: The company becomes the identity. The relationship becomes the foundation. At some point, what we built and who we are merge so completely that separating them feels like annihilation. Attachment arises when we view something as the essential source of satisfying our needs. Attachment produces fear, because what we are attached to, we are afraid to lose. Without attachment, the prospect of loss produces no fear.
+                          - generic [ref=e951]:
+                            - generic [ref=e954]: Zdjęcie ·
+                            - generic [ref=e958]: shenfreelife
+                        - generic [ref=e961]:
+                          - button "Promuj" [ref=e963]:
+                            - generic [ref=e967]: Promuj
+                          - button "Otwórz menu rozwijane" [ref=e968]:
+                            - generic [ref=e971]: Otwórz menu rozwijane
+                    - gridcell "22 marca 06:00" [ref=e974]:
+                      - generic [ref=e976]: 22 marca 06:00
+                    - gridcell "Publiczne" [ref=e977]:
+                      - generic [ref=e978]: Publiczne
+                    - gridcell "Brak promowania" [ref=e979]:
+                      - generic "Brak promowania" [ref=e981]
+                  - row [ref=e984] [cursor=pointer]:
+                    - 'gridcell "Zaznacz element z podpisem „We remember the moment the line was crossed. The betrayal was specific. Anger arrived. Hot, immediate, proportional to the event. Then something shifted. The anger hardened. It ceased to be about what he did and became about what he is. The specific became universal. The temporary became permanent. Anger responds to a situation. Hatred responds to existence. And because its target is permanent, so is its grip. Understanding is the solvent. The blade held against the world was forged from a single injury. When the injury is addressed, the blade has no purpose. The world becomes clear. emotionmentoring.com #emotionmentoring #architectureofadaptation #mindset #highperformance #leadership”" [ref=e985]':
+                      - 'button "Zaznacz element z podpisem „We remember the moment the line was crossed. The betrayal was specific. Anger arrived. Hot, immediate, proportional to the event. Then something shifted. The anger hardened. It ceased to be about what he did and became about what he is. The specific became universal. The temporary became permanent. Anger responds to a situation. Hatred responds to existence. And because its target is permanent, so is its grip. Understanding is the solvent. The blade held against the world was forged from a single injury. When the injury is addressed, the blade has no purpose. The world becomes clear. emotionmentoring.com #emotionmentoring #architectureofadaptation #mindset #highperformance #leadership”" [ref=e987]':
+                        - generic [ref=e991]:
+                          - 'checkbox "Zaznacz element z podpisem „We remember the moment the line was crossed. The betrayal was specific. Anger arrived. Hot, immediate, proportional to the event. Then something shifted. The anger hardened. It ceased to be about what he did and became about what he is. The specific became universal. The temporary became permanent. Anger responds to a situation. Hatred responds to existence. And because its target is permanent, so is its grip. Understanding is the solvent. The blade held against the world was forged from a single injury. When the injury is addressed, the blade has no purpose. The world becomes clear. emotionmentoring.com #emotionmentoring #architectureofadaptation #mindset #highperformance #leadership”" [ref=e992]'
+                          - generic:
+                            - img
+                    - 'gridcell "Facebook We remember the moment the line was crossed. The betrayal was specific. Anger arrived. Hot, immediate, proportional to the event. Then something shifted. The anger hardened. It ceased to be about what he did and became about what he is. The specific became universal. The temporary became permanent. Anger responds to a situation. Hatred responds to existence. And because its target is permanent, so is its grip. Understanding is the solvent. The blade held against the world was forged from a single injury. When the injury is addressed, the blade has no purpose. The world becomes clear. emotionmentoring.com #emotionmentoring #architectureofadaptation #mindset #highperformance #leadership Zdjęcie · Fundacja Shen Promuj Otwórz menu rozwijane" [ref=e993]':
+                      - generic [ref=e996]:
+                        - img "Facebook" [ref=e1002]
+                        - generic [ref=e1003]:
+                          - generic [ref=e1004]: "We remember the moment the line was crossed. The betrayal was specific. Anger arrived. Hot, immediate, proportional to the event. Then something shifted. The anger hardened. It ceased to be about what he did and became about what he is. The specific became universal. The temporary became permanent. Anger responds to a situation. Hatred responds to existence. And because its target is permanent, so is its grip. Understanding is the solvent. The blade held against the world was forged from a single injury. When the injury is addressed, the blade has no purpose. The world becomes clear. emotionmentoring.com #emotionmentoring #architectureofadaptation #mindset #highperformance #leadership"
+                          - generic [ref=e1005]:
+                            - generic [ref=e1008]: Zdjęcie ·
+                            - generic [ref=e1012]: Fundacja Shen
+                        - generic [ref=e1015]:
+                          - button "Promuj" [ref=e1017]:
+                            - generic [ref=e1021]: Promuj
+                          - button "Otwórz menu rozwijane" [ref=e1022]:
+                            - generic [ref=e1025]: Otwórz menu rozwijane
+                    - gridcell "21 marca 06:00" [ref=e1028]:
+                      - generic [ref=e1030]: 21 marca 06:00
+                    - gridcell "Publiczne" [ref=e1031]:
+                      - generic [ref=e1032]: Publiczne
+                    - gridcell "Brak promowania" [ref=e1033]:
+                      - generic "Brak promowania" [ref=e1035]
+                  - row [ref=e1038] [cursor=pointer]:
+                    - 'gridcell "Zaznacz element z podpisem „We remember the moment the line was crossed. The betrayal was specific. Anger arrived. Hot, immediate, proportional to the event. Then something shifted. The anger hardened. It ceased to be about what he did and became about what he is. The specific became universal. The temporary became permanent. Anger responds to a situation. Hatred responds to existence. And because its target is permanent, so is its grip. Understanding is the solvent. The blade held against the world was forged from a single injury. When the injury is addressed, the blade has no purpose. The world becomes clear. emotionmentoring.com #emotionmentoring #architectureofadaptation #mindset #highperformance #leadership”" [ref=e1039]':
+                      - 'button "Zaznacz element z podpisem „We remember the moment the line was crossed. The betrayal was specific. Anger arrived. Hot, immediate, proportional to the event. Then something shifted. The anger hardened. It ceased to be about what he did and became about what he is. The specific became universal. The temporary became permanent. Anger responds to a situation. Hatred responds to existence. And because its target is permanent, so is its grip. Understanding is the solvent. The blade held against the world was forged from a single injury. When the injury is addressed, the blade has no purpose. The world becomes clear. emotionmentoring.com #emotionmentoring #architectureofadaptation #mindset #highperformance #leadership”" [ref=e1041]':
+                        - generic [ref=e1045]:
+                          - 'checkbox "Zaznacz element z podpisem „We remember the moment the line was crossed. The betrayal was specific. Anger arrived. Hot, immediate, proportional to the event. Then something shifted. The anger hardened. It ceased to be about what he did and became about what he is. The specific became universal. The temporary became permanent. Anger responds to a situation. Hatred responds to existence. And because its target is permanent, so is its grip. Understanding is the solvent. The blade held against the world was forged from a single injury. When the injury is addressed, the blade has no purpose. The world becomes clear. emotionmentoring.com #emotionmentoring #architectureofadaptation #mindset #highperformance #leadership”" [ref=e1046]'
+                          - generic:
+                            - img
+                    - 'gridcell "Instagram We remember the moment the line was crossed. The betrayal was specific. Anger arrived. Hot, immediate, proportional to the event. Then something shifted. The anger hardened. It ceased to be about what he did and became about what he is. The specific became universal. The temporary became permanent. Anger responds to a situation. Hatred responds to existence. And because its target is permanent, so is its grip. Understanding is the solvent. The blade held against the world was forged from a single injury. When the injury is addressed, the blade has no purpose. The world becomes clear. emotionmentoring.com #emotionmentoring #architectureofadaptation #mindset #highperformance #leadership Zdjęcie · shenfreelife Promuj Otwórz menu rozwijane" [ref=e1047]':
+                      - generic [ref=e1050]:
+                        - img "Instagram" [ref=e1056]
+                        - generic [ref=e1057]:
+                          - generic [ref=e1058]: "We remember the moment the line was crossed. The betrayal was specific. Anger arrived. Hot, immediate, proportional to the event. Then something shifted. The anger hardened. It ceased to be about what he did and became about what he is. The specific became universal. The temporary became permanent. Anger responds to a situation. Hatred responds to existence. And because its target is permanent, so is its grip. Understanding is the solvent. The blade held against the world was forged from a single injury. When the injury is addressed, the blade has no purpose. The world becomes clear. emotionmentoring.com #emotionmentoring #architectureofadaptation #mindset #highperformance #leadership"
+                          - generic [ref=e1059]:
+                            - generic [ref=e1062]: Zdjęcie ·
+                            - generic [ref=e1066]: shenfreelife
+                        - generic [ref=e1069]:
+                          - button "Promuj" [ref=e1071]:
+                            - generic [ref=e1075]: Promuj
+                          - button "Otwórz menu rozwijane" [ref=e1076]:
+                            - generic [ref=e1079]: Otwórz menu rozwijane
+                    - gridcell "21 marca 06:00" [ref=e1082]:
+                      - generic [ref=e1084]: 21 marca 06:00
+                    - gridcell "Publiczne" [ref=e1085]:
+                      - generic [ref=e1086]: Publiczne
+                    - gridcell "Brak promowania" [ref=e1087]:
+                      - generic "Brak promowania" [ref=e1089]
+                  - row [ref=e1092] [cursor=pointer]:
+                    - gridcell "Zaznacz element z podpisem „A minor trigger, a small frustration, and the response is volcanic. The intensity vastly exceeds what the situation calls for. Everyone in the room knows it. Blocked emotional charges do not disappear. They remain stuck. The pressure builds quietly over months and years. When the container breaks, everything comes out at once. Release the stored content, and responses calibrate to the situation.”" [ref=e1093]:
+                      - button "Zaznacz element z podpisem „A minor trigger, a small frustration, and the response is volcanic. The intensity vastly exceeds what the situation calls for. Everyone in the room knows it. Blocked emotional charges do not disappear. They remain stuck. The pressure builds quietly over months and years. When the container breaks, everything comes out at once. Release the stored content, and responses calibrate to the situation.”" [ref=e1095]:
+                        - generic [ref=e1099]:
+                          - checkbox "Zaznacz element z podpisem „A minor trigger, a small frustration, and the response is volcanic. The intensity vastly exceeds what the situation calls for. Everyone in the room knows it. Blocked emotional charges do not disappear. They remain stuck. The pressure builds quietly over months and years. When the container breaks, everything comes out at once. Release the stored content, and responses calibrate to the situation.”" [ref=e1100]
+                          - generic:
+                            - img
+                    - gridcell "Instagram A minor trigger, a small frustration, and the response is volcanic. The intensity vastly exceeds what the situation calls for. Everyone in the room knows it. Blocked emotional charges do not disappear. They remain stuck. The pressure builds quietly over months and years. When the container breaks, everything comes out at once. Release the stored content, and responses calibrate to the situation. Zdjęcie · shenfreelife Promuj Otwórz menu rozwijane" [ref=e1101]:
+                      - generic [ref=e1104]:
+                        - img "Instagram" [ref=e1110]
+                        - generic [ref=e1111]:
+                          - generic [ref=e1112]: A minor trigger, a small frustration, and the response is volcanic. The intensity vastly exceeds what the situation calls for. Everyone in the room knows it. Blocked emotional charges do not disappear. They remain stuck. The pressure builds quietly over months and years. When the container breaks, everything comes out at once. Release the stored content, and responses calibrate to the situation.
+                          - generic [ref=e1113]:
+                            - generic [ref=e1116]: Zdjęcie ·
+                            - generic [ref=e1120]: shenfreelife
+                        - generic [ref=e1123]:
+                          - button "Promuj" [ref=e1125]:
+                            - generic [ref=e1129]: Promuj
+                          - button "Otwórz menu rozwijane" [ref=e1130]:
+                            - generic [ref=e1133]: Otwórz menu rozwijane
+                    - gridcell "21 marca 06:00" [ref=e1136]:
+                      - generic [ref=e1138]: 21 marca 06:00
+                    - gridcell "Publiczne" [ref=e1139]:
+                      - generic [ref=e1140]: Publiczne
+                    - gridcell "Brak promowania" [ref=e1141]:
+                      - generic "Brak promowania" [ref=e1143]
+                  - row "Zaznacz element z podpisem „The partner crossed a line. The initial response is anger. Hot, immediate, directed at the situation. Then something shifts. The anger does not pass. It settles. It hardens. Anger is temporary. Hatred is permanent. The distinction matters because hatred blinds perception. Understanding arises when hatred subsides. With it, the ability to see clearly.” Instagram The partner crossed a line. The initial response is anger. Hot, immediate, directed at the situation. Then something shifts. The anger does not pass. It settles. It hardens. Anger is temporary. Hatred is permanent. The distinction matters because hatred blinds perception. Understanding arises when hatred subsides. With it, the ability to see clearly. Zdjęcie · shenfreelife Promuj Otwórz menu rozwijane 20 marca 06:00 Publiczne Brak promowania" [ref=e1146] [cursor=pointer]:
+                    - gridcell "Zaznacz element z podpisem „The partner crossed a line. The initial response is anger. Hot, immediate, directed at the situation. Then something shifts. The anger does not pass. It settles. It hardens. Anger is temporary. Hatred is permanent. The distinction matters because hatred blinds perception. Understanding arises when hatred subsides. With it, the ability to see clearly.”" [ref=e1147]:
+                      - button "Zaznacz element z podpisem „The partner crossed a line. The initial response is anger. Hot, immediate, directed at the situation. Then something shifts. The anger does not pass. It settles. It hardens. Anger is temporary. Hatred is permanent. The distinction matters because hatred blinds perception. Understanding arises when hatred subsides. With it, the ability to see clearly.”" [ref=e1149]:
+                        - generic [ref=e1153]:
+                          - checkbox "Zaznacz element z podpisem „The partner crossed a line. The initial response is anger. Hot, immediate, directed at the situation. Then something shifts. The anger does not pass. It settles. It hardens. Anger is temporary. Hatred is permanent. The distinction matters because hatred blinds perception. Understanding arises when hatred subsides. With it, the ability to see clearly.”" [ref=e1154]
+                          - generic:
+                            - img
+                    - gridcell "Instagram The partner crossed a line. The initial response is anger. Hot, immediate, directed at the situation. Then something shifts. The anger does not pass. It settles. It hardens. Anger is temporary. Hatred is permanent. The distinction matters because hatred blinds perception. Understanding arises when hatred subsides. With it, the ability to see clearly. Zdjęcie · shenfreelife Promuj Otwórz menu rozwijane" [ref=e1155]:
+                      - generic [ref=e1158]:
+                        - img "Instagram" [ref=e1164]
+                        - generic [ref=e1165]:
+                          - generic [ref=e1166]: The partner crossed a line. The initial response is anger. Hot, immediate, directed at the situation. Then something shifts. The anger does not pass. It settles. It hardens. Anger is temporary. Hatred is permanent. The distinction matters because hatred blinds perception. Understanding arises when hatred subsides. With it, the ability to see clearly.
+                          - generic [ref=e1167]:
+                            - generic [ref=e1170]: Zdjęcie ·
+                            - generic [ref=e1174]: shenfreelife
+                        - generic [ref=e1177]:
+                          - button "Promuj" [ref=e1179]:
+                            - generic [ref=e1183]: Promuj
+                          - button "Otwórz menu rozwijane" [expanded] [ref=e1184]:
+                            - generic [ref=e1187]: Otwórz menu rozwijane
+                    - gridcell "20 marca 06:00" [ref=e1190]:
+                      - generic [ref=e1192]: 20 marca 06:00
+                    - gridcell "Publiczne" [ref=e1193]:
+                      - generic [ref=e1194]: Publiczne
+                    - gridcell "Brak promowania" [ref=e1195]:
+                      - generic "Brak promowania" [ref=e1197]
+    - menu [ref=e1207]:
+      - button "Zarządzaj postem" [active] [ref=e1210] [cursor=pointer]:
+        - generic [ref=e1215]: Zarządzaj postem
+      - menuitem "Skopiuj identyfikator posta" [ref=e1220] [cursor=pointer]:
+        - generic [ref=e1225]: Skopiuj identyfikator posta
+  - generic [ref=e192]:
+    - generic [ref=e194]:
+      - button "Meta Business Suite" [ref=e195] [cursor=pointer]:
+        - generic [ref=e197]: Meta Business Suite
+      - button "Pressable" [ref=e206] [cursor=pointer]:
+        - generic [ref=e209]:
+          - img "Instagram" [ref=e214]
+          - img "Facebook" [ref=e219]
+    - navigation "Linki" [ref=e224]:
+      - generic [ref=e225]: Linki
+      - list [ref=e226]:
+        - generic [ref=e227]:
+          - listitem [ref=e231]:
+            - generic [ref=e233]:
+              - link "Strona główna" [ref=e234] [cursor=pointer]:
+                - /url: https://business.facebook.com/latest/home?business_id=952013878730287&asset_id=114978181708449
+                - generic [ref=e235]: Strona główna
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Strona główna
+          - listitem [ref=e239]:
+            - generic [ref=e241]:
+              - link "Powiadomienia" [ref=e242] [cursor=pointer]:
+                - generic [ref=e243]: Powiadomienia
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Powiadomienia
+          - listitem [ref=e248]:
+            - generic [ref=e250]:
+              - link "Menedżer reklam" [ref=e251] [cursor=pointer]:
+                - generic [ref=e252]: Menedżer reklam
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Menedżer reklam
+          - listitem [ref=e256]:
+            - generic [ref=e258]:
+              - link "Skrzynka odbiorcza" [ref=e259] [cursor=pointer]:
+                - /url: https://business.facebook.com/latest/inbox?business_id=952013878730287&asset_id=114978181708449
+                - generic [ref=e260]: Skrzynka odbiorcza
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Skrzynka odbiorcza
+          - listitem [ref=e265]:
+            - generic [ref=e267]:
+              - link "Zawartość" [ref=e268] [cursor=pointer]:
+                - /url: https://business.facebook.com/latest/posts?business_id=952013878730287&asset_id=114978181708449
+                - generic [ref=e269]: Zawartość
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Zawartość
+          - navigation "Linki" [ref=e270]:
+            - generic [ref=e271]: Linki
+            - list [ref=e272]:
+              - generic [ref=e274]:
+                - separator [ref=e276]
+                - navigation "Shortcuts" [ref=e277]:
+                  - generic [ref=e278]: Shortcuts
+                  - list [ref=e279]:
+                    - listitem [ref=e280]:
+                      - listitem [ref=e286]:
+                        - generic [ref=e288]:
+                          - link "Terminarz" [ref=e289] [cursor=pointer]:
+                            - /url: https://business.facebook.com/latest/content_calendar?business_id=952013878730287&asset_id=114978181708449
+                            - generic [ref=e290]: Terminarz
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: Terminarz
+                    - listitem [ref=e292]:
+                      - listitem [ref=e298]:
+                        - generic [ref=e300]:
+                          - link "Reklamy" [ref=e301] [cursor=pointer]:
+                            - /url: https://business.facebook.com/latest/ad_center/ads_summary?business_id=952013878730287&asset_id=114978181708449
+                            - generic [ref=e302]: Reklamy
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: Reklamy
+                    - listitem [ref=e304]:
+                      - listitem [ref=e310]:
+                        - generic [ref=e312]:
+                          - link "Statystyki" [ref=e313] [cursor=pointer]:
+                            - /url: https://business.facebook.com/latest/insights?business_id=952013878730287&asset_id=114978181708449
+                            - generic [ref=e314]: Statystyki
+                          - generic:
+                            - generic:
+                              - generic:
+                                - generic: Statystyki
+          - listitem [ref=e320]:
+            - generic [ref=e322]:
+              - link "Wszystkie narzędzia" [ref=e323] [cursor=pointer]:
+                - generic [ref=e324]: Wszystkie narzędzia
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Wszystkie narzędzia
+    - generic [ref=e327]:
+      - listitem [ref=e330]:
+        - generic [ref=e332]:
+          - link "Szukaj" [ref=e333] [cursor=pointer]:
+            - generic [ref=e334]: Szukaj
+          - generic:
+            - generic:
+              - generic:
+                - generic: Szukaj
+      - navigation "Linki" [ref=e335]:
+        - generic [ref=e336]: Linki
+        - list [ref=e337]:
+          - listitem [ref=e341]:
+            - generic [ref=e343]:
+              - link "Ustawienia" [ref=e344] [cursor=pointer]:
+                - /url: https://business.facebook.com/latest/settings/business_users?business_id=952013878730287&asset_id=114978181708449
+                - generic [ref=e345]: Ustawienia
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Ustawienia
+      - listitem [ref=e352]:
+        - generic [ref=e354]:
+          - link "Pomoc" [ref=e355] [cursor=pointer]:
+            - generic [ref=e356]: Pomoc
+          - generic:
+            - generic:
+              - generic:
+                - generic: Pomoc

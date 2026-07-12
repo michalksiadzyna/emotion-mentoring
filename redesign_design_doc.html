@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operation Silver v2 — CEO Edition Design Document</title>
+<link rel="stylesheet" href="report_style.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-title">OPERATION SILVER v2</div>
+    <ul class="nav-links">
+        <li><a href="#mission">Mission</a></li>
+        <li><a href="#pivot">The Pivot</a></li>
+        <li><a href="#intel">Intelligence</a></li>
+        <li><a href="#offer">The Offer</a></li>
+        <li><a href="#engines">Dual Engine</a></li>
+        <li><a href="#language">Design Language</a></li>
+        <li><a href="#blueprint">Blueprint</a></li>
+        <li><a href="#copy">Copy Candidates</a></li>
+        <li><a href="#names">Offer Names</a></li>
+        <li><a href="#decisions">Open Decisions</a></li>
+    </ul>
+</nav>
+
+<div class="report-header">
+    <h1>Operation Silver — v2</h1>
+    <div class="subtitle">CEO Edition. Sole client: the CEO. Product: a mind that functions under the load.</div>
+    <div class="date">2026-07-04 &mdash; emotion-mentoring &mdash; supersedes v1 of the same day</div>
+</div>
+
+<div class="summary-bar" style="grid-template-columns: repeat(4, 1fr);">
+    <div class="summary-item"><div class="num gold">30 min</div><div class="desc">entry call (was free 45)</div></div>
+    <div class="summary-item"><div class="num green">€3,000</div><div class="desc">/month — verified market rate</div></div>
+    <div class="summary-item"><div class="num blue">9 / 9</div><div class="desc">CEO sites hide price</div></div>
+    <div class="summary-item"><div class="num red">2</div><div class="desc">copy engines: fear + love</div></div>
+</div>
+
+<!-- ═══════════════ MISSION ═══════════════ -->
+<section class="section" id="mission">
+    <div class="section-label gold-bg">Mission</div>
+    <h2>1. The Thesis</h2>
+    <div class="finding gold-l">
+        <div class="finding-body">
+            <p><strong>The client:</strong> the CEO. One audience, named in the first headline. No second audience appears anywhere — every widening word ("leaders", "executives", "high achievers") refunds the status the word CEO bought. This is a verified pattern failure on competitor sites.</p>
+            <p><strong>The product:</strong> optimization of the CEO's mind. Every company decision runs through one mind; that mind carries more load than it was tuned for — responsibilities, pressure, unhandled emotional weight. The service restores and upgrades its function under load: better algorithms for decisions, problems, relationships, life.</p>
+            <p><strong>The market gap (verified):</strong> the CEO-coaching segment speaks two dialects — the pressure dialect ("overwhelm, you don't have to do it alone") and Reboot's depth dialect ("radical self-inquiry"). The middle lane — a precise, mechanistic account of the CEO's mind under load, sold privately to the individual CEO — is empty. Tignum sells "mental agility under high load" to Fortune-500 companies as corporate contracts; nobody sells it to the person in the chair at €3,000+/month. That lane is ours.</p>
+            <p><strong>The Trojan horse (documented):</strong> in HBR's coach survey, 3% of coaches are hired for personal issues; 76% end up working on them. CEOs buy performance. The work turns out to be inner work. We sell the former and deliver both — which is exactly the Shen Method's nature.</p>
+        </div>
+    </div>
+</section>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════ PIVOT ═══════════════ -->
+<section class="section" id="pivot">
+    <div class="section-label red-bg">Questioned</div>
+    <h2>2. Everything Questioned — What Changed From v1</h2>
+    <div class="section-desc">Your order: question every element. Here is each element, the verdict, and the evidence class.</div>
+    <table class="rtable">
+        <thead><tr><th>Element</th><th>Was (v1)</th><th>Now (v2)</th><th>Evidence</th></tr></thead>
+        <tbody>
+            <tr><td>Audience</td><td>Executives, athletes, high achievers</td><td class="gold"><strong>CEOs only</strong>, named in the H1, qualified by company not person</td><td>9/9 teardowns; audience-creep is the segment's #1 weakness</td></tr>
+            <tr><td>Entry call length</td><td>45 minutes</td><td class="gold"><strong>30 minutes</strong></td><td>Gong 30k-call dataset: 30-min invites get 12% better show-up than 60, zero conversion penalty; EA calendars run on 30-min blocks (Harvard CEO Time Study); 20–30 min is the industry fit-check norm</td></tr>
+            <tr><td>Entry call name</td><td>"Free 45-Minute Assessment"</td><td class="gold"><strong>Private, mutual-fit conversation.</strong> "Free" is retired (mass-market signal, sales-trap smell); "assessment" is retired (a stranger assessing a CEO inverts status)</td><td>Zero top-tier CEO coaches advertise a free session; practitioner consensus + observed absence</td></tr>
+            <tr><td>Booking mechanics</td><td>4-field form → Formspree → wait</td><td class="gold"><strong>3–4 question mini-application → immediate calendar link</strong> → confirmation from personal email. EA-forwardable, no login. Explicit confidentiality line at the form.</td><td>Pattern at every top CEO coach checked; slow booking is the #1 documented funnel killer; 60%+ of coached CEOs keep coaching private (Stanford)</td></tr>
+            <tr><td>Engagement shape</td><td>Undefined on page</td><td class="gold"><strong>Two private sessions/month + direct access between sessions; engagements run six months minimum</strong></td><td>Published structure of Mochary (coach to Sam Altman) and Reboot; market surveys</td></tr>
+            <tr><td>Price</td><td>$3,000/mo in a stats strip</td><td class="gold"><strong>€3,000/month, framed as "engagements begin at…"</strong> — placement decision open, see <a href="#decisions">Decisions</a></td><td>Verified market-to-lower-premium for European CEO tier (US $3–8k/mo, UK C-suite £2.5–5k+/mo); headroom to €4–6k as referral proof accumulates</td></tr>
+            <tr><td>Positioning term</td><td>"Architecture of Adaptation"</td><td class="gold"><strong>Retired from the website.</strong> The mind is the object: capacity, load, decisions, clarity</td><td>Your directive + vocabulary evidence below</td></tr>
+            <tr><td>Copy strategy</td><td>Single-track aspiration</td><td class="gold"><strong>Dual engine: fear-avoidance + love-approach</strong> in every layer</td><td>Your directive; Kahneman loss aversion (losses weigh ~2× gains)</td></tr>
+            <tr><td>Site's strategic role</td><td>Assumed acquisition machine</td><td class="gold"><strong>Validation asset.</strong> ~6% of coaching buyers arrive via search/content; ~50% hire the first coach they speak to. The site must win the "CEO checks you out at 11pm after a referral" moment</td><td>Rekhi 80-interview buyer study; Stanford GSB survey</td></tr>
+            <tr><td>Visual direction</td><td>Dark silver minimal (v1)</td><td class="green"><strong>Unchanged — and now strategically confirmed:</strong> the entire CEO segment is light-mode and 2,000+ words. A dark, silver, ~1,000-word page is alone in the category</td><td>9/9 teardowns light-mode</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════ INTELLIGENCE ═══════════════ -->
+<section class="section" id="intel">
+    <div class="section-label blue-bg">Intelligence</div>
+    <h2>3. What the Three Squads Verified</h2>
+
+    <div class="finding blue-l" id="i1">
+        <div class="finding-header"><span class="finding-num blue">A</span><span class="finding-title">Vocabulary — what lands and what repels with CEOs</span></div>
+        <div class="finding-body">
+            <p>Pulled from live copy of practitioners who actually sell to this buyer (Tignum, Mochary, Gurner, Gervais, Conscious Leadership Group, Art of Accomplishment):</p>
+            <table class="rtable">
+                <thead><tr><th>LANDS</th><th>REPELS / HANDLE WITH CARE</th></tr></thead>
+                <tbody>
+                    <tr><td class="green">performance, peak performance</td><td class="red">therapy (executives fear it undermines authority — documented stigma)</td></tr>
+                    <tr><td class="green">clarity, "think clearer"</td><td class="red">healing, wellness (HR-perk register)</td></tr>
+                    <tr><td class="green">decisions, decision quality</td><td class="red">"emotional / emotions" as a headline (even the most emotions-forward operators pair it instantly with output)</td></tr>
+                    <tr><td class="green">capacity, load, "under pressure"</td><td class="red">vulnerability as a promise</td></tr>
+                    <tr><td class="green">energy, "energy leaks"</td><td class="red">mindfulness/meditation as a category (Gervais teaches it, brands it "high performance psychology")</td></tr>
+                    <tr><td class="green">edge, elite, "the 0.01%"</td><td class="red">fixing / anything implying something is wrong with them (coaching shed its stigma by becoming performance work, per HBR)</td></tr>
+                    <tr><td class="green">scale yourself, sovereign of your calendar</td><td class="red">"you are lonely" (state it as an external force: isolation, the empty chair across the desk)</td></tr>
+                </tbody>
+            </table>
+            <p><strong>How the segment says emotions without saying it:</strong> "decision distress" (Oracle), "energy leaks" (Tignum), "cognitive load", "the nervous system" (Art of Accomplishment), "grounded, clear, effective under pressure" (Conscious.is). This is the sanctioned channel for our emotional content.</p>
+            <p><strong>The brand tension, flagged honestly:</strong> the domain and brand say <em>Emotion Mentoring</em> — the one word the vocabulary evidence says never to headline. Resolutions in <a href="#decisions">Open Decisions</a>, ruling is yours.</p>
+        </div>
+    </div>
+
+    <div class="finding blue-l" id="i2">
+        <div class="finding-header"><span class="finding-num blue">B</span><span class="finding-title">CEO pain — verified statistics (honest ammunition for the fear engine)</span></div>
+        <div class="finding-body">
+            <p>Every number traces to a named study; the popular "CEOs make 35,000 decisions a day" line is folklore and stays out:</p>
+            <p>1. Half of CEOs report loneliness in the role; <strong>61% say it hinders their performance</strong> (RHR International survey, via Harvard Business Review).<br>
+            2. Nearly two-thirds of CEOs receive no outside advice on their leadership — nearly all say they want it (Stanford GSB / Miles Group, 200+ CEOs).<br>
+            3. <strong>~70% of C-suite executives have seriously considered quitting for their well-being</strong> (Deloitte × Workplace Intelligence, 2,100 respondents).<br>
+            4. <strong>85% of leaders suffered "decision distress"</strong> — regret, guilt, second-guessing — in the past year; 59% face a decision dilemma daily or more (Oracle, 14,000+ respondents).<br>
+            5. CEOs average <strong>62.5 hours/week</strong>, working 79% of weekend days and 70% of holidays (Harvard Business School, 60,000 logged hours).<br>
+            6. 43% of executives don't get enough sleep at least four nights a week (McKinsey); <strong>90% of founder-CEOs lose sleep</strong> over the possibility of failure (Norwest CEO Journey Study).</p>
+            <p>These are the icebergs, documented. The fear engine quotes them; nothing is invented.</p>
+        </div>
+    </div>
+
+    <div class="finding blue-l" id="i3">
+        <div class="finding-header"><span class="finding-num blue">C</span><span class="finding-title">Segment behavior — the CEO teardown patterns</span></div>
+        <div class="finding-body">
+            <p>1. <strong>Price invisible, 9 of 9 sites.</strong> The segment treats disclosure as down-market. (Our ruling on this is open — see Decisions.)<br>
+            2. <strong>"CEO" in the first headline</strong> on every strong site; qualification by company scale ("$50M–$2B enterprises"), a status ladder visitors self-place on.<br>
+            3. <strong>Entry is a conversation, never a checkout.</strong> Best mechanics found: Glenn Gow's <em>"See If We're a Fit"</em> — books like a calendar link, reads like mutual selection.<br>
+            4. <strong>Proof is peer-status proof:</strong> famous client names, hard business metrics, or testimonial mass from sitting CEOs. Coaching credentials are nearly absent — market proof replaces credential proof.<br>
+            5. <strong>Strongest headline in the segment</strong> names the CEO's Tuesday, not their dreams: "Make Better CEO Decisions Under Pressure" (The CEO Project). Weakest are generic aspiration: "Be The Leader You Want To Be."<br>
+            6. <strong>Avoid:</strong> unverifiable superlatives ("The #1 CEO Coach"), audience creep, aspiration wallpaper.</p>
+        </div>
+    </div>
+</section>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════ OFFER ═══════════════ -->
+<section class="section" id="offer">
+    <div class="section-label green-bg">The Offer</div>
+    <h2>4. The Rebuilt Offer Spec</h2>
+    <div class="finding green-l">
+        <div class="finding-body">
+            <p><strong>Entry: The Fit Conversation.</strong> 30 minutes. Private and confidential. Mutual selection — both sides decide whether this is a fit; nothing is sold on the call. Booking: 3–4 question mini-application (name, company, role, "what is taxing your mind most") → immediate calendar link → confirmation from michal@emotionmentoring.com. EA-forwardable. One confidentiality sentence at the form.</p>
+            <p><strong>Engagement: private, monthly.</strong> Two deep 1-on-1 sessions per month. Direct access between sessions. Engagements run six months minimum. Begins at €3,000 per month. One client relationship at a time on the calendar it deserves — scarcity stated only as far as it is literally true (your honesty rule; your confirmation needed on the wording).</p>
+            <p><strong>What the engagement does (dual-engine, one sentence each):</strong> the mind stops drifting toward the iceberg — decisions stay sharp when the load peaks; and capacity grows — the same mind runs the company, the family, and the life it was building all along.</p>
+        </div>
+    </div>
+</section>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════ DUAL ENGINE ═══════════════ -->
+<section class="section" id="engines">
+    <div class="section-label red-bg">Copy Doctrine</div>
+    <h2>5. The Dual Engine — Fear and Love</h2>
+    <div class="section-desc">Your directive, grounded in Kahneman's loss aversion: losses weigh roughly twice as heavy as gains. Both engines run in every layer of copy.</div>
+    <div class="finding red-l" id="e1">
+        <div class="finding-header"><span class="finding-num red">1</span><span class="finding-title">Engine one — the iceberg (avoidance)</span></div>
+        <div class="finding-body">
+            <p>Name what the CEO dreads, in documented terms: the mind at capacity, decisions degrading under load (85% report decision distress), sleep going (90% of founder-CEOs), the company steering toward what an overloaded mind can no longer see. The trajectory is the Titanic's — visible, gradual, and survivable only if the helm changes what it's doing. The method is the navigation upgrade: a stronger mind, better algorithms for load, decisions, and pressure. They steer past the iceberg because the mind at the helm got rebuilt.</p>
+            <p><strong>Placement:</strong> the pain section (four strikes become four documented icebergs), one quote-break line, and the first half of the engagement description.</p>
+        </div>
+    </div>
+    <div class="finding green-l" id="e2">
+        <div class="finding-header"><span class="finding-num green">2</span><span class="finding-title">Engine two — the open water (approach)</span></div>
+        <div class="finding-body">
+            <p>Name what they steer toward: competitive edge, bigger wins, relationships that work at home and at the board table, capacity to achieve what the company was founded for. The optimized mind is compounding advantage — every decision, every negotiation, every evening at home runs on it.</p>
+            <p><strong>Placement:</strong> the transformation/results section, the second half of the engagement description, and the closing line above the form.</p>
+        </div>
+    </div>
+</section>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════ DESIGN LANGUAGE ═══════════════ -->
+<section class="section" id="language">
+    <div class="section-label gold-bg">Design Language</div>
+    <h2>6. Design Language — Unchanged, Now Confirmed</h2>
+    <div class="finding gold-l">
+        <div class="finding-body">
+            <p>The card blueprint stands: #0A0A0C ground, silver metal gradient (#4D4F54 → #C8CBD1 → #FFFFFF → #94969D) through headlines with scroll-linked shine, flat mono-silver #C8CCD0 for calm elements, Cormorant Garamond small caps + Jost, corner ticks, hairline borders, baked grain, touch-press physics, sticky mobile CTA. Directions A (Calling Card) and B (Monolith) both remain in play for preview builds.</p>
+            <p><strong>New strategic weight:</strong> all nine CEO-segment competitors are light-mode and long. The dark silver object is category differentiation at zero cost — a CEO checking us at 11pm sees something none of our peers look like.</p>
+        </div>
+    </div>
+</section>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════ BLUEPRINT ═══════════════ -->
+<section class="section" id="blueprint">
+    <div class="section-label green-bg">Blueprint</div>
+    <h2>7. The Page, CEO Edition (~1,000 words)</h2>
+    <div class="section-desc">v1's de-bloat verdicts stand (case study and exit popup removed; FAQ collapses to accordions with the full answers on a /faq subpage). The structure is re-derived for the CEO and the dual engine.</div>
+    <table class="rtable">
+        <thead><tr><th>#</th><th>Section</th><th>Content</th><th>Engine</th><th>Words</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td><strong>Hero</strong></td><td>"CEO" in the headline. Portrait with corner ticks. One line. One CTA: the Fit Conversation.</td><td>both, compressed</td><td>30</td></tr>
+            <tr><td>2</td><td><strong>The Load</strong></td><td>Four documented icebergs as one-line strikes (decision distress, the 62.5-hour week, sleep, the empty chair across the desk), tap-to-expand with the stat + source</td><td class="red">fear</td><td>60</td></tr>
+            <tr><td>3</td><td><strong>The Turn</strong></td><td>Three lines: every company decision runs through one mind; that mind can be rebuilt for the load; this is private 1-on-1 work on exactly that.</td><td>pivot point</td><td>50</td></tr>
+            <tr><td>4</td><td><strong>Open Water</strong></td><td>Three concrete gains: decisions under pressure, capacity for what the company was founded for, relationships that work at home and at the table</td><td class="green">love</td><td>60</td></tr>
+            <tr><td>5</td><td><strong>Proof</strong></td><td>2–3 named single-sentence quotes visible (strongest CEO-relevant ones), rest behind expand</td><td>both</td><td>90</td></tr>
+            <tr><td>6</td><td><strong>Quote break</strong></td><td>One chrome line in Shen voice</td><td>—</td><td>20</td></tr>
+            <tr><td>7</td><td><strong>The Guide</strong></td><td>Two manifesto lines, credential line (11+ years, Foundation, author), 3 stats; long bio expandable</td><td>—</td><td>90</td></tr>
+            <tr><td>8</td><td><strong>The Book</strong></td><td>Secret Book of Emotions as object; subordinate link (kept per your ruling)</td><td>—</td><td>40</td></tr>
+            <tr><td>9</td><td><strong>The Engagement</strong></td><td>Shape: 2 sessions/month, direct access, six-month minimum; price line placement per your ruling; CTA</td><td>both</td><td>80</td></tr>
+            <tr><td>10</td><td><strong>The Fit Conversation</strong></td><td>3 reassurance bullets (mutual fit, nothing sold, confidential) + mini-application + calendar — curtain-reveal closing beat</td><td>—</td><td>80</td></tr>
+            <tr><td>11</td><td><strong>FAQ</strong></td><td>5–6 accordions, short answers; full SEO answers on /faq</td><td>—</td><td>250</td></tr>
+            <tr><td>12</td><td><strong>Footer</strong></td><td>Foundation, book, /faq, contact</td><td>—</td><td>20</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════ COPY ═══════════════ -->
+<section class="section" id="copy">
+    <div class="section-label blue-bg">Copy</div>
+    <h2>8. Hero Candidates — CEO Edition</h2>
+    <div class="section-desc">v1 candidates retired with the pivot. New candidates follow the verified pattern: name the chair, name the Tuesday, both engines present. Options lettered per your convention.</div>
+
+    <div class="finding blue-l" id="ca">
+        <div class="finding-header"><span class="finding-num blue">A</span><span class="finding-title">Option A — the thesis stated</span></div>
+        <div class="finding-body">
+            <div class="quote">Every Decision Your Company Makes<br>Runs Through One Mind.<br><em>Private mind optimization for CEOs. Two engines: steer past what breaks others, build toward what you started this for.<br>[ See If We're a Fit — 30 Minutes, Private ]</em></div>
+            <p>The premise as headline. The company-runs-on-one-mind logic makes the price self-justifying before it appears.</p>
+        </div>
+    </div>
+    <div class="finding blue-l" id="cb">
+        <div class="finding-header"><span class="finding-num blue">B</span><span class="finding-title">Option B — the load named</span></div>
+        <div class="finding-body">
+            <div class="quote">The Load Keeps Growing.<br>Build a Mind That Carries It.<br><em>Private 1-on-1 work for CEOs whose minds run everything.<br>[ See If We're a Fit — 30 Minutes, Private ]</em></div>
+            <p>Fear engine first (the growing load), love engine in the promise (the mind that carries it). Names the CEO's actual Tuesday.</p>
+        </div>
+    </div>
+    <div class="finding blue-l" id="cc">
+        <div class="finding-header"><span class="finding-num blue">C</span><span class="finding-title">Option C — shortest blade, chrome-type ready</span></div>
+        <div class="finding-body">
+            <div class="quote">One Company. One Mind. Yours.<br><em>Mind optimization for CEOs. Private. 1-on-1.<br>[ See If We're a Fit — 30 Minutes, Private ]</em></div>
+            <p>Six words for full-screen metal on a phone. The scroll delivers the two engines immediately after.</p>
+        </div>
+    </div>
+</section>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════ NAMES ═══════════════ -->
+<section class="section" id="names">
+    <div class="section-label gold-bg">Naming</div>
+    <h2>9. Offer Name Directions</h2>
+    <div class="section-desc">The engagement can carry a proper name (observed pattern: Mochary Method, Personal Readiness Plan, Zero to Dangerous, Platinum Partnership). Creative proposals marked; observed patterns marked.</div>
+    <table class="rtable">
+        <thead><tr><th>Option</th><th>Name</th><th>Register</th><th>Origin</th></tr></thead>
+        <tbody>
+            <tr><td class="gold"><strong>A</strong></td><td><strong>The Operating Mind</strong></td><td>The CEO's mind as the company's real operating system. Plain, ownable, zero wellness scent. My recommendation.</td><td>proposal</td></tr>
+            <tr><td><strong>B</strong></td><td><strong>Capacity</strong></td><td>One word; "a mind with more room than the load demands." From Tignum's proven vocabulary.</td><td>proposal on observed vocabulary</td></tr>
+            <tr><td><strong>C</strong></td><td><strong>The Council of One</strong></td><td>A private board for the one person with no peer in the building. Positions against Vistage/YPO peer groups.</td><td>proposal riffing on observed names</td></tr>
+            <tr><td><strong>D</strong></td><td><strong>First Asset</strong></td><td>The premise as a name: the mind is the company's first asset; everything is downstream.</td><td>proposal</td></tr>
+            <tr><td><strong>E</strong></td><td><strong>The Shen Method (as offer name)</strong></td><td>Surname/brand-method pattern. Strongest once public results exist; usable now since the method genuinely exists and is published in the book.</td><td>observed pattern</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<div class="accent-line"></div>
+
+<!-- ═══════════════ DECISIONS ═══════════════ -->
+<section class="section" id="decisions">
+    <div class="section-label red-bg">Your Rulings</div>
+    <h2>10. Open Decisions</h2>
+    <table class="rtable">
+        <thead><tr><th>#</th><th>Decision</th><th>My recommendation</th></tr></thead>
+        <tbody>
+            <tr><td>1</td><td><strong>Price visibility.</strong> All 9 CEO competitors hide it; usability research says hidden prices read evasive; a stated floor protects your call time; you ordered the €3,000 change</td><td>Show it: "Engagements begin at €3,000 per month" in the Engagement section. We differentiate from the 9/9 hiders, filter callers, and honor transparency. Accept the segment-norm risk knowingly.</td></tr>
+            <tr><td>2</td><td><strong>The brand tension.</strong> Domain and brand say "Emotion Mentoring" — the one word the CEO vocabulary evidence avoids in headlines</td><td>Keep the brand as the quiet masthead (logo, footer, domain); front the page with the offer name and mind/capacity/load language. The word "emotion" appears where it is strongest: the book title and the method's depth, revealed after performance framing has done its work (the documented 3%/76% Trojan-horse pattern).</td></tr>
+            <tr><td>3</td><td><strong>Hero copy</strong></td><td>Option B ("The Load Keeps Growing. Build a Mind That Carries It.")</td></tr>
+            <tr><td>4</td><td><strong>Offer name</strong></td><td>Option A — The Operating Mind</td></tr>
+            <tr><td>5</td><td><strong>Entry CTA wording</strong></td><td>"See If We're a Fit — 30 Minutes, Private" (verified best mechanics in segment, adapted)</td></tr>
+            <tr><td>6</td><td><strong>Scheduler.</strong> Immediate-calendar booking needs a scheduling tool (Calendly/Cal.com) after the mini-application</td><td>Cal.com free tier; I set it up when we build. Until then, form → personal email reply within hours.</td></tr>
+            <tr><td>7</td><td><strong>Direction A (Calling Card) vs B (Monolith)</strong></td><td>Build both previews; choose on sight</td></tr>
+            <tr><td>8</td><td><strong>Scarcity wording</strong> ("a limited number of engagements") </td><td>Only what is literally true — you confirm the real number of client slots</td></tr>
+            <tr><td>9</td><td><strong>Polish version</strong> (index-pl was removed at some point; CEO pivot changes its copy entirely)</td><td>English first; Polish mirror after the English page is approved</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<footer>
+    <p>Generated <strong>2026-07-04</strong> &mdash; Operation Silver v2 (CEO Edition), emotion-mentoring</p>
+</footer>
+
+</body>
+</html>

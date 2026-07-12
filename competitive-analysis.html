@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emotion Mentoring — Competitive & Market Analysis</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a;
+    color: #d0d0d0;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 60px 40px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .subtitle { font-size: 13px; color: #666; margin-bottom: 40px; }
+  .intro {
+    font-size: 16px; color: #999;
+    border-left: 3px solid #c9a84c;
+    padding-left: 20px; margin-bottom: 50px; line-height: 1.8;
+  }
+  h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px; font-weight: 600; color: #fff;
+    margin-top: 60px; margin-bottom: 24px;
+    padding-bottom: 8px; border-bottom: 1px solid #1a1a1a;
+  }
+  h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 17px; font-weight: 600; color: #c9a84c;
+    margin-top: 32px; margin-bottom: 12px;
+  }
+
+  /* Creator cards */
+  .creator {
+    background: #111; border: 1px solid #1a1a1a;
+    border-radius: 16px; padding: 28px 32px; margin-bottom: 20px;
+  }
+  .creator-header {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 8px; margin-bottom: 12px;
+  }
+  .creator-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px; font-weight: 700; color: #fff;
+  }
+  .creator-method {
+    font-size: 12px; color: #c9a84c; letter-spacing: 1px;
+  }
+  .creator-row {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 12px 24px; margin-top: 12px;
+  }
+  .creator-row.three { grid-template-columns: 1fr 1fr 1fr; }
+  .fl { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #555; margin-bottom: 2px; }
+  .fv { color: #bbb; font-size: 14px; margin-bottom: 8px; }
+  .fv strong { color: #fff; }
+  .fv.gold { color: #c9a84c; font-weight: 600; }
+
+  /* Scale model tags */
+  .scale-tag {
+    display: inline-block; font-size: 10px; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 3px 10px;
+    border-radius: 4px; margin-right: 6px; margin-bottom: 8px;
+  }
+  .scale-tag.cert { background: #1a2a11; color: #81c784; }
+  .scale-tag.content { background: #112a3a; color: #64b5f6; }
+  .scale-tag.book { background: #2a2211; color: #ffb74d; }
+  .scale-tag.boutique { background: #2a112a; color: #ce93d8; }
+  .scale-tag.mass { background: #2a1a1a; color: #ef9a9a; }
+  .scale-tag.somatic { background: #1a2a2a; color: #80cbc4; }
+  .scale-tag.spiritual { background: #1f1a2e; color: #b39ddb; }
+  .scale-tag.research { background: #1a1f2e; color: #90a4ae; }
+  .scale-tag.nonprofit { background: #2a2211; color: #dce775; }
+
+  /* Insight boxes */
+  .insight {
+    margin-top: 14px; padding: 12px 18px;
+    background: #0d1117; border-left: 3px solid #c9a84c;
+    border-radius: 0 8px 8px 0; color: #999; font-size: 13px;
+  }
+  .insight strong { color: #c9a84c; }
+
+  /* Tables */
+  .data-table {
+    width: 100%; border-collapse: collapse; margin: 16px 0;
+  }
+  .data-table th {
+    text-align: left; font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: #555;
+    padding: 10px 14px; border-bottom: 1px solid #1a1a1a;
+  }
+  .data-table td {
+    padding: 10px 14px; border-bottom: 1px solid #111;
+    color: #bbb; font-size: 13px;
+  }
+  .data-table td:last-child, .data-table td.num {
+    color: #fff; font-weight: 600;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .data-table tr:hover td { background: #0d1117; }
+
+  /* Marketing section */
+  .tactic {
+    background: #111; border: 1px solid #1a1a1a;
+    border-radius: 16px; padding: 24px 28px; margin-bottom: 16px;
+  }
+  .tactic-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 8px;
+  }
+  .tactic ul { list-style: none; padding: 0; }
+  .tactic li {
+    padding: 4px 0 4px 14px; position: relative; color: #bbb; font-size: 14px;
+  }
+  .tactic li::before {
+    content: ''; position: absolute; left: 0; top: 12px;
+    width: 5px; height: 5px; background: #c9a84c; border-radius: 50%;
+  }
+
+  /* Mistakes */
+  .mistake {
+    padding: 4px 0 4px 14px; position: relative; color: #bbb; font-size: 14px;
+  }
+  .mistake::before {
+    content: ''; position: absolute; left: 0; top: 12px;
+    width: 5px; height: 5px; background: #ef5350; border-radius: 50%;
+  }
+  .mistake strong { color: #e0e0e0; }
+
+  /* Funnel diagram */
+  .funnel {
+    background: #0d1117; border: 1px solid #1a1a1a;
+    border-radius: 12px; padding: 24px; margin: 20px 0;
+    font-family: 'Space Grotesk', sans-serif; font-size: 14px;
+  }
+  .funnel-step {
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px 0; color: #bbb;
+  }
+  .funnel-arrow { color: #c9a84c; font-size: 18px; padding-left: 20px; }
+  .funnel-label {
+    background: #111; border: 1px solid #1a1a1a;
+    padding: 8px 16px; border-radius: 8px; flex: 1;
+  }
+  .funnel-label strong { color: #fff; }
+
+  /* Imperative */
+  .imperative {
+    display: flex; gap: 20px; align-items: flex-start;
+    padding: 20px 0; border-bottom: 1px solid #1a1a1a;
+  }
+  .imperative:last-child { border-bottom: none; }
+  .imp-num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px; font-weight: 700; color: #c9a84c; min-width: 40px;
+  }
+  .imp-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 6px;
+  }
+  .imp-desc { color: #999; font-size: 14px; }
+
+  /* Breathman section */
+  .breathman-highlight {
+    background: #111; border: 1px solid #c9a84c;
+    border-radius: 16px; padding: 32px; margin-bottom: 28px;
+  }
+
+  /* Sources */
+  .sources { margin-top: 50px; padding-top: 20px; border-top: 1px solid #1a1a1a; }
+  .sources a {
+    color: #555; text-decoration: none; font-size: 12px;
+    display: block; padding: 2px 0; transition: color 0.2s;
+  }
+  .sources a:hover { color: #c9a84c; }
+
+  /* Niche section heading */
+  .niche-intro {
+    color: #666; font-size: 14px; margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Competitive &amp; Market Analysis</h1>
+<div class="subtitle">Emotion Mentoring | 2026-03-05 | Method creators, pricing, marketing, scaling models</div>
+
+<div class="intro">
+  Research across 30+ proprietary method creators in the mind/spirit/therapy/emotional wellness space. How they built their businesses, what they charge, how they market, and what Emotion Mentoring can learn from each scaling model.
+</div>
+
+<!-- ==================== PART 1: SCALING MODELS ==================== -->
+
+<h2>Five Scaling Models</h2>
+
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Model A: Certification Machine</span>
+  </div>
+  <span class="scale-tag cert">Highest Revenue Potential</span>
+  <div class="fv">Train practitioners who pay $3K&ndash;$12K+ each. Each graduate becomes both a customer AND a marketing channel. Annual licensing fees create recurring revenue. Network effect: more practitioners = more brand visibility.</div>
+  <div class="fv" style="color: #81c784;"><strong>Examples:</strong> Tony Robbins, Marisa Peer (18,000+ graduates), Wim Hof (1,200+ instructors), Peter Levine (30,000+ in 42 countries), Dick Schwartz (IFS), Byron Katie, Breathman (~60 practitioners)</div>
+</div>
+
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Model B: Content / Platform Empire</span>
+  </div>
+  <span class="scale-tag content">Passive + Active Revenue</span>
+  <div class="fv">Massive free content (YouTube, podcasts) as funnel. Digital subscriptions and courses for recurring revenue. Live events/retreats as high-ticket conversion.</div>
+  <div class="fv" style="color: #64b5f6;"><strong>Examples:</strong> Eckhart Tolle ($12&ndash;25M/yr), Joe Dispenza (sellout retreats), Jordan Peterson ($89M lifetime), Vishen Lakhiani / Mindvalley ($100&ndash;150M/yr)</div>
+</div>
+
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Model C: Book-First Authority</span>
+  </div>
+  <span class="scale-tag book">Credibility Engine</span>
+  <div class="fv">Research or experience credibility drives book sales. Books create authority, authority drives speaking fees and corporate consulting. Selective certification (if any) maintains quality.</div>
+  <div class="fv" style="color: #ffb74d;"><strong>Examples:</strong> Bren&eacute; Brown (35M+ copies), Bessel van der Kolk (3M+ copies, 355 weeks on NYT), Mark Manson (16M+ copies), MBS (1M+ copies)</div>
+</div>
+
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Model D: Boutique / Ultra-Premium</span>
+  </div>
+  <span class="scale-tag boutique">Emotion Mentoring's Current Model</span>
+  <div class="fv">Small team, high-net-worth clients. Intimate, exclusive positioning. $1,000+/hour implicit rates. Scale through media (podcasts, books) while keeping services exclusive.</div>
+  <div class="fv" style="color: #ce93d8;"><strong>Examples:</strong> Michaela Boehm (Oscar winners, billionaires), Esther Perel ($150&ndash;200K speaking, 2&ndash;10 employees), Rich Litvin ($100K prot&eacute;g&eacute; coaching), Jerry Colonna / Reboot</div>
+</div>
+
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Model E: Mass-Market Direct-to-Consumer</span>
+  </div>
+  <span class="scale-tag mass">Requires Infrastructure</span>
+  <div class="fv">Massive social following (millions). Viral frameworks. Revenue through books, courses, corporate partnerships. Production company infrastructure for content at scale.</div>
+  <div class="fv" style="color: #ef9a9a;"><strong>Examples:</strong> Mel Robbins (40M followers, $15M/yr), Brendon Burchard ($200M+ lifetime, 5M followers), Marie Forleo (80K B-School students), Gabby Bernstein</div>
+</div>
+
+<!-- ==================== PART 2: PRICING BENCHMARKS ==================== -->
+
+<h2>Industry Pricing Benchmarks</h2>
+
+<table class="data-table">
+  <tr><th>Tier</th><th>Rate</th><th>Who</th></tr>
+  <tr><td>Average executive coach</td><td class="num">$288/hr</td><td>North America average (2025)</td></tr>
+  <tr><td>Mid-range executive</td><td class="num">$200&ndash;600/hr</td><td>Certified coaches with 5+ years</td></tr>
+  <tr><td>C-suite / premium</td><td class="num">$1,000&ndash;3,000/hr</td><td>Top-tier executive coaches</td></tr>
+  <tr><td>Monthly retainer</td><td class="num">$2,000&ndash;10,000/mo</td><td>Ongoing engagement</td></tr>
+  <tr><td>4&ndash;6 month program</td><td class="num">$7,500&ndash;30,000</td><td>Structured transformation</td></tr>
+  <tr><td>Elite prot&eacute;g&eacute;</td><td class="num">$100,000</td><td>Rich Litvin</td></tr>
+  <tr><td>Speaking (premium)</td><td class="num">$50K&ndash;300K</td><td>Tolle, Brown, Robbins</td></tr>
+  <tr><td>Speaking (starting)</td><td class="num">Free&ndash;$5K</td><td>Building proof stage</td></tr>
+</table>
+
+<div class="insight"><strong>Key finding:</strong> Coaches charging $200+/session see higher satisfaction AND lower churn than those competing on price. Premium pricing is a retention mechanism, not just a revenue strategy.</div>
+
+<!-- ==================== PART 3: METHOD CREATORS ==================== -->
+
+<h2>Method Creators &mdash; Profiles &amp; Numbers</h2>
+
+<!-- Robbins -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Tony Robbins</span>
+    <span class="creator-method">Neuro-Associative Conditioning / Strategic Intervention</span>
+  </div>
+  <span class="scale-tag cert">Certification</span>
+  <span class="scale-tag mass">Mass Market</span>
+  <div class="creator-row three">
+    <div><div class="fl">Net Worth</div><div class="fv gold">$600&ndash;650M</div></div>
+    <div><div class="fl">Annual Revenue</div><div class="fv gold">~$50M (core company)</div></div>
+    <div><div class="fl">Social</div><div class="fv">IG 8M, YT 1.4M, TT 1.3M</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">UPW $1K&ndash;$2.5K | Date w/ Destiny $5K&ndash;$12K | Business Mastery $10K&ndash;$15K | Certification $5K&ndash;$10K | Speaking $500K&ndash;$750K</div></div>
+    <div><div class="fl">Scale</div><div class="fv">110+ businesses, 6 continents, 40&ndash;50 events/year, certification program (Robbins-Madanes), 357&ndash;493 employees</div></div>
+  </div>
+</div>
+
+<!-- Wim Hof -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Wim Hof</span>
+    <span class="creator-method">The Wim Hof Method</span>
+  </div>
+  <span class="scale-tag cert">Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Net Worth</div><div class="fv gold">$10&ndash;15M</div></div>
+    <div><div class="fl">Annual Revenue</div><div class="fv gold">$16.3M (Innerfire BV)</div></div>
+    <div><div class="fl">Certified Instructors</div><div class="fv gold">1,200+</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">App $39/yr | Instructor cert ~$5K | Annual license ~$500/yr | Workshops $50&ndash;$150</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Instructors are self-employed contractors who pay licensing fees. Revenue-share threshold incentivizes instructor sales. App provides passive recurring revenue.</div></div>
+  </div>
+  <div class="insight"><strong>Relevant model:</strong> Low-barrier entry (app), mid-tier certification ($5K), ongoing licensing. Each instructor is a marketing channel. The 3-pillar simplicity (cold, breath, mindset) makes it teachable.</div>
+</div>
+
+<!-- Byron Katie -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Byron Katie</span>
+    <span class="creator-method">The Work (4 Questions + Turnaround)</span>
+  </div>
+  <span class="scale-tag cert">Certification</span>
+  <span class="scale-tag book">Book-First</span>
+  <div class="creator-row three">
+    <div><div class="fl">Net Worth</div><div class="fv gold">$3&ndash;6M</div></div>
+    <div><div class="fl">Entry Point</div><div class="fv gold">Free (worksheets)</div></div>
+    <div><div class="fl">Top Tier</div><div class="fv gold">$6K (certification)</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing Ladder</div><div class="fv">Free worksheets &rarr; Online subscription &rarr; 9-day School ~$4K &rarr; Facilitator cert ~$6K</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Free entry creates massive funnel. Facilitator network expands reach. Each facilitator pays for the privilege AND becomes a customer.</div></div>
+  </div>
+</div>
+
+<!-- Joe Dispenza -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Joe Dispenza</span>
+    <span class="creator-method">Meditation / Neuroscience Method</span>
+  </div>
+  <span class="scale-tag content">Content Empire</span>
+  <div class="creator-row three">
+    <div><div class="fl">Net Worth</div><div class="fv gold">$15&ndash;30M</div></div>
+    <div><div class="fl">Social</div><div class="fv gold">IG 4M</div></div>
+    <div><div class="fl">Retreat Size</div><div class="fv gold">1,200&ndash;2,500 (sells out in minutes)</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Online course ~$300&ndash;$500 (prerequisite) | Week-long retreat $2K&ndash;$3.5K | Meditations $20&ndash;$50 | Dr. Joe Live membership (subscription)</div></div>
+    <div><div class="fl">Scale</div><div class="fv">55+ retreats globally. Prerequisite coursework as gateway. Online meditations = passive income. YouTube + Gaia partnership.</div></div>
+  </div>
+</div>
+
+<!-- Gabor Mate -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Gabor Mat&eacute;</span>
+    <span class="creator-method">Compassionate Inquiry</span>
+  </div>
+  <span class="scale-tag cert">Certification</span>
+  <span class="scale-tag book">Book-First</span>
+  <div class="creator-row three">
+    <div><div class="fl">Net Worth</div><div class="fv gold">$5&ndash;8M</div></div>
+    <div><div class="fl">Book Sales</div><div class="fv gold">2M+ copies</div></div>
+    <div><div class="fl">Speaking Fees</div><div class="fv gold">$20K&ndash;$75K</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">PESI Master Class $300 | 1-year professional training (240 hrs) $3,800 CAD | Mentorship + Cert additional | Annual membership $150 CAD</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Documentary "The Wisdom of Trauma" massively expanded reach. PESI partnership for introductory courses. Professional training trains therapists.</div></div>
+  </div>
+</div>
+
+<!-- Eckhart Tolle -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Eckhart Tolle</span>
+    <span class="creator-method">Presence-Based Teaching</span>
+  </div>
+  <span class="scale-tag content">Content Empire</span>
+  <span class="scale-tag book">Book-First</span>
+  <div class="creator-row three">
+    <div><div class="fl">Net Worth</div><div class="fv gold">~$80M</div></div>
+    <div><div class="fl">Annual Income</div><div class="fv gold">$12&ndash;25M</div></div>
+    <div><div class="fl">Book Sales</div><div class="fv gold">16M+ (Power of Now)</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Revenue Streams</div><div class="fv">Royalties $2&ndash;5M | Digital subscriptions $5&ndash;10M | Courses $3&ndash;6M | Speaking $50K&ndash;$200K per event</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Book went viral through word of mouth, then Oprah. Eckhart Teachings subscription platform. No facilitator certification &mdash; kept teaching centralized.</div></div>
+  </div>
+</div>
+
+<!-- Brene Brown -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Bren&eacute; Brown</span>
+    <span class="creator-method">Vulnerability / Shame Resilience / Dare to Lead</span>
+  </div>
+  <span class="scale-tag book">Book-First</span>
+  <span class="scale-tag cert">Selective Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Net Worth</div><div class="fv gold">$3&ndash;5M</div></div>
+    <div><div class="fl">Book Sales</div><div class="fv gold">35M+ copies</div></div>
+    <div><div class="fl">Speaking Fees</div><div class="fv gold">$100K&ndash;$300K</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Dare to Lead participant $650 | Facilitator cert (selective, &lt;300 certified) | HBO Max, TED, Oprah</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Academic credibility. TED talk (most-watched ever). Fewer than 300 facilitators &mdash; quality over quantity. Sliding-scale speaking.</div></div>
+  </div>
+</div>
+
+<!-- Marisa Peer -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Marisa Peer</span>
+    <span class="creator-method">Rapid Transformational Therapy (RTT)</span>
+  </div>
+  <span class="scale-tag cert">Certification Machine</span>
+  <div class="creator-row three">
+    <div><div class="fl">Net Worth</div><div class="fv gold">~$5M</div></div>
+    <div><div class="fl">Graduates</div><div class="fv gold">18,000+</div></div>
+    <div><div class="fl">Social</div><div class="fv gold">IG 903K, reach 25M/week</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">RTT sessions $200&ndash;$350 | Certification $7K&ndash;$12K | Mindvalley partnership</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Core business = training therapists, not seeing clients. Each graduate pays $7K&ndash;$12K AND becomes a marketing channel. 10,000+ active RTT practitioners.</div></div>
+  </div>
+  <div class="insight"><strong>Most relevant certification model:</strong> Peer turned a personal practice into a global certification machine. Break-even for new practitioners: ~26 sessions. Includes business training upon graduation.</div>
+</div>
+
+<!-- Esther Perel -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Esther Perel</span>
+    <span class="creator-method">Relational Intelligence</span>
+  </div>
+  <span class="scale-tag boutique">Boutique</span>
+  <div class="creator-row three">
+    <div><div class="fl">Net Worth</div><div class="fv gold">$6&ndash;15M</div></div>
+    <div><div class="fl">Speaking Fees</div><div class="fv gold">$150K&ndash;$200K</div></div>
+    <div><div class="fl">Social</div><div class="fv gold">IG 2.36M</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Sessions membership $40&ndash;$70/mo | MasterClass included | Sessions Live: 600 in-person + 2K virtual</div></div>
+    <div><div class="fl">Scale</div><div class="fv">2&ndash;10 employees. Podcast ("Where Should We Begin") became cultural phenomenon. Lean team, high revenue per head. Maintained therapy practice for credibility.</div></div>
+  </div>
+  <div class="insight"><strong>Most relevant boutique model:</strong> Perel proves you can build a $6&ndash;15M business with 2&ndash;10 people by combining: active therapy practice (credibility) + podcast (reach) + membership platform (recurring) + premium speaking (high-ticket).</div>
+</div>
+
+<!-- Dick Schwartz -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Dick Schwartz</span>
+    <span class="creator-method">Internal Family Systems (IFS)</span>
+  </div>
+  <span class="scale-tag cert">Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Book Sales</div><div class="fv gold">1M+ (No Bad Parts, #1 NYT)</div></div>
+    <div><div class="fl">Team</div><div class="fv gold">14 employees</div></div>
+    <div><div class="fl">Total Training Cost</div><div class="fv gold">$9.5K&ndash;$11.4K (3 levels)</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Level 1 $4K&ndash;$5.3K | Level 2 $2.6K&ndash;$3K | Level 3 $2.7K&ndash;$2.9K | Cert fee $200</div></div>
+    <div><div class="fl">Scale</div><div class="fv">3-level training hierarchy. IFS Institute was sole certification provider for decades (monopoly). Schwartz removed himself from L1/L2 teaching &mdash; focuses on L3 and public work.</div></div>
+  </div>
+</div>
+
+<!-- Peter Levine -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Peter Levine</span>
+    <span class="creator-method">Somatic Experiencing (SE)</span>
+  </div>
+  <span class="scale-tag cert">Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Practitioners Trained</div><div class="fv gold">30,000+ in 42 countries</div></div>
+    <div><div class="fl">Languages</div><div class="fv gold">42</div></div>
+    <div><div class="fl">Full Cert Cost</div><div class="fv gold">$18K&ndash;$24K (3 years)</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">3-year cert $6K&ndash;$8K/year | PESI Master Class $99&ndash;$160 | Plus 12 hrs personal SE sessions + 18 hrs case consultation</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Long rigorous training = deep practitioners + 3 years of recurring revenue per student. Separated teaching org (SE International) from personal work (Ergos Institute). Non-profit structure.</div></div>
+  </div>
+</div>
+
+<!-- Bessel van der Kolk -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Bessel van der Kolk</span>
+    <span class="creator-method">Integrative Trauma Treatment</span>
+  </div>
+  <span class="scale-tag book">Book-First</span>
+  <div class="creator-row three">
+    <div><div class="fl">Book Sales</div><div class="fv gold">3M+ copies</div></div>
+    <div><div class="fl">NYT Bestseller</div><div class="fv gold">355 weeks (nearly 7 years)</div></div>
+    <div><div class="fl">Sequel Deal</div><div class="fv gold">Eight figures</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">PESI intensive $500&ndash;$600 | 2-day workshop $499 | 7-month certificate (Trauma Research Foundation)</div></div>
+    <div><div class="fl">Scale</div><div class="fv">"The Body Keeps the Score" became a cultural phenomenon during COVID. PESI partnership makes training accessible. Academic credibility (Boston University).</div></div>
+  </div>
+</div>
+
+<!-- Mark Manson -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Mark Manson</span>
+    <span class="creator-method">Counterintuitive Self-Help</span>
+  </div>
+  <span class="scale-tag book">Book-First</span>
+  <span class="scale-tag content">Content</span>
+  <div class="creator-row three">
+    <div><div class="fl">Net Worth</div><div class="fv gold">$8&ndash;20M</div></div>
+    <div><div class="fl">Annual Revenue</div><div class="fv gold">~$2&ndash;2.5M (excl. royalties)</div></div>
+    <div><div class="fl">Book Sales</div><div class="fv gold">16M+ copies</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Blog</div><div class="fv">2M+ monthly readers &rarr; built audience &rarr; book monetized it</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Blog-to-book pipeline. Premium subscription for recurring revenue. No certification. Lean operation, high revenue per head.</div></div>
+  </div>
+</div>
+
+<!-- Jordan Peterson -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Jordan Peterson</span>
+    <span class="creator-method">Self-Authoring / Meaning-Based Approach</span>
+  </div>
+  <span class="scale-tag content">Content Empire</span>
+  <div class="creator-row three">
+    <div><div class="fl">Lifetime Revenue</div><div class="fv gold">~$89M</div></div>
+    <div><div class="fl">YouTube</div><div class="fv gold">8.8M subs, 1B+ views</div></div>
+    <div><div class="fl">Self-Authoring Users</div><div class="fv gold">350K+ ($16M+ revenue)</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Self-Authoring $29.90 | Understand Myself $9.95 | Peterson Academy ~$500/yr (30K students in month 1 = ~$15M)</div></div>
+    <div><div class="fl">Scale</div><div class="fv">YouTube lectures went viral (free funnel). Low-cost digital products at massive scale. Worldwide speaking tours. No certification &mdash; direct-to-consumer.</div></div>
+  </div>
+</div>
+
+<!-- ==================== BREATHMAN ==================== -->
+
+<h2>Case Study: Micha&lstrok; Godlewski / Breathman</h2>
+
+<div class="breathman-highlight">
+  <div class="creator-header">
+    <span class="creator-name">Micha&lstrok; Godlewski &mdash; "Breathman"</span>
+    <span class="creator-method">Transmodal Breathing / Breath Intelligence</span>
+  </div>
+  <span class="scale-tag cert">Certification</span>
+  <span class="scale-tag boutique">Boutique</span>
+
+  <div class="fv" style="margin: 12px 0; color: #999;">Polish breathwork creator. Integrates therapeutic, energetic, and shamanic dimensions. 20+ years experience. Law degree, former professional ballroom dancer (20 years). Depression at 32 led to breathwork. University lecturer (Tischner European University, Krak&oacute;w University of Economics). Published in <em>Psychologia w Praktyce</em>.</div>
+
+  <div class="creator-row three">
+    <div><div class="fl">Active Practitioners</div><div class="fv gold">~30 (+ ~30 in training)</div></div>
+    <div><div class="fl">Est. Annual Revenue</div><div class="fv gold">250K&ndash;600K PLN (~$60&ndash;145K)</div></div>
+    <div><div class="fl">Instagram</div><div class="fv gold">1,622 followers</div></div>
+  </div>
+
+  <h3>Pricing Structure</h3>
+  <table class="data-table">
+    <tr><th>Product / Service</th><th>Price (PLN)</th></tr>
+    <tr><td>Individual transmodal session</td><td class="num">250</td></tr>
+    <tr><td>Supervision session (practitioners)</td><td class="num">450</td></tr>
+    <tr><td>Workshops (range)</td><td class="num">15&ndash;890</td></tr>
+    <tr><td>Breathland festival</td><td class="num">800</td></tr>
+    <tr><td>"Breath of Life" intensive</td><td class="num">1,450&ndash;1,900</td></tr>
+    <tr><td>Breathworker 2026 certification</td><td class="num">1,000&ndash;3,500</td></tr>
+    <tr><td>Supervisors training</td><td class="num">2,250</td></tr>
+    <tr><td>Thailand 23-day training</td><td class="num">5,999 + 1,800 accom.</td></tr>
+    <tr><td>Book (standard)</td><td class="num">69 + shipping</td></tr>
+    <tr><td>Book + planner + journal</td><td class="num">99 + shipping</td></tr>
+  </table>
+
+  <h3>Delivery Model</h3>
+  <div class="fv">1-on-1 sessions, group workshops, retreats (Tuscany, Thailand), his own festival (Breathland), Breathworker certification (~1,000 hours total), corporate training, university lecturing, two self-published books, 100+ free Facebook sessions during COVID lockdown.</div>
+
+  <h3>What He Does Well</h3>
+  <div class="tactic">
+    <ul>
+      <li>Proprietary named method ("Transmodal Breathing") with a clear intellectual framework ("Breath Intelligence")</li>
+      <li>Academic legitimacy (university lectures, psychology journal) that most breathwork practitioners entirely lack</li>
+      <li>Practitioner certification creates network effect &mdash; graduates in 10+ cities across 3 continents</li>
+      <li>Controls entire value chain: self-published books, direct sales only, no intermediaries</li>
+      <li>Blends scientific language (nervous system, acetylcholine) with spiritual/shamanic language</li>
+      <li>CEOs and business owners among testimonial endorsers &mdash; credible to professionals</li>
+    </ul>
+  </div>
+
+  <h3>Gaps / Weaknesses</h3>
+  <div class="tactic">
+    <ul>
+      <li>1,622 Instagram followers after 20+ years &mdash; minimal social media strategy</li>
+      <li>Wix website, poor rendering, difficult to extract information</li>
+      <li>Book rating 6.2/10 on Lubimyczytac.pl with only 5 ratings &mdash; minimal social proof</li>
+      <li>No TikTok, minimal YouTube, no podcast of his own</li>
+      <li>Poland-only book distribution, no English-language materials despite international workshops</li>
+      <li>No digital course at scale (no Udemy, Teachable, membership site)</li>
+    </ul>
+  </div>
+
+  <div class="insight"><strong>Relevance to Emotion Mentoring:</strong> Breathman is the closest comparable &mdash; a Polish solo practitioner with a proprietary method, a book, a certification program, and a niche audience. His business generates an estimated $60&ndash;145K/year. His strengths (academic credibility, practitioner network, method naming) are worth emulating. His weaknesses (social media, digital presence, book distribution) are opportunities the Shen Method can avoid.</div>
+</div>
+
+<!-- ==================== PART 4: MARKETING ==================== -->
+
+<h2>Marketing Analysis &mdash; What Works</h2>
+
+<div class="tactic">
+  <div class="tactic-title">LinkedIn (Primary Channel for Executive Audiences)</div>
+  <ul>
+    <li><strong>3&ndash;5 posts/week</strong> optimal. Quality over quantity.</li>
+    <li><strong>Carousel posts</strong> outperform all formats: 1.9x better than median, 6.6% engagement rate</li>
+    <li><strong>Video reach plummeted</strong> in 2025 &mdash; LinkedIn deprioritizes video in favor of carousels and PDFs</li>
+    <li><strong>Commenting on 10&ndash;20 posts daily</strong> boosts profile views by 50% and own-post engagement by 10%</li>
+    <li><strong>Niche content rewarded</strong> &mdash; algorithm identifies topics and serves to the right audience</li>
+    <li><strong>Headline = landing page</strong>: "I help tech executives lead without burnout" beats "Certified Coach, ICF ACC"</li>
+  </ul>
+</div>
+
+<div class="tactic">
+  <div class="tactic-title">Book as Lead Magnet</div>
+  <ul>
+    <li>Book establishes authority and creates trust before any sales conversation</li>
+    <li>Free chapter as lead magnet boosted leads by 37.8% in one case study, brought 2 paying clients in one month</li>
+    <li><strong>Rich Litvin:</strong> <em>The Prosperous Coach</em> (100K copies, 2K/month) &mdash; the book IS the client acquisition system</li>
+    <li><strong>MBS:</strong> <em>The Coaching Habit</em> (1M+ copies) &mdash; created an entire corporate training empire</li>
+    <li><em>The Secret Book of Emotions</em> already exists &mdash; this is the authority anchor</li>
+  </ul>
+</div>
+
+<div class="tactic">
+  <div class="tactic-title">Anti-Marketing Model (Rich Litvin / Steve Chandler)</div>
+  <ul>
+    <li>Reject internet marketing, funnels, SEO, social media grinding</li>
+    <li>Create clients through invitation and referral, one conversation at a time</li>
+    <li>"Show people what coaching can do BY coaching" &mdash; the free sample IS the sales process</li>
+    <li>Premium clients (CEOs, executives) are allergic to salesy tactics</li>
+    <li>Naturally filters for high-quality, high-commitment clients</li>
+    <li><strong>Risk:</strong> Growth is slower. Requires extraordinary skill in initial conversation. Zero scalability without some visibility layer.</li>
+  </ul>
+</div>
+
+<div class="tactic">
+  <div class="tactic-title">Podcast Guesting</div>
+  <ul>
+    <li>A single targeted appearance converted into a $13,000 client (Interview Connections case study)</li>
+    <li>50,000+ interviews booked for 1,000+ coaches through Interview Connections alone</li>
+    <li>Episodes live forever &mdash; long-tail content that keeps generating leads</li>
+    <li><strong>Prerequisite:</strong> Have a clear funnel BEFORE guesting. Without it, appearances generate awareness but zero revenue.</li>
+    <li>Booking agencies cost $1,500&ndash;$5,000/month</li>
+  </ul>
+</div>
+
+<h2>Marketing &mdash; What Fails</h2>
+
+<div style="padding: 0 0 0 0;">
+  <div class="mistake"><strong>Cold DMs.</strong> Damages credibility. Premium clients view unsolicited messages as spam. Signals desperation.</div>
+  <div class="mistake"><strong>Paid social ads for high-ticket.</strong> At $1.50&ndash;$2/lead, math works for $97 courses but collapses for $10K+ engagements.</div>
+  <div class="mistake"><strong>Displaying prices on the website.</strong> Premium prices without context create sticker shock. Price emerges in conversation after value is established.</div>
+  <div class="mistake"><strong>Hourly billing.</strong> Commoditizes the service. Transformation packages ($10K&ndash;$50K+) frame around outcomes.</div>
+  <div class="mistake"><strong>Pricing too low.</strong> Cheap pricing signals cheap service. Especially in emotional work where trust and perceived expertise are paramount.</div>
+  <div class="mistake"><strong>TikTok/Reels for executive audiences.</strong> CEOs consume LinkedIn and podcasts. Short-form entertainment attracts the wrong audience.</div>
+  <div class="mistake"><strong>Marketing to everyone.</strong> "I help people with emotions" prevents standing out. "I help CEOs trapped by their own success" resonates.</div>
+  <div class="mistake"><strong>Inconsistency.</strong> Posting sporadically destroys momentum. Algorithm and audience both punish inconsistency.</div>
+  <div class="mistake"><strong>Generic content.</strong> "3 tips to manage emotions" lacks authenticity. Contrarian frameworks and personal observations outperform advice.</div>
+  <div class="mistake"><strong>Group coaching as entry point.</strong> Premium clients expect exclusivity. Leading with group signals mass market.</div>
+</div>
+
+<!-- ==================== RECOMMENDED FUNNEL ==================== -->
+
+<h2>Recommended Funnel</h2>
+
+<div class="funnel">
+  <div class="funnel-step"><div class="funnel-label"><strong>Visibility Layer</strong> &mdash; LinkedIn 3&ndash;4x/week (carousel frameworks), podcast guesting 1&ndash;2x/month, speaking, book distribution</div></div>
+  <div class="funnel-arrow">&darr;</div>
+  <div class="funnel-step"><div class="funnel-label"><strong>Lead Capture</strong> &mdash; Free chapter download &rarr; email list, website inquiry, warm LinkedIn DMs (post-engagement only)</div></div>
+  <div class="funnel-arrow">&darr;</div>
+  <div class="funnel-step"><div class="funnel-label"><strong>Anti-Marketing Core</strong> &mdash; Powerful initial conversation (free &mdash; demonstrate the Shen Method in action). Personal connection.</div></div>
+  <div class="funnel-arrow">&darr;</div>
+  <div class="funnel-step"><div class="funnel-label"><strong>Enrollment</strong> &mdash; Discovery call &rarr; transformation package proposal. No hourly billing.</div></div>
+  <div class="funnel-arrow">&darr;</div>
+  <div class="funnel-step"><div class="funnel-label"><strong>Referral Loop</strong> &mdash; Delighted clients refer peers. Strategic partner referrals (wealth managers, executive search, board advisors).</div></div>
+</div>
+
+<!-- ==================== NICHE CREATORS ==================== -->
+
+<h2>Niche Therapy &amp; Spiritual Method Creators</h2>
+<p class="niche-intro">20 method creators in somatic therapy, trauma work, emotional processing, breathwork, and spiritual teaching &mdash; with pricing, revenue estimates, and business models.</p>
+
+<h3>Somatic, Trauma &amp; Relationship Methods</h3>
+
+<!-- Thomas Hübl -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Thomas H&uuml;bl</span>
+    <span class="creator-method">Collective Trauma Integration / Pocket Project</span>
+  </div>
+  <span class="scale-tag somatic">Somatic</span>
+  <span class="scale-tag cert">Certification</span>
+  <span class="scale-tag content">Content Empire</span>
+  <div class="creator-row three">
+    <div><div class="fl">Revenue Model</div><div class="fv gold">Online courses + certification + retreats</div></div>
+    <div><div class="fl">Social</div><div class="fv gold">YT 85K, IG 60K+</div></div>
+    <div><div class="fl">Key Work</div><div class="fv gold">Healing Collective Trauma (book)</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Online courses $300&ndash;$800 | Multi-year professional training $3K&ndash;$8K | Retreats $1K&ndash;$3K | Free content library</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Academy model with tiered access. Pocket Project nonprofit arm handles collective trauma work. Inner Science brand positions him in the spiritual-meets-neuroscience space.</div></div>
+  </div>
+  <div class="insight"><strong>Relevant model:</strong> Combined nonprofit mission (collective trauma) with premium training. Book launched global awareness, academy generates recurring revenue. Dual-entity structure (nonprofit + commercial training).</div>
+</div>
+
+<!-- Irene Lyon -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Irene Lyon</span>
+    <span class="creator-method">Nervous System Training (Somatic + Feldenkrais hybrid)</span>
+  </div>
+  <span class="scale-tag somatic">Somatic</span>
+  <span class="scale-tag content">Content Empire</span>
+  <div class="creator-row three">
+    <div><div class="fl">Lifetime Revenue</div><div class="fv gold">$10&ndash;20M+</div></div>
+    <div><div class="fl">Students</div><div class="fv gold">27,000+</div></div>
+    <div><div class="fl">Social</div><div class="fv gold">YT 460K+</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">SmartBody SmartMind $2,997&ndash;$3,497 (flagship, 12-week) | 21-Day Tune Up $1,197 | Free YouTube education funnel</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Solo practitioner who scaled to 8 figures through online courses. YouTube as primary funnel (460K+ subs). Cohort-based launches 2&ndash;3x/year. Team of ~5.</div></div>
+  </div>
+  <div class="insight"><strong>Closest comparable model:</strong> Solo practitioner, proprietary method, scaled through YouTube education &rarr; premium course launches. Achieved $10M+ without certification or franchising &mdash; purely direct-to-consumer.</div>
+</div>
+
+<!-- David Berceli -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">David Berceli</span>
+    <span class="creator-method">TRE (Tension &amp; Trauma Releasing Exercises)</span>
+  </div>
+  <span class="scale-tag somatic">Somatic</span>
+  <span class="scale-tag cert">Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Reach</div><div class="fv gold">70+ countries</div></div>
+    <div><div class="fl">Revenue Model</div><div class="fv gold">Certification licensing</div></div>
+    <div><div class="fl">Entry Point</div><div class="fv gold">Books + YouTube</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Books $15&ndash;$25 | Module 1 training ~$600&ndash;$1,200 | Full certification track ~$3K&ndash;$5K | Provider annual listing fee</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Global network of certified providers, country-specific trainers. Military/humanitarian applications. The exercises themselves are simple enough to teach at scale.</div></div>
+  </div>
+  <div class="insight"><strong>Relevant model:</strong> Method simplicity enables massive geographic scaling. TRE works because the exercises are teachable to non-professionals. Military adoption provided credibility lever.</div>
+</div>
+
+<!-- Pat Ogden -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Pat Ogden</span>
+    <span class="creator-method">Sensorimotor Psychotherapy</span>
+  </div>
+  <span class="scale-tag somatic">Somatic</span>
+  <span class="scale-tag cert">Certification</span>
+  <span class="scale-tag research">Research</span>
+  <div class="creator-row three">
+    <div><div class="fl">Organization</div><div class="fv gold">SPI (~30 employees)</div></div>
+    <div><div class="fl">Revenue</div><div class="fv gold">Est. $3&ndash;5M/yr</div></div>
+    <div><div class="fl">Model</div><div class="fv gold">Professional training institute</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Level 1 training ~$3,500&ndash;$5,000 (1 year, multiple weekends) | Level 2 ~$3,500&ndash;$5,000 | Post-grad specializations | Webinars $25&ndash;$75</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Sensorimotor Psychotherapy Institute (SPI) is a full training organization with staff. Trains licensed therapists exclusively. Global workshop calendar.</div></div>
+  </div>
+</div>
+
+<!-- Laurence Heller -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Laurence Heller</span>
+    <span class="creator-method">NARM (NeuroAffective Relational Model)</span>
+  </div>
+  <span class="scale-tag somatic">Somatic</span>
+  <span class="scale-tag cert">Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Focus</div><div class="fv gold">Developmental trauma</div></div>
+    <div><div class="fl">Revenue</div><div class="fv gold">Est. $1&ndash;3M/yr</div></div>
+    <div><div class="fl">Key Book</div><div class="fv gold">Healing Developmental Trauma</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">NARM Practitioner Training ~$4,500&ndash;$6,000 (2 years) | Advanced training modules | Webinars/workshops $50&ndash;$200</div></div>
+    <div><div class="fl">Scale</div><div class="fv">NARM Training Institute trains licensed professionals. Growing global presence through licensed regional trainers. Book is the primary authority builder.</div></div>
+  </div>
+</div>
+
+<!-- Deb Dana -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Deb Dana</span>
+    <span class="creator-method">Applied Polyvagal Theory (clinical translation)</span>
+  </div>
+  <span class="scale-tag somatic">Somatic</span>
+  <span class="scale-tag book">Book-First</span>
+  <div class="creator-row three">
+    <div><div class="fl">Key Contribution</div><div class="fv gold">Made Polyvagal Theory clinically accessible</div></div>
+    <div><div class="fl">Books</div><div class="fv gold">4+ books (bestsellers in therapy)</div></div>
+    <div><div class="fl">Revenue</div><div class="fv gold">Est. $1&ndash;2M/yr</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Rhythm of Regulation training ~$400&ndash;$600 | PESI/Sounds True courses $200&ndash;$400 | Workshops $100&ndash;$300 | Books + workbooks</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Publishing partner strategy (PESI, Sounds True, Norton) for distribution. Did not create a standalone certification &mdash; scaled through book authority and platform partnerships.</div></div>
+  </div>
+  <div class="insight"><strong>Relevant model:</strong> Became the "translator" of Porges' Polyvagal Theory for clinicians. Being the accessible interpreter of complex science is a powerful positioning strategy.</div>
+</div>
+
+<!-- Stephen Porges -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Stephen Porges</span>
+    <span class="creator-method">Polyvagal Theory / Safe and Sound Protocol (SSP)</span>
+  </div>
+  <span class="scale-tag research">Research</span>
+  <span class="scale-tag somatic">Somatic</span>
+  <div class="creator-row three">
+    <div><div class="fl">Nonprofit Revenue</div><div class="fv gold">$1.59M (Polyvagal Institute)</div></div>
+    <div><div class="fl">SSP Licensing</div><div class="fv gold">Via Unyte/iLs (acquired)</div></div>
+    <div><div class="fl">Impact</div><div class="fv gold">Foundational theory for somatic therapy</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Revenue Streams</div><div class="fv">SSP delivered through licensed providers (Unyte) | Polyvagal Institute programs | Speaking/lectures $5K&ndash;$25K | Book royalties</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Theory licensing through tech company (Unyte acquired iLs for SSP delivery). Nonprofit institute for education. The theory itself drives the ecosystem &mdash; other practitioners (Deb Dana, etc.) build on it.</div></div>
+  </div>
+</div>
+
+<!-- Stan Tatkin -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Stan Tatkin</span>
+    <span class="creator-method">PACT (Psychobiological Approach to Couple Therapy)</span>
+  </div>
+  <span class="scale-tag somatic">Somatic</span>
+  <span class="scale-tag cert">Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Session Rate</div><div class="fv gold">$700&ndash;$800/hr</div></div>
+    <div><div class="fl">Revenue</div><div class="fv gold">Est. $2&ndash;4M/yr</div></div>
+    <div><div class="fl">Key Book</div><div class="fv gold">Wired for Love (100K+ copies)</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">PACT Level 1&ndash;3 training ~$2K&ndash;$4K per level | Intensives for couples $5K&ndash;$10K | Books/audiobooks | Online courses $200&ndash;$500</div></div>
+    <div><div class="fl">Scale</div><div class="fv">PACT Institute trains therapists in couples work. Attachment theory + neuroscience positioning. The high session rate ($700&ndash;$800/hr) demonstrates the premium that a proprietary method commands.</div></div>
+  </div>
+  <div class="insight"><strong>Relevant pricing:</strong> $700&ndash;$800/hr for individual sessions. Demonstrates that a neuroscience-backed proprietary couples method commands ultra-premium rates without celebrity status.</div>
+</div>
+
+<!-- Terry Real -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Terry Real</span>
+    <span class="creator-method">Relational Life Therapy (RLT)</span>
+  </div>
+  <span class="scale-tag cert">Certification</span>
+  <span class="scale-tag content">Content Empire</span>
+  <div class="creator-row three">
+    <div><div class="fl">Social</div><div class="fv gold">IG 258K</div></div>
+    <div><div class="fl">Revenue</div><div class="fv gold">Est. $3&ndash;6M/yr</div></div>
+    <div><div class="fl">Key Book</div><div class="fv gold">Us: Getting Past You and Me</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">RLT Certification ~$6K&ndash;$10K (2 levels) | Couples intensive $15K&ndash;$25K | Online community membership | Workshops $200&ndash;$500</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Dual certification tracks generate recurring revenue from therapists. Instagram Reels drove massive growth (258K followers). Podcast appearances are primary funnel. Couples intensives at $15K+ for premium tier.</div></div>
+  </div>
+</div>
+
+<!-- Sue Johnson / ICEEFT -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Sue Johnson / ICEEFT</span>
+    <span class="creator-method">EFT for Couples (Emotionally Focused Therapy)</span>
+  </div>
+  <span class="scale-tag cert">Certification</span>
+  <span class="scale-tag research">Research</span>
+  <div class="creator-row three">
+    <div><div class="fl">Revenue</div><div class="fv gold">~$16M/yr (ICEEFT)</div></div>
+    <div><div class="fl">Employees</div><div class="fv gold">49</div></div>
+    <div><div class="fl">Members</div><div class="fv gold">8,000&ndash;10,000 trained therapists</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Externship 4-day ~$1,000&ndash;$1,500 | Core Skills training ~$2K&ndash;$3K | Full certification track $8K&ndash;$15K+ | Membership $150&ndash;$300/yr</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Largest couples therapy training organization globally. 49 employees, $16M revenue. Evidence base (75% recovery rate) is the primary selling point. Each certified therapist pays recurring membership and continues buying advanced training.</div></div>
+  </div>
+  <div class="insight"><strong>Gold standard model:</strong> Research-backed method &rarr; training institute &rarr; global certified network. $16M/yr from training therapists alone. Proof that certification-driven scaling works when the evidence base is solid.</div>
+</div>
+
+<h3>Spiritual, Emotional &amp; Breathwork Methods</h3>
+
+<!-- Karla McLaren -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Karla McLaren</span>
+    <span class="creator-method">Dynamic Emotional Integration (DEI) / Language of Emotions</span>
+  </div>
+  <span class="scale-tag spiritual">Emotional</span>
+  <span class="scale-tag cert">Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Revenue</div><div class="fv gold">Est. $300K&ndash;$800K/yr</div></div>
+    <div><div class="fl">Key Book</div><div class="fv gold">The Language of Emotions (180K+ copies)</div></div>
+    <div><div class="fl">Positioning</div><div class="fv gold">Emotions as messengers, each with a purpose</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">DEI Certification ~$2,500&ndash;$4,000 | Online courses $100&ndash;$300 | Books/audiobooks | Licensing fee for DEI professionals</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Emotional literacy pioneer. Book is primary authority. DEI certification trains consultants. Modest but loyal audience. Social media presence is small &mdash; authority built through writing.</div></div>
+  </div>
+  <div class="insight"><strong>Direct competitor positioning:</strong> Also treats emotions as purposeful messengers with distinct functions. The Language of Emotions framework parallels the Shen Method's approach. Key difference: McLaren is academic/intellectual, Shen Method is experiential/embodied.</div>
+</div>
+
+<!-- Hilary Jacobs Hendel -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Hilary Jacobs Hendel</span>
+    <span class="creator-method">The Change Triangle (AEDP-informed emotional processing)</span>
+  </div>
+  <span class="scale-tag spiritual">Emotional</span>
+  <span class="scale-tag book">Book-First</span>
+  <div class="creator-row three">
+    <div><div class="fl">Revenue</div><div class="fv gold">Est. $200K&ndash;$500K/yr</div></div>
+    <div><div class="fl">Key Book</div><div class="fv gold">It's Not Always Depression</div></div>
+    <div><div class="fl">Model</div><div class="fv gold">Book + private practice + education</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Private sessions $250&ndash;$400/hr | Workshops $150&ndash;$350 | The Change Triangle course ~$300&ndash;$500 | Book/speaking</div></div>
+    <div><div class="fl">Scale</div><div class="fv">The Change Triangle is a simple visual tool that went viral on social media. Book built authority. Smaller operation &mdash; primarily private practice augmented by speaking and courses.</div></div>
+  </div>
+</div>
+
+<!-- Leslie Greenberg -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Leslie Greenberg</span>
+    <span class="creator-method">Emotion-Focused Therapy (EFT Individual)</span>
+  </div>
+  <span class="scale-tag research">Research</span>
+  <span class="scale-tag cert">Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Revenue</div><div class="fv gold">Est. $2&ndash;4M/yr (institute)</div></div>
+    <div><div class="fl">Research Base</div><div class="fv gold">30+ RCTs published</div></div>
+    <div><div class="fl">Key Differentiator</div><div class="fv gold">Most researched emotional method</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">EFT Training Levels 1&ndash;3 ~$1,500&ndash;$3,000 per level | Supervision/certification additional | Books/journals | ISEFT membership</div></div>
+    <div><div class="fl">Scale</div><div class="fv">International Society for EFT (ISEFT). Academic credibility from York University. Trains therapists through institute model. The research base (30+ RCTs) is what makes it scalable in clinical settings.</div></div>
+  </div>
+</div>
+
+<!-- Diana Fosha -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Diana Fosha</span>
+    <span class="creator-method">AEDP (Accelerated Experiential Dynamic Psychotherapy)</span>
+  </div>
+  <span class="scale-tag somatic">Somatic</span>
+  <span class="scale-tag cert">Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Revenue</div><div class="fv gold">Est. $2&ndash;4M/yr (AEDP Institute)</div></div>
+    <div><div class="fl">Model</div><div class="fv gold">Professional training institute</div></div>
+    <div><div class="fl">Positioning</div><div class="fv gold">"Healing-oriented, transformation-based"</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">AEDP Essential Skills ~$2K&ndash;$3K | Full certification track ~$8K&ndash;$12K | Supervision/consultation $200&ndash;$400/hr | Immersion courses</div></div>
+    <div><div class="fl">Scale</div><div class="fv">AEDP Institute in NYC with global faculty. Emphasizes the transformational experience itself as the selling point. Growing certification network. Smaller than IFS or EFT but devoted following.</div></div>
+  </div>
+</div>
+
+<!-- Adyashanti -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Adyashanti</span>
+    <span class="creator-method">Open Gate Sangha (non-denominational awakening teaching)</span>
+  </div>
+  <span class="scale-tag spiritual">Spiritual</span>
+  <span class="scale-tag boutique">Boutique</span>
+  <div class="creator-row three">
+    <div><div class="fl">Peak Revenue</div><div class="fv gold">$3&ndash;5M/yr</div></div>
+    <div><div class="fl">Status</div><div class="fv gold">Retired 2023 (health)</div></div>
+    <div><div class="fl">Key Books</div><div class="fv gold">The End of Your World, Emptiness Dancing</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Retreats $400&ndash;$1,500 | Online courses $100&ndash;$300 | Membership subscription | Books/audio | Webcasts (donation-based)</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Built loyal community through authenticity and accessibility. Donation-based webcasts as entry point. Retreats and courses for deeper engagement. Retired model &mdash; content library continues generating passive income.</div></div>
+  </div>
+</div>
+
+<!-- Rupert Spira -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Rupert Spira</span>
+    <span class="creator-method">Non-Dual Awareness (Direct Path)</span>
+  </div>
+  <span class="scale-tag spiritual">Spiritual</span>
+  <span class="scale-tag content">Content Empire</span>
+  <div class="creator-row three">
+    <div><div class="fl">Revenue</div><div class="fv gold">~$5M/yr</div></div>
+    <div><div class="fl">YouTube</div><div class="fv gold">619K subscribers</div></div>
+    <div><div class="fl">Model</div><div class="fv gold">YouTube &rarr; retreats &rarr; membership</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">YouTube (free, primary funnel) | Retreats $1K&ndash;$3K | Membership community | Books/pottery (yes, also a ceramicist) | Online courses</div></div>
+    <div><div class="fl">Scale</div><div class="fv">YouTube is the engine &mdash; 619K subscribers with high engagement. Non-dual teaching attracts wealthy, educated audience. Retreats sell out through YouTube funnel alone. No certification needed.</div></div>
+  </div>
+  <div class="insight"><strong>Relevant model:</strong> Proof that YouTube alone can build a $5M/yr spiritual teaching business. 619K subs with genuine engagement, no gimmicks. The content IS the marketing.</div>
+</div>
+
+<!-- Stanislav Grof -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Stanislav Grof</span>
+    <span class="creator-method">Holotropic Breathwork</span>
+  </div>
+  <span class="scale-tag spiritual">Spiritual</span>
+  <span class="scale-tag cert">Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Legacy</div><div class="fv gold">50+ years, transpersonal psychology pioneer</div></div>
+    <div><div class="fl">Certification Cost</div><div class="fv gold">$10&ndash;$12K</div></div>
+    <div><div class="fl">Reach</div><div class="fv gold">Global practitioner network</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Certification ~$10K&ndash;$12K (600+ hrs over 2&ndash;3 years) | Individual workshops $200&ndash;$500 | GTT modules ~$1K&ndash;$2K each | Books</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Grof Transpersonal Training (GTT) built a global certification network. High-commitment certification ($10K+, multi-year) ensures serious practitioners. The breathwork modality itself has spawned dozens of derivative methods.</div></div>
+  </div>
+</div>
+
+<!-- Dan Brulé -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Dan Brul&eacute;</span>
+    <span class="creator-method">Breath Mastery (integrative breathwork)</span>
+  </div>
+  <span class="scale-tag spiritual">Breathwork</span>
+  <span class="scale-tag cert">Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Revenue</div><div class="fv gold">Est. $1&ndash;3M/yr</div></div>
+    <div><div class="fl">Key Book</div><div class="fv gold">Just Breathe</div></div>
+    <div><div class="fl">Clients</div><div class="fv gold">Navy SEALs, UFC fighters, Fortune 500</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing Ladder</div><div class="fv">Online course $297 | Breath Mastery Inner Circle $7,500 | Private mentorship $60K | Certification track ~$5K&ndash;$10K</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Classic pricing ladder from $297 to $60K. Elite client testimonials (SEALs, fighters) drive authority. Certification creates practitioner network. Book provides mass-market entry point.</div></div>
+  </div>
+  <div class="insight"><strong>Relevant pricing ladder:</strong> $297 &rarr; $7,500 &rarr; $60,000. Three clear tiers. Elite clientele (military, athletes) justifies premium pricing. This is the exact ladder structure relevant to Emotion Mentoring.</div>
+</div>
+
+<!-- David Deida -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">David Deida</span>
+    <span class="creator-method">Masculine/Feminine Polarity (sexual-spiritual integration)</span>
+  </div>
+  <span class="scale-tag spiritual">Spiritual</span>
+  <span class="scale-tag boutique">Boutique</span>
+  <div class="creator-row three">
+    <div><div class="fl">Revenue</div><div class="fv gold">Est. $2&ndash;5M/yr</div></div>
+    <div><div class="fl">Key Book</div><div class="fv gold">The Way of the Superior Man (2M+ copies)</div></div>
+    <div><div class="fl">Workshop Price</div><div class="fv gold">$6K+</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Books (mass market entry) | Intensive workshops $3K&ndash;$6K+ | No certification &mdash; kept it exclusive | Limited availability</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Deliberately stayed boutique. Book sold 2M+ copies creating permanent demand. Workshops are expensive and scarce, driving exclusivity. No social media, minimal online presence &mdash; anti-marketing approach.</div></div>
+  </div>
+  <div class="insight"><strong>Anti-marketing model:</strong> 2M+ book copies create the funnel. Then disappears. Scarcity drives premium pricing ($6K+ workshops). Proof that a strong enough book eliminates the need for content marketing.</div>
+</div>
+
+<!-- Tara Brach -->
+<div class="creator">
+  <div class="creator-header">
+    <span class="creator-name">Tara Brach</span>
+    <span class="creator-method">RAIN Method / Radical Compassion (Buddhist-informed mindfulness)</span>
+  </div>
+  <span class="scale-tag spiritual">Spiritual</span>
+  <span class="scale-tag content">Content Empire</span>
+  <span class="scale-tag cert">Certification</span>
+  <div class="creator-row three">
+    <div><div class="fl">Podcast</div><div class="fv gold">3M+ downloads/month</div></div>
+    <div><div class="fl">Revenue</div><div class="fv gold">Est. $3&ndash;6M/yr</div></div>
+    <div><div class="fl">Key Method</div><div class="fv gold">RAIN (Recognize, Allow, Investigate, Nurture)</div></div>
+  </div>
+  <div class="creator-row">
+    <div><div class="fl">Pricing</div><div class="fv">Podcast (free, 3M+ downloads/mo) | MMTCP Teacher Training $6,700&ndash;$8,700 (2-year) | Retreats $500&ndash;$2K | Books | Online courses $100&ndash;$300</div></div>
+    <div><div class="fl">Scale</div><div class="fv">Podcast is the primary engine. MMTCP (Mindfulness Meditation Teacher Certification Program, co-created with Jack Kornfield) is a premium certification at $6.7K&ndash;$8.7K. Dana/donation model for meditation sits (community building).</div></div>
+  </div>
+  <div class="insight"><strong>Relevant model:</strong> Free podcast (3M+/month) as the engine, premium teacher certification ($6.7K&ndash;$8.7K) as the monetization. RAIN is a 4-letter acronym that anyone can remember &mdash; simplicity of the framework drove adoption.</div>
+</div>
+
+<!-- ==================== IMPLICATIONS ==================== -->
+
+<h2>What This Means for Emotion Mentoring</h2>
+
+<div class="imperative">
+  <div class="imp-num">1</div>
+  <div>
+    <div class="imp-title">The Shen Method IS the Moat</div>
+    <div class="imp-desc">Every successful creator has a named proprietary framework. "The Work," "IFS," "Somatic Experiencing," "Compassionate Inquiry." The Shen Method already has this. Lead with it &mdash; not "I do emotional coaching" but "I use the Shen Method &mdash; a proprietary system for resolving the emotional patterns that limit how executives lead."</div>
+  </div>
+</div>
+
+<div class="imperative">
+  <div class="imp-num">2</div>
+  <div>
+    <div class="imp-title">The Book Is Already the Best Asset</div>
+    <div class="imp-desc">Van der Kolk built an empire on one book. Byron Katie's free worksheets created a global funnel. MBS's single book sold 1M+ copies and built a corporate empire. <em>The Secret Book of Emotions</em> already exists &mdash; use it as the primary trust-builder, lead magnet, and authority anchor.</div>
+  </div>
+</div>
+
+<div class="imperative">
+  <div class="imp-num">3</div>
+  <div>
+    <div class="imp-title">Esther Perel Is the Model to Study</div>
+    <div class="imp-desc">2&ndash;10 employees, $6&ndash;15M business, active practice for credibility, podcast for reach, membership for recurring revenue, premium speaking for high-ticket. This is the most achievable path for a solo practitioner with a proprietary method and a book.</div>
+  </div>
+</div>
+
+<div class="imperative">
+  <div class="imp-num">4</div>
+  <div>
+    <div class="imp-title">Certification Is the Long-Term Play</div>
+    <div class="imp-desc">Marisa Peer: 18,000 graduates at $7K&ndash;$12K each. IFS: 14 employees running a global movement. Wim Hof: 1,200 instructors paying annual licensing. Breathman: ~60 practitioners in Poland. Certification turns the Shen Method from a personal practice into a scalable intellectual property &mdash; when the time is right.</div>
+  </div>
+</div>
+
+<div class="imperative">
+  <div class="imp-num">5</div>
+  <div>
+    <div class="imp-title">Hybrid Anti-Marketing Is the Right Approach</div>
+    <div class="imp-desc">Anti-marketing core (relationships, powerful conversations, referrals) layered with strategic visibility (LinkedIn carousels 3&ndash;4x/week, podcast guesting 1&ndash;2x/month, book as gift). Avoid both extremes: full Litvin (too slow for initial momentum) and full Burchard (requires team and infrastructure).</div>
+  </div>
+</div>
+
+<div class="imperative">
+  <div class="imp-num">6</div>
+  <div>
+    <div class="imp-title">Price for Transformation, Not Time</div>
+    <div class="imp-desc">Every data point confirms: hourly billing commoditizes. Transformation packages ($10K&ndash;$50K) frame around outcomes, not hours. "What would it be worth to stop losing your best people to your emotional reactivity?" reframes the engagement as a bargain.</div>
+  </div>
+</div>
+
+<div class="imperative">
+  <div class="imp-num">7</div>
+  <div>
+    <div class="imp-title">Breathman Shows the Floor, Not the Ceiling</div>
+    <div class="imp-desc">Godlewski built a $60&ndash;145K/year business with a proprietary method, a book, 60 practitioners, and 1,600 Instagram followers. With even modest improvements to digital presence, English-language reach, and social proof &mdash; the Shen Method starts from a stronger position.</div>
+  </div>
+</div>
+
+<!-- ==================== SOURCES ==================== -->
+
+<div class="sources">
+  <h2 style="font-size: 14px; border: none; margin-top: 0;">Sources</h2>
+  <a href="https://coachvox.ai/win-high-ticket-coaching-clients/">Win High-Ticket Coaching Clients &mdash; Coachvox</a>
+  <a href="https://luisazhou.com/blog/marketing-for-coaches/">Marketing for Coaches &mdash; Luisa Zhou</a>
+  <a href="https://richlitvin.com/">Rich Litvin</a>
+  <a href="https://www.reboot.io/">Jerry Colonna / Reboot</a>
+  <a href="https://www.marshallgoldsmith.com/">Marshall Goldsmith</a>
+  <a href="https://www.mbs.works/books/">MBS Works</a>
+  <a href="https://brendon.com/">Brendon Burchard</a>
+  <a href="https://www.marieforleo.com/">Marie Forleo</a>
+  <a href="https://annasviews.com/tony-robbins-events/">Tony Robbins Events Costs</a>
+  <a href="https://breathskills.com/articles/wim-hof-method-instructor-training-review">Wim Hof Instructor Training Review</a>
+  <a href="https://www.businessupturn.com/usa/how-byron-katies/84951/">Byron Katie Business Model</a>
+  <a href="https://drjoedispenza.com/retreats">Joe Dispenza Retreats</a>
+  <a href="https://compassionateinquiry.com/online-training/">Compassionate Inquiry Training</a>
+  <a href="https://eckhart-tolle-net-worth.pages.dev/">Eckhart Tolle Financials</a>
+  <a href="https://brenebrown.com/train-to-become-a-dare-to-lead-facilitator/">Dare to Lead Facilitator Training</a>
+  <a href="https://marisapeer.com/rtt-training-courses/">RTT Training Courses</a>
+  <a href="https://traumahealing.org/tuition-and-support/">SE Tuition &amp; Support</a>
+  <a href="https://ifs-institute.com/news-events/news/sum-our-parts-glimpse-ifs-institute-operations">IFS Institute Operations</a>
+  <a href="https://sessions.estherperel.com/">Esther Perel Sessions</a>
+  <a href="https://auresnotes.com/how-jordan-peterson-made-89-million-dollar/">Jordan Peterson Income Breakdown</a>
+  <a href="https://nathanbarry.com/inside-mark-mansons-2-500-000-creator-business-full-breakdown-055/">Mark Manson Business Breakdown</a>
+  <a href="https://www.instytutoddechu.com/">Instytut Oddechu (Breathman)</a>
+  <a href="https://inteligencjaoddechu.pl/">Inteligencja Oddechu (Breathman Book)</a>
+  <a href="https://dobrostanpodcast.pl/oddech-michal-godlewski/">Breathman &mdash; Dobrostan Podcast</a>
+  <a href="https://postiv.ai/blog/linkedin-content-strategy-2025">LinkedIn Content Strategy 2025&ndash;2026</a>
+  <a href="https://interviewconnections.com/how-to-maximize-roi-as-a-podcast-guest/">Podcast Guesting ROI</a>
+  <a href="https://highperformanceorgs.com/how-much-does-executive-coaching-cost/">Executive Coaching Costs 2026</a>
+  <a href="https://coachingfederation.org/blog/coaching-industry-continues-global-growth-with-5-34-billion-usd-revenue-new-research-reveals/">Coaching Industry $5.34B Revenue</a>
+</div>
+
+</body>
+</html>

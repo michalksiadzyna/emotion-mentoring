@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emotion Mentoring — for CEOs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a0c;
+  --ink2:#0d0d10;
+  --silver-bg:#a0a5b1;
+  --hair:rgba(255,255,255,.13);
+  --hair-dark:rgba(10,10,12,.22);
+  --silver:#c8ccd0;
+  --silver-dim:#84878e;
+  --silver-hi:#f2f4f6;
+  --text:#b4b7be;
+  --text-dim:#74777e;
+  --metal:linear-gradient(100deg,#4d4f54 0%,#8b8e95 16%,#c8cbd1 30%,#ffffff 44%,#f2f3f5 48%,#ffffff 52%,#b9bcc3 66%,#64666c 84%,#94969d 100%);
+  --serif:'Cormorant Garamond',serif;
+  --mono:'IBM Plex Mono',monospace;
+  --sans:'Jost',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:auto}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);font-weight:300;font-size:19px;line-height:1.7;overflow-x:hidden}
+::selection{background:#c8ccd0;color:#0a0a0c}
+
+/* grain */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ═══ chrome text ═══ */
+.metal{background-image:var(--metal);background-size:220% 100%;background-position:50% 0;
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+
+/* ═══ corner ticks ═══ */
+.tick{position:absolute;width:15px;height:15px;pointer-events:none;z-index:3}
+.tick i{position:absolute;inset:0;background-image:var(--metal);background-size:400% 400%;
+  clip-path:polygon(0 0,100% 0,100% 13%,13% 13%,13% 100%,0 100%)}
+.tick.tl{top:0;left:0}.tick.tr{top:0;right:0;transform:rotate(90deg)}
+.tick.br{bottom:0;right:0;transform:rotate(180deg)}.tick.bl{bottom:0;left:0;transform:rotate(270deg)}
+
+/* ═══ PRELOADER ═══ */
+#loader{position:fixed;inset:0;z-index:4000;background:var(--ink);display:flex;align-items:center;justify-content:center;will-change:transform}
+#loader[hidden]{display:none}
+#loader .l-mark{font-family:var(--serif);font-variant:small-caps;font-weight:600;letter-spacing:.14em;text-indent:.14em;
+  font-size:clamp(1.7rem,5.4vw,3.6rem);opacity:0;text-align:center;line-height:1.2}
+#loader .l-mark small{display:block;font-family:var(--mono);font-size:.62rem;letter-spacing:.6em;text-indent:.6em;color:var(--silver-dim);margin-top:14px;text-transform:uppercase}
+#loader .l-count{position:absolute;bottom:4vh;right:4vw;font-family:var(--mono);font-size:clamp(3.4rem,9vw,7.5rem);line-height:1;color:var(--silver-dim);font-weight:400}
+#loader .l-count sup{font-size:.3em;color:var(--text-dim)}
+#loader .l-bar{position:absolute;bottom:3vh;left:4vw;right:4vw;height:1px;background:rgba(255,255,255,.08)}
+#loader .l-bar i{position:absolute;inset:0;background:var(--silver);transform:scaleX(0);transform-origin:left}
+#loader .l-meta{position:absolute;top:3.4vh;left:4vw;font-family:var(--mono);font-size:.62rem;letter-spacing:.3em;color:var(--text-dim);text-transform:uppercase}
+
+/* ═══ HUD ═══ */
+#hud{position:fixed;inset:0;pointer-events:none;z-index:1600;font-family:var(--mono);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--silver-dim);transition:color .5s}
+#hud>div{position:absolute;opacity:0}
+#hud .h-tl{top:26px;left:4vw;pointer-events:auto}
+#hud .h-tr{top:26px;right:4vw;text-align:right}
+#hud .h-bl{bottom:24px;left:4vw}
+#hud .h-br{bottom:24px;right:4vw;text-align:right}
+body.on-silver #hud{color:#3d4048}
+@media (max-width:760px){#hud .h-tr,#hud .h-bl{display:none}#hud{font-size:.58rem}}
+
+/* ═══ scenes ═══ */
+.scene{position:relative}
+.pad{padding:0 4vw}
+.mono-label{font-family:var(--mono);font-size:.66rem;letter-spacing:.34em;text-indent:.34em;text-transform:uppercase;color:var(--silver-dim)}
+.rule{height:1px;background:var(--hair);transform:scaleX(1);transform-origin:left center}
+.mask{overflow:hidden;display:block}
+
+/* ═══ HERO ═══ */
+#hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;background:var(--ink)}
+#hero .bgp{position:absolute;inset:0;z-index:0;opacity:0;background-image:url('portrait.webp');background-size:cover;background-position:center 22%;
+  filter:grayscale(85%) contrast(1.05) brightness(.5)}
+#hero .bgp::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 0%,var(--ink) 82%)}
+#hero .h-inner{position:relative;z-index:2;padding:0 4vw;text-align:center}
+#hero .mast{font-family:var(--serif);font-variant:small-caps;font-weight:500;line-height:.92;letter-spacing:.02em;
+  font-size:clamp(4.2rem,15.5vw,15.5rem)}
+#hero .mast .row{display:block;overflow:hidden;padding-bottom:.06em}
+#hero .mast .row span{display:inline-block;transform:translateY(0)}
+#hero .forline{font-family:var(--mono);font-size:clamp(.72rem,1.9vw,1rem);letter-spacing:.85em;text-indent:.85em;text-transform:uppercase;color:var(--silver);margin-top:3.4vh}
+#hero .weld{max-width:560px;margin:4.5vh auto 0;font-size:clamp(1rem,2.3vw,1.18rem);color:var(--text);line-height:1.75}
+#hero .h-cta-row{margin-top:5vh;display:flex;align-items:center;justify-content:center;gap:30px;flex-wrap:wrap}
+
+/* pill CTA */
+.pill{display:inline-block;position:relative;text-decoration:none;cursor:pointer;border:1px solid rgba(200,204,208,.35);
+  border-radius:100px;padding:15px 38px;font-family:var(--mono);font-size:.72rem;letter-spacing:.3em;text-indent:.3em;
+  text-transform:uppercase;color:var(--silver-hi);overflow:hidden;transition:border-color .3s,box-shadow .3s;background:rgba(200,204,208,.04)}
+.pill::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.16) 50%,transparent 58%);
+  background-size:260% 100%;background-position:135% 0;transition:background-position .9s ease}
+.pill:hover{border-color:var(--silver);box-shadow:0 0 40px rgba(200,204,208,.12)}
+.pill:hover::before{background-position:-60% 0}
+.pill:active{transform:scale(.97)}
+
+/* ═══ THE LOAD — sticky stage ═══ */
+#load{height:400vh;background:var(--ink)}
+#load .stage{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;align-items:center}
+#load .s-head{position:absolute;top:10vh;left:4vw}
+#load .s-prog{position:absolute;top:10.4vh;right:4vw;font-family:var(--mono);font-size:.66rem;letter-spacing:.3em;color:var(--silver-dim)}
+#load .strike{position:absolute;left:4vw;right:4vw;top:50%;transform:translateY(-50%);opacity:0;visibility:hidden}
+#load .strike .big{font-family:var(--serif);font-weight:400;font-style:italic;line-height:1.12;letter-spacing:0;
+  font-size:clamp(2rem,6.4vw,5.4rem);color:var(--silver-hi);max-width:16em}
+#load .strike .callout{margin-top:4.5vh;display:flex;align-items:flex-start;gap:18px;max-width:560px}
+#load .strike .callout .ln{width:56px;height:1px;background:var(--silver-dim);margin-top:.62em;flex-shrink:0}
+#load .strike .callout p{font-family:var(--mono);font-size:.74rem;line-height:1.9;letter-spacing:.06em;color:var(--text-dim);text-transform:uppercase}
+#load .strike .callout b{color:var(--silver);font-weight:500}
+
+/* ═══ SILVER — the turn ═══ */
+#turn{background:var(--silver-bg);color:#26282e;padding:16vh 0 0}
+#turn .mono-label{color:#4a4d55}
+#turn .t-title{font-family:var(--serif);font-variant:small-caps;font-weight:500;line-height:.98;
+  font-size:clamp(3rem,9.5vw,9rem);color:#141519;margin-top:3vh}
+#turn .t-copy{max-width:600px;font-size:clamp(1rem,2.2vw,1.15rem);color:#33363e;margin-top:5vh;line-height:1.8}
+#turn .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:10vh;border-top:1px solid var(--hair-dark)}
+#turn .t-grid>div{padding:5.5vh 26px;border-right:1px solid var(--hair-dark)}
+#turn .t-grid>div:last-child{border-right:none}
+#turn .t-grid .n{font-family:var(--serif);font-weight:500;font-size:clamp(3.4rem,7vw,6rem);line-height:1;color:#141519}
+#turn .t-grid .n sup{font-size:.4em;vertical-align:super}
+#turn .t-grid p{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;line-height:1.9;text-transform:uppercase;color:#4a4d55;margin-top:14px}
+#turn .t-silence{padding:8vh 4vw;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3vw,2rem);color:#26282e;text-align:center}
+
+/* marquee */
+.marquee{--gap:5rem;display:flex;gap:var(--gap);overflow:hidden;user-select:none;border-top:1px solid var(--hair-dark);border-bottom:1px solid var(--hair-dark);padding:3.2vh 0;background:var(--silver-bg)}
+.marquee ul{flex-shrink:0;display:flex;gap:var(--gap);min-width:100%;list-style:none;align-items:baseline;
+  animation:mscroll 26s linear infinite}
+.marquee li{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(2.2rem,6vw,5rem);line-height:1;color:#141519;white-space:nowrap}
+.marquee li.sep{font-size:clamp(1rem,2.4vw,2rem);color:#4a4d55}
+@keyframes mscroll{to{transform:translateX(calc(-100% - var(--gap)))}}
+@media (prefers-reduced-motion: reduce){.marquee ul{animation-play-state:paused}}
+
+/* ═══ OPEN WATER — editorial rows ═══ */
+#water{background:var(--ink);padding:16vh 0 10vh}
+.ed-rows{margin-top:6vh}
+.ed-row{position:relative;padding:5.2vh 4vw;border-top:1px solid var(--hair);display:flex;align-items:baseline;gap:4vw;transition:background .3s}
+.ed-row:last-child{border-bottom:1px solid var(--hair)}
+.ed-row:hover{background:rgba(200,204,208,.03)}
+.ed-row .idx{font-family:var(--mono);font-size:.7rem;letter-spacing:.2em;color:var(--silver-dim);min-width:44px}
+.ed-row h3{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.9rem,5.4vw,4.4rem);line-height:1.05;letter-spacing:.02em;color:var(--silver-hi);flex-shrink:0}
+.ed-row p{font-size:clamp(.9rem,1.8vw,1rem);color:var(--text-dim);max-width:420px;margin-left:auto;text-align:right}
+@media (max-width:860px){.ed-row{flex-direction:column;gap:14px}.ed-row p{margin-left:0;text-align:left}}
+
+/* ═══ PROOF ═══ */
+#proof{background:var(--ink);padding:8vh 0 14vh}
+.p-rows{margin-top:6vh}
+.p-row{padding:6vh 4vw;border-top:1px solid var(--hair)}
+.p-row:last-of-type{border-bottom:1px solid var(--hair)}
+.p-row .qt{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.4rem,3.4vw,2.6rem);line-height:1.4;color:var(--silver-hi);max-width:24em}
+.p-row .who{margin-top:3vh;font-family:var(--mono);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--silver-dim)}
+.p-hidden{display:none}
+.p-hidden.show{display:block}
+.morelink{display:block;margin:5vh auto 0;background:none;border:1px solid var(--hair);border-radius:100px;padding:13px 34px;color:var(--silver-dim);font-family:var(--mono);
+  font-size:.66rem;letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;cursor:pointer;transition:color .25s,border-color .25s}
+.morelink:hover{color:var(--silver-hi);border-color:var(--silver-dim)}
+
+/* ═══ GUIDE ═══ */
+#guide{background:var(--ink2);padding:16vh 0}
+#guide .g-wrap{display:flex;gap:7vw;align-items:center;justify-content:center;flex-wrap:wrap;padding:0 4vw;margin-top:7vh}
+#guide .g-frame{position:relative;width:min(340px,80vw);aspect-ratio:3/4;overflow:hidden;flex-shrink:0;padding:0}
+#guide .g-frame img{width:100%;height:118%;object-fit:cover;object-position:center top;filter:grayscale(35%) contrast(1.05);will-change:transform;transition:filter .5s}
+#guide .g-frame:hover img{filter:grayscale(0%) contrast(1.02)}
+#guide .g-bio{max-width:480px}
+#guide .manif{font-family:var(--serif);font-style:italic;font-size:clamp(1.4rem,3vw,2rem);color:var(--silver-hi);line-height:1.45}
+#guide .cred{margin-top:4vh;font-size:.98rem;color:var(--text-dim);line-height:1.8}
+#guide .g-stats{display:flex;gap:0;margin-top:5vh;border-top:1px solid var(--hair)}
+#guide .g-stats>div{flex:1;padding:3vh 18px 0;border-right:1px solid var(--hair)}
+#guide .g-stats>div:last-child{border-right:none}
+#guide .g-stats b{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1}
+#guide .g-stats span{display:block;font-family:var(--mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-dim);margin-top:8px}
+#guide details{margin-top:4vh}
+#guide summary{cursor:pointer;list-style:none;font-family:var(--mono);font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--silver-dim)}
+#guide summary::-webkit-details-marker{display:none}
+#guide details p{margin-top:14px;font-size:.95rem;color:var(--text-dim)}
+
+/* ═══ BOOK ═══ */
+#book{background:var(--ink2);padding:4vh 0 16vh}
+#book .b-wrap{display:flex;gap:7vw;align-items:center;justify-content:center;flex-wrap:wrap;padding:0 4vw;margin-top:6vh}
+#book .cover{position:relative;width:min(220px,55vw);aspect-ratio:2/3;background:linear-gradient(155deg,#191a1f,#0c0c0f 70%);border:1px solid var(--hair);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:14px;
+  transform:perspective(1000px) rotateY(10deg);transition:transform .6s cubic-bezier(.2,.7,.2,1);box-shadow:24px 30px 70px rgba(0,0,0,.55)}
+#book .cover:hover{transform:perspective(1000px) rotateY(0)}
+#book .cover .bt{font-family:var(--serif);font-variant:small-caps;font-weight:600;font-size:1.3rem;line-height:1.4;letter-spacing:.1em}
+#book .cover .ba{font-family:var(--mono);font-size:.56rem;letter-spacing:.5em;text-indent:.5em;text-transform:uppercase;color:var(--silver-dim)}
+#book .b-txt{max-width:430px}
+#book .b-txt h3{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.7rem,3.6vw,2.6rem);line-height:1.15}
+#book .b-txt p{margin-top:2.6vh;color:var(--text-dim);font-size:.98rem}
+#book a.blink{display:inline-block;margin-top:3.4vh;color:var(--silver);font-family:var(--mono);font-size:.66rem;letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--hair);padding-bottom:6px;transition:color .25s,border-color .25s}
+#book a.blink:hover{color:var(--silver-hi);border-color:var(--silver-dim)}
+
+/* ═══ ENGAGEMENT — the card ═══ */
+#engage{background:var(--ink);padding:16vh 0}
+.cardpanel{position:relative;max-width:720px;margin:7vh auto 0;background:linear-gradient(165deg,#101013,#0b0b0e);border:1px solid var(--hair);padding:7vh 6vw;text-align:center}
+.cardpanel .cp-name{font-family:var(--serif);font-variant:small-caps;font-weight:600;font-size:clamp(1.9rem,4.6vw,3.2rem);letter-spacing:.1em;line-height:1.1}
+.cardpanel .cp-role{font-family:var(--mono);font-size:.6rem;letter-spacing:.6em;text-indent:.6em;text-transform:uppercase;color:var(--silver-dim);margin-top:12px}
+.cardpanel .cp-rows{margin-top:5.5vh;border-top:1px solid var(--hair)}
+.cardpanel .cp-rows>div{padding:2.4vh 0;border-bottom:1px solid var(--hair);font-size:clamp(.95rem,2vw,1.08rem);color:var(--text);display:flex;justify-content:space-between;gap:20px;text-align:left}
+.cardpanel .cp-rows .k{font-family:var(--mono);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--silver-dim);padding-top:.45em;flex-shrink:0}
+.cardpanel .price{font-family:var(--serif);font-weight:500;font-size:clamp(1.9rem,4.8vw,3.2rem);margin-top:5vh;line-height:1.15}
+.cardpanel .pnote{font-family:var(--mono);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--text-dim);margin-top:12px}
+.fc{max-width:720px;margin:24px auto 0;border:1px solid var(--hair);padding:5vh 6vw;text-align:center;background:linear-gradient(180deg,rgba(200,204,208,.04),transparent);position:relative}
+.fc h3{font-family:var(--serif);font-variant:small-caps;font-weight:600;font-size:clamp(1.5rem,3.2vw,2.2rem);letter-spacing:.12em}
+.fc p{margin-top:2.4vh;font-size:.96rem;color:var(--text-dim);max-width:520px;margin-left:auto;margin-right:auto}
+
+/* circle CTA on rule */
+.circle-line{position:relative;max-width:900px;margin:12vh auto 0;padding:0 4vw}
+.circle-line .rule{background:var(--hair)}
+.circle-cta{position:absolute;top:50%;left:62%;transform:translate(-50%,-50%);width:172px;height:172px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;text-align:center;
+  background:radial-gradient(circle at 32% 28%,#e6e9ec,#9a9ea6 42%,#5c5f66 78%,#7e828a);
+  color:#101114;font-family:var(--serif);font-variant:small-caps;font-weight:600;font-size:1.25rem;letter-spacing:.1em;
+  box-shadow:0 18px 60px rgba(0,0,0,.6),inset 0 1px 1px rgba(255,255,255,.65);will-change:transform}
+.circle-cta:active{transform:translate(-50%,-50%) scale(.96)}
+@media (max-width:760px){.circle-cta{width:132px;height:132px;font-size:1.05rem;left:50%}.circle-line{margin-top:14vh;padding-bottom:8vh}}
+
+/* ═══ FAQ ═══ */
+#faq{background:var(--ink);padding:6vh 0 16vh}
+#faq .f-list{margin-top:6vh}
+#faq details{border-top:1px solid var(--hair)}
+#faq details:last-of-type{border-bottom:1px solid var(--hair)}
+#faq summary{list-style:none;cursor:pointer;padding:3.4vh 4vw;display:flex;align-items:baseline;gap:3vw;transition:background .3s}
+#faq summary:hover{background:rgba(200,204,208,.03)}
+#faq summary::-webkit-details-marker{display:none}
+#faq summary .fi{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;color:var(--silver-dim);min-width:40px}
+#faq summary .fq{font-family:var(--serif);font-weight:500;font-size:clamp(1.2rem,2.8vw,1.9rem);color:var(--silver-hi);line-height:1.3}
+#faq summary .plus{margin-left:auto;color:var(--silver-dim);font-size:1.3rem;font-weight:300;transition:transform .3s}
+#faq details[open] .plus{transform:rotate(45deg)}
+#faq .a{padding:0 4vw 4vh calc(4vw + 40px + 3vw);max-width:760px;color:var(--text-dim);font-size:.97rem}
+
+/* ═══ CURTAIN FOOTER SCENE ═══ */
+main{position:relative;z-index:1;background:var(--ink);transform:translate3d(0,0,0)}
+#finale{position:sticky;bottom:0;left:0;z-index:0;background:#07070a;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+#finale .fin-inner{padding:12vh 4vw 4vh;text-align:center}
+#finale .fin-line{font-family:var(--serif);font-variant:small-caps;font-weight:500;line-height:.95;font-size:clamp(3rem,10.5vw,10rem)}
+#finale .assure{display:flex;gap:4vw;justify-content:center;flex-wrap:wrap;margin-top:6vh;font-family:var(--mono);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim)}
+#finale .assure b{color:var(--silver);font-weight:500}
+#finale form{display:flex;flex-direction:column;gap:14px;max-width:540px;margin:5.5vh auto 0;text-align:left}
+#finale label{font-family:var(--mono);font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim)}
+#finale input,#finale textarea{background:rgba(255,255,255,.03);border:1px solid var(--hair);color:var(--silver-hi);padding:16px;font-family:var(--sans);font-size:1rem;transition:border-color .3s}
+#finale input:focus,#finale textarea:focus{outline:none;border-color:var(--silver-dim)}
+#finale textarea{min-height:100px;resize:vertical}
+#finale .privline{font-family:var(--mono);font-size:.62rem;letter-spacing:.14em;color:var(--text-dim);margin-top:2.6vh;text-align:center;text-transform:uppercase}
+#finale .meta-rail{margin-top:7vh;padding:3vh 4vw 3.4vh;border-top:1px solid var(--hair);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim)}
+#finale .meta-rail a{color:var(--silver-dim);text-decoration:none;transition:color .25s}
+#finale .meta-rail a:hover{color:var(--silver-hi)}
+#finale .disc{padding:0 4vw 4vh;font-family:var(--mono);font-size:.56rem;letter-spacing:.08em;color:#4b4d53;text-align:center;max-width:680px;margin:0 auto;line-height:1.9;text-transform:uppercase}
+
+/* section headers */
+.sec-head{padding:0 4vw;display:flex;align-items:baseline;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.sec-head h2{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(2.2rem,6.4vw,5.6rem);line-height:1.02}
+.sec-head h2 .mask span{display:inline-block}
+
+/* ═══ cursor ═══ */
+#cur-dot,#cur-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:3500;border-radius:50%;translate:-50% -50%;display:none}
+#cur-dot{width:7px;height:7px;background:#e9ebee}
+#cur-ring{width:38px;height:38px;border:1px solid rgba(230,233,236,.55);transition:width .3s,height .3s,border-color .3s}
+body.cur-link #cur-ring{width:66px;height:66px;border-color:#e9ebee}
+@media (hover:hover) and (pointer:fine){#cur-dot,#cur-ring{display:block}}
+
+/* sticky mobile CTA */
+#sticky{position:fixed;left:0;right:0;bottom:0;z-index:1700;background:rgba(8,8,10,.9);backdrop-filter:blur(16px);
+  border-top:1px solid var(--hair);padding:12px 16px;display:none;transform:translateY(110%);transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+#sticky.show{transform:none}
+#sticky a{display:block;padding:14px;border:1px solid rgba(200,204,208,.4);border-radius:100px;color:var(--silver-hi);text-decoration:none;text-align:center;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.3em;text-indent:.3em;text-transform:uppercase}
+#sticky a:active{transform:scale(.98)}
+@media (max-width:760px){#sticky{display:block}}
+
+/* ripple */
+.ripple{position:fixed;width:8px;height:8px;border-radius:50%;background:radial-gradient(circle,rgba(233,235,238,.45),transparent 70%);
+  pointer-events:none;z-index:3600;animation:rip .55s ease-out forwards}
+@keyframes rip{to{transform:scale(15);opacity:0}}
+
+@media (prefers-reduced-motion: reduce){
+  .rvv{opacity:1 !important;transform:none !important}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ PRELOADER ═══ -->
+<div id="loader" hidden>
+  <div class="l-meta">Emotion Mentoring // MMXXVI</div>
+  <div class="l-mark metal" id="lMark">Emotion Mentoring<small>for CEOs</small></div>
+  <div class="l-count"><span id="lNum">000</span><sup>%</sup></div>
+  <div class="l-bar"><i id="lBar"></i></div>
+</div>
+
+<!-- ═══ CURSOR ═══ -->
+<div id="cur-dot"></div><div id="cur-ring"></div>
+
+<!-- ═══ HUD ═══ -->
+<div id="hud" aria-hidden="true">
+  <div class="h-tl">Emotion Mentoring&nbsp;&nbsp;//&nbsp;&nbsp;© MMXXVI</div>
+  <div class="h-tr">Twelve private engagements<br>Worldwide</div>
+  <div class="h-bl">Scroll to descend</div>
+  <div class="h-br" id="hudClock">Local —:—</div>
+</div>
+
+<main id="main">
+
+<!-- ═══ SCENE 1 · HERO ═══ -->
+<section class="scene" id="hero">
+  <div class="bgp" id="heroBg"></div>
+  <div class="h-inner">
+    <h1 class="mast metal" id="mast">
+      <span class="row"><span>Emotion</span></span>
+      <span class="row"><span>Mentoring</span></span>
+    </h1>
+    <div class="forline rvv" data-rv>For CEOs</div>
+    <p class="weld rvv" data-rv>We built everything except the mind that carries it.<br>That work begins here.</p>
+    <div class="h-cta-row rvv" data-rv>
+      <a class="pill" href="#finale" data-cursor>The Confidential Conversation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCENE 2 · THE LOAD — pinned cinema ═══ -->
+<section class="scene" id="load">
+  <div class="stage">
+    <div class="s-head mono-label">The Load</div>
+    <div class="s-prog"><span id="loadIdx">01</span> / 04</div>
+
+    <div class="strike" data-strike>
+      <div class="big">We answer to everyone. No&nbsp;one answers to&nbsp;Us.</div>
+      <div class="callout"><span class="ln"></span>
+        <p><b>Half of CEOs</b> report loneliness in the role. Of those, <b>61%</b> say it hinders their performance. // RHR International, via Harvard Business Review, 2012</p></div>
+    </div>
+    <div class="strike" data-strike>
+      <div class="big">The decisions keep coming. The&nbsp;regret stays&nbsp;longer.</div>
+      <div class="callout"><span class="ln"></span>
+        <p><b>85%</b> of business leaders suffered decision distress this past year. <b>70%</b> would rather a robot decide. // Oracle, The Decision Dilemma, 2023</p></div>
+    </div>
+    <div class="strike" data-strike>
+      <div class="big">The week runs 62.5&nbsp;hours. The&nbsp;mind pays the&nbsp;difference.</div>
+      <div class="callout"><span class="ln"></span>
+        <p>Working <b>79%</b> of weekend days and <b>70%</b> of vacation days. // Harvard Business Review, Porter &amp; Nohria, 2018</p></div>
+    </div>
+    <div class="strike" data-strike>
+      <div class="big">Nothing prepared&nbsp;Us for this&nbsp;seat.</div>
+      <div class="callout"><span class="ln"></span>
+        <p>Only <b>32%</b> of CEOs felt fully prepared. What blindsided the rest was the human side. // Egon Zehnder, 402 CEOs, 2018</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCENE 3 · THE TURN — hard cut to silver ═══ -->
+<section class="scene" id="turn" data-silver>
+  <div class="pad">
+    <div class="mono-label rvv" data-rv>The Turn</div>
+    <h2 class="t-title rvv" data-rv>One Mind<br>Carries All of It.</h2>
+    <p class="t-copy rvv" data-rv>Every decision the company makes runs through one mind. The Shen Method works on that mind directly. We repair what life damaged, restore the ability to adapt, and unlock what waits underneath.</p>
+  </div>
+  <div class="t-grid rvv" data-rv>
+    <div><span class="n"><span class="count" data-count="71">0</span><sup>%</sup></span><p>of US CEOs carry symptoms of imposter syndrome // Korn&nbsp;Ferry, 2024</p></div>
+    <div><span class="n"><span class="count" data-count="55">0</span><sup>%</sup></span><p>faced a mental-health issue last year; 81% believe admitting it reads as weakness // Businessolver, 2024</p></div>
+    <div><span class="n"><span class="count" data-count="90">0</span><sup>%</sup></span><p>of founders tell no investor about their stress; 23% ever seek help // Startup Snapshot, 2023</p></div>
+  </div>
+  <div class="t-silence rvv" data-rv>The silence is the norm. It ends in one confidential room.</div>
+  <div class="marquee" aria-label="A mind that can adapt is healthy, strong, and capable.">
+    <ul><li>A mind that can adapt</li><li class="sep">✦</li><li>is healthy</li><li class="sep">✦</li><li>strong</li><li class="sep">✦</li><li>capable</li><li class="sep">✦</li></ul>
+    <ul aria-hidden="true"><li>A mind that can adapt</li><li class="sep">✦</li><li>is healthy</li><li class="sep">✦</li><li>strong</li><li class="sep">✦</li><li>capable</li><li class="sep">✦</li></ul>
+  </div>
+</section>
+
+<!-- ═══ SCENE 4 · OPEN WATER ═══ -->
+<section class="scene" id="water">
+  <div class="sec-head">
+    <h2 class="metal rvv" data-rv>What the Rebuilt Mind Does</h2>
+    <div class="mono-label">Open Water</div>
+  </div>
+  <div class="ed-rows">
+    <div class="ed-row rvv" data-rv>
+      <span class="idx">01</span><h3>Clean Decisions</h3>
+      <p>Pressure stops distorting judgment. The call gets made once, without the regret tax.</p>
+    </div>
+    <div class="ed-row rvv" data-rv>
+      <span class="idx">02</span><h3>Returned Capacity</h3>
+      <p>The load stays; the strain goes. Room appears for the work the company was founded to do.</p>
+    </div>
+    <div class="ed-row rvv" data-rv>
+      <span class="idx">03</span><h3>Relationships That Work</h3>
+      <p>At home and at the table. The healthy family fuels the performance, and the performance feeds the family. The flywheel turns both ways.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCENE 4b · PROOF ═══ -->
+<section class="scene" id="proof">
+  <div class="sec-head">
+    <h2 class="metal rvv" data-rv>Results Speak Quietly</h2>
+    <div class="mono-label">In Their Words</div>
+  </div>
+  <div class="p-rows">
+    <div class="p-row rvv" data-rv>
+      <p class="qt">"He doesn't hide behind catchy sales copy. He simply delivers results."</p>
+      <p class="who">Arkadiusz Czajkowski&nbsp;&nbsp;//&nbsp;&nbsp;CEO</p>
+    </div>
+    <div class="p-row rvv" data-rv>
+      <p class="qt">"After four months, the loneliness that had made my life a nightmare for years simply disappeared."</p>
+      <p class="who">Krystyna Mendonca&nbsp;&nbsp;//&nbsp;&nbsp;Entrepreneur</p>
+    </div>
+    <div class="p-row rvv" data-rv>
+      <p class="qt">"Every processed hour contributes to my success. I understand what mechanisms drive other people — and that changes everything."</p>
+      <p class="who">Michał Szost</p>
+    </div>
+    <div class="p-row p-hidden">
+      <p class="qt">"I worked with several therapists before — CBT, psychodynamic, Gestalt, Hellinger, Theta Healing. What hit me about this method was unlike anything previous."</p>
+      <p class="who">Agnieszka Palka</p>
+    </div>
+    <div class="p-row p-hidden">
+      <p class="qt">"Within a single session I healed a pattern I had been repeating for many years."</p>
+      <p class="who">Dominika Lenard</p>
+    </div>
+    <div class="p-row p-hidden">
+      <p class="qt">"I know no one who works at this level with what is still in us to be healed."</p>
+      <p class="who">Paulina Szuta</p>
+    </div>
+  </div>
+  <button class="morelink" id="moreBtn" data-cursor>More results&nbsp;&nbsp;+</button>
+</section>
+
+<!-- ═══ SCENE 5 · GUIDE ═══ -->
+<section class="scene" id="guide">
+  <div class="sec-head">
+    <h2 class="metal rvv" data-rv>Shen</h2>
+    <div class="mono-label">The Guide</div>
+  </div>
+  <div class="g-wrap">
+    <div class="g-frame rvv" data-rv>
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <img class="plx" src="portrait.webp" alt="Shen — Michał Ksiądzyna">
+    </div>
+    <div class="g-bio rvv" data-rv>
+      <p class="manif">"Most approaches manage the pattern. We change the pattern at the level where it lives."</p>
+      <p class="cred">Michał Ksiądzyna. Eleven years of work on the emotional system. Founder of the Shen Foundation. Author of The Secret Book of Emotions.</p>
+      <div class="g-stats">
+        <div><b class="metal">11+</b><span>Years of the work</span></div>
+        <div><b class="metal">12</b><span>Engagements at once</span></div>
+        <div><b class="metal">01</b><span>Method // The Shen Method</span></div>
+      </div>
+      <details><summary data-cursor>The longer story&nbsp;&nbsp;+</summary>
+        <p>Forged through thousands of hours of practice and the study of how the human emotional system actually operates. Clients describe the work as direct, precise, and deep. Every conversation goes where the pattern lives.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCENE 5b · BOOK ═══ -->
+<section class="scene" id="book">
+  <div class="b-wrap">
+    <div class="cover rvv" data-rv>
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <span class="bt metal">The Secret Book of&nbsp;Emotions</span>
+      <span class="ba">Shen</span>
+    </div>
+    <div class="b-txt rvv" data-rv>
+      <div class="mono-label" style="margin-bottom:2vh;">The Book</div>
+      <h3 class="metal">Twenty Secrets of the Hidden Design</h3>
+      <p>How addiction, craving, and repression actually work inside Us. A direct, unfiltered guide to the machinery this whole page speaks of.</p>
+      <a class="blink" href="the-secret-book-of-emotions-shen.html" data-cursor>Read the book</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SCENE 6 · ENGAGEMENT ═══ -->
+<section class="scene" id="engage">
+  <div class="sec-head">
+    <h2 class="metal rvv" data-rv>The Shen Method</h2>
+    <div class="mono-label">The Engagement</div>
+  </div>
+  <div class="cardpanel rvv" data-rv>
+    <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+    <div class="cp-name metal">Emotion Mentoring</div>
+    <div class="cp-role">Private · One on One · Worldwide</div>
+    <div class="cp-rows">
+      <div><span class="k">Sessions</span><span>Two deep sessions each month</span></div>
+      <div><span class="k">Access</span><span>Direct line between sessions</span></div>
+      <div><span class="k">Seats</span><span>Twelve engagements exist at once. A waitlist holds the door.</span></div>
+      <div><span class="k">Term</span><span>Engagements run six months minimum</span></div>
+    </div>
+    <div class="price metal">Begins at €3,000 per month</div>
+    <div class="pnote">The alternative a crisis buys is a Swiss clinic at €100,000 a week</div>
+  </div>
+  <div class="fc rvv" data-rv>
+    <h3 class="metal">First Call</h3>
+    <p>Held for a small number of active clients. When life breaks open — a rupture, a loss, an event too large to carry alone — the response comes within hours, and the work continues until the ground is solid again. The value lives in the days nothing happens. We know who answers.</p>
+  </div>
+  <div class="circle-line rvv" data-rv>
+    <div class="rule"></div>
+    <a class="circle-cta" id="circleCta" href="#finale">Begin</a>
+  </div>
+</section>
+
+<!-- ═══ SCENE 6b · FAQ ═══ -->
+<section class="scene" id="faq">
+  <div class="sec-head">
+    <h2 class="metal rvv" data-rv>Before Reaching Out</h2>
+    <div class="mono-label">Questions</div>
+  </div>
+  <div class="f-list rvv" data-rv>
+    <details><summary data-cursor><span class="fi">01</span><span class="fq">What does it cost?</span><span class="plus">+</span></summary>
+      <div class="a">Engagements begin at €3,000 per month and run six months minimum. Two deep sessions each month, with direct access between them. Twelve engagements exist at once.</div></details>
+    <details><summary data-cursor><span class="fi">02</span><span class="fq">How is this different from therapy or coaching?</span><span class="plus">+</span></summary>
+      <div class="a">Therapy revisits the past. Coaching manages behavior. This work goes to the emotional system itself and changes the patterns at their source. The results are structural; they compound.</div></details>
+    <details><summary data-cursor><span class="fi">03</span><span class="fq">How does the engagement run?</span><span class="plus">+</span></summary>
+      <div class="a">Private and one on one, worldwide. Two sessions each month carry the deep work; direct access between sessions carries everything the weeks bring.</div></details>
+    <details><summary data-cursor><span class="fi">04</span><span class="fq">Who is this for?</span><span class="plus">+</span></summary>
+      <div class="a">Built for CEOs. The seat with the most riding on one mind. We also work with those who carry large wealth and the weight that arrives with it.</div></details>
+    <details><summary data-cursor><span class="fi">05</span><span class="fq">Is it confidential?</span><span class="plus">+</span></summary>
+      <div class="a">Completely. Client identities are never confirmed, and the work itself stays in the room. Most clients tell no one; that is normal here.</div></details>
+    <details><summary data-cursor><span class="fi">06</span><span class="fq">How do We begin?</span><span class="plus">+</span></summary>
+      <div class="a">One confidential conversation of 20 to 30 minutes. Both sides decide whether the fit is real. Nothing is sold on the call.</div></details>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ FINALE — curtain reveal ═══ -->
+<footer id="finale">
+  <div class="fin-inner">
+    <div class="mono-label" style="margin-bottom:3vh;">The First Step</div>
+    <div class="fin-line metal">The Work Awaits.</div>
+    <div class="assure">
+      <div><b>20–30 min</b>&nbsp;&nbsp;one calendar block</div>
+      <div><b>Mutual fit</b>&nbsp;&nbsp;nothing is sold</div>
+      <div><b>Confidential</b>&nbsp;&nbsp;the room stays sealed</div>
+    </div>
+    <form action="https://formspree.io/f/placeholder" method="POST">
+      <label for="fname">Name</label>
+      <input id="fname" name="name" type="text" autocomplete="name" required>
+      <label for="femail">Email</label>
+      <input id="femail" name="email" type="email" autocomplete="email" required>
+      <label for="fwhat">What is taxing the mind most</label>
+      <textarea id="fwhat" name="message" placeholder="One sentence is enough."></textarea>
+      <button class="pill" type="submit" style="margin-top:14px;" data-cursor>Request the Conversation</button>
+    </form>
+    <p class="privline">Confidential // No lists // One reply, from Michał directly</p>
+  </div>
+  <div class="meta-rail">
+    <span>Emotion Mentoring © MMXXVI</span>
+    <span id="finClock">Local —:—</span>
+    <span>
+      <a href="foundation.html" data-cursor>Foundation</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+      <a href="the-secret-book-of-emotions-shen.html" data-cursor>The Book</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+      <a href="mailto:michal@emotionmentoring.com" data-cursor>Email</a>
+    </span>
+    <span>V.2 // Silver</span>
+  </div>
+  <p class="disc">Emotion mentoring is not medical or psychiatric care and does not replace it. In immediate danger or a medical emergency, contact local emergency services first — 112 in Europe, 911 or 988 in the US.</p>
+</footer>
+
+<div id="sticky"><a href="#finale">The Confidential Conversation</a></div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<script defer src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js"></script>
+<script defer>
+window.addEventListener('DOMContentLoaded',()=>{
+
+/* clocks (run regardless of libs) */
+function tickClock(){
+  const t=new Date().toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});
+  const a=document.getElementById('hudClock'),b=document.getElementById('finClock');
+  if(a)a.textContent='Local '+t; if(b)b.textContent='Local '+t;
+}
+tickClock();setInterval(tickClock,30000);
+
+/* more quotes + ripple + sticky work without libs */
+document.getElementById('moreBtn').addEventListener('click',function(){
+  document.querySelectorAll('.p-hidden').forEach(q=>q.classList.add('show'));
+  this.remove();
+  if(window.ScrollTrigger)ScrollTrigger.refresh();
+});
+addEventListener('pointerdown',e=>{
+  const r=document.createElement('div');r.className='ripple';
+  r.style.left=(e.clientX-4)+'px';r.style.top=(e.clientY-4)+'px';
+  document.body.appendChild(r);setTimeout(()=>r.remove(),600);
+},{passive:true});
+
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine=matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+/* ═══ no-GSAP fallback: static page, HUD + strikes visible ═══ */
+if(!window.gsap||reduced){
+  document.querySelectorAll('#hud > div').forEach(d=>d.style.opacity=1);
+  document.querySelectorAll('[data-strike]').forEach(s=>{s.style.position='relative';s.style.opacity=1;s.style.visibility='visible';s.style.transform='none';s.style.top='auto';});
+  const ld=document.getElementById('load');if(ld)ld.style.height='auto';
+  const st=document.querySelector('#load .stage');if(st){st.style.position='relative';st.style.height='auto';st.style.display='block';st.style.padding='10vh 0';}
+  document.querySelectorAll('.count').forEach(c=>c.textContent=c.dataset.count);
+  const hero=document.getElementById('heroBg');if(hero)hero.style.opacity=.34;
+  const stick=document.getElementById('sticky');
+  addEventListener('scroll',()=>stick.classList.toggle('show',scrollY>innerHeight*.8),{passive:true});
+  return;
+}
+
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.config({ignoreMobileResize:true,limitCallbacks:true});
+
+/* ═══ Lenis smooth scroll (desktop feel; native touch) ═══ */
+let lenis=null;
+if(window.Lenis){
+  lenis=new Lenis({lerp:.1,smoothWheel:true,syncTouch:false,anchors:true});
+  lenis.on('scroll',ScrollTrigger.update);
+  gsap.ticker.add(t=>lenis.raf(t*1000));
+  gsap.ticker.lagSmoothing(0);
+}
+
+/* ═══ PRELOADER ═══ */
+const loader=document.getElementById('loader');
+const seen=sessionStorage.getItem('emGate');
+function heroIn(delay){
+  const tl=gsap.timeline({delay:delay||0});
+  tl.from('#mast .row span',{yPercent:110,duration:1.15,stagger:.12,ease:'expo.out'})
+    .to('#heroBg',{opacity:.34,duration:1.6,ease:'power2.inOut'},'-=.7')
+    .from('[data-rv][data-hero]',{},0);
+  gsap.utils.toArray('#hero [data-rv]').forEach((el,i)=>{
+    tl.from(el,{y:34,autoAlpha:0,duration:.9,ease:'power3.out'},.55+i*.14);
+  });
+  tl.to('#hud > div',{opacity:1,duration:1,stagger:.1,ease:'power2.out'},.9);
+}
+if(!seen){
+  sessionStorage.setItem('emGate','1');
+  loader.hidden=false;
+  if(lenis)lenis.stop();
+  const num={v:0};
+  const ltl=gsap.timeline({defaults:{ease:'power4.inOut'}});
+  ltl.to(num,{v:100,duration:1.9,ease:'power1.inOut',onUpdate:()=>{
+      document.getElementById('lNum').textContent=String(Math.round(num.v)).padStart(3,'0');}})
+    .to('#lBar',{scaleX:1,duration:1.9,ease:'power1.inOut'},0)
+    .to('#lMark',{opacity:1,duration:1.3,ease:'power2.out'},.25)
+    .to('.l-count, .l-bar, .l-meta',{autoAlpha:0,duration:.4},'-=.2')
+    .to('#lMark',{yPercent:-16,autoAlpha:0,duration:.55,ease:'power3.in'})
+    .to('#loader',{yPercent:-100,duration:1,ease:'power4.inOut',onComplete:()=>{
+        loader.remove();if(lenis)lenis.start();ScrollTrigger.refresh();}},'-=.15');
+  heroIn(3.7);
+}else{
+  loader.remove();
+  heroIn(.15);
+}
+
+/* ═══ generic reveals (outside hero) ═══ */
+gsap.utils.toArray('[data-rv]').forEach(el=>{
+  if(el.closest('#hero'))return;
+  gsap.set(el,{y:44,autoAlpha:0});
+  ScrollTrigger.create({trigger:el,start:'top 87%',once:true,
+    onEnter:()=>gsap.to(el,{y:0,autoAlpha:1,duration:1,ease:'power3.out',overwrite:'auto'})});
+});
+
+/* hairline rules draw in */
+ScrollTrigger.batch('.rule',{start:'top 88%',
+  onEnter:b=>gsap.fromTo(b,{scaleX:0},{scaleX:1,duration:1.1,ease:'power3.out',stagger:.12,overwrite:true})});
+
+/* ═══ THE LOAD — pinned scrubbed cinema ═══ */
+const strikes=gsap.utils.toArray('[data-strike]');
+gsap.set(strikes,{visibility:'visible',opacity:0,y:50});
+gsap.set(strikes[0],{opacity:1,y:0});
+const idxEl=document.getElementById('loadIdx');
+const ltl2=gsap.timeline({scrollTrigger:{trigger:'#load',start:'top top',end:'bottom bottom',scrub:.6,
+  onUpdate(self){
+    const i=Math.min(3,Math.floor(self.progress*4));
+    idxEl.textContent='0'+(i+1);
+  }}});
+strikes.forEach((s,i)=>{
+  if(i===0)return;
+  ltl2.to(strikes[i-1],{opacity:0,y:-60,duration:1,ease:'power2.in'},(i-1)*2+1)
+      .fromTo(s,{opacity:0,y:60},{opacity:1,y:0,duration:1,ease:'power2.out'},(i-1)*2+1.6);
+});
+ltl2.to({},{duration:.8});
+
+/* ═══ count-ups on silver ═══ */
+gsap.utils.toArray('.count').forEach(el=>{
+  const target=+el.dataset.count;
+  const o={v:0};
+  ScrollTrigger.create({trigger:el,start:'top 85%',once:true,
+    onEnter:()=>gsap.to(o,{v:target,duration:1.8,ease:'power2.out',
+      onUpdate:()=>el.textContent=Math.round(o.v)})});
+});
+
+/* HUD inverts on silver */
+ScrollTrigger.create({trigger:'#turn',start:'top 55%',end:'bottom 45%',
+  onToggle:self=>document.body.classList.toggle('on-silver',self.isActive)});
+
+/* ═══ portrait parallax ═══ */
+gsap.utils.toArray('.g-frame .plx').forEach(img=>{
+  gsap.fromTo(img,{yPercent:-9},{yPercent:9,ease:'none',
+    scrollTrigger:{trigger:img.closest('.g-frame'),start:'top bottom',end:'bottom top',scrub:true}});
+});
+/* hero bg drift */
+gsap.to('#heroBg',{yPercent:12,ease:'none',
+  scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+
+/* chrome sheen scrubbed on big metal headlines */
+gsap.utils.toArray('.sec-head h2.metal, .fin-line, .cp-name, .price').forEach(el=>{
+  gsap.fromTo(el,{backgroundPositionX:'110%'},{backgroundPositionX:'-10%',ease:'none',
+    scrollTrigger:{trigger:el,start:'top 95%',end:'bottom 5%',scrub:1}});
+});
+
+/* sticky mobile CTA */
+ScrollTrigger.create({trigger:'#hero',start:'bottom 60%',
+  onEnter:()=>document.getElementById('sticky').classList.add('show'),
+  onLeaveBack:()=>document.getElementById('sticky').classList.remove('show')});
+ScrollTrigger.create({trigger:'#finale',start:'top 80%',
+  onEnter:()=>document.getElementById('sticky').classList.remove('show'),
+  onLeaveBack:()=>document.getElementById('sticky').classList.add('show')});
+
+/* ═══ cursor + magnetic (desktop only) ═══ */
+if(fine){
+  const dX=gsap.quickTo('#cur-dot','x',{duration:.14,ease:'power3'}),
+        dY=gsap.quickTo('#cur-dot','y',{duration:.14,ease:'power3'}),
+        rX=gsap.quickTo('#cur-ring','x',{duration:.5,ease:'power3'}),
+        rY=gsap.quickTo('#cur-ring','y',{duration:.5,ease:'power3'});
+  addEventListener('mousemove',e=>{dX(e.clientX);dY(e.clientY);rX(e.clientX);rY(e.clientY);});
+  document.addEventListener('mouseover',e=>
+    document.body.classList.toggle('cur-link',!!e.target.closest('a, button, summary, [data-cursor]')));
+  /* magnetic circle */
+  const c=document.getElementById('circleCta');
+  const cX=gsap.quickTo(c,'x',{duration:.9,ease:'elastic.out(1,.35)'}),
+        cY=gsap.quickTo(c,'y',{duration:.9,ease:'elastic.out(1,.35)'});
+  c.addEventListener('mousemove',e=>{
+    const r=c.getBoundingClientRect();
+    cX((e.clientX-(r.left+r.width/2))*.4);
+    cY((e.clientY-(r.top+r.height/2))*.4);
+  });
+  c.addEventListener('mouseleave',()=>{cX(0);cY(0);});
+}
+
+});
+</script>
+</body>
+</html>

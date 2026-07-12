@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gold A vs B — Side by Side</title>
+<style>
+<!--FONTS-->
+:root{
+  --ink:#0a0a0c;
+  /* A · Brand Gold */
+  --a-bg:#c9a96e; --a-gold:#d3b477; --a-dim:#8d7648; --a-hi:#f5ead0;
+  --a-ink1:#161005; --a-ink2:#352b16; --a-ink3:#4d3f22;
+  --a-metal:linear-gradient(100deg,#5c4a26 0%,#9a7d3f 16%,#d4b678 30%,#fff3d4 44%,#f7e9c0 48%,#fff3d4 52%,#c9a75d 66%,#71592b 84%,#a3854a 100%);
+  /* B · Champagne Gold */
+  --b-bg:#d9c491; --b-gold:#c9a96e; --b-dim:#85714a; --b-hi:#f2e8d4;
+  --b-ink1:#171204; --b-ink2:#332b17; --b-ink3:#544628;
+  --b-metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%);
+  --serif:'Cormorant Garamond',serif; --mono:'IBM Plex Mono',monospace; --sans:'Jost',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:#b9b3a6;font-family:var(--sans);font-weight:300;padding:6vw 4vw 14vw}
+h1{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.8rem,7vw,3rem);color:#f5ead0;line-height:1.1}
+.sub{font-family:var(--mono);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:#787263;margin-top:10px}
+.row-label{font-family:var(--mono);font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:#787263;margin:9vw 0 3vw;border-top:1px solid rgba(255,255,255,.1);padding-top:3vw}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tag{font-family:var(--mono);font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:#8d7648;margin-bottom:8px}
+.metal-a,.metal-b{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.5rem,6.4vw,3.4rem);line-height:1;
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;background-size:220% 100%;background-position:50% 0}
+.metal-a{background-image:var(--a-metal)}
+.metal-b{background-image:var(--b-metal)}
+.field{padding:7vw 5vw;min-height:44vw}
+.field .lab{font-family:var(--mono);font-size:.55rem;letter-spacing:.3em;text-transform:uppercase}
+.field .tt{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.25rem,5.2vw,2.6rem);line-height:1;margin-top:3vw}
+.field p{font-size:.72rem;line-height:1.65;margin-top:3vw}
+.fa{background:var(--a-bg)}.fa .lab{color:var(--a-ink3)}.fa .tt{color:var(--a-ink1)}.fa p{color:var(--a-ink2)}
+.fb{background:var(--b-bg)}.fb .lab{color:var(--b-ink3)}.fb .tt{color:var(--b-ink1)}.fb p{color:var(--b-ink2)}
+.accents{background:#0d0d10;border:1px solid rgba(255,255,255,.09);padding:6vw 5vw}
+.accents .fl{font-family:var(--mono);font-size:.62rem;letter-spacing:.5em;text-transform:uppercase}
+.accents .hi{font-family:var(--serif);font-style:italic;font-size:clamp(1rem,4.2vw,1.6rem);margin-top:3vw;line-height:1.4}
+.accents .dm{font-family:var(--mono);font-size:.56rem;letter-spacing:.2em;text-transform:uppercase;margin-top:3vw}
+.aa .fl{color:var(--a-gold)}.aa .hi{color:var(--a-hi)}.aa .dm{color:var(--a-dim)}
+.ab .fl{color:var(--b-gold)}.ab .hi{color:var(--b-hi)}.ab .dm{color:var(--b-dim)}
+.orb{display:flex;align-items:center;justify-content:center;padding:7vw 0;background:#0d0d10;border:1px solid rgba(255,255,255,.09)}
+.orb span{width:31vw;height:31vw;max-width:150px;max-height:150px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-variant:small-caps;font-weight:600;font-size:clamp(.95rem,4vw,1.25rem);color:#141008;
+  box-shadow:0 14px 44px rgba(0,0,0,.6),inset 0 1px 1px rgba(255,255,255,.65)}
+.oa span{background:radial-gradient(circle at 32% 28%,#f3e5be,#c1a05c 42%,#6a5527 78%,#8f7440)}
+.ob span{background:radial-gradient(circle at 32% 28%,#f6eccd,#c9ae74 42%,#73603a 78%,#97815a)}
+.sw{display:flex;gap:6px;margin-top:10px}
+.sw div{flex:1;height:52px;border-radius:2px;position:relative}
+.sw span{position:absolute;bottom:4px;left:6px;font-family:var(--mono);font-size:.5rem;letter-spacing:.06em;color:rgba(0,0,0,.72)}
+.sw .dk span{color:rgba(255,255,255,.75)}
+.verdict{margin-top:12vw;font-family:var(--serif);font-style:italic;font-size:clamp(1.05rem,4.4vw,1.5rem);color:#f5ead0;line-height:1.5;text-align:center}
+</style>
+</head>
+<body>
+
+<h1>Gold A <span style="color:#787263">vs</span> B</h1>
+<div class="sub">Same page · two golds · A left, B right</div>
+
+<div class="row-label">01 · The Metal — every big headline</div>
+<div class="duo">
+  <div><div class="tag">A · Brand Gold</div><div class="metal-a">Emotion<br>Mentoring</div></div>
+  <div><div class="tag">B · Champagne</div><div class="metal-b">Emotion<br>Mentoring</div></div>
+</div>
+
+<div class="row-label">02 · The Turn — the full gold field, five screens in</div>
+<div class="duo">
+  <div class="field fa"><div class="lab">The Turn</div><div class="tt">One Mind<br>Carries<br>All of It.</div><p>Every decision the company makes runs through one mind.</p></div>
+  <div class="field fb"><div class="lab">The Turn</div><div class="tt">One Mind<br>Carries<br>All of It.</div><p>Every decision the company makes runs through one mind.</p></div>
+</div>
+<div class="sw">
+  <div style="background:#c9a96e"><span>#c9a96e</span></div>
+  <div style="background:#d9c491"><span>#d9c491</span></div>
+</div>
+
+<div class="row-label">03 · Accents on the dark ground</div>
+<div class="duo">
+  <div class="accents aa"><div class="fl">For CEOs</div><div class="hi">"He simply delivers results."</div><div class="dm">Twelve engagements // Worldwide</div></div>
+  <div class="accents ab"><div class="fl">For CEOs</div><div class="hi">"He simply delivers results."</div><div class="dm">Twelve engagements // Worldwide</div></div>
+</div>
+<div class="sw">
+  <div style="background:#d3b477"><span>#d3b477</span></div>
+  <div style="background:#c9a96e"><span>#c9a96e</span></div>
+  <div class="dk" style="background:#8d7648"><span>#8d7648</span></div>
+  <div class="dk" style="background:#85714a"><span>#85714a</span></div>
+</div>
+
+<div class="row-label">04 · The Begin orb</div>
+<div class="duo">
+  <div class="orb oa"><span>Begin</span></div>
+  <div class="orb ob"><span>Begin</span></div>
+</div>
+
+<p class="verdict">A runs hotter — saturated brand gold.<br>B stands back — pale champagne, quieter.</p>
+
+</body>
+</html>

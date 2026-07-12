@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Mentoring — Shen Voice v1 Changes</title>
+    <link rel="stylesheet" href="report_style.css">
+    <style>
+        /* Override base sizing for readable 14-inch display */
+        body { font-size: 20px; }
+        .report-header h1 { font-size: 34px; }
+        .section h2 { font-size: 28px; }
+        h3 { font-size: 24px; }
+
+        .section { max-width: 900px; }
+        .report-header { max-width: 900px; }
+        footer { max-width: 900px; }
+
+        /* Diff blocks */
+        .diff-pair { margin-bottom: 32px; }
+
+        .diff-label {
+            font-size: 0.65rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: block;
+        }
+        .diff-label.before { color: #e08080; }
+        .diff-label.after { color: #70c090; }
+
+        .diff-block {
+            padding: 18px 22px;
+            border-radius: 4px;
+            font-size: 0.88rem;
+            line-height: 1.8;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .diff-block.before {
+            background: rgba(224, 85, 85, 0.07);
+            border-left: 3px solid rgba(224, 85, 85, 0.5);
+        }
+        .diff-block.after {
+            background: rgba(80, 180, 120, 0.07);
+            border-left: 3px solid rgba(80, 180, 120, 0.5);
+        }
+
+        .diff-block strong { color: var(--gold); font-weight: 500; }
+        .diff-block em { color: var(--muted); }
+
+        .change-count {
+            font-size: 0.72rem;
+            color: var(--muted);
+            letter-spacing: 1px;
+            margin-top: -4px;
+            margin-bottom: 24px;
+        }
+
+        .section-divider {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+            margin: 48px 0 16px;
+        }
+
+        /* Sub-change numbering */
+        .change-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.85rem;
+            color: var(--gold);
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        /* Nav override for this report */
+        .nav-links a { font-size: 0.68rem; }
+
+        /* Summary bar grid */
+        .summary-bar { grid-template-columns: repeat(3, 1fr); }
+    </style>
+</head>
+<body>
+
+<nav>
+    <span class="nav-title">Shen Voice v1</span>
+    <ul class="nav-links">
+        <li><a href="#hero">Hero</a></li>
+        <li><a href="#pain">Pain</a></li>
+        <li><a href="#method">Method</a></li>
+        <li><a href="#mentor">Mentor</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#casestudy">Case Study</a></li>
+        <li><a href="#forwho">For Who</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#confidentiality">Confidentiality</a></li>
+        <li><a href="#faq1">FAQ 1</a></li>
+        <li><a href="#faq2">FAQ 2</a></li>
+        <li><a href="#faq3">FAQ 3</a></li>
+        <li><a href="#faq4">FAQ 4</a></li>
+        <li><a href="#faq5">FAQ 5</a></li>
+        <li><a href="#faq6">FAQ 6</a></li>
+        <li><a href="#faq7">FAQ 7</a></li>
+        <li><a href="#faq8">FAQ 8</a></li>
+        <li><a href="#faq9">FAQ 9</a></li>
+        <li><a href="#cta">CTA</a></li>
+    </ul>
+</nav>
+
+<div class="report-header">
+    <h1>Emotion Mentoring — Shen Voice v1 Changes</h1>
+    <p class="subtitle">Side-by-side text comparison: index.html (original) vs index-shen-v1.html (Shen voice rewrite)</p>
+    <p class="date">19 March 2026</p>
+</div>
+
+<div class="summary-bar" style="max-width:900px;">
+    <div class="summary-item">
+        <div class="num gold">19</div>
+        <div class="desc">Sections Changed</div>
+    </div>
+    <div class="summary-item">
+        <div class="num gold">~75</div>
+        <div class="desc">Text Blocks Modified</div>
+    </div>
+    <div class="summary-item">
+        <div class="num gold">0</div>
+        <div class="desc">CSS / Code Changes</div>
+    </div>
+</div>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<div class="section" id="hero">
+    <span class="section-label gold-bg">Section</span>
+    <h2>Hero</h2>
+    <p class="change-count">3 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Hero Subtitle</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The strategies, the discipline, the drive — you've mastered all of it. Yet the invisible system running your decisions and relationships remains untouched. <strong>This is where the real work begins.</strong></div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">We master the strategy, the discipline, the visible game. Yet beneath all of it runs an invisible architecture, governing every decision, every relationship. <strong>That is where we go.</strong></div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Hero Reveal Paragraph</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Your effort and intelligence brought you this far. Yet beneath both, your Subconscious Mind is running emotional patterns that no strategy, willpower, or achievement can override. Every day you don't address it, the gap between where you are and where you could be grows wider.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">We build careers, reputations, entire lives on effort and intelligence. And underneath it all, the Subconscious Mind runs emotional patterns that no strategy or willpower can override. The gap between where you are and where the architecture allows you to go widens every day it stays untouched.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ PAIN ═══════════════════════════ -->
+<div class="section" id="pain">
+    <span class="section-label red-bg">Section</span>
+    <h2>Pain Points</h2>
+    <p class="change-count">4 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. "You react when you need to respond"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">A negotiation, a difficult conversation, a critical moment — something takes over. The composed, sharp version of you disappears precisely when you need it most.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">A negotiation, a difficult conversation, a critical moment. Something takes over. The nervous system fires an old pattern, and the composed, sharp version of you vanishes precisely when the stakes are highest.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. "Your energy is inconsistent"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Some days you're unstoppable. Others, an invisible weight derails everything. You can't willpower your way to consistency — because the block isn't in your thinking. It's deeper.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Some days you're unstoppable. Others, an invisible weight drags everything down. Willpower has nothing to do with it. The block lives in the emotional system, beneath conscious thought, and it shifts your capacity like weather you can feel yet cannot see.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. "Success feels hollow"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">You've achieved real things. And yet lasting satisfaction remains elusive. You sense something richer is possible — just beyond where you currently live.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Real achievements. Tangible results. And still, lasting satisfaction dissolves the moment you reach for it. The emotional system filters out fulfillment before it can land. Something richer exists just beyond where the current architecture allows you to live.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. "Pressure bleeds into everything"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Work pressure poisons relationships. Old emotional residue corrupts present moments. No boundary holds. No strategy keeps the walls up forever.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Work pressure bleeds into intimacy. Old emotional residue corrupts present moments. We build walls, set boundaries, compartmentalize. And still, the pressure finds every crack.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ METHOD ═══════════════════════════ -->
+<div class="section" id="method">
+    <span class="section-label gold-bg">Section</span>
+    <h2>Method</h2>
+    <p class="change-count">7 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Method Introduction (Paragraph 1)</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Emotion Mentoring is a <strong>precise, structured process</strong> that works directly with how your mind and nervous system process emotional data — creating new, lasting adaptations at the source. This is the method transforming executives, athletes, and high achievers right now.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Emotion Mentoring works directly with the Architecture of Adaptation, the invisible blueprint governing how your mind and nervous system process emotional data. We reach the layer where patterns originate and <strong>redesign them at the source</strong>. The visible life changes because the invisible design changes.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Method Introduction (Paragraph 2)</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Think of it as elite training for the operating system beneath your conscious thought. We go straight to the source. We <strong>change the patterns generating them</strong> — at the level where they actually live. And the results speak for themselves.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Think of it as precision engineering for the operating system beneath conscious thought. Therapy revisits the past. Coaching addresses behavior. Emotion Mentoring operates in a different layer entirely, one most approaches never reach. <strong>We change the patterns generating them</strong>, at the level where they actually live.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Method Introduction (Paragraph 3)</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Unlike therapy, this isn't about revisiting the past. Unlike coaching, it's not about accountability alone. This operates in a different layer entirely — one most approaches never reach. The results are structural. They don't fade. <strong>They compound.</strong></div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The results are structural. They do not fade. <strong>They compound.</strong></div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. Method Card — "New Adaptations"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Guide your nervous system to form new, powerful responses to challenge, pressure, and uncertainty. You stop reacting and start choosing.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The nervous system learns new responses to challenge, pressure, and uncertainty. Old reactions dissolve. Choice returns.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. Method Card — "Pattern Release"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Identify and release the emotional patterns silently capping your performance and your capacity for joy — even patterns held for decades.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">We locate the exact emotional patterns silently capping performance and capacity for joy, then release them. Even patterns held for decades.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">6. Method Card — "Clarity"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Develop an honest, empowering relationship with reality. One that serves your ambitions rather than quietly undermining them.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">An honest, empowering relationship with reality replaces the distortions the emotional system created. Your ambitions gain a foundation that holds.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">7. Method Card — "Lasting Change"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Changes embed deeply over time. It's permanent — structural transformation that stays. And it builds on itself.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Changes embed at the structural level. They stay. And they compound over time, each shift deepening the one before it.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ MENTOR ═══════════════════════════ -->
+<div class="section" id="mentor">
+    <span class="section-label gold-bg">Section</span>
+    <h2>Mentor (Shen Bio)</h2>
+    <p class="change-count">4 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Bio Paragraph 1</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">For over 11 years, Shen has worked at the intersection of emotional intelligence and peak performance — guiding executives, athletes, and high achievers through the deep inner shifts that no surface-level method can touch.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">For over 11 years, Shen has guided executives, athletes, and high achievers through the deep inner shifts that surface-level methods cannot reach. His work sits at the intersection of emotional intelligence and peak performance, where the deepest emotional patterns live.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Bio Paragraph 2</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">His approach was forged through thousands of hours of intensive practice, personal transformation, and rigorous study of how the human emotional system actually operates. He founded the <strong>Shen Foundation</strong> to bring this work to a wider audience.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Thousands of hours of intensive practice, personal transformation, and rigorous study of how the human emotional system operates forged this approach. He founded the <strong>Shen Foundation</strong> to carry this work further.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Bio Paragraph 3</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Clients describe him as <strong>direct, precise, deeply empathetic, and uncompromising</strong> in his commitment to real results. Every conversation goes deep — and he's exceptionally good at taking you there.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Clients describe him as <strong>direct, precise, deeply empathetic, and uncompromising</strong> in his commitment to real results. Every conversation reaches the place where patterns live.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. Bio Paragraph 4</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">What sets this work apart is its precision. Most approaches treat symptoms. This method identifies the exact emotional structures shaping your behaviour — and changes them at the root. The shift is not conceptual. It's something you <strong>feel in your body, in your decisions, in how you show up</strong> the very next day.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Most approaches treat symptoms. This method identifies the exact emotional structures shaping your behavior and changes them at the root. The shift is something you <strong>feel in your body, in your decisions, in how you show up</strong> the very next day.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ RESULTS ═══════════════════════════ -->
+<div class="section" id="results">
+    <span class="section-label green-bg">Section</span>
+    <h2>Results</h2>
+    <p class="change-count">7 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Results Lead</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">When your emotional system changes, everything changes with it — your decisions, your relationships, your performance, your quality of life.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">When the emotional system shifts, everything built on top of it shifts with it. Decisions, relationships, performance, quality of life. All of it moves.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. "Clearer Decisions"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Make high-stakes decisions from a grounded, clear state — no fog, no second-guessing, no emotional static distorting your judgment.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">High-stakes decisions arrive from a grounded, clear state. The fog lifts. The second-guessing stops. Judgment runs clean.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. "Peak Performance on Demand"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Access your best self reliably — in boardrooms, in competitions, in creative work, in the conversations that matter most.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Your best self becomes the default, available on demand. In boardrooms, in competitions, in creative work, in the conversations that carry the most weight.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. "Emotional Mastery"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Respond to difficulty with precision and composure. You stop being managed by emotions — and start leading with them as information.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Difficulty meets precision and composure. Emotions become information you lead with, signals that sharpen your decisions instead of distorting them.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. "Deeper Relationships"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">When your inner world clears, your outer relationships transform. Intimacy deepens. Influence grows. Old friction dissolves.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The inner world clears, and the outer relationships transform with it. Intimacy deepens. Influence grows. Old friction dissolves.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">6. "Real Fulfillment"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Satisfaction that's earned — and felt. A quality of life that matches the quality of your ambitions.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Satisfaction that lands and stays. The quality of life finally matches the quality of the ambition driving it.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">7. "Growth That Compounds"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Self-sustaining. Built to last. Changes compound over time. You grow — and the growth keeps going.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Structural change sustains itself. Each shift deepens the last. Growth compounds, and the compounding accelerates.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ CASE STUDY ═══════════════════════════ -->
+<div class="section" id="casestudy">
+    <span class="section-label blue-bg">Section</span>
+    <h2>Case Study (Arkadiusz)</h2>
+    <p class="change-count">3 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Opening</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Arkadiusz came in guarded. A CEO who had tested enough approaches to know that most fall short — and who gave trust only where it was earned. The first session was measured, deliberate. He watched every move.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Arkadiusz came in guarded. A CEO who had tested enough approaches to recognize the difference between technique and depth. He gave trust only where it was earned. The first session was measured, deliberate. He watched every move.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Middle</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Session by session, the work spoke for itself. Clear, measurable shifts in how he processed pressure and made decisions. Patterns he had carried through years of leadership — silent habits that shaped every boardroom interaction, every high-stakes call — began to dissolve. New responses took their place. Calmer. Sharper. More deliberate.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">We worked session by session. The shifts showed up where they mattered. How he processed pressure. How he made decisions under weight. Patterns he had carried through years of leadership, silent habits shaping every boardroom interaction, every high-stakes call, began dissolving. New responses took their place. Calmer. Sharper. More deliberate.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Closing</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Three months in, the work continued — by choice. The skepticism that once guarded him became the proof: when someone this discerning stays, the method delivers. His words say it plainly: <em>"He simply delivers results."</em></div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Three months in, the work continued by choice. Arkadiusz is the kind of client who stays only when the method delivers. His words say it plainly <em>"He simply delivers results."</em></div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ FOR WHO ═══════════════════════════ -->
+<div class="section" id="forwho">
+    <span class="section-label gold-bg">Section</span>
+    <h2>For Who</h2>
+    <p class="change-count">5 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Transition Line</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The patterns holding you back were formed for good reasons — but they are not the limit of what you can do. New adaptations are always possible. You just need the right guide to access them.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The patterns holding you back were formed for good reasons. And they are ready to change. New adaptations are always possible. You just need the right guide to access them.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Subtitle</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Reserved for individuals operating at the highest level — where the stakes demand everything, and the commitment matches.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">We work with individuals operating at the highest level. The stakes demand everything. The commitment matches.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. "Executives & Leaders"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Your decisions shape organizations and lives. Emotional precision is your most critical leadership asset — the edge that determines how far you lead.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Your decisions shape organizations and lives. Your emotional system governs how you lead under pressure, how you read a room, how you hold steady when the stakes are real. We redesign it at the root.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. "Elite Athletes"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The physical and technical edge narrows at the top. Championships are decided in the mind — in the quality of state you can access when the pressure is highest. That's where this work lives.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">At the top, the physical and technical edge narrows to almost nothing. Championships are decided in the quality of state you can access when the pressure peaks. We work at that exact layer.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. "High Achievers"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">You've built success on the outside. Now you want the inner life to match — deeper peace, richer experience, real alignment. Something deeper than technique. A shift in the quality of being itself.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">You have built success on the outside. Now you want the inner life to match. Deeper peace, richer experience, real alignment. We go past technique into the deep layer where patterns live, where the quality of being itself transforms.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ PROCESS ═══════════════════════════ -->
+<div class="section" id="process">
+    <span class="section-label gold-bg">Section</span>
+    <h2>Process</h2>
+    <p class="change-count">5 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Process Subtitle</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Dozens of clients have started right here.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Every engagement begins here.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Step 1 — "Free Assessment"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">A private video call to understand where you are, what you want to change, and whether this is the right fit. No sales pitch. No obligation. Just an honest conversation about what's possible for you.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">A private video call to understand where you are and what you want to change. We assess fit together. An honest conversation about what is possible for you, with zero obligation.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Step 2 — "Personal Roadmap"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Based on your specific patterns and goals, we build a precise roadmap. Every session has a clear purpose. Every session is tailored, precise, and built around your reality.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">We map your specific patterns and goals into a precise roadmap. Every session carries a clear purpose, tailored to your reality. Your emotional patterns become visible, and we begin redesigning them.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. Step 3 — "Deep Work Begins"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Intensive, focused sessions that work directly with your emotional system. Most clients notice something shifting from the very first session — not just relief, but real structural change.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Intensive, focused sessions that engage directly with your emotional system. Most clients feel something shift from the very first session. The change is structural, and it holds.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. Step 4 — "Lasting Transformation"</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Changes integrate into your life and strengthen over time. The transformation is permanent — and it deepens. You return because the depth keeps opening new ground.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Changes integrate into your life and strengthen over time. The transformation is permanent, and it deepens. You return because the depth keeps opening new ground.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ CONFIDENTIALITY ═══════════════════════════ -->
+<div class="section" id="confidentiality">
+    <span class="section-label blue-bg">Section</span>
+    <h2>Confidentiality</h2>
+    <p class="change-count">1 change</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Confidentiality Statement</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Every conversation is completely private. Nothing is recorded or shared. Many clients are executives and public figures — discretion is absolute, from first contact forward.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Every conversation is completely private. We record nothing. We share nothing. Many clients are executives and public figures. Discretion is absolute, from first contact forward.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ FAQ 1 ═══════════════════════════ -->
+<div class="section" id="faq1">
+    <span class="section-label orange-bg">FAQ</span>
+    <h2>FAQ 1 — What is Emotion Mentoring?</h2>
+    <p class="change-count">7 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Lead Bold</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before"><strong>Emotion mentoring is the process of permanently dissolving the emotional patterns that limit how you lead, decide, and connect — by working directly with the deep internal system where those patterns live.</strong></div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after"><strong>Emotion mentoring dissolves the emotional patterns that limit how you lead, decide, and connect. It works directly with the emotional system, the invisible layer where those patterns originate, and when that layer changes, everything above it transforms.</strong></div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Summary Paragraph</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Most high performers have already tried optimizing their mindset, behavior, and strategy. Emotion mentoring is what happens when you finally address the layer underneath all of that — and the results show up in every area of life, starting from the first session.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Most high performers have already optimized their mindset, their behavior, their strategy. Emotion mentoring reaches the layer underneath all of that. The results show up in every area of life, starting from the first session.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Deep Definition</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Emotion mentoring is a structured, one-on-one process of emotional transformation that works directly with your emotion system — the deep internal architecture of patterns, responses, and stored experiences that governs how you think, decide, lead, and relate. Developed by Shen over 11+ years of intensive practice with high performers worldwide, this approach targets the root layer where emotional patterns live: the subconscious operating system that shapes every reaction, every decision under pressure, and every relationship dynamic in your life. Where most approaches work at the surface — managing symptoms, building coping strategies, or reframing thoughts — emotion mentoring goes to the source and dissolves the patterns that generate those symptoms in the first place.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Emotion mentoring is a structured, one-on-one process of emotional transformation. It engages directly with your emotion system, the deep internal architecture of patterns, responses, and stored experiences that governs how you think, decide, lead, and relate. Shen developed this approach over 11+ years of intensive practice with high performers worldwide. The methodology targets the root layer where emotional patterns live. Think of it as your subconscious operating system. It shapes every reaction, every decision under pressure, every relationship dynamic in your life. Most approaches work at the surface, managing symptoms, building coping strategies, reframing thoughts. Emotion mentoring goes to the source and dissolves the patterns that generate those symptoms in the first place.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. Emotion System Explanation</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The emotion system is the body's stored emotional intelligence — a vast network of learned responses, protective mechanisms, and behavioral defaults that formed across your entire life, many of them in early childhood. These patterns run automatically, below conscious awareness, and they dictate how you respond to pressure, conflict, intimacy, uncertainty, and opportunity. Your rational mind operates on top of this system, which means willpower, discipline, and cognitive strategies can only override these patterns temporarily. Emotion mentoring engages the emotion system directly, creating structural change at the level where patterns actually originate.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The emotion system is the body's stored emotional intelligence. A vast network of learned responses, protective mechanisms, and behavioral defaults that formed across your entire life, many of them in early childhood. These patterns run automatically, below conscious awareness. They dictate how you respond to pressure, conflict, intimacy, uncertainty, and opportunity. Your rational mind operates on top of this system. Willpower, discipline, and cognitive strategies can only override these patterns temporarily. Like a fortress built on shifting ground, the surface structure holds until real pressure arrives. Emotion mentoring engages the emotion system directly, creating structural change at the level where patterns actually originate.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. Methodology</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The methodology combines direct nervous system work, adaptive mind training, and pattern dissolution to produce lasting change — the kind that holds under real-world pressure, in high-stakes boardrooms, in intimate relationships, and in the quiet moments where your internal dialogue reveals who you truly are. This is inner work at the highest level of precision: each session is tailored to your specific patterns, your specific challenges, and the specific emotional architecture that drives your behavior. The approach is direct, efficient, and built for people who demand results.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The methodology combines direct nervous system work, adaptive mind training, and pattern dissolution to produce lasting change. The kind that holds under real-world pressure, in high-stakes boardrooms, in intimate relationships, and in the quiet moments where your internal dialogue reveals who you truly are. Each session is tailored to your specific patterns, your specific challenges, and the specific emotional patterns that drive your behavior. The approach is direct, efficient, and built for people who demand results. Every session addresses what your system presents in that moment, which means the work is always precisely calibrated to where you are.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">6. 12-Month Timeframe</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">A typical emotion mentoring engagement spans 12 months of dedicated, private work. This timeframe exists because genuine emotional transformation — structural change that rewires how you operate at the deepest level — requires sustained engagement to fully integrate across every domain of life. Leadership presence, relationship depth, decision-making under pressure, creative capacity, physical well-being — all of these shift as the emotion system reorganizes. The 12-month structure ensures these changes become your new default, fully embedded in how you live and work.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">A typical emotion mentoring engagement spans 12 months of dedicated, private work. This timeframe exists because genuine emotional transformation, the kind that rewires how you operate at the deepest level, requires sustained engagement to fully integrate across every domain of life. Leadership presence, relationship depth, decision-making under pressure, creative capacity, physical well-being. All of these shift as the emotion system reorganizes. The 12-month structure ensures these changes become your new default, fully embedded in how you live and work.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">7. First Session + CTA</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Most clients experience tangible shifts from the very first session. This is one of the hallmarks of working directly with the emotion system rather than through cognitive or behavioral layers — when you access the right pattern at the right depth, the change is immediate and felt throughout the body. The free 45-minute assessment is designed to evaluate your specific situation, identify your core emotional patterns, and determine whether this approach is the right fit for what you're looking for. It carries zero obligation and delivers real clarity regardless of what you decide next.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Most clients experience tangible shifts from the very first session. This is one of the hallmarks of working directly with the emotion system rather than through cognitive or behavioral layers. When you access the right pattern at the right depth, the change is immediate and felt throughout the body. The free 45-minute assessment evaluates your specific situation, identifies your core emotional patterns, and determines whether this approach fits what you are looking for. Zero obligation. Real clarity. Regardless of what you decide next.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ FAQ 2 ═══════════════════════════ -->
+<div class="section" id="faq2">
+    <span class="section-label orange-bg">FAQ</span>
+    <h2>FAQ 2 — Therapy vs Coaching vs Emotion Mentoring</h2>
+    <p class="change-count">7 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Lead Bold</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before"><strong>Therapy helps you understand your past. Coaching pushes you toward goals. Emotion mentoring dissolves the deep patterns that both of those approaches leave untouched.</strong></div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after"><strong>Therapy helps you understand your past. Coaching pushes you toward goals. Emotion mentoring dissolves the deep patterns that both of those approaches leave untouched, the ones living in the emotional system itself.</strong></div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Summary</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The difference is structural: therapy and coaching work above the emotion system, while emotion mentoring works inside it — which is why it produces permanent change where other methods produce managed change.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The difference is structural. Therapy and coaching work above the emotion system. Emotion mentoring works inside it. That is why it produces permanent change where other methods produce managed change.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Three Layers</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Therapy, coaching, and emotion mentoring each operate at a different layer of the human experience — and understanding these distinctions is essential for choosing the right approach. Therapy focuses primarily on understanding and processing the past. It creates insight through reflection, dialogue, and the therapeutic relationship, helping you make sense of your history and develop healthier narratives. Coaching focuses on the future — accountability, goal-setting, action planning, and performance optimization. It pushes you toward external targets with structure and momentum. Both are valuable disciplines with real merit. Emotion mentoring operates at a fundamentally different depth: it works directly with your emotion system, the deep internal architecture of patterns and stored responses that drives behavior at the source.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Therapy, coaching, and emotion mentoring each operate at a different layer of the human experience, and understanding these distinctions is essential for choosing the right approach. Therapy focuses primarily on understanding and processing the past. It creates insight through reflection, dialogue, and the therapeutic relationship, helping you make sense of your history and develop healthier narratives. Coaching focuses on the future. Accountability, goal-setting, action planning, and performance optimization. It pushes you toward external targets with structure and momentum. Both are valuable disciplines with real merit. Emotion mentoring operates at a fundamentally different depth. It works directly with your emotion system, the deep internal architecture of patterns and stored responses that drives behavior at the source.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. Key Questions</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The key question each approach asks reveals the difference. Therapy asks "why do you feel this way?" — seeking understanding through insight. Coaching asks "what will you do about it?" — seeking progress through action. Emotion mentoring asks "what pattern is running this response, and how do we dissolve it at the root?" This distinction matters because insight and action, while helpful, operate above the layer where emotional patterns actually live. You can understand exactly why you react a certain way and still react that way under pressure. You can set clear goals and still find the same internal blocks sabotaging your follow-through. Pattern dissolution works at the level where those reactions and blocks originate.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The key question each approach asks reveals the difference. Therapy asks "why do you feel this way?" Coaching asks "what will you do about it?" Emotion mentoring asks "what pattern is running this response, and how do we dissolve it at the root?" This distinction matters because insight and action, while helpful, operate above the layer where emotional patterns actually live. You can understand exactly why you react a certain way and still react that way under pressure. You can set clear goals and still find the same internal blocks sabotaging your follow-through. Imagine knowing the name of every lock on a door yet lacking the key. Pattern dissolution works at the level where those reactions and blocks originate.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. Managed vs Structural Change</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The results reflect this difference. Therapy and coaching often produce managed change — you develop awareness of your patterns and strategies for handling them, which requires ongoing effort and vigilance. Emotion mentoring produces structural change — the patterns themselves dissolve, and your default responses genuinely shift. A situation that used to trigger anxiety, reactivity, or self-doubt begins to feel fundamentally different. The pressure is the same; your emotional relationship to it has transformed. This is the difference between emotional management and emotional mastery, and it's why emotion mentoring is increasingly recognized as a powerful executive coaching alternative for leaders who've plateaued with conventional approaches.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The results reflect this difference. Therapy and coaching often produce managed change. You develop awareness of your patterns and strategies for handling them, which requires ongoing effort and vigilance. Emotion mentoring produces structural change. The patterns themselves dissolve, and your default responses genuinely shift. A situation that used to trigger anxiety, reactivity, or self-doubt begins to feel fundamentally different. The pressure is the same. Your emotional relationship to it has transformed. This is the difference between emotional management and emotional mastery, and it is why emotion mentoring is increasingly recognized as a powerful executive coaching alternative for leaders who have plateaued with conventional approaches.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">6. Client Profile</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Most clients who arrive at emotion mentoring have already invested significantly in therapy, coaching, or both. They found those approaches genuinely helpful — often essential at certain stages — yet incomplete. The insight from therapy didn't reach the body-level patterns that still fire in moments of pressure. The accountability from coaching didn't dissolve the deeper emotional blocks that kept showing up in new forms. These clients are self-aware, high-functioning, and ready for inner work that operates at the depth their experience demands. They recognize that optimizing strategy and understanding psychology are only part of the equation — the emotion system is what governs the rest.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Most clients who arrive at emotion mentoring have already invested significantly in therapy, coaching, or both. They found those approaches genuinely helpful, often essential at certain stages, yet incomplete. The insight from therapy reached the mind. It did not reach the body-level patterns that still fire in moments of pressure. The accountability from coaching created momentum. It did not dissolve the deeper emotional blocks that kept showing up in new forms. These clients are self-aware, high-functioning, and ready for inner work that operates at the depth their experience demands. They recognize that optimizing strategy and understanding psychology are only part of the equation. The emotion system governs the rest.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">7. Lasting Change + CTA</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Emotion mentoring is built for lasting change — the kind that doesn't require maintenance strategies or ongoing coping mechanisms. When a pattern dissolves at the level of the emotion system, the change is permanent. You don't need to remember techniques or practice responses; your system has genuinely reorganized. This is why the 12-month engagement model exists: it provides enough depth and duration for the most entrenched patterns to release and for a new way of operating to fully integrate into your leadership, relationships, and daily life. The free 45-minute assessment is designed to help you understand which layer your current challenges live at and whether emotion mentoring is the right approach for where you are now.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Emotion mentoring is built for lasting change, the kind that requires no maintenance strategies and no ongoing coping mechanisms. When a pattern dissolves at the level of the emotion system, the change is permanent. You do not need to remember techniques or practice responses. Your system has genuinely reorganized. This is why the 12-month engagement model exists. It provides enough depth and duration for the most entrenched patterns to release and for a new way of operating to fully integrate into your leadership, relationships, and daily life. The free 45-minute assessment helps you understand which layer your current challenges live at and whether emotion mentoring is the right approach for where you are now.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ FAQ 3 ═══════════════════════════ -->
+<div class="section" id="faq3">
+    <span class="section-label orange-bg">FAQ</span>
+    <h2>FAQ 3 — Who is this for?</h2>
+    <p class="change-count">7 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Lead Bold</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before"><strong>If you've achieved real success but sense that something internal is capping your next level — in leadership, relationships, or fulfillment — emotion mentoring was designed specifically for you.</strong></div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after"><strong>If you have achieved real success and sense that something internal is capping your next level, in leadership, relationships, or fulfillment, emotion mentoring was designed specifically for where you are. The external game is handled. The internal architecture is what remains.</strong></div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Summary</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">You don't need to be in crisis. Most clients are already high-functioning. They come because they're ready for inner work that finally matches the standards they hold for everything else.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">You do not need to be in crisis. Most clients are already high-functioning. They come because they are ready for inner work that finally matches the standards they hold for everything else in their life.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Target Profile</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Emotion mentoring is built for high-performing individuals — executives, entrepreneurs, elite athletes, founders, and professionals who have already achieved significant external success and recognize that something deeper is shaping their next level of growth. These are people who operate at the top of their field and expect the same caliber of precision in their inner work as they demand in every other domain. The typical client is someone who has optimized their strategy, discipline, and external environment, and is now ready to address the emotion system — the internal architecture that governs decisions, presence, relationships, and performance under pressure.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Emotion mentoring is built for high-performing individuals. Executives, entrepreneurs, elite athletes, founders, and professionals who have already achieved significant external success and recognize that something deeper is shaping their next level of growth. These are people who operate at the top of their field and expect the same caliber of precision in their inner work as they demand in every other domain. The typical client has optimized their strategy, discipline, and external environment. They are now ready to address the emotion system, the inner architecture that governs decisions, presence, relationships, and performance under pressure.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. Fit Scenarios</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">You are a strong fit for this work if you recognize yourself in specific scenarios: you hold leadership responsibility and want clearer, more grounded decision-making in high-stakes situations. Your performance is inconsistent despite strong discipline — some days you're sharp and present, other days a reactive pattern hijacks your focus. Success feels hollow and you sense a deeper level of fulfillment, purpose, and aliveness is available to you. Stress from your professional life bleeds into your most important relationships — with your partner, your children, your closest friends. You've read the books, attended the seminars, hired the coaches, and still feel something fundamental hasn't shifted. These are the patterns emotion mentoring was designed to dissolve.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">You are a strong fit for this work if you recognize yourself in specific scenarios. You hold leadership responsibility and want clearer, more grounded decision-making in high-stakes situations. Your performance is inconsistent despite strong discipline. Some days you are sharp and present, other days a reactive pattern hijacks your focus. Success feels hollow and you sense a deeper level of fulfillment, purpose, and aliveness is available to you. Stress from your professional life bleeds into your most important relationships, with your partner, your children, your closest friends. You have read the books, attended the seminars, hired the coaches, and still feel something fundamental has not shifted. These are the patterns emotion mentoring was designed to dissolve.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. Previous Investment</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Many clients arrive having already invested significantly in therapy, coaching, personal development programs, or executive coaching alternatives. They found those approaches genuinely helpful — often essential at certain stages of their growth — yet incomplete when it comes to the structural emotional patterns that still run in the background. These clients are self-aware, driven, and ready for depth. They're looking for inner work that matches the intensity and precision of how they operate in the rest of their life. Emotional intelligence, for them, is a competitive advantage and a quality-of-life imperative.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Many clients arrive having already invested significantly in therapy, coaching, personal development programs, or executive coaching alternatives. They found those approaches genuinely helpful, often essential at certain stages of their growth, yet incomplete when it comes to the structural emotional patterns that still run in the background. These clients are self-aware, driven, and ready for depth. They are looking for inner work that matches the intensity and precision of how they operate in the rest of their life. Emotional intelligence, for them, is a competitive advantage and a quality-of-life imperative.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">6. Peak Moments</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">You don't need to be in crisis to benefit from emotion mentoring. Many clients come at peak career moments — after a major promotion, during a company scaling phase, or at a life transition where the stakes of every decision are higher than ever. They're already successful and high-functioning. They come because they sense a deeper level of peak performance, emotional mastery, and inner clarity that their current tools can't access. Some come because they've noticed patterns repeating across different relationships or roles and want to understand what's actually driving those cycles. Others come because they've achieved everything they set out to achieve and feel a quiet emptiness that accomplishment alone can't fill.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">You do not need to be in crisis to benefit from emotion mentoring. Many clients come at peak career moments, after a major promotion, during a company scaling phase, or at a life transition where the stakes of every decision are higher than they have ever been. They are already successful and high-functioning. They come because they sense a deeper level of peak performance, emotional mastery, and inner clarity that their current tools cannot access. Some come because they have noticed patterns repeating across different relationships or roles and want to understand what is actually driving those cycles. Others come because they have achieved everything they set out to achieve and feel a quiet emptiness that accomplishment alone cannot fill.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">7. International + CTA</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Shen works with clients across multiple continents and time zones — executives in Europe and North America, entrepreneurs in the Middle East and Asia, athletes and creative leaders worldwide. The international client base reflects the universal nature of emotional patterns: regardless of culture, industry, or background, the emotion system operates by the same principles. The free 45-minute assessment exists precisely to determine fit. It's a direct, honest conversation about where you are, what patterns are running, and whether this approach is the right tool for what you're trying to achieve. Zero obligation, complete clarity.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Shen works with clients across multiple continents and time zones. Executives in Europe and North America, entrepreneurs in the Middle East and Asia, athletes and creative leaders worldwide. The international client base reflects the universal nature of emotional patterns. Regardless of culture, industry, or background, the emotion system operates by the same principles. The free 45-minute assessment exists precisely to determine fit. It is a direct, honest conversation about where you are, what patterns are running, and whether this approach is the right tool for what you are trying to achieve. Zero obligation, complete clarity.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ FAQ 4 ═══════════════════════════ -->
+<div class="section" id="faq4">
+    <span class="section-label orange-bg">FAQ</span>
+    <h2>FAQ 4 — What is the Emotion System?</h2>
+    <p class="change-count">7 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Lead Bold</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before"><strong>Your emotion system is the subconscious operating system that runs beneath every decision, every reaction, and every relationship in your life.</strong></div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after"><strong>Your emotion system is the subconscious operating system that runs beneath every decision, every reaction, and every relationship in your life. It formed before your rational mind developed, and it governs you still.</strong></div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Summary</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">It formed before your rational mind developed, it operates faster than thought, and it overrides willpower every time. Working with it directly — rather than trying to think your way around it — is what creates change that actually lasts.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">It operates faster than thought and overrides willpower every time. Working with it directly, rather than trying to think your way around it, is what creates change that actually lasts.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Deep Definition</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The emotion system is your body's deep internal architecture of emotional patterns — the subconscious operating system that governs how you respond to pressure, conflict, intimacy, uncertainty, and opportunity. It encompasses the stored emotional responses, protective mechanisms, and behavioral defaults that formed across your entire life, many of them encoded in early childhood before your conscious mind had any say in the matter. These patterns live in the body, below the reach of rational thought, and they fire automatically — shaping your reactions, your decisions, your relationships, and your experience of life before your thinking mind has a chance to intervene. Understanding the emotion system is the foundation of all emotion mentoring work.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The emotion system is your body's deep internal architecture of emotional patterns, the subconscious operating system that governs how you respond to pressure, conflict, intimacy, uncertainty, and opportunity. It encompasses the stored emotional responses, protective mechanisms, and behavioral defaults that formed across your entire life, many of them encoded in early childhood before your conscious mind had any say in the matter. These patterns live in the body, below the reach of rational thought, and they fire automatically. They shape your reactions, your decisions, your relationships, and your experience of life before your thinking mind has a chance to intervene. Understanding the emotion system is the foundation of all emotion mentoring work.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. Why Patterns Persist</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Emotional patterns persist because they are stored at a level that cognitive approaches simply cannot access. You can understand a pattern intellectually — know exactly why you react with anger in certain situations, or why you withdraw when vulnerability is required — and still find the same response firing in the heat of the moment. This is because the emotion system operates on its own logic, independent of your rational understanding. Willpower, discipline, positive thinking, and cognitive reframing all work above the layer where these patterns live. They can suppress or manage the pattern temporarily, but the underlying structure remains intact, ready to reassert itself under sufficient pressure. This is why so many high performers describe the experience of "knowing better" yet still falling into the same emotional cycles.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Emotional patterns persist because they are stored at a level that cognitive approaches simply cannot access. You can understand a pattern intellectually. You can know exactly why you react with anger in certain situations, or why you withdraw when vulnerability is required, and still find the same response firing in the heat of the moment. The emotion system operates on its own logic, independent of your rational understanding. Willpower, discipline, positive thinking, and cognitive reframing all work above the layer where these patterns live. They can suppress or manage the pattern temporarily. The underlying structure remains intact, ready to reassert itself under sufficient pressure. This is why so many high performers describe the experience of "knowing better" yet still falling into the same emotional cycles.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. Direct Work + Dam Metaphor</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Working directly with the emotion system means engaging these patterns at their source — at the body level where they are actually stored and maintained. Emotion mentoring uses precise techniques developed over 11+ years to access specific layers of the emotion system, identify the patterns that are active, and facilitate their dissolution. Pattern dissolution is fundamentally different from pattern management. When a pattern dissolves, the stored emotional charge that powered it releases, and the system reorganizes naturally into a more functional configuration. The pattern doesn't need to be managed, monitored, or overridden — it simply ceases to operate. This is what structural change means in the context of emotional transformation.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Working directly with the emotion system means engaging these patterns at their source, at the body level where they are actually stored and maintained. Emotion mentoring uses precise techniques developed over 11+ years to access specific layers of the emotion system, identify the patterns that are active, and facilitate their dissolution. Pattern dissolution is fundamentally different from pattern management. When a pattern dissolves, the stored emotional charge that powered it releases, and the system reorganizes naturally into a more functional configuration. The pattern simply ceases to operate. Think of it like removing a dam from a river. The water does not need instructions on where to flow. It already knows. This is what structural change means in the context of emotional transformation.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">6. Practical Results</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">In practical terms, working with the emotion system produces changes that show up in every area of life. A tense board meeting that used to trigger defensive reactivity becomes an opportunity for clear, grounded leadership. A difficult conversation with a partner that used to escalate into conflict becomes a moment of genuine connection and honest communication. A high-stakes decision under uncertainty that used to generate paralyzing anxiety becomes a process you navigate with calm clarity and confidence. The external situations remain the same — the pressure, the stakes, the complexity are all identical. Your internal relationship to those situations is what transforms, and that transformation is permanent because the underlying pattern has dissolved rather than been temporarily managed.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">In practical terms, working with the emotion system produces changes that show up in every area of life. A tense board meeting that used to trigger defensive reactivity becomes an opportunity for clear, grounded leadership. A difficult conversation with a partner that used to escalate into conflict becomes a moment of genuine connection and honest communication. A high-stakes decision under uncertainty that used to generate paralyzing anxiety becomes a process you navigate with calm clarity and confidence. The external situations remain the same. The pressure, the stakes, the complexity are all identical. Your internal relationship to those situations is what transforms, and that transformation is permanent because the underlying pattern has dissolved rather than been temporarily managed.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">7. Mastery + CTA</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Clients consistently describe this as the difference between managing emotions and genuinely mastering them. Emotional mastery, in the context of emotion mentoring, means your emotion system operates as an asset — providing accurate signals, appropriate responses, and deep resilience — rather than as a source of reactivity, inconsistency, and internal friction. Some patterns that have been active for decades dissolve in weeks once the right layer of the emotion system is accessed. Others require patient, sustained work across multiple sessions. The free 45-minute assessment is designed to map your specific emotion system patterns and determine which layers are most active in driving the challenges you're currently facing.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Clients consistently describe this as the difference between managing emotions and genuinely mastering them. Emotional mastery, in the context of emotion mentoring, means your emotion system operates as an asset, providing accurate signals, appropriate responses, and deep resilience, rather than as a source of reactivity, inconsistency, and internal friction. Some patterns that have been active for decades dissolve in weeks once the right layer of the emotion system is accessed. Others require patient, sustained work across multiple sessions. The free 45-minute assessment maps your specific emotion system patterns and determines which layers are most active in driving the challenges you are currently facing.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ FAQ 5 ═══════════════════════════ -->
+<div class="section" id="faq5">
+    <span class="section-label orange-bg">FAQ</span>
+    <h2>FAQ 5 — Do online sessions work?</h2>
+    <p class="change-count">7 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Lead Bold</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before"><strong>Yes. Online sessions deliver the same depth, precision, and results as in-person work — fully.</strong></div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after"><strong>Yes. Online sessions deliver the same depth, precision, and results as in-person work. Fully. The emotional patterns we work with transmit completely through a quality video connection.</strong></div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Summary</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Emotion mentoring works with your emotional patterns and presence, and both transmit completely through a quality video connection. Clients across six continents work with Shen online, and the transformations are identical to face-to-face work.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Clients across six continents work with Shen online. The transformations are identical to face-to-face work, because the methodology reads the emotion system, and the emotion system is visible regardless of distance.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Online Effectiveness</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Yes — online emotion mentoring delivers the same depth, precision, and results as in-person work. Sessions are conducted via private, encrypted video call, ensuring complete confidentiality and making this work accessible to clients anywhere in the world. The effectiveness of emotion mentoring depends on the quality of the connection between mentor and client, the willingness to engage honestly, and the skill of the practitioner in reading and working with the emotion system — none of which are diminished by the online format. Shen has conducted thousands of hours of online mentoring across multiple continents, and the results consistently match in-person depth.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Online emotion mentoring delivers the same depth, precision, and results as in-person work. Sessions are conducted via private, encrypted video call, ensuring complete confidentiality and making this work accessible to clients anywhere in the world. The effectiveness of emotion mentoring depends on the quality of the connection between mentor and client, the willingness to engage honestly, and the skill of the practitioner in reading and working with the emotion system. The online format diminishes none of these. Shen has conducted thousands of hours of online mentoring across multiple continents, and the results consistently match in-person depth.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. How It Works Online</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Emotion mentoring works at the level of emotional patterns, presence, and the body's stored responses. This work requires attentive observation, precise communication, and deep rapport — all of which translate fully through high-quality video connection. The medium matters far less than the methodology. What makes a session powerful is the ability to identify active emotional patterns in real time, guide the client into direct contact with those patterns, and facilitate their dissolution. This process works identically whether you're in the same room or on opposite sides of the world. Many clients who have experienced both formats report that online sessions feel equally intimate and transformative.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Emotion mentoring works at the level of emotional patterns, presence, and the body's stored responses. This work requires attentive observation, precise communication, and deep rapport, all of which translate fully through high-quality video connection. The medium matters far less than the methodology. What makes a session powerful is the ability to identify active emotional patterns in real time, guide the client into direct contact with those patterns, and facilitate their dissolution. This process works identically whether you are in the same room or on opposite sides of the world. Many clients who have experienced both formats report that online sessions feel equally intimate and transformative.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. Session Format</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Each session runs 60–90 minutes and follows a structured yet adaptive format. Sessions use real situations from your life — a recent leadership challenge, a relationship dynamic, a decision you're wrestling with — as the material for deep emotion system work. The session adapts to what your system presents in that moment, which means every session is precisely calibrated to where you are and what needs attention. Between sessions, integration happens naturally as the patterns that dissolved continue reorganizing in your daily life. You'll notice shifts in how you respond to situations, how you make decisions, and how people around you respond to your changed presence.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Each session runs 60 to 90 minutes and follows a structured yet adaptive format. Sessions use real situations from your life, a recent leadership challenge, a relationship dynamic, a decision you are wrestling with, as the material for deep emotion system work. The session adapts to what your system presents in that moment, which means every session is precisely calibrated to where you are and what needs attention. Between sessions, integration happens naturally as the patterns that dissolved continue reorganizing in your daily life. You will notice shifts in how you respond to situations, how you make decisions, and how people around you respond to your changed presence.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">6. International Clients</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Clients across multiple time zones and continents work with Shen regularly — executives in Europe and North America, entrepreneurs in the Middle East and Asia, athletes and leaders in Africa and Oceania. The online mentoring format makes scheduling flexible across any time zone, and the international client base reflects the universal nature of emotional patterns. Privacy is paramount: all sessions are conducted on encrypted, secure platforms, and no recordings are made. The confidentiality of the mentoring relationship is absolute.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Clients across multiple time zones and continents work with Shen regularly. Executives in Europe and North America, entrepreneurs in the Middle East and Asia, athletes and leaders in Africa and Oceania. The online mentoring format makes scheduling flexible across any time zone, and the international client base reflects the universal nature of emotional patterns. Privacy is paramount. All sessions are conducted on encrypted, secure platforms, and no recordings are made. The confidentiality of the mentoring relationship is absolute.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">7. Environment Setup</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">For clients who prefer or want to set up their environment optimally, a quiet, private space where you won't be interrupted is ideal — a home office, a private room, or any location where you feel comfortable being fully honest and present. Some clients use noise-cancelling headphones for added privacy. In-person intensive sessions are also available by arrangement for clients who want face-to-face depth, prefer an immersive format, or want to accelerate a specific phase of their emotional transformation. These intensives can be combined with the ongoing online mentoring program for maximum impact.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">For clients who want to set up their environment optimally, a quiet, private space where you will not be interrupted is ideal. A home office, a private room, or any location where you feel comfortable being fully honest and present. Some clients use noise-cancelling headphones for added privacy. In-person intensive sessions are also available by arrangement for clients who want face-to-face depth, prefer an immersive format, or want to accelerate a specific phase of their emotional transformation. These intensives can be combined with the ongoing online mentoring program for maximum impact.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ FAQ 6 ═══════════════════════════ -->
+<div class="section" id="faq6">
+    <span class="section-label orange-bg">FAQ</span>
+    <h2>FAQ 6 — How long until I see results?</h2>
+    <p class="change-count">7 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Lead Bold</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before"><strong>Most clients feel a tangible shift from the very first session.</strong></div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after"><strong>Most clients feel a tangible shift from the very first session. When you access the right pattern at the right depth, the body responds immediately.</strong></div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Summary</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Deeper structural transformation unfolds across a 12-month engagement — surface patterns dissolve in the first month, deeper patterns release by months two and three, and full integration across leadership, relationships, and performance builds through months six to twelve.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Deeper structural transformation unfolds across a 12-month engagement. Surface patterns dissolve in the first month. Deeper patterns release by months two and three. Full integration across leadership, relationships, and performance builds through months six to twelve.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. First Session</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Most clients notice something shifting from the very first emotion mentoring session — a real, felt change in how they respond to situations that previously triggered reactive patterns. This is one of the defining characteristics of working directly with the emotion system: when the right pattern is accessed at the right depth, the shift is immediate and unmistakable. Early shifts often appear as calmer reactions in moments that used to feel emotionally charged, clearer thinking under pressure, a quieter internal dialogue, or an unfamiliar sense of spaciousness and groundedness where tension and anxiety used to live. These first-session shifts are what convert skeptics into committed clients.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Most clients notice something shifting from the very first emotion mentoring session. A real, felt change in how they respond to situations that previously triggered reactive patterns. This is one of the defining characteristics of working directly with the emotion system. When the right pattern is accessed at the right depth, the shift is immediate and unmistakable. Early shifts often appear as calmer reactions in moments that used to feel emotionally charged, clearer thinking under pressure, a quieter internal dialogue, or an unfamiliar sense of spaciousness and groundedness where tension and anxiety used to live. These first-session shifts are what convert skeptics into committed clients.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. Month One</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Deeper, structural transformation unfolds across clear phases over the course of the 12-month engagement. In the first month, the most surface-level reactive patterns begin dissolving and you gain a new awareness of the emotional architecture driving your behavior. You start to see your patterns in real time — the moments where your emotion system takes over before your rational mind can intervene. This awareness alone begins to create space between stimulus and response, a space that grows wider as the work deepens. The first month often feels like gaining a new sense — the ability to perceive your own emotional operating system with clarity.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Deeper, structural transformation unfolds across clear phases over the course of the 12-month engagement. In the first month, the most surface-level reactive patterns begin dissolving and you gain a new awareness of the emotional patterns driving your behavior. You start to see your patterns in real time, the moments where your emotion system takes over before your rational mind can intervene. This awareness alone begins to create space between stimulus and response, a space that grows wider as the work deepens. The first month often feels like gaining a new sense. Imagine seeing the operating system that has been running your life since childhood, clearly, for the first time.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. Months 2-3</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">By months two and three, patterns you may have carried for years or decades start releasing at deeper layers of the emotion system. This is where the emotional transformation becomes visible to others. Partners notice a shift in how you handle conflict. Colleagues observe a change in your leadership presence. Teams respond differently to your energy in meetings. Often, the people around you register these changes before you fully recognize them yourself — because the shift feels so natural that your new way of operating simply becomes "how you are." Pattern dissolution at this depth creates lasting change that holds under real-world pressure, in the moments that matter most.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">By months two and three, patterns you may have carried for years or decades start releasing at deeper layers of the emotion system. This is where the emotional transformation becomes visible to others. Partners notice a shift in how you handle conflict. Colleagues observe a change in your leadership presence. Teams respond differently to your energy in meetings. Often, the people around you register these changes before you fully recognize them yourself, because the shift feels so natural that your new way of operating simply becomes "how you are." Pattern dissolution at this depth creates lasting change that holds under real-world pressure, in the moments that matter most.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">6. Months 3-6</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Between months three and six, the changes integrate into your daily operating system across multiple domains. Decision-making under uncertainty becomes more grounded and confident. Relationships deepen as you bring more presence, honesty, and emotional availability to the people who matter most. Performance under pressure stabilizes at a consistently higher baseline — the peaks and valleys smooth out, and your best becomes your norm. This phase is where many clients describe a qualitative shift in their experience of life: a sense of inner quiet, fulfillment, and alignment that is fundamentally different from the achievement-driven satisfaction they're accustomed to.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Between months three and six, the changes integrate into your daily operating system across multiple domains. Decision-making under uncertainty becomes more grounded and confident. Relationships deepen as you bring more presence, honesty, and emotional availability to the people who matter most. Performance under pressure stabilizes at a consistently higher baseline. The peaks and valleys smooth out, and your best becomes your norm. This phase is where many clients describe a qualitative shift in their experience of life. A sense of inner quiet, fulfillment, and alignment that is fundamentally different from the achievement-driven satisfaction they are accustomed to.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">7. Months 6-12 + CTA</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Months six through twelve represent the full integration phase, where the structural changes in your emotion system express themselves across every domain of life — leadership, intimate relationships, health, creativity, purpose, and legacy. Some patterns held for decades dissolve in weeks once the right layer is accessed; others require patient, sustained inner work across multiple sessions to fully release. The 12-month engagement exists because real emotional transformation needs this kind of time to fully embed and become permanent. The free 45-minute assessment is designed to evaluate your specific situation, identify which patterns are most active, and map a realistic timeline for your unique emotional transformation journey.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Months six through twelve represent the full integration phase, where the structural changes in your emotion system express themselves across every domain of life. Leadership, intimate relationships, health, creativity, purpose, and legacy. Some patterns held for decades dissolve in weeks once the right layer is accessed. Others require patient, sustained inner work across multiple sessions to fully release. The 12-month engagement exists because real emotional transformation needs this kind of time to fully embed and become permanent. The free 45-minute assessment evaluates your specific situation, identifies which patterns are most active, and maps a realistic timeline for your unique emotional transformation journey.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ FAQ 7 ═══════════════════════════ -->
+<div class="section" id="faq7">
+    <span class="section-label orange-bg">FAQ</span>
+    <h2>FAQ 7 — What results can I expect?</h2>
+    <p class="change-count">7 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Lead Bold</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before"><strong>Clearer decisions under pressure. Deeper relationships. Consistent peak performance. Genuine confidence that comes from the inside, not from achievement.</strong></div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after"><strong>Clearer decisions under pressure. Deeper relationships. Consistent peak performance. Genuine confidence that comes from the inside, from the emotional system itself, not from achievement.</strong></div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Summary</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">These are the results emotion mentoring delivers — and they're permanent, because the patterns driving the old behavior have dissolved rather than been managed. Partners, colleagues, and teams often notice the changes before you do.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">These are the results emotion mentoring delivers, and they are permanent. The patterns driving the old behavior have dissolved rather than been managed. Partners, colleagues, and teams often notice the changes before you do.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Leadership Results</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Emotion mentoring delivers transformation across every domain that matters to high performers — leadership, relationships, performance, emotional well-being, and physical health. The results are specific, measurable, and felt. In leadership, clients experience clearer decision-making under pressure, stronger executive presence, calmer and more grounded responses in high-stakes situations, and the ability to hold space for difficult conversations with teams and boards. The reactive patterns that used to hijack leadership moments — defensiveness, over-control, avoidance of conflict, impulsive decisions — dissolve at the level of the emotion system, and a more authentic, powerful leadership style emerges naturally.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Emotion mentoring delivers transformation across every domain that matters to high performers. Leadership, relationships, performance, emotional well-being, and physical health. The results are specific, measurable, and felt. In leadership, clients experience clearer decision-making under pressure, stronger executive presence, calmer and more grounded responses in high-stakes situations, and the ability to hold space for difficult conversations with teams and boards. The reactive patterns that used to hijack leadership moments, defensiveness, over-control, avoidance of conflict, impulsive decisions, dissolve at the level of the emotion system. A more authentic, powerful leadership style emerges naturally in their place.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. Relationship Results</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">In relationships, the emotional transformation is often the most profound and surprising result clients experience. As emotional patterns dissolve, your capacity for genuine intimacy, honest communication, and deep connection expands dramatically. Partners notice a shift in how you handle conflict — where tension used to escalate, there's now patience and presence. Children experience a parent who is more emotionally available and less reactive. Friendships deepen as the protective walls that once served a purpose become unnecessary. Many clients describe this domain as the unexpected gift of the work — they came for peak performance and discovered that the same inner work transformed their most important relationships.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">In relationships, the emotional transformation is often the most profound and surprising result clients experience. As emotional patterns dissolve, your capacity for genuine intimacy, honest communication, and deep connection expands dramatically. Partners notice a shift in how you handle conflict. Where tension used to escalate, there is now patience and presence. Children experience a parent who is genuinely more emotionally available. Friendships deepen as the protective walls that once served a purpose become unnecessary. Many clients describe this domain as the unexpected gift of the work. They came for peak performance and discovered that the same inner work transformed their most important relationships.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. Performance Results</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Performance results manifest as consistency, focus, and resilience that go beyond what discipline alone can produce. The peaks and valleys of performance smooth out as the emotional patterns that caused inconsistency dissolve. Clients describe a state of sustained high performance that feels effortless compared to the white-knuckle discipline they relied on before. Emotional mastery translates directly into cognitive clarity — when the emotion system is clean and functional, your thinking is sharper, your creativity is more accessible, and your stamina for demanding work increases. This is why emotion mentoring is increasingly sought as an executive coaching alternative by leaders who've maximized their strategic and behavioral optimization.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Performance results manifest as consistency, focus, and resilience that go beyond what discipline alone can produce. The peaks and valleys of performance smooth out as the emotional patterns that caused inconsistency dissolve. Clients describe a state of sustained high performance that feels effortless compared to the white-knuckle discipline they relied on before. Emotional mastery translates directly into cognitive clarity. When the emotion system is clean and functional, your thinking is sharper, your creativity is more accessible, and your stamina for demanding work increases. This is why emotion mentoring is increasingly sought as an executive coaching alternative by leaders who have maximized their strategic and behavioral optimization.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">6. Emotional Results</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The emotional results are perhaps the most personally meaningful: genuine confidence that is qualitatively different from performed confidence. Inner quiet where anxious internal dialogue used to dominate. A sense of fulfillment and aliveness that comes from being deeply aligned with who you are, rather than from external achievement alone. The body responds to emotional transformation as well — clients regularly report improved sleep, reduced chronic tension, better digestion, and a general sense of physical ease as the stress patterns held in the body release. Emotional patterns are stored in the body, and when they dissolve, the physical manifestations dissolve with them.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The emotional results are perhaps the most personally meaningful. Genuine confidence that is qualitatively different from performed confidence. Inner quiet where anxious internal dialogue used to dominate. A sense of fulfillment and aliveness that comes from being deeply aligned with who you are, rather than from external achievement alone. The body responds to emotional transformation as well. Clients regularly report improved sleep, reduced chronic tension, better digestion, and a general sense of physical ease as the stress patterns held in the body release. Emotional patterns are stored in the body, and when they dissolve, the physical manifestations dissolve with them.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">7. Others Notice + CTA</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Partners, colleagues, and teams often notice these changes before the client does — it shows up in tone of voice, body language, the quality of presence in a room, and the way conversations unfold differently. This is the hallmark of structural change versus managed change: the transformation is so natural that it becomes invisible to the person experiencing it. Many of the most successful emotion mentoring clients came in deeply skeptical. The felt shifts they experienced in the first sessions were what converted that skepticism into deep commitment. The free 45-minute assessment carries zero risk — it exists precisely so you can experience the approach firsthand and decide based on what you feel, rather than what you've been told.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Partners, colleagues, and teams often notice these changes before the client does. It shows up in tone of voice, body language, the quality of presence in a room, and the way conversations unfold differently. This is the hallmark of structural change versus managed change. The transformation is so natural, so deeply integrated, that it becomes invisible to the person experiencing it. Many of the most successful emotion mentoring clients came in deeply skeptical. The felt shifts they experienced in the first sessions converted that skepticism into deep commitment. The free 45-minute assessment carries zero risk. It exists precisely so you can experience the approach firsthand and decide based on what you feel, rather than what you have been told.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ FAQ 8 ═══════════════════════════ -->
+<div class="section" id="faq8">
+    <span class="section-label orange-bg">FAQ</span>
+    <h2>FAQ 8 — How do I start?</h2>
+    <p class="change-count">7 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Lead Bold</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before"><strong>Start with the free 45-minute assessment if you're exploring. Choose the VIP assessment if you want deep insight before committing. Go straight to a full session if you're ready for transformation now.</strong></div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after"><strong>Start with the free 45-minute assessment if you are exploring. Choose the VIP assessment if you want deep insight into your emotional patterns before committing. Go straight to a full session if you are ready for transformation now.</strong></div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Summary</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Each option delivers real value on its own — and all three are designed so you can experience the approach firsthand and decide from clarity, with zero obligation.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Each option delivers real value on its own. All three are designed so you can experience the approach firsthand and decide from clarity, with zero obligation.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Free Assessment</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The <strong>free assessment</strong> is a focused 45-minute conversation where Shen personally evaluates your situation, identifies your core emotional patterns, and determines whether emotion mentoring is the right fit for what you're facing. This is a real conversation with a skilled practitioner — direct, honest, and surprisingly deep for a first interaction. You'll walk away with genuine clarity on where you stand emotionally, which patterns are most active in driving your current challenges, and what a path forward could look like. Many clients describe it as the most honest conversation they've had about their inner world. The free assessment carries zero obligation — its purpose is to give you enough firsthand experience to make an informed decision based on what you feel, rather than what you've been told.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The <strong>free assessment</strong> is a focused 45-minute conversation where Shen personally evaluates your situation, identifies your core emotional patterns, and determines whether emotion mentoring is the right fit for what you are facing. This is a real conversation with a skilled practitioner. Direct, honest, and surprisingly deep for a first interaction. You will walk away with genuine clarity on where you stand emotionally, which patterns are most active in driving your current challenges, and what a path forward could look like. Many clients describe it as the most honest conversation they have had about their inner world. The free assessment carries zero obligation. Its purpose is to give you enough firsthand experience to make an informed decision based on what you feel, rather than what you have been told.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. VIP Assessment</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The <strong>VIP assessment</strong> goes significantly deeper. It's a longer, more thorough evaluation of your entire life situation — covering your emotional patterns, leadership dynamics, relationship architecture, performance blocks, and the specific emotion system configurations that are shaping your current experience. You receive detailed, personalized feedback that maps your emotional landscape with precision — feedback you keep regardless of what you decide next. The VIP assessment draws on the full depth of the emotion mentoring methodology to give you an accurate picture of your inner operating system. Whether or not you continue into the full 12-month program, the VIP assessment alone delivers real, lasting value that many clients describe as transformative in itself. Only a limited number of VIP assessment slots are available each year, reflecting the depth of preparation and attention each one requires.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The <strong>VIP assessment</strong> goes significantly deeper. It is a longer, more thorough evaluation of your entire life situation, covering your emotional patterns, leadership dynamics, relationship architecture, performance blocks, and the specific emotion system configurations that are shaping your current experience. You receive detailed, personalized feedback that maps your emotional landscape with precision, feedback you keep regardless of what you decide next. The VIP assessment draws on the full depth of the emotion mentoring methodology to give you an accurate picture of your inner operating system. Whether or not you continue into the full 12-month program, the VIP assessment alone delivers real, lasting value that many clients describe as transformative in itself. Only a limited number of VIP assessment slots are available each year, reflecting the depth of preparation and attention each one requires.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. Full Session</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">A <strong>full session</strong> is where the real emotional transformation happens. It's deep, intensive inner work on a specific pattern or challenge in your life — actual pattern dissolution at the level of the emotion system, changing how you respond to the situations that matter most. This is the emotion mentoring methodology at full depth: precise, powerful, and designed for lasting structural change. The changes from a single full session can be profound — patterns that have been active for years can shift in a single sitting when the right layer is accessed with the right approach. These changes hold under real-world pressure because the pattern itself has dissolved rather than been temporarily managed.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">A <strong>full session</strong> is where the real emotional transformation happens. It is deep, intensive inner work on a specific pattern or challenge in your life. Actual pattern dissolution at the level of the emotion system, changing how you respond to the situations that matter most. This is the emotion mentoring methodology at full depth. Precise, powerful, and designed for lasting structural change. The changes from a single full session can be profound. Patterns that have been active for years can shift in a single sitting when the right layer is accessed with the right approach. These changes hold under real-world pressure because the pattern itself has dissolved rather than been temporarily managed.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">6. 12-Month Program</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The <strong>12-month program</strong> is the full emotion mentoring engagement — a sustained, methodical journey through the layers of your emotion system, dissolving the patterns that limit your performance, relationships, and fulfillment while building a new emotional foundation for how you operate in every domain of life. The program includes regular deep sessions, ongoing support between sessions, and Shen's full attention and commitment to your transformation. It's structured across 12 months because genuine emotional transformation — the kind that rewires your deepest patterns and integrates lasting change across leadership, relationships, health, and purpose — requires sustained engagement. Each phase of the program builds on the previous one, creating compounding depth and momentum.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The <strong>12-month program</strong> is the full emotion mentoring engagement. A sustained, methodical journey through the layers of your emotion system, dissolving the patterns that limit your performance, relationships, and fulfillment while building a new emotional foundation for how you operate in every domain of life. The program includes regular deep sessions, ongoing support between sessions, and Shen's full attention and commitment to your transformation. It is structured across 12 months because genuine emotional transformation, the kind that rewires your deepest patterns and integrates lasting change across leadership, relationships, health, and purpose, requires sustained engagement. Each phase of the program builds on the previous one, creating compounding depth and momentum.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">7. Choosing + CTA</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Choosing between these options is straightforward. If you're curious about emotion mentoring and want to experience the approach firsthand, start with the free 45-minute assessment — it's designed precisely for that exploration and gives you everything you need to make an informed decision. If you already know you want depth and want a comprehensive map of your emotional patterns before committing to the full program, the VIP assessment delivers standalone value at a level most clients find remarkable. If you're ready for transformation and want to begin the real work immediately, a full session is the entry point into deep structural change. All paths lead to the same place — greater emotional mastery, clearer leadership, deeper relationships, and a quality of inner life that matches your outer achievements.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Choosing between these options is straightforward. If you are curious about emotion mentoring and want to experience the approach firsthand, start with the free 45-minute assessment. It is designed precisely for that exploration and gives you everything you need to make an informed decision. If you already know you want depth and want a comprehensive map of your emotional patterns before committing to the full program, the VIP assessment delivers standalone value at a level most clients find remarkable. If you are ready for transformation and want to begin the real work immediately, a full session is the entry point into deep structural change. All paths lead to the same place. Greater emotional mastery, clearer leadership, deeper relationships, and a quality of inner life that matches your outer achievements.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ FAQ 9 ═══════════════════════════ -->
+<div class="section" id="faq9">
+    <span class="section-label orange-bg">FAQ</span>
+    <h2>FAQ 9 — What is the investment?</h2>
+    <p class="change-count">7 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. Lead Bold</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before"><strong>Emotion mentoring is a premium, 12-month engagement at $3,000 per month — reflecting the caliber of the work, the exclusivity of Shen's attention, and the magnitude of what changes.</strong></div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after"><strong>Emotion mentoring is a premium, 12-month engagement at $3,000 per month. This reflects the caliber of the work, the exclusivity of Shen's attention, and the magnitude of what changes when the emotional system is redesigned at the root.</strong></div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Summary</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Most clients describe it as the highest-return investment they've ever made in themselves — because the emotional patterns it dissolves were costing them far more in missed decisions, strained relationships, and unrealized potential.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Most clients describe it as the highest-return investment they have made in themselves. The emotional patterns it dissolves were costing them far more in missed decisions, strained relationships, and unrealized potential.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Program Structure</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">This is a <strong>12-month program</strong> of dedicated, private work with Shen — structured across a full year because genuine emotional transformation requires sustained engagement to fully integrate and express itself across every domain of your life. Leadership presence, relationship depth, decision-making under pressure, creative capacity, physical well-being, and inner fulfillment — all of these shift as the emotion system reorganizes, and each domain requires time to fully rewire. The program includes regular deep sessions, ongoing support between sessions, and a methodical approach to dissolving the emotional patterns that limit your performance, relationships, and fulfillment. Every phase builds on the previous one, creating compounding depth and lasting structural change.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">This is a <strong>12-month program</strong> of dedicated, private work with Shen, structured across a full year because genuine emotional transformation requires sustained engagement to fully integrate and express itself across every domain of your life. Leadership presence, relationship depth, decision-making under pressure, creative capacity, physical well-being, and inner fulfillment. All of these shift as the emotion system reorganizes, and each domain requires time to fully rewire. The program includes regular deep sessions, ongoing support between sessions, and a methodical approach to dissolving the emotional patterns that limit your performance, relationships, and fulfillment. Every phase builds on the previous one, creating compounding depth and lasting structural change.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">4. Shen's Attention</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">Every engagement receives Shen's full attention and commitment. The number of active clients is kept intentionally small — a deliberate choice to ensure each client receives the depth of focus, energy, and precision this work demands. This is a premium, high-touch engagement designed for individuals who invest seriously in themselves and understand that the quality of inner work directly determines the quality of outer results. Shen brings over 11 years of intensive practice, thousands of hours of session experience, and a level of skill in reading and working with the emotion system that only comes from deep, sustained dedication to the craft of emotional transformation.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Every engagement receives Shen's full attention and commitment. The number of active clients is kept intentionally small, a deliberate choice to ensure each client receives the depth of focus, energy, and precision this work demands. This is a premium, high-touch engagement designed for individuals who invest seriously in themselves and understand that the quality of inner work directly determines the quality of outer results. Shen brings over 11 years of intensive practice, thousands of hours of session experience, and a level of skill in reading and working with the emotion system that only comes from deep, sustained dedication to the craft of emotional transformation.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">5. ROI</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The investment reflects the caliber of the work and the results it produces. Clients in high-stakes roles — executives, founders, senior leaders, elite performers — operate in environments where emotional clarity directly impacts income, decision quality, team performance, and personal relationships. A single reactive pattern in a board meeting can cost more than the entire engagement. A single unresolved emotional block can keep someone from a promotion, a relationship, or a level of fulfillment they've been working toward for years. The return on investing in emotion mentoring compounds across every area of life, often in ways that far exceed the original expectation. Clients consistently describe it as the most impactful investment they've made in themselves.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The investment reflects the caliber of the work and the results it produces. Clients in high-stakes roles, executives, founders, senior leaders, elite performers, operate in environments where emotional clarity directly impacts income, decision quality, team performance, and personal relationships. A single reactive pattern in a board meeting can cost more than the entire engagement. A single unresolved emotional block can keep someone from a promotion, a relationship, or a level of fulfillment they have been working toward for years. The return on investing in emotion mentoring compounds across every area of life, often in ways that far exceed the original expectation. Clients consistently describe it as the most impactful investment they have made in themselves.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">6. Client Readiness</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">This work is for people who recognize that their internal operating system is the highest-leverage point for growth — and who are ready to invest accordingly. The typical client has already invested significantly in their development through coaching, therapy, education, and personal growth programs. They understand the value of expert guidance, they know the difference between surface-level work and deep structural change, and they are ready for emotional mastery at the level their life and career demand.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">This work is for people who recognize that their internal operating system is the highest-leverage point for growth, and who are ready to invest accordingly. The typical client has already invested significantly in their development through coaching, therapy, education, and personal growth programs. They understand the value of expert guidance. They know the difference between surface-level work and deep structural change. They are ready for emotional mastery at the level their life and career demand.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">7. CTA</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">The exact structure, investment, and fit are discussed during the free 45-minute assessment — which carries zero obligation and is the right place to explore whether this is the right next step for you. The conversation is direct, honest, and designed to give you complete clarity on the program structure, what the engagement looks like in practice, and whether the investment aligns with what you're looking for. No pressure, no sales tactics — just a straightforward conversation between two adults about whether this work is the right fit.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">The exact structure, investment, and fit are discussed during the free 45-minute assessment, which carries zero obligation and is the right place to explore whether this is the right next step for you. The conversation is direct, honest, and designed to give you complete clarity on the program structure, what the engagement looks like in practice, and whether the investment aligns with what you are looking for. No pressure, no sales tactics. A straightforward conversation between two adults about whether this work is the right fit.</div>
+    </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════ CTA ═══════════════════════════ -->
+<div class="section" id="cta">
+    <span class="section-label green-bg">Section</span>
+    <h2>CTA (Call to Action)</h2>
+    <p class="change-count">3 changes</p>
+
+    <div class="diff-pair">
+        <div class="change-num">1. CTA Lead</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">You begin with one complimentary 45-minute assessment. You'll walk away with clarity on where you are, what's possible, and whether this is the right path.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">We begin with one complimentary 45-minute assessment. You walk away with clarity on where you are, what is possible, and whether this is the right path.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">2. Response Time</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">I typically respond within a few hours.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Typical response time is a few hours.</div>
+    </div>
+
+    <div class="diff-pair">
+        <div class="change-num">3. Slots Notice</div>
+        <span class="diff-label before">Before</span>
+        <div class="diff-block before">VIP Assessment and Professional Session slots are limited — only a handful are allotted each year. Every engagement receives dedicated attention at the highest level.</div>
+        <span class="diff-label after">After</span>
+        <div class="diff-block after">Assessment and session slots are limited. Only a handful are allotted each year. Every engagement receives dedicated, personal attention.</div>
+    </div>
+</div>
+
+<div class="accent-line"></div>
+
+<footer>
+    <p>Generated <strong>19 March 2026</strong> | Emotion Mentoring — Shen Voice v1 Diff Report</p>
+</footer>
+
+</body>
+</html>

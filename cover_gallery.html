@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Cover Gallery — All Versions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #141418;
+    color: #f5f3ee;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 40px 20px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 16px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 40px;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .card {
+    background: #1a1a20;
+    border: 1px solid rgba(201,169,110,0.15);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .card:hover {
+    border-color: rgba(201,169,110,0.5);
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+  }
+  .card-label {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .card-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f5f3ee;
+  }
+  .card-note {
+    font-size: 11px;
+    color: #9a9890;
+    max-width: 200px;
+    text-align: right;
+    line-height: 1.4;
+  }
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .lightbox.active { display: flex; }
+  .lightbox img {
+    max-height: 90vh;
+    max-width: 90vw;
+    object-fit: contain;
+  }
+</style>
+</head>
+<body>
+
+<h1>Secret Book of Emotions — Cover Versions</h1>
+
+<div class="gallery">
+  <div class="card">
+    <img src="file:///C:/Users/micha/Projects/Knifehead/content/images/covers/cover_v1.png" onclick="openLightbox(this.src)" alt="v1">
+    <div class="card-label">
+      <span class="card-name">v1</span>
+      <span class="card-note">Compact, subtitle, no bottom text</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="file:///C:/Users/micha/Projects/Knifehead/content/images/covers/cover_v2.png" onclick="openLightbox(this.src)" alt="v2">
+    <div class="card-label">
+      <span class="card-name">v2</span>
+      <span class="card-note">Same as v1, minor spacing</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="file:///C:/Users/micha/Projects/Knifehead/content/images/covers/cover_v3.png" onclick="openLightbox(this.src)" alt="v3">
+    <div class="card-label">
+      <span class="card-name">v3</span>
+      <span class="card-note">Same core layout</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="file:///C:/Users/micha/Projects/Knifehead/content/images/covers/cover_v4.png" onclick="openLightbox(this.src)" alt="v4">
+    <div class="card-label">
+      <span class="card-name">v4</span>
+      <span class="card-note">Diamond ornament added</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="file:///C:/Users/micha/Projects/Knifehead/content/images/covers/cover_v5.png" onclick="openLightbox(this.src)" alt="v5">
+    <div class="card-label">
+      <span class="card-name">v5</span>
+      <span class="card-note">"Free Edition" + URL at bottom</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="file:///C:/Users/micha/Projects/Knifehead/content/images/covers/cover_v6.png" onclick="openLightbox(this.src)" alt="v6">
+    <div class="card-label">
+      <span class="card-name">v6</span>
+      <span class="card-note">Diamond + URL, no "Free Edition"</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="file:///C:/Users/micha/Projects/Knifehead/content/images/covers/cover_v7.png" onclick="openLightbox(this.src)" alt="v7">
+    <div class="card-label">
+      <span class="card-name">v7</span>
+      <span class="card-note">Refined v6, diamond + URL</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="file:///C:/Users/micha/Projects/Knifehead/content/images/covers/cover_A_pure.png" onclick="openLightbox(this.src)" alt="A Pure">
+    <div class="card-label">
+      <span class="card-name">A — Pure</span>
+      <span class="card-note">Tall format, stacked title, clean</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="file:///C:/Users/micha/Projects/Knifehead/content/images/covers/cover_B_20secrets.png" onclick="openLightbox(this.src)" alt="B 20 Secrets">
+    <div class="card-label">
+      <span class="card-name">B — 20 Secrets</span>
+      <span class="card-note">Tall format + "20 SECRETS" label</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="file:///C:/Users/micha/Projects/Knifehead/content/images/covers/cover_final.png" onclick="openLightbox(this.src)" alt="Final">
+    <div class="card-label">
+      <span class="card-name">FINAL</span>
+      <span class="card-note">Compact with subtitle</span>
+    </div>
+  </div>
+</div>
+
+<div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+  <img id="lightboxImg" src="" alt="Full size">
+</div>
+
+<script>
+function openLightbox(src) {
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('active');
+}
+</script>
+
+</body>
+</html>
