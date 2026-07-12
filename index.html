@@ -126,7 +126,7 @@ html.no-intro #veil{display:none}
 
 /* ═══ 2 · RECOGNITION ═══ */
 #recognition{background:var(--ink)}
-#recognition .intro{max-width:620px;margin-top:3.6vh;color:var(--text);font-size:clamp(.98rem,2vw,1.1rem)}
+#recognition .intro{max-width:620px;margin-top:4.5vh;color:var(--text);font-size:clamp(1.02rem,2.2vw,1.18rem)}
 .r-rows{margin-top:4.5vh;border-top:1px solid var(--hair)}
 .r-row{position:relative;display:flex;align-items:baseline;gap:3.5vw;padding:2.8vh 2vw 2.8vh 0;border-bottom:1px solid var(--hair);transition:background .3s}
 .r-row .in{display:flex;align-items:baseline;gap:3.5vw;width:100%;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
@@ -142,7 +142,7 @@ html.no-intro #veil{display:none}
 .r-row.feat:hover{background:rgba(201,169,110,.06)}
 @media (max-width:860px){.r-row .in{flex-direction:column;gap:10px}.r-row p{margin-left:0;text-align:left}}
 
-.fornot{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:4.5vh}
+.fornot{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:3vh}
 .fn-card{border:1px solid var(--hair);padding:3.2vh 3.2vw;background:linear-gradient(165deg,#101013,#0b0b0e);transition:border-color .3s,transform .3s,box-shadow .3s}
 .fn-card:hover{border-color:rgba(201,169,110,.4);transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(0,0,0,.8)}
 .fn-card h4{font-family:var(--sans);font-weight:400;font-size:.68rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
@@ -175,7 +175,7 @@ html.no-intro #veil{display:none}
 #work .body p{font-size:clamp(1.04rem,2.3vw,1.24rem);line-height:1.8;color:var(--text)}
 #work .body p+p{margin-top:3.2vh}
 #work .method{margin-top:4.5vh;font-family:var(--serif);font-style:italic;font-size:clamp(1.25rem,2.8vw,1.7rem);color:var(--gold-lt);line-height:1.5}
-.mentorline{display:flex;align-items:center;gap:30px;margin-top:6vh;max-width:560px;text-decoration:none;transition:transform .25s}
+.mentorline{display:flex;align-items:center;gap:30px;margin-top:4.5vh;max-width:560px;text-decoration:none;transition:transform .25s}
 .mentorline:hover{transform:translateY(-3px)}
 .m-photo{flex:0 0 auto;display:block;width:150px;height:150px;padding:5px;border:1px solid rgba(201,169,110,.3);transition:border-color .3s}
 .m-photo picture{display:block;height:100%;line-height:0}
@@ -327,6 +327,8 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
       <span class="m-link">About Michal &rarr;</span>
     </span>
   </a>
+
+  <p class="intro" data-rise>We work with a narrow group — on purpose.</p>
 
   <div class="fornot">
     <div class="fn-card feat ticked" data-rise>
