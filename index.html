@@ -76,7 +76,7 @@ html.no-intro #veil{display:none}
 
 /* ═══ shared scene scaffolding ═══ */
 .scene{position:relative;padding:9vh 8vw}
-.kick{font-family:var(--sans);font-weight:400;font-size:.66rem;letter-spacing:.42em;text-indent:.42em;text-transform:uppercase;color:var(--gold-dim)}
+.kick{font-family:var(--sans);font-weight:400;font-size:.66rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-dim)}
 .scene h2{font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;line-height:1.06;
   font-size:clamp(2rem,5vw,3.6rem);color:var(--gold-hi);margin-top:2vh}
 .rule{height:1px;background:var(--hair);margin-top:4.5vh;transform-origin:left center}
@@ -107,7 +107,7 @@ html.no-intro #veil{display:none}
 @media (prefers-reduced-motion: reduce){#hook .cue i{animation:none}}
 
 /* pill CTA */
-.pill{display:inline-block;position:relative;text-decoration:none;cursor:pointer;border:1px solid rgba(201,169,110,.35);
+.pill{display:inline-block;position:relative;text-align:center;text-decoration:none;cursor:pointer;border:1px solid rgba(201,169,110,.35);
   border-radius:100px;padding:16px 42px;font-family:var(--sans);font-weight:400;font-size:.72rem;letter-spacing:.28em;text-indent:.28em;
   text-transform:uppercase;color:var(--gold-hi);overflow:hidden;transition:border-color .25s,box-shadow .25s,transform .15s;background:rgba(201,169,110,.05)}
 .pill::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.16) 50%,transparent 58%);
@@ -216,6 +216,7 @@ html.no-intro #veil{display:none}
 
 /* ═══ 6 · THE CONVERSATION ═══ */
 #conversation{background:var(--ink);padding-bottom:18vh;text-align:center}
+#conversation .kick{text-indent:.42em}
 #conversation .lead{margin-top:2.8vh;font-family:var(--serif);font-style:italic;font-size:clamp(1.1rem,2.4vw,1.4rem);color:var(--text);margin-left:auto;margin-right:auto;max-width:34em}
 #conversation h2{margin-left:auto;margin-right:auto;max-width:16em}
 .convpanel{position:relative;max-width:780px;margin:4vh auto 0;background:linear-gradient(165deg,#101013,#0b0b0e);
