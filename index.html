@@ -75,16 +75,16 @@ html.no-intro #veil{display:none}
 @media (max-width:860px){#spine{display:none}}
 
 /* ═══ shared scene scaffolding ═══ */
-.scene{position:relative;padding:9vh 8vw}
+.scene{position:relative;padding:9vh 8vw;max-width:860px;margin:0 auto}
 .kick{font-family:var(--sans);font-weight:400;font-size:.66rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-dim)}
 .scene h2{font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;line-height:1.06;
-  font-size:clamp(2rem,5vw,3.6rem);color:var(--gold-hi);margin-top:2vh}
+  font-size:clamp(2rem,5vw,2.9rem);color:var(--gold-hi);margin-top:2vh}
 .rule{height:1px;background:var(--hair);margin-top:4.5vh;transform-origin:left center}
 .w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .01em .04em}
 .ch{display:inline-block;will-change:transform}
 
 /* ═══ 1 · HOOK ═══ */
-#hook{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:14vh 8vw 10vh}
+#hook{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:14vh 8vw 10vh;max-width:860px;margin:0 auto}
 #hook::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(ellipse 70% 50% at 50% 108%,rgba(201,169,110,.09),transparent 70%)}
 #hook .bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:26px 8vw;
@@ -94,14 +94,14 @@ html.no-intro #veil{display:none}
 #hook .kicker{color:var(--gold);font-family:var(--sans);font-weight:400;font-size:clamp(.66rem,1.5vw,.8rem);letter-spacing:.42em;text-transform:uppercase;line-height:2}
 #hook h1{margin-top:3.4vh;font-family:var(--serif);font-weight:500;line-height:1.04;letter-spacing:.005em}
 #hook .l1wrap{display:block;overflow:hidden;padding-bottom:.08em}
-#hook .l1{display:block;font-variant:small-caps;font-size:clamp(2.6rem,7.6vw,6.6rem)}
-#hook .l2{display:block;font-style:italic;font-weight:400;font-size:clamp(1.5rem,3.9vw,3.3rem);color:var(--text);margin-top:1.2vh;max-width:22em}
+#hook .l1{display:block;font-variant:small-caps;font-size:clamp(2.6rem,7.6vw,4.6rem)}
+#hook .l2{display:block;font-style:italic;font-weight:400;font-size:clamp(1.5rem,3.9vw,2.3rem);color:var(--text);margin-top:1.2vh;max-width:22em}
 #hook .support{max-width:760px;margin:4vh auto 0;text-align:center;font-family:var(--sans);font-style:normal;font-weight:400;font-size:clamp(1.25rem,2.8vw,1.75rem);line-height:1.5;letter-spacing:.02em;color:var(--gold-hi)}
 #hook .support::before{content:"";display:block;width:100%;height:1px;margin:0 auto 2.6vh;background:linear-gradient(90deg,transparent,var(--gold) 14%,var(--gold) 86%,transparent)}
 #hook .support::after{content:"";display:block;width:100%;height:1px;margin:2.6vh auto 0;background:linear-gradient(90deg,transparent,var(--gold) 14%,var(--gold) 86%,transparent)}
 #hook .citeline{margin-top:1.6vh;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim)}
 @media (max-width:760px){#hook .citeline .csep{display:none}#hook .citeline .cite2{display:block}}
-#hook .h-cta{margin-top:5vh;display:flex;align-items:center;justify-content:center;gap:38px;flex-wrap:wrap}
+#hook .h-cta{margin-top:5vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px}
 #hook .cue{position:absolute;bottom:4vh;left:8vw;display:flex;align-items:center;gap:14px;
   font-family:var(--sans);font-size:.6rem;letter-spacing:.4em;text-transform:uppercase;color:var(--text-dim)}
 #hook .cue i{display:block;width:1px;height:44px;background:linear-gradient(to bottom,var(--gold),transparent);transform-origin:top;animation:cue 1.8s ease-in-out infinite}
@@ -143,11 +143,11 @@ html.no-intro #veil{display:none}
 .r-row p{font-size:.94rem;color:var(--text-dim);max-width:340px;margin-left:auto;text-align:right;transition:color .3s}
 .r-row:hover p{color:var(--text)}
 .r-row.feat{padding:6vh 2.5vw 6vh 2.5vw;background:rgba(201,169,110,.035)}
-.r-row.feat h3{font-variant:small-caps;font-size:clamp(1.9rem,5vw,3.2rem);line-height:1.14}
+.r-row.feat h3{font-variant:small-caps;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.14}
 .r-row.feat:hover{background:rgba(201,169,110,.06)}
 @media (max-width:860px){.r-row .in{flex-direction:column;gap:10px}.r-row p{margin-left:0;text-align:left}}
 
-.fornot{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:0}
+.fornot{display:grid;grid-template-columns:1fr;gap:26px;margin-top:0}
 .fn-card{border:1px solid var(--hair);padding:3.2vh 3.2vw;background:linear-gradient(165deg,#101013,#0b0b0e);transition:border-color .3s,transform .3s,box-shadow .3s}
 .fn-card:hover{border-color:rgba(201,169,110,.4);transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(0,0,0,.8)}
 .fn-card h4{font-family:var(--sans);font-weight:400;font-size:.68rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
@@ -195,27 +195,27 @@ html.no-intro #veil{display:none}
 /* ═══ 4 · PROOF ═══ */
 #proof{background:var(--ink)}
 #proof .sub{margin-top:2vh;font-family:var(--sans);font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--text-dim)}
-.q-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:4.5vh}
+.q-grid{display:grid;grid-template-columns:1fr;gap:26px;margin-top:4.5vh}
 .q-card{border:1px solid var(--hair);padding:3.6vh 3vw;background:linear-gradient(165deg,#101013,#0b0b0e);
   transition:border-color .3s,transform .3s,box-shadow .3s;position:relative}
 .q-card:hover{border-color:rgba(201,169,110,.4);transform:translateY(-4px);box-shadow:0 26px 54px -32px rgba(0,0,0,.85)}
-.q-card blockquote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.2rem,2.5vw,1.55rem);line-height:1.5;color:var(--gold-hi)}
+.q-card blockquote{font-family:var(--serif);font-style:italic;font-weight:400;font-size:clamp(1.2rem,2.5vw,1.35rem);line-height:1.5;color:var(--gold-hi)}
 .q-card figcaption{margin-top:3vh;font-family:var(--sans);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);transition:color .3s}
 .q-card:hover figcaption{color:var(--gold)}
 @media (max-width:860px){.q-grid{grid-template-columns:1fr}}
-.cta-block{margin-top:5vh;display:flex;align-items:center;justify-content:center;gap:44px;flex-wrap:wrap;text-align:left}
+.cta-block{margin-top:5vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:left}
 
 /* ═══ 5 · TERMS ═══ */
 #terms{background:var(--ink2)}
 #terms .spots{display:flex;align-items:baseline;gap:1.6vw;margin-top:3vh;flex-wrap:wrap}
-#terms .spots .n{font-family:var(--serif);font-weight:500;font-size:clamp(3.2rem,9vw,6.5rem);line-height:.9;white-space:nowrap}
+#terms .spots .n{font-family:var(--serif);font-weight:500;font-size:clamp(3.2rem,9vw,4.8rem);line-height:.9;white-space:nowrap}
 #terms .spots .lbl{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.6rem,4vw,3rem);color:var(--gold-hi)}
 #terms .spots-note{margin-top:2.6vh;max-width:480px;color:var(--text-dim);font-size:.96rem}
 .t-rows{margin-top:7vh;border-top:1px solid var(--hair)}
-.t-row{display:flex;justify-content:space-between;align-items:baseline;gap:4vw;padding:2.4vh 1vw;border-bottom:1px solid var(--hair);transition:background .3s}
+.t-row{display:flex;flex-direction:column;gap:8px;padding:2.4vh 1vw;border-bottom:1px solid var(--hair);transition:background .3s}
 .t-row:hover{background:rgba(201,169,110,.03)}
 .t-row .k{font-family:var(--sans);font-weight:400;font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-dim);min-width:130px}
-.t-row .v{font-size:clamp(1rem,2.2vw,1.2rem);color:var(--text);text-align:right;max-width:34em}
+.t-row .v{font-size:clamp(1rem,2.2vw,1.2rem);color:var(--text);text-align:left;max-width:34em}
 .t-row .v b{font-weight:400;color:var(--gold-hi)}
 @media (max-width:760px){.t-row{flex-direction:column;gap:8px}.t-row .v{text-align:left}}
 .sidedoor{margin-top:5vh;font-size:.95rem;color:var(--text-dim)}
@@ -441,8 +441,8 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
       <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email</label>
       <input type="email" id="email" name="email" required placeholder="your personal email" autocomplete="email">
       <input type="hidden" name="version" value="live_v3">
-      <button class="pill solid" type="submit">Book your conversation</button>
-      <p class="fine">Confidential. 30 minutes. You get the details by email.</p>
+      <button class="pill solid" type="submit">Book your conversation<span class="pill-sub">Confidential 30 minutes</span></button>
+      <p class="fine">You get the details by email.</p>
     </form>
   </div>
 
