@@ -143,11 +143,12 @@ html.no-intro #veil{display:none}
 .r-row p{font-size:.94rem;color:var(--text-dim);max-width:340px;margin-left:auto;text-align:right;transition:color .3s}
 .r-row:hover p{color:var(--text)}
 .r-row.feat{padding:6vh 2.5vw 6vh 2.5vw;background:rgba(201,169,110,.035)}
+.r-row.feat{max-width:720px}
 .r-row.feat h3{font-variant:small-caps;font-size:clamp(1.9rem,5vw,3.2rem);line-height:1.14}
 .r-row.feat:hover{background:rgba(201,169,110,.06)}
 @media (max-width:860px){.r-row .in{flex-direction:column;gap:10px}.r-row p{margin-left:0;text-align:left}}
 
-.fornot{display:grid;grid-template-columns:1fr;gap:26px;margin-top:0}
+.fornot{display:grid;grid-template-columns:1fr;gap:26px;margin-top:0;max-width:720px}
 .fn-card{border:1px solid var(--hair);padding:3.2vh 3.2vw;background:linear-gradient(165deg,#101013,#0b0b0e);transition:border-color .3s,transform .3s,box-shadow .3s}
 .fn-card:hover{border-color:rgba(201,169,110,.4);transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(0,0,0,.8)}
 .fn-card h4{font-family:var(--sans);font-weight:400;font-size:.68rem;letter-spacing:.38em;text-transform:uppercase;color:var(--gold)}
@@ -195,7 +196,7 @@ html.no-intro #veil{display:none}
 /* ═══ 4 · PROOF ═══ */
 #proof{background:var(--ink)}
 #proof .sub{margin-top:2vh;font-family:var(--sans);font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--text-dim)}
-.q-grid{display:grid;grid-template-columns:1fr;gap:26px;margin-top:4.5vh}
+.q-grid{display:grid;grid-template-columns:1fr;gap:26px;margin-top:4.5vh;max-width:720px}
 .q-card{border:1px solid var(--hair);padding:3.6vh 3vw;background:linear-gradient(165deg,#101013,#0b0b0e);
   transition:border-color .3s,transform .3s,box-shadow .3s;position:relative}
 .q-card:hover{border-color:rgba(201,169,110,.4);transform:translateY(-4px);box-shadow:0 26px 54px -32px rgba(0,0,0,.85)}
