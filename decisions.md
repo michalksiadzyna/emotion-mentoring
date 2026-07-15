@@ -5,6 +5,13 @@
 
 ---
 
+## RECOGNITION LIST REPLACED (user, 2026-07-15): nine situations, user's verbatim statements
+
+- User supplied nine "Situations I Help You Navigate" statements and ruled: **use his clear statements verbatim** — no Claude rewrites (crafted A/B/C versions rejected with "you were given clear statements, use them").
+- **TWO FEATURED CARDS:** i "Loneliness at the top." (item 9, leadership isolation, MERGED into it — body: "Everyone reports upward. The decisions that matter most cannot be openly discussed with employees, partners, family, or friends.") · ii "Difficult decisions." (item 5, user ruled it the second feature over items 4/6 — body: "Moving from confusion and internal pressure to the calm, clarity, and perspective needed to choose well.").
+- Remaining seven items are plain rows iii–ix in the user's list order (conflicts · mental overload · personal crises · sudden wealth · loss of meaning · loss of trust and control · major transitions). Dashes in items 7/8 resolved to periods (no-dash rule); wording otherwise verbatim.
+- Old rows ii–v (divorce, payroll, emptiness, fear-to-breaking) RETIRED, replaced by this list. Section h2 "The situations CEOs carry." stands (locked, We-voice; user's "Situations I Help You Navigate" title not used — I-voice violates the We ruling).
+
 ## LAUNCHED (2026-07-12): V3 Cinema IS the live website at emotionmentoring.com
 
 User order: "save, upload as the new website." Old gold index archived at `archive/index_gold_pre_champagne_2026-07-12.html` (local) and in git history (commit dc35eca and earlier). New index carries: canonical, favicon, OG/Twitter meta, Formspree (version=live_v3). Verified serving at the root domain. Subpages RESTYLED and live (2026-07-12): foundation.html (facts/board/KRS verbatim), the-secret-book-of-emotions-shen.html (xgopoelo gate preserved, "free" copy removed), thankyou.html (rebuilt minimal, old upsell content discarded, noindex). Polish pages untouched per English-only ruling. Full SEO pass (JSON-LD) pending.
