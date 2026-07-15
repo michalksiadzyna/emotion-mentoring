@@ -122,8 +122,9 @@ html.no-intro #veil{display:none}
 .pill:hover{border-color:var(--gold);box-shadow:0 0 44px rgba(201,169,110,.14)}
 .pill:hover::before{background-position:-60% 0}
 .pill:active{transform:scale(.97)}
-.pill.solid{background:linear-gradient(120deg,#caa96b,#ecdcb2);border-color:transparent;color:#171204;font-weight:500}
-.pill.solid:hover{box-shadow:0 0 50px rgba(217,196,145,.3)}
+.pill.solid{background-image:var(--metal);background-size:220% 100%;background-position:15% 0;border-color:transparent;color:#171204;font-weight:500;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 30px -14px rgba(201,169,110,.4);transition:border-color .25s,box-shadow .35s,transform .15s,background-position .7s ease}
+.pill.solid:hover{background-position:85% 0;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 0 0 1px rgba(253,246,227,.4),0 0 34px rgba(217,196,145,.35),0 22px 60px -16px rgba(217,196,145,.6)}
 .pill-sub{display:block;margin-top:2px;font-size:var(--fs-tag);letter-spacing:.12em;text-indent:.12em;font-weight:400;opacity:.6}
 
 /* CTA-side quote */
@@ -170,10 +171,10 @@ html.no-intro #veil{display:none}
 }
 .r-row.feat h3{font-variant:small-caps;font-weight:400;letter-spacing:.04em;font-size:var(--fs-m);line-height:1.4}
 .r-row.feat:hover{background:rgba(201,169,110,.06)}
-/* featured corners — pronounced, metallic, same shine as the text */
-.r-row.feat .tick{width:26px;height:26px}
-.r-row.feat:hover .tick{width:32px;height:32px}
-.r-row.feat .tick i{clip-path:polygon(0 0,100% 0,100% 18%,18% 18%,18% 100%,0 100%);animation:tickshine 4.5s ease-in-out infinite}
+/* featured corners — metallic; fixed size, glow (not growth) on hover */
+.r-row.feat .tick,.r-row.feat:hover .tick{width:18px;height:18px}
+.r-row.feat .tick i{clip-path:polygon(0 0,100% 0,100% 16%,16% 16%,16% 100%,0 100%);animation:tickshine 4.5s ease-in-out infinite;transition:filter .35s ease}
+.r-row.feat:hover .tick i{filter:brightness(1.45) drop-shadow(0 0 7px rgba(217,196,145,.65))}
 @keyframes tickshine{0%,100%{background-position:0% 0%}50%{background-position:85% 85%}}
 @media (max-width:860px){.r-row .in{flex-direction:column;gap:10px}.r-row p{margin-left:0;text-align:left}}
 
@@ -212,13 +213,14 @@ html.no-intro #veil{display:none}
 #work .method{margin-top:5vh;font-family:var(--serif);font-style:italic;font-size:var(--fs-m);color:var(--gold-lt);line-height:1.5}
 .mentorline{display:flex;align-items:flex-start;gap:38px;margin-top:6vh;max-width:720px;text-decoration:none;transition:transform .25s}
 .mentorline:hover{transform:translateY(-3px)}
-.m-photo{flex:0 0 auto;display:block;width:clamp(200px,26vw,300px);height:auto;aspect-ratio:1/1;padding:6px;border:1px solid rgba(201,169,110,.3);transition:border-color .3s}
+.m-photo{flex:0 0 auto;display:block;width:clamp(180px,21vw,230px);height:auto;aspect-ratio:1/1;padding:6px;border:1px solid rgba(201,169,110,.3);transition:border-color .3s}
 .m-photo picture{display:block;height:100%;line-height:0}
 .m-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%) contrast(1.05);transition:filter .3s}
 .mentorline:hover .m-photo{border-color:var(--gold)}
 .mentorline:hover .m-photo img{filter:none}
 .m-info{min-width:0}
 .m-info b{display:block;font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:var(--fs-m);line-height:1.3;color:var(--gold-hi)}
+.m-info .m-bio{display:block;margin-top:12px;font-size:var(--fs-s);color:var(--text);max-width:24em;line-height:1.7}
 .m-info .m-role{display:block;margin-bottom:8px;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim)}
 .m-info .m-link{display:inline-block;margin-top:16px;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dim);border-bottom:1px solid rgba(201,169,110,.3);padding-bottom:3px;transition:color .25s,border-color .25s}
 .mentorline:hover .m-link{color:var(--gold-hi);border-color:var(--gold)}
@@ -226,7 +228,8 @@ html.no-intro #veil{display:none}
 
 /* ═══ 4 · PROOF ═══ */
 #proof{background:var(--ink)}
-.q-all{display:inline-block;margin-top:3.4vh;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3);padding-bottom:4px;transition:color .25s,border-color .25s}
+.q-more{max-width:720px;margin:3vh auto 0;text-align:right}
+.q-all{display:inline-block;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3);padding-bottom:4px;transition:color .25s,border-color .25s}
 .q-all:hover{color:var(--gold-hi);border-color:var(--gold)}
 .q-grid{display:grid;grid-template-columns:1fr;gap:26px;margin-top:4.5vh;max-width:720px}
 .q-card{border:1px solid var(--hair);padding:3.6vh 3vw;background:linear-gradient(165deg,#101013,#0b0b0e);
@@ -241,8 +244,8 @@ html.no-intro #veil{display:none}
 /* ═══ 5 · TERMS ═══ */
 #terms{background:var(--ink2)}
 #terms .spots{display:flex;align-items:baseline;gap:1.6vw;margin-top:3vh;flex-wrap:wrap}
-#terms .spots .n{font-family:var(--serif);font-weight:500;font-size:var(--fs-m);line-height:1;white-space:nowrap}
-#terms .spots .lbl{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:var(--fs-m);color:var(--gold-hi)}
+#terms .spots .n{font-family:var(--serif);font-weight:500;font-size:var(--fs-l);line-height:1;white-space:nowrap}
+#terms .spots .lbl{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:var(--fs-l);color:var(--gold-hi)}
 #terms .spots-note{margin-top:2.6vh;max-width:480px;color:var(--text-dim);font-size:var(--fs-s)}
 .t-rows{margin-top:7vh;border-top:1px solid var(--hair)}
 .t-row{display:flex;flex-direction:column;gap:8px;padding:3.4vh 1vw;border-bottom:1px solid var(--hair);transition:background .3s}
@@ -251,9 +254,6 @@ html.no-intro #veil{display:none}
 .t-row .v{font-size:var(--fs-s);color:var(--text);text-align:left;max-width:34em}
 .t-row .v b{font-weight:400;color:var(--gold-hi)}
 @media (max-width:760px){.t-row{flex-direction:column;gap:8px}.t-row .v{text-align:left}}
-.sidedoor{margin-top:5vh;font-size:var(--fs-s);color:var(--text-dim)}
-.sidedoor a{color:var(--gold-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3);padding-bottom:2px;transition:color .25s,border-color .25s}
-.sidedoor a:hover{color:var(--gold-hi);border-color:var(--gold)}
 
 /* ═══ 6 · THE CONVERSATION ═══ */
 #conversation{background:var(--ink);padding-bottom:18vh;text-align:center}
@@ -274,16 +274,13 @@ html.no-intro #veil{display:none}
 .conv-quote p{font-family:var(--serif);font-style:italic;font-size:var(--fs-s);color:var(--text);line-height:1.6}
 .conv-quote span{display:block;margin-top:10px;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim)}
 
-/* ═══ pre-footer navigation ═══ */
-.subnav{border-top:1px solid var(--hair);padding:7vh 8vw;text-align:center}
-.subnav .kick{display:block;text-indent:.42em}
-.subnav-links{margin-top:3vh;display:flex;justify-content:center;align-items:baseline;gap:2.4em 3.6em;flex-wrap:wrap}
-.subnav-links a{font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.26em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.25);padding-bottom:4px;transition:color .25s,border-color .25s}
-.subnav-links a:hover{color:var(--gold-hi);border-color:var(--gold)}
-
 /* ═══ footer ═══ */
-footer{border-top:1px solid var(--hair);padding:6vh 8vw 12vh;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+footer{border-top:1px solid var(--hair);padding:7vh 8vw 12vh;
   font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.28em;text-transform:uppercase;color:var(--text-dim)}
+footer .f-links{display:flex;justify-content:center;align-items:baseline;gap:2.4em 3.6em;flex-wrap:wrap;padding-bottom:5vh;margin-bottom:5vh;border-bottom:1px solid var(--hair)}
+footer .f-links a{color:var(--text-dim);text-decoration:none;letter-spacing:.26em;border-bottom:1px solid rgba(201,169,110,.25);padding-bottom:4px;transition:color .25s,border-color .25s}
+footer .f-links a:hover{color:var(--gold-hi);border-color:var(--gold)}
+footer .f-row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
 footer .fm b{font-weight:400;color:var(--gold-dim)}
 #replay{background:none;border:1px solid var(--hair);border-radius:100px;padding:10px 22px;color:var(--text-dim);cursor:pointer;
   font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;transition:color .25s,border-color .25s}
@@ -376,6 +373,7 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
     <span class="m-info">
       <span class="m-role">Creator of The Shen Method</span>
       <b>Michal Ksiadzyna</b>
+      <span class="m-bio">Michal Ksiadzyna, known as Shen, works one-on-one with CEOs on the emotional weight of leading a company.</span>
       <span class="m-link">About Michal &rarr;</span>
     </span>
   </a>
@@ -428,11 +426,11 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
       <figcaption>Arkadiusz Czajkowski &middot; CEO</figcaption>
     </figure>
     <figure class="q-card" data-rise>
-      <blockquote>&ldquo;Every processed hour contributes to my success. I am now more empathetic. I understand what mechanisms drive other people — and that changes everything.&rdquo;</blockquote>
-      <figcaption>Michał Szost</figcaption>
+      <blockquote>&ldquo;I worked with several therapists before — CBT, psychodynamic, Gestalt, Hellinger, Theta Healing. What hit me about this method was unlike anything previous.&rdquo;</blockquote>
+      <figcaption>Agnieszka Palka</figcaption>
     </figure>
   </div>
-  <a class="q-all" href="testimonials.html" data-rise>Everything clients say &rarr;</a>
+  <div class="q-more" data-rise><a class="q-all" href="testimonials.html">More testimonials &rarr;</a></div>
 
   <div class="cta-block" data-rise>
     <a class="pill solid" href="#conversation">Book your conversation<span class="pill-sub">Confidential 30 minutes</span></a>
@@ -476,7 +474,6 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
     </div>
   </div>
 
-  <p class="sidedoor" data-rise><a href="the-secret-book-of-emotions-shen.html">The Secret Book of Emotions &rarr;</a></p>
 </section>
 
 <!-- ═══════════ 6 · THE CONVERSATION ═══════════ -->
@@ -503,24 +500,21 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
   </div>
 </section>
 
-<!-- ═══════════ pre-footer navigation ═══════════ -->
-<nav class="subnav" aria-label="Pages">
-  <p class="kick">Explore</p>
-  <div class="subnav-links">
+</main>
+
+<footer>
+  <nav class="f-links" aria-label="Pages">
     <a href="michal-ksiadzyna.html">About Michal</a>
     <a href="testimonials.html">What clients say</a>
     <a href="the-secret-book-of-emotions-shen.html"><span class="metal shimmer">The Secret Book of Emotions</span></a>
     <a href="foundation.html">The Shen Foundation</a>
+  </nav>
+  <div class="f-row">
+    <span class="fm"><b>Michal Ksiadzyna</b> &middot; The Shen Method</span>
+    <span>Emotion Mentoring for CEOs</span>
+    <span>&copy; 2026</span>
+    <button id="replay" type="button">Replay opening</button>
   </div>
-</nav>
-
-</main>
-
-<footer>
-  <span class="fm"><b>Michal Ksiadzyna</b> &middot; The Shen Method</span>
-  <span>Emotion Mentoring for CEOs</span>
-  <span>&copy; 2026</span>
-  <button id="replay" type="button">Replay opening</button>
 </footer>
 
 <!-- sticky mobile CTA -->
