@@ -138,7 +138,7 @@ html.no-intro #veil{display:none}
 .divider{display:flex;align-items:center;gap:16px;margin:7vh 0}
 .divider i{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,.28) 20%,rgba(201,169,110,.28) 80%,transparent)}
 .r-rows{margin-top:4.5vh;border-top:1px solid var(--hair)}
-.r-row{position:relative;display:flex;align-items:baseline;gap:3.5vw;padding:4.2vh 2vw 4.2vh 0;border-bottom:1px solid var(--hair);transition:background .3s}
+.r-row{position:relative;display:flex;align-items:baseline;gap:3.5vw;padding:4.2vh 2vw 4.2vh 2.5vw;border-bottom:1px solid var(--hair);transition:background .3s}
 .r-row .in{display:flex;align-items:baseline;gap:3.5vw;width:100%;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .r-row:hover{background:rgba(201,169,110,.03)}
 .r-row:hover .in{transform:translateX(14px)}
@@ -170,6 +170,11 @@ html.no-intro #veil{display:none}
 }
 .r-row.feat h3{font-variant:small-caps;font-weight:400;letter-spacing:.04em;font-size:var(--fs-m);line-height:1.4}
 .r-row.feat:hover{background:rgba(201,169,110,.06)}
+/* featured corners — pronounced, metallic, same shine as the text */
+.r-row.feat .tick{width:26px;height:26px}
+.r-row.feat:hover .tick{width:32px;height:32px}
+.r-row.feat .tick i{clip-path:polygon(0 0,100% 0,100% 18%,18% 18%,18% 100%,0 100%);animation:tickshine 4.5s ease-in-out infinite}
+@keyframes tickshine{0%,100%{background-position:0% 0%}50%{background-position:85% 85%}}
 @media (max-width:860px){.r-row .in{flex-direction:column;gap:10px}.r-row p{margin-left:0;text-align:left}}
 
 .fornot{display:grid;grid-template-columns:1fr;gap:26px;margin-top:0;max-width:720px}
@@ -205,7 +210,7 @@ html.no-intro #veil{display:none}
 #work .body p{font-size:var(--fs-s);line-height:1.8;color:var(--text)}
 #work .body p+p{margin-top:4vh}
 #work .method{margin-top:5vh;font-family:var(--serif);font-style:italic;font-size:var(--fs-m);color:var(--gold-lt);line-height:1.5}
-.mentorline{display:flex;align-items:center;gap:38px;margin-top:6vh;max-width:720px;text-decoration:none;transition:transform .25s}
+.mentorline{display:flex;align-items:flex-start;gap:38px;margin-top:6vh;max-width:720px;text-decoration:none;transition:transform .25s}
 .mentorline:hover{transform:translateY(-3px)}
 .m-photo{flex:0 0 auto;display:block;width:clamp(200px,26vw,300px);height:auto;aspect-ratio:1/1;padding:6px;border:1px solid rgba(201,169,110,.3);transition:border-color .3s}
 .m-photo picture{display:block;height:100%;line-height:0}
@@ -221,7 +226,8 @@ html.no-intro #veil{display:none}
 
 /* ═══ 4 · PROOF ═══ */
 #proof{background:var(--ink)}
-#proof .sub{margin-top:2vh;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.34em;text-transform:uppercase;color:var(--text-dim)}
+.q-all{display:inline-block;margin-top:3.4vh;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3);padding-bottom:4px;transition:color .25s,border-color .25s}
+.q-all:hover{color:var(--gold-hi);border-color:var(--gold)}
 .q-grid{display:grid;grid-template-columns:1fr;gap:26px;margin-top:4.5vh;max-width:720px}
 .q-card{border:1px solid var(--hair);padding:3.6vh 3vw;background:linear-gradient(165deg,#101013,#0b0b0e);
   transition:border-color .3s,transform .3s,box-shadow .3s;position:relative}
@@ -267,6 +273,13 @@ html.no-intro #veil{display:none}
 .conv-quote{max-width:520px;margin:6vh auto 0;text-align:center}
 .conv-quote p{font-family:var(--serif);font-style:italic;font-size:var(--fs-s);color:var(--text);line-height:1.6}
 .conv-quote span{display:block;margin-top:10px;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim)}
+
+/* ═══ pre-footer navigation ═══ */
+.subnav{border-top:1px solid var(--hair);padding:7vh 8vw;text-align:center}
+.subnav .kick{display:block;text-indent:.42em}
+.subnav-links{margin-top:3vh;display:flex;justify-content:center;align-items:baseline;gap:2.4em 3.6em;flex-wrap:wrap}
+.subnav-links a{font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.26em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.25);padding-bottom:4px;transition:color .25s,border-color .25s}
+.subnav-links a:hover{color:var(--gold-hi);border-color:var(--gold)}
 
 /* ═══ footer ═══ */
 footer{border-top:1px solid var(--hair);padding:6vh 8vw 12vh;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
@@ -325,13 +338,13 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
       <span>Arkadiusz Czajkowski &middot; CEO</span>
     </div>
   </div>
-  <div class="cue" data-fade><i></i>Scroll</div>
+  <div class="cue" data-fade aria-hidden="true"><i></i></div>
 </section>
 
 <!-- ═══════════ 2 · RECOGNITION ═══════════ -->
 <section id="recognition" class="scene">
   <p class="kick" data-rise>01 &middot; Recognition</p>
-  <h2 class="assemble">The situations CEOs carry.</h2>
+  <h2 class="assemble">The situations we help you navigate.</h2>
   <div class="rule" data-line></div>
 
   <div class="r-rows">
@@ -403,7 +416,6 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
 <section id="proof" class="scene">
   <p class="kick" data-rise>03 &middot; Proof</p>
   <h2 class="assemble">What clients say.</h2>
-  <p class="sub" data-rise>Attributed, never anonymous.</p>
   <div class="rule" data-line></div>
 
   <div class="q-grid">
@@ -415,7 +427,12 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
       <blockquote>&ldquo;Michał is a highly skilled professional who built my trust session by session — and I&rsquo;m not someone easily convinced.&rdquo;</blockquote>
       <figcaption>Arkadiusz Czajkowski &middot; CEO</figcaption>
     </figure>
+    <figure class="q-card" data-rise>
+      <blockquote>&ldquo;Every processed hour contributes to my success. I am now more empathetic. I understand what mechanisms drive other people — and that changes everything.&rdquo;</blockquote>
+      <figcaption>Michał Szost</figcaption>
+    </figure>
   </div>
+  <a class="q-all" href="testimonials.html" data-rise>Everything clients say &rarr;</a>
 
   <div class="cta-block" data-rise>
     <a class="pill solid" href="#conversation">Book your conversation<span class="pill-sub">Confidential 30 minutes</span></a>
@@ -451,7 +468,7 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
   <div class="t-rows">
     <div class="t-row" data-rise>
       <span class="k">Cadence</span>
-      <span class="v">Two private sessions a month, plus direct access between them.</span>
+      <span class="v">One private session a week. Access to emergency sessions.</span>
     </div>
     <div class="t-row" data-rise>
       <span class="k">Investment</span>
@@ -459,7 +476,7 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
     </div>
   </div>
 
-  <p class="sidedoor" data-rise>One side door exists. <a href="the-secret-book-of-emotions-shen.html">The Secret Book of Emotions</a>.</p>
+  <p class="sidedoor" data-rise><a href="the-secret-book-of-emotions-shen.html">The Secret Book of Emotions &rarr;</a></p>
 </section>
 
 <!-- ═══════════ 6 · THE CONVERSATION ═══════════ -->
@@ -485,6 +502,17 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
     <span>Krystyna Mendonca &middot; Entrepreneur</span>
   </div>
 </section>
+
+<!-- ═══════════ pre-footer navigation ═══════════ -->
+<nav class="subnav" aria-label="Pages">
+  <p class="kick">Explore</p>
+  <div class="subnav-links">
+    <a href="michal-ksiadzyna.html">About Michal</a>
+    <a href="testimonials.html">What clients say</a>
+    <a href="the-secret-book-of-emotions-shen.html"><span class="metal shimmer">The Secret Book of Emotions</span></a>
+    <a href="foundation.html">The Shen Foundation</a>
+  </div>
+</nav>
 
 </main>
 
