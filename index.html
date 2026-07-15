@@ -97,7 +97,7 @@ html.no-intro #veil{display:none}
 .ch{display:inline-block;will-change:transform}
 
 /* ═══ 1 · HOOK ═══ */
-#hook{min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:var(--sp-5) 8vw var(--sp-4)}
+#hook{display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:var(--sp-5) 8vw var(--sp-4)}
 #hook .bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:26px 8vw;
   font-family:var(--sans);font-weight:400;font-size:var(--fs-tag);letter-spacing:.32em;text-transform:uppercase;color:var(--text-dim)}
 #hook .bar b{font-weight:400;color:var(--gold-dim);transition:color .25s}
@@ -113,7 +113,7 @@ html.no-intro #veil{display:none}
 #hook .citeline{margin-top:var(--sp-1);font-size:var(--fs-tag);letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim)}
 @media (max-width:760px){#hook .citeline .csep{display:none}#hook .citeline .cite2{display:block}}
 #hook .h-cta{margin-top:var(--sp-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
-#hook .cue{position:absolute;bottom:var(--sp-2);left:8vw;display:flex;align-items:center;gap:14px;
+#hook .cue{position:absolute;bottom:var(--sp-1);left:8vw;display:flex;align-items:center;gap:14px;
   font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.4em;text-transform:uppercase;color:var(--text-dim)}
 #hook .cue i{display:block;width:1px;height:44px;background:linear-gradient(to bottom,var(--gold),transparent);transform-origin:top;animation:cue 1.8s ease-in-out infinite}
 @keyframes cue{0%{transform:scaleY(0)}45%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
@@ -185,7 +185,7 @@ html.no-intro #veil{display:none}
 @keyframes tickshine{0%,100%{background-position:0% 0%}50%{background-position:85% 85%}}
 @media (max-width:860px){.r-row .in{flex-direction:column;gap:10px}.r-row p{margin-left:0;text-align:left}}
 
-.fn-head{max-width:720px;margin:0 auto var(--sp-1);text-align:left;font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;font-size:var(--fs-m);line-height:1.3;color:var(--gold-hi)}
+.fn-head{max-width:720px;margin:0 auto var(--sp-2);text-align:center;font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;font-size:var(--fs-l);line-height:1.1;color:var(--gold-hi)}
 /* animated quote line — same beam as the hero cue, centered after post-button quotes */
 .qline{display:flex;justify-content:center;margin-top:var(--sp-2)}
 .qline i{display:block;width:1px;height:44px;background:linear-gradient(to bottom,var(--gold),transparent);transform-origin:top;animation:cue 1.8s ease-in-out infinite}
@@ -268,7 +268,7 @@ html.no-intro #veil{display:none}
 @media (max-width:760px){.t-row{flex-direction:column;gap:8px}.t-row .v{text-align:left}}
 
 /* ═══ 6 · THE CONVERSATION ═══ */
-#conversation{background:var(--ink);padding-bottom:var(--sp-5);text-align:center}
+#conversation{background:var(--ink);padding-bottom:var(--sp-3);text-align:center}
 #conversation .kick{text-indent:.42em}
 #conversation .lead{margin-top:var(--sp-1);font-family:var(--serif);font-style:italic;font-size:var(--fs-m);color:var(--text);margin-left:auto;margin-right:auto;max-width:34em}
 #conversation h2{margin-left:auto;margin-right:auto;max-width:16em}
@@ -285,7 +285,7 @@ html.no-intro #veil{display:none}
 .conv-quote{max-width:520px;margin:var(--sp-3) auto 0;text-align:center}
 .conv-quote p{font-family:var(--serif);font-style:italic;font-size:var(--fs-s);color:var(--text);line-height:1.6}
 .conv-quote span{display:block;margin-top:10px;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim)}
-.explorebook{display:block;width:fit-content;margin:var(--sp-3) auto 0;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.26em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.25);padding-bottom:4px;transition:color .25s,border-color .25s}
+.explorebook{display:block;width:fit-content;margin:var(--sp-2) auto 0;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.26em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.25);padding-bottom:4px;transition:color .25s,border-color .25s}
 .explorebook:hover{color:var(--gold-hi);border-color:var(--gold)}
 
 /* ═══ footer ═══ */
@@ -351,7 +351,7 @@ footer .f-copy{letter-spacing:.26em}
 <!-- ═══════════ 2 · RECOGNITION ═══════════ -->
 <section id="recognition" class="scene">
   <p class="kick" data-rise>01 &middot; The Situations</p>
-  <h2 class="assemble">The situations Emotion Mentoring helps you navigate.</h2>
+  <h2 class="assemble">In what situations Emotion Mentoring can help you.</h2>
   <div class="rule" data-line></div>
 
   <div class="r-rows">
@@ -390,7 +390,7 @@ footer .f-copy{letter-spacing:.26em}
 
   <div class="divider" data-rise aria-hidden="true"><i></i></div>
 
-  <h3 class="fn-head" data-rise>For a closed circle.</h3>
+  <h3 class="fn-head" data-rise>Is Emotion Mentoring for you?</h3>
 
   <div class="fornot">
     <div class="fn-card feat ticked" data-rise>
