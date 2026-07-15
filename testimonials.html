@@ -67,8 +67,9 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;o
 .pill:hover::before{background-position:-60% 0}
 .pill:active{transform:scale(.97)}
 .pill.solid{background-image:var(--metal);background-size:220% 100%;background-position:15% 0;border-color:transparent;color:#171204;font-weight:500;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 30px -14px rgba(201,169,110,.4);transition:border-color .25s,box-shadow .35s,transform .15s,background-position .7s ease}
-.pill.solid:hover{background-position:85% 0;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 0 0 1px rgba(253,246,227,.4),0 0 34px rgba(217,196,145,.35),0 22px 60px -16px rgba(217,196,145,.6)}
+  box-shadow:0 8px 22px -14px rgba(0,0,0,.55);transition:border-color .25s,box-shadow .35s,transform .15s,background-position .7s ease}
+.pill.solid::before{display:none}
+.pill.solid:hover{background-position:85% 0;box-shadow:0 0 14px rgba(217,196,145,.38)}
 .pill-sub{display:block;margin-top:2px;font-size:var(--fs-tag);letter-spacing:.12em;text-indent:.12em;font-weight:400;opacity:.6}
 
 /* ═══ header ═══ */
@@ -94,16 +95,12 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;o
 #begin .fine{margin-top:2.4vh;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.26em;text-transform:uppercase;color:var(--text-dim);line-height:2}
 
 /* ═══ footer ═══ */
-footer{border-top:1px solid var(--hair);padding:7vh 8vw 12vh;
+footer{border-top:1px solid var(--hair);padding:6vh 8vw 10vh;
   font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.28em;text-transform:uppercase;color:var(--text-dim)}
-footer .f-links{display:flex;justify-content:center;align-items:baseline;gap:2.4em 3.6em;flex-wrap:wrap;padding-bottom:5vh;margin-bottom:5vh;border-bottom:1px solid var(--hair)}
+footer .f-links{display:flex;justify-content:center;align-items:baseline;gap:2em 3.2em;flex-wrap:wrap}
 footer .f-links a{color:var(--text-dim);text-decoration:none;letter-spacing:.26em;border-bottom:1px solid rgba(201,169,110,.25);padding-bottom:4px;transition:color .25s,border-color .25s}
 footer .f-links a:hover{color:var(--gold-hi);border-color:var(--gold)}
-footer .f-row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-footer .fm b{font-weight:400;color:var(--gold-dim)}
-footer .back{background:rgba(201,169,110,.14);border:1px solid rgba(201,169,110,.5);border-radius:100px;padding:10px 22px;color:var(--gold-hi);cursor:pointer;
-  font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;text-decoration:none;transition:color .25s,border-color .25s,background .25s}
-footer .back:hover{color:var(--gold-hi);border-color:var(--gold);background:rgba(201,169,110,.22)}
+footer .f-copy{letter-spacing:.26em}
 
 /* ═══ sticky mobile CTA ═══ */
 #mcta{position:fixed;left:12px;right:12px;bottom:12px;z-index:1500;display:none;padding:17px 10px;text-align:center;
@@ -146,7 +143,7 @@ footer .back:hover{color:var(--gold-hi);border-color:var(--gold);background:rgba
   <div class="q-list">
     <figure class="q-card" data-rise>
       <blockquote>&ldquo;After four months, the loneliness that had made my life a nightmare for years simply disappeared. The changes were subtle at first &mdash; almost imperceptible. But the more I let go, the lighter it became. After less than a year I finally felt real freedom and joy &mdash; something I had been missing so badly. As a side effect, I completely lost the need for alcohol and coffee. And my relationship with my daughter &mdash; which brought me here in the first place &mdash; completely transformed.&rdquo;</blockquote>
-      <figcaption>Krystyna Mendonca &middot; Entrepreneur</figcaption>
+      <figcaption>Krystyna Mendonca &middot; Entrepreneur &middot; Mother</figcaption>
     </figure>
 
     <figure class="q-card" data-rise>
@@ -156,7 +153,7 @@ footer .back:hover{color:var(--gold-hi);border-color:var(--gold);background:rgba
 
     <figure class="q-card" data-rise>
       <blockquote>&ldquo;I worked with several therapists before &mdash; CBT, psychodynamic, Gestalt, Hellinger, Theta Healing. What hit me about this method was unlike anything previous. Michał is an excellent guide &mdash; he allows you to experience even the deepest emotions while feeling completely safe and understood. I was able to live through, transform, and release what no longer serves me. He listens, is empathetic, and simultaneously firm. He leads you to the goal without letting your defenses take control &mdash; and that&rsquo;s why it&rsquo;s so effective.&rdquo;</blockquote>
-      <figcaption>Agnieszka Palka</figcaption>
+      <figcaption>Agnieszka Palka &middot; Entrepreneur &middot; Mother</figcaption>
     </figure>
 
     <figure class="q-card" data-rise>
@@ -197,16 +194,14 @@ footer .back:hover{color:var(--gold-hi);border-color:var(--gold);background:rgba
 
 <footer>
   <nav class="f-links" aria-label="Pages">
+    <a href="/">Main page</a>
     <a href="michal-ksiadzyna.html">About Michal</a>
     <a href="testimonials.html">What clients say</a>
     <a href="narratives/">Narratives</a>
     <a href="the-secret-book-of-emotions-shen.html"><span class="metal">The Secret Book of Emotions</span></a>
     <a href="foundation.html">The Shen Foundation</a>
+    <span class="f-copy">&copy; 2026</span>
   </nav>
-  <div class="f-row">
-    <span class="fm"><b>Michal Ksiadzyna</b> &middot; The Shen Method</span>
-    <a class="back" href="/">Back to the main page</a>
-  </div>
 </footer>
 
 <!-- sticky mobile CTA -->

@@ -123,8 +123,9 @@ html.no-intro #veil{display:none}
 .pill:hover::before{background-position:-60% 0}
 .pill:active{transform:scale(.97)}
 .pill.solid{background-image:var(--metal);background-size:220% 100%;background-position:15% 0;border-color:transparent;color:#171204;font-weight:500;
-  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 30px -14px rgba(201,169,110,.4);transition:border-color .25s,box-shadow .35s,transform .15s,background-position .7s ease}
-.pill.solid:hover{background-position:85% 0;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 0 0 1px rgba(253,246,227,.4),0 0 34px rgba(217,196,145,.35),0 22px 60px -16px rgba(217,196,145,.6)}
+  box-shadow:0 8px 22px -14px rgba(0,0,0,.55);transition:border-color .25s,box-shadow .35s,transform .15s,background-position .7s ease}
+.pill.solid::before{display:none}
+.pill.solid:hover{background-position:85% 0;box-shadow:0 0 14px rgba(217,196,145,.38)}
 .pill-sub{display:block;margin-top:2px;font-size:var(--fs-tag);letter-spacing:.12em;text-indent:.12em;font-weight:400;opacity:.6}
 
 /* CTA-side quote */
@@ -244,8 +245,8 @@ html.no-intro #veil{display:none}
 /* ═══ 5 · TERMS ═══ */
 #terms{background:var(--ink2)}
 #terms .spots{display:flex;align-items:baseline;gap:1.6vw;margin-top:3vh;flex-wrap:wrap}
-#terms .spots .n{font-family:var(--serif);font-weight:500;font-size:var(--fs-l);line-height:1;white-space:nowrap}
-#terms .spots .lbl{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:var(--fs-l);color:var(--gold-hi)}
+#terms .spots .n{font-family:var(--serif);font-weight:500;font-size:var(--fs-m);line-height:1;white-space:nowrap}
+#terms .spots .lbl{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:var(--fs-m);color:var(--gold-hi)}
 #terms .spots-note{margin-top:2.6vh;max-width:480px;color:var(--text-dim);font-size:var(--fs-s)}
 .t-rows{margin-top:7vh;border-top:1px solid var(--hair)}
 .t-row{display:flex;flex-direction:column;gap:8px;padding:3.4vh 1vw;border-bottom:1px solid var(--hair);transition:background .3s}
@@ -273,18 +274,16 @@ html.no-intro #veil{display:none}
 .conv-quote{max-width:520px;margin:6vh auto 0;text-align:center}
 .conv-quote p{font-family:var(--serif);font-style:italic;font-size:var(--fs-s);color:var(--text);line-height:1.6}
 .conv-quote span{display:block;margin-top:10px;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim)}
+.explorebook{display:block;width:fit-content;margin:7vh auto 0;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.26em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.25);padding-bottom:4px;transition:color .25s,border-color .25s}
+.explorebook:hover{color:var(--gold-hi);border-color:var(--gold)}
 
 /* ═══ footer ═══ */
-footer{border-top:1px solid var(--hair);padding:7vh 8vw 12vh;
+footer{border-top:1px solid var(--hair);padding:6vh 8vw 10vh;
   font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.28em;text-transform:uppercase;color:var(--text-dim)}
-footer .f-links{display:flex;justify-content:center;align-items:baseline;gap:2.4em 3.6em;flex-wrap:wrap;padding-bottom:5vh;margin-bottom:5vh;border-bottom:1px solid var(--hair)}
+footer .f-links{display:flex;justify-content:center;align-items:baseline;gap:2em 3.2em;flex-wrap:wrap}
 footer .f-links a{color:var(--text-dim);text-decoration:none;letter-spacing:.26em;border-bottom:1px solid rgba(201,169,110,.25);padding-bottom:4px;transition:color .25s,border-color .25s}
 footer .f-links a:hover{color:var(--gold-hi);border-color:var(--gold)}
-footer .f-row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-footer .fm b{font-weight:400;color:var(--gold-dim)}
-#replay{background:none;border:1px solid var(--hair);border-radius:100px;padding:10px 22px;color:var(--text-dim);cursor:pointer;
-  font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;transition:color .25s,border-color .25s}
-#replay:hover{color:var(--gold-hi);border-color:var(--gold-dim)}
+footer .f-copy{letter-spacing:.26em}
 
 /* ═══ sticky mobile CTA ═══ */
 #mcta{position:fixed;left:12px;right:12px;bottom:12px;z-index:1500;display:none;padding:17px 10px;text-align:center;
@@ -340,8 +339,8 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
 
 <!-- ═══════════ 2 · RECOGNITION ═══════════ -->
 <section id="recognition" class="scene">
-  <p class="kick" data-rise>01 &middot; Recognition</p>
-  <h2 class="assemble">The situations we help you navigate.</h2>
+  <p class="kick" data-rise>01 &middot; The Situations</p>
+  <h2 class="assemble">The situations the mentoring helps you navigate.</h2>
   <div class="rule" data-line></div>
 
   <div class="r-rows">
@@ -373,7 +372,7 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
     <span class="m-info">
       <span class="m-role">Creator of The Shen Method</span>
       <b>Michal Ksiadzyna</b>
-      <span class="m-bio">Michal Ksiadzyna, known as Shen, works one-on-one with CEOs on the emotional weight of leading a company.</span>
+      <span class="m-bio">Known as Shen. Every session and every conversation is with him, one on one.</span>
       <span class="m-link">About Michal &rarr;</span>
     </span>
   </a>
@@ -405,7 +404,7 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
   <div class="rule" data-line></div>
   <div class="body">
     <p data-rise>Life leaves errors in the mind. Damage, emotional blockages that were never handled. They surface as heavy decisions, strained relationships, and fear that rises without reason.</p>
-    <p data-rise>In the mentoring, we find those blockages and repair them at the source. The mind adapts again. It runs better and carries more with less strain.</p>
+    <p data-rise>The mentoring finds those blockages and repairs them at the source. The mind adapts again. It runs better and carries more with less strain.</p>
     <p class="method metal shimmer" data-rise>This is The Shen Method: emotion mentoring built for minds that carry companies.</p>
   </div>
 </section>
@@ -419,7 +418,7 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
   <div class="q-grid">
     <figure class="q-card" data-rise>
       <blockquote>&ldquo;After four months, the loneliness that had made my life a nightmare for years simply disappeared.&rdquo;</blockquote>
-      <figcaption>Krystyna Mendonca &middot; Entrepreneur</figcaption>
+      <figcaption>Krystyna Mendonca &middot; Entrepreneur &middot; Mother</figcaption>
     </figure>
     <figure class="q-card" data-rise>
       <blockquote>&ldquo;Michał is a highly skilled professional who built my trust session by session — and I&rsquo;m not someone easily convinced.&rdquo;</blockquote>
@@ -427,7 +426,7 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
     </figure>
     <figure class="q-card" data-rise>
       <blockquote>&ldquo;I worked with several therapists before — CBT, psychodynamic, Gestalt, Hellinger, Theta Healing. What hit me about this method was unlike anything previous.&rdquo;</blockquote>
-      <figcaption>Agnieszka Palka</figcaption>
+      <figcaption>Agnieszka Palka &middot; Entrepreneur &middot; Mother</figcaption>
     </figure>
   </div>
   <div class="q-more" data-rise><a class="q-all" href="testimonials.html">More testimonials &rarr;</a></div>
@@ -496,8 +495,10 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
 
   <div class="conv-quote" data-rise>
     <p>&ldquo;After less than a year I finally felt real freedom and joy.&rdquo;</p>
-    <span>Krystyna Mendonca &middot; Entrepreneur</span>
+    <span>Krystyna Mendonca &middot; Entrepreneur &middot; Mother</span>
   </div>
+
+  <a class="explorebook" data-rise href="the-secret-book-of-emotions-shen.html">Explore: <span class="metal shimmer">The Secret Book of Emotions</span></a>
 </section>
 
 </main>
@@ -509,13 +510,8 @@ footer .fm b{font-weight:400;color:var(--gold-dim)}
     <a href="narratives/">Narratives</a>
     <a href="the-secret-book-of-emotions-shen.html"><span class="metal shimmer">The Secret Book of Emotions</span></a>
     <a href="foundation.html">The Shen Foundation</a>
+    <span class="f-copy">&copy; 2026</span>
   </nav>
-  <div class="f-row">
-    <span class="fm"><b>Michal Ksiadzyna</b> &middot; The Shen Method</span>
-    <span>Emotion Mentoring for CEOs</span>
-    <span>&copy; 2026</span>
-    <button id="replay" type="button">Replay opening</button>
-  </div>
 </footer>
 
 <!-- sticky mobile CTA -->
@@ -653,11 +649,12 @@ function heroPlay(){
   });
 })();
 
-/* ── replay control ── */
-document.getElementById('replay').addEventListener('click', function(){
+/* ── replay control (button optional) ── */
+var replayBtn = document.getElementById('replay');
+if(replayBtn){ replayBtn.addEventListener('click', function(){
   try{ localStorage.removeItem('introSeen_v1'); }catch(e){}
   location.reload();
-});
+}); }
 
 /* ── sticky mobile CTA ── */
 (function(){

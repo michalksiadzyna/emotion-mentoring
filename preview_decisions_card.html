@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Decisions Card — Version Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a0c;
+  --ink2:#0d0d10;
+  --hair:rgba(255,255,255,.12);
+  --gold:#c9a96e;
+  --gold-dim:#85714a;
+  --gold-hi:#f2e8d4;
+  --gold-lt:#d9c491;
+  --text:#b6b1a6;
+  --text-dim:#76715f;
+  --metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%);
+  --serif:'Cormorant Garamond',serif;
+  --sans:'Jost',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);font-weight:300;font-size:19px;line-height:1.7;overflow-x:hidden}
+::selection{background:#c9a96e;color:#0a0a0c}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.metal{background-image:var(--metal);background-size:230% 100%;background-position:50% 0;
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.shimmer{animation:shim 5s ease-in-out infinite}
+@keyframes shim{0%,100%{background-position:20% 0}50%{background-position:80% 0}}
+
+.tick{position:absolute;width:15px;height:15px;pointer-events:none;z-index:3;transition:width .25s ease,height .25s ease}
+.tick i{position:absolute;inset:0;background-image:var(--metal);background-size:400% 400%;display:block;
+  clip-path:polygon(0 0,100% 0,100% 13%,13% 13%,13% 100%,0 100%)}
+.tick.tl{top:0;left:0}.tick.tr{top:0;right:0;transform:rotate(90deg)}
+.tick.br{bottom:0;right:0;transform:rotate(180deg)}.tick.bl{bottom:0;left:0;transform:rotate(270deg)}
+.ticked{position:relative}
+.ticked:hover .tick{width:20px;height:20px}
+
+.scene{position:relative;padding:7vh 8vw}
+.kick{font-family:var(--sans);font-weight:400;font-size:.66rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-dim)}
+.scene h2{font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;line-height:1.06;
+  font-size:clamp(2rem,5vw,3.6rem);color:var(--gold-hi);margin-top:2vh}
+
+.r-rows{margin-top:4.5vh;border-top:1px solid var(--hair)}
+.r-row{position:relative;display:flex;align-items:baseline;gap:3.5vw;padding:2.8vh 2vw 2.8vh 0;border-bottom:1px solid var(--hair);transition:background .3s}
+.r-row .in{display:flex;align-items:baseline;gap:3.5vw;width:100%;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.r-row:hover{background:rgba(201,169,110,.03)}
+.r-row:hover .in{transform:translateX(14px)}
+.r-row .idx{font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;color:var(--gold-dim);min-width:36px;transition:color .25s}
+.r-row:hover .idx{color:var(--gold)}
+.r-row h3{font-family:var(--sans);font-weight:300;font-size:clamp(1.04rem,2.2vw,1.28rem);line-height:1.6;color:var(--text);flex-shrink:0;max-width:30em}
+.r-row p{font-size:.94rem;color:var(--text-dim);max-width:340px;margin-left:auto;text-align:right;transition:color .3s}
+.r-row:hover p{color:var(--text)}
+.r-row.feat{padding:6vh 2.5vw 6vh 2.5vw;background:rgba(201,169,110,.035)}
+.r-row.feat h3{font-variant:small-caps;font-size:clamp(1.9rem,5vw,3.2rem);line-height:1.14}
+.r-row.feat:hover{background:rgba(201,169,110,.06)}
+@media (max-width:860px){.r-row .in{flex-direction:column;gap:10px}.r-row p{margin-left:0;text-align:left}.r-row.feat{padding:4vh 2.5vw}}
+
+.vlabel{margin:9vh 8vw 0;padding-bottom:1.2vh;border-bottom:1px solid var(--gold-dim);
+  font-family:var(--sans);font-weight:400;font-size:.8rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold)}
+.vnote{margin:1.4vh 8vw 0;font-size:.9rem;color:var(--text-dim);max-width:640px}
+.pagehead{padding:6vh 8vw 0}
+.pagehead h1{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.8rem,4vw,2.8rem);color:var(--gold-hi);line-height:1.1}
+.pagehead p{margin-top:1vh;font-size:.95rem;color:var(--text-dim);max-width:680px}
+</style>
+</head>
+<body>
+
+<div class="pagehead">
+  <h1>The featured decisions card. Three versions.</h1>
+  <p>Each version is shown inside the real Recognition section: the locked loneliness card above it, a plain row below it, so you judge it in place. Hover works. The card being judged is the second featured one.</p>
+</div>
+
+<!-- ═══════════ VERSION A ═══════════ -->
+<div class="vlabel">Version A</div>
+<div class="vnote">Headline names the stakes. Body carries the full journey in one sentence.</div>
+<section class="scene">
+  <p class="kick">01 &middot; Recognition</p>
+  <h2>The situations CEOs carry.</h2>
+  <div class="r-rows">
+    <div class="r-row feat ticked">
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div class="in"><span class="idx">i</span><h3 class="metal shimmer">Loneliness at the top.</h3><p>Everyone reports upward. The decisions that matter most cannot be shared with employees, partners, family, or friends.</p></div>
+    </div>
+    <div class="r-row feat ticked">
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div class="in"><span class="idx">ii</span><h3 class="metal shimmer">Decisions that decide everything.</h3><p>From confusion and internal pressure to the calm, clarity, and perspective needed to choose well.</p></div>
+    </div>
+    <div class="r-row"><div class="in"><span class="idx">iii</span><h3>Mental overload, constant pressure, and carrying responsibility alone.</h3></div></div>
+  </div>
+</section>
+
+<!-- ═══════════ VERSION B ═══════════ -->
+<div class="vlabel">Version B</div>
+<div class="vnote">Plain headline. Body splits the two states and lets the contrast do the work.</div>
+<section class="scene">
+  <p class="kick">01 &middot; Recognition</p>
+  <h2>The situations CEOs carry.</h2>
+  <div class="r-rows">
+    <div class="r-row feat ticked">
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div class="in"><span class="idx">i</span><h3 class="metal shimmer">Loneliness at the top.</h3><p>Everyone reports upward. The decisions that matter most cannot be shared with employees, partners, family, or friends.</p></div>
+    </div>
+    <div class="r-row feat ticked">
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div class="in"><span class="idx">ii</span><h3 class="metal shimmer">Difficult decisions.</h3><p>Confusion and internal pressure on one side. Calm, clarity, and perspective on the other.</p></div>
+    </div>
+    <div class="r-row"><div class="in"><span class="idx">iii</span><h3>Mental overload, constant pressure, and carrying responsibility alone.</h3></div></div>
+  </div>
+</section>
+
+<!-- ═══════════ VERSION C ═══════════ -->
+<div class="vlabel">Version C</div>
+<div class="vnote">Headline owns the pressure. Body owns the promise.</div>
+<section class="scene">
+  <p class="kick">01 &middot; Recognition</p>
+  <h2>The situations CEOs carry.</h2>
+  <div class="r-rows">
+    <div class="r-row feat ticked">
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div class="in"><span class="idx">i</span><h3 class="metal shimmer">Loneliness at the top.</h3><p>Everyone reports upward. The decisions that matter most cannot be shared with employees, partners, family, or friends.</p></div>
+    </div>
+    <div class="r-row feat ticked">
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div class="in"><span class="idx">ii</span><h3 class="metal shimmer">A decision too heavy to see clearly.</h3><p>We restore the calm, clarity, and perspective a good choice requires.</p></div>
+    </div>
+    <div class="r-row"><div class="in"><span class="idx">iii</span><h3>Mental overload, constant pressure, and carrying responsibility alone.</h3></div></div>
+  </div>
+</section>
+
+<div style="height:8vh"></div>
+</body>
+</html>
