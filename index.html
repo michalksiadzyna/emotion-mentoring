@@ -113,11 +113,7 @@ html.no-intro #veil{display:none}
 #hook .citeline{margin-top:var(--sp-1);font-size:var(--fs-tag);letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim)}
 @media (max-width:760px){#hook .citeline .csep{display:none}#hook .citeline .cite2{display:block}}
 #hook .h-cta{margin-top:var(--sp-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
-#hook .cue{position:absolute;bottom:var(--sp-1);left:8vw;display:flex;align-items:center;gap:14px;
-  font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.4em;text-transform:uppercase;color:var(--text-dim)}
-#hook .cue i{display:block;width:1px;height:44px;background:linear-gradient(to bottom,var(--gold),transparent);transform-origin:top;animation:cue 1.8s ease-in-out infinite}
 @keyframes cue{0%{transform:scaleY(0)}45%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
-@media (prefers-reduced-motion: reduce){#hook .cue i{animation:none}}
 
 /* pill CTA */
 .pill{display:inline-block;position:relative;text-align:center;white-space:nowrap;text-decoration:none;cursor:pointer;border:1px solid rgba(201,169,110,.35);
@@ -159,7 +155,6 @@ html.no-intro #veil{display:none}
 @media (min-width:861px){
   #hook{align-items:center;text-align:center}
   #hook .l2{margin-left:auto;margin-right:auto}
-  #hook .cue{left:50%;transform:translateX(-50%)}
   .scene{text-align:center}
   .scene .rule{max-width:720px;margin-left:auto;margin-right:auto}
   .r-rows{max-width:720px;margin-left:auto;margin-right:auto;text-align:left}
@@ -309,7 +304,6 @@ footer .f-copy{letter-spacing:.26em}
   .scene{padding:var(--sp-4) 7vw}
   #hook{padding:var(--sp-5) 7vw var(--sp-4)}
   #hook .bar{padding:22px 7vw}
-  #hook .cue{left:7vw}
   .cta-block{gap:28px}
 }
 @media (prefers-reduced-motion: reduce){
@@ -345,7 +339,6 @@ footer .f-copy{letter-spacing:.26em}
       <span>Arkadiusz Czajkowski &middot; CEO</span>
     </div>
   </div>
-  <div class="cue" data-fade aria-hidden="true"><i></i></div>
 </section>
 
 <!-- ═══════════ 2 · RECOGNITION ═══════════ -->
@@ -406,6 +399,10 @@ footer .f-copy{letter-spacing:.26em}
 
   <div class="cta-block" data-rise>
     <a class="pill solid" href="#conversation">Book your conversation<span class="pill-sub">Confidential 30 minutes</span></a>
+    <div class="ctaq">
+      <p>&ldquo;What hit me about this method was unlike anything previous.&rdquo;</p>
+      <span>Agnieszka Palka &middot; Entrepreneur &middot; Mother</span>
+    </div>
   </div>
 
 </section>
@@ -450,7 +447,6 @@ footer .f-copy{letter-spacing:.26em}
       <p>&ldquo;Since that work, I have never felt lonely.&rdquo;</p>
       <span>Beata Brzychczyk</span>
     </div>
-    <div class="qline" data-rise aria-hidden="true"><i></i></div>
   </div>
 </section>
 
@@ -575,7 +571,7 @@ function heroPlay(){
   tl.from('#hook .kicker',{opacity:0,y:12,duration:.4},0)
     .from('#hook .l1',{yPercent:110,duration:.5},.05)
     .from(l2chars,{yPercent:105,opacity:0,duration:.4,stagger:.012},.3)
-    .from(['#hook .bar','#hook .support','#hook .h-cta','#hook .cue'],{opacity:0,y:18,duration:.5,stagger:.07},.42);
+    .from(['#hook .bar','#hook .support','#hook .h-cta'],{opacity:0,y:18,duration:.5,stagger:.07},.42);
 }
 
 /* ── VEIL : canvas ink-dissolve with champagne edge light ── */
