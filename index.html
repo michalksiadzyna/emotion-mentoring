@@ -185,7 +185,11 @@ html.no-intro #veil{display:none}
 @keyframes tickshine{0%,100%{background-position:0% 0%}50%{background-position:85% 85%}}
 @media (max-width:860px){.r-row .in{flex-direction:column;gap:10px}.r-row p{margin-left:0;text-align:left}}
 
-.fn-kick{max-width:720px;margin:0 auto var(--sp-1);text-align:left}
+.fn-head{max-width:720px;margin:0 auto var(--sp-1);text-align:left;font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;font-size:var(--fs-m);line-height:1.3;color:var(--gold-hi)}
+/* animated quote line — same beam as the hero cue, centered after post-button quotes */
+.qline{display:flex;justify-content:center;margin-top:var(--sp-2)}
+.qline i{display:block;width:1px;height:44px;background:linear-gradient(to bottom,var(--gold),transparent);transform-origin:top;animation:cue 1.8s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.qline i{animation:none}}
 .fornot{display:grid;grid-template-columns:1fr;gap:26px;margin-top:0;max-width:720px}
 .fn-card{border:1px solid var(--hair);padding:var(--sp-2) 3.2vw;background:linear-gradient(165deg,#101013,#0b0b0e);transition:border-color .3s,transform .3s,box-shadow .3s}
 .fn-card:hover{border-color:rgba(201,169,110,.4);transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(0,0,0,.8)}
@@ -281,7 +285,7 @@ html.no-intro #veil{display:none}
 .conv-quote{max-width:520px;margin:var(--sp-3) auto 0;text-align:center}
 .conv-quote p{font-family:var(--serif);font-style:italic;font-size:var(--fs-s);color:var(--text);line-height:1.6}
 .conv-quote span{display:block;margin-top:10px;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim)}
-.explorebook{display:block;width:fit-content;margin:var(--sp-5) auto 0;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.26em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.25);padding-bottom:4px;transition:color .25s,border-color .25s}
+.explorebook{display:block;width:fit-content;margin:var(--sp-3) auto 0;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.26em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.25);padding-bottom:4px;transition:color .25s,border-color .25s}
 .explorebook:hover{color:var(--gold-hi);border-color:var(--gold)}
 
 /* ═══ footer ═══ */
@@ -386,7 +390,7 @@ footer .f-copy{letter-spacing:.26em}
 
   <div class="divider" data-rise aria-hidden="true"><i></i></div>
 
-  <p class="kick fn-kick" data-rise>Who this is for</p>
+  <h3 class="fn-head" data-rise>For a closed circle.</h3>
 
   <div class="fornot">
     <div class="fn-card feat ticked" data-rise>
@@ -446,6 +450,7 @@ footer .f-copy{letter-spacing:.26em}
       <p>&ldquo;Since that work, I have never felt lonely.&rdquo;</p>
       <span>Beata Brzychczyk</span>
     </div>
+    <div class="qline" data-rise aria-hidden="true"><i></i></div>
   </div>
 </section>
 
@@ -506,6 +511,8 @@ footer .f-copy{letter-spacing:.26em}
     <p>&ldquo;After less than a year I finally felt real freedom and joy.&rdquo;</p>
     <span>Krystyna Mendonca &middot; Entrepreneur &middot; Mother</span>
   </div>
+
+  <div class="qline" data-rise aria-hidden="true"><i></i></div>
 
   <a class="explorebook" data-rise href="the-secret-book-of-emotions-shen.html">Explore: <span class="metal shimmer">The Secret Book of Emotions</span></a>
 </section>
