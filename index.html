@@ -136,11 +136,11 @@ html.no-intro #veil{display:none}
 
 /* ═══ 2 · RECOGNITION ═══ */
 #recognition{background:var(--ink);padding-top:var(--sp-2)}
-#recognition{padding-bottom:var(--sp-2)}
+#recognition{padding-bottom:var(--sp-3)}
 .divider{display:flex;align-items:center;gap:16px;margin:var(--sp-3) 0}
 .divider i{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,169,110,.28) 20%,rgba(201,169,110,.28) 80%,transparent)}
-.r-rows{margin-top:var(--sp-2);border-top:1px solid var(--hair)}
-.r-row{position:relative;display:flex;align-items:baseline;gap:3.5vw;padding:var(--sp-2) 2vw var(--sp-2) 2.5vw;border-bottom:1px solid var(--hair);transition:background .3s}
+.r-rows{margin-top:var(--sp-2);display:flex;flex-direction:column;gap:26px}
+.r-row{position:relative;display:flex;align-items:baseline;gap:3.5vw;padding:var(--sp-2) 2vw var(--sp-2) 2.5vw;border:1px solid var(--hair);transition:background .3s}
 .r-row .in{display:flex;align-items:baseline;gap:3.5vw;width:100%;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .r-row:hover{background:rgba(201,169,110,.03)}
 .r-row:hover .in{transform:translateX(14px)}
@@ -170,6 +170,13 @@ html.no-intro #veil{display:none}
   .r-row p{margin-left:0;text-align:left;max-width:36em}
 }
 @media (max-width:860px){.r-row .in{flex-direction:column;gap:10px}.r-row p{margin-left:0;text-align:left}}
+.r-row.feat{padding:var(--sp-2) 2.5vw;background:rgba(201,169,110,.035)}
+.r-row.feat:hover{background:rgba(201,169,110,.06)}
+/* featured corners — metallic; fixed size, glow (not growth) on hover */
+.r-row.feat .tick,.r-row.feat:hover .tick{width:18px;height:18px}
+.r-row.feat .tick i{clip-path:polygon(0 0,100% 0,100% 16%,16% 16%,16% 100%,0 100%);animation:tickshine 4.5s ease-in-out infinite;transition:filter .35s ease}
+.r-row.feat:hover .tick i{filter:brightness(1.45) drop-shadow(0 0 7px rgba(217,196,145,.65))}
+@keyframes tickshine{0%,100%{background-position:0% 0%}50%{background-position:85% 85%}}
 
 .fn-head{max-width:720px;margin:0 auto var(--sp-2);text-align:center;font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;font-size:var(--fs-l);line-height:1.1;color:var(--gold-hi)}
 /* animated quote line — same beam as the hero cue, centered after post-button quotes */
@@ -211,7 +218,7 @@ html.no-intro #veil{display:none}
 #work .method{margin-top:var(--sp-2);font-family:var(--serif);font-style:italic;font-size:var(--fs-m);color:var(--gold-lt);line-height:1.5}
 .mentorline{display:flex;align-items:flex-start;gap:38px;margin-top:var(--sp-3);max-width:720px;text-decoration:none;transition:transform .25s}
 .mentorline:hover{transform:translateY(-3px)}
-.m-photo{flex:0 0 auto;display:block;width:clamp(180px,21vw,230px);height:auto;aspect-ratio:1/1;padding:6px;border:1px solid rgba(201,169,110,.3);transition:border-color .3s}
+.m-photo{flex:0 0 auto;display:block;width:clamp(230px,26vw,300px);height:auto;aspect-ratio:3/4;padding:6px;border:1px solid rgba(201,169,110,.3);transition:border-color .3s}
 .m-photo picture{display:block;height:100%;line-height:0}
 .m-photo img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%) contrast(1.05);transition:filter .3s}
 .mentorline:hover .m-photo{border-color:var(--gold)}
@@ -225,7 +232,7 @@ html.no-intro #veil{display:none}
 @media (max-width:760px){.mentorline{flex-direction:column;align-items:flex-start;gap:24px}.m-photo{width:min(72vw,300px)}}
 
 /* ═══ 4 · PROOF ═══ */
-#proof{background:var(--ink)}
+#proof{background:var(--ink);padding-bottom:var(--sp-3)}
 .q-more{max-width:720px;margin:var(--sp-1) auto 0;text-align:right}
 .q-all{display:inline-block;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3);padding-bottom:4px;transition:color .25s,border-color .25s}
 .q-all:hover{color:var(--gold-hi);border-color:var(--gold)}
@@ -267,12 +274,6 @@ html.no-intro #veil{display:none}
   padding:14px 8px 5px;outline:none;border-radius:0;transition:border-color .3s,box-shadow .3s}
 .convpanel input[type="email"]::placeholder{color:var(--text-dim);letter-spacing:.04em}
 .convpanel input[type="email"]:focus{border-color:var(--gold);box-shadow:0 18px 26px -22px rgba(217,196,145,.5)}
-.convpanel .q-label{display:block;max-width:520px;font-family:var(--serif);font-style:italic;font-size:var(--fs-s);color:var(--text);line-height:1.6}
-.convpanel textarea{width:100%;max-width:520px;background:transparent;border:1px solid rgba(201,169,110,.25);
-  color:var(--gold-hi);font-family:var(--sans);font-weight:300;font-size:var(--fs-s);line-height:1.6;
-  padding:14px 16px;outline:none;border-radius:0;resize:vertical;min-height:86px;transition:border-color .3s}
-.convpanel textarea::placeholder{color:var(--text-dim);letter-spacing:.04em}
-.convpanel textarea:focus{border-color:var(--gold)}
 .convpanel .fine{font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.26em;text-transform:uppercase;color:var(--text-dim);line-height:2}
 .conv-quote{max-width:520px;margin:var(--sp-3) auto 0;text-align:center}
 .conv-quote p{font-family:var(--serif);font-style:italic;font-size:var(--fs-s);color:var(--text);line-height:1.6}
@@ -328,7 +329,7 @@ footer .f-copy{letter-spacing:.26em}
   <h1>
     <span class="l1wrap"><span class="l1 metal shimmer">Stay clear. Lead well.</span></span>
     <span class="l1wrap"><span class="l1 metal shimmer">Protect what you have built.</span></span>
-    <span class="l2" id="l2">I help leaders increase their capacity under pressure, make better decisions, and remain effective through personal and professional crises.</span>
+    <span class="l2" id="l2">I help leaders increase their capacity under pressure, develop a mind capable of better decisions, and remain effective through personal and professional crises.</span>
   </h1>
   <div class="h-cta" data-fade>
     <a class="pill solid" href="#conversation">Begin with one powerful conversation<span class="pill-sub">Confidential 30 minutes</span></a>
@@ -342,18 +343,33 @@ footer .f-copy{letter-spacing:.26em}
 <!-- ═══════════ 2 · RECOGNITION ═══════════ -->
 <section id="recognition" class="scene">
   <p class="kick" data-rise>01 &middot; The Outcomes</p>
-  <h2 class="assemble">What the work provides</h2>
+  <h2 class="assemble">What the method provides</h2>
   <div class="rule" data-line></div>
 
   <div class="r-rows">
-    <div class="r-row" data-rise><div class="in"><span class="idx">i</span><span class="prb">Mental overload &rarr;</span><h3 class="metal shimmer">Greater capacity to lead</h3><p>Regain the clarity, focus, and mental space required to carry significant responsibility without being consumed by it.</p></div></div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">ii</span><span class="prb">Conflict and complex situations &rarr;</span><h3 class="metal shimmer">Calm, strategic response</h3><p>Navigate difficult relationships and high-stakes situations without losing control, authority, or perspective.</p></div></div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">iii</span><span class="prb">Personal or professional crisis &rarr;</span><h3 class="metal shimmer">Stability when it matters most</h3><p>Receive direct support that helps you remain functional, decisive, and effective through periods of intense pressure.</p></div></div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">iv</span><span class="prb">Threats to business continuity &rarr;</span><h3 class="metal shimmer">Protection of what you have built</h3><p>Reduce the risk that a temporary crisis destabilizes your leadership, your team, or the organization you spent years building.</p></div></div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">v</span><span class="prb">Difficult decisions &rarr;</span><h3 class="metal shimmer">Clear and grounded action</h3><p>Reach the mental state required to understand the situation, make the decision, and act with conviction.</p></div></div>
+    <div class="r-row feat ticked" data-rise>
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div class="in"><span class="idx">i</span><span class="prb">Mental overload &rarr;</span><h3 class="metal shimmer">Greater capacity to lead</h3><p>Regain the clarity, focus, and mental space required to carry significant responsibility without being consumed by it.</p></div>
+    </div>
+    <div class="r-row feat ticked" data-rise>
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div class="in"><span class="idx">ii</span><span class="prb">Conflict and complex situations &rarr;</span><h3 class="metal shimmer">Calm, strategic response</h3><p>Navigate difficult relationships and high-stakes situations without losing control, authority, or perspective.</p></div>
+    </div>
+    <div class="r-row feat ticked" data-rise>
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div class="in"><span class="idx">iii</span><span class="prb">Personal or professional crisis &rarr;</span><h3 class="metal shimmer">Stability when it matters most</h3><p>Receive direct support that helps you remain functional, decisive, and effective through periods of intense pressure.</p></div>
+    </div>
+    <div class="r-row feat ticked" data-rise>
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div class="in"><span class="idx">iv</span><span class="prb">Threats to business continuity &rarr;</span><h3 class="metal shimmer">Protection of what you have built</h3><p>Reduce the risk that a temporary crisis destabilizes your leadership, your team, or the organization you spent years building.</p></div>
+    </div>
+    <div class="r-row feat ticked" data-rise>
+      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
+      <div class="in"><span class="idx">v</span><span class="prb">Difficult decisions &rarr;</span><h3 class="metal shimmer">Clear and grounded action</h3><p>Reach the mental state required to understand the situation, make the decision, and act with conviction.</p></div>
+    </div>
   </div>
 
-  <p class="statement" data-rise>This work strengthens your ability to carry responsibility, remain effective under pressure, and protect the people, relationships, and organization that depend on your leadership.</p>
+  <p class="statement" data-rise>The method strengthens your ability to carry responsibility, remain effective under pressure, and protect the people, relationships, and organization that depend on your leadership.</p>
 
   <a class="mentorline" href="michal-ksiadzyna.html" data-rise>
     <span class="m-photo ticked">
@@ -379,7 +395,7 @@ footer .f-copy{letter-spacing:.26em}
     <div class="fn-card feat ticked" data-rise>
       <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
       <h4>This is for</h4>
-      <p><span class="metal shimmer">Leaders carrying significant responsibility.</span> <span class="fn-rest">Entrepreneurs, executives, founders, artists, and athletes who want to develop the capacity of their mind.</span></p>
+      <p><span class="metal shimmer">Leaders carrying significant responsibility.</span> <span class="fn-rest">Entrepreneurs, executives, founders, and athletes who want to develop the capacity of their mind.</span></p>
     </div>
     <div class="fn-card no" data-rise>
       <h4>This is not for</h4>
@@ -405,7 +421,7 @@ footer .f-copy{letter-spacing:.26em}
   <div class="body">
     <p data-rise>The mentoring strengthens the person who carries responsibility. It finds the emotional blockages that drain capacity and repairs them at the source. The mind runs clearer, holds steady under load, and carries more with less strain.</p>
     <p data-rise>A business should not become vulnerable because the person leading it is moving through a difficult period. The mentoring protects your ability to function, the quality of your decisions, the stability of your team, and the value you have already created.</p>
-    <p class="method metal shimmer" data-rise>This is The Shen Method: emotion mentoring built for minds that carry responsibility.</p>
+    <p class="method metal shimmer" data-rise>This is The Shen Method and emotion mentoring built for healthier, stronger, more capable, more adaptable minds.</p>
   </div>
 </section>
 
@@ -484,11 +500,9 @@ footer .f-copy{letter-spacing:.26em}
   <div class="convpanel ticked" data-rise>
     <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
     <form action="https://formspree.io/f/mvzblnyr" method="POST">
-      <p class="kick" style="letter-spacing:.34em;text-indent:.34em">Leave an email address</p>
+      <p class="kick" style="letter-spacing:.34em;text-indent:.34em">Provide your email address</p>
       <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email</label>
       <input type="email" id="email" name="email" required placeholder="your e-mail" autocomplete="email">
-      <label class="q-label" for="shift">If you operated at full capacity, what would be different?</label>
-      <textarea id="shift" name="shift" rows="3" placeholder="Describe the shift you are ready to make. Optional."></textarea>
       <input type="hidden" name="version" value="live_v3">
       <button class="pill solid" type="submit">Begin with one powerful conversation<span class="pill-sub">Confidential 30 minutes</span></button>
       <p class="fine">You get the details by email.</p>

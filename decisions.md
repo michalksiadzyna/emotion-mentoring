@@ -5,6 +5,19 @@
 
 ---
 
+## OUTCOME ROUND 2 (user, 2026-07-18, voice) — supersedes conflicting Round-1 entries
+
+- **HERO L1 OPEN:** "Stay clear." ruled needing work — 10 replacement propositions ordered; l1 unchanged until his pick. "Lead well. Protect what you have built." stands.
+- **HERO L2 RULED:** "...increase their capacity under pressure" stays; decisions clause = **"develop a mind capable of better decisions"** ("make better decisions" retired — the value is the mind that produces the decisions).
+- **"WORK" BANNED AGAIN:** h2 = **"What the method provides"**; statement = **"The method strengthens your ability..."** ("this work" retired; "the method" is his chosen subject here).
+- **OUTCOME ROWS VISUALLY PROMOTED:** all five rows carry the old featured-card treatment (hairline frame, gold tint, metallic corner ticks, 26px gaps) — the flat list ruled not good enough visually.
+- **METHOD LINE DICTATED:** "This is The Shen Method and emotion mentoring built for healthier, stronger, more capable, more adaptable minds." (the "minds that carry responsibility" line ruled NOT TRUE).
+- **PORTRAIT RULED:** bigger, portrait orientation (height over width) — now clamp(230-300px) wide at 3/4 aspect.
+- **"ARTISTS" SCRATCHED** from the This-is-for card (entrepreneurs, executives, founders, athletes remain).
+- **CTA SPACING STANDARDIZED:** space above and below both "Begin with one powerful conversation" blocks equalized at --sp-3 (#recognition and #proof padding-bottom → --sp-3).
+- **FORM RULED:** kick = **"Provide your email address"** ("Leave an email address" retired). EMAIL ONLY — the full-capacity question + textarea REMOVED (Round-1 form addition dead).
+- **TESTIMONIAL:** Lenard slot needs a CEO author; only Czajkowski is CEO-confirmed — user will source a new CEO quote himself; Lenard stays until then.
+
 ## OPERATION OUTCOME (user brief, 2026-07-18) — supersedes conflicting entries below
 
 - **REPOSITIONING ORDERED:** the offer is communicated through concrete positive outcomes, never primarily through problems. Pattern sitewide: problem → positive outcome. Positioning: strategic support for leaders, strengthening of the mind under responsibility, decision-making support, crisis support, protection of leadership continuity, protection of what the client has built. Never generic therapy/coaching/motivational/stress-management framing.
