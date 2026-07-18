@@ -7,7 +7,7 @@
 
 ## OUTCOME ROUND 2 (user, 2026-07-18, voice) — supersedes conflicting Round-1 entries
 
-- **HERO L1 OPEN:** "Stay clear." ruled needing work — 10 replacement propositions ordered; l1 unchanged until his pick. "Lead well. Protect what you have built." stands.
+- **HERO L1 RULED (user pick, option E, 2026-07-18): "See clearly. Lead well. Protect what you have built."** ("Stay clear." retired; chosen from 10 propositions in hero_l1_propositions.html).
 - **HERO L2 RULED:** "...increase their capacity under pressure" stays; decisions clause = **"develop a mind capable of better decisions"** ("make better decisions" retired — the value is the mind that produces the decisions).
 - **"WORK" BANNED AGAIN:** h2 = **"What the method provides"**; statement = **"The method strengthens your ability..."** ("this work" retired; "the method" is his chosen subject here).
 - **OUTCOME ROWS VISUALLY PROMOTED:** all five rows carry the old featured-card treatment (hairline frame, gold tint, metallic corner ticks, 26px gaps) — the flat list ruled not good enough visually.
