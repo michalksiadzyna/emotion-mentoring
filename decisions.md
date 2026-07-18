@@ -5,6 +5,12 @@
 
 ---
 
+## RULINGS 2026-07-18
+
+- **M-BIO NAME RULED (user, 2026-07-18, final):** the mentorline name reads **Michał "Shen" Ksiądzyna** (verbatim, diacritics, Shen inside the name). The provisional "Known as Shen. Every session and every conversation is with him, one on one." is DEAD — never applied, now retired. The sourced facts bio line ("More than 11 years...") stays.
+- **FOR/NOT-FOR header:** stays PROVISIONAL — user confirms direction but a new proposition is still being worked; do not lock.
+- **SEO pass (JSON-LD refresh on V3 pages):** deferred by user — "later".
+
 ## RECOGNITION LIST REPLACED (user, 2026-07-15): nine situations, user's verbatim statements
 
 - User supplied nine "Situations I Help You Navigate" statements and ruled: **use his clear statements verbatim** — no Claude rewrites (crafted A/B/C versions rejected with "you were given clear statements, use them").
