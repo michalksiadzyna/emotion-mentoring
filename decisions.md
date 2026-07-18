@@ -10,6 +10,7 @@
 - **HERO L1 RULED (user pick, option E, 2026-07-18): "See clearly. Lead well. Protect what you have built."** ("Stay clear." retired; chosen from 10 propositions in hero_l1_propositions.html).
 - **HERO L2 RULED:** "...increase their capacity under pressure" stays; decisions clause = **"develop a mind capable of better decisions"** ("make better decisions" retired — the value is the mind that produces the decisions).
 - **"WORK" BANNED AGAIN:** h2 = **"What the method provides"**; statement = **"The method strengthens your ability..."** ("this work" retired; "the method" is his chosen subject here).
+- **CARD RHYTHM RULED (user, 2026-07-18):** the roman numeral counts as non-existing for card spacing — it floats top-right (absolute, at the padding line); distance top-border→problem label EQUALS bottom-border→body text (verified 42px both).
 - **OUTCOME ROWS VISUALLY PROMOTED:** all five rows carry the old featured-card treatment (hairline frame, gold tint, metallic corner ticks, 26px gaps) — the flat list ruled not good enough visually.
 - **METHOD LINE DICTATED:** "This is The Shen Method and emotion mentoring built for healthier, stronger, more capable, more adaptable minds." (the "minds that carry responsibility" line ruled NOT TRUE).
 - **PORTRAIT RULED:** bigger, portrait orientation (height over width) — now clamp(230-300px) wide at 3/4 aspect.
