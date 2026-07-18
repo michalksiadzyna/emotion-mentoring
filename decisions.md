@@ -5,6 +5,21 @@
 
 ---
 
+## OPERATION OUTCOME (user brief, 2026-07-18) — supersedes conflicting entries below
+
+- **REPOSITIONING ORDERED:** the offer is communicated through concrete positive outcomes, never primarily through problems. Pattern sitewide: problem → positive outcome. Positioning: strategic support for leaders, strengthening of the mind under responsibility, decision-making support, crisis support, protection of leadership continuity, protection of what the client has built. Never generic therapy/coaching/motivational/stress-management framing.
+- **AUDIENCE BROADENED:** entrepreneurs, executives, founders, artists, athletes, and other high performers carrying significant responsibility (supersedes CEO-only framing; kicker now "Emotion Mentoring for Leaders").
+- **HERO DICTATED:** l1 "Stay clear. Lead well." + "Protect what you have built." (metal, two lines) · l2 "I help leaders increase their capacity under pressure, make better decisions, and remain effective through personal and professional crises." — the "I" here is user-dictated and supersedes the no-I ruling for this line. Old loneliness-stat hero + RHR/Stanford citeline RETIRED. Hero kept lean (no support line).
+- **CTA DICTATED: "Begin with one powerful conversation"** — all pills, form button, sticky mobile CTA ("Book your conversation" retired on index; sub-line "Confidential 30 minutes" stays).
+- **OUTCOMES SECTION DICTATED:** h2 "What the work provides" (user's verbatim title; supersedes never-"work" phrasing for this title). Five rows, each problem-tag → metal outcome headline → body, all copy user-verbatim: mental overload→Greater capacity to lead · conflict→Calm, strategic response · crisis→Stability when it matters most · continuity threats→Protection of what you have built · difficult decisions→Clear and grounded action. The nine-situation list RETIRED from index (featured-row treatment retired with it).
+- **SUPPORTING STATEMENT DICTATED (prominent, between gold hairlines after outcomes):** "This work strengthens your ability to carry responsibility, remain effective under pressure, and protect the people, relationships, and organization that depend on your leadership."
+- **BUSINESS CONTINUITY MESSAGE:** Mentoring section para 2 carries it ("A business should not become vulnerable because the person leading it is moving through a difficult period..."). Credible-language rule: protect what you have built / maintain continuity / reduce risk of destabilization; NEVER guarantees ("your business will never fail" banned).
+- **METHOD LINE:** "...built for minds that carry responsibility." (was "carry companies" — audience broadening).
+- **FORM:** optional question restored under the email field: label "If you operated at full capacity, what would be different?" + textarea placeholder "Describe the shift you are ready to make. Optional." Email remains the only required field.
+- **FOR-card:** "Leaders carrying significant responsibility." + "Entrepreneurs, executives, founders, artists, and athletes who want to develop the capacity of their mind."
+- **TONE RULES:** concise, calm, premium, credible; banned: unlock/journey/empower/thrive/healing/breakthrough, fear-based copy, therapy/coaching/spiritual clichés, emergency-mental-health register.
+- Scope note: subpage/narrative CTA pills still carry the old "Book your conversation" register — alignment pending user direction.
+
 ## RULINGS 2026-07-18
 
 - **M-BIO NAME RULED (user, 2026-07-18, final):** the mentorline name reads **Michał "Shen" Ksiądzyna** (verbatim, diacritics, Shen inside the name). The provisional "Known as Shen. Every session and every conversation is with him, one on one." is DEAD — never applied, now retired. The sourced facts bio line ("More than 11 years...") stays.

@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Emotion Mentoring for CEOs — The Shen Method</title>
-<meta name="description" content="Emotion Mentoring for CEOs. One-on-one mentoring with Michal Ksiadzyna on navigating life while leading an organization.">
+<title>Emotion Mentoring for Leaders — The Shen Method</title>
+<meta name="description" content="Strategic support for leaders. One-on-one mentoring with Michal Ksiadzyna: greater capacity under pressure, clearer decisions, and protection of what you have built.">
 <link rel="canonical" href="https://emotionmentoring.com/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta property="og:title" content="Emotion Mentoring for CEOs — The Shen Method">
-<meta property="og:description" content="Emotion Mentoring for CEOs. One-on-one mentoring with Michal Ksiadzyna on navigating life while leading an organization.">
+<meta property="og:title" content="Emotion Mentoring for Leaders — The Shen Method">
+<meta property="og:description" content="Strategic support for leaders. One-on-one mentoring with Michal Ksiadzyna: greater capacity under pressure, clearer decisions, and protection of what you have built.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://emotionmentoring.com/">
 <meta property="og:image" content="https://emotionmentoring.com/michal-ksiadzyna-emotion-mentoring.png">
@@ -107,11 +107,9 @@ html.no-intro #veil{display:none}
 #hook .l1wrap{display:block;overflow:hidden;padding-bottom:.08em}
 #hook .l1{display:block;font-variant:small-caps;font-size:var(--fs-l)}
 #hook .l2{display:block;font-style:italic;font-weight:400;font-size:var(--fs-m);color:var(--text);margin-top:var(--sp-1);max-width:22em}
-#hook .support{max-width:760px;margin:var(--sp-2) auto 0;text-align:center;font-family:var(--sans);font-style:normal;font-weight:400;font-size:var(--fs-m);line-height:1.5;letter-spacing:.02em;color:var(--gold-hi)}
-#hook .support::before{content:"";display:block;width:100%;height:1px;margin:0 auto var(--sp-1);background:linear-gradient(90deg,transparent,var(--gold) 14%,var(--gold) 86%,transparent)}
-#hook .support::after{content:"";display:block;width:100%;height:1px;margin:var(--sp-1) auto 0;background:linear-gradient(90deg,transparent,var(--gold) 14%,var(--gold) 86%,transparent)}
-#hook .citeline{margin-top:var(--sp-1);font-family:var(--serif);font-style:italic;font-size:var(--fs-s);letter-spacing:.02em;color:var(--text-dim)}
-@media (max-width:760px){#hook .citeline .csep{display:none}#hook .citeline .cite2{display:block}}
+.statement{max-width:720px;margin:var(--sp-3) auto 0;text-align:center;font-family:var(--serif);font-style:italic;font-weight:500;font-size:var(--fs-m);line-height:1.55;color:var(--gold-hi)}
+.statement::before{content:"";display:block;width:100%;height:1px;margin:0 auto var(--sp-1);background:linear-gradient(90deg,transparent,var(--gold) 14%,var(--gold) 86%,transparent)}
+.statement::after{content:"";display:block;width:100%;height:1px;margin:var(--sp-1) auto 0;background:linear-gradient(90deg,transparent,var(--gold) 14%,var(--gold) 86%,transparent)}
 #hook .h-cta{margin-top:var(--sp-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
 @keyframes cue{0%{transform:scaleY(0)}45%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
@@ -148,10 +146,11 @@ html.no-intro #veil{display:none}
 .r-row:hover .in{transform:translateX(14px)}
 .r-row .idx{font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.2em;color:var(--gold-dim);min-width:36px;transition:color .25s}
 .r-row:hover .idx{color:var(--gold)}
-.r-row h3{font-family:var(--sans);font-weight:300;font-size:var(--fs-s);line-height:1.6;color:var(--text);flex-shrink:0;max-width:30em}
+.r-row .prb{font-family:var(--sans);font-weight:400;font-size:var(--fs-tag);letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim);transition:color .25s}
+.r-row:hover .prb{color:var(--gold-dim)}
+.r-row h3{font-family:var(--serif);font-variant:small-caps;font-weight:400;letter-spacing:.04em;font-size:var(--fs-m);line-height:1.4;color:var(--gold-hi);flex-shrink:0;max-width:30em}
 .r-row p{font-size:var(--fs-s);color:var(--text-dim);max-width:26em;margin-left:auto;text-align:right;transition:color .3s}
 .r-row:hover p{color:var(--text)}
-.r-row.feat{padding:var(--sp-2) 2.5vw;background:rgba(201,169,110,.035)}
 @media (min-width:861px){
   #hook{align-items:center;text-align:center}
   #hook .l2{margin-left:auto;margin-right:auto}
@@ -169,15 +168,7 @@ html.no-intro #veil{display:none}
   .r-row .in{flex-direction:column;align-items:flex-start;gap:10px}
   .r-row h3{max-width:none}
   .r-row p{margin-left:0;text-align:left;max-width:36em}
-  .r-row.feat{padding:var(--sp-2) 2.5vw}
 }
-.r-row.feat h3{font-variant:small-caps;font-weight:400;letter-spacing:.04em;font-size:var(--fs-m);line-height:1.4}
-.r-row.feat:hover{background:rgba(201,169,110,.06)}
-/* featured corners — metallic; fixed size, glow (not growth) on hover */
-.r-row.feat .tick,.r-row.feat:hover .tick{width:18px;height:18px}
-.r-row.feat .tick i{clip-path:polygon(0 0,100% 0,100% 16%,16% 16%,16% 100%,0 100%);animation:tickshine 4.5s ease-in-out infinite;transition:filter .35s ease}
-.r-row.feat:hover .tick i{filter:brightness(1.45) drop-shadow(0 0 7px rgba(217,196,145,.65))}
-@keyframes tickshine{0%,100%{background-position:0% 0%}50%{background-position:85% 85%}}
 @media (max-width:860px){.r-row .in{flex-direction:column;gap:10px}.r-row p{margin-left:0;text-align:left}}
 
 .fn-head{max-width:720px;margin:0 auto var(--sp-2);text-align:center;font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;font-size:var(--fs-l);line-height:1.1;color:var(--gold-hi)}
@@ -276,6 +267,12 @@ html.no-intro #veil{display:none}
   padding:14px 8px 5px;outline:none;border-radius:0;transition:border-color .3s,box-shadow .3s}
 .convpanel input[type="email"]::placeholder{color:var(--text-dim);letter-spacing:.04em}
 .convpanel input[type="email"]:focus{border-color:var(--gold);box-shadow:0 18px 26px -22px rgba(217,196,145,.5)}
+.convpanel .q-label{display:block;max-width:520px;font-family:var(--serif);font-style:italic;font-size:var(--fs-s);color:var(--text);line-height:1.6}
+.convpanel textarea{width:100%;max-width:520px;background:transparent;border:1px solid rgba(201,169,110,.25);
+  color:var(--gold-hi);font-family:var(--sans);font-weight:300;font-size:var(--fs-s);line-height:1.6;
+  padding:14px 16px;outline:none;border-radius:0;resize:vertical;min-height:86px;transition:border-color .3s}
+.convpanel textarea::placeholder{color:var(--text-dim);letter-spacing:.04em}
+.convpanel textarea:focus{border-color:var(--gold)}
 .convpanel .fine{font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.26em;text-transform:uppercase;color:var(--text-dim);line-height:2}
 .conv-quote{max-width:520px;margin:var(--sp-3) auto 0;text-align:center}
 .conv-quote p{font-family:var(--serif);font-style:italic;font-size:var(--fs-s);color:var(--text);line-height:1.6}
@@ -305,7 +302,9 @@ footer .f-copy{letter-spacing:.26em}
   #hook{padding:var(--sp-5) 7vw var(--sp-4)}
   #hook .bar{padding:22px 7vw}
   .cta-block{gap:28px}
+  .pill{white-space:normal;line-height:1.7;padding:14px 30px}
 }
+@media (max-width:420px){#mcta{letter-spacing:.12em;text-indent:.12em}}
 @media (prefers-reduced-motion: reduce){
   .pill::before{transition:none}
   .r-row .in,.fn-card,.q-card{transition:none}
@@ -325,15 +324,14 @@ footer .f-copy{letter-spacing:.26em}
 <!-- ═══════════ 1 · HOOK ═══════════ -->
 <section id="hook" class="scene">
   <div class="bar" data-fade><b>Michal Ksiadzyna</b><b>The Shen Method</b></div>
-  <p class="kicker" data-fade>Emotion Mentoring for CEOs</p>
+  <p class="kicker" data-fade>Emotion Mentoring for Leaders</p>
   <h1>
-    <span class="l1wrap"><span class="l1 metal shimmer">Half of CEOs are lonely at the top</span></span>
-    <span class="l2" id="l2">Two-thirds face it without any outside advice.</span>
+    <span class="l1wrap"><span class="l1 metal shimmer">Stay clear. Lead well.</span></span>
+    <span class="l1wrap"><span class="l1 metal shimmer">Protect what you have built.</span></span>
+    <span class="l2" id="l2">I help leaders increase their capacity under pressure, make better decisions, and remain effective through personal and professional crises.</span>
   </h1>
-  <p class="citeline" data-fade>RHR International via Harvard Business Review<span class="csep"> &middot; </span><span class="cite2">Stanford GSB</span></p>
-  <p class="support" data-fade>One-on-one mentoring on navigating life while leading an organization.</p>
   <div class="h-cta" data-fade>
-    <a class="pill solid" href="#conversation">Book your conversation<span class="pill-sub">Confidential 30 minutes</span></a>
+    <a class="pill solid" href="#conversation">Begin with one powerful conversation<span class="pill-sub">Confidential 30 minutes</span></a>
     <div class="ctaq">
       <p>&ldquo;He doesn&rsquo;t hide behind catchy sales copy. He simply delivers results.&rdquo;</p>
       <span>Arkadiusz Czajkowski &middot; CEO</span>
@@ -343,27 +341,19 @@ footer .f-copy{letter-spacing:.26em}
 
 <!-- ═══════════ 2 · RECOGNITION ═══════════ -->
 <section id="recognition" class="scene">
-  <p class="kick" data-rise>01 &middot; The Situations</p>
-  <h2 class="assemble">In what situations Emotion Mentoring can help you?</h2>
+  <p class="kick" data-rise>01 &middot; The Outcomes</p>
+  <h2 class="assemble">What the work provides</h2>
   <div class="rule" data-line></div>
 
   <div class="r-rows">
-    <div class="r-row feat ticked" data-rise>
-      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
-      <div class="in"><span class="idx">i</span><h3 class="metal shimmer">Leadership isolation and loneliness.</h3><p>Decisions you cannot openly discuss with employees, partners, family, or friends.</p></div>
-    </div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">ii</span><h3>Conflicts and complex social situations involving partners, family, employees, and business relationships.</h3></div></div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">iii</span><h3>Mental overload, constant pressure, and carrying responsibility alone.</h3></div></div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">iv</span><h3>Personal life crises, sudden changes, and periods of instability.</h3></div></div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">v</span><h3>Sudden wealth, rapid success, and their impact on relationships, security, and lifestyle.</h3></div></div>
-    <div class="r-row feat ticked" data-rise>
-      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
-      <div class="in"><span class="idx">vi</span><h3 class="metal shimmer">Difficult decisions.</h3><p>Moving from confusion and internal pressure to the calm, clarity, and perspective needed to choose well.</p></div>
-    </div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">vii</span><h3>Loss of meaning, direction, or motivation after achieving success.</h3></div></div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">viii</span><h3>Loss of trust and control. Uncertainty about whom to trust, what to delegate, and how to protect your interests.</h3></div></div>
-    <div class="r-row" data-rise><div class="in"><span class="idx">ix</span><h3>Major life and business transitions. Growth, exit, succession, relocation, divorce, inheritance, or a change of direction.</h3></div></div>
+    <div class="r-row" data-rise><div class="in"><span class="idx">i</span><span class="prb">Mental overload &rarr;</span><h3 class="metal shimmer">Greater capacity to lead</h3><p>Regain the clarity, focus, and mental space required to carry significant responsibility without being consumed by it.</p></div></div>
+    <div class="r-row" data-rise><div class="in"><span class="idx">ii</span><span class="prb">Conflict and complex situations &rarr;</span><h3 class="metal shimmer">Calm, strategic response</h3><p>Navigate difficult relationships and high-stakes situations without losing control, authority, or perspective.</p></div></div>
+    <div class="r-row" data-rise><div class="in"><span class="idx">iii</span><span class="prb">Personal or professional crisis &rarr;</span><h3 class="metal shimmer">Stability when it matters most</h3><p>Receive direct support that helps you remain functional, decisive, and effective through periods of intense pressure.</p></div></div>
+    <div class="r-row" data-rise><div class="in"><span class="idx">iv</span><span class="prb">Threats to business continuity &rarr;</span><h3 class="metal shimmer">Protection of what you have built</h3><p>Reduce the risk that a temporary crisis destabilizes your leadership, your team, or the organization you spent years building.</p></div></div>
+    <div class="r-row" data-rise><div class="in"><span class="idx">v</span><span class="prb">Difficult decisions &rarr;</span><h3 class="metal shimmer">Clear and grounded action</h3><p>Reach the mental state required to understand the situation, make the decision, and act with conviction.</p></div></div>
   </div>
+
+  <p class="statement" data-rise>This work strengthens your ability to carry responsibility, remain effective under pressure, and protect the people, relationships, and organization that depend on your leadership.</p>
 
   <a class="mentorline" href="michal-ksiadzyna.html" data-rise>
     <span class="m-photo ticked">
@@ -389,7 +379,7 @@ footer .f-copy{letter-spacing:.26em}
     <div class="fn-card feat ticked" data-rise>
       <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
       <h4>This is for</h4>
-      <p><span class="metal shimmer">CEOs, founders, and leaders</span> <span class="fn-rest">who want to develop the capacity of their mind.</span></p>
+      <p><span class="metal shimmer">Leaders carrying significant responsibility.</span> <span class="fn-rest">Entrepreneurs, executives, founders, artists, and athletes who want to develop the capacity of their mind.</span></p>
     </div>
     <div class="fn-card no" data-rise>
       <h4>This is not for</h4>
@@ -398,7 +388,7 @@ footer .f-copy{letter-spacing:.26em}
   </div>
 
   <div class="cta-block" data-rise>
-    <a class="pill solid" href="#conversation">Book your conversation<span class="pill-sub">Confidential 30 minutes</span></a>
+    <a class="pill solid" href="#conversation">Begin with one powerful conversation<span class="pill-sub">Confidential 30 minutes</span></a>
     <div class="ctaq">
       <p>&ldquo;What hit me about this method was unlike anything previous.&rdquo;</p>
       <span>Agnieszka Palka &middot; Entrepreneur &middot; Mother</span>
@@ -413,9 +403,9 @@ footer .f-copy{letter-spacing:.26em}
   <h2 class="assemble">A stronger, more adapted mind</h2>
   <div class="rule" data-line></div>
   <div class="body">
-    <p data-rise>Life leaves errors in the mind. Damage, emotional blockages that were never handled. They surface as heavy decisions, strained relationships, and fear that rises without reason.</p>
-    <p data-rise>The mentoring finds those blockages and repairs them at the source. The mind adapts again. It runs better and carries more with less strain.</p>
-    <p class="method metal shimmer" data-rise>This is The Shen Method: emotion mentoring built for minds that carry companies.</p>
+    <p data-rise>The mentoring strengthens the person who carries responsibility. It finds the emotional blockages that drain capacity and repairs them at the source. The mind runs clearer, holds steady under load, and carries more with less strain.</p>
+    <p data-rise>A business should not become vulnerable because the person leading it is moving through a difficult period. The mentoring protects your ability to function, the quality of your decisions, the stability of your team, and the value you have already created.</p>
+    <p class="method metal shimmer" data-rise>This is The Shen Method: emotion mentoring built for minds that carry responsibility.</p>
   </div>
 </section>
 
@@ -442,7 +432,7 @@ footer .f-copy{letter-spacing:.26em}
   <div class="q-more" data-rise><a class="q-all" href="testimonials.html">More testimonials &rarr;</a></div>
 
   <div class="cta-block" data-rise>
-    <a class="pill solid" href="#conversation">Book your conversation<span class="pill-sub">Confidential 30 minutes</span></a>
+    <a class="pill solid" href="#conversation">Begin with one powerful conversation<span class="pill-sub">Confidential 30 minutes</span></a>
     <div class="ctaq">
       <p>&ldquo;Since that work, I have never felt lonely.&rdquo;</p>
       <span>Beata Brzychczyk</span>
@@ -497,8 +487,10 @@ footer .f-copy{letter-spacing:.26em}
       <p class="kick" style="letter-spacing:.34em;text-indent:.34em">Leave an email address</p>
       <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email</label>
       <input type="email" id="email" name="email" required placeholder="your e-mail" autocomplete="email">
+      <label class="q-label" for="shift">If you operated at full capacity, what would be different?</label>
+      <textarea id="shift" name="shift" rows="3" placeholder="Describe the shift you are ready to make. Optional."></textarea>
       <input type="hidden" name="version" value="live_v3">
-      <button class="pill solid" type="submit">Book your conversation<span class="pill-sub">Confidential 30 minutes</span></button>
+      <button class="pill solid" type="submit">Begin with one powerful conversation<span class="pill-sub">Confidential 30 minutes</span></button>
       <p class="fine">You get the details by email.</p>
     </form>
   </div>
@@ -527,7 +519,7 @@ footer .f-copy{letter-spacing:.26em}
 </footer>
 
 <!-- sticky mobile CTA -->
-<a id="mcta" href="#conversation">Book your conversation</a>
+<a id="mcta" href="#conversation">Begin with one powerful conversation</a>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/ScrollTrigger.min.js"></script>
@@ -569,9 +561,9 @@ function heroPlay(){
   var l2chars = splitChars(document.getElementById('l2'));
   var tl = gsap.timeline({defaults:{ease:'power3.out'}});
   tl.from('#hook .kicker',{opacity:0,y:12,duration:.4},0)
-    .from('#hook .l1',{yPercent:110,duration:.5},.05)
-    .from(l2chars,{yPercent:105,opacity:0,duration:.4,stagger:.012},.3)
-    .from(['#hook .bar','#hook .support','#hook .h-cta'],{opacity:0,y:18,duration:.5,stagger:.07},.42);
+    .from('#hook .l1',{yPercent:110,duration:.5,stagger:.12},.05)
+    .from(l2chars,{yPercent:105,opacity:0,duration:.4,stagger:.008},.3)
+    .from(['#hook .bar','#hook .h-cta'],{opacity:0,y:18,duration:.5,stagger:.07},.42);
 }
 
 /* ── VEIL : canvas ink-dissolve with champagne edge light ── */
@@ -737,7 +729,7 @@ if(animOK){
   form.addEventListener('submit', function(e){
     e.preventDefault();
     var btn = form.querySelector('button[type="submit"]');
-    var original = btn.textContent;
+    var original = Array.prototype.slice.call(btn.childNodes);
     btn.disabled = true; btn.textContent = 'Sending…';
     fetch(form.action, { method:'POST', body:new FormData(form), headers:{ 'Accept':'application/json' } })
       .then(function(r){
@@ -745,7 +737,8 @@ if(animOK){
         else { throw new Error('formspree'); }
       })
       .catch(function(){
-        btn.disabled = false; btn.textContent = original;
+        btn.disabled = false; btn.textContent = '';
+        original.forEach(function(n){ btn.appendChild(n); });
         var m = form.querySelector('.form-err');
         if(!m){ m = document.createElement('p'); m.className = 'fine form-err'; form.appendChild(m); }
         m.textContent = 'Something did not go through. Please email michal.ksiadzyna@gmail.com directly.';
