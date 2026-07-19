@@ -43,12 +43,12 @@ try{ history.scrollRestoration = 'manual'; }catch(e){}
   --fs-tag:.66rem;
   /* single sanctioned exception: the spots line (user ruling 2026-07-15) */
   --fs-spots:clamp(1.8rem,3.6vw,2.5rem);
-  /* spacing system - five sanctioned vertical distances. No other vh spacing exists. */
-  --sp-1:2.4vh;
-  --sp-2:4.5vh;
-  --sp-3:7vh;
-  --sp-4:10vh;
-  --sp-5:18vh;
+  /* spacing system - five sanctioned vertical distances, round px (user ruling 2026-07-19). */
+  --sp-1:20px;
+  --sp-2:40px;
+  --sp-3:60px;
+  --sp-4:90px;
+  --sp-5:160px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
