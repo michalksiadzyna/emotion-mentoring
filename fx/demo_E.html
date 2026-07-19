@@ -137,7 +137,7 @@
       rgba(242,232,212,.85) 62%,
       rgba(242,232,212,0) 100%);
     filter:blur(.6px);
-    box-shadow:0 0 26px 3px rgba(217,196,145,.5);
+    box-shadow:0 0 18px 2px rgba(217,196,145,.35);
     will-change:transform,opacity;
     pointer-events:none;
   }
@@ -157,12 +157,12 @@
     100%{opacity:0;transform:scaleX(1)}
   }
   @keyframes veilUp{
-    from{transform:translateY(0);opacity:1}
-    to{transform:translateY(-103%);opacity:.25}
+    from{transform:translateY(0)}
+    to{transform:translateY(-103%)}
   }
   @keyframes veilDown{
-    from{transform:translateY(0);opacity:1}
-    to{transform:translateY(103%);opacity:.25}
+    from{transform:translateY(0)}
+    to{transform:translateY(103%)}
   }
   @keyframes heroBorn{
     from{opacity:0;transform:scaleY(.68) scaleX(.99)}

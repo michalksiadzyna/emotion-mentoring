@@ -120,7 +120,7 @@
     height:100%;
     width:1px;
     transform:translateX(-50%);
-    background:linear-gradient(180deg,transparent 0%,var(--gold) 38%,var(--gold-hi) 50%,var(--gold) 62%,transparent 100%);
+    background:linear-gradient(180deg,transparent 0%,var(--gold-lt) 38%,#fdf6e3 50%,var(--gold-lt) 62%,transparent 100%);
     opacity:0;
     will-change:width,opacity,box-shadow;
   }
@@ -132,7 +132,7 @@
     height:100%;
     width:1px;
     transform:translateX(-50%);
-    background:linear-gradient(180deg,transparent 0%,rgba(201,169,110,.9) 50%,transparent 100%);
+    background:linear-gradient(180deg,transparent 0%,rgba(217,196,145,.8) 50%,transparent 100%);
     filter:blur(14px);
     opacity:0;
     will-change:width,opacity;
@@ -237,7 +237,7 @@
     /* 0.4s — a low warm glow escapes through the seam, widening it */
     tl.to(seam,{
       width:4,
-      boxShadow:'0 0 26px rgba(201,169,110,.55), 0 0 70px rgba(201,169,110,.22)',
+      boxShadow:'0 0 20px rgba(217,196,145,.45), 0 0 56px rgba(217,196,145,.16)',
       duration:0.3,
       ease:'power2.inOut'
     },0.4);
