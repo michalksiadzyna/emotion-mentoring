@@ -113,6 +113,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;o
 .statement::before{content:"";display:block;width:100%;height:1px;margin:0 auto var(--sp-1);background:linear-gradient(90deg,transparent,var(--gold) 14%,var(--gold) 86%,transparent)}
 .statement::after{content:"";display:block;width:100%;height:1px;margin:var(--sp-1) auto 0;background:linear-gradient(90deg,transparent,var(--gold) 14%,var(--gold) 86%,transparent)}
 #hook .h-cta{margin-top:var(--sp-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+#hook .astrip{margin-top:var(--sp-2);text-align:center;font-family:var(--sans);font-weight:400;font-size:var(--fs-tag);letter-spacing:.26em;text-transform:uppercase;color:var(--text-dim);line-height:2.2}
 @keyframes cue{0%{transform:scaleY(0)}45%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
 /* pill CTA */
@@ -218,6 +219,12 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;o
 #work .body{max-width:680px;margin-top:var(--sp-2)}
 #work .body p{font-size:var(--fs-s);line-height:1.8;color:var(--text)}
 #work .body p+p{margin-top:var(--sp-2)}
+.stages{margin-top:var(--sp-2);display:flex;flex-direction:column;gap:16px}
+.stage{display:flex;gap:20px;align-items:baseline}
+.stage .sidx{font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.2em;color:var(--gold-dim);min-width:26px}
+.stage p{font-size:var(--fs-s);line-height:1.8;color:var(--text)}
+.promise-h{margin-top:var(--sp-3);font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;font-size:var(--fs-m);color:var(--gold-hi)}
+.promise-h+p{margin-top:var(--sp-1)}
 #work .method{margin-top:var(--sp-2);font-family:var(--serif);font-style:italic;font-size:var(--fs-m);color:var(--gold-lt);line-height:1.5}
 .mentorline{display:flex;align-items:flex-start;gap:38px;margin-top:var(--sp-3);max-width:720px;text-decoration:none;transition:transform .25s}
 .mentorline:hover{transform:translateY(-3px)}
@@ -359,6 +366,7 @@ footer .f-copy{letter-spacing:.26em}
       <span>Arkadiusz Czajkowski &middot; CEO</span>
     </div>
   </div>
+  <p class="astrip">11+ years &middot; Thousands of one-on-one hours &middot; Every session with Michal &middot; Emergency access</p>
 </section>
 
 <!-- ═══════════ 2 · RECOGNITION ═══════════ -->
@@ -447,7 +455,13 @@ footer .f-copy{letter-spacing:.26em}
   <h2 class="assemble">A stronger, more adapted mind</h2>
   <div class="rule" data-line></div>
   <div class="body">
-    <p data-rise>The mentoring strengthens the person who carries responsibility. It finds the emotional blockages that drain capacity and repairs them at the source. The mind runs clearer, holds steady under load, and carries more with less strain.</p>
+    <p data-rise>The mentoring strengthens the person who carries responsibility.</p>
+    <div class="stages">
+      <div class="stage" data-rise><span class="sidx">i</span><p>It finds the emotional blockages that drain capacity.</p></div>
+      <div class="stage" data-rise><span class="sidx">ii</span><p>It repairs them at the source.</p></div>
+      <div class="stage" data-rise><span class="sidx">iii</span><p>The mind runs clearer, holds steady under load, and carries more with less strain.</p></div>
+    </div>
+    <h3 class="promise-h" data-rise>The promise</h3>
     <p data-rise>A business should not become vulnerable because the person leading it is moving through a difficult period. The mentoring protects your ability to function, the quality of your decisions, the stability of your team, and the value you have already created.</p>
     <p class="method metal shimmer" data-rise>This is The Shen Method, emotion mentoring built for healthier, stronger, more capable, more adaptable minds.</p>
   </div>
@@ -606,7 +620,7 @@ function heroPlay(){
     .fromTo('#hook .l1',{yPercent:110},{yPercent:0,duration:.5,stagger:.12},.05)
     .set(l2el,{autoAlpha:1},.28)
     .fromTo(l2chars,{yPercent:105,opacity:0},{yPercent:0,opacity:1,duration:.4,stagger:.008},.3)
-    .fromTo(['#hook .bar','#hook .h-cta'],{opacity:0,y:18},{opacity:1,y:0,duration:.5,stagger:.07},.42);
+    .fromTo(['#hook .bar','#hook .h-cta','#hook .astrip'],{opacity:0,y:18},{opacity:1,y:0,duration:.5,stagger:.07},.42);
 }
 
 /* ── ENTRANCE : the gold thread — plays on every load; text rises only after it is gone ── */
@@ -619,7 +633,7 @@ function heroPlay(){
   window.scrollTo(0,0);
 
   /* the stage stays empty while the dark parts */
-  gsap.set(['#hook .bar','#hook .kicker','#hook .h-cta'],{opacity:0});
+  gsap.set(['#hook .bar','#hook .kicker','#hook .h-cta','#hook .astrip'],{opacity:0});
   gsap.set('#hook .l1',{yPercent:110});
   gsap.set('#l2',{autoAlpha:0});
   unhide();
