@@ -112,7 +112,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;o
 .statement{max-width:720px;margin:var(--sp-3) auto 0;text-align:center;font-family:var(--serif);font-style:italic;font-weight:500;font-size:var(--fs-m);line-height:1.55;color:var(--gold-hi)}
 .statement::before{content:"";display:block;width:100%;height:1px;margin:0 auto var(--sp-1);background:linear-gradient(90deg,transparent,var(--gold) 14%,var(--gold) 86%,transparent)}
 .statement::after{content:"";display:block;width:100%;height:1px;margin:var(--sp-1) auto 0;background:linear-gradient(90deg,transparent,var(--gold) 14%,var(--gold) 86%,transparent)}
-#hook .h-cta{margin-top:var(--sp-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px}
+#hook .h-cta{margin-top:var(--sp-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--sp-3)}
 @keyframes cue{0%{transform:scaleY(0)}45%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
 
 /* pill CTA */
@@ -261,7 +261,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;o
 .q-card figcaption{margin-top:var(--sp-1);font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);transition:color .3s}
 .q-card:hover figcaption{color:var(--gold)}
 @media (max-width:860px){.q-grid{grid-template-columns:1fr}}
-.cta-block{margin-top:var(--sp-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;text-align:left}
+.cta-block{margin-top:var(--sp-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--sp-3);text-align:left}
 
 /* ═══ 5 · TERMS ═══ */
 #terms{background:var(--ink2)}
@@ -319,7 +319,6 @@ footer .f-copy{letter-spacing:.26em}
   .scene{padding:var(--sp-4) 7vw}
   #hook{padding:var(--sp-5) 7vw var(--sp-4)}
   #hook .bar{padding:22px 7vw}
-  .cta-block{gap:28px}
   .pill{white-space:normal;line-height:1.7;padding:14px 30px}
 }
 @media (max-width:420px){#mcta{letter-spacing:.12em;text-indent:.12em}}
