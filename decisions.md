@@ -10,6 +10,7 @@
 - **Effect chosen from 10 demos: option A, The Gold Thread** (champagne filament draws across an arched line, flares once, the dark parts along it). Ink-dissolve veil RETIRED from index.html.
 - **SEQUENCING RULED:** the thread must be GONE before any text exists — the stage stays empty while the dark parts; hero text rises only after the effect has fully cleared (thread dies at ~1.06s, panels clear ~1.27s, text starts after). The thread never crosses visible text.
 - **EVERY LOAD RULED:** the effect plays on every reload of index.html — the localStorage one-time gate REMOVED (supersedes the 2026-07-11 one-time ruling). Any input still skips instantly; reduced-motion gets the calm page.
+- **RETIMED (user, 2026-07-19, "too slow / desktop broken"):** overlap choreography — draw .42s, pulse, panels part .58–1.08s, thread dead by .74s, text begins .76s (inside the parting); total ~1.7s. Flash fixes: fx-wait class hides hero until the script takes over; thread hidden pre-script via CSS; scroll forced to top on load (scrollRestoration manual).
 - Demo pages remain at /fx/ (noindex, unlinked). Metal refit of all 10 demos ruled in after "cheap gold" complaint: brushed-champagne pour, conic aperture ring, ivory-core beams sitewide in demos.
 
 ## OUTCOME ROUND 2 (user, 2026-07-18, voice) — supersedes conflicting Round-1 entries

@@ -14,7 +14,10 @@
 <meta property="og:image" content="https://emotionmentoring.com/michal-ksiadzyna-emotion-mentoring.png">
 <meta name="twitter:card" content="summary">
 <script>
-/* entrance plays on every load (user ruling 2026-07-19) — no gate */
+/* entrance plays on every load (user ruling 2026-07-19) — no gate.
+   fx-wait hides the hero until the entrance script takes over (kills the first-paint flash). */
+document.documentElement.classList.add('fx-wait');
+try{ history.scrollRestoration = 'manual'; }catch(e){}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -72,6 +75,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;o
 
 /* ═══ ENTRANCE — the gold thread ═══ */
 #entrance{position:fixed;inset:0;z-index:5000;pointer-events:none;background:transparent}
+#ethread,#ethreadGlow{opacity:0}
+.fx-wait #hook .bar,.fx-wait #hook .kicker,.fx-wait #hook h1,.fx-wait #hook .h-cta{visibility:hidden}
 #entrance svg{position:absolute;inset:0;width:100%;height:100%;display:block}
 #eflare{position:absolute;left:50%;top:49.44%;width:34vmin;height:8vmin;transform:translate(-50%,-50%);
   background:radial-gradient(closest-side, rgba(253,246,227,.75), rgba(217,196,145,.28) 46%, transparent 72%);
@@ -604,13 +609,17 @@ function heroPlay(){
 /* ── ENTRANCE : the gold thread — plays on every load; text rises only after it is gone ── */
 (function(){
   var ent = document.getElementById('entrance');
-  if(!ent){ heroPlay(); return; }
-  if(!animOK){ ent.parentNode.removeChild(ent); heroPlay(); return; }
+  var unhide = function(){ document.documentElement.classList.remove('fx-wait'); };
+  if(!ent){ unhide(); heroPlay(); return; }
+  if(!animOK){ ent.parentNode.removeChild(ent); unhide(); heroPlay(); return; }
+
+  window.scrollTo(0,0);
 
   /* the stage stays empty while the dark parts */
   gsap.set(['#hook .bar','#hook .kicker','#hook .h-cta'],{opacity:0});
   gsap.set('#hook .l1',{yPercent:110});
   gsap.set('#l2',{autoAlpha:0});
+  unhide();
 
   var thread = document.getElementById('ethread'),
       glow   = document.getElementById('ethreadGlow'),
@@ -627,17 +636,19 @@ function heroPlay(){
   var tl = gsap.timeline({onComplete:finish});
   tl.set([thread,glow],{strokeDasharray:L,strokeDashoffset:L,opacity:1},0)
     .set(flare,{opacity:0,scale:.4},0)
-    /* 0.0–0.5 s : the filament draws itself across the width */
-    .to([thread,glow],{strokeDashoffset:0,duration:.5,ease:'power2.inOut'},0)
-    /* 0.5 s : one soft pulse at the centre */
-    .to(flare,{opacity:1,scale:1,duration:.16,ease:'power2.out'},.5)
-    .to(thread,{attr:{'stroke-width':2.6},duration:.16,ease:'power2.out'},.5)
-    .to(flare,{opacity:0,scale:1.7,duration:.26,ease:'power2.in'},.64)
-    /* 0.72–1.27 s : the black parts along the thread */
-    .to(pTop,{y:-520,duration:.55,ease:'power4.inOut'},.72)
-    .to(pBot,{y:520,duration:.55,ease:'power4.inOut'},.72)
-    /* the thread dies before any text exists */
-    .to([thread,glow],{opacity:0,duration:.28,ease:'power2.out'},.78);
+    /* 0.0–0.42 s : the filament draws itself across the width */
+    .to([thread,glow],{strokeDashoffset:0,duration:.42,ease:'power2.inOut'},0)
+    /* 0.42 s : one soft pulse at the centre */
+    .to(flare,{opacity:1,scale:1,duration:.14,ease:'power2.out'},.42)
+    .to(thread,{attr:{'stroke-width':2.6},duration:.14,ease:'power2.out'},.42)
+    .to(flare,{opacity:0,scale:1.7,duration:.22,ease:'power2.in'},.54)
+    /* 0.58–1.08 s : the black parts along the thread */
+    .to(pTop,{y:-520,duration:.5,ease:'power4.inOut'},.58)
+    .to(pBot,{y:520,duration:.5,ease:'power4.inOut'},.58)
+    /* the thread dies as the dark parts — gone before any text exists */
+    .to([thread,glow],{opacity:0,duration:.16,ease:'power2.out'},.58)
+    /* 0.76 s : text rises into the opening while the last dark leaves */
+    .call(heroPlay, null, .76);
 
   /* any input skips instantly */
   function skip(){ if(!done) tl.progress(1); }
