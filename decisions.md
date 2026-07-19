@@ -5,6 +5,13 @@
 
 ---
 
+## ENTRANCE RULED (user, 2026-07-19): THE GOLD THREAD — supersedes the ink-dissolve and the one-time rule
+
+- **Effect chosen from 10 demos: option A, The Gold Thread** (champagne filament draws across an arched line, flares once, the dark parts along it). Ink-dissolve veil RETIRED from index.html.
+- **SEQUENCING RULED:** the thread must be GONE before any text exists — the stage stays empty while the dark parts; hero text rises only after the effect has fully cleared (thread dies at ~1.06s, panels clear ~1.27s, text starts after). The thread never crosses visible text.
+- **EVERY LOAD RULED:** the effect plays on every reload of index.html — the localStorage one-time gate REMOVED (supersedes the 2026-07-11 one-time ruling). Any input still skips instantly; reduced-motion gets the calm page.
+- Demo pages remain at /fx/ (noindex, unlinked). Metal refit of all 10 demos ruled in after "cheap gold" complaint: brushed-champagne pour, conic aperture ring, ivory-core beams sitewide in demos.
+
 ## OUTCOME ROUND 2 (user, 2026-07-18, voice) — supersedes conflicting Round-1 entries
 
 - **HERO L1 RULED (user pick, option E, 2026-07-18): "See clearly. Lead well. Protect what you have built."** ("Stay clear." retired; chosen from 10 propositions in hero_l1_propositions.html).

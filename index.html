@@ -14,12 +14,7 @@
 <meta property="og:image" content="https://emotionmentoring.com/michal-ksiadzyna-emotion-mentoring.png">
 <meta name="twitter:card" content="summary">
 <script>
-/* intro gate — runs before first paint */
-(function(){
-  try{
-    if(localStorage.getItem('introSeen_v1')){document.documentElement.classList.add('no-intro');}
-  }catch(e){document.documentElement.classList.add('no-intro');}
-})();
+/* entrance plays on every load (user ruling 2026-07-19) — no gate */
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,10 +70,12 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;o
 .ticked{position:relative}
 .ticked:hover .tick{width:20px;height:20px}
 
-/* ═══ VEIL — ink-dissolve entrance ═══ */
-#veil{position:fixed;inset:0;z-index:5000;background:var(--ink)}
-#veil canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-html.no-intro #veil{display:none}
+/* ═══ ENTRANCE — the gold thread ═══ */
+#entrance{position:fixed;inset:0;z-index:5000;pointer-events:none;background:transparent}
+#entrance svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+#eflare{position:absolute;left:50%;top:49.44%;width:34vmin;height:8vmin;transform:translate(-50%,-50%);
+  background:radial-gradient(closest-side, rgba(253,246,227,.75), rgba(217,196,145,.28) 46%, transparent 72%);
+  filter:blur(6px);mix-blend-mode:screen;opacity:0}
 
 /* ═══ SPINE — the traveling champagne beam ═══ */
 #spine{position:fixed;top:0;bottom:0;left:calc(5vw - 1px);width:1px;background:rgba(255,255,255,.05);z-index:6;pointer-events:none}
@@ -314,8 +311,26 @@ footer .f-copy{letter-spacing:.26em}
 </head>
 <body>
 
-<!-- entrance veil : ink-dissolve with champagne edge light -->
-<div id="veil" aria-hidden="true"><canvas id="veilc"></canvas></div>
+<!-- entrance : the gold thread — draws, flares, parts the dark, dies; text rises after -->
+<div id="entrance" aria-hidden="true">
+  <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="etg" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0"   stop-color="#85714a" stop-opacity="0"/>
+        <stop offset=".18" stop-color="#d9c491"/>
+        <stop offset=".5"  stop-color="#fdf6e3"/>
+        <stop offset=".82" stop-color="#d9c491"/>
+        <stop offset="1"   stop-color="#85714a" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="esoft" x="-20%" y="-400%" width="140%" height="900%"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+    <path id="epanelTop" fill="#0a0a0c" d="M0,0 L1440,0 L1440,466 Q720,426 0,466 Z"/>
+    <path id="epanelBot" fill="#0a0a0c" d="M0,465 Q720,425 1440,465 L1440,900 L0,900 Z"/>
+    <path id="ethreadGlow" d="M0,465 Q720,425 1440,465" fill="none" stroke="url(#etg)" stroke-width="10" opacity=".5" filter="url(#esoft)" vector-effect="non-scaling-stroke"/>
+    <path id="ethread" d="M0,465 Q720,425 1440,465" fill="none" stroke="url(#etg)" stroke-width="1.8" vector-effect="non-scaling-stroke"/>
+  </svg>
+  <i id="eflare"></i>
+</div>
 
 <!-- champagne beam that travels the page spine -->
 <div id="spine" aria-hidden="true"><i class="beam"></i></div>
@@ -546,7 +561,6 @@ footer .f-copy{letter-spacing:.26em}
 (function(){
 "use strict";
 var RM = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-var noIntro = document.documentElement.classList.contains('no-intro');
 var animOK = !!(window.gsap && window.ScrollTrigger) && !RM;
 if(animOK) gsap.registerPlugin(ScrollTrigger);
 
@@ -572,101 +586,61 @@ function splitChars(el){
   return chars;
 }
 
-/* ── hero timeline (played after the veil lifts) ── */
+/* ── hero timeline (plays only after the entrance has fully cleared) ── */
 var heroPlayed = false;
 function heroPlay(){
   if(heroPlayed) return; heroPlayed = true;
   if(!animOK) return;
-  var l2chars = splitChars(document.getElementById('l2'));
+  var l2el = document.getElementById('l2');
+  var l2chars = splitChars(l2el);
   var tl = gsap.timeline({defaults:{ease:'power3.out'}});
-  tl.from('#hook .kicker',{opacity:0,y:12,duration:.4},0)
-    .from('#hook .l1',{yPercent:110,duration:.5,stagger:.12},.05)
-    .from(l2chars,{yPercent:105,opacity:0,duration:.4,stagger:.008},.3)
-    .from(['#hook .bar','#hook .h-cta'],{opacity:0,y:18,duration:.5,stagger:.07},.42);
+  tl.fromTo('#hook .kicker',{opacity:0,y:12},{opacity:1,y:0,duration:.4},0)
+    .fromTo('#hook .l1',{yPercent:110},{yPercent:0,duration:.5,stagger:.12},.05)
+    .set(l2el,{autoAlpha:1},.28)
+    .fromTo(l2chars,{yPercent:105,opacity:0},{yPercent:0,opacity:1,duration:.4,stagger:.008},.3)
+    .fromTo(['#hook .bar','#hook .h-cta'],{opacity:0,y:18},{opacity:1,y:0,duration:.5,stagger:.07},.42);
 }
 
-/* ── VEIL : canvas ink-dissolve with champagne edge light ── */
+/* ── ENTRANCE : the gold thread — plays on every load; text rises only after it is gone ── */
 (function(){
-  var veil = document.getElementById('veil');
-  if(!veil || noIntro){ if(veil) veil.parentNode.removeChild(veil); heroPlay(); return; }
-  try{ localStorage.setItem('introSeen_v1','1'); }catch(e){}
+  var ent = document.getElementById('entrance');
+  if(!ent){ heroPlay(); return; }
+  if(!animOK){ ent.parentNode.removeChild(ent); heroPlay(); return; }
 
-  var removed = false;
-  function kill(){
-    if(removed) return; removed = true;
-    if(veil.parentNode) veil.parentNode.removeChild(veil);
+  /* the stage stays empty while the dark parts */
+  gsap.set(['#hook .bar','#hook .kicker','#hook .h-cta'],{opacity:0});
+  gsap.set('#hook .l1',{yPercent:110});
+  gsap.set('#l2',{autoAlpha:0});
+
+  var thread = document.getElementById('ethread'),
+      glow   = document.getElementById('ethreadGlow'),
+      pTop   = document.getElementById('epanelTop'),
+      pBot   = document.getElementById('epanelBot'),
+      flare  = document.getElementById('eflare');
+  var L = thread.getTotalLength();
+  var done = false;
+  function finish(){
+    if(done) return; done = true;
+    if(ent.parentNode) ent.parentNode.removeChild(ent);
     heroPlay();
   }
-  function fadeOut(ms){
-    veil.style.transition = 'opacity ' + ms + 'ms ease';
-    veil.style.opacity = '0';
-    setTimeout(kill, ms + 40);
-  }
-
-  if(RM){ fadeOut(300); return; }   /* prefers-reduced-motion: simple fade */
-
-  var cv = document.getElementById('veilc');
-  var ctx = cv.getContext('2d');
-  if(!ctx){ fadeOut(300); return; }
-  var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-  var W = cv.width  = Math.round(innerWidth * dpr);
-  var H = cv.height = Math.round(innerHeight * dpr);
-
-  /* ink blob seeds */
-  var seeds = [], N = 70, maxR = Math.max(W,H) * .34;
-  for(var i=0;i<N;i++){
-    seeds.push({ x:Math.random()*W, y:Math.random()*H,
-      max:(0.35 + Math.random()*0.65) * maxR,
-      d:Math.random()*0.5 });
-  }
-  var DUR = 1050, start = null, raf = null, fading = false;
-
-  function ease(p){ return 1 - Math.pow(1-p, 3); }
-
-  function frame(now){
-    if(start === null){ start = now; veil.style.background = 'transparent'; }
-    var t = (now - start) / DUR;
-    if(t > 1) t = 1;
-
-    ctx.globalCompositeOperation = 'source-over';
-    ctx.fillStyle = '#0a0a0c';
-    ctx.fillRect(0,0,W,H);
-
-    var i, s, p, r, g;
-    /* champagne edge light around each dissolving hole */
-    for(i=0;i<N;i++){
-      s = seeds[i];
-      p = (t - s.d) / (1 - s.d); if(p <= 0) continue; if(p > 1) p = 1;
-      r = ease(p) * s.max; if(r < 2) continue;
-      g = ctx.createRadialGradient(s.x, s.y, r*.72, s.x, s.y, r*1.22);
-      g.addColorStop(0, 'rgba(217,196,145,0)');
-      g.addColorStop(.62, 'rgba(217,196,145,' + (0.34 * (1-p)) + ')');
-      g.addColorStop(.8, 'rgba(253,246,227,' + (0.5 * (1-p)) + ')');
-      g.addColorStop(1, 'rgba(217,196,145,0)');
-      ctx.fillStyle = g;
-      ctx.beginPath(); ctx.arc(s.x, s.y, r*1.25, 0, 6.2832); ctx.fill();
-    }
-    /* punch the ink out */
-    ctx.globalCompositeOperation = 'destination-out';
-    for(i=0;i<N;i++){
-      s = seeds[i];
-      p = (t - s.d) / (1 - s.d); if(p <= 0) continue; if(p > 1) p = 1;
-      r = ease(p) * s.max; if(r < 2) continue;
-      g = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, r);
-      g.addColorStop(0, 'rgba(0,0,0,1)');
-      g.addColorStop(.8, 'rgba(0,0,0,1)');
-      g.addColorStop(1, 'rgba(0,0,0,0)');
-      ctx.fillStyle = g;
-      ctx.beginPath(); ctx.arc(s.x, s.y, r, 0, 6.2832); ctx.fill();
-    }
-
-    if(t >= 1){ if(!fading){ fading = true; fadeOut(150); } return; }
-    raf = requestAnimationFrame(frame);
-  }
-  raf = requestAnimationFrame(frame);
+  var tl = gsap.timeline({onComplete:finish});
+  tl.set([thread,glow],{strokeDasharray:L,strokeDashoffset:L,opacity:1},0)
+    .set(flare,{opacity:0,scale:.4},0)
+    /* 0.0–0.5 s : the filament draws itself across the width */
+    .to([thread,glow],{strokeDashoffset:0,duration:.5,ease:'power2.inOut'},0)
+    /* 0.5 s : one soft pulse at the centre */
+    .to(flare,{opacity:1,scale:1,duration:.16,ease:'power2.out'},.5)
+    .to(thread,{attr:{'stroke-width':2.6},duration:.16,ease:'power2.out'},.5)
+    .to(flare,{opacity:0,scale:1.7,duration:.26,ease:'power2.in'},.64)
+    /* 0.72–1.27 s : the black parts along the thread */
+    .to(pTop,{y:-520,duration:.55,ease:'power4.inOut'},.72)
+    .to(pBot,{y:520,duration:.55,ease:'power4.inOut'},.72)
+    /* the thread dies before any text exists */
+    .to([thread,glow],{opacity:0,duration:.28,ease:'power2.out'},.78);
 
   /* any input skips instantly */
-  function skip(){ if(raf) cancelAnimationFrame(raf); kill(); }
+  function skip(){ if(!done) tl.progress(1); }
   ['pointerdown','keydown','wheel','touchstart'].forEach(function(ev){
     window.addEventListener(ev, skip, {once:true, passive:true});
   });
