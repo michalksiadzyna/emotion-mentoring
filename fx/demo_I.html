@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FX Demo I — Dual Doors</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0c; --gold:#c9a96e; --gold-dim:#85714a; --gold-hi:#f2e8d4; --gold-lt:#d9c491;
+    --text:#b6b1a6; --text-dim:#76715f;
+    --metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    background:var(--ink);
+    overflow-x:hidden;
+    font-family:'Cormorant Garamond',serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Hero ---------- */
+  #hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:6vh 24px;
+  }
+  #hero .kicker{
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    font-size:.66rem;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:3.2vh;
+  }
+  #hero h1{font-weight:500;line-height:1.14;}
+  #hero .l1{
+    display:block;
+    font-variant:small-caps;
+    font-weight:500;
+    font-size:clamp(2.1rem,5vw,3.4rem);
+    background:var(--metal);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  #hero .l2{
+    font-style:italic;
+    font-size:clamp(1.35rem,2.6vw,1.65rem);
+    color:var(--text);
+    max-width:34em;
+    margin:3.4vh auto 0;
+    line-height:1.5;
+  }
+  #hero .pill{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-weight:500;
+    font-size:.66rem;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    color:#171204;
+    background:var(--metal);
+    border-radius:100px;
+    padding:16px 42px;
+    margin-top:4vh;
+  }
+
+  /* ---------- Doors ---------- */
+  #doors{
+    position:fixed;
+    inset:0;
+    z-index:40;
+    overflow:hidden;
+    pointer-events:none;
+  }
+  .door{
+    position:absolute;
+    top:0;
+    height:100%;
+    width:50.5%;
+    background:linear-gradient(180deg,#0c0c0f 0%,#08080a 55%,#0b0b0e 100%);
+    will-change:transform;
+  }
+  .door-l{left:0;}
+  .door-r{right:0;}
+  /* faint metallic edge sheen where the panels meet — heavy, machined */
+  .door-l::after,
+  .door-r::after{
+    content:"";
+    position:absolute;
+    top:0;
+    height:100%;
+    width:110px;
+    max-width:26vw;
+    pointer-events:none;
+  }
+  .door-l::after{
+    right:0;
+    background:linear-gradient(90deg,rgba(201,169,110,0) 0%,rgba(201,169,110,.045) 72%,rgba(201,169,110,.11) 100%);
+  }
+  .door-r::after{
+    left:0;
+    background:linear-gradient(270deg,rgba(201,169,110,0) 0%,rgba(201,169,110,.045) 72%,rgba(201,169,110,.11) 100%);
+  }
+
+  /* the seam: 1px vertical hairline, transparent -> gold -> transparent */
+  #seam{
+    position:absolute;
+    left:50%;
+    top:0;
+    height:100%;
+    width:1px;
+    transform:translateX(-50%);
+    background:linear-gradient(180deg,transparent 0%,var(--gold) 38%,var(--gold-hi) 50%,var(--gold) 62%,transparent 100%);
+    opacity:0;
+    will-change:width,opacity,box-shadow;
+  }
+  /* the low warm glow that escapes through the seam */
+  #seam-glow{
+    position:absolute;
+    left:50%;
+    top:0;
+    height:100%;
+    width:1px;
+    transform:translateX(-50%);
+    background:linear-gradient(180deg,transparent 0%,rgba(201,169,110,.9) 50%,transparent 100%);
+    filter:blur(14px);
+    opacity:0;
+    will-change:width,opacity;
+  }
+
+  /* film grain, barely there */
+  #grain{
+    position:fixed;
+    inset:0;
+    z-index:60;
+    pointer-events:none;
+    opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- Replay ---------- */
+  #replay{
+    position:fixed;
+    right:26px;
+    bottom:22px;
+    z-index:80;
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    font-size:.62rem;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--gold-dim);
+    background:none;
+    border:none;
+    border-bottom:1px solid rgba(133,113,74,.35);
+    padding:6px 2px;
+    cursor:pointer;
+    transition:color .35s ease,border-color .35s ease;
+  }
+  #replay:hover{color:var(--gold);border-color:var(--gold);}
+</style>
+<meta name="robots" content="noindex, nofollow">
+
+<style>
+/* live-site backdrop: the real website sits behind the effect */
+#hero{position:fixed !important;inset:0 !important;width:100% !important;height:100% !important;
+  margin:0 !important;padding:0 !important;max-width:none !important;transform:none;z-index:0}
+#hero>*:not(.realsite){visibility:hidden !important}
+.realsite{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;visibility:visible;z-index:0;background:#0a0a0c}
+</style>
+
+</head>
+<body>
+
+  <section id="hero"><iframe class="realsite" src="/" title="Emotion Mentoring"></iframe>
+    <p class="kicker">Emotion Mentoring for Leaders</p>
+    <h1>
+      <span class="l1">See clearly. Lead well.</span>
+      <span class="l1">Protect what you have built.</span>
+    </h1>
+    <p class="l2">I help leaders increase their capacity under pressure, develop a mind capable of better decisions, and remain effective through personal and professional crises.</p>
+    <span class="pill">Begin with one powerful conversation</span>
+  </section>
+
+  <div id="doors" aria-hidden="true">
+    <div class="door door-l"></div>
+    <div class="door door-r"></div>
+    <div id="seam-glow"></div>
+    <div id="seam"></div>
+  </div>
+
+  <div id="grain" aria-hidden="true"></div>
+
+  <button id="replay" type="button">Replay</button>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/gsap.min.js"></script>
+<script>
+(function(){
+  var doorL = document.querySelector('.door-l');
+  var doorR = document.querySelector('.door-r');
+  var seam = document.getElementById('seam');
+  var glow = document.getElementById('seam-glow');
+  var hero = document.getElementById('hero');
+  var doors = document.getElementById('doors');
+  var tl = null;
+  var running = false;
+
+  function build(){
+    if(tl){ tl.kill(); }
+    running = true;
+    doors.style.visibility = 'visible';
+
+    gsap.set(doorL,{xPercent:0});
+    gsap.set(doorR,{xPercent:0});
+    gsap.set(seam,{opacity:0,width:1,boxShadow:'0 0 0px rgba(201,169,110,0)'});
+    gsap.set(glow,{opacity:0,width:1});
+    gsap.set(hero,{opacity:0,scale:1.035,filter:'blur(6px)'});
+
+    tl = gsap.timeline({
+      defaults:{ease:'power3.inOut'},
+      onComplete:function(){ running = false; doors.style.visibility = 'hidden'; }
+    });
+
+    /* 0.0s — heavy panels standing, thin seam wakes */
+    tl.to(seam,{opacity:1,duration:0.28,ease:'power2.out'},0);
+
+    /* 0.4s — a low warm glow escapes through the seam, widening it */
+    tl.to(seam,{
+      width:4,
+      boxShadow:'0 0 26px rgba(201,169,110,.55), 0 0 70px rgba(201,169,110,.22)',
+      duration:0.3,
+      ease:'power2.inOut'
+    },0.4);
+    tl.to(glow,{opacity:.85,width:10,duration:0.3,ease:'power2.inOut'},0.4);
+
+    /* 0.7s — the doors part, unhurried, expensive */
+    tl.to(doorL,{xPercent:-102,duration:0.7,ease:'power3.inOut'},0.7);
+    tl.to(doorR,{xPercent:102,duration:0.7,ease:'power3.inOut'},0.7);
+
+    /* hero eases into place behind them */
+    tl.to(hero,{opacity:1,scale:1,filter:'blur(0px)',duration:0.7,ease:'power3.out'},0.72);
+
+    /* the seam's glow dies last */
+    tl.to(seam,{opacity:0,width:1,boxShadow:'0 0 0px rgba(201,169,110,0)',duration:0.32,ease:'power2.in'},1.18);
+    tl.to(glow,{opacity:0,duration:0.32,ease:'power2.in'},1.18);
+  }
+
+  function skip(){
+    if(running && tl){ tl.progress(1); }
+  }
+
+  document.addEventListener('click',function(e){
+    if(e.target.id === 'replay') return;
+    skip();
+  });
+  document.addEventListener('keydown',skip);
+
+  document.getElementById('replay').addEventListener('click',function(e){
+    e.stopPropagation();
+    build();
+  });
+
+  build();
+})();
+</script>
+</body>
+</html>

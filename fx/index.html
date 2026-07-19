@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrance Effects — Demo Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0a0a0c;--gold:#c9a96e;--gold-dim:#85714a;--gold-hi:#f2e8d4;--text:#b6b1a6;--text-dim:#76715f;
+--metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--text);font-family:Jost,sans-serif;font-weight:300;min-height:100vh;padding:8vh 8vw}
+h1{font-family:'Cormorant Garamond',serif;font-variant:small-caps;font-weight:500;font-size:clamp(2rem,4.5vw,3rem);
+  background-image:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent;text-align:center}
+p.sub{text-align:center;font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);margin-top:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px;max-width:1100px;margin:7vh auto 0}
+a.card{display:block;border:1px solid rgba(255,255,255,.12);padding:26px 24px;text-decoration:none;background:linear-gradient(165deg,#101013,#0b0b0e);transition:border-color .25s,transform .25s,box-shadow .25s}
+a.card:hover{border-color:rgba(201,169,110,.5);transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(0,0,0,.8)}
+a.card .letter{font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+a.card .name{display:block;margin-top:8px;font-family:'Cormorant Garamond',serif;font-variant:small-caps;font-weight:500;font-size:24px;
+  background-image:var(--metal);-webkit-background-clip:text;background-clip:text;color:transparent}
+a.card .hint{display:block;margin-top:8px;font-size:14px;color:var(--text-dim);line-height:1.6}
+</style>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h1>Entrance Effects</h1>
+<p class="sub">Ten scenarios &middot; tap to play over the live site &middot; refresh to replay</p>
+<div class="grid">
+  <a class="card" href="demo_A.html"><span class="letter">Option A</span><span class="name">The Gold Thread</span><span class="hint">A filament of light draws, flares, and parts the darkness.</span></a>
+  <a class="card" href="demo_B.html"><span class="letter">Option B</span><span class="name">Molten Pour</span><span class="hint">Liquid gold coats the screen, then drains to reveal the page.</span></a>
+  <a class="card" href="demo_C.html"><span class="letter">Option C</span><span class="name">The Signet Press</span><span class="hint">A seal presses into the black, then dissolves into gold dust.</span></a>
+  <a class="card" href="demo_D.html"><span class="letter">Option D</span><span class="name">Curtain of Bars</span><span class="hint">Five gold-edged panels lift in stagger, editorial and quiet.</span></a>
+  <a class="card" href="demo_E.html"><span class="letter">Option E</span><span class="name">Light Sweep Horizon</span><span class="hint">A horizon line pulses; the darkness peels away from it.</span></a>
+  <a class="card" href="demo_F.html"><span class="letter">Option F</span><span class="name">Ink to Gold</span><span class="hint">The ink dissolve, directed into one diagonal wave and a finale.</span></a>
+  <a class="card" href="demo_G.html"><span class="letter">Option G</span><span class="name">Chandelier Dust</span><span class="hint">Gold particles fall and settle into the headline. Nothing blocks.</span></a>
+  <a class="card" href="demo_H.html"><span class="letter">Option H</span><span class="name">The Aperture</span><span class="hint">A gold-rimmed iris opens onto a page already assembling.</span></a>
+  <a class="card" href="demo_I.html"><span class="letter">Option I</span><span class="name">Dual Doors</span><span class="hint">Two heavy doors part along a glowing seam. The closed circle opens.</span></a>
+  <a class="card" href="demo_J.html"><span class="letter">Option J</span><span class="name">Three Words</span><span class="hint">Clarity. Leadership. Protection. Then the page.</span></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FX Demo J — Three Words</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0c; --gold:#c9a96e; --gold-dim:#85714a; --gold-hi:#f2e8d4; --gold-lt:#d9c491;
+    --text:#b6b1a6; --text-dim:#76715f;
+    --metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    background:var(--ink);
+    overflow-x:hidden;
+    font-family:'Cormorant Garamond',serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Hero ---------- */
+  #hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:6vh 24px;
+  }
+  #hero .kicker{
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    font-size:.66rem;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:3.2vh;
+  }
+  #hero h1{font-weight:500;line-height:1.14;}
+  #hero .l1{
+    display:block;
+    font-variant:small-caps;
+    font-weight:500;
+    font-size:clamp(2.1rem,5vw,3.4rem);
+    background:var(--metal);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  #hero .l2{
+    font-style:italic;
+    font-size:clamp(1.35rem,2.6vw,1.65rem);
+    color:var(--text);
+    max-width:34em;
+    margin:3.4vh auto 0;
+    line-height:1.5;
+  }
+  #hero .pill{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-weight:500;
+    font-size:.66rem;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    color:#171204;
+    background:var(--metal);
+    border-radius:100px;
+    padding:16px 42px;
+    margin-top:4vh;
+  }
+  /* the final beam that lands under the CTA pill */
+  #cta-beam{
+    display:block;
+    height:1px;
+    width:230px;
+    max-width:64vw;
+    margin:14px auto 0;
+    background:linear-gradient(90deg,transparent 0%,var(--gold) 30%,var(--gold-hi) 50%,var(--gold) 70%,transparent 100%);
+    opacity:0;
+    transform:scaleX(0);
+    transform-origin:center;
+    will-change:transform,opacity;
+  }
+
+  /* ---------- Veil with the three words ---------- */
+  #veil{
+    position:fixed;
+    inset:0;
+    z-index:40;
+    background:var(--ink);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+  }
+  #word-stage{
+    position:relative;
+    height:3.4rem;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .word{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    white-space:nowrap;
+    font-variant:small-caps;
+    font-weight:500;
+    font-size:2rem;
+    letter-spacing:.06em;
+    background:var(--metal);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    opacity:0;
+    will-change:opacity,filter;
+  }
+  #hairline{
+    height:1px;
+    width:240px;
+    max-width:70vw;
+    margin-top:22px;
+    background:linear-gradient(90deg,transparent 0%,var(--gold) 30%,var(--gold-hi) 50%,var(--gold) 70%,transparent 100%);
+    transform:scaleX(0);
+    transform-origin:center;
+    will-change:transform,opacity;
+  }
+
+  /* film grain, barely there */
+  #grain{
+    position:fixed;
+    inset:0;
+    z-index:60;
+    pointer-events:none;
+    opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+  }
+
+  /* ---------- Replay ---------- */
+  #replay{
+    position:fixed;
+    right:26px;
+    bottom:22px;
+    z-index:80;
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    font-size:.62rem;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--gold-dim);
+    background:none;
+    border:none;
+    border-bottom:1px solid rgba(133,113,74,.35);
+    padding:6px 2px;
+    cursor:pointer;
+    transition:color .35s ease,border-color .35s ease;
+  }
+  #replay:hover{color:var(--gold);border-color:var(--gold);}
+</style>
+<meta name="robots" content="noindex, nofollow">
+
+<style>
+/* live-site backdrop: the real website sits behind the effect */
+#hero{position:fixed !important;inset:0 !important;width:100% !important;height:100% !important;
+  margin:0 !important;padding:0 !important;max-width:none !important;transform:none;z-index:0}
+#hero>*:not(.realsite){visibility:hidden !important}
+.realsite{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;visibility:visible;z-index:0;background:#0a0a0c}
+</style>
+
+</head>
+<body>
+
+  <section id="hero"><iframe class="realsite" src="/" title="Emotion Mentoring"></iframe>
+    <p class="kicker">Emotion Mentoring for Leaders</p>
+    <h1>
+      <span class="l1">See clearly. Lead well.</span>
+      <span class="l1">Protect what you have built.</span>
+    </h1>
+    <p class="l2">I help leaders increase their capacity under pressure, develop a mind capable of better decisions, and remain effective through personal and professional crises.</p>
+    <span class="pill">Begin with one powerful conversation</span>
+    <span id="cta-beam" aria-hidden="true"></span>
+  </section>
+
+  <div id="veil" aria-hidden="true">
+    <div id="word-stage">
+      <span class="word" id="w1">Clarity.</span>
+      <span class="word" id="w2">Leadership.</span>
+      <span class="word" id="w3">Protection.</span>
+    </div>
+    <div id="hairline"></div>
+  </div>
+
+  <div id="grain" aria-hidden="true"></div>
+
+  <button id="replay" type="button">Replay</button>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/gsap.min.js"></script>
+<script>
+(function(){
+  var veil = document.getElementById('veil');
+  var hero = document.getElementById('hero');
+  var w1 = document.getElementById('w1');
+  var w2 = document.getElementById('w2');
+  var w3 = document.getElementById('w3');
+  var hairline = document.getElementById('hairline');
+  var beam = document.getElementById('cta-beam');
+  var tl = null;
+  var running = false;
+
+  /* hairline lengths accumulate: each word leaves it longer */
+  var LEN1 = 0.375;  /* scaleX of the 240px line ->  90px */
+  var LEN2 = 0.625;  /* -> 150px */
+  var LEN3 = 1.0;    /* -> 240px */
+
+  function build(){
+    if(tl){ tl.kill(); }
+    running = true;
+    veil.style.visibility = 'visible';
+
+    gsap.set([w1,w2,w3],{opacity:0,filter:'blur(5px)'});
+    gsap.set(hairline,{scaleX:0,opacity:1});
+    gsap.set(veil,{opacity:1});
+    gsap.set(hero,{opacity:0});
+    gsap.set(beam,{opacity:0,scaleX:0});
+
+    tl = gsap.timeline({
+      defaults:{ease:'power3.inOut'},
+      onComplete:function(){ running = false; veil.style.visibility = 'hidden'; }
+    });
+
+    /* 0.0s — Clarity. */
+    tl.to(w1,{opacity:1,filter:'blur(0px)',duration:0.16,ease:'power2.out'},0.0);
+    tl.to(w1,{opacity:0,filter:'blur(4px)',duration:0.14,ease:'power2.in'},0.31);
+    tl.to(hairline,{scaleX:LEN1,duration:0.34,ease:'power3.out'},0.03);
+
+    /* 0.45s — Leadership. */
+    tl.to(w2,{opacity:1,filter:'blur(0px)',duration:0.16,ease:'power2.out'},0.45);
+    tl.to(w2,{opacity:0,filter:'blur(4px)',duration:0.14,ease:'power2.in'},0.76);
+    tl.to(hairline,{scaleX:LEN2,duration:0.34,ease:'power3.out'},0.48);
+
+    /* 0.9s — Protection. */
+    tl.to(w3,{opacity:1,filter:'blur(0px)',duration:0.16,ease:'power2.out'},0.9);
+    tl.to(hairline,{scaleX:LEN3,duration:0.32,ease:'power3.out'},0.93);
+
+    /* 1.3s — hard cut, 150ms, to the calm hero */
+    tl.set(hero,{opacity:1},1.3);
+    tl.to(veil,{opacity:0,duration:0.15,ease:'power1.out'},1.3);
+
+    /* the last hairline lands beneath the CTA pill: a brief gold beam */
+    tl.to(beam,{opacity:1,scaleX:1,duration:0.22,ease:'power3.out'},1.42);
+    tl.to(beam,{opacity:0,duration:0.4,ease:'power2.in'},1.75);
+  }
+
+  function skip(){
+    if(running && tl){ tl.progress(1); }
+  }
+
+  document.addEventListener('click',function(e){
+    if(e.target.id === 'replay') return;
+    skip();
+  });
+  document.addEventListener('keydown',skip);
+
+  document.getElementById('replay').addEventListener('click',function(e){
+    e.stopPropagation();
+    build();
+  });
+
+  build();
+})();
+</script>
+</body>
+</html>

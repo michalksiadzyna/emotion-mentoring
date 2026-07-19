@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FX Demo F — Ink to Gold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0c; --gold:#c9a96e; --gold-dim:#85714a; --gold-hi:#f2e8d4; --gold-lt:#d9c491;
+    --text:#b6b1a6; --text-dim:#76715f;
+    --metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    background:var(--ink);
+    overflow:hidden;
+    font-family:'Jost',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Hero ---------- */
+  #hero{
+    position:relative;
+    z-index:1;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 6vw;
+  }
+  .kicker{
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    font-size:.66rem;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:3.2vh;
+  }
+  h1{font-weight:500}
+  .l1{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-variant:small-caps;
+    font-weight:500;
+    font-size:clamp(2.1rem,5vw,3.4rem);
+    line-height:1.14;
+    background:var(--metal);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .l2{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(1.35rem,2.6vw,1.65rem);
+    line-height:1.5;
+    color:var(--text);
+    max-width:34em;
+    margin:3vh auto 0;
+  }
+  .pill{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-weight:500;
+    font-size:.66rem;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    color:#171204;
+    background:var(--metal);
+    border-radius:100px;
+    padding:16px 42px;
+    margin-top:4vh;
+  }
+
+  /* ---------- Ink canvas ---------- */
+  #ink{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:5;
+    pointer-events:none;
+  }
+  #ink.off{display:none}
+
+  /* ---------- Replay ---------- */
+  #replay{
+    position:fixed;
+    right:24px;
+    bottom:22px;
+    z-index:20;
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    font-size:.6rem;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--gold-dim);
+    padding:10px 4px 8px;
+    border-bottom:1px solid rgba(133,113,74,.35);
+    transition:color .35s ease,border-color .35s ease;
+  }
+  #replay:hover{
+    color:var(--gold);
+    border-bottom-color:rgba(201,169,110,.6);
+  }
+</style>
+<meta name="robots" content="noindex, nofollow">
+
+<style>
+/* live-site backdrop: the real website sits behind the effect */
+#hero{position:fixed !important;inset:0 !important;width:100% !important;height:100% !important;
+  margin:0 !important;padding:0 !important;max-width:none !important;transform:none;z-index:0}
+#hero>*:not(.realsite){visibility:hidden !important}
+.realsite{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;visibility:visible;z-index:0;background:#0a0a0c}
+</style>
+
+</head>
+<body>
+
+<section id="hero"><iframe class="realsite" src="/" title="Emotion Mentoring"></iframe>
+  <p class="kicker">Emotion Mentoring for Leaders</p>
+  <h1>
+    <span class="l1">See clearly. Lead well.</span>
+    <span class="l1">Protect what you have built.</span>
+  </h1>
+  <p class="l2">I help leaders increase their capacity under pressure, develop a mind capable of better decisions, and remain effective through personal and professional crises.</p>
+  <span class="pill">Begin with one powerful conversation</span>
+</section>
+
+<canvas id="ink"></canvas>
+
+<button id="replay" type="button">Replay</button>
+
+<script>
+(function(){
+  var canvas = document.getElementById('ink');
+  var ctx = canvas.getContext('2d');
+
+  var TOTAL = 1500;        /* ms — full effect length */
+  var WAVE_SPAN = 720;     /* ms — last hole in the diagonal wave begins by here */
+  var HOLE_DUR = 520;      /* ms — each hole's growth time */
+  var BLOOM_AT = 1100;     /* ms — final bloom over the headline */
+  var BLOOM_DUR = 380;
+  var FADE_AT = 1300;      /* ms — safety fade of any remaining ink */
+
+  var W = 0, H = 0, dpr = 1;
+  var holes = [];
+  var bloom = null;
+  var rafId = null;
+  var t0 = 0;
+  var playing = false;
+
+  function easeOutCubic(p){ return 1 - Math.pow(1 - p, 3); }
+  function easeOutQuart(p){ return 1 - Math.pow(1 - p, 4); }
+
+  function build(){
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width = Math.round(W * dpr);
+    canvas.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    /* Diagonal wave grid: delay driven by (x + y), top-left first. */
+    holes = [];
+    var spacing = Math.max(96, Math.min(W, H) / 7.5);
+    var maxSum = W + H;
+    var cols = Math.ceil(W / spacing) + 1;
+    var rows = Math.ceil(H / spacing) + 1;
+    for (var i = 0; i < cols; i++){
+      for (var j = 0; j < rows; j++){
+        var x = i * spacing + (j % 2 ? spacing * 0.5 : 0) + (((i * 7 + j * 13) % 10) - 5) * (spacing * 0.04);
+        var y = j * spacing + (((i * 11 + j * 5) % 10) - 5) * (spacing * 0.04);
+        holes.push({
+          x: x,
+          y: y,
+          delay: ((x + y) / maxSum) * WAVE_SPAN + ((i * 3 + j * 7) % 8) * 6,
+          maxR: spacing * 1.5
+        });
+      }
+    }
+
+    /* Final larger bloom centered on the headline area. */
+    bloom = {
+      x: W / 2,
+      y: H * 0.42,
+      delay: BLOOM_AT,
+      dur: BLOOM_DUR,
+      maxR: Math.max(W, H) * 0.75
+    };
+  }
+
+  function drawHoleGlow(h, r, p){
+    var glowA = (1 - p) * 0.75;
+    if (glowA <= 0.01) return;
+    var outer = r * 1.7 + 2;
+    var g = ctx.createRadialGradient(h.x, h.y, Math.max(r * 0.5, 0.1), h.x, h.y, outer);
+    g.addColorStop(0, 'rgba(217,196,145,' + glowA.toFixed(3) + ')');
+    g.addColorStop(0.55, 'rgba(217,196,145,' + (glowA * 0.35).toFixed(3) + ')');
+    g.addColorStop(1, 'rgba(217,196,145,0)');
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(h.x, h.y, outer, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function punchHole(h, r){
+    if (r <= 0.1) return;
+    var g = ctx.createRadialGradient(h.x, h.y, 0, h.x, h.y, r);
+    g.addColorStop(0, 'rgba(0,0,0,1)');
+    g.addColorStop(0.72, 'rgba(0,0,0,1)');
+    g.addColorStop(1, 'rgba(0,0,0,0)');
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.arc(h.x, h.y, r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function frame(now){
+    var t = now - t0;
+    if (t >= TOTAL){ finish(); return; }
+
+    /* Repaint solid ink, then carve the current state of every hole. */
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.clearRect(0, 0, W, H);
+    ctx.fillStyle = '#0a0a0c';
+    ctx.fillRect(0, 0, W, H);
+
+    var i, h, p, r;
+
+    /* Champagne edge-light rings (fade as each hole grows). */
+    for (i = 0; i < holes.length; i++){
+      h = holes[i];
+      p = (t - h.delay) / HOLE_DUR;
+      if (p <= 0 || p >= 1) continue;
+      r = easeOutCubic(p) * h.maxR;
+      drawHoleGlow(h, r, p);
+    }
+    p = (t - bloom.delay) / bloom.dur;
+    if (p > 0 && p < 1){
+      drawHoleGlow(bloom, easeOutQuart(p) * bloom.maxR * 0.55, p);
+    }
+
+    /* Punch the holes out of the ink (classic dissolve). */
+    ctx.globalCompositeOperation = 'destination-out';
+    for (i = 0; i < holes.length; i++){
+      h = holes[i];
+      p = (t - h.delay) / HOLE_DUR;
+      if (p <= 0) continue;
+      if (p > 1) p = 1;
+      punchHole(h, easeOutCubic(p) * h.maxR);
+    }
+    p = (t - bloom.delay) / bloom.dur;
+    if (p > 0){
+      if (p > 1) p = 1;
+      punchHole(bloom, easeOutQuart(p) * bloom.maxR);
+    }
+    ctx.globalCompositeOperation = 'source-over';
+
+    /* Safety fade so the last glow dies cleanly by 1.5 s. */
+    if (t > FADE_AT){
+      canvas.style.opacity = String(Math.max(0, 1 - (t - FADE_AT) / (TOTAL - FADE_AT)));
+    } else {
+      canvas.style.opacity = '1';
+    }
+
+    rafId = requestAnimationFrame(frame);
+  }
+
+  function finish(){
+    playing = false;
+    if (rafId){ cancelAnimationFrame(rafId); rafId = null; }
+    canvas.classList.add('off');
+    canvas.style.opacity = '1';
+  }
+
+  function play(){
+    if (rafId){ cancelAnimationFrame(rafId); rafId = null; }
+    build();
+    canvas.classList.remove('off');
+    canvas.style.opacity = '1';
+    playing = true;
+    t0 = performance.now();
+    ctx.fillStyle = '#0a0a0c';
+    ctx.fillRect(0, 0, W, H);
+    rafId = requestAnimationFrame(frame);
+  }
+
+  function skip(){
+    if (!playing) return;
+    finish();
+  }
+
+  document.getElementById('replay').addEventListener('click', function(e){
+    e.stopPropagation();
+    play();
+  });
+
+  document.addEventListener('click', skip);
+  document.addEventListener('keydown', skip);
+
+  window.addEventListener('resize', function(){
+    if (playing){ build(); } /* rebuild grid mid-effect if viewport changes */
+  });
+
+  play();
+})();
+</script>
+
+</body>
+</html>

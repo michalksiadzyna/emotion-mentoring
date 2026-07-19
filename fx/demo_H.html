@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo H — The Aperture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0c; --gold:#c9a96e; --gold-dim:#85714a; --gold-hi:#f2e8d4; --gold-lt:#d9c491;
+    --text:#b6b1a6; --text-dim:#76715f;
+    --metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    background:#000;
+    overflow:hidden;
+    font-family:'Cormorant Garamond',serif;
+  }
+  /* the page lives inside the iris */
+  #stage{
+    position:fixed;
+    inset:0;
+    background:var(--ink);
+    clip-path:circle(0px at 50% 50%);
+  }
+  #hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:0 6vw;
+  }
+  #hero.pre{
+    opacity:0;
+    transform:translateY(26px) scale(.985);
+  }
+  #hero.enter{
+    opacity:1;
+    transform:translateY(0) scale(1);
+    transition:opacity 1s cubic-bezier(.22,.61,.36,1),transform 1s cubic-bezier(.22,.61,.36,1);
+  }
+  .kicker{
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    font-size:.66rem;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:3.2vh;
+  }
+  h1{font-weight:500;line-height:1.16;}
+  .l1{
+    display:block;
+    font-variant:small-caps;
+    font-weight:500;
+    font-size:clamp(2.1rem,5vw,3.4rem);
+    background:var(--metal);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .l2{
+    font-style:italic;
+    font-size:clamp(1.35rem,2.6vw,1.65rem);
+    color:var(--text);
+    max-width:34em;
+    margin:3.4vh auto 0;
+    line-height:1.5;
+  }
+  .pill{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-weight:500;
+    font-size:.66rem;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    color:#171204;
+    background:var(--metal);
+    border-radius:100px;
+    padding:16px 42px;
+    margin-top:4vh;
+  }
+  /* the iris rim — a metal-gradient ring that rotates as it expands */
+  #ring{
+    position:fixed;
+    left:50%;
+    top:50%;
+    width:0;
+    height:0;
+    border-radius:50%;
+    background:var(--metal);
+    transform:translate(-50%,-50%) rotate(0deg);
+    pointer-events:none;
+    z-index:6;
+  }
+  #ring::before{
+    content:"";
+    position:absolute;
+    inset:3px;
+    border-radius:inherit;
+    background:var(--ink);
+    transition:opacity .25s ease;
+  }
+  #ring.mark::before{opacity:0;}
+  #replay{
+    position:fixed;
+    right:26px;
+    bottom:24px;
+    z-index:10;
+    background:none;
+    border:1px solid rgba(201,169,110,.22);
+    color:var(--gold-dim);
+    font-family:'Jost',sans-serif;
+    font-size:.6rem;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    padding:10px 20px 10px 24px;
+    cursor:pointer;
+    transition:color .3s ease,border-color .3s ease;
+  }
+  #replay:hover{color:var(--gold);border-color:rgba(201,169,110,.55);}
+</style>
+<meta name="robots" content="noindex, nofollow">
+
+<style>
+/* live-site backdrop: the real website sits behind the effect */
+#hero{position:fixed !important;inset:0 !important;width:100% !important;height:100% !important;
+  margin:0 !important;padding:0 !important;max-width:none !important;transform:none;z-index:0}
+#hero>*:not(.realsite){visibility:hidden !important}
+.realsite{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;visibility:visible;z-index:0;background:#0a0a0c}
+</style>
+
+</head>
+<body>
+
+<div id="stage">
+  <section id="hero" class="pre"><iframe class="realsite" src="/" title="Emotion Mentoring"></iframe>
+    <p class="kicker">Emotion Mentoring for Leaders</p>
+    <h1>
+      <span class="l1">See clearly. Lead well.</span>
+      <span class="l1">Protect what you have built.</span>
+    </h1>
+    <p class="l2">I help leaders increase their capacity under pressure, develop a mind capable of better decisions, and remain effective through personal and professional crises.</p>
+    <span class="pill">Begin with one powerful conversation</span>
+  </section>
+</div>
+
+<div id="ring"></div>
+<button id="replay" type="button">Replay</button>
+
+<script>
+(function(){
+  "use strict";
+  var stage = document.getElementById('stage');
+  var ring = document.getElementById('ring');
+  var hero = document.getElementById('hero');
+  var replayBtn = document.getElementById('replay');
+
+  var OPEN_END = 1000;   // graceful opening ends
+  var BLOW_END = 1400;   // iris accelerates past the screen edges (power4.in)
+  var OPEN_FRACTION = .42;
+
+  var raf = 0, startT = 0, playing = false, marked = false, markTimer = 0, endTimer = 0;
+
+  function maxRadius(){
+    return Math.hypot(window.innerWidth, window.innerHeight) / 2 + 30;
+  }
+  function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+  function easeInQuart(t){ return t * t * t * t; }
+  function clamp01(t){ return Math.max(0, Math.min(1, t)); }
+
+  function setRing(r, angle){
+    var d = Math.max(0, r * 2);
+    ring.style.width = d + 'px';
+    ring.style.height = d + 'px';
+    ring.style.transform = 'translate(-50%,-50%) rotate(' + angle + 'deg)';
+  }
+
+  function loop(now){
+    if (!playing) return;
+    var el = now - startT;
+    var maxR = maxRadius();
+    var r;
+    if (el <= OPEN_END){
+      r = easeOutCubic(clamp01(el / OPEN_END)) * maxR * OPEN_FRACTION;
+    } else {
+      r = maxR * (OPEN_FRACTION + (1 - OPEN_FRACTION) * easeInQuart(clamp01((el - OPEN_END) / (BLOW_END - OPEN_END))));
+    }
+    stage.style.clipPath = 'circle(' + r.toFixed(1) + 'px at 50% 50%)';
+    setRing(r, el * .028); // slow rotation of the metal rim
+    if (el >= BLOW_END){ toMark(); return; }
+    raf = requestAnimationFrame(loop);
+  }
+
+  // the rim's last arc shrinks into a small diamond mark at center-top, then fades
+  function toMark(){
+    if (marked) return;
+    marked = true;
+    if (raf) cancelAnimationFrame(raf);
+    stage.style.clipPath = 'none';
+    ring.classList.add('mark');
+    ring.style.transition = 'width .32s cubic-bezier(.55,.06,.68,.19), height .32s cubic-bezier(.55,.06,.68,.19), top .32s cubic-bezier(.55,.06,.68,.19), transform .32s cubic-bezier(.55,.06,.68,.19), border-radius .32s ease, opacity .28s ease';
+    ring.style.width = '13px';
+    ring.style.height = '13px';
+    ring.style.top = '15%';
+    ring.style.borderRadius = '2px';
+    ring.style.transform = 'translate(-50%,-50%) rotate(45deg)';
+    markTimer = setTimeout(function(){ ring.style.opacity = '0'; }, 330);
+    endTimer = setTimeout(function(){ playing = false; }, 640);
+  }
+
+  function resolveInstant(){
+    playing = false;
+    marked = true;
+    if (raf) cancelAnimationFrame(raf);
+    clearTimeout(markTimer);
+    clearTimeout(endTimer);
+    stage.style.clipPath = 'none';
+    ring.style.transition = 'none';
+    ring.style.opacity = '0';
+    hero.style.transition = 'none';
+    hero.classList.remove('pre');
+    hero.classList.add('enter');
+    void hero.offsetWidth;
+    hero.style.transition = '';
+  }
+
+  function skip(){
+    if (!playing) return;
+    resolveInstant();
+  }
+
+  function play(){
+    if (raf) cancelAnimationFrame(raf);
+    clearTimeout(markTimer);
+    clearTimeout(endTimer);
+    marked = false;
+    // reset ring + stage
+    ring.classList.remove('mark');
+    ring.style.transition = 'none';
+    ring.style.opacity = '1';
+    ring.style.top = '50%';
+    ring.style.borderRadius = '50%';
+    setRing(0, 0);
+    stage.style.clipPath = 'circle(0px at 50% 50%)';
+    // reset hero beneath the iris
+    hero.classList.remove('enter');
+    hero.classList.add('pre');
+    void hero.offsetWidth; // flush styles before transitions re-arm
+    playing = true;
+    startT = performance.now();
+    requestAnimationFrame(function(){
+      hero.classList.remove('pre');
+      hero.classList.add('enter');
+    });
+    raf = requestAnimationFrame(loop);
+  }
+
+  window.addEventListener('resize', function(){
+    if (!playing && marked) stage.style.clipPath = 'none';
+  });
+  window.addEventListener('pointerdown', skip);
+  window.addEventListener('keydown', skip);
+  replayBtn.addEventListener('pointerdown', function(e){ e.stopPropagation(); });
+  replayBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    play();
+    replayBtn.blur();
+  });
+
+  if (document.fonts && document.fonts.ready){
+    document.fonts.ready.then(play);
+  } else {
+    play();
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FX Demo E — Light Sweep Horizon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0c; --gold:#c9a96e; --gold-dim:#85714a; --gold-hi:#f2e8d4; --gold-lt:#d9c491;
+    --text:#b6b1a6; --text-dim:#76715f;
+    --metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    background:var(--ink);
+    overflow:hidden;
+    font-family:'Jost',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Hero ---------- */
+  #hero{
+    position:relative;
+    z-index:1;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:0 6vw;
+  }
+  .hero-inner{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    transform-origin:50% 50%;
+    opacity:0;
+  }
+  .kicker{
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    font-size:.66rem;
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:3.2vh;
+  }
+  h1{font-weight:500}
+  .l1{
+    display:block;
+    font-family:'Cormorant Garamond',serif;
+    font-variant:small-caps;
+    font-weight:500;
+    font-size:clamp(2.1rem,5vw,3.4rem);
+    line-height:1.14;
+    background:var(--metal);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .l2{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:clamp(1.35rem,2.6vw,1.65rem);
+    line-height:1.5;
+    color:var(--text);
+    max-width:34em;
+    margin:3vh auto 0;
+  }
+  .pill{
+    display:inline-block;
+    font-family:'Jost',sans-serif;
+    font-weight:500;
+    font-size:.66rem;
+    text-transform:uppercase;
+    letter-spacing:.16em;
+    color:#171204;
+    background:var(--metal);
+    border-radius:100px;
+    padding:16px 42px;
+    margin-top:4vh;
+  }
+
+  /* ---------- Effect layers ---------- */
+  .veil{
+    position:fixed;
+    left:0;
+    width:100%;
+    height:50.25%;
+    background:var(--ink);
+    z-index:5;
+    will-change:transform,opacity;
+  }
+  .veil-top{top:-0.25%}
+  .veil-bot{bottom:-0.25%}
+
+  .horizon{
+    position:fixed;
+    top:50%;
+    left:0;
+    width:100%;
+    height:1px;
+    margin-top:-0.5px;
+    z-index:6;
+    opacity:0;
+    background:linear-gradient(90deg,
+      rgba(201,169,110,0) 0%,
+      rgba(201,169,110,.55) 26%,
+      rgba(217,196,145,.95) 50%,
+      rgba(201,169,110,.55) 74%,
+      rgba(201,169,110,0) 100%);
+    box-shadow:0 0 14px 1px rgba(201,169,110,.35);
+    will-change:opacity;
+    pointer-events:none;
+  }
+  .pulse{
+    position:fixed;
+    top:50%;
+    left:8%;
+    width:84%;
+    height:2px;
+    margin-top:-1px;
+    z-index:7;
+    opacity:0;
+    transform:scaleX(0);
+    transform-origin:50% 50%;
+    background:linear-gradient(90deg,
+      rgba(242,232,212,0) 0%,
+      rgba(242,232,212,.85) 38%,
+      #fdf6e3 50%,
+      rgba(242,232,212,.85) 62%,
+      rgba(242,232,212,0) 100%);
+    filter:blur(.6px);
+    box-shadow:0 0 26px 3px rgba(217,196,145,.5);
+    will-change:transform,opacity;
+    pointer-events:none;
+  }
+
+  /* ---------- Timeline (class .play on body) ---------- */
+  @keyframes lineIn{
+    from{opacity:0}
+    to{opacity:1}
+  }
+  @keyframes lineOut{
+    from{opacity:1}
+    to{opacity:0}
+  }
+  @keyframes pulseOnce{
+    0%{opacity:0;transform:scaleX(.02)}
+    30%{opacity:1}
+    100%{opacity:0;transform:scaleX(1)}
+  }
+  @keyframes veilUp{
+    from{transform:translateY(0);opacity:1}
+    to{transform:translateY(-103%);opacity:.25}
+  }
+  @keyframes veilDown{
+    from{transform:translateY(0);opacity:1}
+    to{transform:translateY(103%);opacity:.25}
+  }
+  @keyframes heroBorn{
+    from{opacity:0;transform:scaleY(.68) scaleX(.99)}
+    to{opacity:1;transform:none}
+  }
+
+  .play .horizon{
+    animation:
+      lineIn .4s cubic-bezier(.22,1,.36,1) both,
+      lineOut .28s cubic-bezier(.55,0,.55,.2) 1.22s forwards;
+  }
+  .play .pulse{
+    animation:pulseOnce .48s cubic-bezier(.25,.46,.45,.94) .4s both;
+  }
+  .play .veil-top{
+    animation:veilUp .6s cubic-bezier(.7,0,.16,1) .7s both;
+  }
+  .play .veil-bot{
+    animation:veilDown .6s cubic-bezier(.7,0,.16,1) .7s both;
+  }
+  .play .hero-inner{
+    animation:heroBorn .68s cubic-bezier(.22,1,.36,1) .62s both;
+  }
+
+  /* ---------- Resolved / skipped state ---------- */
+  .done .horizon,
+  .done .pulse{animation:none;opacity:0}
+  .done .veil-top{animation:none;transform:translateY(-103%);opacity:0}
+  .done .veil-bot{animation:none;transform:translateY(103%);opacity:0}
+  .done .hero-inner{animation:none;opacity:1;transform:none}
+
+  /* ---------- Replay ---------- */
+  #replay{
+    position:fixed;
+    right:24px;
+    bottom:22px;
+    z-index:20;
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-family:'Jost',sans-serif;
+    font-weight:400;
+    font-size:.6rem;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--gold-dim);
+    padding:10px 4px 8px;
+    border-bottom:1px solid rgba(133,113,74,.35);
+    transition:color .35s ease,border-color .35s ease;
+  }
+  #replay:hover{
+    color:var(--gold);
+    border-bottom-color:rgba(201,169,110,.6);
+  }
+</style>
+<meta name="robots" content="noindex, nofollow">
+
+<style>
+/* live-site backdrop: the real website sits behind the effect */
+#hero{position:fixed !important;inset:0 !important;width:100% !important;height:100% !important;
+  margin:0 !important;padding:0 !important;max-width:none !important;transform:none;z-index:0}
+#hero>*:not(.realsite){visibility:hidden !important}
+.realsite{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;visibility:visible;z-index:0;background:#0a0a0c}
+</style>
+
+</head>
+<body>
+
+<section id="hero"><iframe class="realsite" src="/" title="Emotion Mentoring"></iframe>
+  <div class="hero-inner">
+    <p class="kicker">Emotion Mentoring for Leaders</p>
+    <h1>
+      <span class="l1">See clearly. Lead well.</span>
+      <span class="l1">Protect what you have built.</span>
+    </h1>
+    <p class="l2">I help leaders increase their capacity under pressure, develop a mind capable of better decisions, and remain effective through personal and professional crises.</p>
+    <span class="pill">Begin with one powerful conversation</span>
+  </div>
+</section>
+
+<div class="veil veil-top"></div>
+<div class="veil veil-bot"></div>
+<div class="horizon"></div>
+<div class="pulse"></div>
+
+<button id="replay" type="button">Replay</button>
+
+<script>
+(function(){
+  var body = document.body;
+  var DURATION = 1500;
+  var playing = false;
+  var endTimer = null;
+
+  function play(){
+    clearTimeout(endTimer);
+    body.classList.remove('done');
+    body.classList.remove('play');
+    void body.offsetWidth; /* restart animations */
+    body.classList.add('play');
+    playing = true;
+    endTimer = setTimeout(function(){ playing = false; }, DURATION);
+  }
+
+  function skip(){
+    if(!playing) return;
+    playing = false;
+    clearTimeout(endTimer);
+    body.classList.remove('play');
+    body.classList.add('done');
+  }
+
+  document.getElementById('replay').addEventListener('click', function(e){
+    e.stopPropagation();
+    play();
+  });
+
+  document.addEventListener('click', skip);
+  document.addEventListener('keydown', skip);
+
+  play();
+})();
+</script>
+
+</body>
+</html>

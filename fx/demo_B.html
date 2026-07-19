@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FX Demo B — Molten Pour</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0a0a0c; --gold:#c9a96e; --gold-dim:#85714a; --gold-hi:#f2e8d4; --gold-lt:#d9c491;
+    --text:#b6b1a6; --text-dim:#76715f;
+    --metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%);
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0; background:var(--ink); overflow:hidden;
+    display:grid; place-items:center;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Hero ---------- */
+  #hero{
+    text-align:center; padding:0 24px; max-width:1100px;
+    position:relative; z-index:1;
+    visibility:hidden; will-change:transform,opacity;
+  }
+  .kicker{
+    font-family:'Jost',sans-serif; font-weight:400; font-size:.66rem;
+    letter-spacing:.42em; text-transform:uppercase; color:var(--gold);
+    margin:0 0 2.6vh;
+  }
+  h1{ margin:0 0 3vh; }
+  .l1{
+    display:block; font-family:'Cormorant Garamond',serif; font-weight:500;
+    font-variant:small-caps; font-size:clamp(2.1rem,5vw,3.4rem); line-height:1.16;
+    background:var(--metal); background-size:220% 100%;
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation:shimmer 7s ease-in-out infinite alternate;
+  }
+  @keyframes shimmer{
+    from{ background-position:0% 0; }
+    to  { background-position:100% 0; }
+  }
+  .l2{
+    font-family:'Cormorant Garamond',serif; font-style:italic;
+    font-size:clamp(1.35rem,2.6vw,1.65rem); line-height:1.5;
+    color:var(--text); max-width:34em; margin:0 auto;
+  }
+  .pill{
+    display:inline-block; font-family:'Jost',sans-serif; font-weight:500;
+    font-size:.66rem; text-transform:uppercase; letter-spacing:.16em;
+    color:#171204; background:var(--metal); border-radius:100px;
+    padding:16px 42px; margin-top:4vh;
+  }
+
+  /* ---------- The molten sheet ---------- */
+  #pour{
+    position:fixed; inset:0; z-index:5;
+    background:var(--metal); background-size:280% 100%;
+    animation:molten 3s linear infinite alternate;
+    transform:translateY(-102%);
+    overflow:hidden; pointer-events:none; will-change:transform;
+  }
+  @keyframes molten{
+    from{ background-position:0% 0; }
+    to  { background-position:100% 0; }
+  }
+  #pour::before,
+  #pour::after{
+    content:""; position:absolute; left:0; right:0; height:3px;
+    background:var(--gold-hi);
+    box-shadow:0 0 22px 6px rgba(253,246,227,.75), 0 0 60px 18px rgba(201,169,110,.45);
+  }
+  #pour::before{ top:0; }
+  #pour::after{ bottom:0; }
+  #sweep{
+    position:absolute; inset:-2% -20%;
+    background:linear-gradient(105deg, transparent 40%, rgba(255,252,240,.85) 50%, transparent 60%);
+    transform:translateX(-110%); mix-blend-mode:screen; will-change:transform;
+  }
+
+  /* ---------- Replay ---------- */
+  #replay{
+    position:fixed; right:22px; bottom:20px; z-index:10;
+    font-family:'Jost',sans-serif; font-weight:400; font-size:.62rem;
+    text-transform:uppercase; letter-spacing:.3em; text-indent:.3em;
+    color:var(--gold-dim); background:transparent;
+    border:1px solid rgba(201,169,110,.25); border-radius:100px;
+    padding:10px 20px; cursor:pointer;
+    transition:color .35s ease, border-color .35s ease;
+  }
+  #replay:hover{ color:var(--gold); border-color:rgba(201,169,110,.7); }
+</style>
+<meta name="robots" content="noindex, nofollow">
+
+<style>
+/* live-site backdrop: the real website sits behind the effect */
+#hero{position:fixed !important;inset:0 !important;width:100% !important;height:100% !important;
+  margin:0 !important;padding:0 !important;max-width:none !important;transform:none;z-index:0}
+#hero>*:not(.realsite){visibility:hidden !important}
+.realsite{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;visibility:visible;z-index:0;background:#0a0a0c}
+</style>
+
+</head>
+<body>
+
+  <section id="hero"><iframe class="realsite" src="/" title="Emotion Mentoring"></iframe>
+    <p class="kicker">Emotion Mentoring for Leaders</p>
+    <h1>
+      <span class="l1">See clearly. Lead well.</span>
+      <span class="l1">Protect what you have built.</span>
+    </h1>
+    <p class="l2">I help leaders increase their capacity under pressure, develop a mind capable of better decisions, and remain effective through personal and professional crises.</p>
+    <span class="pill">Begin with one powerful conversation</span>
+  </section>
+
+  <div id="pour" aria-hidden="true">
+    <div id="sweep"></div>
+  </div>
+
+  <button id="replay" type="button">Replay</button>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/gsap.min.js"></script>
+<script>
+(function(){
+  var hero   = document.getElementById('hero');
+  var pour   = document.getElementById('pour');
+  var sweep  = document.getElementById('sweep');
+  var replay = document.getElementById('replay');
+
+  function resolveInstant(){
+    /* Fallback: no animation library — land on the finished hero. */
+    pour.style.display = 'none';
+    hero.style.visibility = 'visible';
+  }
+
+  if (!window.gsap){
+    resolveInstant();
+    replay.addEventListener('click', function(){ location.reload(); });
+    return;
+  }
+
+  var tl = gsap.timeline({ paused:true });
+
+  /* t = 0.0 — reset every layer (makes restart clean) */
+  tl.set(pour,  { yPercent:-102 }, 0)
+    .set(sweep, { xPercent:-110 }, 0)
+    .set(hero,  { autoAlpha:0, scale:1.02, y:14 }, 0)
+
+    /* 0.0 – 0.6 s : the sheet of liquid gold pours down, coating the screen */
+    .to(pour, { yPercent:0, duration:.6, ease:'power2.inOut' }, 0)
+
+    /* 0.6 s : one bright specular sweep across the sheen */
+    .fromTo(sweep, { xPercent:-110 }, { xPercent:110, duration:.32, ease:'none' }, .58)
+
+    /* hero is uncovered by the drain — make it ready beneath the sheet */
+    .set(hero, { autoAlpha:1 }, .85)
+    .to(hero, { scale:1, y:0, duration:.6, ease:'power3.out' }, .9)
+
+    /* 0.9 – 1.4 s : the gold drains downward and off-screen */
+    .to(pour, { yPercent:103, duration:.5, ease:'power4.inOut' }, .9);
+
+  function skip(){
+    if (tl.progress() < 1) tl.progress(1);
+  }
+
+  window.addEventListener('click', skip);
+  window.addEventListener('keydown', skip);
+
+  replay.addEventListener('click', function(e){
+    e.stopPropagation();
+    tl.restart();
+  });
+
+  tl.play();
+})();
+</script>
+</body>
+</html>
