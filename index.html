@@ -248,8 +248,28 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;o
 .mentorline:hover .m-link{color:var(--gold-hi);border-color:var(--gold)}
 @media (max-width:760px){.mentorline{flex-direction:column;align-items:flex-start;gap:24px}.m-photo{width:min(72vw,300px)}}
 
+/* ═══ 3 · THE MENTORING — the ledger ═══ */
+#mentoring{background:var(--ink2)}
+.lg-lead{margin:var(--sp-1) auto 0;max-width:34em;font-family:var(--serif);font-style:italic;font-size:var(--fs-m);line-height:1.5;color:var(--text)}
+.ledger{max-width:820px;margin:var(--sp-2) auto 0;border-top:1px solid var(--hair);text-align:left}
+.lg-row{display:grid;grid-template-columns:1fr 44px 1fr;align-items:center;gap:0 10px;
+  padding:26px 10px;border-bottom:1px solid var(--hair);transition:background .3s}
+.lg-row:hover{background:rgba(201,169,110,.03)}
+.lg-row .from{color:var(--text-dim);font-size:var(--fs-s);line-height:1.6;text-align:right;transition:color .3s}
+.lg-row:hover .from{color:var(--text)}
+.lg-row .arr{text-align:center;color:var(--gold-dim);font-family:var(--serif);font-size:1.1rem}
+.lg-row .to{font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;
+  font-size:var(--fs-m);line-height:1.35}
+.lg-note{margin-top:var(--sp-2);text-align:center;font-family:var(--sans);font-size:var(--fs-tag);
+  letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim);line-height:2.2}
+@media (max-width:700px){
+  .lg-row{grid-template-columns:1fr;gap:8px;padding:22px 4px}
+  .lg-row .from{text-align:left}
+  .lg-row .arr{display:none}
+}
+
 /* ═══ 4 · PROOF ═══ */
-#proof{background:var(--ink2);padding-bottom:var(--sp-3)}
+#proof{background:var(--ink);padding-bottom:var(--sp-3)}
 .q-more{max-width:720px;margin:var(--sp-1) auto 0;text-align:right}
 .q-all{display:inline-block;font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3);padding-bottom:4px;transition:color .25s,border-color .25s}
 .q-all:hover{color:var(--gold-hi);border-color:var(--gold)}
@@ -264,8 +284,8 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;o
 .cta-block{margin-top:var(--sp-3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--sp-3);text-align:left}
 
 /* ═══ 5 · TERMS ═══ */
-#terms{background:var(--ink)}
-#fit{background:var(--ink2)}
+#terms{background:var(--ink2)}
+#fit{background:var(--ink)}
 #terms .spots{display:flex;align-items:baseline;gap:.55em;margin-top:var(--sp-1);flex-wrap:wrap}
 #terms .spots .n{font-family:var(--serif);font-weight:500;font-size:var(--fs-spots);line-height:1;white-space:nowrap}
 #terms .spots .lbl{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:var(--fs-spots);color:var(--gold-hi)}
@@ -279,7 +299,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;o
 @media (max-width:760px){.t-row{flex-direction:column;gap:8px}.t-row .v{text-align:left}}
 
 /* ═══ 6 · THE CONVERSATION ═══ */
-#conversation{background:var(--ink);padding-bottom:var(--sp-3);text-align:center}
+#conversation{background:var(--ink2);padding-bottom:var(--sp-3);text-align:center}
 #conversation .kick{text-indent:.42em}
 #conversation .lead{margin-top:var(--sp-1);font-family:var(--serif);font-style:italic;font-size:var(--fs-m);color:var(--text);margin-left:auto;margin-right:auto;max-width:34em}
 #conversation h2{margin-left:auto;margin-right:auto;max-width:16em}
@@ -437,9 +457,45 @@ footer .f-copy{letter-spacing:.26em}
 
 </section>
 
+<!-- ═══════════ 3 · THE MENTORING ═══════════ -->
+<section id="mentoring" class="scene">
+  <p class="kick" data-rise>02 &middot; The Mentoring</p>
+  <h2 class="assemble">What changes inside the mind</h2>
+  <p class="lg-lead" data-rise>What a leader carries in, and what the mind carries out.</p>
+  <div class="rule" data-line></div>
+  <div class="ledger">
+    <div class="lg-row" data-rise>
+      <span class="from">Pressure that keeps rising</span>
+      <span class="arr">&rarr;</span>
+      <span class="to metal shimmer">Capacity that grows with it</span>
+    </div>
+    <div class="lg-row" data-rise>
+      <span class="from">Reactions that repeat for years</span>
+      <span class="arr">&rarr;</span>
+      <span class="to metal shimmer">Sources found and repaired</span>
+    </div>
+    <div class="lg-row" data-rise>
+      <span class="from">Decisions no one else can hear</span>
+      <span class="arr">&rarr;</span>
+      <span class="to metal shimmer">Strength when you decide alone</span>
+    </div>
+    <div class="lg-row" data-rise>
+      <span class="from">A crisis that touches everything</span>
+      <span class="arr">&rarr;</span>
+      <span class="to metal shimmer">Stability that holds through it</span>
+    </div>
+    <div class="lg-row" data-rise>
+      <span class="from">A period that could destabilize everything</span>
+      <span class="arr">&rarr;</span>
+      <span class="to metal shimmer">What you built, protected</span>
+    </div>
+  </div>
+  <p class="lg-note" data-rise>Session by session &middot; One on one with Michal &middot; 11+ years of practice</p>
+</section>
+
 <!-- ═══════════ 4 · PROOF ═══════════ -->
 <section id="proof" class="scene">
-  <p class="kick" data-rise>02 &middot; Proof</p>
+  <p class="kick" data-rise>03 &middot; Proof</p>
   <h2 class="assemble">What clients say</h2>
   <div class="rule" data-line></div>
 
@@ -470,7 +526,7 @@ footer .f-copy{letter-spacing:.26em}
 
 <!-- ═══════════ 5 · TERMS ═══════════ -->
 <section id="terms" class="scene">
-  <p class="kick" data-rise>03 &middot; Terms</p>
+  <p class="kick" data-rise>04 &middot; Terms</p>
   <h2 class="assemble">Open terms for a closed circle</h2>
   <div class="rule" data-line></div>
 
@@ -521,7 +577,7 @@ footer .f-copy{letter-spacing:.26em}
 
 <!-- ═══════════ 7 · THE CONVERSATION ═══════════ -->
 <section id="conversation" class="scene">
-  <p class="kick" data-rise>04 &middot; The Conversation</p>
+  <p class="kick" data-rise>05 &middot; The Conversation</p>
   <h2 class="assemble">Book your confidential 30-minute conversation</h2>
   <p class="lead" data-rise>One email. A confidential conversation. A plain yes or no at the end.</p>
 
