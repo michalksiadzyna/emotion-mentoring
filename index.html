@@ -552,15 +552,18 @@ footer .f-copy{letter-spacing:.26em}
     <span class="n metal shimmer" id="spotsBig">8 of 12</span>
     <span class="lbl">spots taken.</span>
   </div>
-  <p class="spots-note" data-rise><b class="metal" id="spotsLine">5 open as of July 2026.</b> Entry is decided in the conversation.</p>
+  <!-- ONE SOURCE OF TRUTH: edit only the "8 of 12" above. Keep this static line as (12 - taken) for crawlers; the script recomputes it for browsers. -->
+  <p class="spots-note" data-rise><b class="metal" id="spotsLine">4 open as of July 2026.</b> Entry is decided in the conversation.</p>
   <script>
-  /* Numbers maintained manually by Michal; month always shows current (user ruling 2026-07-12) */
+  /* Single source of truth: the visible "taken of total" text above (user rulings 2026-07-12 / 2026-07-20).
+     The open count is DERIVED from it, so both lines always sum to total. Month always shows current. */
   (function(){
-    var SPOTS = { taken: 8, total: 12 };
+    var m = document.getElementById('spotsBig').textContent.match(/(\d+)\s*of\s*(\d+)/);
+    if(!m) return;
+    var taken = parseInt(m[1], 10), total = parseInt(m[2], 10);
     var asOf = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
-    document.getElementById('spotsBig').textContent = SPOTS.taken + ' of ' + SPOTS.total;
     document.getElementById('spotsLine').textContent =
-      (SPOTS.total - SPOTS.taken) + ' open as of ' + asOf + '.';
+      (total - taken) + ' open as of ' + asOf + '.';
   })();
   </script>
 
