@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Section 02 — Three Propositions</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0a0a0c;--ink2:#0d0d10;--hair:rgba(255,255,255,.12);
+  --gold:#c9a96e;--gold-dim:#85714a;--gold-hi:#f2e8d4;--gold-lt:#d9c491;
+  --text:#b6b1a6;--text-dim:#76715f;
+  --metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%);
+  --serif:'Cormorant Garamond',serif;--sans:'Jost',sans-serif;
+  --fs-l:clamp(2.1rem,5vw,3.4rem);--fs-m:clamp(1.35rem,2.6vw,1.65rem);--fs-s:19px;--fs-tag:.66rem;
+  --sp-1:20px;--sp-2:40px;--sp-3:60px;--sp-4:90px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--text);font-family:var(--sans);font-weight:300;font-size:var(--fs-s);line-height:1.7;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;opacity:.045;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.metal{background-image:var(--metal);background-size:230% 100%;background-position:50% 0;
+  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.scene{position:relative;padding:var(--sp-4) 8vw;text-align:center}
+.kick{font-family:var(--sans);font-weight:400;font-size:var(--fs-tag);letter-spacing:.42em;text-transform:uppercase;color:var(--gold-dim)}
+.scene h2{font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;line-height:1.1;
+  font-size:var(--fs-l);color:var(--gold-hi);margin-top:var(--sp-1)}
+.rule{height:1px;background:var(--hair);margin:var(--sp-2) auto 0;max-width:720px}
+
+/* preview chrome */
+.opt-label{position:sticky;top:0;z-index:50;background:linear-gradient(180deg,rgba(10,10,12,.96),rgba(10,10,12,.85));
+  border-bottom:1px solid rgba(201,169,110,.35);padding:14px 8vw;text-align:center;
+  font-family:var(--sans);font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+.divide{height:var(--sp-4);background:repeating-linear-gradient(45deg,#050506 0 14px,#0a0a0c 14px 28px)}
+
+/* ═══ OPTION A — THE LEDGER ═══ */
+#optA{background:var(--ink2)}
+.ledger{max-width:820px;margin:var(--sp-2) auto 0;border-top:1px solid var(--hair);text-align:left}
+.lg-row{display:grid;grid-template-columns:1fr 44px 1fr;align-items:center;gap:0 10px;
+  padding:26px 10px;border-bottom:1px solid var(--hair);transition:background .3s}
+.lg-row:hover{background:rgba(201,169,110,.03)}
+.lg-row .from{color:var(--text-dim);font-size:var(--fs-s);line-height:1.6;text-align:right}
+.lg-row .arr{text-align:center;color:var(--gold-dim);font-family:var(--serif);font-size:1.1rem}
+.lg-row .to{font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;
+  font-size:clamp(1.1rem,2.2vw,1.4rem);line-height:1.35}
+.lg-note{margin-top:var(--sp-2);text-align:center;font-family:var(--sans);font-size:var(--fs-tag);
+  letter-spacing:.3em;text-transform:uppercase;color:var(--text-dim)}
+@media (max-width:700px){
+  .lg-row{grid-template-columns:1fr;gap:8px;padding:22px 4px}
+  .lg-row .from{text-align:left}
+  .lg-row .arr{display:none}
+}
+
+/* ═══ OPTION B — THE MONUMENT ═══ */
+#optB{background:var(--ink)}
+.monument{max-width:900px;margin:var(--sp-3) auto 0;font-family:var(--serif);font-weight:500;font-style:italic;
+  font-size:clamp(1.7rem,4vw,2.7rem);line-height:1.4;color:var(--gold-hi);text-wrap:balance}
+.monument .metal{font-style:normal}
+.mon-tags{display:flex;justify-content:center;align-items:baseline;gap:2.4em;margin-top:var(--sp-3);
+  font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.4em;text-transform:uppercase;color:var(--gold-dim)}
+.mon-tags i{font-style:normal;color:var(--gold);opacity:.7}
+@media (max-width:600px){.mon-tags{gap:1.2em;letter-spacing:.24em}}
+
+/* ═══ OPTION C — THE STRATA ═══ */
+#optC{background:var(--ink2)}
+.strata{position:relative;max-width:760px;margin:var(--sp-2) auto 0;text-align:left}
+.strata::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,transparent,var(--gold-lt) 20%,#fdf6e3 55%,var(--gold-lt) 90%,transparent);opacity:.55}
+.stratum{position:relative;padding:34px 6vw;border:1px solid var(--hair);border-top:none}
+.stratum:first-child{border-top:1px solid var(--hair)}
+.stratum .s-tag{font-family:var(--sans);font-size:var(--fs-tag);letter-spacing:.36em;text-transform:uppercase;color:var(--gold-dim)}
+.stratum p{margin-top:10px;font-size:var(--fs-s);line-height:1.7;color:var(--text)}
+.stratum.s1{background:rgba(255,255,255,.025)}
+.stratum.s2{background:rgba(255,255,255,.01)}
+.stratum.s3{background:rgba(201,169,110,.05)}
+.stratum.s3 p{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:var(--fs-m);line-height:1.4}
+.strata-close{margin-top:var(--sp-2);text-align:center;font-family:var(--serif);font-style:italic;
+  font-size:var(--fs-m);line-height:1.5}
+</style>
+</head>
+<body>
+
+<div class="opt-label">Option A &middot; The Ledger</div>
+<section id="optA" class="scene">
+  <p class="kick">02 &middot; The Mentoring</p>
+  <h2>What changes inside the mind</h2>
+  <div class="rule"></div>
+  <div class="ledger">
+    <div class="lg-row">
+      <span class="from">Pressure that keeps rising</span>
+      <span class="arr">&rarr;</span>
+      <span class="to metal">Capacity that grows with it</span>
+    </div>
+    <div class="lg-row">
+      <span class="from">Reactions with hidden sources</span>
+      <span class="arr">&rarr;</span>
+      <span class="to metal">Sources found and repaired</span>
+    </div>
+    <div class="lg-row">
+      <span class="from">Decisions carried under strain</span>
+      <span class="arr">&rarr;</span>
+      <span class="to metal">Decisions made with a clear mind</span>
+    </div>
+    <div class="lg-row">
+      <span class="from">A mind that endures</span>
+      <span class="arr">&rarr;</span>
+      <span class="to metal">A mind that adapts</span>
+    </div>
+  </div>
+  <p class="lg-note">Session by session &middot; One on one with Michal</p>
+</section>
+
+<div class="divide"></div>
+
+<div class="opt-label">Option B &middot; The Monument</div>
+<section id="optB" class="scene">
+  <p class="kick">02 &middot; The Mentoring</p>
+  <div class="rule" style="margin-top:var(--sp-2)"></div>
+  <p class="monument">Emotion Mentoring <span class="metal">finds the damage</span> life left in the mind, <span class="metal">repairs it at the source</span>, and returns a mind that <span class="metal">carries more</span>.</p>
+  <div class="mon-tags"><span>Found</span><i>&middot;</i><span>Repaired</span><i>&middot;</i><span>Stronger</span></div>
+</section>
+
+<div class="divide"></div>
+
+<div class="opt-label">Option C &middot; The Strata</div>
+<section id="optC" class="scene">
+  <p class="kick">02 &middot; The Mentoring</p>
+  <h2>Where the work happens</h2>
+  <div class="rule"></div>
+  <div class="strata">
+    <div class="stratum s1">
+      <span class="s-tag">The surface</span>
+      <p>The reactions, the tension, the heavy days everyone can see.</p>
+    </div>
+    <div class="stratum s2">
+      <span class="s-tag">Beneath</span>
+      <p>The strain that quietly drives them.</p>
+    </div>
+    <div class="stratum s3">
+      <span class="s-tag">The source</span>
+      <p class="metal">Emotional damage life left behind. This is where Emotion Mentoring works.</p>
+    </div>
+  </div>
+  <p class="strata-close metal">Repair the source and the surface follows.</p>
+</section>
+
+</body>
+</html>
