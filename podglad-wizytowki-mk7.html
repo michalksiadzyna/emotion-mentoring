@@ -123,7 +123,7 @@
   </div></div>
   <div class="scaler"><div class="card">
     <div class="back-center">
-      <div class="qrwrap2"><i class="k1 metal-fill"></i><i class="k2 metal-fill"></i><i class="k3 metal-fill"></i><i class="k4 metal-fill"></i><div class="qr" data-seed="cc1"></div></div>
+      <div class="qrwrap2"><i class="k1 metal-fill"></i><i class="k2 metal-fill"></i><i class="k3 metal-fill"></i><i class="k4 metal-fill"></i><div class="qr" data-qr="michal"></div></div>
       <div class="site gold" style="letter-spacing:.009em">emotionmentoring.com</div>
       <div class="phone gold">+48 696 853 927</div>
     </div>
@@ -140,7 +140,7 @@
   </div></div>
   <div class="scaler"><div class="card">
     <div class="back-center">
-      <div class="qrwrap2"><i class="k1 metal-fill"></i><i class="k2 metal-fill"></i><i class="k3 metal-fill"></i><i class="k4 metal-fill"></i><div class="qr" data-seed="cc1"></div></div>
+      <div class="qrwrap2"><i class="k1 metal-fill"></i><i class="k2 metal-fill"></i><i class="k3 metal-fill"></i><i class="k4 metal-fill"></i><div class="qr" data-qr="maciej"></div></div>
       <div class="site gold" style="font-size:3mm;letter-spacing:.0795em">maciejcaputa.com</div>
       <div class="phone gold" style="letter-spacing:.0351em">+48 512 183 439</div>
     </div>
@@ -148,40 +148,22 @@
 </div>
 
 <script>
-function qrPattern(seedStr, n){
-  let seed = 0; for(const ch of seedStr) seed = (seed*31 + ch.charCodeAt(0)) & 0xffff;
-  function rnd(){ seed = (seed*9301+49297)%233280; return seed/233280; }
-  const cells = [];
-  for(let r=0;r<n;r++){
-    for(let c=0;c<n;c++){
-      const f = Math.floor(n/3);
-      const inTL = r<f&&c<f, inTR = r<f&&c>=n-f, inBL = r>=n-f&&c<f;
-      let on = false;
-      if(inTL||inTR||inBL){
-        const rr = r<f?r:r-(n-f), cc = c<f?c:c-(n-f);
-        const ring = rr===0||rr===f-1||cc===0||cc===f-1;
-        const core = rr>=2&&rr<=f-3&&cc>=2&&cc<=f-3;
-        on = ring||core;
-      } else on = rnd()>0.52;
-      cells.push(on);
-    }
-  }
-  return cells;
-}
+const QR_MATRICES = {"michal": [[1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1], [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1], [1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1], [1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1], [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 1, 1], [1, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 1], [0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0], [0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 0, 0], [1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0], [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0], [1, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0], [1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0], [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0], [1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0], [1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]], "maciej": [[1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1], [1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1], [1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 1], [1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 1], [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 1, 1, 0, 1], [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1], [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], [1, 0, 1, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0], [1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 1, 0], [1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0], [0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1], [1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 0], [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0, 1], [1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1], [1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0], [1, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0], [1, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 0, 1, 1, 0, 1, 1, 0, 1, 0], [1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1], [1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 1], [1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1]]};
 function buildQR(el){
-  const cells = qrPattern(el.dataset.seed||'x', 21);
-  cells.forEach(on=>{
-    const d=document.createElement('div');
-    if(on) d.className='on';
+  const m = QR_MATRICES[el.dataset.qr];
+  el.style.gridTemplateColumns = 'repeat(' + m.length + ',1fr)';
+  el.style.gridTemplateRows = 'repeat(' + m.length + ',1fr)';
+  m.forEach(row => row.forEach(on => {
+    const d = document.createElement('div');
+    if(on) d.className = 'on';
     el.appendChild(d);
-  });
+  }));
 }
 function fitCards(){
   document.querySelectorAll('.scaler').forEach(sc=>{
     const card = sc.firstElementChild;
     card.style.transform='none';
     const w = card.offsetWidth;
-    const avail = sc.clientWidth;
     const s = 1.65;
     card.style.transform = 'scale('+s+')';
     sc.style.height = (card.offsetHeight * s) + 'px';
