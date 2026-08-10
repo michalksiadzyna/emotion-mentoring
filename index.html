@@ -822,5 +822,32 @@ if(animOK){
   });
 })();
 </script>
+
+<script>
+/* CTA scroll: land with the section heading at the top of the screen, not on the empty space above it. */
+(function(){
+  var GAP = 22;
+  function target(){
+    var h = document.querySelector('#conversation h2');
+    if(!h) return null;
+    return Math.max(0, h.getBoundingClientRect().top + window.pageYOffset - GAP);
+  }
+  function go(smooth){
+    var y = target(); if(y === null) return;
+    window.scrollTo({ top:y, behavior: smooth ? 'smooth' : 'auto' });
+  }
+  document.querySelectorAll('a[href="#conversation"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      go(true);
+      if(history.replaceState) history.replaceState(null, '', '#conversation');
+    });
+  });
+  /* wejscie z podstrony przez adres #conversation: przegladarka skacze sama, poprawiamy po ulozeniu layoutu */
+  if(location.hash === '#conversation'){
+    window.addEventListener('load', function(){ setTimeout(function(){ go(false); }, 60); });
+  }
+})();
+</script>
 </body>
 </html>
