@@ -101,30 +101,63 @@ h2{font-size:clamp(30px,4.6vw,44px);line-height:1.18;letter-spacing:.01em;margin
   min-height:100svh;display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;
   position:relative;padding:var(--sp-3) 24px;
+  background:#000;
 }
-.hero::before{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    radial-gradient(ellipse 60% 45% at 50% 42%,var(--violet-glow),transparent 70%),
-    radial-gradient(ellipse 30% 25% at 50% 55%,rgba(232,179,76,.07),transparent 70%);
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:200px;
+  background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none;
 }
-.hero img{
-  width:min(340px,72vw);height:auto;display:block;position:relative;
-  filter:drop-shadow(0 0 60px rgba(140,30,210,.25));
+.sigil{position:relative;width:min(360px,74vw)}
+.sigil img{
+  width:100%;height:auto;display:block;position:relative;z-index:3;
   mix-blend-mode:screen;
 }
-.hero .overline{margin-top:var(--sp-2)}
+.aura{position:absolute;border-radius:50%;pointer-events:none;filter:blur(46px);z-index:1}
+.aura.a1{inset:-14%;background:radial-gradient(circle at 50% 46%,rgba(140,30,210,.36),transparent 62%);animation:breathe 7s ease-in-out infinite}
+.aura.a2{inset:8%;background:radial-gradient(circle at 50% 42%,rgba(232,179,76,.22),transparent 58%);animation:breathe 5.2s ease-in-out 1.6s infinite}
+@keyframes breathe{0%,100%{opacity:.45;transform:scale(.96)}50%{opacity:1;transform:scale(1.06)}}
+.wisps{position:absolute;inset:-18%;width:136%;height:136%;z-index:2;pointer-events:none;filter:blur(1.5px);overflow:visible}
+.wisps path{fill:none;stroke-width:1.6;stroke-linecap:round;opacity:0;
+  stroke-dasharray:120 220;stroke-dashoffset:340;animation:wisp 9s ease-in-out infinite}
+.wisps path:nth-of-type(2){animation-delay:1.4s;animation-duration:11s}
+.wisps path:nth-of-type(3){animation-delay:3.1s;animation-duration:10s}
+.wisps path:nth-of-type(4){animation-delay:4.6s;animation-duration:12s}
+.wisps path:nth-of-type(5){animation-delay:6.2s;animation-duration:9.5s}
+.wisps path:nth-of-type(6){animation-delay:7.4s;animation-duration:11.5s}
+@keyframes wisp{
+  0%{stroke-dashoffset:340;opacity:0}
+  16%{opacity:.75}
+  60%{opacity:.3}
+  85%{stroke-dashoffset:-340;opacity:0}
+  100%{stroke-dashoffset:-340;opacity:0}
+}
+.spark{position:absolute;width:3px;height:3px;border-radius:50%;z-index:2;opacity:0;
+  background:var(--gold-hi);box-shadow:0 0 8px rgba(247,212,136,.9);
+  animation:spark 6s linear infinite}
+.spark.v{background:#c77bf0;box-shadow:0 0 8px rgba(199,123,240,.9)}
+@keyframes spark{
+  0%{opacity:0;transform:translateY(16px) scale(.5)}
+  12%{opacity:.9}
+  55%{opacity:.35}
+  100%{opacity:0;transform:translateY(-70px) scale(1)}
+}
+.hero .overline{margin-top:var(--sp-2);position:relative;z-index:4}
 .hero h1{
   font-size:clamp(38px,6vw,60px);line-height:1.12;letter-spacing:.02em;
-  margin-top:14px;position:relative;
+  margin-top:14px;position:relative;z-index:4;
 }
-.hero p{margin-top:18px;max-width:560px;color:var(--dim);font-size:18px;position:relative}
+.hero p{margin-top:18px;max-width:560px;color:var(--dim);font-size:18px;position:relative;z-index:4}
 .hero .drop{
   position:absolute;bottom:34px;left:50%;width:1px;height:70px;
   background:linear-gradient(180deg,var(--gold),transparent);
   animation:drop 2.6s ease-in-out infinite;
 }
 @keyframes drop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@media (prefers-reduced-motion:reduce){
+  .aura,.wisps path,.spark,.hero .drop{animation:none}
+  .wisps path{opacity:.3;stroke-dashoffset:0}
+  .spark{opacity:.5}
+}
 
 /* ---------- sections ---------- */
 section{padding:var(--sp-5) 0;position:relative}
@@ -220,7 +253,35 @@ footer .links{margin-top:10px;display:flex;gap:26px;justify-content:center;flex-
 <body>
 
 <header class="hero">
-  <img src="assets/shen-logo-tall.png" alt="Fundacja SHEN, a gold flame rising through a violet triangle" fetchpriority="high">
+  <div class="sigil">
+    <div class="aura a1"></div><div class="aura a2"></div>
+    <svg class="wisps" viewBox="0 0 400 400" aria-hidden="true">
+      <defs>
+        <linearGradient id="wgold" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#b87f22" stop-opacity="0"/>
+          <stop offset=".5" stop-color="#f7d488"/>
+          <stop offset="1" stop-color="#e8b34c" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="wviol" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0" stop-color="#7a1fb8" stop-opacity="0"/>
+          <stop offset=".5" stop-color="#c77bf0"/>
+          <stop offset="1" stop-color="#a72ce8" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path stroke="url(#wviol)" pathLength="340" d="M200 330 C 120 300, 80 220, 120 150 S 170 60, 150 28"/>
+      <path stroke="url(#wgold)" pathLength="340" d="M210 340 C 290 310, 322 230, 285 160 S 242 70, 262 34"/>
+      <path stroke="url(#wviol)" pathLength="340" d="M190 348 C 108 338, 58 258, 95 188"/>
+      <path stroke="url(#wgold)" pathLength="340" d="M215 322 C 262 262, 302 210, 332 118"/>
+      <path stroke="url(#wviol)" pathLength="340" d="M180 302 C 138 240, 110 178, 142 98"/>
+      <path stroke="url(#wgold)" pathLength="340" d="M205 300 C 232 240, 210 160, 236 88"/>
+    </svg>
+    <img src="assets/shen-logo-square.png" alt="Fundacja SHEN, a gold flame rising through a violet triangle" fetchpriority="high">
+    <span class="spark" style="left:31%;top:60%;animation-delay:.8s"></span>
+    <span class="spark v" style="left:64%;top:52%;animation-delay:2.2s"></span>
+    <span class="spark" style="left:48%;top:70%;animation-delay:3.6s"></span>
+    <span class="spark v" style="left:72%;top:64%;animation-delay:5s"></span>
+    <span class="spark" style="left:38%;top:44%;animation-delay:4.2s"></span>
+  </div>
   <div class="overline">Fundacja Shen · Poland</div>
   <h1 class="metal">The Shen Foundation</h1>
   <p>Established by Michał Ksiądzyna to advance emotional awareness and carry Emotion Mentoring further than private practice ever could.</p>
