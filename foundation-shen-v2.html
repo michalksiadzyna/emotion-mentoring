@@ -98,14 +98,14 @@ h2{font-size:clamp(30px,4.6vw,44px);line-height:1.18;letter-spacing:.01em;margin
 
 /* ---------- hero ---------- */
 .hero{
-  min-height:100svh;display:flex;flex-direction:column;
+  min-height:min(88svh,980px);display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;
-  position:relative;padding:var(--sp-3) 24px;
+  position:relative;padding:48px 24px 56px;
   background:#000;overflow:hidden;
 }
 .hero::after{
   content:"";position:absolute;left:0;right:0;bottom:0;height:200px;
-  background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none;z-index:6;
+  background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none;z-index:1;
 }
 .sigil{position:relative;width:min(380px,78vw)}
 .sigil img{
@@ -118,18 +118,11 @@ h2{font-size:clamp(30px,4.6vw,44px);line-height:1.18;letter-spacing:.01em;margin
   margin-top:14px;position:relative;z-index:5;
 }
 .hero p{margin-top:18px;max-width:560px;color:var(--dim);font-size:18px;position:relative;z-index:5}
-.hero .drop{
-  position:absolute;bottom:34px;left:50%;width:1px;height:70px;z-index:6;
-  background:linear-gradient(180deg,var(--gold),transparent);
-  animation:drop 2.6s ease-in-out infinite;
-}
-@keyframes drop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 @media (prefers-reduced-motion:reduce){
-  .hero .drop{animation:none}
-}
+  }
 
 /* ---------- sections ---------- */
-section{padding:var(--sp-5) 0;position:relative}
+section{padding:clamp(72px,11vh,130px) 0;position:relative}
 section.alt{background:var(--bg2)}
 section.alt::before,section.alt::after{
   content:"";position:absolute;left:0;right:0;height:1px;
@@ -207,15 +200,14 @@ footer a{color:var(--dim);text-decoration:none}
 footer a:hover{color:var(--gold)}
 footer .links{margin-top:10px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap}
 
-/* ---------- reveal (JS-gated; without JS everything stays visible) ---------- */
-.js .rv{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
-.js .rv.in{opacity:1;transform:none}
-
 @media(max-width:760px){
   .pillars{grid-template-columns:1fr}
   .board{grid-template-columns:1fr}
   .rrow{grid-template-columns:1fr;gap:6px;padding:20px 22px}
-  section{padding:var(--sp-4) 0}
+  section{padding:64px 0}
+  .pillars,.board,.record,.btns{margin-top:var(--sp-2)}
+  h2{margin-bottom:14px}
+  .kick{margin-bottom:24px}
 }
 </style>
 </head>
@@ -228,13 +220,12 @@ footer .links{margin-top:10px;display:flex;gap:26px;justify-content:center;flex-
   <div class="overline">Fundacja Shen · Poland</div>
   <h1 class="metal">The Shen Foundation</h1>
   <p>Established by Michał Ksiądzyna to advance emotional awareness and carry Emotion Mentoring further than private practice ever could.</p>
-  <span class="drop" aria-hidden="true"></span>
 </header>
 
 <main>
 
 <section id="mission">
-  <div class="wrap rv">
+  <div class="wrap">
     <div class="kick"><span class="num">01</span><span class="name">Mission</span></div>
     <h2>Why the Foundation <span class="violet-metal">exists</span>.</h2>
     <p class="mission-line">The Shen Foundation exists to take Emotion Mentoring further than private practice ever could. We advance the physical, mental, and spiritual development of individuals through structured mentoring, education, and direct support. We give more people access to Emotion Mentoring and the real, lasting transformation it creates.</p>
@@ -242,7 +233,7 @@ footer .links{margin-top:10px;display:flex;gap:26px;justify-content:center;flex-
 </section>
 
 <section id="work" class="alt">
-  <div class="wrap rv">
+  <div class="wrap">
     <div class="kick"><span class="num">02</span><span class="name">The Work</span></div>
     <h2>Three ways the mission <span class="metal">moves</span>.</h2>
     <div class="pillars">
@@ -266,7 +257,7 @@ footer .links{margin-top:10px;display:flex;gap:26px;justify-content:center;flex-
 </section>
 
 <section id="leadership">
-  <div class="wrap rv">
+  <div class="wrap">
     <div class="kick"><span class="num">03</span><span class="name">Leadership</span></div>
     <h2>The <span class="violet-metal">board</span>.</h2>
     <div class="board">
@@ -285,7 +276,7 @@ footer .links{margin-top:10px;display:flex;gap:26px;justify-content:center;flex-
 </section>
 
 <section id="record" class="alt">
-  <div class="wrap rv">
+  <div class="wrap">
     <div class="kick"><span class="num">04</span><span class="name">The Record</span></div>
     <h2>Registered in <span class="metal">Poland</span>.</h2>
     <div class="record">
@@ -299,7 +290,7 @@ footer .links{margin-top:10px;display:flex;gap:26px;justify-content:center;flex-
 </section>
 
 <section id="connect" class="connect">
-  <div class="wrap rv">
+  <div class="wrap">
     <div class="kick"><span class="num">05</span><span class="name">Connect</span></div>
     <h2>Walk <span class="violet-metal">with us</span>.</h2>
     <p class="lead">The Foundation grew out of Emotion Mentoring itself. Follow the work, or begin where it all began.</p>
@@ -321,13 +312,6 @@ footer .links{margin-top:10px;display:flex;gap:26px;justify-content:center;flex-
   </div>
 </footer>
 
-<script>
-document.documentElement.classList.add('js');
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-
-
-</script>
 
 </body>
 </html>
