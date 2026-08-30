@@ -3,26 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Shen Foundation — Emotion Mentoring</title>
-<meta name="description" content="The Shen Foundation, established by Michal Ksiadzyna, advances emotional awareness and makes Emotion Mentoring accessible to those who need it most.">
+<title>The Shen Foundation</title>
+<meta name="description" content="The Shen Foundation, established by Michał Ksiądzyna, advances emotional awareness and makes Emotion Mentoring accessible to those who need it most. KRS 0001057347.">
 <link rel="canonical" href="https://emotionmentoring.com/foundation.html">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<meta property="og:title" content="The Shen Foundation — Emotion Mentoring">
-<meta property="og:description" content="The Shen Foundation, established by Michal Ksiadzyna, advances emotional awareness and makes Emotion Mentoring accessible to those who need it most.">
+<link rel="icon" type="image/png" href="assets/shen-logo-square.png">
+<meta property="og:title" content="The Shen Foundation">
+<meta property="og:description" content="A Polish foundation advancing emotional awareness and opening Emotion Mentoring to those who need it most.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://emotionmentoring.com/foundation.html">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://emotionmentoring.com/assets/shen-logo-square.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://emotionmentoring.com/assets/shen-logo-square.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Fundacja SHEN",
-  "alternateName": "The Shen Foundation",
+  "@type": "NGO",
+  "name": "The Shen Foundation",
+  "legalName": "Fundacja SHEN",
   "url": "https://emotionmentoring.com/foundation.html",
-  "description": "The Shen Foundation, established by Michal Ksiadzyna, advances emotional awareness and makes Emotion Mentoring accessible to those who need it most.",
+  "logo": "https://emotionmentoring.com/assets/shen-logo-square.png",
+  "description": "The Shen Foundation, established by Michał Ksiądzyna, advances emotional awareness and makes Emotion Mentoring accessible to those who need it most.",
   "founder": {
     "@type": "Person",
     "name": "Michał Ksiądzyna",
@@ -38,266 +41,263 @@
 </script>
 <style>
 :root{
-  --ink:#0a0a0c;
-  --ink2:#0d0d10;
-  --hair:rgba(255,255,255,.12);
-  --gold:#c9a96e;
-  --gold-dim:#85714a;
-  --gold-hi:#f2e8d4;
-  --gold-lt:#d9c491;
-  --text:#b6b1a6;
-  --text-dim:#76715f;
-  --metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%);
-  --serif:'Cormorant Garamond',serif;
-  --sans:'Jost',sans-serif;
+  --bg:#070409;
+  --bg2:#0c0710;
+  --ink:#ece4f4;
+  --dim:#a294b4;
+  --faint:#6d6079;
+  --violet:#a72ce8;
+  --violet-deep:#7a1fb8;
+  --violet-line:rgba(167,44,232,.28);
+  --violet-glow:rgba(140,30,210,.14);
+  --gold:#e8b34c;
+  --gold-hi:#f7d488;
+  --gold-lo:#b87f22;
+  --gold-line:rgba(232,179,76,.30);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost','Segoe UI',sans-serif;
+  --sp-1:20px;--sp-2:40px;--sp-3:60px;--sp-4:90px;--sp-5:160px;
+  --w:860px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--text);font-family:var(--sans);font-weight:300;font-size:19px;line-height:1.7;overflow-x:hidden}
-::selection{background:#c9a96e;color:#0a0a0c}
-a{color:var(--gold);}
-
-/* grain */
-body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:1900;opacity:.045;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-
-/* ═══ chrome text ═══ */
-.metal{background-image:var(--metal);background-size:230% 100%;background-position:50% 0;
-  -webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
-
-/* ═══ corner ticks ═══ */
-.tick{position:absolute;width:15px;height:15px;pointer-events:none;z-index:3;transition:width .25s ease,height .25s ease}
-.tick i{position:absolute;inset:0;background-image:var(--metal);background-size:400% 400%;display:block;
-  clip-path:polygon(0 0,100% 0,100% 13%,13% 13%,13% 100%,0 100%)}
-.tick.tl{top:0;left:0}.tick.tr{top:0;right:0;transform:rotate(90deg)}
-.tick.br{bottom:0;right:0;transform:rotate(180deg)}.tick.bl{bottom:0;left:0;transform:rotate(270deg)}
-.ticked{position:relative}
-.ticked:hover .tick{width:20px;height:20px}
-
-/* ═══ shared scene scaffolding ═══ */
-.scene{position:relative;padding:9vh 8vw}
-.kick{font-family:var(--sans);font-weight:400;font-size:.66rem;letter-spacing:.42em;text-transform:uppercase;color:var(--gold-dim)}
-.scene h2{font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;line-height:1.06;
-  font-size:clamp(2rem,5vw,3.6rem);color:var(--gold-hi);margin-top:2vh}
-.rule{height:1px;background:var(--hair);margin-top:4.5vh;transform-origin:left center}
-
-/* pill CTA */
-.pill{display:inline-block;position:relative;text-align:center;text-decoration:none;cursor:pointer;border:1px solid rgba(201,169,110,.35);
-  border-radius:100px;padding:16px 42px;font-family:var(--sans);font-weight:400;font-size:.72rem;letter-spacing:.16em;text-indent:.16em;
-  text-transform:uppercase;color:var(--gold-hi);overflow:hidden;transition:border-color .25s,box-shadow .25s,transform .15s;background:rgba(201,169,110,.05)}
-.pill::before{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 42%,rgba(255,255,255,.16) 50%,transparent 58%);
-  background-size:260% 100%;background-position:135% 0;transition:background-position .8s ease}
-.pill:hover{border-color:var(--gold);box-shadow:0 0 44px rgba(201,169,110,.14)}
-.pill:hover::before{background-position:-60% 0}
-.pill:active{transform:scale(.97)}
-.pill.solid{background-image:var(--metal);background-size:220% 100%;background-position:15% 0;border-color:transparent;color:#171204;font-weight:500;
-  box-shadow:0 8px 22px -14px rgba(0,0,0,.55);transition:border-color .25s,box-shadow .35s,transform .15s,background-position .7s ease}
-.pill.solid::before{display:none}
-.pill.solid:hover{background-position:85% 0;box-shadow:0 0 14px rgba(217,196,145,.38)}
-
-/* ═══ hero ═══ */
-#top{min-height:62svh;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden;padding:16vh 8vw 8vh}
-#top::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 70% 50% at 50% 108%,rgba(201,169,110,.09),transparent 70%)}
-#top .bar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:26px 8vw;
-  font-family:var(--sans);font-weight:400;font-size:.64rem;letter-spacing:.32em;text-transform:uppercase;color:var(--text-dim)}
-#top .bar a{font-weight:400;color:var(--gold-dim);text-decoration:none;transition:color .25s}
-#top .bar a:hover{color:var(--gold-hi)}
-#top h1{margin-top:2vh;font-family:var(--serif);font-variant:small-caps;font-weight:500;letter-spacing:.02em;line-height:1.06;
-  font-size:clamp(2.2rem,6vw,4.4rem)}
-#top .support{max-width:640px;margin-top:3vh;font-size:clamp(1rem,2.2vw,1.16rem);line-height:1.78;color:var(--text)}
-
-/* ═══ content ═══ */
-.scene .body{max-width:720px;margin-top:4.5vh}
-.scene .body p{font-size:clamp(1.02rem,2.2vw,1.18rem);line-height:1.8;color:var(--text)}
-.scene .body p+p{margin-top:3vh}
-#mission{background:var(--ink2)}
-#record{background:var(--ink2)}
-
-/* board cards */
-.b-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:4.5vh}
-.b-card{border:1px solid var(--hair);padding:clamp(26px,3.2vw,40px);background:linear-gradient(165deg,#101013,#0b0b0e);
-  transition:border-color .3s,transform .3s,box-shadow .3s;position:relative}
-.b-card:hover{border-color:rgba(201,169,110,.4);transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(0,0,0,.8)}
-.b-card h3{font-family:var(--serif);font-variant:small-caps;font-weight:500;font-size:clamp(1.5rem,3vw,2rem);line-height:1.14;color:var(--gold-hi)}
-.b-portrait{width:220px;height:220px;max-width:100%;margin:0 0 26px;border:1px solid rgba(201,169,110,.3);padding:6px;transition:border-color .3s}
-.b-portrait picture{display:block;height:100%;line-height:0}
-.b-portrait img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%) contrast(1.05);transition:filter .3s}
-.b-card:hover .b-portrait{border-color:var(--gold)}
-.b-card:hover .b-portrait img{filter:none}
-.b-card .role{margin-top:1vh;font-family:var(--sans);font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-dim);transition:color .3s}
-.b-card:hover .role{color:var(--gold)}
-.b-card p{margin-top:2.4vh;font-size:.98rem;color:var(--text-dim);line-height:1.75;transition:color .3s}
-.b-card:hover p{color:var(--text)}
-@media (max-width:860px){.b-grid{grid-template-columns:1fr}}
-
-/* record rows */
-.t-rows{margin-top:4.5vh;border-top:1px solid var(--hair)}
-.t-row{display:flex;justify-content:space-between;align-items:baseline;gap:4vw;padding:2.4vh 1vw;border-bottom:1px solid var(--hair);transition:background .3s}
-.t-row:hover{background:rgba(201,169,110,.03)}
-.t-row .k{font-family:var(--sans);font-weight:400;font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--gold-dim);min-width:130px}
-.t-row .v{font-size:clamp(1rem,2.2vw,1.2rem);color:var(--text);text-align:right;max-width:34em}
-.t-row .v b{font-weight:400;color:var(--gold-hi)}
-@media (max-width:760px){.t-row{flex-direction:column;gap:8px}.t-row .v{text-align:left}}
-.sidedoor{margin-top:5vh;font-size:.95rem;color:var(--text-dim)}
-.sidedoor a{color:var(--gold-dim);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3);padding-bottom:2px;transition:color .25s,border-color .25s}
-.sidedoor a:hover{color:var(--gold-hi);border-color:var(--gold)}
-
-/* ═══ footer ═══ */
-footer{border-top:1px solid var(--hair);padding:6vh 8vw 10vh;
-  font-family:var(--sans);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--text-dim)}
-footer .f-links{display:flex;justify-content:center;align-items:baseline;gap:2em 3.2em;flex-wrap:wrap}
-footer .f-links a{color:var(--text-dim);text-decoration:none;letter-spacing:.26em;border-bottom:1px solid rgba(201,169,110,.25);padding-bottom:4px;transition:color .25s,border-color .25s}
-footer .f-links a:hover{color:var(--gold-hi);border-color:var(--gold)}
-footer .f-copy{letter-spacing:.26em}
-
-/* ═══ sticky mobile CTA ═══ */
-#mcta{position:fixed;left:12px;right:12px;bottom:12px;z-index:1500;display:none;padding:17px 10px;text-align:center;
-  background:linear-gradient(120deg,#caa96b,#ecdcb2);color:#171204;font-family:var(--sans);font-weight:500;font-size:.7rem;
-  letter-spacing:.24em;text-indent:.24em;text-transform:uppercase;text-decoration:none;border-radius:2px;
-  transform:translateY(140%);transition:transform .35s ease;box-shadow:0 12px 34px rgba(0,0,0,.55)}
-#mcta.on{transform:translateY(0)}
-#mcta:active{transform:translateY(2px)}
-@media (max-width:760px){#mcta{display:block}}
-
-/* ═══ light scroll-reveal ═══ */
-[data-rise]{opacity:0;transform:translateY(18px);transition:opacity .4s ease,transform .4s ease}
-[data-rise].visible{opacity:1;transform:translateY(0)}
-
-@media (max-width:760px){
-  .scene{padding:8vh 7vw}
-  #top{padding:16vh 7vw 8vh}
-  #top .bar{padding:22px 7vw}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-weight:300;
+  font-size:17px;line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
-@media (prefers-reduced-motion: reduce){
-  .pill::before{transition:none}
-  .b-card{transition:none}
-  [data-rise]{opacity:1;transform:none;transition:none}
+::selection{background:rgba(167,44,232,.35);color:#fff}
+.wrap{max-width:var(--w);margin:0 auto;padding:0 24px}
+
+/* ---------- type ---------- */
+h1,h2,.serif{font-family:var(--serif);font-weight:400}
+.metal{
+  background:linear-gradient(160deg,var(--gold-hi) 10%,var(--gold) 45%,var(--gold-lo) 90%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.violet-metal{
+  background:linear-gradient(160deg,#d27bff 5%,var(--violet) 50%,var(--violet-deep) 95%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.overline{
+  font-family:var(--sans);font-size:12px;font-weight:400;
+  letter-spacing:.42em;text-transform:uppercase;color:var(--dim);
+}
+.kick{
+  font-family:var(--sans);font-size:12px;font-weight:400;
+  letter-spacing:.42em;text-transform:uppercase;
+  display:flex;align-items:center;gap:18px;margin-bottom:var(--sp-2);
+}
+.kick .num{color:var(--gold)}
+.kick .name{color:var(--dim)}
+.kick::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--violet-line),transparent)}
+h2{font-size:clamp(30px,4.6vw,44px);line-height:1.18;letter-spacing:.01em;margin-bottom:var(--sp-1)}
+.lead{font-size:19px;color:var(--dim);max-width:620px}
+
+/* ---------- hero ---------- */
+.hero{
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  position:relative;padding:44px 24px 52px;
+  background:#000;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:200px;
+  background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none;z-index:1;
+}
+.sigil{position:relative;width:min(380px,78vw)}
+.sigil img{
+  width:100%;height:auto;display:block;position:relative;z-index:3;
+  mix-blend-mode:screen;
+}
+.hero .overline{margin-top:var(--sp-2);position:relative;z-index:5}
+.hero h1{
+  font-size:clamp(38px,6vw,60px);line-height:1.12;letter-spacing:.02em;
+  margin-top:14px;position:relative;z-index:5;
+}
+.hero p{margin-top:18px;max-width:560px;color:var(--dim);font-size:18px;position:relative;z-index:5}
+@media (prefers-reduced-motion:reduce){
+  }
+
+/* ---------- sections ---------- */
+section{padding:clamp(48px,7vh,84px) 0;position:relative}
+section.alt{background:var(--bg2)}
+section.alt::before,section.alt::after{
+  content:"";position:absolute;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--violet-line),transparent);
+}
+section.alt::before{top:0}
+section.alt::after{bottom:0}
+.mission-line{
+  font-family:var(--serif);font-size:clamp(22px,3vw,28px);line-height:1.5;
+  max-width:700px;margin-top:var(--sp-2);
+}
+
+/* ---------- pillars ---------- */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:var(--sp-3)}
+.pillar{
+  border:1px solid var(--violet-line);padding:36px 28px;
+  background:linear-gradient(180deg,rgba(167,44,232,.05),transparent 60%);
+  position:relative;
+}
+.pillar::before{
+  content:"";position:absolute;top:-1px;left:-1px;width:22px;height:22px;
+  border-top:1px solid var(--gold-line);border-left:1px solid var(--gold-line);
+}
+.pillar::after{
+  content:"";position:absolute;bottom:-1px;right:-1px;width:22px;height:22px;
+  border-bottom:1px solid var(--gold-line);border-right:1px solid var(--gold-line);
+}
+.pillar .glyph{font-family:var(--serif);font-size:26px;margin-bottom:16px;display:block}
+.pillar h3{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:.02em;margin-bottom:10px}
+.pillar p{font-size:15.5px;color:var(--dim)}
+
+/* ---------- board ---------- */
+.board{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:var(--sp-3)}
+.member{border-top:1px solid var(--gold-line);padding-top:28px}
+.member .role{font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
+.member h3{font-family:var(--serif);font-weight:500;font-size:26px;margin-bottom:12px}
+.member p{font-size:15.5px;color:var(--dim)}
+
+/* ---------- record ---------- */
+.record{margin-top:var(--sp-3);border:1px solid var(--violet-line)}
+.rrow{
+  display:grid;grid-template-columns:220px 1fr;gap:20px;
+  padding:24px 32px;align-items:baseline;
+}
+.rrow + .rrow{border-top:1px solid rgba(167,44,232,.14)}
+.rrow .k{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint)}
+.rrow .v{font-family:var(--serif);font-size:21px;letter-spacing:.04em}
+.record-note{margin-top:var(--sp-1);font-size:15px;color:var(--faint);font-style:italic;font-family:var(--serif);font-size:17px}
+.record-note a{color:var(--dim)}
+
+/* ---------- connect ---------- */
+.connect{text-align:center}
+.connect .kick{justify-content:center}
+.connect .kick::after{display:none}
+.btns{margin-top:var(--sp-3);display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+.btn{
+  display:inline-block;padding:18px 42px;text-decoration:none;
+  font-family:var(--sans);font-size:13px;letter-spacing:.3em;text-transform:uppercase;
+  border:1px solid var(--gold-line);color:var(--gold);
+  transition:background .3s,color .3s;
+}
+.btn:hover{background:rgba(232,179,76,.08)}
+.btn.violet{border-color:var(--violet-line);color:#c77bf0}
+.btn.violet:hover{background:rgba(167,44,232,.08)}
+.connect .lead{margin:0 auto}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--violet-line);
+  padding:var(--sp-3) 24px;text-align:center;
+}
+footer .fmark{width:56px;height:auto;opacity:.85;margin-bottom:18px;mix-blend-mode:screen}
+footer p{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--faint)}
+footer a{color:var(--dim);text-decoration:none}
+footer a:hover{color:var(--gold)}
+footer .links{margin-top:10px;display:flex;gap:26px;justify-content:center;flex-wrap:wrap}
+
+@media(max-width:760px){
+  .pillars{grid-template-columns:1fr}
+  .board{grid-template-columns:1fr}
+  .rrow{grid-template-columns:1fr;gap:6px;padding:20px 22px}
+  section{padding:44px 0}
+  .pillars,.board,.record,.btns{margin-top:var(--sp-2)}
+  h2{margin-bottom:14px}
+  .kick{margin-bottom:24px}
 }
 </style>
 </head>
 <body>
 
+<header class="hero">
+  <div class="sigil">
+    <img src="assets/shen-logo-square.png" alt="The Shen Foundation, a gold flame rising through a violet triangle" fetchpriority="high">
+  </div>
+  <div class="overline">Poland · KRS 0001057347</div>
+  <h1 class="metal">The Shen Foundation</h1>
+  <p>Established by Michał Ksiądzyna to advance emotional awareness and carry Emotion Mentoring further than private practice ever could.</p>
+</header>
+
 <main>
 
-<!-- ═══════════ HERO ═══════════ -->
-<section id="top" class="scene">
-  <div class="bar"><a href="/">Michal Ksiadzyna</a><a href="/">The Shen Method</a></div>
-  <p class="kick" data-rise>The Shen Foundation</p>
-  <h1 class="metal" data-rise>Further than private practice.</h1>
-  <p class="support" data-rise>A Polish foundation established by Michał Ksiądzyna to advance emotional awareness and make Emotion Mentoring accessible to those who need it most.</p>
-</section>
-
-<!-- ═══════════ MISSION ═══════════ -->
-<section id="mission" class="scene">
-  <p class="kick" data-rise>01 &middot; Mission</p>
-  <h2 data-rise>Why the Foundation exists.</h2>
-  <div class="rule" data-rise></div>
-  <div class="body">
-    <p data-rise>The Shen Foundation exists to take Emotion Mentoring further than private practice ever could. We advance the physical, mental, and spiritual development of individuals through structured mentoring, education, and direct support.</p>
-    <p data-rise>We give more people access to Emotion Mentoring and the real, lasting transformation it creates.</p>
+<section id="mission">
+  <div class="wrap">
+    <div class="kick"><span class="num">01</span><span class="name">Mission</span></div>
+    <h2>Why the Foundation <span class="violet-metal">exists</span>.</h2>
+    <p class="mission-line">The Shen Foundation exists to take Emotion Mentoring further than private practice ever could. We advance the physical, mental, and spiritual development of individuals through structured mentoring, education, and direct support. We give more people access to Emotion Mentoring and the real, lasting transformation it creates.</p>
   </div>
 </section>
 
-<!-- ═══════════ BOARD ═══════════ -->
-<section id="board" class="scene">
-  <p class="kick" data-rise>02 &middot; Leadership</p>
-  <h2 data-rise>The board.</h2>
-  <div class="rule" data-rise></div>
-
-  <div class="b-grid">
-    <div class="b-card ticked" data-rise>
-      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
-      <div class="b-portrait">
-        <picture>
-          <source srcset="portrait.webp" type="image/webp">
-          <img src="portrait.jpg" alt="Michał Ksiądzyna" loading="lazy">
-        </picture>
+<section id="work" class="alt">
+  <div class="wrap">
+    <div class="kick"><span class="num">02</span><span class="name">The Work</span></div>
+    <h2>Three ways the mission <span class="metal">moves</span>.</h2>
+    <div class="pillars">
+      <div class="pillar">
+        <span class="glyph metal">✦</span>
+        <h3>Mentoring</h3>
+        <p>Structured one-on-one work that finds emotional blockages at their source and repairs them where they began.</p>
       </div>
-      <h3>Michał Ksiądzyna</h3>
-      <p class="role">Founding Member &amp; President of the Board</p>
-      <p>Creator of Emotion Mentoring. A practitioner with deep experience guiding individuals through lasting emotional transformation. Graduate of the Wrocław University of Economics and Business. Published researcher and author.</p>
-    </div>
-    <div class="b-card ticked" data-rise>
-      <span class="tick tl"><i></i></span><span class="tick tr"><i></i></span><span class="tick br"><i></i></span><span class="tick bl"><i></i></span>
-      <h3>Krystyna Mendonca</h3>
-      <p class="role">Vice-President of the Board</p>
-      <p>A dedicated advocate for emotional awareness and personal transformation. Krystyna brings her own experience with the Emotion Mentoring process and a deep commitment to the Foundation&rsquo;s mission of making Emotion Mentoring more widely accessible.</p>
+      <div class="pillar">
+        <span class="glyph metal">✦</span>
+        <h3>Education</h3>
+        <p>Teaching how emotions are built, how they shape decisions, and how the mind adapts once the design beneath it changes.</p>
+      </div>
+      <div class="pillar">
+        <span class="glyph metal">✦</span>
+        <h3>Direct Support</h3>
+        <p>Opening the door to Emotion Mentoring for those who need it most.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ RECORD ═══════════ -->
-<section id="record" class="scene">
-  <p class="kick" data-rise>03 &middot; The Record</p>
-  <h2 data-rise>Registered in Poland.</h2>
-  <div class="rule" data-rise></div>
-
-  <div class="t-rows">
-    <div class="t-row" data-rise>
-      <span class="k">Full Legal Name</span>
-      <span class="v"><b>Fundacja SHEN</b></span>
-    </div>
-    <div class="t-row" data-rise>
-      <span class="k">KRS</span>
-      <span class="v">National Court Register &middot; <b>0001057347</b></span>
-    </div>
-    <div class="t-row" data-rise>
-      <span class="k">NIP</span>
-      <span class="v">Tax Identification Number &middot; <b>9121942119</b></span>
-    </div>
-    <div class="t-row" data-rise>
-      <span class="k">REGON</span>
-      <span class="v">Statistical Number &middot; <b>526635518</b></span>
+<section id="leadership">
+  <div class="wrap">
+    <div class="kick"><span class="num">03</span><span class="name">Leadership</span></div>
+    <h2>The <span class="violet-metal">board</span>.</h2>
+    <div class="board">
+      <div class="member">
+        <div class="role">Founding Member · President of the Board</div>
+        <h3>Michał Ksiądzyna</h3>
+        <p>Creator of Emotion Mentoring. A practitioner with deep experience guiding individuals through lasting emotional transformation. Graduate of the Wrocław University of Economics and Business. Published researcher and author.</p>
+      </div>
+      <div class="member">
+        <div class="role">Vice-President of the Board</div>
+        <h3>Krystyna Mendonca</h3>
+        <p>A dedicated advocate for emotional awareness and personal transformation. Krystyna brings her own experience with the Emotion Mentoring process and a deep commitment to making it more widely accessible.</p>
+      </div>
     </div>
   </div>
+</section>
 
-  <p class="sidedoor" data-rise>The Foundation&rsquo;s statute and board sit on public record under its <a href="https://wyszukiwarka-krs.ms.gov.pl/" target="_blank" rel="noopener">National Court Register</a> entry, KRS 0001057347. The Foundation is on <a href="https://www.facebook.com/shen.fundacja/" target="_blank" rel="noopener">Facebook</a>.</p>
-  <p class="sidedoor" data-rise>The Foundation grew out of Emotion Mentoring itself &mdash; <a href="/">Emotion Mentoring for Leaders</a>.</p>
+<section id="record" class="alt">
+  <div class="wrap">
+    <div class="kick"><span class="num">04</span><span class="name">The Record</span></div>
+    <h2>Registered in <span class="metal">Poland</span>.</h2>
+    <div class="record">
+      <div class="rrow"><span class="k">KRS · National Court Register</span><span class="v metal">0001057347</span></div>
+      <div class="rrow"><span class="k">NIP · Tax Identification</span><span class="v metal">9121942119</span></div>
+      <div class="rrow"><span class="k">REGON · Statistical Number</span><span class="v metal">526635518</span></div>
+    </div>
+    <p class="record-note">The Foundation&rsquo;s statute and board sit on public record under its National Court Register entry, KRS 0001057347.</p>
+  </div>
 </section>
 
 </main>
 
 <footer>
-  <nav class="f-links" aria-label="Pages">
-    <a href="/">Main page</a>
-    <a href="the-secret-book-of-emotions-shen.html"><span class="metal">The Secret Book of Emotions</span></a>
-    <a href="testimonials.html">What clients say</a>
-    <a href="foundation.html">The Shen Foundation</a>
-    <a href="michal-ksiadzyna.html">About Michal Ksiadzyna</a>
-    <a href="narratives/">Narratives</a>
-    <span class="f-copy">&copy; 2026</span>
-  </nav>
+  <img class="fmark" src="assets/shen-logo-square.png" alt="" aria-hidden="true">
+  <p>© 2026 The Shen Foundation · KRS 0001057347</p>
+  <div class="links">
+    <a href="https://emotionmentoring.com/">Emotion Mentoring</a>
+  </div>
 </footer>
 
-<!-- sticky mobile CTA -->
-<a id="mcta" href="/#conversation">Begin with one powerful conversation</a>
 
-<script>
-(function(){
-"use strict";
-
-/* ── light scroll-reveal ── */
-var rises = document.querySelectorAll('[data-rise]');
-if('IntersectionObserver' in window){
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); }
-    });
-  },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-  rises.forEach(function(el){ io.observe(el); });
-}else{
-  rises.forEach(function(el){ el.classList.add('visible'); });
-}
-
-/* ── sticky mobile CTA ── */
-var mcta = document.getElementById('mcta');
-function check(){
-  mcta.classList.toggle('on', window.scrollY > innerHeight * .72);
-}
-window.addEventListener('scroll', check, {passive:true});
-check();
-})();
-</script>
 </body>
 </html>
