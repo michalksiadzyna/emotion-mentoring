@@ -561,7 +561,7 @@ footer .f-copy{letter-spacing:.26em}
     var m = document.getElementById('spotsBig').textContent.match(/(\d+)\s*of\s*(\d+)/);
     if(!m) return;
     var taken = parseInt(m[1], 10), total = parseInt(m[2], 10);
-    var asOf = new Date().toLocaleString('en-US', { month: 'long', year: 'numeric' });
+    var asOf = 'September 2026'; /* pinned by user order 2026-08-30; restore new Date() derivation when he lifts it */
     document.getElementById('spotsLine').textContent =
       (total - taken) + ' open as of ' + asOf + '.';
   })();
