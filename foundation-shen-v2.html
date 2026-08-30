@@ -101,62 +101,65 @@ h2{font-size:clamp(30px,4.6vw,44px);line-height:1.18;letter-spacing:.01em;margin
   min-height:100svh;display:flex;flex-direction:column;
   align-items:center;justify-content:center;text-align:center;
   position:relative;padding:var(--sp-3) 24px;
-  background:#000;
+  background:#000;overflow:hidden;
 }
 .hero::after{
   content:"";position:absolute;left:0;right:0;bottom:0;height:200px;
-  background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none;
+  background:linear-gradient(180deg,transparent,var(--bg));pointer-events:none;z-index:6;
 }
-.sigil{position:relative;width:min(360px,74vw)}
+.sigil{position:relative;width:min(380px,78vw)}
 .sigil img{
   width:100%;height:auto;display:block;position:relative;z-index:3;
   mix-blend-mode:screen;
 }
-.aura{position:absolute;border-radius:50%;pointer-events:none;filter:blur(46px);z-index:1}
-.aura.a1{inset:-14%;background:radial-gradient(circle at 50% 46%,rgba(140,30,210,.36),transparent 62%);animation:breathe 7s ease-in-out infinite}
-.aura.a2{inset:8%;background:radial-gradient(circle at 50% 42%,rgba(232,179,76,.22),transparent 58%);animation:breathe 5.2s ease-in-out 1.6s infinite}
-@keyframes breathe{0%,100%{opacity:.45;transform:scale(.96)}50%{opacity:1;transform:scale(1.06)}}
-.wisps{position:absolute;inset:-18%;width:136%;height:136%;z-index:2;pointer-events:none;filter:blur(1.5px);overflow:visible}
-.wisps path{fill:none;stroke-width:1.6;stroke-linecap:round;opacity:0;
-  stroke-dasharray:120 220;stroke-dashoffset:340;animation:wisp 9s ease-in-out infinite}
-.wisps path:nth-of-type(2){animation-delay:1.4s;animation-duration:11s}
-.wisps path:nth-of-type(3){animation-delay:3.1s;animation-duration:10s}
-.wisps path:nth-of-type(4){animation-delay:4.6s;animation-duration:12s}
-.wisps path:nth-of-type(5){animation-delay:6.2s;animation-duration:9.5s}
-.wisps path:nth-of-type(6){animation-delay:7.4s;animation-duration:11.5s}
-@keyframes wisp{
-  0%{stroke-dashoffset:340;opacity:0}
-  16%{opacity:.75}
-  60%{opacity:.3}
-  85%{stroke-dashoffset:-340;opacity:0}
-  100%{stroke-dashoffset:-340;opacity:0}
-}
-.spark{position:absolute;width:3px;height:3px;border-radius:50%;z-index:2;opacity:0;
-  background:var(--gold-hi);box-shadow:0 0 8px rgba(247,212,136,.9);
-  animation:spark 6s linear infinite}
-.spark.v{background:#c77bf0;box-shadow:0 0 8px rgba(199,123,240,.9)}
-@keyframes spark{
-  0%{opacity:0;transform:translateY(16px) scale(.5)}
-  12%{opacity:.9}
-  55%{opacity:.35}
-  100%{opacity:0;transform:translateY(-70px) scale(1)}
-}
-.hero .overline{margin-top:var(--sp-2);position:relative;z-index:4}
+.aura{position:absolute;border-radius:50%;pointer-events:none;filter:blur(46px);z-index:1;mix-blend-mode:screen}
+.aura.a1{inset:-14%;background:radial-gradient(circle at 50% 46%,rgba(150,35,220,.42),transparent 62%);animation:breathe 7s ease-in-out infinite}
+.aura.a2{inset:8%;background:radial-gradient(circle at 50% 42%,rgba(240,180,80,.26),transparent 58%);animation:breathe 5.2s ease-in-out 1.6s infinite}
+@keyframes breathe{0%,100%{opacity:.5;transform:scale(.96)}50%{opacity:1;transform:scale(1.07)}}
+.haze{position:absolute;border-radius:50%;pointer-events:none;z-index:1;filter:blur(55px);mix-blend-mode:screen}
+.haze.h1{width:150%;height:120%;left:-25%;top:-8%;background:radial-gradient(closest-side,rgba(120,30,190,.30),transparent 72%);animation:drift1 17s ease-in-out infinite alternate}
+.haze.h2{width:110%;height:100%;left:-32%;top:14%;background:radial-gradient(closest-side,rgba(167,44,232,.17),transparent 72%);animation:drift2 23s ease-in-out infinite alternate}
+.haze.h3{width:95%;height:85%;left:38%;top:24%;background:radial-gradient(closest-side,rgba(235,150,60,.13),transparent 74%);animation:drift3 19s ease-in-out infinite alternate}
+@keyframes drift1{from{transform:translate(-3%,2%) scale(1)}to{transform:translate(4%,-3%) scale(1.12)}}
+@keyframes drift2{from{transform:translate(3%,-2%) rotate(-4deg)}to{transform:translate(-5%,3%) rotate(5deg)}}
+@keyframes drift3{from{transform:translate(-2%,3%) scale(.94)}to{transform:translate(3%,-4%) scale(1.1)}}
+.wisps{position:absolute;left:-30%;top:-30%;width:160%;height:160%;z-index:4;pointer-events:none;mix-blend-mode:screen;overflow:visible}
+.wisps .lay{transform-origin:200px 200px}
+.wisps .back{filter:blur(6px);animation:sway1 16s ease-in-out infinite alternate}
+.wisps .front{filter:blur(1.1px);animation:sway2 12s ease-in-out infinite alternate}
+@keyframes sway1{from{transform:rotate(-1.6deg) translateY(3px)}to{transform:rotate(1.8deg) translateY(-4px)}}
+@keyframes sway2{from{transform:rotate(1.2deg) translateY(-2px)}to{transform:rotate(-1.4deg) translateY(3px)}}
+.wisps path{fill:none;stroke-linecap:round}
+.wisps .flow{stroke-dasharray:120 220;animation:flow 8s linear infinite}
+.wisps .flow.f2{animation-duration:11s;animation-delay:-3s}
+.wisps .flow.f3{animation-duration:9.5s;animation-delay:-6s}
+.wisps .flow.f4{animation-duration:13s;animation-delay:-1.5s}
+.wisps .flow.f5{animation-duration:10s;animation-delay:-4.5s}
+.wisps .flow.f6{animation-duration:12s;animation-delay:-8s}
+.wisps .flow.f7{animation-duration:9s;animation-delay:-2.5s}
+.wisps .flow.f8{animation-duration:14s;animation-delay:-7s}
+.wisps .flow.f9{animation-duration:11.5s;animation-delay:-5s}
+@keyframes flow{from{stroke-dashoffset:340}to{stroke-dashoffset:-340}}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:#f7d488;z-index:2;opacity:0;
+  box-shadow:0 0 6px rgba(247,212,136,.8);animation:twinkle 5s ease-in-out infinite}
+.star.v{background:#c77bf0;box-shadow:0 0 6px rgba(199,123,240,.8)}
+@keyframes twinkle{0%,100%{opacity:0}50%{opacity:.9}}
+.hero .overline{margin-top:var(--sp-2);position:relative;z-index:5}
 .hero h1{
   font-size:clamp(38px,6vw,60px);line-height:1.12;letter-spacing:.02em;
-  margin-top:14px;position:relative;z-index:4;
+  margin-top:14px;position:relative;z-index:5;
 }
-.hero p{margin-top:18px;max-width:560px;color:var(--dim);font-size:18px;position:relative;z-index:4}
+.hero p{margin-top:18px;max-width:560px;color:var(--dim);font-size:18px;position:relative;z-index:5}
 .hero .drop{
-  position:absolute;bottom:34px;left:50%;width:1px;height:70px;
+  position:absolute;bottom:34px;left:50%;width:1px;height:70px;z-index:6;
   background:linear-gradient(180deg,var(--gold),transparent);
   animation:drop 2.6s ease-in-out infinite;
 }
 @keyframes drop{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 @media (prefers-reduced-motion:reduce){
-  .aura,.wisps path,.spark,.hero .drop{animation:none}
-  .wisps path{opacity:.3;stroke-dashoffset:0}
-  .spark{opacity:.5}
+  .aura,.haze,.star,.hero .drop{animation:none}
+  .wisps .back,.wisps .front,.wisps .flow{animation:none}
+  .aura{opacity:.8}
 }
 
 /* ---------- sections ---------- */
@@ -254,33 +257,49 @@ footer .links{margin-top:10px;display:flex;gap:26px;justify-content:center;flex-
 
 <header class="hero">
   <div class="sigil">
+    <div class="haze h1"></div><div class="haze h2"></div><div class="haze h3"></div>
     <div class="aura a1"></div><div class="aura a2"></div>
+    <img src="assets/shen-logo-square.png" alt="Fundacja SHEN, a gold flame rising through a violet triangle" fetchpriority="high">
     <svg class="wisps" viewBox="0 0 400 400" aria-hidden="true">
       <defs>
-        <linearGradient id="wgold" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0" stop-color="#b87f22" stop-opacity="0"/>
-          <stop offset=".5" stop-color="#f7d488"/>
-          <stop offset="1" stop-color="#e8b34c" stop-opacity="0"/>
+        <linearGradient id="gv1" gradientUnits="userSpaceOnUse" x1="60" y1="340" x2="190" y2="50">
+          <stop offset="0" stop-color="#7a1fb8" stop-opacity="0"/><stop offset=".45" stop-color="#c86bff"/><stop offset="1" stop-color="#8a2be2" stop-opacity="0"/>
         </linearGradient>
-        <linearGradient id="wviol" x1="0" y1="1" x2="0" y2="0">
-          <stop offset="0" stop-color="#7a1fb8" stop-opacity="0"/>
-          <stop offset=".5" stop-color="#c77bf0"/>
-          <stop offset="1" stop-color="#a72ce8" stop-opacity="0"/>
+        <linearGradient id="gv2" gradientUnits="userSpaceOnUse" x1="340" y1="330" x2="225" y2="40">
+          <stop offset="0" stop-color="#7a1fb8" stop-opacity="0"/><stop offset=".5" stop-color="#d98cff"/><stop offset="1" stop-color="#8a2be2" stop-opacity="0"/>
         </linearGradient>
+        <linearGradient id="gv3" gradientUnits="userSpaceOnUse" x1="100" y1="120" x2="300" y2="110">
+          <stop offset="0" stop-color="#a72ce8" stop-opacity="0"/><stop offset=".5" stop-color="#b558f5"/><stop offset="1" stop-color="#a72ce8" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="gg1" gradientUnits="userSpaceOnUse" x1="205" y1="330" x2="215" y2="60">
+          <stop offset="0" stop-color="#b87f22" stop-opacity="0"/><stop offset=".5" stop-color="#ffe08a"/><stop offset="1" stop-color="#f0b341" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="gg2" gradientUnits="userSpaceOnUse" x1="230" y1="300" x2="350" y2="140">
+          <stop offset="0" stop-color="#b87f22" stop-opacity="0"/><stop offset=".55" stop-color="#ffd479"/><stop offset="1" stop-color="#f0b341" stop-opacity="0"/>
+        </linearGradient>
+        <g id="wset">
+          <path class="flow"    stroke="url(#gv1)" stroke-width="3"   pathLength="340" d="M60 340 C 40 260, 90 200, 130 170 C 170 140, 160 90, 190 50"/>
+          <path class="flow f2" stroke="url(#gv2)" stroke-width="2.6" pathLength="340" d="M340 330 C 370 250, 320 190, 280 150 C 250 120, 250 80, 225 40"/>
+          <path class="flow f3" stroke="url(#gv1)" stroke-width="2"   pathLength="340" d="M90 370 C 140 340, 100 280, 150 240 C 180 214, 168 190, 178 172"/>
+          <path class="flow f4" stroke="url(#gv2)" stroke-width="2.2" pathLength="340" d="M320 380 C 280 350, 330 300, 300 250 C 282 220, 292 200, 282 186"/>
+          <path class="flow f5" stroke="url(#gv3)" stroke-width="1.8" pathLength="340" d="M100 120 C 150 60, 250 60, 300 110"/>
+          <path class="flow f6" stroke="url(#gg1)" stroke-width="2.4" pathLength="340" d="M205 330 C 235 280, 185 230, 210 180 C 230 140, 205 100, 215 60"/>
+          <path class="flow f7" stroke="url(#gg1)" stroke-width="1.8" pathLength="340" d="M195 340 C 165 290, 215 240, 190 190 C 175 155, 200 110, 190 70"/>
+          <path class="flow f8" stroke="url(#gg2)" stroke-width="2"   pathLength="340" d="M230 300 C 280 260, 260 190, 300 140 C 318 116, 330 92, 342 78"/>
+          <path class="flow f9" stroke="url(#gg2)" stroke-width="1.6" pathLength="340" d="M250 320 C 300 280, 312 230, 350 180"/>
+        </g>
       </defs>
-      <path stroke="url(#wviol)" pathLength="340" d="M200 330 C 120 300, 80 220, 120 150 S 170 60, 150 28"/>
-      <path stroke="url(#wgold)" pathLength="340" d="M210 340 C 290 310, 322 230, 285 160 S 242 70, 262 34"/>
-      <path stroke="url(#wviol)" pathLength="340" d="M190 348 C 108 338, 58 258, 95 188"/>
-      <path stroke="url(#wgold)" pathLength="340" d="M215 322 C 262 262, 302 210, 332 118"/>
-      <path stroke="url(#wviol)" pathLength="340" d="M180 302 C 138 240, 110 178, 142 98"/>
-      <path stroke="url(#wgold)" pathLength="340" d="M205 300 C 232 240, 210 160, 236 88"/>
+      <use class="lay back"  href="#wset" opacity=".9" stroke-width="7"/>
+      <use class="lay front" href="#wset" opacity=".8"/>
     </svg>
-    <img src="assets/shen-logo-square.png" alt="Fundacja SHEN, a gold flame rising through a violet triangle" fetchpriority="high">
-    <span class="spark" style="left:31%;top:60%;animation-delay:.8s"></span>
-    <span class="spark v" style="left:64%;top:52%;animation-delay:2.2s"></span>
-    <span class="spark" style="left:48%;top:70%;animation-delay:3.6s"></span>
-    <span class="spark v" style="left:72%;top:64%;animation-delay:5s"></span>
-    <span class="spark" style="left:38%;top:44%;animation-delay:4.2s"></span>
+    <span class="star" style="left:18%;top:34%;animation-delay:.6s"></span>
+    <span class="star v" style="left:82%;top:28%;animation-delay:2.1s"></span>
+    <span class="star" style="left:88%;top:58%;animation-delay:3.4s"></span>
+    <span class="star v" style="left:12%;top:62%;animation-delay:4.5s"></span>
+    <span class="star" style="left:26%;top:14%;animation-delay:1.4s"></span>
+    <span class="star v" style="left:70%;top:10%;animation-delay:3.9s"></span>
+    <span class="star" style="left:8%;top:44%;animation-delay:2.8s"></span>
+    <span class="star v" style="left:92%;top:42%;animation-delay:.2s"></span>
   </div>
   <div class="overline">Fundacja Shen · Poland</div>
   <h1 class="metal">The Shen Foundation</h1>
@@ -382,6 +401,8 @@ footer .links{margin-top:10px;display:flex;gap:26px;justify-content:center;flex-
 document.documentElement.classList.add('js');
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+
+
 </script>
 
 </body>
