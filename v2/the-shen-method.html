@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex"><title>The Shen Method — Emotion Mentoring</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: conversion spine. Every section ends one tap from the form; sticky header CTA, sticky mobile CTA. Single dark theme by design. */
+:root{
+  color-scheme:dark;
+  --ink:#0a0a0c; --ink2:#101013; --card:#131317;
+  --hair:rgba(255,255,255,.10); --hair-gold:rgba(201,169,110,.28);
+  --gold:#c9a96e; --gold-dim:#85714a; --gold-hi:#f2e8d4; --gold-lt:#d9c491;
+  --text:#bdb8ad; --text-dim:#8a8474;
+  --no:#d0675d; --no-line:rgba(176,64,56,.55); --no-bg:#160c0c;
+  --metal:linear-gradient(100deg,#6b5a35 0%,#a68c52 16%,#d9c391 30%,#fdf6e3 44%,#f4ead0 48%,#fdf6e3 52%,#cdb377 66%,#7a6538 84%,#a89058 100%);
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+  --fs-xl:clamp(2.6rem,6vw,4.6rem); --fs-l:clamp(2rem,4.2vw,3.2rem); --fs-m:clamp(1.3rem,2.2vw,1.6rem); --fs-s:18px; --fs-tag:.7rem;
+  --gut:max(16px,env(safe-area-inset-left,0px)); --gutr:max(16px,env(safe-area-inset-right,0px));
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{background:var(--ink);color:var(--text);font:300 var(--fs-s)/1.7 var(--sans);overflow-x:hidden}
+::selection{background:var(--gold);color:var(--ink)}
+a{color:var(--gold)}
+img{max-width:100%;display:block}
+.shell{max-width:1180px;margin:0 auto;padding-left:max(24px,var(--gut));padding-right:max(24px,var(--gutr))}
+.eyebrow{font:400 var(--fs-tag)/1.6 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--gold-dim)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;color:var(--gold-hi);text-wrap:balance}
+h2{font-size:var(--fs-l);line-height:1.08;margin-top:14px}
+h2 em,h1 em{font-style:italic;font-weight:400;color:var(--gold-lt)}
+.metal{background-image:var(--metal);background-size:230% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.section{padding-block:clamp(72px,10vw,128px)}
+.tint{background:var(--ink2)}
+.lead{font-family:var(--serif);font-style:italic;font-size:var(--fs-m);line-height:1.45;color:var(--text)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.7em;text-decoration:none;cursor:pointer;border:0;
+  font:500 .78rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;border-radius:100px;padding:20px 34px;transition:background-position .7s ease,box-shadow .3s,transform .15s}
+.btn-gold{background-image:var(--metal);background-size:220% 100%;background-position:15% 0;color:#171204;box-shadow:0 10px 30px -16px rgba(217,196,145,.6)}
+.btn-gold:hover{background-position:85% 0;box-shadow:0 0 26px rgba(217,196,145,.35)}
+.btn-gold:active{transform:scale(.98)}
+.btn-line{border:1px solid var(--hair-gold);color:var(--gold-hi);background:transparent;padding:12px 22px;font-size:.68rem}
+.btn-line:hover{border-color:var(--gold)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.tlink{font:400 var(--fs-tag)/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-lt);text-decoration:none;border-bottom:1px solid var(--hair-gold);padding-bottom:5px;transition:color .25s,border-color .25s}
+.tlink:hover{color:var(--gold-hi);border-color:var(--gold)}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;font:400 var(--fs-tag)/1.6 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--text-dim)}
+.facts span+span::before{content:"·";margin-right:18px;color:var(--gold-dim)}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:rgba(10,10,12,.92)}
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(10,10,12,.86);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+.hdr .shell{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:16px}
+.brand{text-decoration:none;display:flex;flex-direction:column;line-height:1.1}
+.brand b{font:500 1.35rem var(--serif);color:var(--gold-hi)}
+.brand small{font:400 .58rem var(--sans);letter-spacing:.34em;color:var(--gold-dim);margin-top:4px}
+.nav{display:flex;gap:2.2em}
+.nav a{font:400 var(--fs-tag) var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--text-dim);text-decoration:none;transition:color .25s}
+.nav a:hover{color:var(--gold-hi)}
+@media (max-width:900px){.nav{display:none}}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,6vw,90px);align-items:center;padding-block:clamp(48px,8vw,110px) clamp(40px,6vw,80px)}
+.hero>div{min-width:0}
+.hero h1{font-size:clamp(2rem,3.3vw,3rem);line-height:1.1;margin-top:22px;font-variant:small-caps;letter-spacing:.005em}
+.hero h1>span{display:block}
+.hero .desc{margin-top:22px;font:italic 400 var(--fs-m)/1.45 var(--serif);color:var(--text);max-width:24em}
+.hero .intro{margin-top:28px;font-family:var(--serif);font-size:var(--fs-m);line-height:1.4;color:var(--gold-hi)}
+.hero .desc{margin-top:14px;max-width:32em}
+.hero .cta{margin-top:36px;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.portrait{position:relative;border:1px solid var(--hair-gold);padding:8px}
+.portrait img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;filter:grayscale(12%) contrast(1.05)}
+.portrait figcaption{position:absolute;left:8px;right:8px;bottom:8px;padding:56px 22px 20px;background:linear-gradient(to top,rgba(10,10,12,.92),transparent)}
+.portrait figcaption b{display:block;font:500 1.4rem var(--serif);color:var(--gold-hi)}
+.portrait figcaption span{display:block;margin-top:4px;font:400 .62rem/1.7 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--gold-lt)}
+.tick{position:absolute;width:16px;height:16px;border-color:var(--gold);border-style:solid;border-width:0}
+.tick.tl{top:-1px;left:-1px;border-top-width:1px;border-left-width:1px}.tick.tr{top:-1px;right:-1px;border-top-width:1px;border-right-width:1px}
+.tick.bl{bottom:-1px;left:-1px;border-bottom-width:1px;border-left-width:1px}.tick.br{bottom:-1px;right:-1px;border-bottom-width:1px;border-right-width:1px}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.portrait{max-width:420px}}
+
+/* practice strip */
+.strip{display:grid;grid-template-columns:repeat(3,1fr);border-block:1px solid var(--hair)}
+.strip>div{display:flex;align-items:center;gap:18px;padding:26px 0;min-width:0}
+.strip>div+div{border-left:1px solid var(--hair);padding-left:clamp(16px,3vw,40px)}
+.strip .n{font:500 clamp(2rem,4vw,2.8rem)/1 var(--serif)}
+.strip span:last-child{font:400 .66rem/1.7 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim)}
+@media (max-width:640px){.strip{grid-template-columns:1fr}.strip>div+div{border-left:0;border-top:1px solid var(--hair);padding-left:0}}
+
+/* client voice */
+.voice{display:grid;grid-template-columns:auto 1fr;gap:28px;padding-block:clamp(56px,7vw,90px)}
+.voice>div{min-width:0}
+.voice .glyph{font:500 7rem/.8 var(--serif);color:var(--gold-dim)}
+.voice blockquote{font:italic 400 clamp(1.5rem,3vw,2.2rem)/1.35 var(--serif);color:var(--gold-hi);max-width:30em}
+.credit{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 28px}
+.credit p{font:400 var(--fs-tag) var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dim)}
+.credit p strong{font-weight:500;color:var(--gold-lt);margin-right:10px}
+
+/* two-column section */
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,90px);align-items:start}
+.split>*{min-width:0}
+.split .head p:not(.eyebrow){margin-top:22px;max-width:28em}
+@media (max-width:860px){.split{grid-template-columns:1fr}}
+.situations{list-style:none;border-top:1px solid var(--hair)}
+.situations li{display:grid;grid-template-columns:52px 1fr;gap:18px;padding:30px 0;border-bottom:1px solid var(--hair)}
+.situations li>div{min-width:0}
+.situations .k{font:500 .8rem var(--sans);letter-spacing:.2em;color:var(--gold-dim);padding-top:8px}
+.situations h3{font-size:var(--fs-m);line-height:1.25}
+.situations p{margin-top:8px}
+.inline-cta{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:16px 26px}
+
+/* approach */
+.steps{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.step{border:1px solid var(--hair);background:var(--card);padding:34px 28px;min-width:0}
+.step .i{font:italic 500 2rem/1 var(--serif)}
+.step h3{margin-top:18px;font-size:var(--fs-m);line-height:1.25}
+.step p{margin-top:10px}
+@media (max-width:860px){.steps{grid-template-columns:1fr}}
+.aim{margin-top:36px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:18px;padding-top:28px;border-top:1px solid var(--hair)}
+.aim p{font:italic 400 var(--fs-m)/1.4 var(--serif);color:var(--gold-hi);max-width:30em}
+
+/* mentor */
+.mentor .big{font:400 var(--fs-m)/1.45 var(--serif);color:var(--gold-hi);margin-top:24px}
+.mentor p+p{margin-top:16px}
+.mentor .links{margin-top:30px;display:flex;flex-wrap:wrap;gap:16px 30px}
+.mentor .note{margin-top:18px;font:italic 400 var(--fs-m)/1.35 var(--serif);color:var(--text)}
+
+.more{display:grid;gap:16px;align-self:center}
+.more-card{display:grid;gap:8px;padding:28px 30px;border:1px solid var(--hair-gold);background:var(--card);text-decoration:none;transition:border-color .3s,transform .3s,background .3s}
+.more-card:hover{border-color:var(--gold);transform:translateY(-3px);background:#17161a}
+.more-card b{font:500 var(--fs-m)/1.2 var(--serif);color:var(--gold-hi)}
+.more-card .go{font:400 var(--fs-tag) var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-lt)}
+
+/* proof */
+.quotes{margin-top:clamp(36px,5vw,56px);display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.quotes figure{border:1px solid var(--hair);background:var(--card);padding:30px 26px;display:flex;flex-direction:column;justify-content:space-between;gap:22px;min-width:0}
+.quotes blockquote{font:italic 400 1.3rem/1.45 var(--serif);color:var(--gold-hi)}
+.quotes figcaption{font:400 .62rem/1.7 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dim)}
+@media (max-width:860px){.quotes{grid-template-columns:1fr}}
+
+/* engagement */
+.card{position:relative;border:1px solid var(--hair-gold);background:linear-gradient(165deg,#141317,#0d0d10);padding:clamp(28px,4vw,48px)}
+.price{margin-top:18px;display:flex;align-items:baseline;flex-wrap:wrap;gap:6px 12px}
+.price .n{font:500 clamp(3rem,7vw,4.6rem)/1 var(--serif)}
+.price .per{font:400 var(--fs-m) var(--serif);color:var(--gold-lt)}
+.commit{margin-top:8px;font:italic 400 var(--fs-m) var(--serif);color:var(--text)}
+.terms{margin-top:28px;border-top:1px solid var(--hair)}
+.terms>div{display:grid;grid-template-columns:150px 1fr;gap:6px 20px;padding:18px 0;border-bottom:1px solid var(--hair)}
+.terms dt{font:400 .64rem/2 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dim)}
+.terms dd{color:var(--text)}
+.terms dd b{font-weight:400;color:var(--gold-hi)}
+@media (max-width:520px){.terms>div{grid-template-columns:1fr}}
+.card .btn{margin-top:30px;width:100%}
+.card .small{margin-top:14px;text-align:center;font-size:.92rem;color:var(--text-dim)}
+.fit{margin-top:36px;display:grid;gap:14px}
+.fit>div{border:1px solid var(--hair-gold);padding:22px 24px}
+.fit h4{font:500 .64rem/1.6 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--gold)}
+.fit p{margin-top:8px;color:var(--text)}
+.fit .no{border-color:var(--no-line);background:var(--no-bg)}
+.fit .no h4{color:var(--no)}
+.fit .no h4::before{content:"\2715";margin-right:.8em;letter-spacing:0}
+
+/* faq */
+.faq{border-top:1px solid var(--hair)}
+.faq details{border-bottom:1px solid var(--hair)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:24px 0;
+  font:500 var(--fs-m)/1.3 var(--serif);color:var(--gold-hi)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:300 1.4rem var(--sans);color:var(--gold-dim);transition:transform .25s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 0 26px;max-width:38em}
+.faq .a p+p{margin-top:12px}
+
+/* conversation */
+.conv{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,90px);align-items:center}
+.conv>*{min-width:0}
+.conv .facts{margin-top:28px}
+.panel{position:relative;border:1px solid var(--hair-gold);background:linear-gradient(165deg,#141317,#0d0d10);padding:clamp(28px,4vw,48px)}
+.panel h3{font-size:var(--fs-m)}
+.panel>p{margin-top:10px}
+form{margin-top:26px;display:flex;flex-direction:column;gap:16px}
+label{font:400 .64rem var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--gold-dim)}
+input[type=email],textarea{width:100%;background:rgba(255,255,255,.03);border:1px solid var(--hair-gold);color:var(--gold-hi);
+  font:300 var(--fs-s) var(--sans);padding:16px 18px;border-radius:0}
+input::placeholder,textarea::placeholder{color:#7d7768}
+textarea{min-height:110px;resize:vertical}
+.note summary{cursor:pointer;list-style:none;font:400 .66rem var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--gold-lt)}
+.note summary::-webkit-details-marker{display:none}
+.note summary::before{content:"+ "}
+.note[open] summary::before{content:"\2212  "}
+.note>div{margin-top:12px;display:flex;flex-direction:column;gap:10px}
+form .btn{width:100%}
+.form-note{font-size:.9rem;color:var(--text-dim)}
+.form-msg{font-size:.95rem;color:var(--gold-lt)}
+.alt{margin-top:24px;padding-top:20px;border-top:1px solid var(--hair);display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-size:.95rem}
+@media (max-width:860px){.conv{grid-template-columns:1fr}}
+
+/* footer */
+footer{border-top:1px solid var(--hair);padding-block:48px 120px}
+footer .shell{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px 40px;align-items:center}
+footer nav{display:flex;flex-wrap:wrap;gap:12px 28px}
+footer a,footer p{font:400 .64rem var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--text-dim);text-decoration:none}
+footer a:hover{color:var(--gold-hi)}
+
+/* sticky mobile CTA */
+.mcta{position:fixed;left:max(12px,var(--gut));right:max(12px,var(--gutr));bottom:calc(12px + env(safe-area-inset-bottom,0px));z-index:40;display:none;
+  transform:translateY(160%);transition:transform .35s ease}
+.mcta.on{transform:none}
+.mcta .btn{width:100%}
+@media (max-width:760px){.mcta{display:block}.hdr .btn-line{display:none}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.mcta{transition:none}}
+</style>
+<style>
+.ledger{margin-top:clamp(32px,4vw,52px);border-top:1px solid var(--hair)}
+.lg{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;gap:0 10px;padding:22px 0;border-bottom:1px solid var(--hair)}
+.lg>span{min-width:0}
+.lg .from{color:var(--text-dim);text-align:right}
+.lg .arr{text-align:center;color:var(--gold-dim)}
+.lg .to{font:500 var(--fs-m)/1.3 var(--serif)}
+@media (max-width:640px){.lg{grid-template-columns:1fr;gap:6px}.lg .from{text-align:left}.lg .arr{display:none}}
+.outs{margin-top:clamp(32px,4vw,52px);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
+.outs article{border:1px solid var(--hair);background:var(--card);padding:28px 26px;min-width:0}
+.outs .prb{font:400 .62rem/1.7 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--text-dim)}
+.outs h3{margin-top:10px;font-size:var(--fs-m);line-height:1.25}
+.outs p{margin-top:10px}
+.back{display:inline-block;margin-top:28px}
+</style>
+</head><body>
+<header class="hdr">
+  <div class="shell">
+    <a class="brand" href="index.html"><b>Emotion Mentoring</b><small>THE SHEN METHOD</small></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#mentor">Your mentor</a>
+      <a href="index.html#terms">Terms</a>
+      <a href="index.html#questions">Questions</a>
+    </nav>
+    <a class="btn btn-line" href="index.html#conversation">Let&rsquo;s talk &nearr;</a>
+  </div>
+</header>
+<main>
+<section class="section shell">
+  <p class="eyebrow">The method</p>
+  <h2><span class="metal">The Shen Method</span><br><em>Built in the room.</em></h2>
+  <p class="lead" style="margin-top:22px;max-width:36em">The Shen Method was built in the room: more than 11 years, thousands of one-on-one hours, refined on real minds carrying real weight. It is a precise way of finding emotional damage and repairing it at the source. Every session applies it the way it was made: one on one, with Michał.</p>
+</section>
+<section class="section tint">
+  <div class="shell">
+    <p class="eyebrow">What changes inside the mind</p>
+    <h2>What a leader carries in,<br><em>and what the mind carries out.</em></h2>
+    <div class="ledger"><div class="lg"><span class="from">Pressure that keeps rising</span><span class="arr">&rarr;</span><span class="to metal">Capacity that grows with it</span></div><div class="lg"><span class="from">Reactions that repeat for years</span><span class="arr">&rarr;</span><span class="to metal">Sources found and repaired</span></div><div class="lg"><span class="from">Decisions no one else can hear</span><span class="arr">&rarr;</span><span class="to metal">Strength when you decide alone</span></div><div class="lg"><span class="from">A crisis that touches everything</span><span class="arr">&rarr;</span><span class="to metal">Stability that holds through it</span></div><div class="lg"><span class="from">A period that could destabilize everything</span><span class="arr">&rarr;</span><span class="to metal">What you built, protected</span></div></div>
+  </div>
+</section>
+<section class="section shell">
+  <p class="eyebrow">What the method provides</p>
+  <h2>Five outcomes.</h2>
+  <div class="outs"><article><p class="prb">Mental overload &rarr;</p><h3>Greater capacity to lead</h3><p>Regain the clarity, focus, and mental space required to carry significant responsibility without being consumed by it.</p></article><article><p class="prb">Conflict and complex situations &rarr;</p><h3>Calm, strategic response</h3><p>Navigate difficult relationships and high-stakes situations without losing control, authority, or perspective.</p></article><article><p class="prb">Personal or professional crisis &rarr;</p><h3>Stability when it matters most</h3><p>Receive direct support that helps you remain functional, decisive, and effective through periods of intense pressure.</p></article><article><p class="prb">Leadership isolation &rarr;</p><h3>Strength when you decide alone</h3><p>Carry the decisions you cannot openly discuss with employees, partners, family, or friends, with a steady mind and a confidential place to think them through.</p></article><article><p class="prb">Threats to business continuity &rarr;</p><h3>Protection of what you have built</h3><p>Reduce the risk that a temporary crisis destabilizes your leadership, your team, or the organization you spent years building.</p></article></div>
+  <div class="inline-cta"><a class="btn btn-gold" href="index.html#conversation">Request a private conversation &nearr;</a><a class="tlink" href="index.html">Back to the main page</a></div>
+</section>
+</main>
+<footer>
+  <div class="shell">
+    <p>&copy; 2026 Emotion Mentoring &middot; Michał Ksiądzyna</p>
+    <nav aria-label="Pages">
+      <a href="https://emotionmentoring.com/testimonials.html">Client experiences</a>
+      <a href="https://emotionmentoring.com/the-secret-book-of-emotions-shen.html">The book</a>
+      <a href="https://emotionmentoring.com/foundation.html">Shen Foundation</a>
+      <a href="https://emotionmentoring.com/narratives/">Narratives</a>
+    </nav>
+  </div>
+</footer>
+</body></html>
