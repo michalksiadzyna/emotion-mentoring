@@ -21,6 +21,11 @@
   <meta name="twitter:description" content="Emotion Mentoring for founders, CEOs and leaders with Michał “Shen” Ksiądzyna, creator of The Shen Method. Private one-on-one mentoring: €3,000 a month, 12 months, a weekly session and emergency access. Begin with a complimentary, confidential 30-minute conversation.">
   <meta name="twitter:image" content="https://emotionmentoring.com/og-image.jpg">
   <script type="application/ld+json">[{"@context": "https://schema.org", "@type": "ProfessionalService", "@id": "https://emotionmentoring.com/#service", "name": "Emotion Mentoring", "slogan": "See clearly. Lead well. Protect what you have built.", "description": "Emotion Mentoring for founders, CEOs and leaders with Michał “Shen” Ksiądzyna, creator of The Shen Method. Private one-on-one mentoring: €3,000 a month, 12 months, a weekly session and emergency access. Begin with a complimentary, confidential 30-minute conversation.", "url": "https://emotionmentoring.com/", "image": "https://emotionmentoring.com/og-image.jpg", "email": "michal.ksiadzyna@gmail.com", "areaServed": "Worldwide", "founder": {"@id": "https://emotionmentoring.com/#michal"}, "makesOffer": {"@type": "Offer", "name": "Emotion Mentoring, 12-month private engagement", "price": "3000", "priceCurrency": "EUR", "priceSpecification": {"@type": "UnitPriceSpecification", "price": "3000", "priceCurrency": "EUR", "unitText": "MONTH"}, "description": "One private session every week and access to emergency sessions, for 12 months."}}, {"@context": "https://schema.org", "@type": "Person", "@id": "https://emotionmentoring.com/#michal", "name": "Michał Ksiądzyna", "alternateName": "Shen", "jobTitle": "Creator of Emotion Mentoring and The Shen Method", "url": "https://emotionmentoring.com/michal-ksiadzyna.html", "image": "https://emotionmentoring.com/portrait.jpg"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What happens in the first conversation?", "acceptedAnswer": {"@type": "Answer", "text": "You describe your situation, Michał asks questions, and you both see whether Emotion Mentoring fits. No obligation to continue."}}, {"@type": "Question", "name": "Do I need to be in a crisis?", "acceptedAnswer": {"@type": "Answer", "text": "No. Recurring pressure, a difficult relationship or carrying more than you have room for is enough to begin."}}, {"@type": "Question", "name": "Is this therapy or business advice?", "acceptedAnswer": {"@type": "Answer", "text": "Neither. Emotion Mentoring works on emotional patterns, perspective and your capacity to carry responsibility. It is not medical or psychiatric treatment."}}, {"@type": "Question", "name": "How long is the engagement?", "acceptedAnswer": {"@type": "Answer", "text": "12 months, with one private session every week. Change that holds needs continuity."}}, {"@type": "Question", "name": "What if a crisis hits between sessions?", "acceptedAnswer": {"@type": "Answer", "text": "You have access to emergency sessions. In an acute crisis, Michał makes time within hours."}}, {"@type": "Question", "name": "Is everything confidential?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. What you bring stays between you and Michał."}}]}]</script>
+    <script>
+  /* entrance: the gold thread plays on every load (user ruling 2026-07-19, restored 2026-10-18) */
+  document.documentElement.classList.add('fx-wait');
+  try{ history.scrollRestoration = 'manual'; }catch(e){}
+  </script>
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -234,6 +239,21 @@
   <script src="em.js" defer></script>
 </head>
 <body>
+<div id="entrance" aria-hidden="true">
+  <svg viewBox="0 0 1440 900" preserveAspectRatio="none">
+    <defs>
+      <linearGradient id="etg" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0" stop-color="#85714a" stop-opacity="0"/><stop offset=".18" stop-color="#d9c491"/><stop offset=".5" stop-color="#fdf6e3"/><stop offset=".82" stop-color="#d9c491"/><stop offset="1" stop-color="#85714a" stop-opacity="0"/>
+      </linearGradient>
+      <filter id="esoft" x="-20%" y="-400%" width="140%" height="900%"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+    <path id="epanelTop" fill="#0b0b0d" d="M0,0 L1440,0 L1440,466 Q720,426 0,466 Z"/>
+    <path id="epanelBot" fill="#0b0b0d" d="M0,465 Q720,425 1440,465 L1440,900 L0,900 Z"/>
+    <path id="ethreadGlow" d="M0,465 Q720,425 1440,465" fill="none" stroke="url(#etg)" stroke-width="10" opacity=".5" filter="url(#esoft)"/>
+    <path id="ethread" d="M0,465 Q720,425 1440,465" fill="none" stroke="url(#etg)" stroke-width="1.8"/>
+  </svg>
+  <i id="eflare"></i>
+</div>
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header">
     <div class="wrap header-inner">
@@ -326,6 +346,39 @@
   (function(){ var taken = 8, total = 12;
     var asOf = new Date().toLocaleString('en-US',{month:'long',year:'numeric'});
     document.getElementById('spotsLine').textContent = (total - taken) + ' places open as of ' + asOf + '.'; })();
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script>
+  (function(){
+    var ent=document.getElementById('entrance'), root=document.documentElement;
+    var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var parts=['.site-header','.hero-copy>*','.portrait-panel'];
+    function reveal(){
+      root.classList.remove('fx-wait');
+      if(!window.gsap||RM) return;
+      gsap.fromTo('.hero h1>*',{yPercent:60,opacity:0},{yPercent:0,opacity:1,duration:.6,stagger:.12,ease:'power3.out'});
+      gsap.fromTo(['.site-header','.hero .overline','.hero-description','.hero-action','.portrait-panel'],{y:16,opacity:0},{y:0,opacity:1,duration:.55,stagger:.07,delay:.25,ease:'power3.out'});
+    }
+    if(!ent||!window.gsap||RM){ if(ent) ent.remove(); reveal(); return; }
+    window.scrollTo(0,0);
+    var thread=document.getElementById('ethread'),glow=document.getElementById('ethreadGlow'),
+        pTop=document.getElementById('epanelTop'),pBot=document.getElementById('epanelBot'),flare=document.getElementById('eflare');
+    var L=thread.getTotalLength(),done=false;
+    function finish(){ if(done) return; done=true; ent.remove(); }
+    var tl=gsap.timeline({onComplete:finish});
+    tl.set([thread,glow],{strokeDasharray:L,strokeDashoffset:L,opacity:1},0)
+      .set(flare,{opacity:0,scale:.4},0)
+      .to([thread,glow],{strokeDashoffset:0,duration:.42,ease:'power2.inOut'},0)
+      .to(flare,{opacity:1,scale:1,duration:.14,ease:'power2.out'},.42)
+      .to(thread,{attr:{'stroke-width':2.6},duration:.14,ease:'power2.out'},.42)
+      .to(flare,{opacity:0,scale:1.7,duration:.22,ease:'power2.in'},.54)
+      .to(pTop,{y:-520,duration:.5,ease:'power4.inOut'},.58)
+      .to(pBot,{y:520,duration:.5,ease:'power4.inOut'},.58)
+      .to([thread,glow],{opacity:0,duration:.16,ease:'power2.out'},.58)
+      .call(reveal,null,.76);
+    function skip(){ if(!done) tl.progress(1); }
+    ['pointerdown','keydown','wheel','touchstart'].forEach(function(ev){ addEventListener(ev,skip,{once:true,passive:true}); });
+  })();
   </script>
 </body>
 </html>
