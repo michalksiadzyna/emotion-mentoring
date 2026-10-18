@@ -87,6 +87,35 @@
       .conversation-heading p{margin-inline:auto}
       .conversation-form-panel{border-left:0;padding-left:0;width:100%;max-width:560px;text-align:left}
     }
+    /* ── fixes from Michał's review 2 (2026-10-18) ── */
+    .portrait-name>span{display:inline!important}
+    .portrait-name{white-space:nowrap}
+    #main h2,#main h3{margin-inline:auto}
+    .work-intro h2{max-width:none!important}
+    .method-preview{border-top:0!important;padding-top:0!important}
+    .method-sequence{counter-reset:seq}
+    .method-sequence li{border-top:0!important;padding-top:0!important;text-align:center;counter-increment:seq}
+    .seq-n{display:block;font:italic 500 30px/1 var(--serif);color:var(--gold-light);margin-bottom:12px}
+    .seq-n::before{content:counter(seq,upper-roman) "."}
+    .method-sequence h4{max-width:none!important;font-family:var(--serif)!important;font-size:24px!important;color:var(--ivory)}
+    .method-sequence p{margin-inline:auto;max-width:30em}
+    .faq-row{border-top:0!important}
+    .framed{position:relative;border:1px solid rgba(200,171,120,.4);background:linear-gradient(165deg,#121215,#0c0c0e);padding:72px 56px!important;margin-block:90px}
+    .framed::before{content:"";position:absolute;inset:-9px;pointer-events:none;
+      background:
+        linear-gradient(var(--gold),var(--gold)) top left/24px 1px no-repeat,
+        linear-gradient(var(--gold),var(--gold)) top left/1px 24px no-repeat,
+        linear-gradient(var(--gold),var(--gold)) top right/24px 1px no-repeat,
+        linear-gradient(var(--gold),var(--gold)) top right/1px 24px no-repeat,
+        linear-gradient(var(--gold),var(--gold)) bottom left/24px 1px no-repeat,
+        linear-gradient(var(--gold),var(--gold)) bottom left/1px 24px no-repeat,
+        linear-gradient(var(--gold),var(--gold)) bottom right/24px 1px no-repeat,
+        linear-gradient(var(--gold),var(--gold)) bottom right/1px 24px no-repeat}
+    #submit-request{width:auto!important;min-width:0!important;min-height:48px;padding:12px 26px;gap:18px;font-size:13px;letter-spacing:.04em;margin-inline:auto;display:flex}
+    #email,#message{font-weight:300;letter-spacing:.02em}
+    #email::placeholder,#message::placeholder{color:#6f6b62!important;font-weight:300;font-style:italic;letter-spacing:.03em}
+    #email{box-shadow:inset 0 2px 10px rgba(0,0,0,.45);border-color:#3d3a34}
+    @media (max-width:680px){.framed{padding:44px 22px!important;margin-inline:16px}.portrait-name{white-space:normal}}
   </style>
   <script src="app.js" defer></script>
 </head>
@@ -137,7 +166,7 @@
         </div>
         <div class="method-preview">
           <div class="method-heading"><p class="overline">THE SHEN METHOD</p><h3>Start with what is happening.<br> Understand what keeps returning.</h3><a class="text-link" href="the-shen-method.html">Explore The Shen Method <span aria-hidden="true">↗</span></a></div>
-          <ol class="method-sequence"><li><span class="sequence-dot" aria-hidden="true"></span><h4>Bring the real situation.</h4><p>A difficult decision, a conflict, a reaction you cannot think your way out of.</p></li><li><span class="sequence-dot" aria-hidden="true"></span><h4>Find the pattern.</h4><p>Find the emotions and patterns behind it, down to the source.</p></li><li><span class="sequence-dot" aria-hidden="true"></span><h4>Lead with a steadier mind.</h4><p>Bring what emerges into your decisions. Weekly sessions keep continuity.</p></li></ol>
+          <ol class="method-sequence"><li><span class="seq-n" aria-hidden="true"></span><h4>Bring the real situation.</h4><p>A difficult decision, a conflict, a reaction you cannot think your way out of.</p></li><li><span class="seq-n" aria-hidden="true"></span><h4>Find the pattern.</h4><p>Find the emotions and patterns behind it, down to the source.</p></li><li><span class="seq-n" aria-hidden="true"></span><h4>Lead with a steadier mind.</h4><p>Bring what emerges into your decisions. Weekly sessions keep continuity.</p></li></ol>
         </div>
       </div>
     </section>
@@ -145,7 +174,7 @@
     <section class="mentor-section section wrap" id="mentor" aria-labelledby="mentor-title">
       <div class="section-top"><p class="overline">02 / YOUR MENTOR</p></div>
       <div class="mentor-grid"><div><h2 id="mentor-title">Michał Ksiądzyna.</h2><p class="mentor-subtitle">Beside you<br> in every session.</p></div><div class="mentor-biography"><p class="large-copy">Founder and President of the Shen Foundation and author of <cite>The Secret Book of Emotions</cite>.</p><p>His private practice includes founders, CEOs and people whose decisions affect others.</p><div class="mentor-links"><a class="text-link" href="../michal-ksiadzyna.html">About Michał <span aria-hidden="true">↗</span></a><a class="text-link" href="the-shen-method.html">The Shen Method <span aria-hidden="true">↗</span></a><a class="text-link subdued" href="../foundation.html">Shen Foundation <span aria-hidden="true">↗</span></a></div></div></div>
-      <div class="supporting-proof"><div class="proof-label"><p class="overline">CLIENT EXPERIENCES</p><a class="text-link subdued" href="../testimonials.html">More accounts <span aria-hidden="true">↗</span></a></div><figure><blockquote>“Michał is an excellent guide — he allows you to experience even the deepest emotions while feeling completely safe and understood.”</blockquote><figcaption>Agnieszka Palka<span>Entrepreneur · Mother</span></figcaption></figure><figure><blockquote>“After four months, the loneliness that had made my life a nightmare for years simply disappeared.”</blockquote><figcaption>Krystyna Mendonca<span>Entrepreneur · Mother</span></figcaption></figure></div>
+      <div class="supporting-proof"><div class="proof-label"><p class="overline">CLIENT EXPERIENCES</p><a class="text-link subdued" href="../testimonials.html">More accounts <span aria-hidden="true">↗</span></a></div><figure><blockquote>“Michał is an excellent guide — he allows you to experience even the deepest emotions while feeling completely safe and understood.”</blockquote><figcaption>Agnieszka Palka<span>Entrepreneur · Mother</span></figcaption></figure><figure><blockquote>“After four months, the loneliness that had made my life a nightmare for years simply disappeared.”</blockquote><figcaption>Krystyna Mendonca<span>Entrepreneur · Mother</span></figcaption></figure><figure><blockquote>“Within a single session I healed a pattern I had been repeating for many years — and I am now deeply happy because of it.”</blockquote><figcaption>Dominika Lenard</figcaption></figure><figure><blockquote>“Since that work, I have never felt lonely.”</blockquote><figcaption>Beata Brzychczyk</figcaption></figure></div>
     </section>
 
     <section class="engagement-section section" id="engagement" aria-labelledby="engagement-title"><div class="wrap">
@@ -158,10 +187,13 @@
         <details><summary>What happens in the first conversation?<span class="expand-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>You describe your situation, Michał asks questions, and you both see whether Emotion Mentoring fits. No obligation to continue.</p></div></details>
         <details><summary>Do I need to be in a crisis?<span class="expand-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>No. Recurring pressure, a difficult relationship or carrying more than you have room for is enough to begin.</p></div></details>
         <details><summary>Is this therapy or business advice?<span class="expand-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>Neither. Emotion Mentoring works on emotional patterns, perspective and your capacity to carry responsibility. It is not medical or psychiatric treatment.</p></div></details>
+        <details><summary>How long is the engagement?<span class="expand-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>12 months, with one private session every week. Change that holds needs continuity.</p></div></details>
+        <details><summary>What if a crisis hits between sessions?<span class="expand-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>You have access to emergency sessions. In an acute crisis, Michał makes time within hours.</p></div></details>
+        <details><summary>Is everything confidential?<span class="expand-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>Yes. What you bring stays between you and Michał.</p></div></details>
       </div></div>
     </div></section>
 
-    <section class="conversation-section section wrap" id="conversation" aria-labelledby="conversation-title">
+    <section class="conversation-section section wrap framed" id="conversation" aria-labelledby="conversation-title">
       <div class="conversation-heading"><p class="overline">04 / THE FIRST CONVERSATION</p><h2 id="conversation-title">Begin with one<br><em>powerful conversation.</em></h2><p>A private space to say what you are carrying.<br>A clear next step, together.</p></div>
       <div class="conversation-form-panel"><div class="form-heading"><div><h3>Request your conversation.</h3><p>Leave your email. Michał replies to arrange a time.</p></div></div>
         <form id="conversation-form" action="https://formspree.io/f/mvzblnyr" method="POST">
