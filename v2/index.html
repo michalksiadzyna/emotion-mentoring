@@ -126,6 +126,11 @@
     .direct-email a:hover{text-decoration:none;border-color:var(--gold-light)}
     .form-heading{text-align:center;justify-content:center}
     #conversation-form>label[for=email]{text-align:center;display:block}
+    /* hero: one three-line statement */
+    .hero h1{font-size:clamp(40px,6.6vw,96px)!important;line-height:1.02!important;letter-spacing:-.035em!important}
+    .hero h1>span,.hero h1>em{display:block;margin-top:0!important}
+    @media (min-width:961px){.hero.wrap{width:min(1120px,calc(100% - 96px))!important}}
+    .menu-toggle,.desktop-nav,.mobile-nav{display:none!important}
   </style>
   <script src="app.js" defer></script>
 </head>
@@ -134,18 +139,17 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="#top" aria-label="Emotion Mentoring, home"><span class="brand-symbol" aria-hidden="true"></span><span class="brand-name">Emotion Mentoring<span class="brand-sub">THE SHEN METHOD</span></span></a>
-      <nav class="desktop-nav" aria-label="Main navigation"><a href="#work">How it works</a><a href="#mentor">Michał</a><a href="#engagement">Terms</a></nav>
-      <div class="header-actions"><a class="header-contact" href="#conversation">Let’s talk <span aria-hidden="true">↗</span></a><button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation"><span></span><span></span></button></div>
+      
+      <div class="header-actions"><a class="header-contact" href="#conversation">Let’s talk <span aria-hidden="true">↗</span></a></div>
     </div>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" hidden><a href="#work"><span>How it works</span><span aria-hidden="true">01</span></a><a href="#mentor"><span>Meet Michał</span><span aria-hidden="true">02</span></a><a href="#engagement"><span>Terms</span><span aria-hidden="true">03</span></a><a href="#conversation"><span>The first conversation</span><span aria-hidden="true">↗</span></a></nav>
+    
   </header>
 
   <main id="main">
     <section class="hero wrap" id="top" aria-labelledby="hero-title">
       <div class="hero-copy">
         <p class="overline"><span class="short-rule" aria-hidden="true"></span> FOR FOUNDERS, CEOs &amp; LEADERS</p>
-        <h1 id="hero-title"><span>See clearly.</span><em>Lead well.</em></h1>
-        <p class="hero-promise">Protect what you have built.</p>
+        <h1 id="hero-title"><span>See clearly.</span><em>Lead well.</em><span>Protect what you have built.</span></h1>
         <p class="hero-description">I strengthen the mind behind your decisions, so you lead with clarity under pressure, and when crisis finds you, it finds you ready.</p>
         <div class="hero-action"><a class="button button-primary" href="#conversation">Request a private conversation <span aria-hidden="true">↗</span></a><p class="action-caption">Complimentary <span>·</span> Confidential <span>·</span> 30 minutes</p></div>
       </div>
