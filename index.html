@@ -202,7 +202,35 @@
     #submit-request{margin-top:var(--g3)!important}
     .direct-email{margin-top:var(--g4)!important;padding-top:var(--g3)!important}
     @media (max-width:680px){.conversation-section{padding:var(--g5) var(--g3)!important}}
-  </style>
+    /* ── buttons: Nocturne 4B, one style for every button (user ruling 2026-10-18) ── */
+    .button,.mobile-contact>a{box-sizing:border-box;position:relative;isolation:isolate;overflow:hidden;display:inline-flex!important;align-items:center;justify-content:center!important;
+      width:min(100%,340px)!important;min-width:0!important;min-height:60px!important;padding:14px 18px 20px!important;gap:0!important;margin-inline:auto;border-radius:3px;
+      border:1px solid var(--gold)!important;color:var(--gold-light)!important;
+      background:linear-gradient(145deg,rgba(200,171,120,.08) 0%,rgba(200,171,120,.02) 75%),#0d0c0b!important;
+      box-shadow:inset 0 0 0 1px rgba(200,171,120,.07)!important;
+      font-family:var(--sans);font-size:14px!important;font-weight:500;line-height:1.4!important;letter-spacing:.035em!important;text-align:center;
+      transition:background .3s ease,border-color .3s ease,color .3s ease,transform .2s ease}
+    .button::after,.mobile-contact>a::after{content:"";position:absolute;left:50%;bottom:17px;width:34px;height:1px;transform:translateX(-50%);pointer-events:none;
+      background:linear-gradient(90deg,transparent,var(--gold-light) 50%,transparent);box-shadow:0 0 8px rgba(224,200,157,.35);transition:width .3s ease}
+    .button:hover,.mobile-contact>a:hover{background:var(--gold-light)!important;border-color:var(--gold-light)!important;color:#171411!important;transform:translateY(-1px)}
+    .button:hover::after,.mobile-contact>a:hover::after{width:72px;background:linear-gradient(90deg,transparent,#171411 50%,transparent);box-shadow:none}
+    .button:active{transform:translateY(1px)}
+    .button:disabled{opacity:.5;cursor:not-allowed;transform:none}
+    .button:focus-visible,.mobile-contact>a:focus-visible{outline:2px solid var(--ivory);outline-offset:4px}
+    .hero-action{align-items:center}
+    .mobile-contact{background:transparent!important;box-shadow:none!important}
+    .mobile-contact{left:0!important;right:0!important}
+    .mobile-contact>a{display:flex!important;margin-inline:auto!important}
+    .mobile-contact>a{width:min(100%,340px)!important;box-shadow:0 8px 30px rgba(0,0,0,.6)!important}
+    #submit-request{display:flex!important;margin-inline:auto!important;padding:14px 18px 20px!important;min-height:60px!important;width:min(100%,340px)!important}
+    @media (max-width:680px){.button,.mobile-contact>a,#submit-request{width:min(100%,280px)!important;font-size:13.5px!important}}
+    .header-contact{gap:0!important;min-height:0!important;justify-content:center!important;position:relative;display:inline-flex;align-items:center;padding:9px 18px 13px!important;border:1px solid var(--gold)!important;border-radius:3px;
+      color:var(--gold-light)!important;background:linear-gradient(145deg,rgba(200,171,120,.08),rgba(200,171,120,.02) 75%),#0d0c0b;font-size:13px;letter-spacing:.035em;transition:background .3s,color .3s,border-color .3s}
+    .header-contact>span{display:none}
+    .header-contact::after{content:"";position:absolute;left:50%;bottom:8px;width:22px;height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--gold-light) 50%,transparent);transition:width .3s}
+    .header-contact:hover{background:var(--gold-light);color:#171411!important;border-color:var(--gold-light)!important}
+    .header-contact:hover::after{width:40px;background:linear-gradient(90deg,transparent,#171411 50%,transparent)}
+    </style>
   <script src="em.js" defer></script>
 </head>
 <body>
@@ -211,7 +239,7 @@
     <div class="wrap header-inner">
       <a class="brand" href="#top" aria-label="Emotion Mentoring, home"><span class="brand-symbol" aria-hidden="true"></span><span class="brand-name">Emotion Mentoring<span class="brand-sub">THE SHEN METHOD</span></span></a>
       
-      <div class="header-actions"><a class="header-contact" href="#conversation">Let’s talk <span aria-hidden="true">↗</span></a></div>
+      <div class="header-actions"><a class="header-contact" href="#conversation">Let’s talk</a></div>
     </div>
     
   </header>
@@ -222,11 +250,11 @@
         <p class="overline"><span class="short-rule" aria-hidden="true"></span> FOR FOUNDERS, CEOs &amp; LEADERS</p>
         <h1 id="hero-title"><span>See clearly.</span><em>Lead well.</em><span>Protect what you have built.</span></h1>
         <p class="hero-description">I strengthen the mind behind your decisions, so you lead with clarity under pressure, and when crisis finds you, it finds you ready.</p>
-        <div class="hero-action"><a class="button button-primary" href="#conversation">Request a private conversation <span aria-hidden="true">↗</span></a><p class="action-caption">Complimentary <span>·</span> Confidential <span>·</span> 30 minutes</p></div>
+        <div class="hero-action"><a class="button button-primary" href="#conversation">Request a private conversation</a><p class="action-caption">Complimentary <span>·</span> Confidential <span>·</span> 30 minutes</p></div>
       </div>
       <figure class="portrait-panel">
         <div class="portrait-box"><span class="portrait-frame" aria-hidden="true"></span><div class="portrait-photo"><img src="portrait.jpg" alt="Michał “Shen” Ksiądzyna, creator of Emotion Mentoring and The Shen Method" width="720" height="899" fetchpriority="high" decoding="async"></div></div>
-        <figcaption><span class="portrait-name">Michał <span>“Shen” Ksiądzyna</span></span><span class="portrait-role">Creator of Emotion Mentoring<br>and The Shen Method</span><a href="#mentor" class="portrait-link">Meet your mentor <span aria-hidden="true">↗</span></a></figcaption>
+        <figcaption><span class="portrait-name">Michał <span>“Shen” Ksiądzyna</span></span><span class="portrait-role">Creator of Emotion Mentoring<br>and The Shen Method</span><a href="#mentor" class="portrait-link">Meet your mentor</a></figcaption>
         <span class="portrait-side-note" aria-hidden="true">A PRIVATE PRACTICE. A PERSONAL COMMITMENT.</span>
       </figure>
     </section>
@@ -235,7 +263,7 @@
 
     <section class="opening-proof wrap" aria-label="A client's experience">
       <p class="overline">IN A CLIENT’S WORDS</p>
-      <div><blockquote>“Michał is a highly skilled professional who built my trust session by session — and I’m not someone easily convinced.”</blockquote><div class="quote-attribution"><p><strong>Arkadiusz Czajkowski</strong><span>CEO</span></p><a class="text-link" href="testimonials.html">Read his account <span aria-hidden="true">↗</span></a></div></div>
+      <div><blockquote>“Michał is a highly skilled professional who built my trust session by session — and I’m not someone easily convinced.”</blockquote><div class="quote-attribution"><p><strong>Arkadiusz Czajkowski</strong><span>CEO</span></p><a class="text-link" href="testimonials.html">Read his account</a></div></div>
     </section>
 
     <section class="work-section section" id="work" aria-labelledby="work-title">
@@ -250,7 +278,7 @@
           </div>
         </div>
         <div class="method-preview">
-          <div class="method-heading"><p class="overline">THE SHEN METHOD</p><h3>Start with what is happening.<br> Understand what keeps returning.</h3><a class="text-link" href="the-shen-method.html">Explore The Shen Method <span aria-hidden="true">↗</span></a></div>
+          <div class="method-heading"><p class="overline">THE SHEN METHOD</p><h3>Start with what is happening.<br> Understand what keeps returning.</h3><a class="text-link" href="the-shen-method.html">Explore The Shen Method</a></div>
           <ol class="method-sequence"><li><span class="seq-n" aria-hidden="true"></span><h4>Bring the real situation.</h4><p>A difficult decision, a conflict, a reaction you cannot think your way out of.</p></li><li><span class="seq-n" aria-hidden="true"></span><h4>Find the pattern.</h4><p>Find the emotions and patterns behind it, down to the source.</p></li><li><span class="seq-n" aria-hidden="true"></span><h4>Lead with a steadier mind.</h4><p>Bring what emerges into your decisions. Weekly sessions keep continuity.</p></li></ol>
         </div>
       </div>
@@ -258,16 +286,16 @@
 
     <section class="mentor-section section wrap" id="mentor" aria-labelledby="mentor-title">
       <div class="section-top"><p class="overline">YOUR MENTOR</p></div>
-      <div class="mentor-grid"><div><h2 id="mentor-title">Michał “Shen” Ksiądzyna.</h2><p class="mentor-subtitle">Beside you<br> in every session.</p></div><div class="mentor-biography"><p class="large-copy">Founder and President of the Shen Foundation and author of <cite>The Secret Book of Emotions</cite>.</p><p>His private practice includes founders, CEOs and people whose decisions affect others.</p><div class="mentor-links"><a class="text-link" href="michal-ksiadzyna.html">About Michał <span aria-hidden="true">↗</span></a><a class="text-link" href="the-shen-method.html">The Shen Method <span aria-hidden="true">↗</span></a><a class="text-link subdued" href="foundation.html">Shen Foundation <span aria-hidden="true">↗</span></a></div></div></div>
-      <div class="supporting-proof"><div class="proof-label"><p class="overline">CLIENT EXPERIENCES</p><a class="text-link subdued" href="testimonials.html">More accounts <span aria-hidden="true">↗</span></a></div><figure><blockquote>“Michał is an excellent guide — he allows you to experience even the deepest emotions while feeling completely safe and understood.”</blockquote><figcaption>Agnieszka Palka<span>Entrepreneur · Mother</span></figcaption></figure><figure><blockquote>“After four months, the loneliness that had made my life a nightmare for years simply disappeared.”</blockquote><figcaption>Krystyna Mendonca<span>Entrepreneur · Mother</span></figcaption></figure><figure><blockquote>“Within a single session I healed a pattern I had been repeating for many years — and I am now deeply happy because of it.”</blockquote><figcaption>Dominika Lenard</figcaption></figure><figure><blockquote>“Since that work, I have never felt lonely.”</blockquote><figcaption>Beata Brzychczyk</figcaption></figure></div>
+      <div class="mentor-grid"><div><h2 id="mentor-title">Michał “Shen” Ksiądzyna.</h2><p class="mentor-subtitle">Beside you<br> in every session.</p></div><div class="mentor-biography"><p class="large-copy">Founder and President of the Shen Foundation and author of <cite>The Secret Book of Emotions</cite>.</p><p>His private practice includes founders, CEOs and people whose decisions affect others.</p><div class="mentor-links"><a class="text-link" href="michal-ksiadzyna.html">About Michał</a><a class="text-link" href="the-shen-method.html">The Shen Method</a><a class="text-link subdued" href="foundation.html">Shen Foundation</a></div></div></div>
+      <div class="supporting-proof"><div class="proof-label"><p class="overline">CLIENT EXPERIENCES</p><a class="text-link subdued" href="testimonials.html">More accounts</a></div><figure><blockquote>“Michał is an excellent guide — he allows you to experience even the deepest emotions while feeling completely safe and understood.”</blockquote><figcaption>Agnieszka Palka<span>Entrepreneur · Mother</span></figcaption></figure><figure><blockquote>“After four months, the loneliness that had made my life a nightmare for years simply disappeared.”</blockquote><figcaption>Krystyna Mendonca<span>Entrepreneur · Mother</span></figcaption></figure><figure><blockquote>“Within a single session I healed a pattern I had been repeating for many years — and I am now deeply happy because of it.”</blockquote><figcaption>Dominika Lenard</figcaption></figure><figure><blockquote>“Since that work, I have never felt lonely.”</blockquote><figcaption>Beata Brzychczyk</figcaption></figure></div>
     </section>
 
     <section class="engagement-section section" id="engagement" aria-labelledby="engagement-title"><div class="wrap">
       <div class="section-top"><p class="overline">THE TERMS</p></div>
       <div class="engagement-grid"><div class="engagement-copy"><h2 id="engagement-title">Private mentoring.<br>Clear terms.</h2>
         <div class="fit"><div><h4>This is for</h4><p>Anyone whose decisions significantly affect people, capital or an organization.</p></div><div class="no"><h4>This is not for</h4><p>People seeking therapy, coaching or a psychiatrist.</p></div></div>
-        <a class="text-link" href="#conversation">Discuss your situation <span aria-hidden="true">↗</span></a></div>
-        <div class="engagement-offer"><p class="overline">EMOTION MENTORING</p><p class="price">€3,000<span>/ month</span></p><p class="price-term">A 12-month private engagement.</p><dl class="offer-details"><div><dt>Weekly rhythm</dt><dd>One private session every week.</dd></div><div><dt>Urgent situations</dt><dd>Access to emergency sessions.</dd></div><div><dt>Places</dt><dd id="spotsLine">4 places open as of October 2026.</dd></div></dl><a class="button button-primary" href="#conversation">Discuss working together <span aria-hidden="true">↗</span></a></div></div>
+        <a class="text-link" href="#conversation">Discuss your situation</a></div>
+        <div class="engagement-offer"><p class="overline">EMOTION MENTORING</p><p class="price">€3,000<span>/ month</span></p><p class="price-term">A 12-month private engagement.</p><dl class="offer-details"><div><dt>Weekly rhythm</dt><dd>One private session every week.</dd></div><div><dt>Urgent situations</dt><dd>Access to emergency sessions.</dd></div><div><dt>Places</dt><dd id="spotsLine">4 places open as of October 2026.</dd></div></dl><a class="button button-primary" href="#conversation">Discuss working together</a></div></div>
       <div class="faq-row" id="questions"><div><p class="overline">BEFORE YOU BEGIN</p><h3>Clarity before<br> commitment.</h3></div><div class="faq-list">
         <details><summary>What happens in the first conversation?<span class="expand-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>You describe your situation, Michał asks questions, and you both see whether Emotion Mentoring fits. No obligation to continue.</p></div></details>
         <details><summary>Do I need to be in a crisis?<span class="expand-icon" aria-hidden="true"></span></summary><div class="faq-answer"><p>No. Recurring pressure, a difficult relationship or carrying more than you have room for is enough to begin.</p></div></details>
@@ -292,7 +320,7 @@
     </section>
   </main>
   <footer class="site-footer"><div class="wrap footer-top"><a class="footer-brand" href="#top">Emotion Mentoring<span>A stronger mind under responsibility.</span></a><a class="back-top" href="#top">Back to top <span aria-hidden="true">↑</span></a></div><div class="wrap footer-bottom"><p>© <span data-year>2026</span> Michał “Shen” Ksiądzyna</p><nav aria-label="Further reading"><a href="the-shen-method.html">The Shen Method</a><a href="testimonials.html">Client experiences</a><a href="the-secret-book-of-emotions-shen.html">The book</a><a href="foundation.html">Foundation</a><a href="narratives/">Narratives</a></nav></div></footer>
-  <div class="mobile-contact" aria-label="Start a conversation"><a href="#conversation"><span>Request a conversation</span><span class="mobile-contact-arrow" aria-hidden="true">↗</span></a></div>
+  <div class="mobile-contact" aria-label="Start a conversation"><a href="#conversation">Request a conversation</a></div>
   <script>
   /* spots: 8 of 12 taken (same single source rule as the live site) */
   (function(){ var taken = 8, total = 12;
