@@ -116,6 +116,16 @@
     #email::placeholder,#message::placeholder{color:#6f6b62!important;font-weight:300;font-style:italic;letter-spacing:.03em}
     #email{box-shadow:inset 0 2px 10px rgba(0,0,0,.45);border-color:#3d3a34}
     @media (max-width:680px){.framed{padding:44px 22px!important;margin-inline:16px}.portrait-name{white-space:normal}}
+    /* note toggle and direct email: centered, joined */
+    .optional-note summary{justify-content:center;gap:10px;cursor:pointer}
+    .optional-note .expand-icon{margin:0!important;width:10px;height:10px}
+    .optional-note .expand-icon:before,.optional-note .expand-icon:after{top:4px;width:10px}
+    .optional-note summary:hover{color:var(--gold-light)}
+    .direct-email{justify-content:center!important;align-items:baseline;gap:8px!important;border-top:1px solid var(--line);text-align:center;font-size:14px!important;letter-spacing:.02em}
+    .direct-email a{border-bottom:1px solid rgba(200,171,120,.45);padding-bottom:2px}
+    .direct-email a:hover{text-decoration:none;border-color:var(--gold-light)}
+    .form-heading{text-align:center;justify-content:center}
+    #conversation-form>label[for=email]{text-align:center;display:block}
   </style>
   <script src="app.js" defer></script>
 </head>
@@ -202,7 +212,7 @@
           <details class="optional-note"><summary>Add a note <span>(optional)</span><span class="expand-icon" aria-hidden="true"></span></summary><div><label for="message">Anything you would like Michał to know?</label><textarea id="message" name="message" rows="3" maxlength="2000" placeholder="Share only what you are comfortable putting in an email."></textarea></div></details>
           <button class="button button-primary" id="submit-request" type="submit"><span class="button-label">Request my conversation</span><span class="button-arrow" aria-hidden="true">↗</span></button>
           <div class="form-error" id="form-error" role="alert" tabindex="-1" hidden><p>We could not confirm your request. Please try again, or <a href="mailto:michal.ksiadzyna@gmail.com?subject=Emotion%20Mentoring">email Michał directly</a>.</p></div>
-        </form><p class="direct-email">Prefer to write directly? <a href="mailto:michal.ksiadzyna@gmail.com?subject=Emotion%20Mentoring">Email Michał <span aria-hidden="true">↗</span></a></p>
+        </form><p class="direct-email"><span>Prefer to write directly?</span><a href="mailto:michal.ksiadzyna@gmail.com?subject=Emotion%20Mentoring">Email Michał</a></p>
       </div>
     </section>
   </main>
