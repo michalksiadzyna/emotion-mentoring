@@ -235,6 +235,13 @@
     .header-contact::after{content:"";position:absolute;left:50%;bottom:8px;width:22px;height:1px;transform:translateX(-50%);background:linear-gradient(90deg,transparent,var(--gold-light) 50%,transparent);transition:width .3s}
     .header-contact:hover{background:var(--gold-light);color:#171411!important;border-color:var(--gold-light)!important}
     .header-contact:hover::after{width:40px;background:linear-gradient(90deg,transparent,#171411 50%,transparent)}
+    /* ── entrance: the gold thread ── */
+    #entrance{position:fixed;inset:0;z-index:5000;pointer-events:none}
+    #entrance svg{position:absolute;inset:0;width:100%!important;height:100%!important;max-width:none!important;display:block}
+    #ethread,#ethreadGlow{opacity:0}
+    #eflare{position:absolute;left:50%;top:49.44%;width:34vmin;height:8vmin;transform:translate(-50%,-50%);
+      background:radial-gradient(closest-side,rgba(253,246,227,.75),rgba(217,196,145,.28) 46%,transparent 72%);filter:blur(6px);mix-blend-mode:screen;opacity:0}
+    .fx-wait .hero-copy>*,.fx-wait .portrait-panel,.fx-wait .site-header{visibility:hidden}
     </style>
   <script src="em.js" defer></script>
 </head>
