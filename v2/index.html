@@ -149,6 +149,49 @@
       .method-sequence li{text-align:center}
     }
     #submit-request{min-height:0!important;padding:18px 36px!important;justify-content:center!important;gap:0!important;line-height:1.3!important}
+    /* ── spacing system: six steps, used everywhere (user ruling 2026-10-18) ── */
+    :root{--g1:8px;--g2:16px;--g3:24px;--g4:40px;--g5:64px;--g6:112px}
+    @media (max-width:960px){:root{--g4:32px;--g5:48px;--g6:80px}}
+    .section{padding-block:var(--g6)!important}
+    .section-top{margin-bottom:var(--g2)!important}
+    #main h2{margin-top:0!important}
+    .overline+h1,.overline+h2,.overline+h3{margin-top:var(--g2)!important}
+    .hero{padding-block:var(--g5)!important;gap:var(--g5)!important}
+    .hero h1{margin-top:var(--g3)!important}
+    .hero-description{margin-top:var(--g3)!important}
+    .hero-action{margin-top:var(--g4)!important;gap:var(--g2)}
+    .action-caption{margin-top:var(--g2)!important}
+    .portrait-panel figcaption{margin-top:var(--g3)!important;gap:var(--g1)}
+    .practice-line{padding-block:var(--g4)!important}
+    .opening-proof{padding-block:var(--g5)!important;gap:var(--g2)!important}
+    .quote-attribution{margin-top:var(--g3)!important}
+    .work-intro p,.mentor-biography p,.conversation-heading>p:not(.overline){margin-top:var(--g3)!important}
+    .work-grid,.mentor-grid{gap:var(--g4)!important}
+    .situations{margin-top:0!important}
+    .method-preview,.supporting-proof,.faq-row{margin-top:var(--g5)!important;padding-top:var(--g5)!important;border-top:1px solid var(--line)!important}
+    .method-preview{gap:var(--g4)!important}
+    .method-heading h3{margin-top:var(--g2)!important}
+    .method-heading .text-link{margin-top:var(--g3)!important}
+    .method-sequence{gap:var(--g4)!important}
+    .method-sequence p{margin-top:var(--g1)!important}
+    .seq-n{margin-bottom:var(--g2)!important}
+    .mentor-subtitle{margin-top:var(--g2)!important}
+    .mentor-biography .large-copy{margin-top:0!important}
+    .mentor-links{margin-top:var(--g3)!important}
+    .supporting-proof{gap:var(--g4)!important}
+    .supporting-proof figcaption{margin-top:var(--g2)!important}
+    .engagement-grid{gap:var(--g5)!important}
+    .engagement-copy h2+.fit,.fit{margin-top:var(--g3)!important}
+    .engagement-copy .text-link{margin-top:var(--g3)!important}
+    .faq-row{gap:var(--g4)!important}
+    .conversation-section{gap:var(--g4)!important;padding:var(--g5) var(--g5)!important}
+    .conversation-form-panel{border-left:0!important;padding:var(--g4) 0 0!important;border-top:1px solid var(--line)!important;margin:0!important}
+    #conversation-form{margin-top:0!important}
+    #conversation-form label[for=email]{margin-bottom:var(--g1)!important}
+    .optional-note{margin-block:var(--g2) 0!important}
+    #submit-request{margin-top:var(--g3)!important}
+    .direct-email{margin-top:var(--g4)!important;padding-top:var(--g3)!important}
+    @media (max-width:680px){.conversation-section{padding:var(--g5) var(--g3)!important}}
   </style>
   <script src="app.js" defer></script>
 </head>
