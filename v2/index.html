@@ -131,6 +131,23 @@
     .hero h1>span,.hero h1>em{display:block;margin-top:0!important}
     @media (min-width:961px){.hero.wrap{width:min(1120px,calc(100% - 96px))!important}}
     .menu-toggle,.desktop-nav,.mobile-nav{display:none!important}
+    /* mobile: everything centered, one idea after another */
+    @media (max-width:960px){
+      .hero,.hero-copy{text-align:center}
+      .hero h1{font-size:clamp(46px,12.5vw,64px)!important}
+      .overline{justify-content:center;text-align:center}
+      .hero-description{margin-inline:auto}
+      .hero-action{display:flex!important;flex-direction:column;align-items:center;margin-inline:auto}
+      .portrait-panel figcaption{display:flex;flex-direction:column;align-items:center;text-align:center}
+      .section-top{justify-content:center}
+      .work-intro,.method-heading,.mentor-grid,.mentor-grid>div,.engagement-copy,.conversation-heading,.proof-label,.faq-row>div:first-child,.opening-proof,.supporting-proof figure{text-align:center}
+      .mentor-links{justify-content:center}
+      .proof-label{display:flex;flex-direction:column;align-items:center;gap:12px}
+      .quote-attribution{justify-content:center;flex-wrap:wrap;gap:12px 20px}
+      .engagement-copy .fit{margin-inline:auto;text-align:left}
+      .conversation-heading p{margin-inline:auto}
+      .method-sequence li{text-align:center}
+    }
   </style>
   <script src="app.js" defer></script>
 </head>
@@ -208,7 +225,7 @@
     </div></section>
 
     <section class="conversation-section section wrap framed" id="conversation" aria-labelledby="conversation-title">
-      <div class="conversation-heading"><p class="overline">04 / THE FIRST CONVERSATION</p><h2 id="conversation-title">Begin with one<br><em>powerful conversation.</em></h2><p>A private space to say what you are carrying.<br>A clear next step, together.</p></div>
+      <div class="conversation-heading"><p class="overline">04 / THE FIRST CONVERSATION</p><h2 id="conversation-title">Begin with one<br><em>powerful conversation.</em></h2><p>A clear next step, together.</p></div>
       <div class="conversation-form-panel"><div class="form-heading"><div><h3>Request your conversation.</h3><p>Leave your email. Michał replies to arrange a time.</p></div></div>
         <form id="conversation-form" action="https://formspree.io/f/mvzblnyr" method="POST">
           <label for="email">Your email address</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="254" placeholder="you@company.com">
